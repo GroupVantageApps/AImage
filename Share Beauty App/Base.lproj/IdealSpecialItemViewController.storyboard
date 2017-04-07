@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ideal Special Item View Controller-->
+        <scene sceneID="lVB-Ep-9Sr">
+            <objects>
+                <viewController storyboardIdentifier="IdealSpecialItemViewController" id="YEZ-Wn-5qc" customClass="IdealSpecialItemViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pfo-gQ-rzP"/>
+                        <viewControllerLayoutGuide type="bottom" id="sbj-Vh-qCB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ck1-hx-rwK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlx-PI-Wyt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-Os-7bg">
+                                        <rect key="frame" x="40" y="64" width="295" height="403"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K5r-B1-WgK">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZ0-uI-HNG">
+                                        <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GZ0-uI-HNG" firstAttribute="leading" secondItem="rlx-PI-Wyt" secondAttribute="leading" id="2Qe-qB-oy7"/>
+                                    <constraint firstItem="GZ0-uI-HNG" firstAttribute="top" secondItem="3QF-Os-7bg" secondAttribute="bottom" id="HqM-Vo-qfa"/>
+                                    <constraint firstItem="3QF-Os-7bg" firstAttribute="top" secondItem="rlx-PI-Wyt" secondAttribute="top" constant="64" id="LF2-LG-2fV"/>
+                                    <constraint firstAttribute="trailing" secondItem="GZ0-uI-HNG" secondAttribute="trailing" id="LMZ-eJ-TV2"/>
+                                    <constraint firstItem="3QF-Os-7bg" firstAttribute="leading" secondItem="rlx-PI-Wyt" secondAttribute="leading" constant="40" id="Seb-0e-HU4"/>
+                                    <constraint firstAttribute="bottom" secondItem="GZ0-uI-HNG" secondAttribute="bottom" id="V3y-5e-wRy"/>
+                                    <constraint firstItem="GZ0-uI-HNG" firstAttribute="height" secondItem="rlx-PI-Wyt" secondAttribute="height" multiplier="3:10" id="gKr-cb-eU0"/>
+                                    <constraint firstAttribute="trailing" secondItem="3QF-Os-7bg" secondAttribute="trailing" constant="40" id="zei-No-jWs"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2I-2B-4Vn" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sbj-Vh-qCB" firstAttribute="top" secondItem="g2I-2B-4Vn" secondAttribute="bottom" id="09V-ha-9Fv"/>
+                            <constraint firstAttribute="trailing" secondItem="rlx-PI-Wyt" secondAttribute="trailing" id="3lH-c6-boE"/>
+                            <constraint firstItem="g2I-2B-4Vn" firstAttribute="top" secondItem="ck1-hx-rwK" secondAttribute="top" id="4yt-2Z-cDI"/>
+                            <constraint firstItem="g2I-2B-4Vn" firstAttribute="leading" secondItem="ck1-hx-rwK" secondAttribute="leading" id="P4G-ql-1zS"/>
+                            <constraint firstItem="sbj-Vh-qCB" firstAttribute="top" secondItem="rlx-PI-Wyt" secondAttribute="bottom" id="SkD-eG-foi"/>
+                            <constraint firstItem="rlx-PI-Wyt" firstAttribute="leading" secondItem="ck1-hx-rwK" secondAttribute="leading" id="VgR-2s-sDh"/>
+                            <constraint firstAttribute="trailing" secondItem="g2I-2B-4Vn" secondAttribute="trailing" id="Xzd-75-S5N"/>
+                            <constraint firstItem="rlx-PI-Wyt" firstAttribute="top" secondItem="ck1-hx-rwK" secondAttribute="top" id="icR-jO-s0h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mCollectionView" destination="3QF-Os-7bg" id="8Eb-E6-HWQ"/>
+                        <outlet property="mTroubleView" destination="g2I-2B-4Vn" id="KXW-EO-fNf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6x-W8-3Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4437" y="-5847"/>
+        </scene>
+    </scenes>
+</document>

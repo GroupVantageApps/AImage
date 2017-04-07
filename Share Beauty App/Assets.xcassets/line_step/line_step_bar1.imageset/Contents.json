@@ -1,0 +1,44 @@
+{
+  "images" : [
+    {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 134
+        },
+        "cap-insets" : {
+          "right" : 11,
+          "left" : 15
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "line_step_bar1.png",
+      "scale" : "1x"
+    },
+    {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 253
+        },
+        "cap-insets" : {
+          "right" : 23,
+          "left" : 40
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "line_step_bar1@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

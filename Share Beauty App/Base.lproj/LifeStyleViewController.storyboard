@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Life Style View Controller-->
+        <scene sceneID="YC8-GB-4VK">
+            <objects>
+                <viewController storyboardIdentifier="LifeStyleViewController" id="j6c-Iw-ea0" customClass="LifeStyleViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RqF-wA-tXq"/>
+                        <viewControllerLayoutGuide type="bottom" id="7jr-cn-ka7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4ac-dL-59k">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-GI-f3H">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wJ-QY-g1s">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lfX-pm-UKt">
+                                                <rect key="frame" x="0.0" y="115" width="1024" height="653"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="fbu-rf-d16">
+                                                    <size key="itemSize" width="50" height="50"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="lfX-pm-UKt" secondAttribute="bottom" id="08P-KB-J7U"/>
+                                            <constraint firstAttribute="trailing" secondItem="lfX-pm-UKt" secondAttribute="trailing" id="14D-N4-ZNh"/>
+                                            <constraint firstItem="lfX-pm-UKt" firstAttribute="centerX" secondItem="6wJ-QY-g1s" secondAttribute="centerX" id="FXK-vB-jlz"/>
+                                            <constraint firstItem="lfX-pm-UKt" firstAttribute="leading" secondItem="6wJ-QY-g1s" secondAttribute="leading" id="UsO-Uy-Erx"/>
+                                            <constraint firstItem="lfX-pm-UKt" firstAttribute="top" secondItem="6wJ-QY-g1s" secondAttribute="top" constant="115" id="g2t-fc-rJG"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="5Et-Sd-cpK"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="75B-xU-00e"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="Rgq-ng-PCP"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="width" secondItem="OWZ-GI-f3H" secondAttribute="width" id="Vdt-3n-zuU"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" id="ecR-87-3uP"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="fLW-b3-w0h"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" id="llZ-6z-VuM"/>
+                                    <constraint firstAttribute="bottom" secondItem="6wJ-QY-g1s" secondAttribute="bottom" id="rTu-yo-IiV"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="height" secondItem="OWZ-GI-f3H" secondAttribute="height" id="wED-UC-MAS"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlv-bI-3Km" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.5" width="1024" height="767.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mlv-bI-3Km" secondAttribute="height" multiplier="4:3" id="KuO-nm-oYb"/>
+                                    <constraint firstAttribute="height" constant="768" id="OK2-ky-JdA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OK2-ky-JdA"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OWZ-GI-f3H" firstAttribute="top" secondItem="4ac-dL-59k" secondAttribute="top" id="7nt-JK-EMn"/>
+                            <constraint firstItem="OWZ-GI-f3H" firstAttribute="leading" secondItem="4ac-dL-59k" secondAttribute="leading" id="DuS-fp-8s9"/>
+                            <constraint firstItem="7jr-cn-ka7" firstAttribute="top" secondItem="Mlv-bI-3Km" secondAttribute="bottom" id="L4g-5c-wKP"/>
+                            <constraint firstItem="Mlv-bI-3Km" firstAttribute="leading" secondItem="4ac-dL-59k" secondAttribute="leading" id="OT9-TS-aIx"/>
+                            <constraint firstAttribute="trailing" secondItem="Mlv-bI-3Km" secondAttribute="trailing" id="UDt-Ry-OZ9"/>
+                            <constraint firstAttribute="trailing" secondItem="OWZ-GI-f3H" secondAttribute="trailing" id="f9h-xC-lR4"/>
+                            <constraint firstItem="7jr-cn-ka7" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="bottom" id="oUl-r9-Z6T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mAVPlayerV" destination="Mlv-bI-3Km" id="JwG-rc-Xm1"/>
+                        <outlet property="mCollectionV" destination="lfX-pm-UKt" id="q8l-v7-Hbz"/>
+                        <outlet property="mScrollV" destination="OWZ-GI-f3H" id="xZB-GR-vkX"/>
+                        <outlet property="mVMain" destination="6wJ-QY-g1s" id="F8b-NX-nh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9h-W7-yMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9336" y="-1114"/>
+        </scene>
+    </scenes>
+</document>

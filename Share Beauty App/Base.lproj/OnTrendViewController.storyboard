@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--On Trend View Controller-->
+        <scene sceneID="kXc-4V-Bhb">
+            <objects>
+                <viewController storyboardIdentifier="OnTrendViewController" id="KqM-OP-RLe" customClass="OnTrendViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CDb-1x-bN6"/>
+                        <viewControllerLayoutGuide type="bottom" id="mlu-1A-bfx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U0Z-Ee-WED">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ontrend_main_visual" translatesAutoresizingMaskIntoConstraints="NO" id="NG4-sd-wxF">
+                                <rect key="frame" x="0.0" y="20" width="440.5" height="748"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NG4-sd-wxF" secondAttribute="height" multiplier="383:650" priority="999" id="a5l-MU-KX0"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-sh-DM0" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="440.5" height="748"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaW-MI-h5G">
+                                        <rect key="frame" x="35" y="30" width="269" height="108"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="90"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the latest products information." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scM-fx-4Dn">
+                                        <rect key="frame" x="40" y="221" width="303" height="22"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7F-Q0-LPN">
+                                        <rect key="frame" x="35" y="108" width="299" height="108"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="90"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="scM-fx-4Dn" firstAttribute="leading" secondItem="R7F-Q0-LPN" secondAttribute="leading" constant="5" id="4Ar-o2-tJw"/>
+                                    <constraint firstItem="R7F-Q0-LPN" firstAttribute="leading" secondItem="vaW-MI-h5G" secondAttribute="leading" id="IJe-id-pzA"/>
+                                    <constraint firstItem="R7F-Q0-LPN" firstAttribute="top" secondItem="vaW-MI-h5G" secondAttribute="bottom" constant="-30" id="dNk-oe-Ydu"/>
+                                    <constraint firstItem="vaW-MI-h5G" firstAttribute="leading" secondItem="1wE-sh-DM0" secondAttribute="leading" constant="35" id="gEj-G6-oFF"/>
+                                    <constraint firstItem="vaW-MI-h5G" firstAttribute="top" secondItem="1wE-sh-DM0" secondAttribute="top" constant="30" id="ipW-Vt-Oho"/>
+                                    <constraint firstItem="scM-fx-4Dn" firstAttribute="top" secondItem="R7F-Q0-LPN" secondAttribute="bottom" constant="5" id="yjh-gc-VjC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-Vd-lqa" customClass="PagingProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="440.5" y="0.0" width="583.5" height="768"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalCellCount">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="varticalCellCount">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GCT-Vd-lqa" secondAttribute="trailing" id="0Or-8G-2Wd"/>
+                            <constraint firstItem="GCT-Vd-lqa" firstAttribute="top" secondItem="U0Z-Ee-WED" secondAttribute="top" id="4S1-ZM-laS"/>
+                            <constraint firstItem="mlu-1A-bfx" firstAttribute="top" secondItem="GCT-Vd-lqa" secondAttribute="bottom" id="Gtu-hL-12D"/>
+                            <constraint firstItem="1wE-sh-DM0" firstAttribute="bottom" secondItem="NG4-sd-wxF" secondAttribute="bottom" id="LiR-FH-amJ"/>
+                            <constraint firstItem="GCT-Vd-lqa" firstAttribute="leading" secondItem="NG4-sd-wxF" secondAttribute="trailing" id="WjK-7m-3jD"/>
+                            <constraint firstItem="1wE-sh-DM0" firstAttribute="trailing" secondItem="NG4-sd-wxF" secondAttribute="trailing" id="ZUT-zK-DBC"/>
+                            <constraint firstItem="1wE-sh-DM0" firstAttribute="leading" secondItem="NG4-sd-wxF" secondAttribute="leading" id="eua-3x-dpq"/>
+                            <constraint firstItem="NG4-sd-wxF" firstAttribute="leading" secondItem="U0Z-Ee-WED" secondAttribute="leading" id="fQ3-ZO-s1L"/>
+                            <constraint firstAttribute="bottom" secondItem="NG4-sd-wxF" secondAttribute="bottom" id="isC-tf-psM"/>
+                            <constraint firstItem="NG4-sd-wxF" firstAttribute="top" secondItem="CDb-1x-bN6" secondAttribute="bottom" id="ivw-Ze-gDC"/>
+                            <constraint firstItem="1wE-sh-DM0" firstAttribute="top" secondItem="NG4-sd-wxF" secondAttribute="top" id="teH-zK-IZX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mAVPlayerV" destination="1wE-sh-DM0" id="RGI-bL-nrJ"/>
+                        <outlet property="mImgVMainVisual" destination="NG4-sd-wxF" id="S0R-SI-aK5"/>
+                        <outlet property="mPagingProductV" destination="GCT-Vd-lqa" id="56X-rr-yYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNo-wi-cTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9336.328125" y="-3539.0625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ontrend_main_visual" width="383" height="650"/>
+    </resources>
+</document>

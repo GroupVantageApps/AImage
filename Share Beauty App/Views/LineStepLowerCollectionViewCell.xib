@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eF7-lS-p0e" customClass="LineStepLowerCollectionViewCell" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_step_bar3" translatesAutoresizingMaskIntoConstraints="NO" id="FNh-85-nGh">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqe-O3-0gr">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Uqe-O3-0gr" firstAttribute="leading" secondItem="eF7-lS-p0e" secondAttribute="leading" id="4BZ-PF-PEM"/>
+                <constraint firstItem="Uqe-O3-0gr" firstAttribute="top" secondItem="eF7-lS-p0e" secondAttribute="top" id="BpR-su-u1q"/>
+                <constraint firstAttribute="bottom" secondItem="FNh-85-nGh" secondAttribute="bottom" id="E1D-ox-6vn"/>
+                <constraint firstItem="FNh-85-nGh" firstAttribute="leading" secondItem="eF7-lS-p0e" secondAttribute="leading" id="KZP-BN-QV8"/>
+                <constraint firstAttribute="trailing" secondItem="Uqe-O3-0gr" secondAttribute="trailing" id="Mh8-E9-kSa"/>
+                <constraint firstAttribute="trailing" secondItem="FNh-85-nGh" secondAttribute="trailing" id="Oxs-Kf-Xer"/>
+                <constraint firstItem="FNh-85-nGh" firstAttribute="top" secondItem="eF7-lS-p0e" secondAttribute="top" id="RYJ-xN-IIj"/>
+                <constraint firstAttribute="bottom" secondItem="Uqe-O3-0gr" secondAttribute="bottom" id="rX9-Av-3A8"/>
+            </constraints>
+            <connections>
+                <outlet property="mImgVLine" destination="FNh-85-nGh" id="PV1-Ng-Nov"/>
+                <outlet property="mLblLower" destination="Uqe-O3-0gr" id="x9p-Dc-Fav"/>
+            </connections>
+            <point key="canvasLocation" x="-76" y="-20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line_step_bar3" width="12" height="28"/>
+    </resources>
+</document>

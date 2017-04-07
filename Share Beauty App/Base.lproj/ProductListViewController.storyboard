@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Product List View Controller-->
+        <scene sceneID="ldR-in-vIE">
+            <objects>
+                <viewController storyboardIdentifier="ProductListViewController" id="R3z-bc-aeJ" customClass="ProductListViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R5B-6A-AMI"/>
+                        <viewControllerLayoutGuide type="bottom" id="NcP-3X-Olg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Svo-rs-6TS">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="kPy-t2-Lec">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdB-eD-yVm">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-jL-56E">
+                                                <rect key="frame" x="0.0" y="77" width="1024" height="614"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="9eX-Vb-93O">
+                                                    <size key="itemSize" width="321" height="368"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xsE-jL-56E" firstAttribute="leading" secondItem="gdB-eD-yVm" secondAttribute="leading" id="2nO-lp-Alu"/>
+                                            <constraint firstItem="xsE-jL-56E" firstAttribute="height" secondItem="gdB-eD-yVm" secondAttribute="height" multiplier="0.8" id="Aa9-g5-MgP"/>
+                                            <constraint firstItem="xsE-jL-56E" firstAttribute="centerY" secondItem="gdB-eD-yVm" secondAttribute="centerY" id="D0h-c7-9lh"/>
+                                            <constraint firstAttribute="trailing" secondItem="xsE-jL-56E" secondAttribute="trailing" id="WGn-6g-HFQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gdB-eD-yVm" secondAttribute="trailing" id="39J-Ne-tgk"/>
+                                    <constraint firstItem="gdB-eD-yVm" firstAttribute="leading" secondItem="kPy-t2-Lec" secondAttribute="leading" id="K2y-Xv-F3R"/>
+                                    <constraint firstItem="gdB-eD-yVm" firstAttribute="height" secondItem="kPy-t2-Lec" secondAttribute="height" id="jnT-k5-5PK"/>
+                                    <constraint firstAttribute="bottom" secondItem="gdB-eD-yVm" secondAttribute="bottom" id="r34-o2-J7D"/>
+                                    <constraint firstItem="gdB-eD-yVm" firstAttribute="width" secondItem="kPy-t2-Lec" secondAttribute="width" id="uVt-Y0-xUe"/>
+                                    <constraint firstItem="gdB-eD-yVm" firstAttribute="top" secondItem="kPy-t2-Lec" secondAttribute="top" id="xYm-Kp-N15"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kPy-t2-Lec" secondAttribute="trailing" id="46u-Tq-M8U"/>
+                            <constraint firstItem="kPy-t2-Lec" firstAttribute="leading" secondItem="Svo-rs-6TS" secondAttribute="leading" id="JEU-4i-GLy"/>
+                            <constraint firstItem="NcP-3X-Olg" firstAttribute="top" secondItem="kPy-t2-Lec" secondAttribute="bottom" id="pwd-4F-zNw"/>
+                            <constraint firstItem="kPy-t2-Lec" firstAttribute="top" secondItem="R5B-6A-AMI" secondAttribute="bottom" id="uX3-25-KSD"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="mCollectionView" destination="xsE-jL-56E" id="6Ik-LM-uJN"/>
+                        <outlet property="mScrollVPinch" destination="kPy-t2-Lec" id="Mgo-lX-uU2"/>
+                        <outlet property="mVMain" destination="gdB-eD-yVm" id="lpI-he-r1T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6p1-9R-R7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8283.3984375" y="-7880.46875"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <connections>
+                <outlet property="mBtnOutApp" destination="Uaa-9l-kCZ" id="zr7-xT-Lo2"/>
+                <outlet property="mBtnSkip" destination="UwT-h8-zFU" id="brf-hL-1ei"/>
+                <outlet property="mBtnUpdate" destination="ntz-Cn-Elz" id="xAz-01-5nD"/>
+                <outlet property="mConstraintUpdateToOutApp" destination="fxO-OK-ah6" id="DrP-GJ-pMI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RKT-Db-1oc">
+            <rect key="frame" x="0.0" y="0.0" width="706" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW0-SQ-wNJ" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="20" y="14" width="30" height="30"/>
+                    <inset key="contentEdgeInsets" minX="5" minY="4" maxX="5" maxY="4"/>
+                    <state key="normal" image="header_menu">
+                        <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapList:" destination="-1" eventType="touchUpInside" id="PFg-nV-HvT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-9l-kCZ" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="657" y="12" width="29" height="30"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <inset key="contentEdgeInsets" minX="3" minY="4" maxX="3" maxY="4"/>
+                    <state key="normal" image="header_option">
+                        <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapOutApp:" destination="-1" eventType="touchUpInside" id="D9A-Cj-Y2F"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_shiseido" translatesAutoresizingMaskIntoConstraints="NO" id="Y04-qN-LjA">
+                    <rect key="frame" x="292" y="11" width="123" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Y04-qN-LjA" secondAttribute="height" multiplier="123:35" id="nag-OQ-Vac"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buO-mN-OMb" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="70" y="14" width="29" height="29"/>
+                    <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                    <state key="normal" image="header_home">
+                        <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapHome:" destination="-1" eventType="touchUpInside" id="pdW-F8-Zet"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntz-Cn-Elz" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="617" y="18" width="20" height="22"/>
+                    <state key="normal" image="button_update"/>
+                    <connections>
+                        <action selector="onTapButton:" destination="-1" eventType="touchUpInside" id="ODS-h1-kGG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-h8-zFU" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="560.5" y="14" width="46.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UwT-h8-zFU" secondAttribute="height" multiplier="23:15" id="kvG-jP-9KU"/>
+                    </constraints>
+                    <state key="normal" title="Skip">
+                        <color key="titleColor" red="0.7843137255" green="0.062745098040000002" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onTapSkip:" destination="-1" eventType="touchUpInside" id="C4Z-Jo-bRN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Y04-qN-LjA" firstAttribute="centerX" secondItem="RKT-Db-1oc" secondAttribute="centerX" id="7dW-xs-GzQ"/>
+                <constraint firstItem="ntz-Cn-Elz" firstAttribute="leading" secondItem="UwT-h8-zFU" secondAttribute="trailing" constant="10" id="Glh-cf-aAH"/>
+                <constraint firstItem="Y04-qN-LjA" firstAttribute="top" secondItem="RKT-Db-1oc" secondAttribute="top" priority="750" constant="11" id="Ii7-qz-J1r"/>
+                <constraint firstItem="xW0-SQ-wNJ" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="LZM-dP-Jbu"/>
+                <constraint firstItem="Uaa-9l-kCZ" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" constant="-2" id="S7j-7b-7ab"/>
+                <constraint firstItem="ntz-Cn-Elz" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="ZyP-cF-UEm"/>
+                <constraint firstItem="UwT-h8-zFU" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="bff-0R-CN4"/>
+                <constraint firstItem="Uaa-9l-kCZ" firstAttribute="leading" secondItem="ntz-Cn-Elz" secondAttribute="trailing" constant="20" id="fxO-OK-ah6"/>
+                <constraint firstItem="Y04-qN-LjA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="lFz-ki-ixp"/>
+                <constraint firstAttribute="trailing" secondItem="Uaa-9l-kCZ" secondAttribute="trailing" constant="20" id="n1a-Uz-6w0"/>
+                <constraint firstItem="buO-mN-OMb" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="sUi-h8-OdE"/>
+                <constraint firstItem="Y04-qN-LjA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="buO-mN-OMb" secondAttribute="trailing" priority="750" constant="20" id="tXE-gk-8zj"/>
+                <constraint firstItem="buO-mN-OMb" firstAttribute="leading" secondItem="xW0-SQ-wNJ" secondAttribute="trailing" constant="20" id="wam-Xf-qhe"/>
+                <constraint firstItem="xW0-SQ-wNJ" firstAttribute="leading" secondItem="RKT-Db-1oc" secondAttribute="leading" constant="20" id="xjB-vy-h0N"/>
+                <constraint firstAttribute="bottom" secondItem="Y04-qN-LjA" secondAttribute="bottom" priority="750" constant="12" id="zdX-MK-d9A"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="66" y="-156"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_update" width="20" height="20"/>
+        <image name="header_home" width="25" height="25"/>
+        <image name="header_menu" width="20" height="17"/>
+        <image name="header_option" width="23" height="22"/>
+        <image name="header_shiseido" width="123" height="35"/>
+    </resources>
+</document>

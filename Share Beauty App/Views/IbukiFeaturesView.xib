@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11760" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IbukiFeaturesView">
+            <connections>
+                <outlet property="mBtnEfficacy" destination="SMn-2I-bsC" id="Dkz-AZ-9mD"/>
+                <outlet property="mConstraintBottom" destination="ZR1-RE-4rb" id="4bV-Po-NQg"/>
+                <outlet property="mConstraintTop" destination="k77-U5-ww6" id="rlv-LX-bcM"/>
+                <outlet property="mImgStar" destination="Aps-qS-WhQ" id="NYd-Od-9wA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="VD3-Je-Cpt">
+            <rect key="frame" x="0.0" y="0.0" width="555" height="181"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="522" placeholderIntrinsicHeight="283" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+                    <rect key="frame" x="0.0" y="0.0" width="555" height="181"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbs-Bs-Yyz">
+                            <rect key="frame" x="30" y="0.0" width="131" height="181"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dN6-bX-qhF">
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="131"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_ibuki_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="SBc-Gt-eUp">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="131"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_ibuki_hoshi.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aps-qS-WhQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="131"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SBc-Gt-eUp" firstAttribute="leading" secondItem="dN6-bX-qhF" secondAttribute="leading" id="ESK-vg-7VT"/>
+                                        <constraint firstItem="Aps-qS-WhQ" firstAttribute="top" secondItem="SBc-Gt-eUp" secondAttribute="top" id="P3P-uG-QyP"/>
+                                        <constraint firstItem="Aps-qS-WhQ" firstAttribute="trailing" secondItem="SBc-Gt-eUp" secondAttribute="trailing" id="RO2-GY-0CV"/>
+                                        <constraint firstAttribute="bottom" secondItem="SBc-Gt-eUp" secondAttribute="bottom" id="Tu1-t2-RyR"/>
+                                        <constraint firstAttribute="trailing" secondItem="SBc-Gt-eUp" secondAttribute="trailing" id="UwU-hI-1Wr"/>
+                                        <constraint firstAttribute="width" constant="131" id="YH2-1n-zK5"/>
+                                        <constraint firstItem="SBc-Gt-eUp" firstAttribute="top" secondItem="dN6-bX-qhF" secondAttribute="top" id="hIb-jX-cNK"/>
+                                        <constraint firstItem="Aps-qS-WhQ" firstAttribute="bottom" secondItem="SBc-Gt-eUp" secondAttribute="bottom" id="mk8-do-dDR"/>
+                                        <constraint firstAttribute="height" constant="131" id="wTK-ud-e70"/>
+                                        <constraint firstItem="Aps-qS-WhQ" firstAttribute="leading" secondItem="SBc-Gt-eUp" secondAttribute="leading" id="zVp-y2-8sC"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxB-Ds-Cyy">
+                                    <rect key="frame" x="0.0" y="151" width="131" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMn-2I-bsC" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                            <rect key="frame" x="1" y="1" width="129" height="28"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.85900002720000002" green="0.17100000379999999" blue="0.21899999680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onTapEfficacy:" destination="-1" eventType="touchUpInside" id="GLj-sM-0Ve"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.85900002720000002" green="0.17100000379999999" blue="0.21899999680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="SMn-2I-bsC" firstAttribute="leading" secondItem="jxB-Ds-Cyy" secondAttribute="leading" constant="1" id="2IF-ac-dJ3"/>
+                                        <constraint firstAttribute="trailing" secondItem="SMn-2I-bsC" secondAttribute="trailing" constant="1" id="Kn5-zb-yBP"/>
+                                        <constraint firstAttribute="bottom" secondItem="SMn-2I-bsC" secondAttribute="bottom" constant="1" id="cyh-67-HPM"/>
+                                        <constraint firstItem="SMn-2I-bsC" firstAttribute="top" secondItem="jxB-Ds-Cyy" secondAttribute="top" constant="1" id="qnz-DX-4cR"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jxB-Ds-Cyy" firstAttribute="top" secondItem="dN6-bX-qhF" secondAttribute="bottom" constant="20" id="2vF-Jk-pNZ"/>
+                                <constraint firstItem="jxB-Ds-Cyy" firstAttribute="leading" secondItem="Lbs-Bs-Yyz" secondAttribute="leading" id="4GA-31-inu"/>
+                                <constraint firstItem="dN6-bX-qhF" firstAttribute="leading" secondItem="Lbs-Bs-Yyz" secondAttribute="leading" id="8Pi-9r-8aU"/>
+                                <constraint firstAttribute="trailing" secondItem="dN6-bX-qhF" secondAttribute="trailing" id="Afm-wh-rcI"/>
+                                <constraint firstItem="dN6-bX-qhF" firstAttribute="top" secondItem="Lbs-Bs-Yyz" secondAttribute="top" id="Cvd-EN-AIV"/>
+                                <constraint firstItem="dN6-bX-qhF" firstAttribute="leading" secondItem="Lbs-Bs-Yyz" secondAttribute="leading" id="Kno-Dg-18h"/>
+                                <constraint firstAttribute="trailing" secondItem="jxB-Ds-Cyy" secondAttribute="trailing" id="L7J-Ht-KJZ"/>
+                                <constraint firstItem="dN6-bX-qhF" firstAttribute="centerX" secondItem="Lbs-Bs-Yyz" secondAttribute="centerX" id="LVx-UW-bxT"/>
+                                <constraint firstAttribute="trailing" secondItem="dN6-bX-qhF" secondAttribute="trailing" id="fYn-4o-XDI"/>
+                                <constraint firstAttribute="trailing" secondItem="dN6-bX-qhF" secondAttribute="trailing" id="j6e-D5-ZqF"/>
+                                <constraint firstAttribute="bottom" secondItem="jxB-Ds-Cyy" secondAttribute="bottom" id="uU7-DL-loi"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Afm-wh-rcI"/>
+                                    <exclude reference="Kno-Dg-18h"/>
+                                    <exclude reference="LVx-UW-bxT"/>
+                                    <exclude reference="j6e-D5-ZqF"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Lbs-Bs-Yyz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="DX1-3a-JP1"/>
+                        <constraint firstItem="Lbs-Bs-Yyz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ToY-1D-a3b"/>
+                        <constraint firstAttribute="bottom" secondItem="Lbs-Bs-Yyz" secondAttribute="bottom" id="wqO-YQ-8Mz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="CpL-G5-W5Z"/>
+                <constraint firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="ZR1-RE-4rb"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="VD3-Je-Cpt" secondAttribute="leading" id="jrZ-ts-1uS"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="VD3-Je-Cpt" secondAttribute="top" id="k77-U5-ww6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="594.5" y="146.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ss_ibuki_bg.png" width="262" height="262"/>
+        <image name="ss_ibuki_hoshi.png" width="262" height="262"/>
+    </resources>
+</document>

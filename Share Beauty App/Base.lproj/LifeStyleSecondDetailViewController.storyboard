@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Life Style Second Detail View Controller-->
+        <scene sceneID="PbH-V7-YSm">
+            <objects>
+                <viewController storyboardIdentifier="LifeStyleSecondDetailViewController" id="L3q-be-xSg" customClass="LifeStyleSecondDetailViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JQd-iR-dj4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ApE-l4-zsA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kuH-T4-qaY">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="h0w-ck-vZv">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8T-dE-5YO">
+                                        <rect key="frame" x="0.0" y="50" width="1024" height="718"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCj-st-mAH">
+                                                <rect key="frame" x="340.5" y="0.0" width="1" height="718"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="CYL-pC-mD2"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbw-z2-hP9">
+                                                <rect key="frame" x="682.5" y="0.0" width="1" height="718"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="h53-EQ-6Dy"/>
+                                                </constraints>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-v3-tQX" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="340.5" height="718"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elc-oN-q1g" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                <rect key="frame" x="341.5" y="0.0" width="341" height="718"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i1-UG-KHM" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                <rect key="frame" x="683.5" y="0.0" width="340.5" height="718"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Lbw-z2-hP9" secondAttribute="bottom" id="5Mu-Oi-KEV"/>
+                                            <constraint firstItem="elc-oN-q1g" firstAttribute="width" secondItem="s5n-v3-tQX" secondAttribute="width" id="6xi-8a-Anb"/>
+                                            <constraint firstAttribute="trailing" secondItem="8i1-UG-KHM" secondAttribute="trailing" id="74s-dA-PpG"/>
+                                            <constraint firstItem="Lbw-z2-hP9" firstAttribute="leading" secondItem="elc-oN-q1g" secondAttribute="trailing" id="BoT-Nk-nM9"/>
+                                            <constraint firstAttribute="bottom" secondItem="elc-oN-q1g" secondAttribute="bottom" id="DlI-98-aoZ"/>
+                                            <constraint firstItem="elc-oN-q1g" firstAttribute="leading" secondItem="hCj-st-mAH" secondAttribute="trailing" id="ISp-uR-J7g"/>
+                                            <constraint firstItem="8i1-UG-KHM" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="N5n-Zw-v8x"/>
+                                            <constraint firstItem="elc-oN-q1g" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="S8X-JV-EB2"/>
+                                            <constraint firstItem="8i1-UG-KHM" firstAttribute="width" secondItem="s5n-v3-tQX" secondAttribute="width" id="bFV-2m-Kwn"/>
+                                            <constraint firstItem="8i1-UG-KHM" firstAttribute="leading" secondItem="Lbw-z2-hP9" secondAttribute="trailing" id="cKT-o3-Zgj"/>
+                                            <constraint firstAttribute="bottom" secondItem="hCj-st-mAH" secondAttribute="bottom" id="cf1-Ah-5vq"/>
+                                            <constraint firstItem="Lbw-z2-hP9" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="fl5-Kk-6ew"/>
+                                            <constraint firstAttribute="bottom" secondItem="8i1-UG-KHM" secondAttribute="bottom" id="hvq-mv-bzn"/>
+                                            <constraint firstItem="s5n-v3-tQX" firstAttribute="leading" secondItem="A8T-dE-5YO" secondAttribute="leading" id="kus-sx-IGL"/>
+                                            <constraint firstItem="hCj-st-mAH" firstAttribute="leading" secondItem="s5n-v3-tQX" secondAttribute="trailing" id="m42-HU-4gn"/>
+                                            <constraint firstAttribute="bottom" secondItem="s5n-v3-tQX" secondAttribute="bottom" id="mQt-3B-FkQ"/>
+                                            <constraint firstItem="hCj-st-mAH" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="w18-ef-Q6V"/>
+                                            <constraint firstItem="s5n-v3-tQX" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="w2j-je-fAs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="A8T-dE-5YO" secondAttribute="trailing" id="Ekh-bv-G7N"/>
+                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="height" secondItem="h0w-ck-vZv" secondAttribute="height" constant="-50" id="FQP-1k-B49"/>
+                                    <constraint firstAttribute="bottom" secondItem="A8T-dE-5YO" secondAttribute="bottom" id="ZMr-Aq-H9w"/>
+                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="top" constant="50" id="aq8-t2-UMY"/>
+                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="leading" secondItem="h0w-ck-vZv" secondAttribute="leading" id="jgx-zp-BL1"/>
+                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="width" secondItem="h0w-ck-vZv" secondAttribute="width" id="vrv-RV-meN"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="h0w-ck-vZv" secondAttribute="trailing" id="LHV-nQ-TJH"/>
+                            <constraint firstItem="h0w-ck-vZv" firstAttribute="leading" secondItem="kuH-T4-qaY" secondAttribute="leading" id="S84-Wl-NPh"/>
+                            <constraint firstItem="ApE-l4-zsA" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="bottom" id="oCz-zJ-70e"/>
+                            <constraint firstItem="h0w-ck-vZv" firstAttribute="top" secondItem="kuH-T4-qaY" secondAttribute="top" id="uOH-vU-c9A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mScrollV" destination="h0w-ck-vZv" id="X02-Rb-hk7"/>
+                        <outlet property="mVContent" destination="A8T-dE-5YO" id="COj-y0-K6z"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="s5n-v3-tQX" collectionClass="NSMutableArray" id="PZL-Pk-qx4"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="elc-oN-q1g" collectionClass="NSMutableArray" id="Ckw-YJ-J4f"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="8i1-UG-KHM" collectionClass="NSMutableArray" id="k4c-B9-PMQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2I-4P-IlV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7437.3046874999991" y="-10.15625"/>
+        </scene>
+    </scenes>
+</document>
