@@ -42,6 +42,7 @@ class LXBaseViewController: UIViewController {
         print("showTop")
         let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
         let navigationController = UINavigationController(rootViewController: toVc)
+        navigationController.isNavigationBarHidden = true
         UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
     
