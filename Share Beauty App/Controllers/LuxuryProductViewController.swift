@@ -1,0 +1,104 @@
+//
+//  LuxuryProductViewController.swift
+//  Share Beauty App
+//
+//  Created by madoka.igarashi on 2017/02/14.
+//  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
+//
+
+import Foundation
+import AVFoundation
+
+class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
+    @IBOutlet weak private var mVContent: UIView!
+    @IBOutlet weak private var mScrollV: UIScrollView!
+    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    weak var delegate: NavigationControllerDelegate?
+    var theme: String? = "Luxury Products"
+    var products: [ProductData]!
+    private var mUpperSteps = [DBStructStep]()
+    private var mLowerSteps = [DBStructLineStep]()
+    var isEnterWithNavigationView: Bool = true
+    @IBOutlet var mHeaderView: LXHeaderView!
+    @IBOutlet var mNavigationView: LXNavigationView!
+    private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    override
+    func viewDidLoad() {
+        super.viewDidLoad()
+        mScrollV.delegate = self
+        mHeaderView.delegate = self
+        mNavigationView.delegate = self
+        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        print("LuxuryProductViewController")
+
+        let line = LineDetailData.init(lineId: 1)
+        mUpperSteps = line.step
+        mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
+
+        for (i, step) in mLowerSteps.enumerated() {
+                let baseV = self.view.viewWithTag(i + 10)! as UIView
+                let stepLbl = baseV.viewWithTag(i + 60) as! UILabel
+                stepLbl.text = step.stepName
+                products = ProductListData(productIds: step.product).products
+                for (index, product) in products.enumerated() {
+                    let productLbl = baseV.viewWithTag(index + 40) as! UILabel
+                    productLbl.text = product.productName
+                    let lineHeight: CGFloat = 20.0
+                    let paragraphStyle = NSMutableParagraphStyle()
+                    paragraphStyle.minimumLineHeight = lineHeight
+                    paragraphStyle.maximumLineHeight = lineHeight
+                    let attributedText = NSMutableAttributedString(string: product.productName)
+                    attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle,
+                                                 range: NSMakeRange(0, attributedText.length))
+                    productLbl.attributedText = attributedText
+                    productLbl.textAlignment = .center
+
+                    let image = baseV.viewWithTag(index + 30) as! UIImageView
+                    image.image =  FileTable.getImage(product.image)
+
+                    let button = baseV.viewWithTag(index + 50) as! UIButton
+                    button.tag = product.productId
+                    button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControlEvents.touchUpInside)
+                    let beautyLbl: UILabel
+
+                    if index > 2 && i == 0 {
+                        beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
+                        print("\(product.beautyName)")
+                        print("\(product.productName)")
+                    } else {
+                        beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
+                    }
+                    beautyLbl.text = product.beautyName
+            }
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("LuxuryProductViewController.viewWillAppear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("LuxuryProductViewController.viewDidAppear")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("LuxuryProductViewController.viewWillDisappear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("LuxuryProductViewController.viewDidDisappear")
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return mVContent
+    }
+
+    @IBAction func tappedProduct(_ sender: AnyObject) {
+        print("tappedProduct:\(sender.tag)")
+        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
+        toVc.productId = sender.tag
+        self.navigationController?.pushViewController(toVc, animated: false)
+    }
+    
+    @IBAction func tappedBABtn(_ sender: Any) {
+        let skingraph: LXProductionBAView = UINib(nibName: "LXProductionBAView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductionBAView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+}

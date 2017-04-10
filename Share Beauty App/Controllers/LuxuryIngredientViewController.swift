@@ -1,0 +1,96 @@
+//
+//  LuxuryIngredientViewController.swift
+//  Share Beauty App
+//
+//  Created by madoka.igarashi on 2017/02/14.
+//  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
+//
+
+import Foundation
+import AVFoundation
+
+class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate, UIScrollViewDelegate{
+    @IBOutlet weak private var mVContent: UIView!
+    @IBOutlet weak private var mScrollV: UIScrollView!
+    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    weak var delegate: NavigationControllerDelegate?
+    var theme: String? = "Luxury Ingredients"
+    var isEnterWithNavigationView: Bool = true
+    @IBOutlet var mHeaderView: LXHeaderView!
+    @IBOutlet var mNavigationView: LXNavigationView!
+    var bgAudioPlayer: AVAudioPlayer!
+    private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mScrollV.delegate = self
+        mHeaderView.delegate = self
+        mNavigationView.delegate = self
+        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        print("LuxuryIngredientViewController.viewDidLoad")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("LuxuryIngredientViewController.viewWillAppear")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print("LuxuryIngredientViewController.viewDidAppear")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("LuxuryIngredientViewController.viewWillDisappear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("LuxuryIngredientViewController.viewDidDisappear")
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return mVContent
+    }
+
+    @IBAction func showSubView(_ sender: Any) {
+        let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+        popup.setAction()
+        popup.delegate = self
+        popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(popup)
+    }
+    
+    @IBAction func showGraphView2(_ sender: Any) {
+        let greenTeaView: LXGreenTeaView = UINib(nibName: "LXGreenTeaView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXGreenTeaView
+        greenTeaView.setUI()
+        greenTeaView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(greenTeaView)    }
+
+    @IBAction func showAngelicaGraphView(_ sender: Any) {
+        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+    @IBAction func showCherryGraphView(_ sender: Any) {
+        let cherryGraphView: LXCherryGraphView = UINib(nibName: "LXCherryGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXCherryGraphView
+        cherryGraphView.setUI()
+        cherryGraphView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(cherryGraphView)
+    }
+    
+    func didTapshowSkinGraph() {
+        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+    func movieAct(){
+        
+        bgAudioPlayer.pause()
+        
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: "lx_ingredient")
+        self.view.addSubview(moviePlay)
+        
+        
+    }
+    
+    func endMovie() {
+        bgAudioPlayer.play()
+    }
+}

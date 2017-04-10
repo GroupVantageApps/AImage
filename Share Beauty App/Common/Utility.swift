@@ -206,4 +206,72 @@ class Utility: NSObject {
         strItems = strItems.filter {$0 != ""}
         return strItems.map {Int($0)!}
     }
+    class func csvToArray (file: String ) -> [String : String]{
+        var result: [String : String] = [:]
+        if let csvPath = Bundle.main.path(forResource: file, ofType: "csv") {
+            do {
+                let csvStr = try String(contentsOfFile:csvPath, encoding:String.Encoding.utf8)
+                var index = ""
+                var value = ""
+                var isStartDC = true
+                csvStr.enumerateLines { (line, stop) -> () in
+                    let count = Utility.numberOfOccurrences(of: "\"", string: line)
+                    
+                    if count == 2 {
+                        let string = NSString(string: line)
+                        let range = string.range(of: ",")
+                        index = string.substring(to: range.location)
+                        value = string.substring(from: range.location + 1)
+                        value = value.replacingOccurrences(of: "\"", with: "")
+                        
+                    } else if count == 1 {
+                        if isStartDC {
+                            let string = NSString(string: line)
+                            let range = string.range(of: ",") 
+                            index = string.substring(to: range.location)
+                            value = string.substring(from: range.location + 1)
+                            value = value.replacingOccurrences(of: "\"", with: "")
+                            isStartDC = false
+                        } else {
+                            let replacedLine = line.replacingOccurrences(of: "\"", with: "")
+                            value = String(format: "%@\n%@",value,replacedLine)
+                            isStartDC = true
+                        }
+                    } else if count == 0 {
+                        if isStartDC {
+                            let string = NSString(string: line)
+                            let range = string.range(of: ",") 
+                            index = string.substring(to: range.location)
+                            value = string.substring(from: range.location + 1)
+                            value = value.replacingOccurrences(of: "\"", with: "")
+                        } else {
+                            value = String(format: "%@\n%@",value,line)
+                        }
+                    }
+                    
+                    if isStartDC {
+                        print("-----------------")
+                        print("No." + index)
+                        print(value)
+                        result[index] = value
+                    }
+                }
+                
+                print(result.count)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
+        
+        return result
+    }
+    class func numberOfOccurrences(of word: String, string: String) -> Int {
+        var count = 0
+        var nextRange = string.startIndex..<string.endIndex
+        while let range = string.range(of: word, options: .caseInsensitive, range: nextRange) {
+            count += 1
+            nextRange = range.upperBound..<string.endIndex
+        }
+        return count
+    }
 }
