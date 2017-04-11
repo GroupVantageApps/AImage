@@ -395,6 +395,8 @@
 		DE2C91B21E9C682500B5FC4A /* skingenece_graphimg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91741E9C682500B5FC4A /* skingenece_graphimg.png */; };
 		DE2C91B31E9C682500B5FC4A /* skingenece_playImg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91751E9C682500B5FC4A /* skingenece_playImg.png */; };
 		DE2C91B41E9C682500B5FC4A /* tea_graph_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91761E9C682500B5FC4A /* tea_graph_bg.png */; };
+		DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */; };
+		DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
 		E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */; };
 		E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */; };
@@ -915,6 +917,8 @@
 		DE2C91741E9C682500B5FC4A /* skingenece_graphimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skingenece_graphimg.png; sourceTree = "<group>"; };
 		DE2C91751E9C682500B5FC4A /* skingenece_playImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skingenece_playImg.png; sourceTree = "<group>"; };
 		DE2C91761E9C682500B5FC4A /* tea_graph_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tea_graph_bg.png; sourceTree = "<group>"; };
+		DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailViewController.swift; sourceTree = "<group>"; };
+		DE2C91B81E9C6F8000B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LXProductDetailViewController.storyboard; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
 		E52891CA1DF2F911007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IdealFirstSelectViewController.storyboard; sourceTree = "<group>"; };
 		E52891CD1DF2FA05007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IconicViewController.storyboard; sourceTree = "<group>"; };
@@ -1440,6 +1444,7 @@
 				DE2C8EEA1E9B9BAF00B5FC4A /* LuxuryViewController.swift */,
 				DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */,
 				DE2C8EEC1E9B9BAF00B5FC4A /* LuxuryProductDetailViewController.swift */,
+				DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */,
 				DE2C8EED1E9B9BAF00B5FC4A /* LuxuryIngredientViewController.swift */,
 				DE2C8EEE1E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift */,
 				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
@@ -1651,6 +1656,7 @@
 				DE2C91281E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard */,
 				DE2C912A1E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard */,
 				DE2C912C1E9C681100B5FC4A /* LuxuryProductViewController.storyboard */,
+				DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */,
 				DE2C912E1E9C681100B5FC4A /* LuxuryViewController.storyboard */,
 				DE2C91301E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard */,
 				C05913D71D67235700F22214 /* LaunchScreen.storyboard */,
@@ -2097,6 +2103,7 @@
 				C050C96E1E8267450009679D /* d_arrow_2.png in Resources */,
 				C050C9741E8267450009679D /* d_graph_line.png in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
+				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
 				DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */,
 				DE2C91901E9C682500B5FC4A /* lx_ingredient_btn_1.png in Resources */,
 				C097F5C31DDF2D0C004814F8 /* IbukiFeaturesView.xib in Resources */,
@@ -2556,6 +2563,7 @@
 				C0880CF71E4B209C006A3713 /* CountryTable.swift in Sources */,
 				C0880CF01E4B2048006A3713 /* CountrySettingViewController.swift in Sources */,
 				C0CDEB0A1D98075600420667 /* UtmFeaturesView.swift in Sources */,
+				DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */,
 				C0449ECA1D76C8E90041903E /* UtmEfficacyView.m in Sources */,
 				C05913D41D67235700F22214 /* Share_Beauty_App.xcdatamodeld in Sources */,
 				EB7365A81D83156F00D223BA /* LanguageEntity.swift in Sources */,
@@ -2767,6 +2775,14 @@
 				DE2C91311E9C681100B5FC4A /* Base */,
 			);
 			name = LuxuryYutakaViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE2C91B81E9C6F8000B5FC4A /* Base */,
+			);
+			name = LXProductDetailViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */ = {
