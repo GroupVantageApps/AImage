@@ -1,0 +1,41 @@
+//
+//  LXGreenTeaView.swift
+//  Share Beauty App
+//
+//  Created by YUN GEONHEE on 2017/03/07.
+//  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
+//
+
+import Foundation
+class LXGreenTeaView: UIView{
+
+    let mXbutton = UIButton(frame: CGRect(x: 664, y: 16.7, width: 38, height: 38))
+    
+    func setUI() {
+        
+        mXbutton.setImage(UIImage(named: "btn_close.png"), for: UIControlState.normal)
+        mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        self.addSubview(mXbutton)
+        
+        let nib = UINib(nibName: "LXGraphView", bundle: nil)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        guard let graphView = views[0] as? LXGraphView else { return }
+        let view = self.viewWithTag(30)
+        graphView.bgImage = "tea_graph_bg"
+        view?.addSubview(graphView)
+        graphView.setUp(left: 30, right: 70, l_title: "Without Premium\nUji Green Tea\nExtract",r_title: "With Premium Uji\nGreen Tea Extract")
+        
+        let nib2 = UINib(nibName: "LXGraphView", bundle: nil)
+        let views2 = nib2.instantiate(withOwner: self, options: nil)
+        guard let graphView2 = views2[0] as? LXGraphView else { return }
+        let view2 = self.viewWithTag(31)
+        graphView2.bgImage = "tea_graph_bg"
+        view2?.addSubview(graphView2)
+        graphView2.setUp(left: 56, right: 24, l_title: "Without Premium\nUji Green Tea\nExtract",r_title: "With Premium Uji\nGreen Tea Extract")
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.isHidden = true
+    }
+
+}

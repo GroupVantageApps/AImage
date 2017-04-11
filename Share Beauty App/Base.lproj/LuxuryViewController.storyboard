@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ACaslonPro-Regular.otf">
+            <string>ACaslonPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Luxury View Controller-->
+        <scene sceneID="a2T-yI-CPx">
+            <objects>
+                <viewController storyboardIdentifier="LuxuryViewController" id="T4m-bh-eTl" customClass="LuxuryViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Dc-Ys-UgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccM-iA-GLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nfh-Xa-TPF">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-HZ-YPi">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="746"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
+                                        <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_top_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="746"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="746" id="Ox8-vW-YyF"/>
+                                                    <constraint firstAttribute="width" constant="1024" id="hnU-DF-AD9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-aN-LVW">
+                                                <rect key="frame" x="733" y="0.0" width="291" height="736"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-6I-CDt">
+                                                        <rect key="frame" x="48" y="655" width="194" height="51"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="194" id="YPm-25-1GC"/>
+                                                            <constraint firstAttribute="height" constant="51" id="rVU-UL-tmv"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-4w-CDy" userLabel="Ingredients">
+                                                        <rect key="frame" x="0.0" y="304" width="291" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="tIi-p4-VIs"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Ingredients" backgroundImage="lx_ingredients_btn.png">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="rkb-nN-fLk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-Vg-SiW">
+                                                        <rect key="frame" x="0.0" y="175" width="291" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="ho1-x8-PyI"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="uih-fg-vXh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Products" backgroundImage="lx_product_btn.png">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Uqu-ee-DYU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-gB-IM3">
+                                                        <rect key="frame" x="0.0" y="433" width="291" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="Xl2-tr-YnP"/>
+                                                            <constraint firstAttribute="height" constant="129" id="rrY-9H-EsN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="YUTAKA" backgroundImage="lx_yutaka_btn.png.png">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="vet-46-uJt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ZAX-gB-IM3" secondAttribute="trailing" id="1G3-uw-Sa1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ekz-4w-CDy" secondAttribute="trailing" id="AFE-nS-pii"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Csi-6I-CDt" secondAttribute="bottom" constant="30" id="Ga6-9W-YFN"/>
+                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="top" secondItem="Ekz-4w-CDy" secondAttribute="bottom" id="Lj6-JL-n7m"/>
+                                                    <constraint firstAttribute="width" constant="291" id="cK3-ck-uaX"/>
+                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="top" secondItem="yNI-Vg-SiW" secondAttribute="bottom" id="d66-Br-qPq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yNI-Vg-SiW" secondAttribute="trailing" id="euF-oi-E4j"/>
+                                                    <constraint firstItem="yNI-Vg-SiW" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="ezZ-yq-nqx"/>
+                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="centerY" secondItem="hXB-aN-LVW" secondAttribute="centerY" id="fIt-Os-BAe"/>
+                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="fva-GU-j1o"/>
+                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="urk-Hl-8yV"/>
+                                                    <constraint firstItem="Csi-6I-CDt" firstAttribute="centerX" secondItem="hXB-aN-LVW" secondAttribute="centerX" id="vgn-Zn-fsW"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
+                                                <rect key="frame" x="15" y="353" width="18" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="18" id="aOZ-T8-dxP"/>
+                                                    <constraint firstAttribute="height" constant="30" id="hCt-70-FoM"/>
+                                                </constraints>
+                                                <state key="normal" image="lx_top_menu.png"/>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-x9-SF9" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="982" y="13" width="27" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="BFG-fA-y4m"/>
+                                                            <constraint firstAttribute="width" constant="27" id="fED-Ul-QQa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <inset key="contentEdgeInsets" minX="3" minY="4" maxX="3" maxY="4"/>
+                                                        <state key="normal" image="lx_header_option.png">
+                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="outApp:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Npx-fg-sbh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C82-S6-a3I" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="935" y="11" width="29" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="29" id="DZz-dh-bhP"/>
+                                                            <constraint firstAttribute="width" constant="29" id="GXk-WB-62x"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                        <state key="normal" image="lx_header_home.png">
+                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="goTop:" destination="T4m-bh-eTl" eventType="touchUpInside" id="yB0-Jq-3wG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
+                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="leading" secondItem="C82-S6-a3I" secondAttribute="trailing" constant="18" id="Mej-a0-J8d"/>
+                                                    <constraint firstItem="C82-S6-a3I" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="YZU-ob-S2V"/>
+                                                    <constraint firstAttribute="width" constant="1024" id="fxV-1e-rnv"/>
+                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="lXn-9U-kXL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xrv-x9-SF9" secondAttribute="trailing" constant="15" id="vPG-EQ-F74"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_top_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-oS-Tth">
+                                                <rect key="frame" x="27" y="22" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="0TF-UM-Kcw"/>
+                                                    <constraint firstAttribute="height" constant="100" id="akZ-lg-7rn"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="736" id="0g5-H1-Wlp"/>
+                                            <constraint firstItem="aaX-G6-A6H" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" constant="15" id="1XP-sH-apn"/>
+                                            <constraint firstItem="hXB-aN-LVW" firstAttribute="leading" secondItem="L9G-oS-Tth" secondAttribute="trailing" constant="606" id="1nL-jY-T2v"/>
+                                            <constraint firstItem="hXB-aN-LVW" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="4ru-6w-E0k"/>
+                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="5Lh-Ux-z4H"/>
+                                            <constraint firstItem="L9G-oS-Tth" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="22" id="8y2-Kn-Lmq"/>
+                                            <constraint firstAttribute="width" constant="1024" id="9Vr-7m-E66"/>
+                                            <constraint firstItem="aaX-G6-A6H" firstAttribute="centerY" secondItem="PSx-Hb-PSG" secondAttribute="centerY" id="Ljb-Tx-GHZ"/>
+                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="NfK-3X-SDG"/>
+                                            <constraint firstAttribute="trailing" secondItem="hXB-aN-LVW" secondAttribute="trailing" id="cHA-eK-q0j"/>
+                                            <constraint firstItem="23k-mA-0zm" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="kE6-zw-Xeq"/>
+                                            <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="xhZ-8N-Tj8"/>
+                                            <constraint firstAttribute="bottom" secondItem="hXB-aN-LVW" secondAttribute="bottom" id="yUl-hH-y4x"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" constant="-10" id="g9g-Bb-EOv"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="nre-A9-77r"/>
+                                    <constraint firstAttribute="bottom" secondItem="PSx-Hb-PSG" secondAttribute="bottom" id="sub-0A-3Ti"/>
+                                    <constraint firstAttribute="trailing" secondItem="PSx-Hb-PSG" secondAttribute="trailing" id="xgc-49-alw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cPZ-HZ-YPi" secondAttribute="trailing" id="7Hf-vS-yXc"/>
+                            <constraint firstItem="ccM-iA-GLD" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="bottom" id="9hR-jY-jLm"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" constant="22" id="NYr-TU-jab"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="R5P-Bp-fuN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ingredientBtn" destination="Ekz-4w-CDy" id="cOz-MY-sEJ"/>
+                        <outlet property="mBtnOutApp" destination="xrv-x9-SF9" id="AGW-Pg-04o"/>
+                        <outlet property="mScrollV" destination="cPZ-HZ-YPi" id="rSG-nH-eCh"/>
+                        <outlet property="mVContent" destination="PSx-Hb-PSG" id="UVt-fs-4hq"/>
+                        <outlet property="productBtn" destination="yNI-Vg-SiW" id="IVd-sM-vu8"/>
+                        <outlet property="yutakaBtn" destination="ZAX-gB-IM3" id="x9v-n8-E7G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aj-4H-wE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7437.3046874999991" y="2291.40625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lx_header_home.png" width="49" height="49"/>
+        <image name="lx_header_option.png" width="45" height="42"/>
+        <image name="lx_ingredients_btn.png" width="1215" height="533"/>
+        <image name="lx_logo.png" width="733" height="195"/>
+        <image name="lx_product_btn.png" width="1215" height="532"/>
+        <image name="lx_top_bg.png" width="2134" height="1600"/>
+        <image name="lx_top_logo.png" width="442" height="442"/>
+        <image name="lx_top_menu.png" width="35" height="56"/>
+        <image name="lx_yutaka_btn.png.png" width="1215" height="521"/>
+    </resources>
+</document>
