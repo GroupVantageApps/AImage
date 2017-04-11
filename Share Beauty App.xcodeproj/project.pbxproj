@@ -1553,7 +1553,7 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9EH8D4TG7B;
+						DevelopmentTeam = J62CVNNG5Q;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Manual;
 					};
@@ -2492,9 +2492,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 9EH8D4TG7B;
+				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2506,8 +2506,8 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsbatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a0448c46-f6e2-4a54-a268-1c92971da6ae";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				PROVISIONING_PROFILE = "eaf2251d-44ab-4e9d-b2bd-8e132ba162db";
+				PROVISIONING_PROFILE_SPECIFIER = "SBA TEST";
 				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Share Beauty App/Share_Beauty_App-Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
