@@ -34,6 +34,14 @@ class LifeStyleProductView: BaseView {
     @IBOutlet weak private var mThumbnailViewBottom: NSLayoutConstraint!
 
     weak var delegate: LifeStyleProductViewDelegate?
+	
+	// カスタムスタイルの定義。従来のスタイルはnormal
+	// スタイルの変更はproductプロパティに値を設定する前に行う
+	enum eStyle: Int {
+		case normal = 0
+		case nonProductName		// 商品名削除
+	}
+	var style: eStyle = .normal
 
     @IBInspectable var numberString: String = "" {
         didSet {
@@ -80,7 +88,7 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var productName: String? {
         didSet {
-            mLblProduct.text = productName
+			mLblProduct.text = self.style == .nonProductName ? nil : productName
         }
     }
 
