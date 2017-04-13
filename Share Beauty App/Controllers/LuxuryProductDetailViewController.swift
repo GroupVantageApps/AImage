@@ -426,7 +426,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         let nextVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
         nextVc.productId = sender.tag
         nextVc.relationProducts = self.relationProducts
-        delegate?.nextVc(nextVc)
+        self.navigationController?.pushViewController(nextVc, animated: false)
     }
 
     // MARK: - IBAction

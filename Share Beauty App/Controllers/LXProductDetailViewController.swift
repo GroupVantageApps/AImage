@@ -421,12 +421,12 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         let relationProduct = ProductDetailData(productId: sender.tag)
         if Const.lineIdLX == relationProduct.lineId {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LXProductDetailViewController", targetClass: LXProductDetailViewController.self) as! LXProductDetailViewController
-            nextVc.productId = productId!
+            nextVc.productId = relationProduct.productId
             nextVc.relationProducts = self.relationProducts
             self.delegate?.nextVc(nextVc)
         } else {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-            nextVc.productId = productId!
+            nextVc.productId = relationProduct.productId
             nextVc.relationProducts = self.relationProducts
             self.delegate?.nextVc(nextVc)
         }
