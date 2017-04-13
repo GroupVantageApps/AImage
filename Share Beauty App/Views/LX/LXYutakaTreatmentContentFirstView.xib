@@ -27,7 +27,7 @@
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_yutaka_treatment_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
                     <rect key="frame" x="500" y="200" width="410" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -62,11 +62,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mImgV" destination="vMx-rr-plv" id="qFy-al-Vmw"/>
+            </connections>
             <point key="canvasLocation" x="155" y="156"/>
         </view>
     </objects>
     <resources>
         <image name="lx_music.png" width="80" height="80"/>
-        <image name="lx_yutaka_treatment_1.png" width="820" height="637"/>
     </resources>
 </document>

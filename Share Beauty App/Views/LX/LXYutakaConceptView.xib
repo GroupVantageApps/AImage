@@ -54,7 +54,6 @@ Delight in the soothing touch of the artisanal Yutaka stone massage tool (made f
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Np-sC-CzV">
                     <rect key="frame" x="120" y="356" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="lx_yutaka_c_1.png"/>
                     <connections>
                         <action selector="tappedToolBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xjU-nC-zEq"/>
                     </connections>
@@ -62,7 +61,6 @@ Delight in the soothing touch of the artisanal Yutaka stone massage tool (made f
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-cE-Rrl">
                     <rect key="frame" x="377" y="355" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="lx_yutaka_c_2.png"/>
                     <connections>
                         <action selector="tappedMusicBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="IcD-s9-ohC"/>
                     </connections>
@@ -70,7 +68,6 @@ Delight in the soothing touch of the artisanal Yutaka stone massage tool (made f
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwi-IR-Wo6">
                     <rect key="frame" x="634" y="355" width="200" height="200"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="lx_yutaka_c_3.png"/>
                     <connections>
                         <action selector="tappedSmellBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="vQ9-z2-q5S"/>
                     </connections>
@@ -99,18 +96,16 @@ Delight in the soothing touch of the artisanal Yutaka stone massage tool (made f
                 <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYg-Op-2CD">
                     <rect key="frame" x="50" y="284" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="lx_start.png"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mMusicBtn" destination="3zq-cE-Rrl" id="dN2-gE-5iZ"/>
+                <outlet property="mSmellBtn" destination="lwi-IR-Wo6" id="1u6-1u-i5i"/>
+                <outlet property="mToolBtn" destination="5Np-sC-CzV" id="IFD-g8-goU"/>
+            </connections>
             <point key="canvasLocation" x="155" y="156"/>
         </view>
     </objects>
-    <resources>
-        <image name="lx_start.png" width="79" height="79"/>
-        <image name="lx_yutaka_c_1.png" width="400" height="401"/>
-        <image name="lx_yutaka_c_2.png" width="400" height="401"/>
-        <image name="lx_yutaka_c_3.png" width="400" height="401"/>
-    </resources>
 </document>

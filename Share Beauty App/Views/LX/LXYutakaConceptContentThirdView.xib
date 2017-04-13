@@ -35,15 +35,15 @@
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_yutaka_sub_3_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
                     <rect key="frame" x="163" y="213" width="210" height="305"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_yutaka_sub_3_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-P8-fnZ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-P8-fnZ">
                     <rect key="frame" x="378" y="213" width="210" height="305"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_yutaka_sub_3_3.png" translatesAutoresizingMaskIntoConstraints="NO" id="R5Z-5H-vfK">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R5Z-5H-vfK">
                     <rect key="frame" x="593" y="213" width="210" height="305"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -71,12 +71,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mSub1ImgV" destination="vMx-rr-plv" id="oLA-7k-S1c"/>
+                <outlet property="mSub2ImgV" destination="xAd-P8-fnZ" id="WWm-5c-XBU"/>
+                <outlet property="mSub3ImgV" destination="R5Z-5H-vfK" id="gSU-Ue-36L"/>
+            </connections>
             <point key="canvasLocation" x="155" y="156"/>
         </view>
     </objects>
-    <resources>
-        <image name="lx_yutaka_sub_3_1.png" width="418" height="609"/>
-        <image name="lx_yutaka_sub_3_2.png" width="418" height="609"/>
-        <image name="lx_yutaka_sub_3_3.png" width="418" height="609"/>
-    </resources>
 </document>
