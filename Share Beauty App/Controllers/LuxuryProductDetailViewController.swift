@@ -423,7 +423,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
-        let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        let nextVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
         nextVc.productId = sender.tag
         nextVc.relationProducts = self.relationProducts
         delegate?.nextVc(nextVc)

@@ -418,10 +418,18 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
-        let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-        nextVc.productId = sender.tag
-        nextVc.relationProducts = self.relationProducts
-        delegate?.nextVc(nextVc)
+        let relationProduct = ProductDetailData(productId: sender.tag)
+        if Const.lineIdLX == relationProduct.lineId {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LXProductDetailViewController", targetClass: LXProductDetailViewController.self) as! LXProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = self.relationProducts
+            self.delegate?.nextVc(nextVc)
+        } else {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = self.relationProducts
+            self.delegate?.nextVc(nextVc)
+        }
     }
 
     // MARK: - IBAction
