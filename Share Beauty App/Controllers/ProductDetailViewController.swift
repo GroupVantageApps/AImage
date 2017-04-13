@@ -167,11 +167,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
         self.initSpecialView()
 
+        //mVSkinConcern配下に、mTroubleSelectViewがあるので、両方にtroublesを渡す必要はないけど、
+        //mTroubleSelectViewからのイベント(プロトコル)を直接ここで受けたいので、
+        //現状このうような作りになってます
         mVSkinConcern.troubles = product.troubles
         mTroubleSelectView.troubles = product.troubles
-        //if product.troubles.count == 0 {
-         //   mVSkinConcernLabel.isHidden = true
-        //}
 
         print("++++++++++++++++++++++++++++++++++++++++++++++++")
         print(self.product.colorballs)

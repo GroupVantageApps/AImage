@@ -527,6 +527,7 @@
                                                                                     <constraint firstItem="Mt0-Ad-5ei" firstAttribute="top" secondItem="en1-Za-qmT" secondAttribute="bottom" constant="10" id="ros-zR-gCn"/>
                                                                                 </constraints>
                                                                                 <connections>
+                                                                                    <outlet property="mTroubleSelectView" destination="Mt0-Ad-5ei" id="yvi-cc-oYv"/>
                                                                                     <outlet property="mVSkinConcernLabel" destination="en1-Za-qmT" id="SIB-09-deT"/>
                                                                                     <outlet property="openButton" destination="tse-pJ-1GY" id="L7s-vG-oq0"/>
                                                                                 </connections>
