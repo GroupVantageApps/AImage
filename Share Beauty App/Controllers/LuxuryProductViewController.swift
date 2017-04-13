@@ -21,10 +21,16 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
     var isEnterWithNavigationView: Bool = true
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
+    
+    
+    @IBOutlet weak var mBABtn: UIButton!
+
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
+
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self

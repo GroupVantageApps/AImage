@@ -14,6 +14,8 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
 
+    @IBOutlet weak var mBGImgV: UIImageView!
+
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
@@ -27,6 +29,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
         print("LuxuryYutakaViewController.viewDidLoad")
     }
     

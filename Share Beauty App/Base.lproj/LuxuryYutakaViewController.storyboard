@@ -33,7 +33,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
                                         <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_yutaka.png" translatesAutoresizingMaskIntoConstraints="NO" id="3V7-tT-FXW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3V7-tT-FXW">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="746"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="746" id="N0j-7V-zXN"/>
@@ -219,6 +219,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mBGImgV" destination="3V7-tT-FXW" id="Gt0-ts-rRV"/>
                         <outlet property="mHeaderView" destination="8d6-qh-ycf" id="wYc-sg-4EU"/>
                         <outlet property="mNavigationView" destination="dju-oC-MUz" id="8Bp-i7-Kva"/>
                         <outlet property="mScrollV" destination="cPZ-HZ-YPi" id="zDE-0r-suL"/>
@@ -230,7 +231,4 @@
             <point key="canvasLocation" x="-7430.8593749999991" y="2297.65625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="lx_yutaka.png" width="2048" height="1536"/>
-    </resources>
 </document>

@@ -10,6 +10,15 @@ import Foundation
 import AVFoundation
 
 class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate, UIScrollViewDelegate{
+
+    @IBOutlet weak var mBGImgV: UIImageView!
+    @IBOutlet weak var mAngelicaBtn: UIButton!
+    @IBOutlet weak var mCherryBtn: UIButton!
+    @IBOutlet weak var mGreenTeaBtn: UIButton!
+    @IBOutlet weak var mSkingeneceBtn: UIButton!
+
+    
+    
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
@@ -26,6 +35,12 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        
+        self.mBGImgV.image = FileTable.getLXFileImage("lx_ingredient.png")
+        self.mAngelicaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_2.png"), for: .normal)
+        self.mCherryBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_3.png"), for: .normal)
+        self.mGreenTeaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_4.png"), for: .normal)
+        self.mSkingeneceBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_1.png"), for: .normal)
         print("LuxuryIngredientViewController.viewDidLoad")
     }
     override func viewWillAppear(_ animated: Bool) {
