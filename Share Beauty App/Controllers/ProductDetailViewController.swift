@@ -21,6 +21,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mVBaseFeaturesView: UIView!
     @IBOutlet weak private var mRelationScrollV: UIScrollView!
     @IBOutlet weak private var mVScrollContent: UIView!
+    @IBOutlet weak private var mVSkinConcernLabel: UIView!
     @IBOutlet weak private var mTroubleSelectView: TroubleSelectView!
     @IBOutlet weak private var mColorballCollectionView: ColorballCollectionView!
     @IBOutlet weak private var mVRelationProductBase: UIView!
@@ -166,7 +167,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
         self.initSpecialView()
 
-        mTroubleSelectView.troubles = product.trables
+        mTroubleSelectView.troubles = product.troubles
+        if product.troubles.count == 0 {
+            mVSkinConcernLabel.isHidden = true
+        }
 
         print("++++++++++++++++++++++++++++++++++++++++++++++++")
         print(self.product.colorballs)

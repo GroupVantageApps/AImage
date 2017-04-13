@@ -21,7 +21,7 @@ class ProductData: NSObject {
     var productName: String = String()      //m_product_translate.content.name
     var beautyName: String = String()       //m_beauty_second_translate.content.name
 
-    var trables: [DataStructTrouble] = []
+    var troubles: [DataStructTrouble] = []
 
     var day: Int = 0
     var night: Int = 0
@@ -74,7 +74,7 @@ class ProductData: NSObject {
         self.beautyName = beautySecondTranslateEntity.name
         self.beautySecondId = beautySecondTranslateEntity.beautySecondId!
 
-        //trablesプロパティは、IdealBeautyの手鏡モーダルで使用
+        //troublesプロパティは、IdealBeautyの手鏡モーダルで使用
         //productEntity.concernから、displatType:3のみを抽出する
         for value in productEntity.concern {
             let data: DBStructConcern = value as DBStructConcern
@@ -86,7 +86,7 @@ class ProductData: NSObject {
                 trouble.troubleName = entity.name
                 trouble.image = entity.image!
 
-                self.trables.append(trouble)
+                self.troubles.append(trouble)
             }
         }
 

@@ -476,7 +476,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-sR-Nnj" userLabel="Trouble">
-                                                                                <rect key="frame" x="0.0" y="176" width="636" height="791"/>
+                                                                                <rect key="frame" x="0.0" y="166" width="636" height="801"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en1-Za-qmT">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="109.5" height="23"/>
@@ -506,7 +506,7 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-Ad-5ei" customClass="TroubleSelectView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="33" width="636" height="758"/>
+                                                                                        <rect key="frame" x="0.0" y="33" width="636" height="768"/>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     </view>
                                                                                 </subviews>
@@ -582,7 +582,7 @@
                                                                             <constraint firstItem="HK7-2k-hNf" firstAttribute="top" secondItem="ral-Qk-yLK" secondAttribute="bottom" id="a1m-cW-JYB"/>
                                                                             <constraint firstItem="CbQ-Ai-fK0" firstAttribute="leading" secondItem="6m6-Dv-mB3" secondAttribute="leading" id="aDs-lU-MuB"/>
                                                                             <constraint firstAttribute="trailing" secondItem="HK7-2k-hNf" secondAttribute="trailing" id="gJ0-TF-zEZ"/>
-                                                                            <constraint firstItem="h1g-sR-Nnj" firstAttribute="top" secondItem="HK7-2k-hNf" secondAttribute="bottom" constant="30" id="iU0-Ef-ksb"/>
+                                                                            <constraint firstItem="h1g-sR-Nnj" firstAttribute="top" secondItem="HK7-2k-hNf" secondAttribute="bottom" constant="20" id="iU0-Ef-ksb"/>
                                                                             <constraint firstItem="HK7-2k-hNf" firstAttribute="leading" secondItem="6m6-Dv-mB3" secondAttribute="leading" id="jX7-A6-ajt"/>
                                                                             <constraint firstAttribute="trailing" secondItem="LfZ-lp-GgT" secondAttribute="trailing" id="ssF-lS-uIM"/>
                                                                             <constraint firstAttribute="height" constant="1000" placeholder="YES" id="u8e-am-m82"/>
@@ -803,6 +803,7 @@
                         <outlet property="mVMain" destination="fmO-Po-Pdd" id="kdi-9c-MBS"/>
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
                         <outlet property="mVScrollContent" destination="6m6-Dv-mB3" id="Zci-5v-P55"/>
+                        <outlet property="mVSkinConcernLabel" destination="en1-Za-qmT" id="bsN-69-mVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaD-mL-MOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
