@@ -21,6 +21,10 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     var bgAudioPlayer: AVAudioPlayer!
     var moviePlay: MoviePlayerView!
 
+    @IBOutlet weak var mLogoImgV: UIImageView!
+    @IBOutlet weak var mTopBGImgV: UIImageView!
+    @IBOutlet weak var mBottomLogoImgV: UIImageView!
+
     func setDropDown(dataSource: [String]) {
         mDropDown.dataSource = dataSource
         mDropDown.anchorView = mBtnOutApp
@@ -55,6 +59,12 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         moviePlay.playMovie(movie: "lx_top")
         self.view.addSubview(moviePlay)
         
+        self.mTopBGImgV.image = FileTable.getLXFileImage("lx_top_bg.png")
+        self.mLogoImgV.image = FileTable.getLXFileImage("lx_top_logo.png")
+        self.mBottomLogoImgV.image = FileTable.getLXFileImage("lx_logo.png")
+        self.ingredientBtn.setBackgroundImage(FileTable.getLXFileImage("lx_ingredients_btn.png"), for: .normal)
+        self.productBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_btn.png"), for: .normal)
+        self.yutakaBtn.setBackgroundImage(FileTable.getLXFileImage("lx_yutaka_btn.png"), for: .normal)
     }
     @IBAction private func onTapLuxuryMenu(_ sender: AnyObject) {
         print("onTapLuxuryMenu tag:" + sender.tag.description)

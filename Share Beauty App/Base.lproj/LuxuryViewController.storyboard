@@ -33,7 +33,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
                                         <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_top_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="746"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="746" id="Ox8-vW-YyF"/>
@@ -43,7 +43,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-aN-LVW">
                                                 <rect key="frame" x="733" y="0.0" width="291" height="736"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-6I-CDt">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-6I-CDt">
                                                         <rect key="frame" x="48" y="655" width="194" height="51"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="194" id="YPm-25-1GC"/>
@@ -57,7 +57,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
                                                         <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Ingredients" backgroundImage="lx_ingredients_btn.png">
+                                                        <state key="normal" title="Ingredients">
                                                             <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -72,7 +72,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
                                                         <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Products" backgroundImage="lx_product_btn.png">
+                                                        <state key="normal" title="Products">
                                                             <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -87,7 +87,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
                                                         <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="YUTAKA" backgroundImage="lx_yutaka_btn.png.png">
+                                                        <state key="normal" title="YUTAKA">
                                                             <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -110,7 +110,7 @@
                                                     <constraint firstItem="Csi-6I-CDt" firstAttribute="centerX" secondItem="hXB-aN-LVW" secondAttribute="centerX" id="vgn-Zn-fsW"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
                                                 <rect key="frame" x="15" y="353" width="18" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="18" id="aOZ-T8-dxP"/>
@@ -160,7 +160,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="xrv-x9-SF9" secondAttribute="trailing" constant="15" id="vPG-EQ-F74"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_top_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-oS-Tth">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-oS-Tth">
                                                 <rect key="frame" x="27" y="22" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="0TF-UM-Kcw"/>
@@ -203,8 +203,11 @@
                     </view>
                     <connections>
                         <outlet property="ingredientBtn" destination="Ekz-4w-CDy" id="cOz-MY-sEJ"/>
+                        <outlet property="mBottomLogoImgV" destination="Csi-6I-CDt" id="KRy-So-f0I"/>
                         <outlet property="mBtnOutApp" destination="xrv-x9-SF9" id="AGW-Pg-04o"/>
+                        <outlet property="mLogoImgV" destination="L9G-oS-Tth" id="cgO-Lp-clJ"/>
                         <outlet property="mScrollV" destination="cPZ-HZ-YPi" id="rSG-nH-eCh"/>
+                        <outlet property="mTopBGImgV" destination="Ic8-Q9-MTU" id="Mmn-VV-bJZ"/>
                         <outlet property="mVContent" destination="PSx-Hb-PSG" id="UVt-fs-4hq"/>
                         <outlet property="productBtn" destination="yNI-Vg-SiW" id="IVd-sM-vu8"/>
                         <outlet property="yutakaBtn" destination="ZAX-gB-IM3" id="x9v-n8-E7G"/>
@@ -218,12 +221,6 @@
     <resources>
         <image name="lx_header_home.png" width="49" height="49"/>
         <image name="lx_header_option.png" width="45" height="42"/>
-        <image name="lx_ingredients_btn.png" width="1215" height="533"/>
-        <image name="lx_logo.png" width="733" height="195"/>
-        <image name="lx_product_btn.png" width="1215" height="532"/>
-        <image name="lx_top_bg.png" width="2134" height="1600"/>
-        <image name="lx_top_logo.png" width="442" height="442"/>
         <image name="lx_top_menu.png" width="35" height="56"/>
-        <image name="lx_yutaka_btn.png.png" width="1215" height="521"/>
     </resources>
 </document>
