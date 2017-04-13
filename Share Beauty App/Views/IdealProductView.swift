@@ -110,7 +110,7 @@ class IdealProductView: UICollectionViewCell {
                 self.beautyName = product?.beautyName
                 self.lineName = product?.lineName
                 self.productName = product?.productName
-                self.mTroubles = (product?.trables)!
+                self.mTroubles = (product?.troubles)!
                 if product != nil {
                     self.isNew = Bool(product!.newItemFlg as NSNumber)
                     self.day = Bool(product!.day as NSNumber)

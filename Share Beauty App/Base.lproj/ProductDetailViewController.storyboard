@@ -429,7 +429,7 @@
                                                                             <view clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="696" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ral-Qk-yLK">
                                                                                 <rect key="frame" x="0.0" y="95" width="636" height="0.0"/>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-2k-hNf">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-2k-hNf" userLabel="HowToUse">
                                                                                 <rect key="frame" x="0.0" y="95" width="636" height="51"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0Q-Mc-ggP">
@@ -475,8 +475,62 @@
                                                                                     <constraint firstItem="L0Q-Mc-ggP" firstAttribute="leading" secondItem="HK7-2k-hNf" secondAttribute="leading" id="n7N-z8-6FP"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-sR-Nnj" customClass="TroubleSelectView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="176" width="636" height="791"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-sR-Nnj" userLabel="Trouble" customClass="ProductDetailSkinConcernView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="166" width="636" height="801"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="en1-Za-qmT">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="109.5" height="23"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3l-C7-hXm">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="21"/>
+                                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY6-27-md3">
+                                                                                                <rect key="frame" x="0.0" y="21" width="109.5" height="2"/>
+                                                                                                <color key="backgroundColor" red="0.85900002720000002" green="0.17100000379999999" blue="0.21899999680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="2" id="e4u-Ep-2uD"/>
+                                                                                                </constraints>
+                                                                                            </view>
+                                                                                        </subviews>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="trailing" secondItem="lY6-27-md3" secondAttribute="trailing" id="0rf-R4-idn"/>
+                                                                                            <constraint firstItem="Z3l-C7-hXm" firstAttribute="leading" secondItem="en1-Za-qmT" secondAttribute="leading" id="1xQ-V3-cRe"/>
+                                                                                            <constraint firstItem="lY6-27-md3" firstAttribute="leading" secondItem="en1-Za-qmT" secondAttribute="leading" id="4zE-qJ-zJ1"/>
+                                                                                            <constraint firstItem="lY6-27-md3" firstAttribute="top" secondItem="Z3l-C7-hXm" secondAttribute="bottom" id="8Gx-DE-FSB"/>
+                                                                                            <constraint firstAttribute="bottom" secondItem="lY6-27-md3" secondAttribute="bottom" id="QEa-OK-Kyh"/>
+                                                                                            <constraint firstItem="Z3l-C7-hXm" firstAttribute="top" secondItem="en1-Za-qmT" secondAttribute="top" id="gsS-zz-RDT"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="Z3l-C7-hXm" secondAttribute="trailing" id="jSV-fL-P2U"/>
+                                                                                        </constraints>
+                                                                                    </view>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tse-pJ-1GY">
+                                                                                        <rect key="frame" x="120" y="2" width="15" height="18"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                                        <state key="normal" backgroundImage="open_line_detail"/>
+                                                                                        <connections>
+                                                                                            <action selector="onTapOpen:" destination="h1g-sR-Nnj" eventType="touchUpInside" id="rYL-5R-pON"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-Ad-5ei" customClass="TroubleSelectView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="33" width="636" height="768"/>
+                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="Mt0-Ad-5ei" secondAttribute="bottom" id="8LG-ZG-Mpx"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="Mt0-Ad-5ei" secondAttribute="trailing" id="CEs-RF-dx0"/>
+                                                                                    <constraint firstItem="Mt0-Ad-5ei" firstAttribute="leading" secondItem="h1g-sR-Nnj" secondAttribute="leading" id="VRW-YY-scv"/>
+                                                                                    <constraint firstItem="en1-Za-qmT" firstAttribute="top" secondItem="h1g-sR-Nnj" secondAttribute="top" id="c2S-zQ-rML"/>
+                                                                                    <constraint firstItem="en1-Za-qmT" firstAttribute="leading" secondItem="h1g-sR-Nnj" secondAttribute="leading" id="cvu-he-0dv"/>
+                                                                                    <constraint firstItem="Mt0-Ad-5ei" firstAttribute="top" secondItem="en1-Za-qmT" secondAttribute="bottom" constant="10" id="ros-zR-gCn"/>
+                                                                                </constraints>
+                                                                                <connections>
+                                                                                    <outlet property="mTroubleSelectView" destination="Mt0-Ad-5ei" id="yvi-cc-oYv"/>
+                                                                                    <outlet property="mVSkinConcernLabel" destination="en1-Za-qmT" id="SIB-09-deT"/>
+                                                                                    <outlet property="openButton" destination="tse-pJ-1GY" id="L7s-vG-oq0"/>
+                                                                                </connections>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbQ-Ai-fK0">
                                                                                 <rect key="frame" x="0.0" y="967" width="636" height="33"/>
@@ -541,7 +595,7 @@
                                                                             <constraint firstItem="HK7-2k-hNf" firstAttribute="top" secondItem="ral-Qk-yLK" secondAttribute="bottom" id="a1m-cW-JYB"/>
                                                                             <constraint firstItem="CbQ-Ai-fK0" firstAttribute="leading" secondItem="6m6-Dv-mB3" secondAttribute="leading" id="aDs-lU-MuB"/>
                                                                             <constraint firstAttribute="trailing" secondItem="HK7-2k-hNf" secondAttribute="trailing" id="gJ0-TF-zEZ"/>
-                                                                            <constraint firstItem="h1g-sR-Nnj" firstAttribute="top" secondItem="HK7-2k-hNf" secondAttribute="bottom" constant="30" id="iU0-Ef-ksb"/>
+                                                                            <constraint firstItem="h1g-sR-Nnj" firstAttribute="top" secondItem="HK7-2k-hNf" secondAttribute="bottom" constant="20" id="iU0-Ef-ksb"/>
                                                                             <constraint firstItem="HK7-2k-hNf" firstAttribute="leading" secondItem="6m6-Dv-mB3" secondAttribute="leading" id="jX7-A6-ajt"/>
                                                                             <constraint firstAttribute="trailing" secondItem="LfZ-lp-GgT" secondAttribute="trailing" id="ssF-lS-uIM"/>
                                                                             <constraint firstAttribute="height" constant="1000" placeholder="YES" id="u8e-am-m82"/>
@@ -751,7 +805,7 @@
                         <outlet property="mRelationScrollV" destination="IJq-sz-snI" id="N54-uL-aWu"/>
                         <outlet property="mScrollVPinch" destination="wAl-8s-SCs" id="Eo8-UU-pWR"/>
                         <outlet property="mTransitionView" destination="qP3-J2-RYj" id="Vjp-e6-5ua"/>
-                        <outlet property="mTroubleSelectView" destination="h1g-sR-Nnj" id="v8p-ka-lJV"/>
+                        <outlet property="mTroubleSelectView" destination="Mt0-Ad-5ei" id="Ksd-0f-8Nz"/>
                         <outlet property="mTroubleView" destination="RQE-Q2-05k" id="EUq-Sz-3Zk"/>
                         <outlet property="mVBaseFeaturesView" destination="ral-Qk-yLK" id="Tvy-kt-YXy"/>
                         <outlet property="mVBaseIbukiBtn" destination="Wx1-mu-ifn" id="XPi-B8-TxF"/>
@@ -762,6 +816,7 @@
                         <outlet property="mVMain" destination="fmO-Po-Pdd" id="kdi-9c-MBS"/>
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
                         <outlet property="mVScrollContent" destination="6m6-Dv-mB3" id="Zci-5v-P55"/>
+                        <outlet property="mVSkinConcern" destination="h1g-sR-Nnj" id="5tL-Qi-WM7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaD-mL-MOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -775,6 +830,7 @@
         <image name="features_smk_1.png" width="92" height="66"/>
         <image name="features_smk_2.png" width="92" height="66"/>
         <image name="features_smk_3.png" width="92" height="66"/>
+        <image name="open_line_detail" width="15" height="15"/>
         <image name="ss_bg.png" width="997" height="1219"/>
     </resources>
 </document>
