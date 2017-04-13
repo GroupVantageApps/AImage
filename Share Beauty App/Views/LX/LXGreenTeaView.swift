@@ -10,10 +10,14 @@ import Foundation
 class LXGreenTeaView: UIView{
 
     let mXbutton = UIButton(frame: CGRect(x: 664, y: 16.7, width: 38, height: 38))
-    
+
+    @IBOutlet weak var mDownImgV: UIImageView!
+    @IBOutlet weak var mUpImgV: UIImageView!
+
     func setUI() {
-        
-        mXbutton.setImage(UIImage(named: "btn_close.png"), for: UIControlState.normal)
+        self.mUpImgV.image = FileTable.getLXFileImage("graphPoint_up.png")
+        self.mDownImgV.image = FileTable.getLXFileImage("graphPoint_down.png")
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         
@@ -21,7 +25,7 @@ class LXGreenTeaView: UIView{
         let views = nib.instantiate(withOwner: self, options: nil)
         guard let graphView = views[0] as? LXGraphView else { return }
         let view = self.viewWithTag(30)
-        graphView.bgImage = "tea_graph_bg"
+        graphView.bgImage = "tea_graph_bg.png"
         view?.addSubview(graphView)
         graphView.setUp(left: 30, right: 70, l_title: "Without Premium\nUji Green Tea\nExtract",r_title: "With Premium Uji\nGreen Tea Extract")
         
@@ -29,7 +33,7 @@ class LXGreenTeaView: UIView{
         let views2 = nib2.instantiate(withOwner: self, options: nil)
         guard let graphView2 = views2[0] as? LXGraphView else { return }
         let view2 = self.viewWithTag(31)
-        graphView2.bgImage = "tea_graph_bg"
+        graphView2.bgImage = "tea_graph_bg.png"
         view2?.addSubview(graphView2)
         graphView2.setUp(left: 56, right: 24, l_title: "Without Premium\nUji Green Tea\nExtract",r_title: "With Premium Uji\nGreen Tea Extract")
     }

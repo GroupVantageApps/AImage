@@ -16,7 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LXGreenTeaView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LXGreenTeaView" customModule="Share_Beauty_App">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LXGreenTeaView" customModule="Share_Beauty_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="701" height="701"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -31,11 +31,11 @@
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphPoint_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-4O-WDD">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiS-4O-WDD">
                     <rect key="frame" x="116" y="262" width="15" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Antioxi_glaph_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="zxQ-gI-mrH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxQ-gI-mrH">
                     <rect key="frame" x="146.5" y="90" width="461" height="213"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -95,11 +95,11 @@
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphPoint_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZvY-Ty-7er">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZvY-Ty-7er">
                     <rect key="frame" x="116" y="420" width="15" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Antioxi_glaph_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="gt5-T5-zoU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gt5-T5-zoU">
                     <rect key="frame" x="146.5" y="417" width="461" height="213"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -141,13 +141,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mDownImgV" destination="uiS-4O-WDD" id="cx3-Gt-vc8"/>
+                <outlet property="mUpImgV" destination="ZvY-Ty-7er" id="WEy-aX-oxR"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="143.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="Antioxi_glaph_02.png" width="904" height="411"/>
-        <image name="Antioxi_glaph_03.png" width="904" height="412"/>
-        <image name="graphPoint_down.png" width="24" height="62"/>
-        <image name="graphPoint_up.png" width="24" height="62"/>
-    </resources>
 </document>

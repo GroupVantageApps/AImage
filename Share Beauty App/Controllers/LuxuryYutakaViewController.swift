@@ -32,7 +32,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
         print("LuxuryYutakaViewController.viewDidLoad")
     }
-    
+
     @IBAction func tappedConceptBtn(_ sender: Any) {
         mConceptView = UINib(nibName: "LXYutakaConceptView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptView
         mConceptView.delegate = self

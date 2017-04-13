@@ -30,7 +30,7 @@
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graphPoint_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-pM-dfz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-pM-dfz">
                     <rect key="frame" x="119" y="387" width="14" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -72,11 +72,13 @@
                 <constraint firstItem="CN6-pT-gVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="181" id="MMj-jK-8Qu"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mDownImgV" destination="EEP-pM-dfz" id="U6C-sh-zQu"/>
+            </connections>
             <point key="canvasLocation" x="43.5" y="-33.5"/>
         </view>
     </objects>
     <resources>
         <image name="cherryGraph_01.png" width="904" height="413"/>
-        <image name="graphPoint_down.png" width="24" height="62"/>
     </resources>
 </document>

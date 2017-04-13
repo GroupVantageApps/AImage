@@ -37,7 +37,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.mSkingeneceintrolbl.font = UIFont(name: "ACaslonPro-Regular", size: 23.0)
         self.addSubview(self.mSkingeneceintrolbl)
 
-        mXbutton.setImage(UIImage(named: "btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         for index in 0..<3 {
@@ -54,7 +54,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             subView.addSubview(mNumlbl)
 
             let imageName = self.array[index]
-            let image = UIImage(named: imageName)
+            let image = FileTable.getLXFileImage(imageName)
             let imageView = UIImageView(image: image!)
             imageView.frame = CGRect(x: 38, y: 113, width: 517, height: 317)
             subView.addSubview(imageView)

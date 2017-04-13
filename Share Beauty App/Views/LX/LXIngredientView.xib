@@ -34,7 +34,7 @@
                     <rect key="frame" x="57" y="108" width="822" height="352"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgS-r4-2Iz">
-                    <rect key="frame" x="57" y="478" width="473" height="251"/>
+                    <rect key="frame" x="57" y="478" width="473" height="221"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRG-zu-kRB">
                             <rect key="frame" x="0.0" y="0.0" width="473" height="230"/>
@@ -49,7 +49,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="473" id="LhT-4R-wRn"/>
                                 <constraint firstAttribute="height" constant="230" id="UgH-tv-kd3"/>
@@ -58,15 +57,18 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="width" constant="473" id="M1z-Rh-HH3"/>
-                        <constraint firstAttribute="height" constant="251" id="MUx-Bm-gAL"/>
+                        <constraint firstAttribute="height" constant="221" id="MUx-Bm-gAL"/>
                         <constraint firstAttribute="trailing" secondItem="zRG-zu-kRB" secondAttribute="trailing" id="Nji-wq-Brv"/>
                         <constraint firstItem="zRG-zu-kRB" firstAttribute="leading" secondItem="hgS-r4-2Iz" secondAttribute="leading" id="ZUm-K5-cDK"/>
                         <constraint firstAttribute="bottom" secondItem="zRG-zu-kRB" secondAttribute="bottom" constant="21" id="dJl-X4-dHP"/>
                         <constraint firstItem="zRG-zu-kRB" firstAttribute="top" secondItem="hgS-r4-2Iz" secondAttribute="top" id="x4t-AO-ym1"/>
                     </constraints>
                 </scrollView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skingenece_playImg.png" translatesAutoresizingMaskIntoConstraints="NO" id="wvQ-Qn-kAd">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wvQ-Qn-kAd">
                     <rect key="frame" x="576" y="478" width="43" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="41" id="5bD-GJ-Hgn"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-Uh-LEu">
                     <rect key="frame" x="630" y="480" width="75" height="41"/>
@@ -78,7 +80,7 @@
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skingenece_graphimg.png" translatesAutoresizingMaskIntoConstraints="NO" id="SLV-ey-DRi">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SLV-ey-DRi">
                     <rect key="frame" x="576" y="533" width="43" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="4zn-92-b1J"/>
@@ -102,18 +104,18 @@ excellent skin cell regeneration effect</string>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lu7-sy-FdA">
-                    <rect key="frame" x="576" y="531" width="259" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lu7-sy-FdA">
+                    <rect key="frame" x="576" y="531" width="30" height="30"/>
                 </button>
-                <button opaque="NO" tag="31" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-2v-LZ6">
-                    <rect key="frame" x="576" y="480" width="159" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-2v-LZ6">
+                    <rect key="frame" x="576" y="483.5" width="30" height="30"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="wvQ-Qn-kAd" firstAttribute="trailing" secondItem="SLV-ey-DRi" secondAttribute="trailing" id="2Sq-gb-HYf"/>
                 <constraint firstItem="jLG-Cn-4uH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="3QF-Hf-Tek"/>
+                <constraint firstItem="wvQ-Qn-kAd" firstAttribute="leading" secondItem="hgS-r4-2Iz" secondAttribute="trailing" constant="46" id="3wv-u0-lNe"/>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="leading" secondItem="h7W-mT-bfI" secondAttribute="leading" id="6QZ-tr-EJV"/>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="top" secondItem="wvQ-Qn-kAd" secondAttribute="top" id="80D-Kh-oTZ"/>
                 <constraint firstItem="Etk-QN-pQl" firstAttribute="leading" secondItem="hgS-r4-2Iz" secondAttribute="trailing" constant="99" id="A8X-6o-Nuk"/>
@@ -121,9 +123,13 @@ excellent skin cell regeneration effect</string>
                 <constraint firstAttribute="bottom" secondItem="Etk-QN-pQl" secondAttribute="bottom" constant="80" id="CCB-Cb-weD"/>
                 <constraint firstItem="nbG-1Z-eNJ" firstAttribute="leading" secondItem="Etk-QN-pQl" secondAttribute="leading" id="CZ3-QC-ONt"/>
                 <constraint firstAttribute="trailing" secondItem="Etk-QN-pQl" secondAttribute="trailing" constant="40" id="EDW-7E-fYI"/>
+                <constraint firstItem="wvQ-Qn-kAd" firstAttribute="leading" secondItem="QuP-2v-LZ6" secondAttribute="leading" id="Fuy-n7-qKt"/>
+                <constraint firstItem="wvQ-Qn-kAd" firstAttribute="centerY" secondItem="QuP-2v-LZ6" secondAttribute="centerY" id="IJk-RD-9JG"/>
                 <constraint firstItem="h7W-mT-bfI" firstAttribute="top" secondItem="jLG-Cn-4uH" secondAttribute="bottom" constant="15" id="K2i-Et-icz"/>
+                <constraint firstItem="wvQ-Qn-kAd" firstAttribute="leading" secondItem="lu7-sy-FdA" secondAttribute="leading" id="P03-X5-NIz"/>
                 <constraint firstItem="SLV-ey-DRi" firstAttribute="top" secondItem="nbG-1Z-eNJ" secondAttribute="top" id="PBI-is-xre"/>
                 <constraint firstItem="nbG-1Z-eNJ" firstAttribute="leading" secondItem="SLV-ey-DRi" secondAttribute="trailing" constant="10" id="Qjm-zg-UpY"/>
+                <constraint firstItem="lu7-sy-FdA" firstAttribute="top" secondItem="wvQ-Qn-kAd" secondAttribute="bottom" constant="12" id="RtL-25-Z2b"/>
                 <constraint firstItem="8FP-Uh-LEu" firstAttribute="top" secondItem="h7W-mT-bfI" secondAttribute="bottom" constant="20" id="Tps-Ob-zyg"/>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="top" secondItem="h7W-mT-bfI" secondAttribute="bottom" constant="18" id="c0j-Qj-y92"/>
                 <constraint firstAttribute="trailing" secondItem="h7W-mT-bfI" secondAttribute="trailing" constant="81" id="dRR-Eq-qjY"/>
@@ -136,11 +142,11 @@ excellent skin cell regeneration effect</string>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="478" id="xeH-oY-vdg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mEffectImgV" destination="SLV-ey-DRi" id="w6f-Bf-bm4"/>
+                <outlet property="mPlayImgV" destination="wvQ-Qn-kAd" id="wss-Hy-zXV"/>
+            </connections>
             <point key="canvasLocation" x="44" y="440"/>
         </view>
     </objects>
-    <resources>
-        <image name="skingenece_graphimg.png" width="43" height="43"/>
-        <image name="skingenece_playImg.png" width="43" height="41"/>
-    </resources>
 </document>

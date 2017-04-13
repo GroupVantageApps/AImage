@@ -20,11 +20,11 @@
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_1_after.png" translatesAutoresizingMaskIntoConstraints="NO" id="YWX-UH-C9K">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWX-UH-C9K">
                     <rect key="frame" x="136" y="223" width="237" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_1_before.png" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMx-rr-plv">
                     <rect key="frame" x="136" y="223" width="237" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -50,7 +50,7 @@
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_2_after.png" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-OF-KVz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-OF-KVz">
                     <rect key="frame" x="452" y="223" width="400" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -134,12 +134,13 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-bc-cse">
                     <rect key="frame" x="493" y="575" width="351" height="67"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Less visible wrinkles in the forehead and decreased roughness.Skin becomes brighter and more plumped, resilient and radiant, for a softer, more youthful look overall.</string>
+                    <string key="text">Less visible wrinkles in the forehead and decreased roughness.
+Skin becomes brighter and more plumped, resilient and radiant, for a softer, more youthful look overall.</string>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_2_before.png" translatesAutoresizingMaskIntoConstraints="NO" id="bPI-1h-Jsq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPI-1h-Jsq">
                     <rect key="frame" x="452" y="223" width="400" height="240"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -148,7 +149,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="firstImgV" destination="vMx-rr-plv" id="Hza-LC-gb9"/>
+                <outlet property="mFirstAfterImgV" destination="YWX-UH-C9K" id="GgQ-XP-QhL"/>
                 <outlet property="mFirstSlider" destination="LCm-Zt-YHF" id="qrA-km-3MT"/>
+                <outlet property="mSecondAfterImgV" destination="GqO-OF-KVz" id="HbW-jh-3uJ"/>
                 <outlet property="mSecondSlider" destination="u0M-0n-pm8" id="zp6-BN-xal"/>
                 <outlet property="secondImgV" destination="bPI-1h-Jsq" id="3wz-kw-je1"/>
             </connections>
@@ -157,9 +160,5 @@
     </objects>
     <resources>
         <image name="ba_up.png" width="30" height="42"/>
-        <image name="photo_1_after.png" width="474" height="479"/>
-        <image name="photo_1_before.png" width="474" height="479"/>
-        <image name="photo_2_after.png" width="801" height="477"/>
-        <image name="photo_2_before.png" width="801" height="477"/>
     </resources>
 </document>

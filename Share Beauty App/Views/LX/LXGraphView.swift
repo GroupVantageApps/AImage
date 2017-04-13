@@ -15,20 +15,21 @@ class LXGraphView: UIView {
     @IBOutlet weak private var mVRightGraph: UIView!
     @IBOutlet weak private var mBtnLeftGraph: UIButton!
     @IBOutlet weak private var mBtnRightGraph: UIButton!
-    
-     
+    @IBOutlet weak var mGraphBGImgV: UIImageView!
+   
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     var bgImage: String = "" {
         didSet {
-            let image = UIImage(named: bgImage)
-            self.mImgVBackGround.image = image
+            self.mImgVBackGround.image = FileTable.getLXFileImage(bgImage)
         }
     }
     var isFirstTap :Bool = true
     var right_y : Int = 0
     func setUp(left: Int, right: Int ,l_title: String, r_title: String) {
+        self.mGraphBGImgV.image = FileTable.getLXFileImage("graph_bg.png")
+        self.mImgVBashLine.image = FileTable.getLXFileImage("lx_bash_line.png")
         self.mImgVBashLine.centerY = CGFloat(left)
         self.right_y = right
         self.mBtnRightGraph.addTarget(self, action: #selector(tappedRightGraphBtn), for: .touchUpInside)
