@@ -39,7 +39,7 @@ class LifeStyleProductView: BaseView {
 	// スタイルの変更はproductプロパティに値を設定する前に行う
 	enum eStyle: Int {
 		case normal = 0
-		case nonProductName		// 商品名削除
+		case beautyOnly
 	}
 	var style: eStyle = .normal
 
@@ -82,13 +82,13 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var lineName: String? {
         didSet {
-            mLblLine.text = lineName
+			mLblLine.text = self.style == .beautyOnly ? nil : lineName
         }
     }
 
     @IBInspectable var productName: String? {
         didSet {
-			mLblProduct.text = self.style == .nonProductName ? nil : productName
+			mLblProduct.text = self.style == .beautyOnly ? nil : productName
         }
     }
 

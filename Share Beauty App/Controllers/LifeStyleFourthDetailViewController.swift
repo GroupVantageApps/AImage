@@ -49,7 +49,7 @@ class LifeStyleFourthDetailViewController: UIViewController, NavigationControlle
             } 
             lifeStyleProductView.delegate = self
 			if i != 1 {
-				lifeStyleProductView.style = .nonProductName
+				lifeStyleProductView.style = .beautyOnly
 			}
             lifeStyleProductView.product = product
             lifeStyleProductView.whyText = itemsA["01"]
