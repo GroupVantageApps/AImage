@@ -1,6 +1,7 @@
 import Alamofire
 import SwiftSpinner
 import SwiftyJSON
+import Zip
 
 enum ContentDownloadError: Error {
     case dbError(Error?)
@@ -99,6 +100,7 @@ class ContentDownloader: NSObject {
             case .success(let value):
                 if JSON(value)["result"].string == "0" {
                     completion(.success)
+                    self.unzipLXFile()
                 } else {
                     completion(.failure(ContentDownloadError.sendComplete))
                 }
@@ -336,6 +338,49 @@ class ContentDownloader: NSObject {
                 print(error.localizedDescription)
                 closure(logInfo)
             }
+        }
+    }
+    private func unzipLXFile() {
+        
+        let movieFilePathStr = NSHomeDirectory() + "/Documents/lx_movie"
+        let manager = FileManager()
+        if manager.fileExists(atPath: movieFilePathStr) {
+            do {
+                let filePath: URL = URL.init(string: movieFilePathStr)!
+                print(filePath)
+                try manager.removeItem(at: filePath)
+            } catch let e {
+                print(e)
+            }
+        }
+
+        let movieFileUrl: URL = FileTable.getPath(6073)
+        print(movieFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(movieFileUrl)
+            print(destinationURL)
+        } catch let e {
+            print(e)
+        }
+        
+        let imageFilePathStr = NSHomeDirectory() + "/Documents/lx_app"
+        if manager.fileExists(atPath: imageFilePathStr) {
+            do {
+                let filePath: URL = URL.init(string: imageFilePathStr)!
+                print(filePath)
+                try manager.removeItem(at: filePath)
+            } catch let e {
+                print(e)
+            }
+        }
+        
+        let imageFileUrl: URL = FileTable.getPath(6074)
+        print(imageFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(imageFileUrl)
+            print(destinationURL)
+        } catch let e {
+            print(e)
         }
     }
 }

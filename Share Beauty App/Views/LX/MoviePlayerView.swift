@@ -31,7 +31,7 @@ class MoviePlayerView: UIView {
     
     func playMovie(movie: String) {
         
-        let path = Bundle.main.path(forResource: movie, ofType:"mp4")!
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/%@.mp4",movie))
         let videoURL = NSURL(fileURLWithPath: path)
         player = AVPlayer(url: videoURL as URL)
         playerLayer = AVPlayerLayer(player: player)
