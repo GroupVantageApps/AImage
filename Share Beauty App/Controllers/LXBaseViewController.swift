@@ -25,7 +25,7 @@ class LXBaseViewController: UIViewController {
         print("LXBase.viewDidDisappear")
     }
     func didTapPrev() {
-        self.navigationController?.popViewController(animated: false)
+       _ = self.navigationController?.popViewController(animated: false)
     }
     func didHeaderViewAction(_ type: LXHeaderViewActionType) {
         switch type {
