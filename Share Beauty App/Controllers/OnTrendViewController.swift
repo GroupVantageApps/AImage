@@ -13,6 +13,7 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
     @IBOutlet weak fileprivate var mPagingProductV: PagingProductView!
     @IBOutlet weak fileprivate var mImgVMainVisual: UIImageView!
     @IBOutlet weak fileprivate var mAVPlayerV: AVPlayerView!
+    @IBOutlet weak var mImgVText: UIImageView!
 
     fileprivate weak var mPlayer: AVPlayer!
 
@@ -36,6 +37,12 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
+        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7812)
+        
+        //@IBOutlet private weak var mImgV: UIImageView!mImgV.image = FileTable.getImage(colorball.imageId)
+        if let textImage = FileTable.getImage(textImageId.first) {
+            mImgVText.image = textImage
+        }
     }
 
     fileprivate func createVideo() {
