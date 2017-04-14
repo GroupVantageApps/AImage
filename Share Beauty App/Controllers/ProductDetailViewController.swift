@@ -96,6 +96,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     private var mSuncareFeaturesView: SunCareFeaturesView!
     private var mWasoFeatureView: WasoFeatureView!
     private var mMakeupUsageView: MakeupUsageView!
+	
+	private var movieTelop: TelopData!
+	private var currentMovieTelop: TelopData.DataStructTerop? = nil
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -190,6 +193,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         self.initTransitionView()
 
         mScrollVPinch.delegate = self
+		
+		// 動画テロップデータ読み込み
+		self.movieTelop = TelopData(movieId: product.movie)
     }
 
     override func viewDidLayoutSubviews() {
@@ -534,6 +540,57 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         self.present(avPlayerVc, animated: true, completion: nil)
         avPlayer.play()
+		
+		// テロップ表示用ラベル
+		let telopLabel = UILabel()
+		telopLabel.numberOfLines = 0
+		telopLabel.lineBreakMode = .byWordWrapping
+		telopLabel.backgroundColor = .clear
+		telopLabel.font = UIFont.systemFont(ofSize: 24.0)
+		telopLabel.adjustsFontSizeToFitWidth = true
+		telopLabel.minimumScaleFactor = 0.6
+		telopLabel.textColor = .white
+		telopLabel.textAlignment = .center
+		let labelWidth = self.view.width * 0.9
+		telopLabel.frame = CGRect(x: (self.view.width - labelWidth) / 2.0, y: self.view.height - 60.0, width: labelWidth, height: 130.0)
+		avPlayerVc.contentOverlayView?.addSubview(telopLabel)
+		
+		// 再生位置を監視し、テロップを表示する
+		let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
+		avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
+			// 内部関数: 該当のテロップデータを検索する
+			func searchTelop(playbackPosition: Float64) -> TelopData.DataStructTerop? {
+				var result: TelopData.DataStructTerop? = nil
+				for data in self.movieTelop.datas {
+					if data.startTime <= playbackPosition && data.endTime >= playbackPosition {
+						result = data
+						break
+					}
+				}
+				
+				return result
+			}
+			
+			// 内部関数: テロップラベルの更新
+			func updateTelopLabel() {
+				if let current = self.currentMovieTelop {
+					telopLabel.text = current.content
+				} else {
+					telopLabel.text = nil
+				}
+			}
+			
+			let playbackPosition = CMTimeGetSeconds(time)
+			if let current = self.currentMovieTelop {
+				if current.startTime > playbackPosition || current.endTime < playbackPosition {
+					self.currentMovieTelop = searchTelop(playbackPosition: playbackPosition)
+					updateTelopLabel()
+				}
+			} else {
+				self.currentMovieTelop = searchTelop(playbackPosition: playbackPosition)
+				updateTelopLabel()
+			}
+		})
     }
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {

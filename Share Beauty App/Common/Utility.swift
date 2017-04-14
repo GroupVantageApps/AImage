@@ -135,6 +135,16 @@ class Utility: NSObject {
     static func toStr(_ value: Any?) -> String {
         return value as! String
     }
+	//JSONのパース結果の値をDoubleに変換する
+	static func toDouble(_ value: Any?) -> Double {
+		if let value = value as? Double {
+			return value
+		} else if let value = value as? String {
+			return atof(value)
+		} else {
+			return 0.0
+		}
+	}
 
     //オンラインチェック
     static func checkOnline() -> Bool {

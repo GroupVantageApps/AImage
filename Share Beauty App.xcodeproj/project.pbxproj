@@ -10,6 +10,11 @@
 		2B336B249D71D6246E23B7EF /* Pods_Share_Beauty_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */; };
 		5C233F93CC49A1135544BD45 /* Pods_Share_Beauty_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */; };
 		611D84057A55077F8526921F /* Pods_Share_Beauty_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */; };
+		800892171EA0DA24007C592A /* TelopTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892151EA0DA24007C592A /* TelopTable.swift */; };
+		800892181EA0DA24007C592A /* TelopTranslateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892161EA0DA24007C592A /* TelopTranslateTable.swift */; };
+		8008921B1EA0DF59007C592A /* TelopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892191EA0DF59007C592A /* TelopEntity.swift */; };
+		8008921C1EA0DF59007C592A /* TelopTranslateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */; };
+		8008921E1EA0DF66007C592A /* TelopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921D1EA0DF66007C592A /* TelopData.swift */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
 		C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D55571DC611A0008795D4 /* ColorballView.swift */; };
 		C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00D55581DC611A0008795D4 /* ColorballView.xib */; };
@@ -467,6 +472,11 @@
 		24AFBABB1CB1A80F7D07FA74 /* Pods-Share Beauty AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9321C537E378B56541512 /* Pods-Share Beauty AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		800892151EA0DA24007C592A /* TelopTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTable.swift; path = Database/table/TelopTable.swift; sourceTree = "<group>"; };
+		800892161EA0DA24007C592A /* TelopTranslateTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateTable.swift; path = Database/table/TelopTranslateTable.swift; sourceTree = "<group>"; };
+		800892191EA0DF59007C592A /* TelopEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopEntity.swift; path = Database/entity/TelopEntity.swift; sourceTree = "<group>"; };
+		8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateEntity.swift; path = Database/entity/TelopTranslateEntity.swift; sourceTree = "<group>"; };
+		8008921D1EA0DF66007C592A /* TelopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopData.swift; path = Database/data/TelopData.swift; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1570,6 +1580,7 @@
 		EB7365791D829D5700D223BA /* data */ = {
 			isa = PBXGroup;
 			children = (
+				8008921D1EA0DF66007C592A /* TelopData.swift */,
 				EBC014851D99DA700006827C /* IdealBeautySecondsData.swift */,
 				EBC014861D99DA700006827C /* IdealBeautyLinesData.swift */,
 				EBC014871D99DA710006827C /* LineDetailData.swift */,
@@ -1584,6 +1595,8 @@
 		EB7365841D830D8700D223BA /* table */ = {
 			isa = PBXGroup;
 			children = (
+				800892151EA0DA24007C592A /* TelopTable.swift */,
+				800892161EA0DA24007C592A /* TelopTranslateTable.swift */,
 				C0880CF51E4B209C006A3713 /* CountryTable.swift */,
 				C0880CF61E4B209C006A3713 /* RegionTable.swift */,
 				EB8F340E1D884D5600641976 /* AppItemTable.swift */,
@@ -1618,6 +1631,8 @@
 		EB73659D1D83152300D223BA /* entity */ = {
 			isa = PBXGroup;
 			children = (
+				800892191EA0DF59007C592A /* TelopEntity.swift */,
+				8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */,
 				C0880CFB1E4B2123006A3713 /* CountryEntity.swift */,
 				C0880CF91E4B20B1006A3713 /* RegionEntitiy.swift */,
 				EB8F34001D884D4800641976 /* AppItemEntity.swift */,
@@ -2250,6 +2265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800892181EA0DA24007C592A /* TelopTranslateTable.swift in Sources */,
 				DE2C90981E9C66E600B5FC4A /* LXYutakaConceptContentThirdView.swift in Sources */,
 				C0D195451DE7025D00C8B88E /* NSMutableAttributedString+Additions.h in Sources */,
 				C0880CF11E4B2048006A3713 /* SettingViewController.swift in Sources */,
@@ -2275,8 +2291,10 @@
 				EB5A4E9C1DC5EA0D00BCC2B7 /* ColorballTranslateEntity.swift in Sources */,
 				C0A950491E642FBE0058E40C /* PagingHorizontalLayout.swift in Sources */,
 				EB7365AF1D83156F00D223BA /* StepUpperTranslateEntity.swift in Sources */,
+				8008921E1EA0DF66007C592A /* TelopData.swift in Sources */,
 				C0880CFA1E4B20B1006A3713 /* RegionEntitiy.swift in Sources */,
 				C037CBAC1D87FB9D00DEFE14 /* UIColor+FQExtention.swift in Sources */,
+				8008921C1EA0DF59007C592A /* TelopTranslateEntity.swift in Sources */,
 				C03520EA1DA0F36E005129B5 /* TroubleView.swift in Sources */,
 				C03520D41D9E8520005129B5 /* IdealResultCollectionView.swift in Sources */,
 				DE2C8EF41E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift in Sources */,
@@ -2299,6 +2317,7 @@
 				C0B263E51E6E98FB00452C12 /* WasoGraphEfficacyView.swift in Sources */,
 				C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */,
 				DE2C90881E9C66E600B5FC4A /* LXIngredientView.swift in Sources */,
+				800892171EA0DA24007C592A /* TelopTable.swift in Sources */,
 				C046D9801D75733E007F57CA /* AVPlayerView.swift in Sources */,
 				EBF938331D814FF000DF9D1B /* Utility.swift in Sources */,
 				EB7365961D83125800D223BA /* StepLowerTable.swift in Sources */,
@@ -2421,6 +2440,7 @@
 				EB8F34181D884D5600641976 /* AppScreenTranslateTable.swift in Sources */,
 				EBC014891D99DA710006827C /* IdealBeautyLinesData.swift in Sources */,
 				EB7365901D8311C100D223BA /* StepUpperTable.swift in Sources */,
+				8008921B1EA0DF59007C592A /* TelopEntity.swift in Sources */,
 				EBF938301D814FDF00DF9D1B /* FMDatabaseQueue.m in Sources */,
 				EB7365AB1D83156F00D223BA /* ProductTranslateEntity.swift in Sources */,
 				C0880CEA1E4B1E6A006A3713 /* DownloadConfigure.swift in Sources */,
