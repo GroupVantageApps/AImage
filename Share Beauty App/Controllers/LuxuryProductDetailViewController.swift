@@ -183,7 +183,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
 
             self.setSpecialCaseConstraints(targetView: mSuncareFeaturesView, viewHeight: 300)
         }
-        mTroubleSelectView.troubles = product.trables
+        mTroubleSelectView.troubles = product.troubles
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示

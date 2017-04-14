@@ -422,6 +422,7 @@
 		EB8F34191D884D5600641976 /* BeautySecondTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F34121D884D5600641976 /* BeautySecondTable.swift */; };
 		EB8F341A1D884D5600641976 /* BeautySecondTranslateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F34131D884D5600641976 /* BeautySecondTranslateTable.swift */; };
 		EB8F341B1D884D5600641976 /* FileTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8F34141D884D5600641976 /* FileTable.swift */; };
+		EBB3BCD91E9F685B0071FE0F /* ProductDetailSkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */; };
 		EBBEB4DD1D9FC49800846786 /* ideal_background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EBBEB4DC1D9FC49800846786 /* ideal_background.mp4 */; };
 		EBBF4E141D955955001CD8B3 /* GcodeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF4E111D955955001CD8B3 /* GcodeTable.swift */; };
 		EBBF4E151D955955001CD8B3 /* UnitTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF4E121D955955001CD8B3 /* UnitTable.swift */; };
@@ -898,6 +899,7 @@
 		EB8F34121D884D5600641976 /* BeautySecondTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeautySecondTable.swift; path = Database/table/BeautySecondTable.swift; sourceTree = "<group>"; };
 		EB8F34131D884D5600641976 /* BeautySecondTranslateTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeautySecondTranslateTable.swift; path = Database/table/BeautySecondTranslateTable.swift; sourceTree = "<group>"; };
 		EB8F34141D884D5600641976 /* FileTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileTable.swift; path = Database/table/FileTable.swift; sourceTree = "<group>"; };
+		EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailSkinConcernView.swift; sourceTree = "<group>"; };
 		EBBEB4DC1D9FC49800846786 /* ideal_background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ideal_background.mp4; sourceTree = "<group>"; };
 		EBBF4E111D955955001CD8B3 /* GcodeTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GcodeTable.swift; path = Database/table/GcodeTable.swift; sourceTree = "<group>"; };
 		EBBF4E121D955955001CD8B3 /* UnitTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitTable.swift; path = Database/table/UnitTable.swift; sourceTree = "<group>"; };
@@ -1268,72 +1270,73 @@
 			isa = PBXGroup;
 			children = (
 				DE2C904F1E9C66E600B5FC4A /* LX */,
-				E57BB3261E598C0100D4F5FB /* ProductLineCollectionViewCell.swift */,
-				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
-				C091BA731D69809F0073FEDB /* BaseView.swift */,
+				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
 				C0AFC9861D86AF1B0066B988 /* BaseButton.swift */,
-				C091BA751D69809F0073FEDB /* HeaderView.swift */,
-				C091BA7C1D6982B00073FEDB /* HeaderView.xib */,
-				C0665AC71D6ACA0300B3D8E5 /* NavigationView.swift */,
-				C0665AC91D6ACA3D00B3D8E5 /* NavigationView.xib */,
-				C0665B3C1D6B251500B3D8E5 /* TestView.swift */,
-				C0665B3E1D6B252400B3D8E5 /* TestView.xib */,
-				C0BC71791DCB41920038AE1A /* RecommendProductView.swift */,
-				C0BC717A1DCB41920038AE1A /* RecommendProductView.xib */,
+				C091BA731D69809F0073FEDB /* BaseView.swift */,
+				C01D71701D951A790044851C /* CategoryButton.swift */,
+				C01D716E1D951A1E0044851C /* CategoryButton.xib */,
 				C0306D4D1D6EC51800D56F45 /* CollectionProductView.swift */,
 				C0306D4F1D6EC52C00D56F45 /* CollectionProductView.xib */,
-				C0E4DCBE1D71808F00931B66 /* ProductListView.xib */,
-				C0E4DCBC1D71807500931B66 /* ProductListView.swift */,
-				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
-				C03C88491D76AB0D009F526E /* LifeStyleProductView.swift */,
-				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
-				C0A335F11D8035DF006A8FD1 /* ProductView.swift */,
-				C0A335F21D8035DF006A8FD1 /* ProductView.xib */,
-				C0FE16481D853CE700415B65 /* SideBar.swift */,
-				C0880CFD1E4B2434006A3713 /* SideBar.xib */,
-				C0AFC9821D868BA60066B988 /* LanguageSettingTableViewCell.swift */,
-				C08C93221E8A5B590096C98F /* ItemsDisplayedTableViewCell.swift */,
-				C037CBA71D87F6D900DEFE14 /* IdealSelectCell.swift */,
-				C037CBA91D87F6ED00DEFE14 /* IdealSelectCell.xib */,
-				C03520D71D9E88D7005129B5 /* IdealResultCell.swift */,
-				C037CBAD1D880EE600DEFE14 /* IdealSelectCollectionView.swift */,
-				C03520D81D9E88D7005129B5 /* IdealResultCell.xib */,
-				C037CBB11D88112A00DEFE14 /* IdealSelectCollectionView.xib */,
-				C03520D31D9E8520005129B5 /* IdealResultCollectionView.swift */,
-				C03520D51D9E8825005129B5 /* IdealResultCollectionView.xib */,
-				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
-				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
-				C01D716E1D951A1E0044851C /* CategoryButton.xib */,
-				C01D71701D951A790044851C /* CategoryButton.swift */,
-				C05C779C1D9E5ECA00E38B7B /* IdealProductView.swift */,
-				C05C779E1D9E5EFA00E38B7B /* IdealProductView.xib */,
-				C03520E91DA0F36E005129B5 /* TroubleView.swift */,
-				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
-				C0A950481E642FBE0058E40C /* PagingHorizontalLayout.swift */,
-				C0998BEF1DA63DCC00220321 /* PagingProductView.swift */,
-				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
-				C0BC62E31DB0BFC6005E73CE /* TroubleSelectView.swift */,
-				C0BC62E51DB0BFE8005E73CE /* TroubleSelectView.xib */,
-				C00D55571DC611A0008795D4 /* ColorballView.swift */,
-				C00D55581DC611A0008795D4 /* ColorballView.xib */,
 				C00D555B1DC61431008795D4 /* ColorballCollectionView.swift */,
 				C00D555D1DC6146A008795D4 /* ColorballCollectionView.xib */,
+				C00D55571DC611A0008795D4 /* ColorballView.swift */,
+				C00D55581DC611A0008795D4 /* ColorballView.xib */,
+				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
+				E5CCCE911E6A605A008A4481 /* EfficacyResultView.swift */,
+				E5CCCE8F1E6A6032008A4481 /* EfficacyResultView.xib */,
+				C091BA751D69809F0073FEDB /* HeaderView.swift */,
+				C091BA7C1D6982B00073FEDB /* HeaderView.xib */,
+				C05C779C1D9E5ECA00E38B7B /* IdealProductView.swift */,
+				C05C779E1D9E5EFA00E38B7B /* IdealProductView.xib */,
+				C03520D71D9E88D7005129B5 /* IdealResultCell.swift */,
+				C03520D81D9E88D7005129B5 /* IdealResultCell.xib */,
+				C03520D31D9E8520005129B5 /* IdealResultCollectionView.swift */,
+				C03520D51D9E8825005129B5 /* IdealResultCollectionView.xib */,
+				C037CBA71D87F6D900DEFE14 /* IdealSelectCell.swift */,
+				C037CBA91D87F6ED00DEFE14 /* IdealSelectCell.xib */,
+				C037CBAD1D880EE600DEFE14 /* IdealSelectCollectionView.swift */,
+				C037CBB11D88112A00DEFE14 /* IdealSelectCollectionView.xib */,
+				C08C93221E8A5B590096C98F /* ItemsDisplayedTableViewCell.swift */,
+				C0AFC9821D868BA60066B988 /* LanguageSettingTableViewCell.swift */,
 				C0D57C621DD5C0090087258B /* LifeStyleCollectionViewCell.swift */,
 				C0D57C631DD5C0090087258B /* LifeStyleCollectionViewCell.xib */,
+				C03C88491D76AB0D009F526E /* LifeStyleProductView.swift */,
+				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
 				C023C2151E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.swift */,
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
 				C023C21A1E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.xib */,
-				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
-				C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */,
-				E5CCCE8F1E6A6032008A4481 /* EfficacyResultView.xib */,
-				E5CCCE911E6A605A008A4481 /* EfficacyResultView.swift */,
 				C02818AB1E6D449300D4DADA /* MakeupUsageView.swift */,
 				C02818AD1E6D44CA00D4DADA /* MakeupUsageView.xib */,
+				C0665AC71D6ACA0300B3D8E5 /* NavigationView.swift */,
+				C0665AC91D6ACA3D00B3D8E5 /* NavigationView.xib */,
+				C0A950481E642FBE0058E40C /* PagingHorizontalLayout.swift */,
+				C0998BEF1DA63DCC00220321 /* PagingProductView.swift */,
+				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
+				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
+				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
+				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
+				C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */,
+				E57BB3261E598C0100D4F5FB /* ProductLineCollectionViewCell.swift */,
+				C0E4DCBC1D71807500931B66 /* ProductListView.swift */,
+				C0E4DCBE1D71808F00931B66 /* ProductListView.xib */,
+				C0A335F11D8035DF006A8FD1 /* ProductView.swift */,
+				C0A335F21D8035DF006A8FD1 /* ProductView.xib */,
+				C0BC71791DCB41920038AE1A /* RecommendProductView.swift */,
+				C0BC717A1DCB41920038AE1A /* RecommendProductView.xib */,
+				C0FE16481D853CE700415B65 /* SideBar.swift */,
+				C0880CFD1E4B2434006A3713 /* SideBar.xib */,
 				C02818AF1E6D4A2C00D4DADA /* StepUsageView.swift */,
 				C02818B11E6D4A5E00D4DADA /* StepUsageView.xib */,
+				C0665B3C1D6B251500B3D8E5 /* TestView.swift */,
+				C0665B3E1D6B252400B3D8E5 /* TestView.xib */,
+				C0BC62E31DB0BFC6005E73CE /* TroubleSelectView.swift */,
+				C0BC62E51DB0BFE8005E73CE /* TroubleSelectView.xib */,
+				C03520E91DA0F36E005129B5 /* TroubleView.swift */,
+				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
 				C0B263E31E6E98FB00452C12 /* WasoGraphEfficacyView.swift */,
 				C0B263E41E6E98FB00452C12 /* WasoGraphEfficacyView.xib */,
+				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1350,34 +1353,36 @@
 				DE2C8EED1E9B9BAF00B5FC4A /* LuxuryIngredientViewController.swift */,
 				DE2C8EEE1E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift */,
 				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
+				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
+				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
 				C0665ACB1D6AE96D00B3D8E5 /* IdealFirstSelectViewController.swift */,
-				C037CBA41D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift */,
 				C0B1BE701D99436E0008E318 /* IdealResultViewController.swift */,
-				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
+				C037CBA41D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift */,
 				C03520DB1DA0D821005129B5 /* IdealSpecialItemViewController.swift */,
-				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
+				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
+				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
 				C03B08E31D7C2F7C00935CBE /* LifeStyleFirstDetailViewController.swift */,
+				C00EFB151D7EBF3000F9EC8F /* LifeStyleFourthDetailViewController.swift */,
 				C00EFB111D7EBF0200F9EC8F /* LifeStyleSecondDetailViewController.swift */,
 				C00EFB131D7EBF1800F9EC8F /* LifeStyleThirdDetailViewController.swift */,
-				C00EFB151D7EBF3000F9EC8F /* LifeStyleFourthDetailViewController.swift */,
-				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
-				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
-				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
-				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
+				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
 				C0A335E91D80181E006A8FD1 /* LineDetailViewController.swift */,
-				C0A335EB1D802D39006A8FD1 /* LineStepViewController.swift */,
-				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
-				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
 				C042C2111DD46A7200BA0211 /* LineListViewController.swift */,
-				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
+				C0A335EB1D802D39006A8FD1 /* LineStepViewController.swift */,
+				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
+				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
+				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
+				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
+				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
 				E57BB3221E5987B600D4F5FB /* ProductLineViewController.swift */,
-				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
-				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
-				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
-				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
+				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
 				C0AFC9801D85648D0066B988 /* RecommendedViewController.swift */,
 				C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */,
-				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
+				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
+				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
+				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
+				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1807,18 +1812,22 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9EH8D4TG7B;
+						DevelopmentTeam = B67DQER9VC;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					C05913DE1D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B67DQER9VC;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 						TestTargetID = C05913C71D67235700F22214;
 					};
 					C05913E91D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = B67DQER9VC;
 						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 						TestTargetID = C05913C71D67235700F22214;
 					};
 				};
@@ -2418,6 +2427,7 @@
 				EB7365AB1D83156F00D223BA /* ProductTranslateEntity.swift in Sources */,
 				C0880CEA1E4B1E6A006A3713 /* DownloadConfigure.swift in Sources */,
 				EB3C67C31D83678000BCF95A /* LineTranslateEntity.swift in Sources */,
+				EBB3BCD91E9F685B0071FE0F /* ProductDetailSkinConcernView.swift in Sources */,
 				EBBF4E141D955955001CD8B3 /* GcodeTable.swift in Sources */,
 				C0E85A681E221F710035CCC4 /* ProductDetailTransitionView.swift in Sources */,
 				DE2C90A21E9C66E600B5FC4A /* MoviePlayerView.swift in Sources */,
@@ -2880,7 +2890,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 9EH8D4TG7B;
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2892,8 +2902,8 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsbatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a0448c46-f6e2-4a54-a268-1c92971da6ae";
-				PROVISIONING_PROFILE_SPECIFIER = wildcard;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Share Beauty App/Share_Beauty_App-Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
@@ -2909,9 +2919,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SHISEIDO COMPANY, LIMITED";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = J62CVNNG5Q;
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2922,8 +2932,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsbatest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eaf2251d-44ab-4e9d-b2bd-8e132ba162db";
-				PROVISIONING_PROFILE_SPECIFIER = "SBA TEST";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Share Beauty App/Share_Beauty_App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -2936,10 +2946,13 @@
 			baseConfigurationReference = 76C9321C537E378B56541512 /* Pods-Share Beauty AppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				INFOPLIST_FILE = "Share Beauty AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.aqua-web.Share-Beauty-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Share Beauty App.app/Share Beauty App";
 			};
@@ -2950,10 +2963,13 @@
 			baseConfigurationReference = A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				INFOPLIST_FILE = "Share Beauty AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.aqua-web.Share-Beauty-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Share Beauty App.app/Share Beauty App";
 			};
@@ -2963,10 +2979,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24AFBABB1CB1A80F7D07FA74 /* Pods-Share Beauty AppUITests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				INFOPLIST_FILE = "Share Beauty AppUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.aqua-web.Share-Beauty-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Share Beauty App";
 			};
@@ -2976,10 +2995,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EABB2D270401D35E9A6FEA7A /* Pods-Share Beauty AppUITests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B67DQER9VC;
 				INFOPLIST_FILE = "Share Beauty AppUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.aqua-web.Share-Beauty-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Share Beauty App";
 			};

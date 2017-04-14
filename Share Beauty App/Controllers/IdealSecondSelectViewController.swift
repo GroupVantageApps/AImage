@@ -46,6 +46,8 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         Utility.log(items)
         mItemTitle.text = items["01"]
         mButtonView.titleLabel?.text = items["02"]
+        mBtnAllItem.setTitle(items["03"], for: .normal)
+        mBtnAllItem.setTitle(items["03"], for: .selected)
     }
     fileprivate func createVideo() {
         let videoPath = Bundle.main.path(forResource: "ideal_background", ofType:"mp4")

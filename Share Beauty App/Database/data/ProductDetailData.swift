@@ -30,7 +30,7 @@ class ProductDetailData: NSObject {
     var beautyName: String = String()       //m_beauty_second_translate.content.name
     var feature: String = String()
     var howToUse: String = String()
-    var trables: [DataStructTrouble] = []
+    var troubles: [DataStructTrouble] = []
     var relationProduct: [Int] = []
 
     var movie: Int = 0
@@ -129,13 +129,13 @@ class ProductDetailData: NSObject {
             if regionId == Const.regionIdAsia {
                 trouble.displayFlg = value.displayType
                 if trouble.displayFlg == Const.troubleDisplayStrong || trouble.displayFlg == Const.troubleDisplayNormal {
-                    self.trables.append(trouble)
+                    self.troubles.append(trouble)
                 }
 
             } else {
                 //アジア以外の場合は、悩みフラグを無視して通常表示とする
                 trouble.displayFlg = Const.troubleDisplayNormal
-                self.trables.append(trouble)
+                self.troubles.append(trouble)
             }
         }
 

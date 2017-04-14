@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -125,8 +125,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-id-1VR">
-                                        <rect key="frame" x="902" y="24.5" width="92" height="31"/>
-                                        <state key="normal" title="All Item" image="icon_recommend_large">
+                                        <rect key="frame" x="918" y="24.5" width="76" height="31"/>
+                                        <state key="normal" title="All Ite" image="icon_recommend_large">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" title="All Item" image="icon_recommend_selected_large"/>
@@ -183,7 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="mAVPlayerV" destination="pSx-iW-Sah" id="1dt-it-F1W"/>
-                        <outlet property="mBtnAllItem" destination="hhJ-id-1VR" id="PW9-gg-Yh9"/>
+                        <outlet property="mBtnAllItem" destination="hhJ-id-1VR" id="VWJ-H3-0RC"/>
                         <outlet property="mButtonView" destination="rhH-7A-T7o" id="FdM-i8-xf3"/>
                         <outlet property="mIdealSelectCollectionV" destination="M86-5m-WRH" id="G95-An-2ZP"/>
                         <outlet property="mItemTitle" destination="lvI-N4-FdT" id="u3L-eZ-Snq"/>

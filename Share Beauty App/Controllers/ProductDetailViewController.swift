@@ -21,6 +21,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mVBaseFeaturesView: UIView!
     @IBOutlet weak private var mRelationScrollV: UIScrollView!
     @IBOutlet weak private var mVScrollContent: UIView!
+    @IBOutlet weak private var mVSkinConcern: ProductDetailSkinConcernView!
     @IBOutlet weak private var mTroubleSelectView: TroubleSelectView!
     @IBOutlet weak private var mColorballCollectionView: ColorballCollectionView!
     @IBOutlet weak private var mVRelationProductBase: UIView!
@@ -166,7 +167,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
         self.initSpecialView()
 
-        mTroubleSelectView.troubles = product.trables
+        //mVSkinConcern配下に、mTroubleSelectViewがあるので、両方にtroublesを渡す必要はないけど、
+        //mTroubleSelectViewからのイベント(プロトコル)を直接ここで受けたいので、
+        //現状このうような作りになってます
+        mVSkinConcern.troubles = product.troubles
+        mTroubleSelectView.troubles = product.troubles
 
         print("++++++++++++++++++++++++++++++++++++++++++++++++")
         print(self.product.colorballs)
