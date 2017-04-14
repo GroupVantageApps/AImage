@@ -127,4 +127,29 @@ class FileTable: NSObject {
             }
         }
     }
+
+    class func getLXFileImage(_ fileName: String?) -> UIImage? {
+        if fileName == nil {
+            return nil
+        }
+        let filePath: URL = URL.init(string: String(format: "file://%@/Documents/lx_app/lx_app/%@", NSHomeDirectory(), fileName!))!
+        print("\(filePath)")
+        if let data = try? Data(contentsOf: filePath) {
+            return UIImage(data: data)
+        } else {
+            return nil
+        }
+    }
+    class func getLXFileAImage(_ fileName: String?) -> APNGImage? {
+        if fileName == nil {
+            return nil
+        }
+        let filePath: URL = URL.init(string: String(format: "file://%@/Documents/lx_app/lx_app/%@", NSHomeDirectory(), fileName!))!
+        print("\(filePath)")
+        if let data = try? Data(contentsOf: filePath) {
+            return APNGImage(data: data, progressive: true)
+        } else {
+            return nil
+        }
+    }
 }

@@ -229,10 +229,19 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     func didTap(_ sender: IdealProductView) {
         let productId: Int? = sender.product?.productId
         if productId == nil {return}
-        let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-        nextVc.productId = productId!
-        nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
-        self.delegate?.nextVc(nextVc)
+
+        if Const.lineIdLX == sender.product?.lineId {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LXProductDetailViewController", targetClass: LXProductDetailViewController.self) as! LXProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+        } else {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+        }
+
     }
     func didTapTrouble(_ sender: DataStructTrouble) {
         mTroubleView.image = FileTable.getImage(sender.image)

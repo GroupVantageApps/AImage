@@ -322,17 +322,8 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     }
 
     @IBAction func onTapSignatureBeauty(_ sender: AnyObject) {
-        let urlScheme: URL = URL(string: Const.urlSchemeSignatureBeauty)!
-        if UIApplication.shared.canOpenURL(urlScheme) == true {
-            UIApplication.shared.openURL(urlScheme)
-        } else {
-            let alert: UIAlertView = UIAlertView()
-            alert.title = "Warning"
-            alert.message = "App is not installed"
-            alert.delegate = nil
-            alert.addButton(withTitle: "OK")
-            alert.show()
-        }
+        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryViewController", targetClass: LuxuryViewController.self) as! LuxuryViewController
+        delegate?.pushVc(toVc)
         LogManager.tapItem(screenCode: mScreen.code, itemId: "06")
     }
 }

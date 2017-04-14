@@ -140,6 +140,7 @@ class DownloadConfigure {
         self.target = tempTarget!
         self.releaseTarget()
     }
+
     static func releaseTarget() {
         tempTarget = nil
     }

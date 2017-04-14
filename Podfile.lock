@@ -5,6 +5,7 @@ PODS:
   - SCLAlertView (0.7.0)
   - SwiftSpinner (1.1.0)
   - SwiftyJSON (3.1.3)
+  - Zip (0.7.0)
 
 DEPENDENCIES:
   - AImage (from `https://github.com/wangjwchn/AImage`, branch `Swift3`)
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - SCLAlertView
   - SwiftSpinner
   - SwiftyJSON
+  - Zip
 
 EXTERNAL SOURCES:
   AImage:
@@ -31,7 +33,8 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+  Zip: e34513299ac38c0686d5b24504da7ce343799ab9
 
-PODFILE CHECKSUM: d1f48c37240a483c42f47f008a49201927555a8a
+PODFILE CHECKSUM: ba9bc4068843e8f1b45a5ec3493e2a83209e1a21
 
 COCOAPODS: 1.2.1.beta.1

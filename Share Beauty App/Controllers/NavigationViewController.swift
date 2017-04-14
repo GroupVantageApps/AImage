@@ -14,6 +14,7 @@ import SCLAlertView
 protocol NavigationControllerDelegate: NSObjectProtocol {
     func nextVc<T: UIViewController>(_ toVc: T) where T: NavigationControllerAnnotation
     func prevVc()
+    func pushVc<T: UIViewController>(_ toVc: T)
     func backRootVc()
     func requestReloadUpdateStatus()
     func showNavigationView(_ animateDuration: TimeInterval?)
@@ -458,6 +459,10 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         animateSideBar(false, completion: {
             self.prevVc(true)
         })
+    }
+    func pushVc<T: UIViewController>(_ toVc: T) {
+        let navigationController = UINavigationController(rootViewController: toVc)
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
 
     // MARK: - SideBarDelegate
