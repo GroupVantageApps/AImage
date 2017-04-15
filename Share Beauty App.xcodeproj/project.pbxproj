@@ -1521,43 +1521,43 @@
 		E569567A1DF2F56000BE9308 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C05913D71D67235700F22214 /* LaunchScreen.storyboard */,
-				C05913CF1D67235700F22214 /* Main.storyboard */,
-				E56956771DF2F52C00BE9308 /* TopViewController.storyboard */,
+				E52891D21DF2FD9E007B92B2 /* AboutBrandViewController.storyboard */,
+				C0880CFF1E4B2579006A3713 /* CountrySettingViewController.storyboard */,
+				E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */,
 				E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */,
-				E5E0D3EC1DF3D04C0053373F /* IdealSecondSelectViewController.storyboard */,
 				E5E0D4071DF3DFD00053373F /* IdealResultViewController.storyboard */,
-				C02818A81E6C26FF00D4DADA /* NewApproachViewController.storyboard */,
+				E5E0D3EC1DF3D04C0053373F /* IdealSecondSelectViewController.storyboard */,
 				E5E0D40A1DF3E1670053373F /* IdealSpecialItemViewController.storyboard */,
-				E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */,
+				DE2C91261E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard */,
+				E5E0D3F21DF3D32E0053373F /* LanguageSettingViewController.storyboard */,
+				C05913D71D67235700F22214 /* LaunchScreen.storyboard */,
 				E5E0D3F81DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard */,
+				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E5E0D3FB1DF3D6DF0053373F /* LifeStyleSecondDetailViewController.storyboard */,
 				E5E0D3F51DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard */,
-				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
-				E5E0D3FE1DF3D8BE0053373F /* TipsViewController.storyboard */,
-				E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */,
-				E52891CF1DF2FAF3007B92B2 /* OnTrendViewController.storyboard */,
-				C0417E701E65A4D3009519EC /* MakeupViewController.storyboard */,
+				E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */,
 				E52891D51DF2FF2D007B92B2 /* LineDetailViewController.storyboard */,
-				E52891D81DF3006F007B92B2 /* LineStepViewController.storyboard */,
-				E55194B01DF43E120064C37D /* ProductDetailViewController.storyboard */,
-				E52891D21DF2FD9E007B92B2 /* AboutBrandViewController.storyboard */,
 				E5E0D3E91DF3CDEB0053373F /* LineListViewController.storyboard */,
-				C0423F7B1E35EE4F00D56960 /* ProductListViewController.storyboard */,
-				E57BB31F1E597BE000D4F5FB /* ProductLineViewController.storyboard */,
-				C0880D011E4B2579006A3713 /* SettingViewController.storyboard */,
-				C0880D031E4B2579006A3713 /* TargetSettingViewController.storyboard */,
-				C0880CFF1E4B2579006A3713 /* CountrySettingViewController.storyboard */,
-				E5E0D3F21DF3D32E0053373F /* LanguageSettingViewController.storyboard */,
-				E5E0D3EF1DF3D1DB0053373F /* RecommendedViewController.storyboard */,
-				E5E0D4041DF3DA7E0053373F /* ScreenSaveViewController.storyboard */,
-				DE2C91261E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard */,
+				E52891D81DF3006F007B92B2 /* LineStepViewController.storyboard */,
 				DE2C91281E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard */,
 				DE2C912A1E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard */,
 				DE2C912C1E9C681100B5FC4A /* LuxuryProductViewController.storyboard */,
-				DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */,
 				DE2C912E1E9C681100B5FC4A /* LuxuryViewController.storyboard */,
 				DE2C91301E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard */,
+				DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */,
+				C05913CF1D67235700F22214 /* Main.storyboard */,
+				C0417E701E65A4D3009519EC /* MakeupViewController.storyboard */,
+				C02818A81E6C26FF00D4DADA /* NewApproachViewController.storyboard */,
+				E52891CF1DF2FAF3007B92B2 /* OnTrendViewController.storyboard */,
+				E55194B01DF43E120064C37D /* ProductDetailViewController.storyboard */,
+				E57BB31F1E597BE000D4F5FB /* ProductLineViewController.storyboard */,
+				C0423F7B1E35EE4F00D56960 /* ProductListViewController.storyboard */,
+				E5E0D3EF1DF3D1DB0053373F /* RecommendedViewController.storyboard */,
+				E5E0D4041DF3DA7E0053373F /* ScreenSaveViewController.storyboard */,
+				C0880D011E4B2579006A3713 /* SettingViewController.storyboard */,
+				C0880D031E4B2579006A3713 /* TargetSettingViewController.storyboard */,
+				E5E0D3FE1DF3D8BE0053373F /* TipsViewController.storyboard */,
+				E56956771DF2F52C00BE9308 /* TopViewController.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -2195,7 +2195,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -2225,7 +2225,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -2240,7 +2240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {
