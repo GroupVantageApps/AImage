@@ -327,17 +327,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     private func initTransitionView() {
         var datas = [ProductDetailTransitionData]()
-        datas.append(ProductDetailTransitionData(title: "Line Detail", selector: #selector(self.onTapLineDetail(_:))))
+        datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
-            datas.append(ProductDetailTransitionData(title: "Life Style Beauty"/**DBではない*/, selector: #selector(self.onTapLifeStyleBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: "Life Style Beauty", selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
         if Utility.isIconicProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Iconic Beauty"/**DBではない*/, selector: #selector(self.onTapIconicBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: "Iconic Beauty", selector: #selector(self.onTapIconicBeauty(_:))))
         }
         if Utility.isOnTrendProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Latest Beauty"/**平井修正 DBではない*/, selector: #selector(self.onTapOnTrendBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: "Latest Beauty", selector: #selector(self.onTapOnTrendBeauty(_:))))
         }
-
+		
         mTransitionView.setProductDetailTransitionData(datas, target: self)
         mTransitionView.cellHeight = 34
         mTransitionView.setLikeItSelector(#selector(self.onTapRecommend(_:)), target: self)
