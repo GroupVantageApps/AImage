@@ -99,6 +99,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 	
 	private var movieTelop: TelopData!
 	private var currentMovieTelop: TelopData.DataStructTerop? = nil
+	
+	// 特殊な初期表示を行う商品ID辞書
+	private enum eTransitionDestinate {
+		case howTowUse
+	}
+	private let initialTransitionDic: [Int: eTransitionDestinate] = [
+		513: .howTowUse,
+		252: .howTowUse,
+		313: .howTowUse,
+	]
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -212,6 +222,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
             }
         }
+		
+		// 初期特殊遷移
+		self.initialTransition()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -592,6 +605,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			}
 		})
     }
+	
+	/// 初期特殊遷移
+	private func initialTransition() {
+		if let transition = self.initialTransitionDic[self.product.productId] {
+			switch transition {
+			case .howTowUse:
+				self.didTap(self.mCategoryButtonHowToUse)
+			}
+		}
+	}
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
