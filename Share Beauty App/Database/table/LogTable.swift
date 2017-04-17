@@ -66,6 +66,59 @@ class LogTable: NSObject {
         database.close()
         return log
     }
+
+    //Log start
+    class func insertProductLog(_ value: DBInsertValueProductLog) {
+        let countryId: Int = LanguageConfigure.countryId
+        let languageId: Int = LanguageConfigure.languageId
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.string(from: Date())
+        
+        let database = ModelDatabase.getDatabase()
+        database.open()
+        
+        let sql: String = "INSERT OR REPLACE INTO m_log_product (country, language, product, buy_flg, log_date_time) VALUES (?, ?, ?, ?, ?)"
+        database.executeUpdate(sql, withArgumentsIn: [ countryId, languageId, value.product, value.buyFlg, date])
+        database.close()
+    }
+    class func totalProductLog() -> [Any] {
+        let database = ModelDatabase.getDatabase()
+        database.open()
+        
+        let sql: String = "SELECT * FROM m_log_product"
+        let resultSet1: FMResultSet! = database.executeQuery(sql, withArgumentsIn: [])
+        
+        var log: [Any] = []
+        while resultSet1.next() {
+            
+            let country = Utility.toStr(resultSet1.string(forColumn: "country"))
+            let language = Utility.toInt(resultSet1.string(forColumn: "language"))
+            let product = Utility.toInt(resultSet1.string(forColumn: "product"))
+            let buy_flg = Utility.toInt(resultSet1.string(forColumn: "buy_flg"))
+            let date = Utility.toStr(resultSet1.string(forColumn: "log_date_time"))
+            
+            var itemLog: [String: Any] = [:]
+            itemLog["country"] = country
+            itemLog["language"] = language
+            itemLog["product"] = product
+            itemLog["buyFlg"] = buy_flg
+            itemLog["date"] = date
+            
+            log.append(itemLog)
+        }
+        
+        database.close()
+        return log
+    }
+    class func delete_all() {
+        let database = ModelDatabase.getDatabase()
+        database.open()
+        let sql: String = "DELETE FROM m_log_product"
+        database.executeUpdate(sql, withArgumentsIn: [])
+        database.close()
+    }
+    //Log end
 }
 
 struct DBInsertValueLog {
@@ -80,3 +133,14 @@ struct DBInsertValueLog {
         product = 0
     }
 }
+
+//Log start
+struct DBInsertValueProductLog {
+    var product: Int
+    var buyFlg: Int
+    init() {
+        product = 0
+        buyFlg = 0
+    }
+}
+//Log end
