@@ -15,6 +15,8 @@
 		8008921B1EA0DF59007C592A /* TelopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892191EA0DF59007C592A /* TelopEntity.swift */; };
 		8008921C1EA0DF59007C592A /* TelopTranslateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */; };
 		8008921E1EA0DF66007C592A /* TelopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921D1EA0DF66007C592A /* TelopData.swift */; };
+		800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */; };
+		800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */; };
 		803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803566E81EA506F100B27C60 /* TouchTransmissionView.swift */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
 		C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D55571DC611A0008795D4 /* ColorballView.swift */; };
@@ -478,6 +480,8 @@
 		800892191EA0DF59007C592A /* TelopEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopEntity.swift; path = Database/entity/TelopEntity.swift; sourceTree = "<group>"; };
 		8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateEntity.swift; path = Database/entity/TelopTranslateEntity.swift; sourceTree = "<group>"; };
 		8008921D1EA0DF66007C592A /* TelopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopData.swift; path = Database/data/TelopData.swift; sourceTree = "<group>"; };
+		8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoBrandViewController.swift; sourceTree = "<group>"; };
+		800892221EA26E3A007C592A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoBrandViewController.storyboard; sourceTree = "<group>"; };
 		803566E81EA506F100B27C60 /* TouchTransmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransmissionView.swift; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1281,7 +1285,6 @@
 		C091BA721D69809F0073FEDB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DE2C904F1E9C66E600B5FC4A /* LX */,
 				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
 				C0AFC9861D86AF1B0066B988 /* BaseButton.swift */,
 				C091BA731D69809F0073FEDB /* BaseView.swift */,
@@ -1318,6 +1321,7 @@
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
 				C023C21A1E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.xib */,
+				DE2C904F1E9C66E600B5FC4A /* LX */,
 				C02818AB1E6D449300D4DADA /* MakeupUsageView.swift */,
 				C02818AD1E6D44CA00D4DADA /* MakeupUsageView.xib */,
 				C0665AC71D6ACA0300B3D8E5 /* NavigationView.swift */,
@@ -1325,6 +1329,7 @@
 				C0A950481E642FBE0058E40C /* PagingHorizontalLayout.swift */,
 				C0998BEF1DA63DCC00220321 /* PagingProductView.swift */,
 				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
+				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
 				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
 				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
@@ -1394,6 +1399,7 @@
 				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
 				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
 				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1561,6 +1567,7 @@
 				C0880D031E4B2579006A3713 /* TargetSettingViewController.storyboard */,
 				E5E0D3FE1DF3D8BE0053373F /* TipsViewController.storyboard */,
 				E56956771DF2F52C00BE9308 /* TopViewController.storyboard */,
+				800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -1906,6 +1913,7 @@
 				C050C99F1E8267450009679D /* t_gray_graph.png in Resources */,
 				DE2C90A31E9C66E600B5FC4A /* MoviePlayerView.xib in Resources */,
 				C050C97B1E8267450009679D /* efficacy_slider_circle.png in Resources */,
+				800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */,
 				E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */,
 				DE2C90A11E9C66E600B5FC4A /* LXYutakaTreatmentView.xib in Resources */,
 				C050C90B1E82619F0009679D /* ss_ibuki_bg.png in Resources */,
@@ -2322,6 +2330,7 @@
 				DE2C90881E9C66E600B5FC4A /* LXIngredientView.swift in Sources */,
 				800892171EA0DA24007C592A /* TelopTable.swift in Sources */,
 				C046D9801D75733E007F57CA /* AVPlayerView.swift in Sources */,
+				800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */,
 				EBF938331D814FF000DF9D1B /* Utility.swift in Sources */,
 				EB7365961D83125800D223BA /* StepLowerTable.swift in Sources */,
 				C03520DC1DA0D821005129B5 /* IdealSpecialItemViewController.swift in Sources */,
@@ -2505,6 +2514,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				800892221EA26E3A007C592A /* Base */,
+			);
+			name = AboutShiseidoBrandViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		C02818A81E6C26FF00D4DADA /* NewApproachViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

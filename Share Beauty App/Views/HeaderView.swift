@@ -9,7 +9,7 @@
 import UIKit
 
 enum HeaderViewActionType: Int {
-    case home, skip, list, update
+    case home, skip, list, update, shiseido
 }
 
 protocol HeaderViewDelegate: NSObjectProtocol {
@@ -21,6 +21,7 @@ class HeaderView: BaseView {
     @IBOutlet weak private var mBtnSkip: BaseButton!
     @IBOutlet weak private var mBtnOutApp: BaseButton!
     @IBOutlet weak private var mBtnUpdate: BaseButton!
+	@IBOutlet weak var mBtnShiseido: BaseButton!
     @IBOutlet weak private var mConstraintUpdateToOutApp: NSLayoutConstraint!
 
     private let mDropDown = DropDown()
@@ -55,6 +56,9 @@ class HeaderView: BaseView {
     @IBAction func onTapButton(_ sender: Any) {
         delegate?.didHeaderViewAction(.update)
     }
+	@IBAction func onTapShiseido(_ sender: Any) {
+		delegate?.didHeaderViewAction(.shiseido)
+	}
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
