@@ -345,23 +345,18 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     private func initTransitionView() {
         
-        let screen = ScreenData(screenId: Const.screenIdLineDetail)
         let item: [String: String]! = AppItemTable.getItems(screenId: Const.screenIdTop)
-        Utility.log(item["02"])
-        Utility.log(item["04"])
-        Utility.log(screen.name)
-
         
         var datas = [ProductDetailTransitionData]()
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
-            datas.append(ProductDetailTransitionData(title: "Life Style Beauty", selector: #selector(self.onTapLifeStyleBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
         if Utility.isIconicProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Iconic Beauty", selector: #selector(self.onTapIconicBeauty(_:))))  //04
+            datas.append(ProductDetailTransitionData(title: item["04"]!, selector: #selector(self.onTapIconicBeauty(_:))))
         }
         if Utility.isOnTrendProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Latest Beauty", selector: #selector(self.onTapOnTrendBeauty(_:)))) //03
+            datas.append(ProductDetailTransitionData(title: item["03"]!, selector: #selector(self.onTapOnTrendBeauty(_:))))
         }
 		
         mTransitionView.setProductDetailTransitionData(datas, target: self)
