@@ -91,6 +91,12 @@ class ModelDatabase: NSObject {
               " action INT, item TEXT, product INT, log_date_time DATETIME)"
         db.executeUpdate(sql, withArgumentsIn: [])
 
+        //Log DB準備 Start
+        sql = "CREATE TABLE m_log_product (country INT, language INT, " +
+        " buy_flg INT, product INT, log_date_time TEXT, UNIQUE (country, language, product, log_date_time))"
+        db.executeUpdate(sql, withArgumentsIn: [])
+        //Log DB準備 End
+
         sql = "CREATE TABLE m_recommend (product INT, line INT, beauty_second INT)"
         db.executeUpdate(sql, withArgumentsIn: [])
 

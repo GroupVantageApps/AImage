@@ -67,7 +67,6 @@ private extension AboutShiseidoBrandViewController {
 		
 		// 動画テロップデータ読み込み
 		self.movieTelop = TelopData(movieId: movieId)
-		debugPrint("テロップ数: \(self.movieTelop.datas.count)")
 		
 		// 再生位置を監視し、テロップを表示する
 		let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
