@@ -237,6 +237,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView.showAnimation()
         }
             mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
+		
+		self.mWasoFeatureView.beginGuideFrameAnimation()
     }
 
     override func viewWillAppear(_ animated: Bool) {

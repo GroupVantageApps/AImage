@@ -108,11 +108,19 @@ class WasoFeatureView: BaseView {
 		self.mRightImageV.addSubview(guideFrameView)
 		self.mRightImageV.addSubview(iconView)
 		self.mRightImageV.addSubview(onGuideFrameImageView)
+	}
+	
+	/// 案内フレームのアニメーション
+	func beginGuideFrameAnimation() {
+		guard let frameView = self.guideFrameView else {
+			return
+		}
 		
-		// frame viewの点滅アニメーション
 		UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse, .curveEaseOut], animations: {
-			guideFrameView.alpha = 0.2
-		}, completion: nil)
+			frameView.alpha = 0.2
+		}, completion: { flg in
+			frameView.alpha = 1.0
+		})
 	}
 
     private func showHukidashi() {
