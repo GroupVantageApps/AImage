@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Shiseido Brand View Controller-->
+        <scene sceneID="I0x-Ft-gAS">
+            <objects>
+                <viewController storyboardIdentifier="AboutShiseidoBrandViewController" id="DlG-sK-LoC" customClass="AboutShiseidoBrandViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u59-wT-LFA"/>
+                        <viewControllerLayoutGuide type="bottom" id="FG5-iU-Rj2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A9i-Sd-3kQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-Bu-tm9" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="157" y="100" width="710" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-nD-uYV" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                        <rect key="frame" x="305" y="150" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="NdT-nX-B3j"/>
+                                            <constraint firstAttribute="height" constant="100" id="OEn-p5-QYF"/>
+                                        </constraints>
+                                        <state key="normal" image="button_movie_play"/>
+                                        <connections>
+                                            <action selector="onTapPlay:" destination="DlG-sK-LoC" eventType="touchUpInside" id="Mvg-RL-vRa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="CrZ-nD-uYV" firstAttribute="centerY" secondItem="ZAo-Bu-tm9" secondAttribute="centerY" id="20I-Ii-xyW"/>
+                                    <constraint firstAttribute="height" constant="400" id="3p7-ty-a0h"/>
+                                    <constraint firstItem="CrZ-nD-uYV" firstAttribute="centerX" secondItem="ZAo-Bu-tm9" secondAttribute="centerX" id="9yW-5F-Snb"/>
+                                    <constraint firstAttribute="width" constant="710" id="dZt-36-MWZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="vSB-xa-tDb">
+                                <rect key="frame" x="51" y="588" width="922" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="vWg-mn-v3r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZAo-Bu-tm9" firstAttribute="top" secondItem="u59-wT-LFA" secondAttribute="bottom" constant="80" id="6eQ-Nz-oci"/>
+                            <constraint firstItem="vSB-xa-tDb" firstAttribute="width" secondItem="A9i-Sd-3kQ" secondAttribute="width" multiplier="0.9" id="7II-VI-bbC"/>
+                            <constraint firstItem="vSB-xa-tDb" firstAttribute="centerX" secondItem="A9i-Sd-3kQ" secondAttribute="centerX" id="Bft-Yw-sjI"/>
+                            <constraint firstItem="ZAo-Bu-tm9" firstAttribute="centerX" secondItem="A9i-Sd-3kQ" secondAttribute="centerX" id="Z52-aL-eXR"/>
+                            <constraint firstItem="FG5-iU-Rj2" firstAttribute="top" secondItem="vSB-xa-tDb" secondAttribute="bottom" constant="50" id="cIs-D2-pER"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mAVPlayerV" destination="ZAo-Bu-tm9" id="JZd-Uj-uf8"/>
+                        <outlet property="mBtnPlay" destination="CrZ-nD-uYV" id="dnh-Ij-muc"/>
+                        <outlet property="mTelopLabel" destination="vSB-xa-tDb" id="enJ-jY-PxL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dr5-ag-BQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-273" y="259"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_movie_play" width="100" height="100"/>
+    </resources>
+</document>

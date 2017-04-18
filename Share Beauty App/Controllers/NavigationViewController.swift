@@ -376,6 +376,12 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mDidTapSkipFunction = {}
         self.backRootVc(true)
     }
+	
+	/// 資生堂About画面への遷移
+	fileprivate func showAboutShiseido() {
+		let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
+		self.nextVc(vc, animated: true)
+	}
 
     // MARK: - NavigationControllerDelegate
 
@@ -434,6 +440,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             mDidTapSkipFunction()
         case .update:
             self.updateData()
+		case .shiseido:
+			self.showAboutShiseido()
         }
     }
 
