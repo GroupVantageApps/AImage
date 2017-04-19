@@ -226,6 +226,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         product = ProductDetailData(productId: productId)
         mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
     }
+	
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		if let avPlayerVc = object as? AVPlayerViewController {
+			// AVPlayerViewControllerのdismiss間際にframeが1度変化する。このタイミングでオブザーバを削除する
+			if keyPath == #keyPath(UIViewController.view.frame) {
+				avPlayerVc.removeObserver(self, forKeyPath: #keyPath(UIViewController.view.frame))
+				if let player = avPlayerVc.player, let observer = self.mAvPlayerObserver {
+					player.removeTimeObserver(observer)
+					self.mAvPlayerObserver = nil
+				}
+			}
+		}
+	}
 
     // MARK: - PrivateMethod
 
@@ -531,15 +544,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
 
+	private var mAvPlayerObserver: Any? = nil
     private func showMovie(movieId: Int) {
         let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movieId))
-        let avPlayerVc: AVPlayerViewController = AVPlayerViewController()
+        let avPlayerVc = AVPlayerViewController()
         avPlayerVc.player = avPlayer
         if #available(iOS 9.0, *) {
             avPlayerVc.allowsPictureInPicturePlayback = false
         }
-        self.present(avPlayerVc, animated: true, completion: nil)
-        avPlayer.play()
+		self.present(avPlayerVc, animated: true, completion: {
+			// dismissを監視するため、オブザーバ登録する
+			avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+		})
+		avPlayer.play()
 		
 		// テロップ表示用ラベル
 		let telopLabel = UILabel()
@@ -557,7 +574,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		
 		// 再生位置を監視し、テロップを表示する
 		let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
-		avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
+		self.mAvPlayerObserver = avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
 			// 内部関数: 該当のテロップデータを検索する
 			func searchTelop(playbackPosition: Float64) -> TelopData.DataStructTerop? {
 				var result: TelopData.DataStructTerop? = nil
