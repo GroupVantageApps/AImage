@@ -637,10 +637,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 value.line = product.lineId
                 value.beautySecond = product.beautySecondId
                 RecommendTable.insert(value)
+                LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
             }
         } else {
             //delete
             RecommendTable.delete(product.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 

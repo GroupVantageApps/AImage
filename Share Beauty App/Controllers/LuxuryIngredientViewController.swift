@@ -21,7 +21,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXIngredience)
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Luxury Ingredients"
     var isEnterWithNavigationView: Bool = true
@@ -35,7 +35,8 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-        
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
+
         self.mBGImgV.image = FileTable.getLXFileImage("lx_ingredient.png")
         self.mAngelicaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_2.png"), for: .normal)
         self.mCherryBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_3.png"), for: .normal)

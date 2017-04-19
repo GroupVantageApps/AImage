@@ -58,20 +58,20 @@ class LogManager: NSObject {
 
     class func tapItem(screenCode: String, itemId: String) {
 
-        var value: DBInsertValueLog = DBInsertValueLog()
+        var value: DBInsertValueProductLog = DBInsertValueProductLog()
         value.screen = screenCode
         value.action = Const.logActionTapItem
         value.item = itemId
 
-        LogTable.insert(value)
+        LogTable.insertProductLog(value)
     }
 
     class func tapProduct(screenCode: String, productId: Int) {
-        var value: DBInsertValueLog = DBInsertValueLog()
+        var value: DBInsertValueProductLog = DBInsertValueProductLog()
         value.screen = screenCode
         value.action = Const.logActionTapProduct
         value.product = productId
-        LogTable.insert(value)
+        LogTable.insertProductLog(value)
     }
 
     class func sendLog() {
@@ -144,10 +144,12 @@ class LogManager: NSObject {
     }
 
     //Log start
-    class func tapProductReccomend(buyFlg: Int, productId: Int) {
+    class func tapProductReccomend(recommedFlg: Int, productId: Int ,screenCode: String) {
         var value: DBInsertValueProductLog = DBInsertValueProductLog()
-        value.buyFlg = buyFlg
+        value.recommedFlg = recommedFlg
         value.product = productId
+        value.screen = screenCode
+        value.action = Const.logActionTapProduct
         LogTable.insertProductLog(value)
     }
     

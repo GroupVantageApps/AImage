@@ -62,7 +62,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mVMain: UIView!
 
-    private let mScreen = ScreenData(screenId: Const.screenIdProductDetail)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXProduct)
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
@@ -104,6 +104,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: productId)
 
         product = ProductDetailData(productId: productId)
         self.checkSpecialCase()
@@ -443,10 +445,12 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 value.line = product.lineId
                 value.beautySecond = product.beautySecondId
                 RecommendTable.insert(value)
+                LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
             }
         } else {
             //delete
             RecommendTable.delete(product.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 

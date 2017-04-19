@@ -12,7 +12,7 @@ import AVFoundation
 class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXProductDetail)
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Luxury Products"
     var products: [ProductData]!
@@ -36,6 +36,7 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryProductViewController")
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
 
         let line = LineDetailData.init(lineId: 1)
         mUpperSteps = line.step

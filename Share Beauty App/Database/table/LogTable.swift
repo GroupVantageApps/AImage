@@ -72,14 +72,14 @@ class LogTable: NSObject {
         let countryId: Int = LanguageConfigure.countryId
         let languageId: Int = LanguageConfigure.languageId
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss"
         let date = dateFormatter.string(from: Date())
         
         let database = ModelDatabase.getDatabase()
         database.open()
         
-        let sql: String = "INSERT OR REPLACE INTO m_log_product (country, language, product, buy_flg, log_date_time) VALUES (?, ?, ?, ?, ?)"
-        database.executeUpdate(sql, withArgumentsIn: [ countryId, languageId, value.product, value.buyFlg, date])
+        let sql: String = "INSERT OR REPLACE INTO m_log_product (country, language, screen, action, item, product, recommend_flg, log_date_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+        database.executeUpdate(sql, withArgumentsIn: [ countryId, languageId, value.screen, value.action, value.item, value.product, value.recommedFlg, date])
         database.close()
     }
     class func totalProductLog() -> [Any] {
@@ -95,14 +95,20 @@ class LogTable: NSObject {
             let country = Utility.toStr(resultSet1.string(forColumn: "country"))
             let language = Utility.toInt(resultSet1.string(forColumn: "language"))
             let product = Utility.toInt(resultSet1.string(forColumn: "product"))
-            let buy_flg = Utility.toInt(resultSet1.string(forColumn: "buy_flg"))
+            let screen = Utility.toInt(resultSet1.string(forColumn: "screen"))
+            let action = Utility.toInt(resultSet1.string(forColumn: "action"))
+            let item = Utility.toInt(resultSet1.string(forColumn: "item"))
+            let recommend_flg = Utility.toInt(resultSet1.string(forColumn: "recommend_flg"))
             let date = Utility.toStr(resultSet1.string(forColumn: "log_date_time"))
             
             var itemLog: [String: Any] = [:]
             itemLog["country"] = country
             itemLog["language"] = language
             itemLog["product"] = product
-            itemLog["buyFlg"] = buy_flg
+            itemLog["screen"] = screen
+            itemLog["action"] = action
+            itemLog["item"] = item
+            itemLog["recommendFlg"] = recommend_flg
             itemLog["date"] = date
             
             log.append(itemLog)
@@ -136,11 +142,17 @@ struct DBInsertValueLog {
 
 //Log start
 struct DBInsertValueProductLog {
+    var screen: String
+    var item: String
     var product: Int
-    var buyFlg: Int
+    var recommedFlg: Int
+    var action: Int
     init() {
+        screen = ""
+        item = ""
+        recommedFlg = 0
+        action = 0
         product = 0
-        buyFlg = 0
     }
 }
 //Log end

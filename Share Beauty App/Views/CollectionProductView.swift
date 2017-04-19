@@ -21,6 +21,8 @@ class CollectionProductView: UICollectionViewCell {
     @IBOutlet weak fileprivate var mImgVReward: UIImageView!
     @IBOutlet weak fileprivate var mVContent: UIView!
 
+    private let mScreen = ScreenData(screenId: Const.screenIdProductList)
+
     @IBInspectable var productImage: UIImage? {
         didSet {
             mBtnProductImg.setImage(productImage, for: .normal)
@@ -88,8 +90,10 @@ class CollectionProductView: UICollectionViewCell {
                 value.beautySecond = product!.beautySecondId
                 RecommendTable.insert(value)
             }
+            LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
         } else {
             RecommendTable.delete(product!.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 }
