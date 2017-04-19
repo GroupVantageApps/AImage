@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,11 +105,15 @@
             <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9e-j9-Yxq">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPy-Re-QY1" userLabel="CenterView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9e-j9-Yxq" userLabel="RightView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
                     <rect key="frame" x="351" y="0.0" width="336" height="171"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-ef-Nrn">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-ef-Nrn" userLabel="LeftView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="336" height="171"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
@@ -117,13 +121,17 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="haQ-ef-Nrn" firstAttribute="leading" secondItem="lMm-e9-V7Q" secondAttribute="leading" id="CFR-ga-1tB"/>
+                <constraint firstItem="UPy-Re-QY1" firstAttribute="leading" secondItem="lMm-e9-V7Q" secondAttribute="leading" id="HiV-Q7-nFM"/>
+                <constraint firstItem="UPy-Re-QY1" firstAttribute="top" secondItem="lMm-e9-V7Q" secondAttribute="top" id="QUg-MF-5tP"/>
                 <constraint firstItem="W9e-j9-Yxq" firstAttribute="top" secondItem="lMm-e9-V7Q" secondAttribute="top" id="VP1-hz-oVi"/>
+                <constraint firstAttribute="trailing" secondItem="UPy-Re-QY1" secondAttribute="trailing" id="WTI-S4-6Ki"/>
                 <constraint firstAttribute="trailing" secondItem="W9e-j9-Yxq" secondAttribute="trailing" id="YS1-BY-bzJ"/>
                 <constraint firstItem="W9e-j9-Yxq" firstAttribute="leading" secondItem="haQ-ef-Nrn" secondAttribute="trailing" constant="15" id="exd-r4-fbZ"/>
                 <constraint firstItem="W9e-j9-Yxq" firstAttribute="width" secondItem="haQ-ef-Nrn" secondAttribute="width" id="g5Y-sb-XUr"/>
                 <constraint firstAttribute="bottom" secondItem="W9e-j9-Yxq" secondAttribute="bottom" id="h5f-jJ-UbJ"/>
                 <constraint firstItem="haQ-ef-Nrn" firstAttribute="top" secondItem="lMm-e9-V7Q" secondAttribute="top" id="sFw-Cs-69I"/>
                 <constraint firstAttribute="bottom" secondItem="haQ-ef-Nrn" secondAttribute="bottom" id="wCe-Ob-69j"/>
+                <constraint firstAttribute="bottom" secondItem="UPy-Re-QY1" secondAttribute="bottom" id="zqA-Rq-UgO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-1010" y="399"/>
@@ -144,7 +152,7 @@
             <state key="selected">
                 <color key="titleColor" red="0.7843137255" green="0.062745098040000002" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </state>
-            <point key="canvasLocation" x="-1234" y="161"/>
+            <point key="canvasLocation" x="-1214" y="-222"/>
         </button>
         <view contentMode="scaleToFill" id="rGu-IW-88G">
             <rect key="frame" x="0.0" y="0.0" width="376" height="51"/>
@@ -172,8 +180,8 @@
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="MTa-mI-cTh"/>
                                     <exclude reference="1pj-Kg-BuH"/>
+                                    <exclude reference="MTa-mI-cTh"/>
                                 </mask>
                             </variation>
                         </label>
@@ -205,7 +213,7 @@
                 <constraint firstItem="6J7-N4-Hm4" firstAttribute="top" secondItem="rGu-IW-88G" secondAttribute="top" id="MJ9-Dd-Vcr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1175" y="408"/>
+            <point key="canvasLocation" x="-1188" y="58"/>
         </view>
     </objects>
     <resources>

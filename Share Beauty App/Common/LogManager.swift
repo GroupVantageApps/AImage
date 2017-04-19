@@ -142,4 +142,56 @@ class LogManager: NSObject {
 
         }
     }
+
+    //Log start
+    class func tapProductReccomend(buyFlg: Int, productId: Int) {
+        var value: DBInsertValueProductLog = DBInsertValueProductLog()
+        value.buyFlg = buyFlg
+        value.product = productId
+        LogTable.insertProductLog(value)
+    }
+    
+    class func sendProductLog(callback: (Int) -> Void) -> Void {
+        
+        let log = LogTable.totalProductLog()
+        var json: String = ""
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: log, options: [])
+            json = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue)! as String
+        } catch {
+            print("Error!: \(error)")
+        }
+        
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+        let str = "json=" + json
+        let strData = str.data(using: String.Encoding.utf8)
+        print(json)
+        let url = NSURL(string: "https://nscp-ga.heteml.jp/ei_ch/log_sharedBeauty/log_DBconnect.php")
+        let request = NSMutableURLRequest(url: url! as URL)
+        
+        request.httpMethod = "POST"
+        request.httpBody = strData
+        request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData
+        request.timeoutInterval = 30.0
+        
+        var response: URLResponse?
+        
+        do {
+            let data = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
+            let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+            print(String(describing: jsonDict["status"]))
+            
+            let status = jsonDict["status"] as! Int
+            if status == 1 {
+                LogTable.delete_all()
+            }
+            callback(1)
+        } catch (let e) {
+            print(e)
+            callback(0)
+        }
+    }
+    //Log end
 }

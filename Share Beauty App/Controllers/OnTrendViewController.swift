@@ -37,9 +37,8 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
+
         let textImageId = AppItemTable.getMainImageByItemId(itemId: 7812)
-        
-        //@IBOutlet private weak var mImgV: UIImageView!mImgV.image = FileTable.getImage(colorball.imageId)
         if let textImage = FileTable.getImage(textImageId.first) {
             mImgVText.image = textImage
         }

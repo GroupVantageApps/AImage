@@ -99,6 +99,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 	
 	private var movieTelop: TelopData!
 	private var currentMovieTelop: TelopData.DataStructTerop? = nil
+	
+	// 特殊な初期表示を行う商品ID辞書
+	private enum eTransitionDestinate {
+		case howTowUse
+	}
+	private let initialTransitionDic: [Int: eTransitionDestinate] = [
+		513: .howTowUse,
+		252: .howTowUse,
+		313: .howTowUse,
+	]
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -212,6 +222,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
             }
         }
+		
+		// waso用画像タップ案内表示
+		if self.mIsWaso {
+			self.showWasoHukidashiGuideView()
+		}
+		
+		// 初期特殊遷移
+		self.initialTransition()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -219,6 +237,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView.showAnimation()
         }
             mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
+		
+		if let wasoFeatureView = self.mWasoFeatureView {
+			wasoFeatureView.beginGuideFrameAnimation()
+		}
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -339,18 +361,21 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     private func initTransitionView() {
+        
+        let item: [String: String]! = AppItemTable.getItems(screenId: Const.screenIdTop)
+        
         var datas = [ProductDetailTransitionData]()
-        datas.append(ProductDetailTransitionData(title: "Line Detail", selector: #selector(self.onTapLineDetail(_:))))
+        datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
-            datas.append(ProductDetailTransitionData(title: "Life Style Beauty"/**DBではない*/, selector: #selector(self.onTapLifeStyleBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
         if Utility.isIconicProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Iconic Beauty"/**DBではない*/, selector: #selector(self.onTapIconicBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["04"]!, selector: #selector(self.onTapIconicBeauty(_:))))
         }
         if Utility.isOnTrendProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Latest Beauty"/**平井修正 DBではない*/, selector: #selector(self.onTapOnTrendBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["03"]!, selector: #selector(self.onTapOnTrendBeauty(_:))))
         }
-
+		
         mTransitionView.setProductDetailTransitionData(datas, target: self)
         mTransitionView.cellHeight = 34
         mTransitionView.setLikeItSelector(#selector(self.onTapRecommend(_:)), target: self)
@@ -471,6 +496,27 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let height = NSLayoutConstraint.makeHeight(item: targetView, constant: viewHeight)
         mVBaseFeaturesView.addConstraints([left, right, top, bottom, height])
     }
+	
+	/// waso用タップ案内view表示
+	private func showWasoHukidashiGuideView() {
+		if self.mWasoFeatureView == nil {
+			return
+		}
+		
+		let colorDic: [Int: UIColor] = [
+			506: #colorLiteral(red: 0.9215686275, green: 0.9450980392, blue: 0.8431372549, alpha: 1),
+			507: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
+			508: #colorLiteral(red: 0.9215686275, green: 0.9450980392, blue: 0.8431372549, alpha: 1),
+			509: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
+			510: #colorLiteral(red: 0.9725490196, green: 0.968627451, blue: 0.9215686275, alpha: 1),
+			511: #colorLiteral(red: 0.9921568627, green: 0.8980392157, blue: 0.737254902, alpha: 1),
+			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1)
+		]
+		
+		if let color = colorDic[self.productId] {
+			self.mWasoFeatureView.showGuideView(frameColor: color)
+		}
+	}
 
     private func showUtmInfo(_ sender: CategoryButton) {
         if sender === mCategoryButtonFeatures {
@@ -609,6 +655,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			}
 		})
     }
+	
+	/// 初期特殊遷移
+	private func initialTransition() {
+		if let transition = self.initialTransitionDic[self.product.productId] {
+			switch transition {
+			case .howTowUse:
+				self.didTap(self.mCategoryButtonHowToUse)
+			}
+		}
+	}
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController

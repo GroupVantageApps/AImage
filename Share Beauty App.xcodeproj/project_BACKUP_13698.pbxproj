@@ -15,9 +15,12 @@
 		8008921B1EA0DF59007C592A /* TelopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892191EA0DF59007C592A /* TelopEntity.swift */; };
 		8008921C1EA0DF59007C592A /* TelopTranslateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */; };
 		8008921E1EA0DF66007C592A /* TelopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921D1EA0DF66007C592A /* TelopData.swift */; };
+<<<<<<< HEAD
 		800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */; };
 		800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */; };
+=======
 		803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803566E81EA506F100B27C60 /* TouchTransmissionView.swift */; };
+>>>>>>> 6a2c00f03175dd6a5ac1aa7f261339bb820791ac
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
 		C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D55571DC611A0008795D4 /* ColorballView.swift */; };
 		C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00D55581DC611A0008795D4 /* ColorballView.xib */; };
@@ -480,9 +483,12 @@
 		800892191EA0DF59007C592A /* TelopEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopEntity.swift; path = Database/entity/TelopEntity.swift; sourceTree = "<group>"; };
 		8008921A1EA0DF59007C592A /* TelopTranslateEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateEntity.swift; path = Database/entity/TelopTranslateEntity.swift; sourceTree = "<group>"; };
 		8008921D1EA0DF66007C592A /* TelopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopData.swift; path = Database/data/TelopData.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoBrandViewController.swift; sourceTree = "<group>"; };
 		800892221EA26E3A007C592A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoBrandViewController.storyboard; sourceTree = "<group>"; };
+=======
 		803566E81EA506F100B27C60 /* TouchTransmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransmissionView.swift; sourceTree = "<group>"; };
+>>>>>>> 6a2c00f03175dd6a5ac1aa7f261339bb820791ac
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1329,6 +1335,7 @@
 				C0A950481E642FBE0058E40C /* PagingHorizontalLayout.swift */,
 				C0998BEF1DA63DCC00220321 /* PagingProductView.swift */,
 				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
+				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
 				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
 				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
@@ -1352,8 +1359,11 @@
 				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
 				C0B263E31E6E98FB00452C12 /* WasoGraphEfficacyView.swift */,
 				C0B263E41E6E98FB00452C12 /* WasoGraphEfficacyView.xib */,
+<<<<<<< HEAD
+=======
 				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 				803566E81EA506F100B27C60 /* TouchTransmissionView.swift */,
+>>>>>>> 6a2c00f03175dd6a5ac1aa7f261339bb820791ac
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1361,37 +1371,23 @@
 		C091BA791D6980DE0073FEDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
-				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
+				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
+				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
 				C0665ACB1D6AE96D00B3D8E5 /* IdealFirstSelectViewController.swift */,
+				C0B1BE701D99436E0008E318 /* IdealResultViewController.swift */,
 				C037CBA41D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift */,
 				C03520DB1DA0D821005129B5 /* IdealSpecialItemViewController.swift */,
-				C0B1BE701D99436E0008E318 /* IdealResultViewController.swift */,
-				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
+				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
+				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
 				C03B08E31D7C2F7C00935CBE /* LifeStyleFirstDetailViewController.swift */,
 				C00EFB151D7EBF3000F9EC8F /* LifeStyleFourthDetailViewController.swift */,
 				C00EFB111D7EBF0200F9EC8F /* LifeStyleSecondDetailViewController.swift */,
 				C00EFB131D7EBF1800F9EC8F /* LifeStyleThirdDetailViewController.swift */,
-				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
-				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
+				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
 				C0A335E91D80181E006A8FD1 /* LineDetailViewController.swift */,
 				C042C2111DD46A7200BA0211 /* LineListViewController.swift */,
 				C0A335EB1D802D39006A8FD1 /* LineStepViewController.swift */,
-				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
-				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
-				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
-				E57BB3221E5987B600D4F5FB /* ProductLineViewController.swift */,
-				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
-				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
-				C0AFC9801D85648D0066B988 /* RecommendedViewController.swift */,
-				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
-				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
-				C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */,
-				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
-				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
-				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
-				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
-				8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */,
 				DE2C8EED1E9B9BAF00B5FC4A /* LuxuryIngredientViewController.swift */,
 				DE2C8EEC1E9B9BAF00B5FC4A /* LuxuryProductDetailViewController.swift */,
 				DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */,
@@ -1399,6 +1395,20 @@
 				DE2C8EEE1E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift */,
 				DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */,
 				DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */,
+				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
+				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
+				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
+				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
+				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
+				E57BB3221E5987B600D4F5FB /* ProductLineViewController.swift */,
+				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
+				C0AFC9801D85648D0066B988 /* RecommendedViewController.swift */,
+				C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */,
+				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
+				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
+				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
+				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2205,7 +2215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -2235,7 +2245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -2250,7 +2260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {

@@ -13,6 +13,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
 
     @IBOutlet weak fileprivate var mPagingProductV: PagingProductView!
     @IBOutlet weak private var mAVPlayerV: AVPlayerView!
+    @IBOutlet weak var mImgVText: UIImageView!
 
     private let mScreen = ScreenData(screenId: Const.screenIdIconicBeauty)
 
@@ -30,6 +31,11 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
 
     override func viewDidLoad() {
         mPagingProductV.delegate = self
+
+        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7814)
+        if let textImage = FileTable.getImage(textImageId.first) {
+            mImgVText.image = textImage
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
