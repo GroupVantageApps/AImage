@@ -53,11 +53,11 @@ class EfficacyResultView: UIView {
     private func setTexts() {
         let items = AppItemTable.getItemsByScreenCode("17AWWASO")
         titleLabel.text = (UIUtil.getUtmArray() as NSArray as? [String])?[47]
-        effectLabel.text = items["1"]
-        exampleLabel.text = items["2"]
-        beforeLabel.text = items["4"]
-        afterLabel.text = items["5"]
-        annotationLabel.text = items["6"]
+        effectLabel.text = items["01"]
+        exampleLabel.text = items["02"]
+        beforeLabel.text = items["04"]
+        afterLabel.text = items["05"]
+        annotationLabel.text = items["06"]
     }
 
     @IBAction func sliderValueChanged(_ slider: UISlider) {
