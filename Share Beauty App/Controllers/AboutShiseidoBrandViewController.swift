@@ -18,6 +18,7 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
 	var isEnterWithNavigationView: Bool = true
 	
 	fileprivate var player: AVPlayer!
+	fileprivate var timeObserver: Any? = nil
 	fileprivate var movieTelop: TelopData!
 	fileprivate var currentMovieTelop: TelopData.DataStructTerop? = nil
 
@@ -36,6 +37,15 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	override func willMove(toParentViewController parent: UIViewController?) {
+		if parent == nil {
+			if let observer = self.timeObserver {
+				self.player.removeTimeObserver(observer)
+				self.timeObserver = nil
+			}
+		}
+	}
 }
 
 // MARK: - UI events
@@ -63,14 +73,13 @@ private extension AboutShiseidoBrandViewController {
 		let layer = self.mAVPlayerV.layer as! AVPlayerLayer
 		layer.videoGravity = AVLayerVideoGravityResizeAspect
 		layer.player = player
-//		debugPrint("資生堂紹介動画URL: \(FileTable.getPath(6075).path)")
 		
 		// 動画テロップデータ読み込み
 		self.movieTelop = TelopData(movieId: movieId)
 		
 		// 再生位置を監視し、テロップを表示する
 		let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
-		self.player.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
+		self.timeObserver = self.player.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
 			// 内部関数: 該当のテロップデータを検索する
 			func searchTelop(playbackPosition: Float64) -> TelopData.DataStructTerop? {
 				var result: TelopData.DataStructTerop? = nil
