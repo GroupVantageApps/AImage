@@ -144,6 +144,7 @@ class ProductDetailTransitionView: BaseView {
 
         button.titleLabel?.text = data.title
         button.setTitle(data.title, for: .normal)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.black.cgColor
         print(data.selector.customMirror.description)
