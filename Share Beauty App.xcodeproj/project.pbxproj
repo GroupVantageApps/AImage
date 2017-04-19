@@ -1329,6 +1329,7 @@
 				C0A950481E642FBE0058E40C /* PagingHorizontalLayout.swift */,
 				C0998BEF1DA63DCC00220321 /* PagingProductView.swift */,
 				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
+				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
 				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
 				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
@@ -1346,14 +1347,13 @@
 				C02818B11E6D4A5E00D4DADA /* StepUsageView.xib */,
 				C0665B3C1D6B251500B3D8E5 /* TestView.swift */,
 				C0665B3E1D6B252400B3D8E5 /* TestView.xib */,
+				803566E81EA506F100B27C60 /* TouchTransmissionView.swift */,
 				C0BC62E31DB0BFC6005E73CE /* TroubleSelectView.swift */,
 				C0BC62E51DB0BFE8005E73CE /* TroubleSelectView.xib */,
 				C03520E91DA0F36E005129B5 /* TroubleView.swift */,
 				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
 				C0B263E31E6E98FB00452C12 /* WasoGraphEfficacyView.swift */,
 				C0B263E41E6E98FB00452C12 /* WasoGraphEfficacyView.xib */,
-				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
-				803566E81EA506F100B27C60 /* TouchTransmissionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

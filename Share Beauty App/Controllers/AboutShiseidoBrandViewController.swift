@@ -26,8 +26,14 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
 	@IBOutlet weak var mBtnPlay: BaseButton!
 	@IBOutlet weak var mTelopLabel: UILabel!
 	
+	deinit {
+		self.delegate?.setAboutShiseidoButtonEnabled(true)
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.delegate?.setAboutShiseidoButtonEnabled(false)
 		
         self.preparationMovie()
 		self.mAVPlayerV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTapView(sender:))))

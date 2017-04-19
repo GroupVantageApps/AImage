@@ -21,6 +21,7 @@ protocol NavigationControllerDelegate: NSObjectProtocol {
     func hideNavigationView(_ animateDuration: TimeInterval?)
     func showVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?, didTapFunction: @escaping () -> ())
     func hideVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?)
+	func setAboutShiseidoButtonEnabled(_ isEnabled: Bool)
 }
 
 protocol NavigationControllerAnnotation: NSObjectProtocol {
@@ -425,6 +426,10 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mHeaderView.showSkipButton(false, animateDuration: animateDuration)
         mDidTapSkipFunction = {}
     }
+	
+	func setAboutShiseidoButtonEnabled(_ isEnabled: Bool) {
+		mHeaderView.setAboutShiseidoEnabled(isEnabled)
+	}
 
     // MARK: - HeaderViewDelegate
 
