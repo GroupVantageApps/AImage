@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAo-Bu-tm9" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                <rect key="frame" x="157" y="100" width="710" height="400"/>
+                                <rect key="frame" x="76.5" y="100" width="871" height="491"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-nD-uYV" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                        <rect key="frame" x="305" y="150" width="100" height="100"/>
+                                        <rect key="frame" x="385.5" y="195.5" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="NdT-nX-B3j"/>
                                             <constraint firstAttribute="height" constant="100" id="OEn-p5-QYF"/>
@@ -40,9 +40,9 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="CrZ-nD-uYV" firstAttribute="centerY" secondItem="ZAo-Bu-tm9" secondAttribute="centerY" id="20I-Ii-xyW"/>
-                                    <constraint firstAttribute="height" constant="400" id="3p7-ty-a0h"/>
+                                    <constraint firstAttribute="height" constant="491" id="3p7-ty-a0h"/>
                                     <constraint firstItem="CrZ-nD-uYV" firstAttribute="centerX" secondItem="ZAo-Bu-tm9" secondAttribute="centerX" id="9yW-5F-Snb"/>
-                                    <constraint firstAttribute="width" constant="710" id="dZt-36-MWZ"/>
+                                    <constraint firstAttribute="width" constant="871" id="dZt-36-MWZ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="vSB-xa-tDb">
