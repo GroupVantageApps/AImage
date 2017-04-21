@@ -65,7 +65,7 @@ class LineTranslateTable: NSObject {
         database.open()
 
         let languageId = LanguageConfigure.languageId
-        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_line_translate WHERE language_id = ?", withArgumentsIn: [languageId])
+        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_line_translate WHERE language_id = ? AND use_flg = 1 ", withArgumentsIn: [languageId])
 
         var entities = [LineTranslateEntity]()
 

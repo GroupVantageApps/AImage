@@ -191,7 +191,7 @@ class ProductListData: NSObject {
 
                 } else if self.pattern == 8 {
                     self.addLX()
-                    self.addUTM()
+                    //self.addUTM()
                 }
 
             self.products.append(ideal.line)
