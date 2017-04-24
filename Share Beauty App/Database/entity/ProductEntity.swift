@@ -33,6 +33,7 @@ class ProductEntity: NSObject {
     var newItemFlg: Int = 0
 
     var spMovies = [Int]()
+	var makeupLook: Bool = false
 }
 
 struct DBStructFinish {

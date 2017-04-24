@@ -142,7 +142,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
         mCategoryButtonTechnologies.title = mItemsCommon["05"]
-        mCategoryButtonDefend.title = mItemsSideMenu["16"]
+		mCategoryButtonDefend.title =  product.makeupLook ? mItemsCommon["06"] : mItemsSideMenu["16"]
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
 
         mImgVProduct.image = FileTable.getImage(product.image)
@@ -157,7 +157,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
-        mCategoryButtonDefend.enabled = mIsUtm
+		
+		if product.makeupLook {
+			mCategoryButtonDefend.enabled = product.backImage != nil
+		} else {
+			mCategoryButtonDefend.enabled = mIsUtm
+		}
 
         self.setSpecialMenu()
 
@@ -586,7 +591,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if sender === mCategoryButtonEfficacy {
             makeCategoryImages(product.effectImage)
         } else if sender === mCategoryButtonDefend {
-
+			if product.makeupLook {
+				if let backImage = product.backImage {
+					makeCategoryImages([backImage])
+				}
+			}
         }
     }
 
