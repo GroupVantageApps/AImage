@@ -25,7 +25,7 @@ class LineTranslateTable: NSObject {
 
             entity.lineTranslateId = Utility.toInt(resultSet.string(forColumn: "id"))
 
-            Utility.log(resultSet.string(forColumn: "content"))
+            //Utility.log(resultSet.string(forColumn: "content"))
             let json = Utility.parseContent(resultSet)
             entity.name = Utility.toStr(json["name"])
             entity.subTitle = Utility.toStr(json["sub_title"])
