@@ -315,6 +315,9 @@ class ProductListData: NSObject {
         let entity: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
         for stepLowerId in stepLowerIds {
             for step in entity.lineStep {
+                if step.stepId == 6 {   //#2182
+                    continue
+                }
                 if step.stepId == stepLowerId {
                     let tempProducts = step.product.map { ProductData(productId: $0) }
                     let newProducts = tempProducts.filter { $0.newItemFlg == 1 }
