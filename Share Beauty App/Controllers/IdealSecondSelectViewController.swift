@@ -37,7 +37,7 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("IdealSecondSelectViewController.viewDidLoad")
+        Utility.log("IdealSecondSelectViewController.viewDidLoad")
         mIdealSelectCollectionV.delegate = self
         let idealBeautySecondsData = IdealBeautySecondsData(lineIds: selectedLineIds!)
         mIdealSelectCollectionV.stepLowers = idealBeautySecondsData.stepLowers
@@ -73,20 +73,16 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        print("IdealThirdSelectViewController.viewWillAppear")
         self.createVideo()
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        print("IdealThirdSelectViewController.viewDidAppear")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        print("IdealThirdSelectViewController.viewWillDisappear")
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        print("IdealThirdSelectViewController.viewDidDisappear")
         self.removeVideo()
     }
 
@@ -135,11 +131,9 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         }
     }
     func didSelectCellSomeone(_ sender: IdealSelectCollectionView) {
-        print("didSelectCellSomeone")
         mVShowResult.isHidden = false
     }
     func didSelectCellNone(_ sender: IdealSelectCollectionView) {
-        print("didSelectCellNone")
         mVShowResult.isHidden = true
     }
 }

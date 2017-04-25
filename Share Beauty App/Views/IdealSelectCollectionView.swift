@@ -53,7 +53,7 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
     fileprivate var mIsSelectSomeone: Bool = false {
         didSet {
             if oldValue == mIsSelectSomeone {
-                return
+                //return
             }
             if mIsSelectSomeone {
                 delegate?.didSelectCellSomeone(self)
@@ -82,7 +82,7 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
         } else {
             mIsLayouted = true
         }
-        print("layoutCollectionView")
+
         var mVContentConstraints: [NSLayoutConstraint] = []
         let mountViews = mVContent.subviews
         for mountView in mountViews {
