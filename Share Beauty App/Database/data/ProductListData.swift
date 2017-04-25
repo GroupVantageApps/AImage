@@ -88,7 +88,7 @@ class ProductListData: NSObject {
 
             let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
             for product in targetProducts {
-                if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).useFlg == 1 {
+                if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
                     ideal.products.append(product)
                 }
             }
@@ -409,7 +409,7 @@ class ProductListData: NSObject {
 
             } else {
                 let data: ProductData = ProductData(productId: productId)
-                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).useFlg == 1 {
+                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                     self.products.append(data)
                 }
             }
@@ -496,7 +496,7 @@ class ProductListData: NSObject {
         let products = productIds.map {ProductData(productId: $0)}
         var dicProducts = [Int:[ProductData]]()
         for product in products {
-            if product.defaultDisplay == 0 || LineTranslateTable.getEntity(product.lineId).useFlg == 0 {continue}
+            if product.defaultDisplay == 0 || LineTranslateTable.getEntity(product.lineId).displayFlg == 0 {continue}
             if dicProducts[product.lineId] == nil {
                 dicProducts[product.lineId] = [product]
             } else {
@@ -522,7 +522,7 @@ class ProductListData: NSObject {
                     secondsProducts[data.beautySecondId]?.append(data)
                 }
             } else {
-                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).useFlg == 1 {
+                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                     if secondsProducts[data.beautySecondId] == nil {
                         secondsProducts[data.beautySecondId] = [data]
                     } else {

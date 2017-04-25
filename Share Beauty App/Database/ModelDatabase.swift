@@ -87,6 +87,9 @@ class ModelDatabase: NSObject {
         sql = "ALTER TABLE m_product ADD COLUMN line_id int"
         db.executeUpdate(sql, withArgumentsIn: [])
 
+        sql = "ALTER TABLE m_line_translate ADD COLUMN display_flg int DEFAULT 1"
+        db.executeUpdate(sql, withArgumentsIn: [])
+
         sql = "CREATE TABLE m_log (region INT, language INT, screen TEXT, " +
               " action INT, item TEXT, product INT, log_date_time DATETIME)"
         db.executeUpdate(sql, withArgumentsIn: [])
