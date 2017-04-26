@@ -159,7 +159,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
 		
 		if product.makeupLook {
-			mCategoryButtonDefend.enabled = product.backImage != nil
+			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0
 		} else {
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
@@ -592,9 +592,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             makeCategoryImages(product.effectImage)
         } else if sender === mCategoryButtonDefend {
 			if product.makeupLook {
-				if let backImage = product.backImage {
-					makeCategoryImages([backImage])
-				}
+				makeCategoryImages(product.makeupLookImages)
 			}
         }
     }

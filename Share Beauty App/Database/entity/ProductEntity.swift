@@ -34,6 +34,7 @@ class ProductEntity: NSObject {
 
     var spMovies = [Int]()
 	var makeupLook: Bool = false
+	var makeupLookImages = [Int]()
 }
 
 struct DBStructFinish {

@@ -58,6 +58,7 @@ class ProductDetailData: NSObject {
     var spec: String = String()
 	
 	var makeupLook: Bool = false
+	var makeupLookImages = [Int]()
 
     //簡易イニシャライザ
     convenience init(productId: Int, screenId: String) {
@@ -100,6 +101,7 @@ class ProductDetailData: NSObject {
 
         self.spMovies = self.productEntity.spMovies
 		self.makeupLook = self.productEntity.makeupLook
+		self.makeupLookImages = self.productEntity.makeupLookImages
 
         //concernソート
         let sort = [Const.troubleDisplayStrong, Const.troubleDisplayNormal, Const.troubleDisplayHide]
