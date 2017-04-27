@@ -455,17 +455,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     @IBAction private func onTapLineDetail(_ sender: AnyObject) {
-        let line = LineDetailData(lineId: self.product.lineId)
-        if line.feature != "" && Bool(line.lineStepFlg as NSNumber) {
-            let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
-            lineDetailVc.lineId = self.product.lineId
-            lineDetailVc.beautySecondId = self.product.beautySecondId
-            delegate?.nextVc(lineDetailVc)
-        } else {
-            let lineListVc = UIViewController.GetViewControllerFromStoryboard("LineListViewController", targetClass: LineListViewController.self) as! LineListViewController
-            lineListVc.line = line
-            delegate?.nextVc(lineListVc)
-        }
+        _ = self.navigationController?.popViewController(animated: false)
     }
 
     @IBAction private func onTapOnTrendBeauty(_ sender: Any) {
