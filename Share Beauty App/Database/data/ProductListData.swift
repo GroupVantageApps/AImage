@@ -348,14 +348,14 @@ class ProductListData: NSObject {
 
             } else if stepLowerId == 4 {
                 //Softener
-                productIds += [224, 517, 523]
+                productIds += [224, 517]
 
             } else if stepLowerId == 6 {
                 //Ultimune
 
             } else if stepLowerId == 8 {
                 //Serum
-                productIds += [390, 39]
+                productIds += [523, 390, 39]
 
             } else if stepLowerId == 9 {
                 //Moisturizer
