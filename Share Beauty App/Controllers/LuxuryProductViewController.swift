@@ -108,4 +108,17 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
     }
+    @IBAction func onTapBLS(_ sender: Any) {
+        let blsView: LXProductBLSView = UINib(nibName: "LXProductBLSView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductBLSView
+        blsView.setUI()
+        blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(blsView)
+    }
+    @IBAction func onTapGraph(_ sender: Any) {
+        let blsView: LXProductGraphView = UINib(nibName: "LXProductGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphView
+        blsView.setUI()
+        blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(blsView)
+
+    }
 }
