@@ -37,13 +37,12 @@
                     <rect key="frame" x="57" y="478" width="473" height="221"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRG-zu-kRB">
-                            <rect key="frame" x="0.0" y="0.0" width="473" height="230"/>
+                            <rect key="frame" x="0.0" y="0.0" width="473" height="470"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0e-de-7rC">
-                                    <rect key="frame" x="0.0" y="0.0" width="473" height="230"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="473" height="470"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <string key="text">Enmei herb is a legendary Japanese botanical that in ancient times, was known to have substantial healing properties. Shiseido researchers picked the Enmei herb from the foot of Mt. Koya, and watched over their re-growth on the company property.
- An extract of the cultivated plants has been paired with Skingenecell 1P and Vitamin C Ethyl ll to create a more advanced and highly e ective ingredient, SkingenecellEnmei.</string>
+                                    <mutableString key="text">Enmei herb is a legendary Japanese botanical that in ancient times, was known to have substantial healing properties. Shiseido researchers picked the Enmei herb from the foot of Mt. Koya, and watched over their re-growth on the company property. An extract of the cultivated plants has been paired with Skingenecell 1P and Vitamin C Ethyl ll to create a more advanced and highly effective ingredient, SkingenecellEnmei. SkingenecellEnmei brings out the ultimate vitalizing potential of the skin through a regenerative process. The formula helps the skin become impervious to damage, and superior in strength.・Promotes the expression of the longevity gene sirtuin 1 to vitalize skin cells.・Inhibits the negative factor Serpin b3 to promote the natural loss of the nuclei and to fundamentally improve skin quality. ・Suppresses factors that attack Langerhans cells to comprehensively strengthen the skin’s natural power.　</mutableString>
                                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21.700000762939453"/>
                                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -51,7 +50,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="width" constant="473" id="LhT-4R-wRn"/>
-                                <constraint firstAttribute="height" constant="230" id="UgH-tv-kd3"/>
+                                <constraint firstAttribute="height" constant="470" id="UgH-tv-kd3"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -68,6 +67,7 @@
                     <rect key="frame" x="576" y="478" width="43" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="5bD-GJ-Hgn"/>
+                        <constraint firstAttribute="width" constant="43" id="xjb-23-05I"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-Uh-LEu">
@@ -96,19 +96,11 @@
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etk-QN-pQl">
-                    <rect key="frame" x="629" y="577" width="291" height="43"/>
-                    <string key="text">Tree e ects that bring out
-excellent skin cell regeneration effect</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lu7-sy-FdA">
                     <rect key="frame" x="576" y="531" width="30" height="30"/>
                 </button>
                 <button opaque="NO" tag="31" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuP-2v-LZ6">
-                    <rect key="frame" x="576" y="483.5" width="30" height="30"/>
+                    <rect key="frame" x="576" y="484" width="30" height="30"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,11 +110,7 @@ excellent skin cell regeneration effect</string>
                 <constraint firstItem="wvQ-Qn-kAd" firstAttribute="leading" secondItem="hgS-r4-2Iz" secondAttribute="trailing" constant="46" id="3wv-u0-lNe"/>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="leading" secondItem="h7W-mT-bfI" secondAttribute="leading" id="6QZ-tr-EJV"/>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="top" secondItem="wvQ-Qn-kAd" secondAttribute="top" id="80D-Kh-oTZ"/>
-                <constraint firstItem="Etk-QN-pQl" firstAttribute="leading" secondItem="hgS-r4-2Iz" secondAttribute="trailing" constant="99" id="A8X-6o-Nuk"/>
                 <constraint firstItem="nbG-1Z-eNJ" firstAttribute="top" secondItem="8FP-Uh-LEu" secondAttribute="bottom" constant="12" id="C2e-zv-5qp"/>
-                <constraint firstAttribute="bottom" secondItem="Etk-QN-pQl" secondAttribute="bottom" constant="80" id="CCB-Cb-weD"/>
-                <constraint firstItem="nbG-1Z-eNJ" firstAttribute="leading" secondItem="Etk-QN-pQl" secondAttribute="leading" id="CZ3-QC-ONt"/>
-                <constraint firstAttribute="trailing" secondItem="Etk-QN-pQl" secondAttribute="trailing" constant="40" id="EDW-7E-fYI"/>
                 <constraint firstItem="wvQ-Qn-kAd" firstAttribute="leading" secondItem="QuP-2v-LZ6" secondAttribute="leading" id="Fuy-n7-qKt"/>
                 <constraint firstItem="wvQ-Qn-kAd" firstAttribute="centerY" secondItem="QuP-2v-LZ6" secondAttribute="centerY" id="IJk-RD-9JG"/>
                 <constraint firstItem="h7W-mT-bfI" firstAttribute="top" secondItem="jLG-Cn-4uH" secondAttribute="bottom" constant="15" id="K2i-Et-icz"/>
@@ -134,7 +122,6 @@ excellent skin cell regeneration effect</string>
                 <constraint firstItem="hgS-r4-2Iz" firstAttribute="top" secondItem="h7W-mT-bfI" secondAttribute="bottom" constant="18" id="c0j-Qj-y92"/>
                 <constraint firstAttribute="trailing" secondItem="h7W-mT-bfI" secondAttribute="trailing" constant="81" id="dRR-Eq-qjY"/>
                 <constraint firstItem="8FP-Uh-LEu" firstAttribute="leading" secondItem="wvQ-Qn-kAd" secondAttribute="trailing" constant="11" id="fTn-0i-RF5"/>
-                <constraint firstItem="Etk-QN-pQl" firstAttribute="top" secondItem="8FP-Uh-LEu" secondAttribute="bottom" constant="56" id="iIB-M1-O7b"/>
                 <constraint firstAttribute="trailing" secondItem="hgS-r4-2Iz" secondAttribute="trailing" constant="430" id="p5K-dv-kep"/>
                 <constraint firstItem="h7W-mT-bfI" firstAttribute="leading" secondItem="jLG-Cn-4uH" secondAttribute="leading" id="q12-Rh-ahp"/>
                 <constraint firstItem="SLV-ey-DRi" firstAttribute="leading" secondItem="wvQ-Qn-kAd" secondAttribute="leading" id="s1f-YO-H96"/>
