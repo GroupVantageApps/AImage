@@ -19,6 +19,8 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 516/2, y: 605, width: 200, height: 50))
     var mSkingeneceintrolbl = UILabel(frame:CGRect(x: 58, y: 43, width: 376, height: 66))
     var array = ["bummytext.png","serpinb3.png","defend.png"]
+    var titleArr = ["Promotes expression of the longevity gene","Inhibits Serpin b3","Suppresses factors that attack Langerhans cells"]
+    var subTitleArr = ["Promotes the expression of the longevity gene Sirtuin1","Inhibits Serpin b3","Boosts skin’s defenses"]
     let mXbutton = UIButton(frame: CGRect(x: 664, y: 16.7, width: 38, height: 38))
     
       func setUI() {
@@ -30,12 +32,12 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.mScrollView.showsHorizontalScrollIndicator = false
         self.addSubview(self.mScrollView)
         
-        self.mSkingeneceintrolbl.text = "Three effects that bring out\nexcellent skin cell regeneration effect"
-        self.mSkingeneceintrolbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
-        self.mSkingeneceintrolbl.lineBreakMode = NSLineBreakMode.byWordWrapping
-        self.mSkingeneceintrolbl.numberOfLines = 0
-        self.mSkingeneceintrolbl.font = UIFont(name: "ACaslonPro-Regular", size: 23.0)
-        self.addSubview(self.mSkingeneceintrolbl)
+//        self.mSkingeneceintrolbl.text = "Three effects that bring out\nexcellent skin cell regeneration effect"
+//        self.mSkingeneceintrolbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
+//        self.mSkingeneceintrolbl.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        self.mSkingeneceintrolbl.numberOfLines = 0
+//        self.mSkingeneceintrolbl.font = UIFont(name: "ACaslonPro-Regular", size: 23.0)
+//        self.addSubview(self.mSkingeneceintrolbl)
 
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
@@ -70,7 +72,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             subView.addSubview(mLineview)
 
             let mLoremIplbl = UILabel(frame:CGRect(x: 66, y: 27.9, width: 310, height: 51))
-            mLoremIplbl.text = "Lorem Ipsum is simply dummy text of\nthe printing and typesetting industry."
+            mLoremIplbl.text = titleArr[index]
             mLoremIplbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
             mLoremIplbl.font = UIFont(name: "ACaslonPro-Regular", size: 18.0)
             mLoremIplbl.lineBreakMode = NSLineBreakMode.byWordWrapping

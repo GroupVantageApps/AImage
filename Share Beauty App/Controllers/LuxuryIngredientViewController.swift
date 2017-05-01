@@ -75,7 +75,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         self.view.addSubview(greenTeaView)    }
 
     @IBAction func showAngelicaGraphView(_ sender: Any) {
-        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        let skingraph: LXAngelicaView = UINib(nibName: "LXAngelicaView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXAngelicaView
         skingraph.setUI()
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
