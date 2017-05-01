@@ -128,7 +128,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz7-If-yoC" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                    <rect key="frame" x="259" y="64" width="31" height="31"/>
+                                    <rect key="frame" x="260" y="74" width="31" height="31"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="8eH-LL-V0p"/>
                                         <constraint firstAttribute="width" constant="31" id="a3G-ko-4SB"/>
@@ -144,7 +144,7 @@
                                 <constraint firstItem="ciQ-Tz-Ox4" firstAttribute="height" secondItem="vKA-7Z-IFR" secondAttribute="height" multiplier="63:107" id="0up-T0-NcX"/>
                                 <constraint firstItem="15O-Xc-Z9D" firstAttribute="top" secondItem="vKA-7Z-IFR" secondAttribute="top" constant="20" id="5n7-lL-f7e"/>
                                 <constraint firstItem="kz7-If-yoC" firstAttribute="leading" secondItem="ciQ-Tz-Ox4" secondAttribute="trailing" constant="20" id="HiK-nN-JJO"/>
-                                <constraint firstAttribute="bottom" secondItem="kz7-If-yoC" secondAttribute="bottom" multiplier="50:50" constant="45" id="I7F-bw-9uc"/>
+                                <constraint firstAttribute="bottom" secondItem="kz7-If-yoC" secondAttribute="bottom" multiplier="50:50" constant="55" id="I7F-bw-9uc"/>
                                 <constraint firstAttribute="trailing" secondItem="kz7-If-yoC" secondAttribute="trailing" constant="20" id="IJX-Lr-rdP"/>
                                 <constraint firstItem="ciQ-Tz-Ox4" firstAttribute="leading" secondItem="15O-Xc-Z9D" secondAttribute="trailing" constant="20" id="NfO-qA-0g3"/>
                                 <constraint firstAttribute="bottom" secondItem="15O-Xc-Z9D" secondAttribute="bottom" constant="20" id="U3F-9j-VOT"/>
