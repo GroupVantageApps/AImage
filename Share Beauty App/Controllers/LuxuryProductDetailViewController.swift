@@ -11,11 +11,13 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, UIScrollViewDelegate {
+class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate , UIScrollViewDelegate {
     
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
     @IBOutlet weak private var mImgVSecondDailyCare: UIImageView!
+
+    var bgAudioPlayer: AVAudioPlayer!
 
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mVBaseIbukiBtn: UIView!
@@ -144,17 +146,25 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.unitName
 
-        if productId == 516 || productId == 517 || productId == 520 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
             mCategoryButtonTechnologies.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            mCategoryButtonEfficacy.enabled = true
             mCategoryButtonDefend.enabled = true
         } else {
             mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
-            mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
-            mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
             mCategoryButtonDefend.enabled = mIsUtm
         }
+        if productId == 516 || productId == 517 || productId == 519 || productId == 522 || productId == 523 {
+            mCategoryButtonEfficacy.enabled = true
+        } else {
+            mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+        }
+        
+        if productId == 522 || productId == 523 {
+            mCategoryButtonHowToUse.enabled = true
+        } else {
+            mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
+        }
+    
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
         }
@@ -415,13 +425,23 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
+//            mVCategoryImage.isHidden = true
+//            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
+//            efficacyV.setUI()
+//            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+//            self.view.addSubview(efficacyV)
             mVCategoryImage.isHidden = true
-            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-            efficacyV.setUI()
-            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-            self.view.addSubview(efficacyV)
+            let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
+            popup.setUI(productId: productId)
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         } else if sender === mCategoryButtonDefend {
-
+            mVCategoryImage.isHidden = true
+            let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+            popup.setAction()
+            popup.delegate = self
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         }
     }
 
@@ -562,5 +582,26 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
 
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
+    }
+    func didTapshowSkinGraph() {
+        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+
+    func movieAct(){
+        
+        bgAudioPlayer.pause()
+        
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: "lx_ingredient")
+        self.view.addSubview(moviePlay)
+    }
+
+    func endMovie() {
+        bgAudioPlayer.play()
     }
 }

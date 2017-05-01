@@ -22,7 +22,8 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
     
-    
+    var bgAudioPlayer: AVAudioPlayer!
+
     @IBOutlet weak var mBABtn: UIButton!
 
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
@@ -101,6 +102,7 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         print("tappedProduct:\(sender.tag)")
         let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
         toVc.productId = sender.tag
+        toVc.bgAudioPlayer = self.bgAudioPlayer
         self.navigationController?.pushViewController(toVc, animated: false)
     }
     

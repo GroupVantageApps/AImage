@@ -74,6 +74,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         ]
         if LuxuryProductViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryProductViewController
+            toVc.bgAudioPlayer = bgAudioPlayer
             self.navigationController?.pushViewController(toVc, animated: false)
         } else if LuxuryIngredientViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryIngredientViewController
