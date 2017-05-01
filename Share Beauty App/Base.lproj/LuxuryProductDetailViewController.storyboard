@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
                                 <rect key="frame" x="0.0" y="0.0" width="547" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -48,10 +48,10 @@
                                                         <rect key="frame" x="20" y="5" width="984" height="30"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-ju-dYM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="984" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="922" height="30"/>
                                                                 <subviews>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP6-cP-TY8" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="2" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="2" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="96" id="XGt-KU-Daz"/>
                                                                             <constraint firstAttribute="height" constant="41" id="eN6-nP-LfJ"/>
@@ -70,7 +70,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4p-hS-PLc" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="198.5" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="186" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="hXa-jc-mku"/>
                                                                             <constraint firstAttribute="width" constant="96" id="vyN-2g-bev"/>
@@ -83,7 +83,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S57-Ce-Sni" userLabel="MBtn How To Use" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="395" y="2" width="194" height="26"/>
+                                                                        <rect key="frame" x="370" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="D5Y-Rm-FhP"/>
                                                                             <constraint firstAttribute="width" constant="96" id="G54-0c-UIL"/>
@@ -96,7 +96,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-QN-ehF" userLabel="Efficacy Results" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="591" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="554" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="IOQ-GA-y6t"/>
                                                                             <constraint firstAttribute="width" constant="96" id="p3O-0V-TBG"/>
@@ -109,7 +109,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldJ-ru-pkX" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="787.5" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="738" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="SJX-5q-uTy"/>
                                                                             <constraint firstAttribute="width" constant="96" id="YKU-PF-FVT"/>
@@ -145,7 +145,7 @@
                                                                     <constraint firstItem="X4p-hS-PLc" firstAttribute="width" secondItem="IP6-cP-TY8" secondAttribute="width" id="wXR-hK-j2G"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1c-eO-x07">
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1c-eO-x07">
                                                                 <rect key="frame" x="942" y="0.0" width="42" height="30"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" image="lx_product_play_movie.png"/>
@@ -229,21 +229,21 @@
                                                                 <rect key="frame" x="0.0" y="189.5" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_1.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpMorning:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="DUD-3d-ATL"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVZ-4W-9Cd" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="43" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="44" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_2.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpEvening:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="qoE-bt-qEU"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbg-YB-PQa" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="86" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="87" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_3.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpNight:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="4F2-e6-UEx"/>

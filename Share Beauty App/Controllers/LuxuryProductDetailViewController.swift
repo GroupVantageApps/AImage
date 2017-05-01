@@ -144,7 +144,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.unitName
 
-        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 522 || productId == 524 || productId == 525 {
+        if productId == 516 || productId == 517 || productId == 520 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonHowToUse.enabled = true
             mCategoryButtonEfficacy.enabled = true
@@ -407,7 +407,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         }
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
-            makeCategoryImages(product.technologyImage)
+            mVCategoryImage.isHidden = true
+            let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+            technologyV.setUI(productId: productId)
+            technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {

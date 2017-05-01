@@ -371,6 +371,14 @@
 		DEA75C841E9F8961001BE9CC /* 010483lx.csv in Resources */ = {isa = PBXBuildFile; fileRef = DEA75C831E9F8961001BE9CC /* 010483lx.csv */; };
 		DEB555341EB333490022AB0F /* lx_ba_second_face_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */; };
 		DEB555361EB333540022AB0F /* lx_ba_second_face_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB555351EB333540022AB0F /* lx_ba_second_face_2.png */; };
+		DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */; };
+		DEE83E5A1EB75C04000C7D8D /* LXProductTechnologyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */; };
+		DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */; };
+		DEE83E5E1EB761F5000C7D8D /* LXTechBiologicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */; };
+		DEE83E601EB76247000C7D8D /* lx_tech_bio.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */; };
+		DEE83E621EB766CA000C7D8D /* lx_aura.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E611EB766CA000C7D8D /* lx_aura.png */; };
+		DEE83E651EB766EF000C7D8D /* LXTechAuraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */; };
+		DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
 		E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */; };
 		E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */; };
@@ -868,6 +876,14 @@
 		DEA75C831E9F8961001BE9CC /* 010483lx.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 010483lx.csv; sourceTree = "<group>"; };
 		DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_1.png; sourceTree = "<group>"; };
 		DEB555351EB333540022AB0F /* lx_ba_second_face_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_2.png; sourceTree = "<group>"; };
+		DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductTechnologyView.xib; sourceTree = "<group>"; };
+		DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductTechnologyView.swift; sourceTree = "<group>"; };
+		DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechBiologicalView.xib; sourceTree = "<group>"; };
+		DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTechBiologicalView.swift; sourceTree = "<group>"; };
+		DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_tech_bio.png; sourceTree = "<group>"; };
+		DEE83E611EB766CA000C7D8D /* lx_aura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_aura.png; sourceTree = "<group>"; };
+		DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTechAuraView.swift; sourceTree = "<group>"; };
+		DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechAuraView.xib; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
 		E52891CA1DF2F911007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IdealFirstSelectViewController.storyboard; sourceTree = "<group>"; };
 		E52891CD1DF2FA05007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IconicViewController.storyboard; sourceTree = "<group>"; };
@@ -1472,6 +1488,12 @@
 		DE2C904F1E9C66E600B5FC4A /* LX */ = {
 			isa = PBXGroup;
 			children = (
+				DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */,
+				DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */,
+				DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */,
+				DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */,
+				DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */,
+				DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */,
 				DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */,
 				DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */,
 				DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */,
@@ -1537,6 +1559,8 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DEE83E611EB766CA000C7D8D /* lx_aura.png */,
+				DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */,
 				DE7B7E601EB7547D006F8246 /* lx_product_play_movie.png */,
 				DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */,
 				DE48C3161EB6AC6B00D29A8D /* lx_product_graph_4.png */,
@@ -1937,6 +1961,7 @@
 				C050C9031E82619F0009679D /* sib02_before.png in Resources */,
 				C0880D051E4B2579006A3713 /* CountrySettingViewController.storyboard in Resources */,
 				C0665ACA1D6ACA3D00B3D8E5 /* NavigationView.xib in Resources */,
+				DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */,
 				C050C9A51E8267450009679D /* utmeye_image.png in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
@@ -2015,6 +2040,7 @@
 				C037CBAA1D87F6ED00DEFE14 /* IdealSelectCell.xib in Resources */,
 				C050C96E1E8267450009679D /* d_arrow_2.png in Resources */,
 				C050C9741E8267450009679D /* d_graph_line.png in Resources */,
+				DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */,
 				DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
 				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
@@ -2057,6 +2083,7 @@
 				DE48C31D1EB6AC6B00D29A8D /* lx_product_graph_1.png in Resources */,
 				DE2C919E1E9C682500B5FC4A /* lx_top_menu.png in Resources */,
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
+				DEE83E601EB76247000C7D8D /* lx_tech_bio.png in Resources */,
 				DE2C8F511E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf in Resources */,
 				DE2C91371E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard in Resources */,
 				DE2C91891E9C682500B5FC4A /* lx_icon_day.png in Resources */,
@@ -2064,6 +2091,7 @@
 				DEB555341EB333490022AB0F /* lx_ba_second_face_1.png in Resources */,
 				C050C9831E8267450009679D /* utm01_after.png in Resources */,
 				C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */,
+				DEE83E621EB766CA000C7D8D /* lx_aura.png in Resources */,
 				C050C99C1E8267450009679D /* t_graph_gray_eye.png in Resources */,
 				DE2C909B1E9C66E600B5FC4A /* LXYutakaConceptSubView.xib in Resources */,
 				C050C8FF1E82619F0009679D /* features_whitelucent_1.png in Resources */,
@@ -2152,6 +2180,7 @@
 				C050C9871E8267450009679D /* utm03_after.png in Resources */,
 				DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */,
 				C050C9011E82619F0009679D /* sib01_before.png in Resources */,
+				DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */,
 				E57BB3211E597BE000D4F5FB /* ProductLineViewController.storyboard in Resources */,
 				DE2C91811E9C682500B5FC4A /* graphPoint_down.png in Resources */,
 				C0D1953E1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.xib in Resources */,
@@ -2343,6 +2372,7 @@
 				EB7365981D83126300D223BA /* StepLowerTranslateTable.swift in Sources */,
 				EB8F34161D884D5600641976 /* AppItemTranslateTable.swift in Sources */,
 				DE2C8EF01E9B9BAF00B5FC4A /* LuxuryViewController.swift in Sources */,
+				DEE83E5A1EB75C04000C7D8D /* LXProductTechnologyView.swift in Sources */,
 				C091BA7F1D69876F0073FEDB /* TopViewController.swift in Sources */,
 				EBBF4E1C1D95596A001CD8B3 /* UnitTranslateEntity.swift in Sources */,
 				DE2C908E1E9C66E600B5FC4A /* LXProductDetailTransitionView.swift in Sources */,
@@ -2366,6 +2396,7 @@
 				C08C93211E8A56DD0096C98F /* ItemsDisplayedViewController.swift in Sources */,
 				DE2C90941E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.swift in Sources */,
 				C0998BF01DA63DCC00220321 /* PagingProductView.swift in Sources */,
+				DEE83E5E1EB761F5000C7D8D /* LXTechBiologicalView.swift in Sources */,
 				EB8F34151D884D5600641976 /* AppItemTable.swift in Sources */,
 				C0449ED61D76D2320041903E /* NSMutableAttributedString+Additions.m in Sources */,
 				EB7365AD1D83156F00D223BA /* StepLowerTranslateEntity.swift in Sources */,
@@ -2440,6 +2471,7 @@
 				EBC0148A1D99DA710006827C /* LineDetailData.swift in Sources */,
 				C0DA9AED1DB8CC7E00692058 /* DPDKeyboardListener.swift in Sources */,
 				C0880CF81E4B209C006A3713 /* RegionTable.swift in Sources */,
+				DEE83E651EB766EF000C7D8D /* LXTechAuraView.swift in Sources */,
 				EB5798041DE2B4A90096C62E /* LogTable.swift in Sources */,
 				C0306D4E1D6EC51800D56F45 /* CollectionProductView.swift in Sources */,
 				DE2C909A1E9C66E600B5FC4A /* LXYutakaConceptSubView.swift in Sources */,
