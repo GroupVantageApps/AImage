@@ -124,14 +124,16 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mItemsSideMenu = AppItemTable.getItems(screenId: Const.screenIdSideMenu)
         mItemsCommon = AppItemTable.getItems(screenId: Const.screenIdProductDetailCommon)
 
+        print(mItemsCommon)
         mItemFeature.text = mItems["08"]
         mItemHowToUse.text = mItems["09"]
         mItemDailyCare.text = mItems["11"]
+        //TODO:csv参照
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
-        mCategoryButtonTechnologies.title = mItemsCommon["05"]
-        mCategoryButtonDefend.title = mItemsSideMenu["16"]
+        mCategoryButtonTechnologies.title = "Technology"
+        mCategoryButtonDefend.title = "Skingencel Enmei"
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
 
         mImgVProduct.image = FileTable.getImage(product.image)
@@ -142,11 +144,17 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.unitName
 
-        mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
-        mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
-        mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
-        mCategoryButtonDefend.enabled = mIsUtm
-
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 522 || productId == 524 || productId == 525 {
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
+        } else {
+            mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
+            mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
+            mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+            mCategoryButtonDefend.enabled = mIsUtm
+        }
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
         }

@@ -145,9 +145,14 @@
                                                                     <constraint firstItem="X4p-hS-PLc" firstAttribute="width" secondItem="IP6-cP-TY8" secondAttribute="width" id="wXR-hK-j2G"/>
                                                                 </constraints>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1c-eO-x07">
+                                                                <rect key="frame" x="942" y="0.0" width="42" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" image="lx_product_play_movie.png"/>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="YeN-ju-dYM" secondAttribute="trailing" id="0Xk-Ac-MTl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YeN-ju-dYM" secondAttribute="trailing" constant="62" id="0Xk-Ac-MTl"/>
                                                             <constraint firstItem="YeN-ju-dYM" firstAttribute="top" secondItem="qnl-bG-utb" secondAttribute="top" id="2Xz-nN-kQg"/>
                                                             <constraint firstAttribute="bottom" secondItem="YeN-ju-dYM" secondAttribute="bottom" id="8GD-vk-08t"/>
                                                             <constraint firstItem="YeN-ju-dYM" firstAttribute="leading" secondItem="qnl-bG-utb" secondAttribute="leading" id="iqC-YC-AaW"/>
@@ -224,21 +229,21 @@
                                                                 <rect key="frame" x="0.0" y="189.5" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="1" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_1.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpMorning:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="DUD-3d-ATL"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVZ-4W-9Cd" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="44" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="43" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_2.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpEvening:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="qoE-bt-qEU"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbg-YB-PQa" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="87" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="86" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_3.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpNight:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="4F2-e6-UEx"/>
@@ -775,6 +780,7 @@
         <image name="features_smk_1.png" width="92" height="66"/>
         <image name="features_smk_2.png" width="92" height="66"/>
         <image name="features_smk_3.png" width="92" height="66"/>
+        <image name="lx_product_play_movie.png" width="74" height="53"/>
         <image name="ss_bg.png" width="997" height="1219"/>
     </resources>
 </document>
