@@ -68,14 +68,16 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
                     button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControlEvents.touchUpInside)
                     let beautyLbl: UILabel
 
-                    if index > 2 && i == 0 {
+                    if (index > 2 && i == 0) || (index > 0 && i == 1) {
                         beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
-                        print("\(product.beautyName)")
-                        print("\(product.productName)")
                     } else {
                         beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
                     }
-                    beautyLbl.text = product.beautyName
+                    print(!(index == 2 && i == 0))
+                    if !(index > 1 && i == 0) && !((index == 0 || index == 3 ) && i == 1) && !(index == 0 && i == 2) {
+                        beautyLbl.text = product.beautyName
+                        print("\(product.beautyName)")
+                    }
             }
         }
     }
