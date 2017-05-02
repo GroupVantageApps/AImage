@@ -176,8 +176,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 mImgVSecondDailyCare.image = imgNight
             }
         }
-//        mBtnMovie.isEnabled = (product.movie != 0)
-//        mBtnBrush.isEnabled = Bool(product.brush as NSNumber)
+
         if mIsUtm || mIsUtmEye {
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self

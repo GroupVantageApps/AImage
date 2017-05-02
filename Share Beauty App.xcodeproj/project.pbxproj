@@ -364,6 +364,14 @@
 		DE48C31B1EB6AC6B00D29A8D /* lx_product_graph_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3171EB6AC6B00D29A8D /* lx_product_graph_3.png */; };
 		DE48C31C1EB6AC6B00D29A8D /* lx_product_graph_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3181EB6AC6B00D29A8D /* lx_product_graph_2.png */; };
 		DE48C31D1EB6AC6B00D29A8D /* lx_product_graph_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3191EB6AC6B00D29A8D /* lx_product_graph_1.png */; };
+		DE507EE71EB887760095FB78 /* lx_yutaka_treatment_thum_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */; };
+		DE507EE81EB887760095FB78 /* lx_yutaka_treatment_thum_02.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */; };
+		DE507EE91EB887760095FB78 /* lx_yutaka_treatment_thum_03.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */; };
+		DE507EEA1EB887760095FB78 /* lx_yutaka_treatment_thum_04.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */; };
+		DE507EEB1EB887760095FB78 /* lx_yutaka_treatment_thum_05.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */; };
+		DE507EEC1EB887760095FB78 /* lx_yutaka_treatment_thum_06.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */; };
+		DE507EED1EB887760095FB78 /* lx_yutaka_treatment_thum_07.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */; };
+		DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */; };
 		DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */; };
 		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
 		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
@@ -882,6 +890,14 @@
 		DE48C3171EB6AC6B00D29A8D /* lx_product_graph_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_3.png; sourceTree = "<group>"; };
 		DE48C3181EB6AC6B00D29A8D /* lx_product_graph_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_2.png; sourceTree = "<group>"; };
 		DE48C3191EB6AC6B00D29A8D /* lx_product_graph_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_1.png; sourceTree = "<group>"; };
+		DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_01.png; sourceTree = "<group>"; };
+		DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_02.png; sourceTree = "<group>"; };
+		DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_03.png; sourceTree = "<group>"; };
+		DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_04.png; sourceTree = "<group>"; };
+		DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_05.png; sourceTree = "<group>"; };
+		DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_06.png; sourceTree = "<group>"; };
+		DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_07.png; sourceTree = "<group>"; };
+		DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_08.png; sourceTree = "<group>"; };
 		DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_angelica.png; sourceTree = "<group>"; };
 		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
 		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
@@ -1589,6 +1605,14 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */,
+				DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */,
+				DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */,
+				DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */,
+				DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */,
+				DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */,
+				DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */,
+				DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */,
 				DEE83E7F1EB79160000C7D8D /* lx_eye_graph.png */,
 				DEE83E7B1EB790DD000C7D8D /* lx_intensive_graph.png */,
 				DEE83E7C1EB790DD000C7D8D /* lx_intensive.png */,
@@ -1987,6 +2011,7 @@
 				C050C9761E8267450009679D /* defend_bg.png in Resources */,
 				C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */,
 				DE2C90891E9C66E600B5FC4A /* LXIngredientView.xib in Resources */,
+				DE507EEA1EB887760095FB78 /* lx_yutaka_treatment_thum_04.png in Resources */,
 				DE2C90911E9C66E600B5FC4A /* LXProductionBAView.xib in Resources */,
 				C0423F821E3627A500D56960 /* shiseido-finder.db in Resources */,
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
@@ -2028,6 +2053,7 @@
 				C050C90B1E82619F0009679D /* ss_ibuki_bg.png in Resources */,
 				C050C9971E8267450009679D /* t_btn_white.png in Resources */,
 				C050C9961E8267450009679D /* t_btn_bg.png in Resources */,
+				DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */,
 				C050C98E1E8267450009679D /* effect_redlight.png in Resources */,
 				E5E0D3F11DF3D1DB0053373F /* RecommendedViewController.storyboard in Resources */,
 				C050C9A01E8267450009679D /* t_red_graph.png in Resources */,
@@ -2089,6 +2115,7 @@
 				DEE83E681EB78A66000C7D8D /* lx_penetration.png in Resources */,
 				DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
+				DE507EEC1EB887760095FB78 /* lx_yutaka_treatment_thum_06.png in Resources */,
 				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
 				DE48C31C1EB6AC6B00D29A8D /* lx_product_graph_2.png in Resources */,
 				DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */,
@@ -2111,6 +2138,7 @@
 				C050C9021E82619F0009679D /* sib02_after.jpg in Resources */,
 				DE2C91861E9C682500B5FC4A /* lx_header_home.png in Resources */,
 				DE2C91881E9C682500B5FC4A /* lx_header_option.png in Resources */,
+				DE507EEB1EB887760095FB78 /* lx_yutaka_treatment_thum_05.png in Resources */,
 				C050C9091E82619F0009679D /* ss_hukidashi_2.png in Resources */,
 				C050C9731E8267450009679D /* d_block_3_5s.png in Resources */,
 				C050C9BE1E8276C60009679D /* Shiseido-ExtraBoldx.otf in Resources */,
@@ -2162,6 +2190,7 @@
 				C050C98C1E8267450009679D /* f_effect_3.png in Resources */,
 				C050C90C1E82619F0009679D /* ss_ibuki_hoshi.png in Resources */,
 				DEE83E7D1EB790DD000C7D8D /* lx_intensive_graph.png in Resources */,
+				DE507EE91EB887760095FB78 /* lx_yutaka_treatment_thum_03.png in Resources */,
 				C050C9A31E8267450009679D /* utm_bg_02.png in Resources */,
 				C050C9711E8267450009679D /* d_block_2s.png in Resources */,
 				C050C9121E82619F0009679D /* wab01_before.png in Resources */,
@@ -2196,6 +2225,7 @@
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
 				DE2C918D1E9C682500B5FC4A /* lx_icon_recommend_selected@2x.png in Resources */,
 				C050C9801E8267450009679D /* efficacy_triangle.png in Resources */,
+				DE507EE71EB887760095FB78 /* lx_yutaka_treatment_thum_01.png in Resources */,
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
 				DEE83E721EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png in Resources */,
 				DEB555361EB333540022AB0F /* lx_ba_second_face_2.png in Resources */,
@@ -2217,8 +2247,10 @@
 				C050C98D1E8267450009679D /* f_effect_bg.png in Resources */,
 				C050C98A1E8267450009679D /* f_effect_1_.png in Resources */,
 				C050C9A61E8267450009679D /* effect_redlight.png in Resources */,
+				DE507EED1EB887760095FB78 /* lx_yutaka_treatment_thum_07.png in Resources */,
 				C050C9A41E8267450009679D /* utm_wh_back.png in Resources */,
 				E5E0D40C1DF3E1670053373F /* IdealSpecialItemViewController.storyboard in Resources */,
+				DE507EE81EB887760095FB78 /* lx_yutaka_treatment_thum_02.png in Resources */,
 				DE2C918A1E9C682500B5FC4A /* lx_icon_night.png in Resources */,
 				C050C9951E8267450009679D /* t_bg_eye.png in Resources */,
 				DE48C31A1EB6AC6B00D29A8D /* lx_product_graph_4.png in Resources */,
