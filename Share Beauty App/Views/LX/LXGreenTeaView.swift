@@ -13,6 +13,7 @@ class LXGreenTeaView: UIView{
 
     @IBOutlet weak var mDownImgV: UIImageView!
     @IBOutlet weak var mUpImgV: UIImageView!
+    @IBOutlet weak var mScrollV: UIScrollView!
 
     func setUI() {
         self.mUpImgV.image = FileTable.getLXFileImage("graphPoint_up.png")
@@ -36,6 +37,10 @@ class LXGreenTeaView: UIView{
         graphView2.bgImage = "tea_graph_bg.png"
         view2?.addSubview(graphView2)
         graphView2.setUp(left: 56, right: 24, l_title: "Without Premium\nUji Green Tea\nExtract",r_title: "With Premium Uji\nGreen Tea Extract")
+        self.mScrollV.contentSize = CGSize(width: 700, height: 838)
+        let firstView = self.viewWithTag(100)! as UIView
+        firstView.frame = CGRect(x: 0, y: 0, width: 700, height: 838)
+        self.mScrollV.addSubview(firstView)
     }
     
     @IBAction func close(_ sender: Any) {

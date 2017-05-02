@@ -12,7 +12,7 @@ import AVFoundation
 class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXProductDetail)
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Luxury Products"
     var products: [ProductData]!
@@ -22,7 +22,8 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
     
-    
+    var bgAudioPlayer: AVAudioPlayer!
+
     @IBOutlet weak var mBABtn: UIButton!
 
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
@@ -36,6 +37,7 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryProductViewController")
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
 
         let line = LineDetailData.init(lineId: 1)
         mUpperSteps = line.step
@@ -67,14 +69,16 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
                     button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControlEvents.touchUpInside)
                     let beautyLbl: UILabel
 
-                    if index > 2 && i == 0 {
+                    if (index > 2 && i == 0) || (index > 0 && i == 1) {
                         beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
-                        print("\(product.beautyName)")
-                        print("\(product.productName)")
                     } else {
                         beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
                     }
-                    beautyLbl.text = product.beautyName
+                    print(!(index == 2 && i == 0))
+                    if !(index > 1 && i == 0) && !((index == 0 || index == 3 ) && i == 1) && !(index == 0 && i == 2) {
+                        beautyLbl.text = product.beautyName
+                        print("\(product.beautyName)")
+                    }
             }
         }
     }
@@ -98,6 +102,7 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         print("tappedProduct:\(sender.tag)")
         let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
         toVc.productId = sender.tag
+        toVc.bgAudioPlayer = self.bgAudioPlayer
         self.navigationController?.pushViewController(toVc, animated: false)
     }
     
@@ -106,5 +111,18 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         skingraph.setUI()
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
+    }
+    @IBAction func onTapBLS(_ sender: Any) {
+        let blsView: LXProductBLSView = UINib(nibName: "LXProductBLSView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductBLSView
+        blsView.setUI()
+        blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(blsView)
+    }
+    @IBAction func onTapGraph(_ sender: Any) {
+        let blsView: LXProductGraphView = UINib(nibName: "LXProductGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphView
+        blsView.setUI()
+        blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(blsView)
+
     }
 }

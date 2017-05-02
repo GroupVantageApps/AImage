@@ -62,6 +62,18 @@ struct Const {
     static let screenIdIconicBeauty = 7800
     static let screenIdIconicTips = 7801
     static let screenIdScreenSaver = 7802
+    static let screenIdLXTop = 7806
+    static let screenIdLXProduct = 7807
+    static let screenIdLXIngredience = 7808
+    static let screenIdLXYUTAKA = 7809
+    static let screenIdLXProductDetail = 7810
+    static let screenIdLXUBSResult = 7811
+    static let screenIdLXSensoryExperience = 7812
+    static let screenIdLXSkingenecell = 7813
+    static let screenIdLXGraph = 7814
+    static let screenIdLXConcept = 7815
+    static let screenIdLXTool = 7816
+    
 
     static let itemIdBeautyTips = "503301"
 

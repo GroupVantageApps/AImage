@@ -27,7 +27,7 @@ class LXCherryGraphView: UIView{
         let view = self.viewWithTag(30)
         graphView.bgImage = "sakura_graph_bg.png"
         view?.addSubview(graphView)
-        graphView.setUp(left: 28, right: 84, l_title: "No\nSakura Leaf\nExtract",r_title: "With\nSakura Leaf\nextract")
+        graphView.setUp(left: 28, right: 84, l_title: "Without\nSakura Leaf\nExtract",r_title: "With\nSakura Leaf\nextract")
     }
     
     @IBAction func close(_ sender: Any) {

@@ -20,56 +20,65 @@
             <rect key="frame" x="0.0" y="0.0" width="701" height="701"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sakura Leaf’s effect of inhibiting breakdown of elastin fibers" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-pT-gVA">
-                    <rect key="frame" x="181" y="137" width="338" height="74"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-pT-gVA">
+                    <rect key="frame" x="180" y="175" width="338" height="74"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="338" id="Htt-Ix-q4q"/>
                         <constraint firstAttribute="height" constant="74" id="ntU-a9-LvW"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="25"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">is derived from the leaves of Oshima cherry blossoms found on Izu Oshima Island.
+It suppresses the breakdown of elastin.</string>
+                            <attributes>
+                                <color key="NSColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="17" name="ACaslonPro-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sakura Leaf Extract" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENB-ej-ekw">
+                    <rect key="frame" x="180" y="139" width="338" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Kge-Va-kEB"/>
+                        <constraint firstAttribute="width" constant="338" id="wPp-Ko-O4s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="31"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-pM-dfz">
-                    <rect key="frame" x="119" y="387" width="14" height="37"/>
+                    <rect key="frame" x="109" y="445" width="14" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryGraph_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wpo-2W-lBS">
-                    <rect key="frame" x="148" y="214" width="460" height="214"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inhibits elastase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jt5-JU-4Eo">
-                    <rect key="frame" x="148" y="430" width="98" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="15"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(in vitro)" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWj-uf-gnV">
-                    <rect key="frame" x="553" y="430" width="56" height="20"/>
+                    <rect key="frame" x="555" y="484" width="56" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="15"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxX-XO-pId">
-                    <rect key="frame" x="148" y="469" width="456" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Sakura Leaf is e ective in inhibiting the activity of enzyme elastase, which breaks down elastin  bers. Elastin  bers are important to skin’s resilience.</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view tag="30" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N97-2g-GhG">
-                    <rect key="frame" x="148" y="214" width="460" height="214"/>
+                    <rect key="frame" x="150" y="268" width="460" height="214"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inhibits elastase" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzn-67-zWD">
+                    <rect key="frame" x="90" y="400" width="52" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="CN6-pT-gVA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="137" id="KN4-As-Gnf"/>
-                <constraint firstItem="CN6-pT-gVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="181" id="MMj-jK-8Qu"/>
+                <constraint firstItem="ENB-ej-ekw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="139" id="51c-L8-XF2"/>
+                <constraint firstItem="CN6-pT-gVA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="175" id="KN4-As-Gnf"/>
+                <constraint firstItem="CN6-pT-gVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="180" id="MMj-jK-8Qu"/>
+                <constraint firstItem="ENB-ej-ekw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="180" id="a0c-ZK-e8D"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -78,7 +87,4 @@
             <point key="canvasLocation" x="43.5" y="-33.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="cherryGraph_01.png" width="904" height="413"/>
-    </resources>
 </document>
