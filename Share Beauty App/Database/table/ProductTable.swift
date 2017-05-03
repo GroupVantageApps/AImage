@@ -33,6 +33,7 @@ class ProductTable: NSObject {
             if let backImage = (json["back_image"] as! [Int])[safe: 0] {
                 entity.backImage = backImage
             }
+			entity.backImage2 = Utility.toInt(json["back_image_2"])
             entity.newItemFlg = Utility.toInt(json["new_item"])
             if let spMovies = json["sp_movie"] as? [Int] {
                 entity.spMovies = spMovies
