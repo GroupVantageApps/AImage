@@ -12,7 +12,7 @@ import AVFoundation
 class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXYutakaConceptViewDelegate ,LXYutakaTreatmentViewDelegate , MoviePlayerViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXYUTAKA)
 
     @IBOutlet weak var mBGImgV: UIImageView!
 
@@ -30,6 +30,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         print("LuxuryYutakaViewController.viewDidLoad")
     }
 

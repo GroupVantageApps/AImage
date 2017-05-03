@@ -43,6 +43,12 @@ class LXCategoryButton: BaseView {
                 mBtnCategory.layer.borderColor = UIColor(red:0.67, green:0.67, blue:0.68, alpha:1.0).cgColor
                 mBtnCategory.setTitleColor(UIColor(red:0.67, green:0.67, blue:0.68, alpha:1.0), for: .disabled)
                 mBtnCategory.backgroundColor = UIColor.black
+            } else {
+                mBtnCategory.layer.borderWidth = 1
+                mBtnCategory.layer.borderColor = UIColor(red:0.65, green:0.60, blue:0.36, alpha:1.0).cgColor
+                mBtnCategory.setTitleColor( UIColor(red:0.65, green:0.60, blue:0.36, alpha:1.0), for: .normal)
+                mBtnCategory.backgroundColor = UIColor.black
+                mConstraintHeight.constant = 0
             }
         }
     }

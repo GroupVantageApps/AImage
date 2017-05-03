@@ -20,7 +20,8 @@ class RecommendProductView: UICollectionViewCell {
     @IBOutlet weak fileprivate var mBtnRecommend: BaseButton!
     @IBOutlet weak fileprivate var mImgVReward: UIImageView!
     @IBOutlet weak fileprivate var mVProtect: UIView!
-
+    private let mScreen = ScreenData(screenId: Const.screenIdRecommend)
+    
     @IBInspectable var productImage: UIImage? {
         didSet {
             mBtnProductImg.setImage(productImage, for: UIControlState())
@@ -90,9 +91,11 @@ class RecommendProductView: UICollectionViewCell {
                 value.line = product!.lineId
                 value.beautySecond = product!.beautySecondId
                 RecommendTable.insert(value)
+                LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
             }
         } else {
             RecommendTable.delete(product!.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 }

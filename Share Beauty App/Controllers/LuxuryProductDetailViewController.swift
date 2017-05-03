@@ -11,11 +11,13 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, UIScrollViewDelegate {
+class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate , UIScrollViewDelegate {
     
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
     @IBOutlet weak private var mImgVSecondDailyCare: UIImageView!
+
+    var bgAudioPlayer: AVAudioPlayer!
 
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mVBaseIbukiBtn: UIView!
@@ -62,7 +64,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mVMain: UIView!
 
-    private let mScreen = ScreenData(screenId: Const.screenIdProductDetail)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXProduct)
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
@@ -104,6 +106,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: productId)
 
         product = ProductDetailData(productId: productId)
         self.checkSpecialCase()
@@ -122,14 +126,16 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mItemsSideMenu = AppItemTable.getItems(screenId: Const.screenIdSideMenu)
         mItemsCommon = AppItemTable.getItems(screenId: Const.screenIdProductDetailCommon)
 
+        print(mItemsCommon)
         mItemFeature.text = mItems["08"]
         mItemHowToUse.text = mItems["09"]
         mItemDailyCare.text = mItems["11"]
+        //TODO:csv参照
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
-        mCategoryButtonTechnologies.title = mItemsCommon["05"]
-        mCategoryButtonDefend.title = mItemsSideMenu["16"]
+        mCategoryButtonTechnologies.title = "Technology"
+        mCategoryButtonDefend.title = "Skingencel Enmei"
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
 
         mImgVProduct.image = FileTable.getImage(product.image)
@@ -140,11 +146,25 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.unitName
 
-        mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
-        mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
-        mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
-        mCategoryButtonDefend.enabled = mIsUtm
-
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonDefend.enabled = true
+        } else {
+            mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
+            mCategoryButtonDefend.enabled = mIsUtm
+        }
+        if productId == 516 || productId == 517 || productId == 519 || productId == 522 || productId == 523 {
+            mCategoryButtonEfficacy.enabled = true
+        } else {
+            mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+        }
+        
+        if productId == 522 || productId == 523 {
+            mCategoryButtonHowToUse.enabled = true
+        } else {
+            mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
+        }
+    
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
         }
@@ -156,8 +176,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 mImgVSecondDailyCare.image = imgNight
             }
         }
-//        mBtnMovie.isEnabled = (product.movie != 0)
-//        mBtnBrush.isEnabled = Bool(product.brush as NSNumber)
+
         if mIsUtm || mIsUtmEye {
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self
@@ -397,17 +416,31 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         }
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
-            makeCategoryImages(product.technologyImage)
+            mVCategoryImage.isHidden = true
+            let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+            technologyV.setUI(productId: productId)
+            technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
+//            mVCategoryImage.isHidden = true
+//            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
+//            efficacyV.setUI()
+//            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+//            self.view.addSubview(efficacyV)
             mVCategoryImage.isHidden = true
-            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-            efficacyV.setUI()
-            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-            self.view.addSubview(efficacyV)
+            let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
+            popup.setUI(productId: productId)
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         } else if sender === mCategoryButtonDefend {
-
+            mVCategoryImage.isHidden = true
+            let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+            popup.setAction()
+            popup.delegate = self
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         }
     }
 
@@ -443,25 +476,17 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 value.line = product.lineId
                 value.beautySecond = product.beautySecondId
                 RecommendTable.insert(value)
+                LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
             }
         } else {
             //delete
             RecommendTable.delete(product.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 
     @IBAction private func onTapLineDetail(_ sender: AnyObject) {
-        let line = LineDetailData(lineId: self.product.lineId)
-        if line.feature != "" && Bool(line.lineStepFlg as NSNumber) {
-            let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
-            lineDetailVc.lineId = self.product.lineId
-            lineDetailVc.beautySecondId = self.product.beautySecondId
-            delegate?.nextVc(lineDetailVc)
-        } else {
-            let lineListVc = UIViewController.GetViewControllerFromStoryboard("LineListViewController", targetClass: LineListViewController.self) as! LineListViewController
-            lineListVc.line = line
-            delegate?.nextVc(lineListVc)
-        }
+        _ = self.navigationController?.popViewController(animated: false)
     }
 
     @IBAction private func onTapOnTrendBeauty(_ sender: Any) {
@@ -556,5 +581,26 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
 
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
+    }
+    func didTapshowSkinGraph() {
+        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+
+    func movieAct(){
+        
+        bgAudioPlayer.pause()
+        
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: "lx_ingredient")
+        self.view.addSubview(moviePlay)
+    }
+
+    func endMovie() {
+        bgAudioPlayer.play()
     }
 }

@@ -19,6 +19,7 @@ class LifeStyleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var mTxtV: UITextView!
     @IBOutlet weak private var mVFocus: UIView!
     @IBOutlet weak var mCountsLabel: UILabel!
+    private let mScreen = ScreenData(screenId: Const.screenIdIdealBeauty4)
 
     var isRecommend: Bool = false {
         didSet {

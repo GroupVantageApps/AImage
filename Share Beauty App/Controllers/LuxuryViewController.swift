@@ -11,7 +11,7 @@ import AVFoundation
 class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePlayerViewDelegate, AVAudioPlayerDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
+    private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     @IBOutlet var mBtnOutApp: BaseButton!
@@ -50,7 +50,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         
         self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryViewController.viewDidLoad")
-
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         
         moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
         moviePlay.isTop = true
@@ -74,6 +74,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         ]
         if LuxuryProductViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryProductViewController
+            toVc.bgAudioPlayer = bgAudioPlayer
             self.navigationController?.pushViewController(toVc, animated: false)
         } else if LuxuryIngredientViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryIngredientViewController

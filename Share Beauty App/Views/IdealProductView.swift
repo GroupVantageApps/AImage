@@ -41,7 +41,7 @@ class IdealProductView: UICollectionViewCell {
     var ultimuneBackgroundImage: UIImage?
     var lxBackgroundImage: UIImage?
     var indexPath: IndexPath!
-
+    private let mScreen = ScreenData(screenId: Const.screenIdIdealBeauty4)
     var mTroubles: [DataStructTrouble] = []
 
     var isBop: Bool = false {
@@ -249,10 +249,11 @@ class IdealProductView: UICollectionViewCell {
                 value.beautySecond = product!.beautySecondId
                 RecommendTable.insert(value)
             }
-
+            LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
         } else {
             //delete
             RecommendTable.delete(product!.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
     @IBAction func onTapMirror(_ sender: BaseButton) {

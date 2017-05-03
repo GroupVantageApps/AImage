@@ -34,6 +34,7 @@ class LifeStyleProductView: BaseView {
     @IBOutlet weak private var mThumbnailViewBottom: NSLayoutConstraint!
 
     weak var delegate: LifeStyleProductViewDelegate?
+    private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
 	
 	// カスタムスタイルの定義。従来のスタイルはnormal
 	// スタイルの変更はproductプロパティに値を設定する前に行う
@@ -70,7 +71,7 @@ class LifeStyleProductView: BaseView {
     @IBInspectable var whyText: String? {
         didSet {
             mLblWhy.text = whyText
-            mBtnWhy.setTitle(whyText, for: UIControlState())
+            //mBtnWhy.setTitle(whyText, for: UIControlState()) //ボタン切ってみた
         }
     }
 
@@ -222,9 +223,11 @@ class LifeStyleProductView: BaseView {
                 value.line = product!.lineId
                 value.beautySecond = product!.beautySecondId
                 RecommendTable.insert(value)
+                LogManager.tapProductReccomend(recommedFlg: 1, productId: product!.productId, screenCode: self.mScreen.code)
             }
         } else {
             RecommendTable.delete(product!.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product!.productId, screenCode: self.mScreen.code)
         }
     }
 
