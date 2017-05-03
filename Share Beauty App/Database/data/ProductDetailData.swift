@@ -52,6 +52,7 @@ class ProductDetailData: NSObject {
     var recommend: Int = 0
 
     var backImage: Int?
+	var backImage2: Int?
 
     var spMovies = [Int]()
 
@@ -98,6 +99,7 @@ class ProductDetailData: NSObject {
         self.howToUse = self.productTranslateEntity.howToUse
 
         self.backImage = self.productEntity.backImage
+		self.backImage2 = self.productEntity.backImage2
 
         self.spMovies = self.productEntity.spMovies
 		self.makeupLook = self.productEntity.makeupLook

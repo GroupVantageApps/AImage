@@ -29,6 +29,7 @@ class ProductEntity: NSObject {
     var lastUpdateTs: String = String()
     var deleteFlg: Int? = 0
     var backImage: Int?
+	var backImage2: Int? = nil
 
     var newItemFlg: Int = 0
 
