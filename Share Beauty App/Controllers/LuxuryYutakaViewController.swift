@@ -63,7 +63,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     @IBAction private func tappedTreatmentBtn(_ sender: AnyObject) {
         let treatmentView = UINib(nibName: "LXYutakaTreatmentView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentView
         treatmentView.delegate = self
-        treatmentView.setUI()
+        treatmentView.setUI(page: sender.tag - 10)
         treatmentView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(treatmentView)
         

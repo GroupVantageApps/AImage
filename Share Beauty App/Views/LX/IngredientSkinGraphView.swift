@@ -13,19 +13,18 @@ import UIKit
 class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
     
     
-    let mScrollView = UIScrollView(frame: CGRect(x: 57, y: 150, width: 573, height: 448))
+    let mScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 701, height: 703))
     var mframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var colors:[UIColor] = [UIColor.white, UIColor.white, UIColor.white]
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 516/2, y: 605, width: 200, height: 50))
     var mSkingeneceintrolbl = UILabel(frame:CGRect(x: 58, y: 43, width: 376, height: 66))
-    var array = ["bummytext.png","serpinb3.png","defend.png"]
+    var array = ["lx_ingredient_bg_1.png","lx_ingredient_bg_2.png","lx_ingredient_bg_3"]
     var titleArr = ["Promotes expression of the longevity gene","Inhibits Serpin b3","Suppresses factors that attack Langerhans cells"]
     var subTitleArr = ["Promotes the expression of the longevity gene Sirtuin1","Inhibits Serpin b3","Boosts skin’s defenses"]
     let mXbutton = UIButton(frame: CGRect(x: 664, y: 16.7, width: 38, height: 38))
     
       func setUI() {
-  
-        
+
         configurePageControl()
         
         self.mScrollView.delegate = self
@@ -48,36 +47,36 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             self.mScrollView.isPagingEnabled = true
 
             let subView = UIView(frame: mframe)
-            subView.backgroundColor = colors[index]
-            let mNumlbl = UILabel(frame:CGRect(x: 0, y: 27.9, width: 20, height: 54))
-            mNumlbl.text = NSString(format:"%d", index+1) as String
-            mNumlbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
-            mNumlbl.font = UIFont(name: "ACaslonPro-Regular", size: 47.0)
-            subView.addSubview(mNumlbl)
+//            subView.backgroundColor = colors[index]
+//            let mNumlbl = UILabel(frame:CGRect(x: 0, y: 27.9, width: 20, height: 54))
+//            mNumlbl.text = NSString(format:"%d", index+1) as String
+//            mNumlbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
+//            mNumlbl.font = UIFont(name: "ACaslonPro-Regular", size: 47.0)
+//            subView.addSubview(mNumlbl)
 
             let imageName = self.array[index]
-            let image = FileTable.getLXFileImage(imageName)
+            let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image!)
-            imageView.frame = CGRect(x: 38, y: 113, width: 517, height: 317)
-            subView.addSubview(imageView)
+            imageView.frame = CGRect(x: self.size.width * CGFloat(index), y: 0, width: self.size.width, height: self.size.height)
+            self.mScrollView.addSubview(imageView)
             
             let nib = UINib(nibName: "LXGraphView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)
             guard let graphView = views[0] as? LXGraphView else { return }
-            graphView.center = CGPoint(x: subView.bounds.size.width*0.5 + 30, y: 273)
+            graphView.center = CGPoint(x: subView.bounds.size.width*0.5 + 15, y: 340)
             subView.addSubview(graphView)
-            
-            let mLineview = UIView(frame: CGRect(x: 48, y: 36, width: 1, height: 32))
-            mLineview.backgroundColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
-            subView.addSubview(mLineview)
 
-            let mLoremIplbl = UILabel(frame:CGRect(x: 66, y: 27.9, width: 310, height: 51))
-            mLoremIplbl.text = titleArr[index]
-            mLoremIplbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
-            mLoremIplbl.font = UIFont(name: "ACaslonPro-Regular", size: 18.0)
-            mLoremIplbl.lineBreakMode = NSLineBreakMode.byWordWrapping
-            mLoremIplbl.numberOfLines = 0
-            subView.addSubview(mLoremIplbl)
+//            let mLineview = UIView(frame: CGRect(x: 48, y: 36, width: 1, height: 32))
+//            mLineview.backgroundColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
+//            subView.addSubview(mLineview)
+//
+//            let mLoremIplbl = UILabel(frame:CGRect(x: 66, y: 27.9, width: 310, height: 51))
+//            mLoremIplbl.text = titleArr[index]
+//            mLoremIplbl.textColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
+//            mLoremIplbl.font = UIFont(name: "ACaslonPro-Regular", size: 18.0)
+//            mLoremIplbl.lineBreakMode = NSLineBreakMode.byWordWrapping
+//            mLoremIplbl.numberOfLines = 0
+//            subView.addSubview(mLoremIplbl)
 
             self.mScrollView.addSubview(subView)
             
