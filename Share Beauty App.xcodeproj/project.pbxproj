@@ -280,6 +280,9 @@
 		C0E85A681E221F710035CCC4 /* ProductDetailTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */; };
 		C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */; };
 		C0FE16491D853CE700415B65 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE16481D853CE700415B65 /* SideBar.swift */; };
+		DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */; };
+		DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */; };
+		DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */; };
 		DE2C8EEF1E9B9BAF00B5FC4A /* LXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */; };
 		DE2C8EF01E9B9BAF00B5FC4A /* LuxuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EEA1E9B9BAF00B5FC4A /* LuxuryViewController.swift */; };
 		DE2C8EF11E9B9BAF00B5FC4A /* LuxuryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */; };
@@ -809,6 +812,9 @@
 		C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTransitionView.xib; sourceTree = "<group>"; };
 		C0FE16481D853CE700415B65 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
+		DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_3.png; sourceTree = "<group>"; };
+		DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_2.png; sourceTree = "<group>"; };
+		DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_1.png; sourceTree = "<group>"; };
 		DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXBaseViewController.swift; sourceTree = "<group>"; };
 		DE2C8EEA1E9B9BAF00B5FC4A /* LuxuryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuxuryViewController.swift; sourceTree = "<group>"; };
 		DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuxuryProductViewController.swift; sourceTree = "<group>"; };
@@ -1613,6 +1619,9 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */,
+				DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */,
+				DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */,
 				DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */,
 				DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */,
 				DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */,
@@ -2048,6 +2057,7 @@
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
 				C050C9721E8267450009679D /* d_block_3_5m.png in Resources */,
 				C03520D61D9E8825005129B5 /* IdealResultCollectionView.xib in Resources */,
+				DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */,
 				DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */,
 				DE2C917E1E9C682500B5FC4A /* efficacy_dummy.png in Resources */,
 				DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */,
@@ -2118,6 +2128,7 @@
 				DEE83E761EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png in Resources */,
 				C050C9851E8267450009679D /* utm02_after.png in Resources */,
 				C037CBAA1D87F6ED00DEFE14 /* IdealSelectCell.xib in Resources */,
+				DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */,
 				C050C96E1E8267450009679D /* d_arrow_2.png in Resources */,
 				C050C9741E8267450009679D /* d_graph_line.png in Resources */,
 				DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */,
@@ -2142,6 +2153,7 @@
 				C050C9A81E8267450009679D /* sizle_base.png in Resources */,
 				C050C9771E8267450009679D /* defend_triangle.png in Resources */,
 				DE2C90811E9C66E600B5FC4A /* LXEfficacyResultView.xib in Resources */,
+				DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */,
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,

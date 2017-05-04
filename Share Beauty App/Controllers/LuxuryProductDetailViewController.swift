@@ -159,6 +159,10 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         }
         
+        if productId == 39 {
+            mCategoryButtonEfficacy.enabled = false
+        }
+        
         if productId == 522 || productId == 523 {
             mCategoryButtonHowToUse.enabled = true
         } else {
