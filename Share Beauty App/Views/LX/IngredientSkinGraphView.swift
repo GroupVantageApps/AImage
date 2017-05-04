@@ -18,7 +18,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
     var colors:[UIColor] = [UIColor.white, UIColor.white, UIColor.white]
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 516/2, y: 605, width: 200, height: 50))
     var mSkingeneceintrolbl = UILabel(frame:CGRect(x: 58, y: 43, width: 376, height: 66))
-    var array = ["lx_ingredient_bg_1.png","lx_ingredient_bg_2.png","lx_ingredient_bg_3"]
+    var array = ["lx_ingredient_bg_1.png","lx_ingredient_bg_2.png","lx_ingredient_bg_3.png"]
     var titleArr = ["Promotes expression of the longevity gene","Inhibits Serpin b3","Suppresses factors that attack Langerhans cells"]
     var subTitleArr = ["Promotes the expression of the longevity gene Sirtuin1","Inhibits Serpin b3","Boosts skin’s defenses"]
     let mXbutton = UIButton(frame: CGRect(x: 664, y: 16.7, width: 38, height: 38))
@@ -81,6 +81,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             self.mScrollView.addSubview(subView)
             
             graphView.setUp(left: 57, right: 30, l_title: "Without\nSkingenecellEnmei",r_title: "With\nSkingenecellEnmei")
+            graphView.bgImage = "ingredient_graph_bg.png"
         }
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 3, height: self.mScrollView.frame.size.height)
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
