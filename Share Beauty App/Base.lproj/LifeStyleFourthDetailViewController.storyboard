@@ -114,7 +114,7 @@
                                     <constraint firstItem="51Z-qT-La0" firstAttribute="leading" secondItem="EDj-9X-S0J" secondAttribute="leading" id="MGA-Qe-95d"/>
                                     <constraint firstAttribute="trailing" secondItem="51Z-qT-La0" secondAttribute="trailing" id="ViV-yH-AgU"/>
                                     <constraint firstItem="51Z-qT-La0" firstAttribute="top" secondItem="EDj-9X-S0J" secondAttribute="top" id="jF0-bu-zAY"/>
-                                    <constraint firstItem="51Z-qT-La0" firstAttribute="height" secondItem="EDj-9X-S0J" secondAttribute="height" constant="-50" id="kJq-M9-KHu"/>
+                                    <constraint firstItem="51Z-qT-La0" firstAttribute="height" secondItem="EDj-9X-S0J" secondAttribute="height" constant="-30" id="kJq-M9-KHu"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
