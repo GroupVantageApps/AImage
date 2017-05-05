@@ -37,7 +37,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     @IBOutlet weak private var mCategoryButtonHowToUse: LXCategoryButton!
     @IBOutlet weak private var mCategoryButtonEfficacy: LXCategoryButton!
     @IBOutlet weak private var mCategoryButtonDefend: LXCategoryButton!
-    @IBOutlet weak private var mBtnMovie: BaseButton!
+    @IBOutlet weak private var mBtnMovie: UIButton!
     @IBOutlet weak private var mBtnBrush: BaseButton!
     @IBOutlet weak private var mBtnRecommend: BaseButton!
 
@@ -158,7 +158,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         } else {
             mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         }
-        
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 522{
+            self.mBtnMovie.isEnabled = true
+        } else {
+            self.mBtnMovie.isEnabled = false
+        }
         if productId == 39 {
             mCategoryButtonEfficacy.enabled = false
         }
@@ -449,14 +453,15 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     private func showMovie(movieId: Int) {
-        let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movieId))
-        let avPlayerVc: AVPlayerViewController = AVPlayerViewController()
-        avPlayerVc.player = avPlayer
-        if #available(iOS 9.0, *) {
-            avPlayerVc.allowsPictureInPicturePlayback = false
-        }
-        self.present(avPlayerVc, animated: true, completion: nil)
-        avPlayer.play()
+        let movieName = String(format: "%d_17AWLX", productId)
+        bgAudioPlayer.pause()
+
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: movieName)
+        self.view.addSubview(moviePlay)
+
     }
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
