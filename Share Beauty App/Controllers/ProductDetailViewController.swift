@@ -188,11 +188,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         //mVSkinConcern配下に、mTroubleSelectViewがあるので、両方にtroublesを渡す必要はないけど、
         //mTroubleSelectViewからのイベント(プロトコル)を直接ここで受けたいので、
         //現状このうような作りになってます
-        mVSkinConcern.troubles = product.troubles
-        mTroubleSelectView.troubles = product.troubles
+        self.mVSkinConcern.troubles = product.troubles
+        self.mTroubleSelectView.troubles = product.troubles
 
         print("++++++++++++++++++++++++++++++++++++++++++++++++")
-        print(self.product.colorballs)
+        print(self.product.troubles)
         print(self.product.productId)
         print("++++++++++++++++++++++++++++++++++++++++++++++++")
 

@@ -280,6 +280,7 @@
 		C0E85A681E221F710035CCC4 /* ProductDetailTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */; };
 		C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */; };
 		C0FE16491D853CE700415B65 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE16481D853CE700415B65 /* SideBar.swift */; };
+		DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */; };
 		DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */; };
 		DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */; };
 		DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */; };
@@ -814,6 +815,7 @@
 		C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTransitionView.xib; sourceTree = "<group>"; };
 		C0FE16481D853CE700415B65 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
+		DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailSkinConcernView.swift; sourceTree = "<group>"; };
 		DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_3.png; sourceTree = "<group>"; };
 		DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_2.png; sourceTree = "<group>"; };
 		DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_1.png; sourceTree = "<group>"; };
@@ -1548,6 +1550,7 @@
 		DE2C904F1E9C66E600B5FC4A /* LX */ = {
 			isa = PBXGroup;
 			children = (
+				DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */,
 				DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */,
 				DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */,
 				DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */,
@@ -2590,6 +2593,7 @@
 				C0306D4E1D6EC51800D56F45 /* CollectionProductView.swift in Sources */,
 				DE2C909A1E9C66E600B5FC4A /* LXYutakaConceptSubView.swift in Sources */,
 				C0A335E41D800324006A8FD1 /* TipsViewController.swift in Sources */,
+				DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */,
 				DE2C908C1E9C66E600B5FC4A /* LXProductDetailTag.swift in Sources */,
 				C0D1953D1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.swift in Sources */,
 				EB8F34071D884D4800641976 /* AppItemEntity.swift in Sources */,

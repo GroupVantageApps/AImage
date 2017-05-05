@@ -54,46 +54,70 @@ class LXProductDetailTransitionView: BaseView {
 
     func setProductDetailTransitionData(_ datas: [LXProductDetailTransitionData], target: Any?) {
 
+        // 内部関数: 幅広ボタンの配置
+        func centerMount(_ view: UIView) {
+            let mountView = self.mVMount.copyView()
+            mountView.translatesAutoresizingMaskIntoConstraints = false
+            let centerMountView = mountView.subviews.first!
+            centerMountView.addSubview(view)
+            let leftVerticalConnect = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : view])
+            let leftHorizontalConnect = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : view])
+            centerMountView.addConstraints(leftVerticalConnect + leftHorizontalConnect)
+            self.mVContent.addSubview(mountView)
+        }
+        
+        // 初期化
         mVContent.subviews.forEach {$0.removeFromSuperview()}
         mVContent.removeConstraints(mVContent.constraints)
-
+        
+        // ボタン作成
         var views = [UIView]()
-
-        mVLikeIt.translatesAutoresizingMaskIntoConstraints = false
-        views.append(mVLikeIt)
-
         datas.forEach { data in
             let view = self.makeButton(data: data, target: target) as UIView
             view.translatesAutoresizingMaskIntoConstraints = false
             views.append(view)
         }
+        
+        // 現在の仕様では、最初の項目に必ず「ライン名」ボタンが来る
+        // ライン名ボタンは必ず幅広ボタンで表示する
+        let view = views.first!
+        views.removeFirst()
+        centerMount(view)
+        
+        // ボタンリストから左右それぞれのリストを作成
         views.reverse()
         let chunkedViews = views.chunk(2)
-
+        
         chunkedViews.forEach { views in
             let mountview = mVMount.copyView()
+            
             mountview.translatesAutoresizingMaskIntoConstraints = false
             let leftView = views.last!
             let leftMountview = mountview.subviews.last!
             leftMountview.addSubview(leftView)
-
+            
             let leftVerticalConnect = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : leftView])
             let leftHorizontalConnect = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : leftView])
             leftMountview.addConstraints(leftVerticalConnect + leftHorizontalConnect)
-
+            
             if views.count != 1 {
                 let rightView = views.first!
-                let rightMountview = mountview.subviews.first!
+                let rightMountview = mountview.subviews[1]
                 rightMountview.addSubview(rightView)
-
+                
                 let rightVerticalConnect = NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : rightView])
                 let rightHorizontalConnect = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: .alignAllTop, metrics: nil, views: ["view" : rightView])
                 rightMountview.addConstraints(rightVerticalConnect + rightHorizontalConnect)
             }
-
+            
             mVContent.addSubview(mountview)
         }
-
+        
+        // Like It（幅広固定）
+        mVLikeIt.translatesAutoresizingMaskIntoConstraints = false
+        centerMount(self.mVLikeIt)
+        
+        // レイアウト設定
         mVContent.subviews.forEach { view in
             let left = NSLayoutConstraint.equalLeftEdge(item: view, toItem: mVContent)
             let right = NSLayoutConstraint.equalRightEdge(item: view, toItem: mVContent)

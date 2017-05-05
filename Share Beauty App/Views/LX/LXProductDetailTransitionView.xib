@@ -25,7 +25,7 @@
                 <outlet property="mLblLikeIt" destination="WSl-6a-rlk" id="u6L-BR-HtK"/>
                 <outlet property="mVContent" destination="WlW-iT-Eh6" id="cz4-GP-FF7"/>
                 <outlet property="mVLikeIt" destination="aVz-u2-1GC" id="uoH-Yx-VYt"/>
-                <outlet property="mVMount" destination="lMm-e9-V7Q" id="gIk-eg-ylg"/>
+                <outlet property="mVMount" destination="vqj-O6-7Rt" id="67C-Wt-EUV"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -109,33 +109,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-313" y="399"/>
         </view>
-        <view contentMode="scaleToFill" id="lMm-e9-V7Q">
-            <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9e-j9-Yxq">
-                    <rect key="frame" x="351" y="0.0" width="336" height="171"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haQ-ef-Nrn">
-                    <rect key="frame" x="0.0" y="0.0" width="336" height="171"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-            </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="haQ-ef-Nrn" firstAttribute="leading" secondItem="lMm-e9-V7Q" secondAttribute="leading" id="CFR-ga-1tB"/>
-                <constraint firstItem="W9e-j9-Yxq" firstAttribute="top" secondItem="lMm-e9-V7Q" secondAttribute="top" id="VP1-hz-oVi"/>
-                <constraint firstAttribute="trailing" secondItem="W9e-j9-Yxq" secondAttribute="trailing" id="YS1-BY-bzJ"/>
-                <constraint firstItem="W9e-j9-Yxq" firstAttribute="leading" secondItem="haQ-ef-Nrn" secondAttribute="trailing" constant="15" id="exd-r4-fbZ"/>
-                <constraint firstItem="W9e-j9-Yxq" firstAttribute="width" secondItem="haQ-ef-Nrn" secondAttribute="width" id="g5Y-sb-XUr"/>
-                <constraint firstAttribute="bottom" secondItem="W9e-j9-Yxq" secondAttribute="bottom" id="h5f-jJ-UbJ"/>
-                <constraint firstItem="haQ-ef-Nrn" firstAttribute="top" secondItem="lMm-e9-V7Q" secondAttribute="top" id="sFw-Cs-69I"/>
-                <constraint firstAttribute="bottom" secondItem="haQ-ef-Nrn" secondAttribute="bottom" id="wCe-Ob-69j"/>
-            </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1143" y="560"/>
-        </view>
         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xnR-ta-wFR" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="373" height="148"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -158,7 +131,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-N4-Hm4">
-                    <rect key="frame" x="135.5" y="0.0" width="105.5" height="51"/>
+                    <rect key="frame" x="135" y="0.0" width="106" height="51"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of7-ju-1Oc" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                             <rect key="frame" x="5" y="0.0" width="51" height="51"/>
@@ -169,7 +142,7 @@
                             <state key="selected" image="lx_icon_recommend_selected.png"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQt-EF-SSg">
-                            <rect key="frame" x="61" y="0.0" width="39.5" height="51"/>
+                            <rect key="frame" x="61" y="0.0" width="40" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="101" id="1pj-Kg-BuH"/>
                                 <constraint firstAttribute="height" constant="31" id="MTa-mI-cTh"/>
@@ -213,6 +186,41 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-1175" y="408"/>
+        </view>
+        <view contentMode="scaleToFill" id="vqj-O6-7Rt">
+            <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhR-2Y-i8H" userLabel="CenterView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txw-56-6DI" userLabel="RightView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="351" y="0.0" width="336" height="171"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Nx-f3-r8X" userLabel="LeftView" customClass="TouchTransmissionView" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="336" height="171"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7Nx-f3-r8X" firstAttribute="top" secondItem="vqj-O6-7Rt" secondAttribute="top" id="6dt-BC-uyK"/>
+                <constraint firstAttribute="bottom" secondItem="txw-56-6DI" secondAttribute="bottom" id="A2h-8Q-Dmx"/>
+                <constraint firstItem="txw-56-6DI" firstAttribute="top" secondItem="vqj-O6-7Rt" secondAttribute="top" id="L7O-qy-hXW"/>
+                <constraint firstItem="7Nx-f3-r8X" firstAttribute="leading" secondItem="vqj-O6-7Rt" secondAttribute="leading" id="N2p-Jx-UNg"/>
+                <constraint firstItem="NhR-2Y-i8H" firstAttribute="leading" secondItem="vqj-O6-7Rt" secondAttribute="leading" id="QAl-H2-2w0"/>
+                <constraint firstAttribute="bottom" secondItem="NhR-2Y-i8H" secondAttribute="bottom" id="RcT-xu-LXY"/>
+                <constraint firstItem="NhR-2Y-i8H" firstAttribute="top" secondItem="vqj-O6-7Rt" secondAttribute="top" id="Z7E-Uf-ILj"/>
+                <constraint firstAttribute="trailing" secondItem="txw-56-6DI" secondAttribute="trailing" id="cPf-dH-O7j"/>
+                <constraint firstAttribute="trailing" secondItem="NhR-2Y-i8H" secondAttribute="trailing" id="ddq-T2-QOJ"/>
+                <constraint firstItem="txw-56-6DI" firstAttribute="width" secondItem="7Nx-f3-r8X" secondAttribute="width" id="jw7-ID-AJh"/>
+                <constraint firstAttribute="bottom" secondItem="7Nx-f3-r8X" secondAttribute="bottom" id="sUz-1r-fPc"/>
+                <constraint firstItem="txw-56-6DI" firstAttribute="leading" secondItem="7Nx-f3-r8X" secondAttribute="trailing" constant="15" id="vYc-bg-LUY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-961" y="574"/>
         </view>
     </objects>
     <resources>
