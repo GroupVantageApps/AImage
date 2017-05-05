@@ -7,9 +7,11 @@
 //
 
 import Foundation
-
+protocol LXProductBLSViewDelegate: NSObjectProtocol {
+    func movieAct()
+} 
 class LXProductBLSView: UIView {
-    
+    weak var delegate: LXProductBLSViewDelegate? 
     var mframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38 , y: 16.7, width: 38, height: 38))
     
@@ -26,6 +28,9 @@ class LXProductBLSView: UIView {
         self.isHidden = true
         print("Button pressed")
     }
-    
-  
+
+    @IBAction func onTapMovie(_ sender: Any) {
+        self.isHidden = true
+        delegate?.movieAct()
+    }
 }

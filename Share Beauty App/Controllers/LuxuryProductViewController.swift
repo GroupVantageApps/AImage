@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
+class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegate, MoviePlayerViewDelegate, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLXProductDetail)
@@ -115,6 +115,7 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
     @IBAction func onTapBLS(_ sender: Any) {
         let blsView: LXProductBLSView = UINib(nibName: "LXProductBLSView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductBLSView
         blsView.setUI()
+        blsView.delegate = self
         blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(blsView)
     }
@@ -124,5 +125,17 @@ class LuxuryProductViewController: LXBaseViewController, LXNavigationViewDelegte
         blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(blsView)
 
+    }
+    func movieAct(){
+        
+        bgAudioPlayer.pause()
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: "17AW_LX")
+        self.view.addSubview(moviePlay)
+    }
+    func endMovie() {
+        bgAudioPlayer.play()
     }
 }
