@@ -126,7 +126,9 @@ class Utility: NSObject {
         } else {
             let str: String = value as! String
             if str != "" {
-                num = Int(str)!
+				if let strValue = Int(str) {
+					num = strValue
+				}
             }
         }
         return num

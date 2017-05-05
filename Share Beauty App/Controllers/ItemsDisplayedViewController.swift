@@ -45,9 +45,15 @@ class ItemsDisplayedViewController: UIViewController, NavigationControllerAnnota
 //event
 extension ItemsDisplayedViewController {
     @IBAction private func onChangedLineSwitch(_ sender: UISwitch) {
+        /*
         LineTranslateTable.changeUseFlg(lineId: mLineId, isUse: sender.isOn)
         if let targetIndex = mLines.index(where: {$0.lineId == mLineId}) {
             mLines[safe: targetIndex]?.useFlg = Int(sender.isOn as NSNumber)
+        }
+ */
+        LineTranslateTable.changeDisplayFlg(lineId: mLineId, isDisplay: sender.isOn)
+        if let targetIndex = mLines.index(where: {$0.lineId == mLineId}) {
+            mLines[safe: targetIndex]?.displayFlg = Int(sender.isOn as NSNumber)
         }
     }
 }
@@ -73,7 +79,7 @@ extension ItemsDisplayedViewController: UITableViewDelegate {
             isIgnoreDisplayFlg: true).products
         mProductTableView.reloadData()
         mLblLine.text = line.name
-        mSwitchLine.isOn = line.useFlg == 1
+        mSwitchLine.isOn = line.displayFlg == 1
         mSwitchLine.isHidden = false
     }
 }

@@ -53,13 +53,20 @@ class MakeupUsageView: BaseView {
             stepInfo4.text = items["14"]
             stepInfo4.startTime = AppItemTable.getSeekByItemId(itemId: 7864)
             stepInfo4.endTime = 47
-
-            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
-            movieInfos = [movieInfo1]
+            // Cateyeを表示
+            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3] //BasicなのでstepInfo4を削除
+            var movieInfo2 = MovieInfo()
+            movieInfo2.title = cateye
+            movieInfo2.movieId = 6025 //変更平井
+            movieInfo2.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
+            
+            movieInfos = [movieInfo1, movieInfo2]
+            
+           // movieInfos = [movieInfo1]
         } else if productId == 514 {
             var movieInfo1 = MovieInfo()
             movieInfo1.title = basic
-            movieInfo1.movieId = 5991
+            movieInfo1.movieId = 6028 //変更平井
 
             var stepInfo1 = StepUsageInfo()
             stepInfo1.stepNumber = 1
@@ -69,24 +76,24 @@ class MakeupUsageView: BaseView {
             var stepInfo2 = StepUsageInfo()
             stepInfo2.stepNumber = 2
             stepInfo2.text = items["22"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7907)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7908)
+            stepInfo2.startTime = AppItemTable.getSeekByItemId(itemId: 7907)
+            stepInfo2.endTime = AppItemTable.getSeekByItemId(itemId: 7908)
             var stepInfo3 = StepUsageInfo()
             stepInfo3.stepNumber = 3
             stepInfo3.text = items["23"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7908)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7909)
+            stepInfo3.startTime = AppItemTable.getSeekByItemId(itemId: 7908)
+            stepInfo3.endTime = AppItemTable.getSeekByItemId(itemId: 7909)
             var stepInfo4 = StepUsageInfo()
             stepInfo4.stepNumber = 4
             stepInfo4.text = items["24"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7909)
-            stepInfo4.endTime = 19
-
-            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
+            stepInfo4.startTime = AppItemTable.getSeekByItemId(itemId: 7909)//開始キー
+            stepInfo4.endTime = 44
+        
+            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3]
 
             var movieInfo2 = MovieInfo()
             movieInfo2.title = cateye
-            movieInfo2.movieId = 5992
+            movieInfo2.movieId = 6028 //変更平井
             movieInfo2.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
 
             movieInfos = [movieInfo1, movieInfo2]

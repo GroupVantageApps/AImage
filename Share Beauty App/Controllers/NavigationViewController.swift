@@ -21,6 +21,7 @@ protocol NavigationControllerDelegate: NSObjectProtocol {
     func hideNavigationView(_ animateDuration: TimeInterval?)
     func showVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?, didTapFunction: @escaping () -> ())
     func hideVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?)
+	func setAboutShiseidoButtonEnabled(_ isEnabled: Bool)
 }
 
 protocol NavigationControllerAnnotation: NSObjectProtocol {
@@ -376,6 +377,12 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mDidTapSkipFunction = {}
         self.backRootVc(true)
     }
+	
+	/// 資生堂About画面への遷移
+	fileprivate func showAboutShiseido() {
+		let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
+		self.nextVc(vc, animated: true)
+	}
 
     // MARK: - NavigationControllerDelegate
 
@@ -419,6 +426,10 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mHeaderView.showSkipButton(false, animateDuration: animateDuration)
         mDidTapSkipFunction = {}
     }
+	
+	func setAboutShiseidoButtonEnabled(_ isEnabled: Bool) {
+		mHeaderView.setAboutShiseidoEnabled(isEnabled)
+	}
 
     // MARK: - HeaderViewDelegate
 
@@ -434,6 +445,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             mDidTapSkipFunction()
         case .update:
             self.updateData()
+		case .shiseido:
+			self.showAboutShiseido()
         }
     }
 

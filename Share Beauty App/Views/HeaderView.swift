@@ -9,7 +9,7 @@
 import UIKit
 
 enum HeaderViewActionType: Int {
-    case home, skip, list, update
+    case home, skip, list, update, shiseido
 }
 
 protocol HeaderViewDelegate: NSObjectProtocol {
@@ -21,12 +21,15 @@ class HeaderView: BaseView {
     @IBOutlet weak private var mBtnSkip: BaseButton!
     @IBOutlet weak private var mBtnOutApp: BaseButton!
     @IBOutlet weak private var mBtnUpdate: BaseButton!
+	@IBOutlet weak var mBtnShiseido: BaseButton!
     @IBOutlet weak private var mConstraintUpdateToOutApp: NSLayoutConstraint!
+	@IBOutlet weak var mConstraintShiseidoToUpdate: NSLayoutConstraint!
 
     private let mDropDown = DropDown()
     weak var delegate: HeaderViewDelegate?
 
     private var mConstraintWidthZero: NSLayoutConstraint?
+	private var mShiseidoConstraintWidthZero: NSLayoutConstraint?
 
     func setDropDown(dataSource: [String]) {
         mDropDown.dataSource = dataSource
@@ -55,6 +58,9 @@ class HeaderView: BaseView {
     @IBAction func onTapButton(_ sender: Any) {
         delegate?.didHeaderViewAction(.update)
     }
+	@IBAction func onTapShiseido(_ sender: Any) {
+		delegate?.didHeaderViewAction(.shiseido)
+	}
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -91,4 +97,21 @@ class HeaderView: BaseView {
             }
         }
     }
+	
+	func setAboutShiseidoEnabled(_ isEnabled: Bool) {
+		mBtnShiseido.isHidden = !isEnabled
+		if isEnabled {
+			mConstraintShiseidoToUpdate.constant = 20
+			if mShiseidoConstraintWidthZero != nil {
+				mBtnShiseido.removeConstraint(mShiseidoConstraintWidthZero!)
+				mShiseidoConstraintWidthZero = nil
+			}
+		} else {
+			mConstraintShiseidoToUpdate.constant = 0
+			if mShiseidoConstraintWidthZero == nil {
+				mShiseidoConstraintWidthZero = NSLayoutConstraint.makeWidth(item: mBtnShiseido, constant: 0)
+				mBtnShiseido.addConstraint(mShiseidoConstraintWidthZero!)
+			}
+		}
+	}
 }

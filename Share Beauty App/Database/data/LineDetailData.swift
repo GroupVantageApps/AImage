@@ -49,7 +49,7 @@ class LineDetailData: NSObject {
 
             for productId in lineStep.product {
                 let data: ProductData = ProductData(productId: productId)
-                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).useFlg == 1 {
+                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
                     lineStep.productData.append(data)
                 }
             }

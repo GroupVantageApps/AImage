@@ -76,6 +76,11 @@ class ProductTable: NSObject {
                 concernData.displayType = Utility.toInt(data["display_type"])
                 entity.concern.append(concernData)
             }
+			
+			entity.makeupLook = Utility.toInt(json["makeup_look"]) > 0
+			if let makeupLookImages = json["makeup_look_image"] as? [Int] {
+				entity.makeupLookImages = makeupLookImages
+			}
         }
 
         database.close()

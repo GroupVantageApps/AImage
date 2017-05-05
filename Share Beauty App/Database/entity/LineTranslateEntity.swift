@@ -28,6 +28,7 @@ class LineTranslateEntity: NSObject {
     var displayOrder: Int? = 0
     var lastUpdateTs: String = String()
     var useFlg: Int? = 0
+    var displayFlg: Int? = 0
 }
 
 struct DBStructLineStep {

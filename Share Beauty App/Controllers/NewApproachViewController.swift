@@ -16,6 +16,7 @@ class NewApproachViewController: UIViewController, NavigationControllerAnnotatio
     @IBOutlet weak var mBtnDefend: UIButton!
     @IBOutlet weak var mBtnRegenerate: UIButton!
     @IBOutlet weak var mLblSynergy: UILabel!
+    @IBOutlet weak var mImgVApproach: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,10 @@ class NewApproachViewController: UIViewController, NavigationControllerAnnotatio
         mLblSynergy.layer.borderWidth = 4
         mLblSynergy.layer.borderColor = UIColor.init(red255: 200, green255: 16, blue255: 46, alpha: 1).cgColor
 
+        let imageId = AppItemTable.getMainImageByItemId(itemId: 7880)
+        if let approachImage = FileTable.getImage(imageId.first) {
+            mImgVApproach.image = approachImage
+        }
     }
     @IBAction func onTapDefend(_ sender: Any) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController

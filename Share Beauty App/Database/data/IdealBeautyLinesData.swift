@@ -27,7 +27,7 @@ class IdealBeautyLinesData: NSObject {
         }
         for lineId in idealBeautyLines {
             let entity: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
-            if entity.lineId != 0 && entity.useFlg == 1 {
+            if entity.lineId != 0 && entity.displayFlg == 1 {
                 var data: DataStructLine = DataStructLine()
                 data.lineId = entity.lineId!
                 data.name = entity.name

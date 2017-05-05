@@ -142,7 +142,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
         mCategoryButtonTechnologies.title = mItemsCommon["05"]
-        mCategoryButtonDefend.title = mItemsSideMenu["16"]
+		mCategoryButtonDefend.title =  product.makeupLook ? mItemsCommon["06"] : mItemsSideMenu["16"]
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
 
         mImgVProduct.image = FileTable.getImage(product.image)
@@ -157,7 +157,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
-        mCategoryButtonDefend.enabled = mIsUtm
+		
+		if product.makeupLook {
+			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0
+		} else {
+			mCategoryButtonDefend.enabled = mIsUtm
+		}
 
         self.setSpecialMenu()
 
@@ -223,6 +228,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
 		
+		// waso用画像タップ案内表示
+		if self.mIsWaso {
+			self.showWasoHukidashiGuideView()
+		}
+		
 		// 初期特殊遷移
 		self.initialTransition()
     }
@@ -232,6 +242,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView.showAnimation()
         }
             mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
+		
+		if let wasoFeatureView = self.mWasoFeatureView {
+			wasoFeatureView.beginGuideFrameAnimation()
+		}
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -239,6 +253,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         product = ProductDetailData(productId: productId)
         mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
     }
+	
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		if let avPlayerVc = object as? AVPlayerViewController {
+			// AVPlayerViewControllerのdismiss間際にframeが1度変化する。このタイミングでオブザーバを削除する
+			if keyPath == #keyPath(UIViewController.view.frame) {
+				avPlayerVc.removeObserver(self, forKeyPath: #keyPath(UIViewController.view.frame))
+				if let player = avPlayerVc.player, let observer = self.mAvPlayerObserver {
+					player.removeTimeObserver(observer)
+					self.mAvPlayerObserver = nil
+				}
+			}
+		}
+	}
 
     // MARK: - PrivateMethod
 
@@ -339,16 +366,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     private func initTransitionView() {
+        
+        let item: [String: String]! = AppItemTable.getItems(screenId: Const.screenIdTop)
+        
         var datas = [ProductDetailTransitionData]()
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
-            datas.append(ProductDetailTransitionData(title: "Life Style Beauty", selector: #selector(self.onTapLifeStyleBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
         if Utility.isIconicProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Iconic Beauty", selector: #selector(self.onTapIconicBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["04"]!, selector: #selector(self.onTapIconicBeauty(_:))))
         }
         if Utility.isOnTrendProduct(productId: self.productId) {
-            datas.append(ProductDetailTransitionData(title: "Latest Beauty", selector: #selector(self.onTapOnTrendBeauty(_:))))
+            datas.append(ProductDetailTransitionData(title: item["03"]!, selector: #selector(self.onTapOnTrendBeauty(_:))))
         }
 		
         mTransitionView.setProductDetailTransitionData(datas, target: self)
@@ -471,6 +501,27 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let height = NSLayoutConstraint.makeHeight(item: targetView, constant: viewHeight)
         mVBaseFeaturesView.addConstraints([left, right, top, bottom, height])
     }
+	
+	/// waso用タップ案内view表示
+	private func showWasoHukidashiGuideView() {
+		if self.mWasoFeatureView == nil {
+			return
+		}
+		
+		let colorDic: [Int: UIColor] = [
+			506: #colorLiteral(red: 0.9215686275, green: 0.9450980392, blue: 0.8431372549, alpha: 1),
+			507: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
+			508: #colorLiteral(red: 0.9215686275, green: 0.9450980392, blue: 0.8431372549, alpha: 1),
+			509: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
+			510: #colorLiteral(red: 0.9725490196, green: 0.968627451, blue: 0.9215686275, alpha: 1),
+			511: #colorLiteral(red: 0.9921568627, green: 0.8980392157, blue: 0.737254902, alpha: 1),
+			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1)
+		]
+		
+		if let color = colorDic[self.productId] {
+			self.mWasoFeatureView.showGuideView(frameColor: color)
+		}
+	}
 
     private func showUtmInfo(_ sender: CategoryButton) {
         if sender === mCategoryButtonFeatures {
@@ -540,19 +591,25 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if sender === mCategoryButtonEfficacy {
             makeCategoryImages(product.effectImage)
         } else if sender === mCategoryButtonDefend {
-
+			if product.makeupLook {
+				makeCategoryImages(product.makeupLookImages)
+			}
         }
     }
 
+	private var mAvPlayerObserver: Any? = nil
     private func showMovie(movieId: Int) {
         let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movieId))
-        let avPlayerVc: AVPlayerViewController = AVPlayerViewController()
+        let avPlayerVc = AVPlayerViewController()
         avPlayerVc.player = avPlayer
         if #available(iOS 9.0, *) {
             avPlayerVc.allowsPictureInPicturePlayback = false
         }
-        self.present(avPlayerVc, animated: true, completion: nil)
-        avPlayer.play()
+		self.present(avPlayerVc, animated: true, completion: {
+			// dismissを監視するため、オブザーバ登録する
+			avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+		})
+		avPlayer.play()
 		
 		// テロップ表示用ラベル
 		let telopLabel = UILabel()
@@ -570,7 +627,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		
 		// 再生位置を監視し、テロップを表示する
 		let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
-		avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
+		self.mAvPlayerObserver = avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
 			// 内部関数: 該当のテロップデータを検索する
 			func searchTelop(playbackPosition: Float64) -> TelopData.DataStructTerop? {
 				var result: TelopData.DataStructTerop? = nil

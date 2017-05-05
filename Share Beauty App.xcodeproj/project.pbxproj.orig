@@ -280,9 +280,6 @@
 		C0E85A681E221F710035CCC4 /* ProductDetailTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */; };
 		C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */; };
 		C0FE16491D853CE700415B65 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE16481D853CE700415B65 /* SideBar.swift */; };
-		DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */; };
-		DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */; };
-		DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */; };
 		DE2C8EEF1E9B9BAF00B5FC4A /* LXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */; };
 		DE2C8EF01E9B9BAF00B5FC4A /* LuxuryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EEA1E9B9BAF00B5FC4A /* LuxuryViewController.swift */; };
 		DE2C8EF11E9B9BAF00B5FC4A /* LuxuryProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */; };
@@ -359,55 +356,7 @@
 		DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91701E9C682500B5FC4A /* pick.png */; };
 		DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */; };
 		DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */; };
-		DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */; };
-		DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */; };
-		DE48C30D1EB6A9AA00D29A8D /* lx_bls_dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */; };
-		DE48C3101EB6AA4400D29A8D /* LXProductBLSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */; };
-		DE48C3111EB6AA4400D29A8D /* LXProductBLSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */; };
-		DE48C3141EB6ABB600D29A8D /* LXProductGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */; };
-		DE48C3151EB6ABB600D29A8D /* LXProductGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3131EB6ABB600D29A8D /* LXProductGraphView.xib */; };
-		DE48C31A1EB6AC6B00D29A8D /* lx_product_graph_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3161EB6AC6B00D29A8D /* lx_product_graph_4.png */; };
-		DE48C31B1EB6AC6B00D29A8D /* lx_product_graph_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3171EB6AC6B00D29A8D /* lx_product_graph_3.png */; };
-		DE48C31C1EB6AC6B00D29A8D /* lx_product_graph_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3181EB6AC6B00D29A8D /* lx_product_graph_2.png */; };
-		DE48C31D1EB6AC6B00D29A8D /* lx_product_graph_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3191EB6AC6B00D29A8D /* lx_product_graph_1.png */; };
-		DE507EE71EB887760095FB78 /* lx_yutaka_treatment_thum_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */; };
-		DE507EE81EB887760095FB78 /* lx_yutaka_treatment_thum_02.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */; };
-		DE507EE91EB887760095FB78 /* lx_yutaka_treatment_thum_03.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */; };
-		DE507EEA1EB887760095FB78 /* lx_yutaka_treatment_thum_04.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */; };
-		DE507EEB1EB887760095FB78 /* lx_yutaka_treatment_thum_05.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */; };
-		DE507EEC1EB887760095FB78 /* lx_yutaka_treatment_thum_06.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */; };
-		DE507EED1EB887760095FB78 /* lx_yutaka_treatment_thum_07.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */; };
-		DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */; };
-		DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */; };
-		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
-		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
-		DE7B7E611EB7547D006F8246 /* lx_product_play_movie.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E601EB7547D006F8246 /* lx_product_play_movie.png */; };
 		DEA75C841E9F8961001BE9CC /* 010483lx.csv in Resources */ = {isa = PBXBuildFile; fileRef = DEA75C831E9F8961001BE9CC /* 010483lx.csv */; };
-		DEB555341EB333490022AB0F /* lx_ba_second_face_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */; };
-		DEB555361EB333540022AB0F /* lx_ba_second_face_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DEB555351EB333540022AB0F /* lx_ba_second_face_2.png */; };
-		DEC4F72D1EBC2A00007FE8F1 /* lx_ba_second_face_1a.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC4F72B1EBC29FF007FE8F1 /* lx_ba_second_face_1a.png */; };
-		DEC4F72E1EBC2A00007FE8F1 /* lx_ba_second_face_2a.png in Resources */ = {isa = PBXBuildFile; fileRef = DEC4F72C1EBC29FF007FE8F1 /* lx_ba_second_face_2a.png */; };
-		DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */; };
-		DEE83E5A1EB75C04000C7D8D /* LXProductTechnologyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */; };
-		DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */; };
-		DEE83E5E1EB761F5000C7D8D /* LXTechBiologicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */; };
-		DEE83E601EB76247000C7D8D /* lx_tech_bio.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */; };
-		DEE83E621EB766CA000C7D8D /* lx_aura.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E611EB766CA000C7D8D /* lx_aura.png */; };
-		DEE83E651EB766EF000C7D8D /* LXTechAuraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */; };
-		DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */; };
-		DEE83E681EB78A66000C7D8D /* lx_penetration.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E671EB78A66000C7D8D /* lx_penetration.png */; };
-		DEE83E6B1EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */; };
-		DEE83E6C1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6A1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift */; };
-		DEE83E6F1EB78B2B000C7D8D /* LXProductEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */; };
-		DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */; };
-		DEE83E721EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E711EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png */; };
-		DEE83E741EB78D74000C7D8D /* lx_effifacy_ba.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E731EB78D74000C7D8D /* lx_effifacy_ba.png */; };
-		DEE83E761EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E751EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png */; };
-		DEE83E791EB78FE9000C7D8D /* lx_effifacy_c_graph_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E771EB78FE9000C7D8D /* lx_effifacy_c_graph_4.png */; };
-		DEE83E7A1EB78FE9000C7D8D /* lx_effifacy_c_graph_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E781EB78FE9000C7D8D /* lx_effifacy_c_graph_3.png */; };
-		DEE83E7D1EB790DD000C7D8D /* lx_intensive_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E7B1EB790DD000C7D8D /* lx_intensive_graph.png */; };
-		DEE83E7E1EB790DD000C7D8D /* lx_intensive.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E7C1EB790DD000C7D8D /* lx_intensive.png */; };
-		DEE83E801EB79160000C7D8D /* lx_eye_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E7F1EB79160000C7D8D /* lx_eye_graph.png */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
 		E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */; };
 		E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */; };
@@ -814,9 +763,6 @@
 		C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTransitionView.xib; sourceTree = "<group>"; };
 		C0FE16481D853CE700415B65 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
-		DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_3.png; sourceTree = "<group>"; };
-		DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_2.png; sourceTree = "<group>"; };
-		DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_1.png; sourceTree = "<group>"; };
 		DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXBaseViewController.swift; sourceTree = "<group>"; };
 		DE2C8EEA1E9B9BAF00B5FC4A /* LuxuryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuxuryViewController.swift; sourceTree = "<group>"; };
 		DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuxuryProductViewController.swift; sourceTree = "<group>"; };
@@ -893,55 +839,7 @@
 		DE2C91701E9C682500B5FC4A /* pick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick.png; sourceTree = "<group>"; };
 		DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailViewController.swift; sourceTree = "<group>"; };
 		DE2C91B81E9C6F8000B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LXProductDetailViewController.storyboard; sourceTree = "<group>"; };
-		DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_btn.png; sourceTree = "<group>"; };
-		DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_bls_btn.png; sourceTree = "<group>"; };
-		DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bls_dummy.png; sourceTree = "<group>"; };
-		DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductBLSView.xib; sourceTree = "<group>"; };
-		DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductBLSView.swift; sourceTree = "<group>"; };
-		DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductGraphView.swift; sourceTree = "<group>"; };
-		DE48C3131EB6ABB600D29A8D /* LXProductGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductGraphView.xib; sourceTree = "<group>"; };
-		DE48C3161EB6AC6B00D29A8D /* lx_product_graph_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_4.png; sourceTree = "<group>"; };
-		DE48C3171EB6AC6B00D29A8D /* lx_product_graph_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_3.png; sourceTree = "<group>"; };
-		DE48C3181EB6AC6B00D29A8D /* lx_product_graph_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_2.png; sourceTree = "<group>"; };
-		DE48C3191EB6AC6B00D29A8D /* lx_product_graph_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_1.png; sourceTree = "<group>"; };
-		DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_01.png; sourceTree = "<group>"; };
-		DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_02.png; sourceTree = "<group>"; };
-		DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_03.png; sourceTree = "<group>"; };
-		DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_04.png; sourceTree = "<group>"; };
-		DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_05.png; sourceTree = "<group>"; };
-		DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_06.png; sourceTree = "<group>"; };
-		DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_07.png; sourceTree = "<group>"; };
-		DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_08.png; sourceTree = "<group>"; };
-		DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_angelica.png; sourceTree = "<group>"; };
-		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
-		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
-		DE7B7E601EB7547D006F8246 /* lx_product_play_movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_play_movie.png; sourceTree = "<group>"; };
 		DEA75C831E9F8961001BE9CC /* 010483lx.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 010483lx.csv; sourceTree = "<group>"; };
-		DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_1.png; sourceTree = "<group>"; };
-		DEB555351EB333540022AB0F /* lx_ba_second_face_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_2.png; sourceTree = "<group>"; };
-		DEC4F72B1EBC29FF007FE8F1 /* lx_ba_second_face_1a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_1a.png; sourceTree = "<group>"; };
-		DEC4F72C1EBC29FF007FE8F1 /* lx_ba_second_face_2a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ba_second_face_2a.png; sourceTree = "<group>"; };
-		DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductTechnologyView.xib; sourceTree = "<group>"; };
-		DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductTechnologyView.swift; sourceTree = "<group>"; };
-		DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechBiologicalView.xib; sourceTree = "<group>"; };
-		DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTechBiologicalView.swift; sourceTree = "<group>"; };
-		DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_tech_bio.png; sourceTree = "<group>"; };
-		DEE83E611EB766CA000C7D8D /* lx_aura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_aura.png; sourceTree = "<group>"; };
-		DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTechAuraView.swift; sourceTree = "<group>"; };
-		DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechAuraView.xib; sourceTree = "<group>"; };
-		DEE83E671EB78A66000C7D8D /* lx_penetration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_penetration.png; sourceTree = "<group>"; };
-		DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXEfficacyPenetrationView.xib; sourceTree = "<group>"; };
-		DEE83E6A1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXEfficacyPenetrationView.swift; sourceTree = "<group>"; };
-		DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductEfficacyView.xib; sourceTree = "<group>"; };
-		DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductEfficacyView.swift; sourceTree = "<group>"; };
-		DEE83E711EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_effifacy_c_graph_1.png; sourceTree = "<group>"; };
-		DEE83E731EB78D74000C7D8D /* lx_effifacy_ba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_effifacy_ba.png; sourceTree = "<group>"; };
-		DEE83E751EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_effifacy_c_graph_2.png; sourceTree = "<group>"; };
-		DEE83E771EB78FE9000C7D8D /* lx_effifacy_c_graph_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_effifacy_c_graph_4.png; sourceTree = "<group>"; };
-		DEE83E781EB78FE9000C7D8D /* lx_effifacy_c_graph_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_effifacy_c_graph_3.png; sourceTree = "<group>"; };
-		DEE83E7B1EB790DD000C7D8D /* lx_intensive_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_intensive_graph.png; sourceTree = "<group>"; };
-		DEE83E7C1EB790DD000C7D8D /* lx_intensive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_intensive.png; sourceTree = "<group>"; };
-		DEE83E7F1EB79160000C7D8D /* lx_eye_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_eye_graph.png; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
 		E52891CA1DF2F911007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IdealFirstSelectViewController.storyboard; sourceTree = "<group>"; };
 		E52891CD1DF2FA05007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IconicViewController.storyboard; sourceTree = "<group>"; };
@@ -1449,13 +1347,14 @@
 				C02818B11E6D4A5E00D4DADA /* StepUsageView.xib */,
 				C0665B3C1D6B251500B3D8E5 /* TestView.swift */,
 				C0665B3E1D6B252400B3D8E5 /* TestView.xib */,
-				803566E81EA506F100B27C60 /* TouchTransmissionView.swift */,
 				C0BC62E31DB0BFC6005E73CE /* TroubleSelectView.swift */,
 				C0BC62E51DB0BFE8005E73CE /* TroubleSelectView.xib */,
 				C03520E91DA0F36E005129B5 /* TroubleView.swift */,
 				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
 				C0B263E31E6E98FB00452C12 /* WasoGraphEfficacyView.swift */,
 				C0B263E41E6E98FB00452C12 /* WasoGraphEfficacyView.xib */,
+				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
+				803566E81EA506F100B27C60 /* TouchTransmissionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1463,37 +1362,23 @@
 		C091BA791D6980DE0073FEDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
-				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
+				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
+				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
 				C0665ACB1D6AE96D00B3D8E5 /* IdealFirstSelectViewController.swift */,
+				C0B1BE701D99436E0008E318 /* IdealResultViewController.swift */,
 				C037CBA41D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift */,
 				C03520DB1DA0D821005129B5 /* IdealSpecialItemViewController.swift */,
-				C0B1BE701D99436E0008E318 /* IdealResultViewController.swift */,
-				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
+				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
+				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
 				C03B08E31D7C2F7C00935CBE /* LifeStyleFirstDetailViewController.swift */,
 				C00EFB151D7EBF3000F9EC8F /* LifeStyleFourthDetailViewController.swift */,
 				C00EFB111D7EBF0200F9EC8F /* LifeStyleSecondDetailViewController.swift */,
 				C00EFB131D7EBF1800F9EC8F /* LifeStyleThirdDetailViewController.swift */,
-				C058183D1D6DD96C00C8FB55 /* IconicViewController.swift */,
-				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
+				C058183B1D6DD95A00C8FB55 /* LifeStyleViewController.swift */,
 				C0A335E91D80181E006A8FD1 /* LineDetailViewController.swift */,
 				C042C2111DD46A7200BA0211 /* LineListViewController.swift */,
 				C0A335EB1D802D39006A8FD1 /* LineStepViewController.swift */,
-				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
-				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
-				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
-				E57BB3221E5987B600D4F5FB /* ProductLineViewController.swift */,
-				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
-				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
-				C0AFC9801D85648D0066B988 /* RecommendedViewController.swift */,
-				C0880CED1E4B2048006A3713 /* CountrySettingViewController.swift */,
-				C0AFC97E1D85645D0066B988 /* LanguageSettingViewController.swift */,
-				C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */,
-				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
-				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
-				C08C93201E8A56DD0096C98F /* ItemsDisplayedViewController.swift */,
-				C05818411D6DD99E00C8FB55 /* AboutBrandViewController.swift */,
-				8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */,
 				DE2C8EED1E9B9BAF00B5FC4A /* LuxuryIngredientViewController.swift */,
 				DE2C8EEC1E9B9BAF00B5FC4A /* LuxuryProductDetailViewController.swift */,
 				DE2C8EEB1E9B9BAF00B5FC4A /* LuxuryProductViewController.swift */,
@@ -1501,6 +1386,20 @@
 				DE2C8EEE1E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift */,
 				DE2C8EE91E9B9BAF00B5FC4A /* LXBaseViewController.swift */,
 				DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */,
+				C0417E6E1E659FB7009519EC /* MakeupViewController.swift */,
+				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
+				C02818A61E6C25B600D4DADA /* NewApproachViewController.swift */,
+				C058183F1D6DD98B00C8FB55 /* OnTrendViewController.swift */,
+				C0306D651D6F354400D56F45 /* ProductDetailViewController.swift */,
+				E57BB3221E5987B600D4F5FB /* ProductLineViewController.swift */,
+				C0423F7E1E35EE7000D56960 /* ProductListViewController.swift */,
+				C0AFC9801D85648D0066B988 /* RecommendedViewController.swift */,
+				C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */,
+				C0880CEE1E4B2048006A3713 /* SettingViewController.swift */,
+				C0880CEF1E4B2048006A3713 /* TargetSettingViewController.swift */,
+				C0A335E31D800324006A8FD1 /* TipsViewController.swift */,
+				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
+				8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1548,22 +1447,6 @@
 		DE2C904F1E9C66E600B5FC4A /* LX */ = {
 			isa = PBXGroup;
 			children = (
-				DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */,
-				DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */,
-				DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */,
-				DEE83E6A1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift */,
-				DEE83E631EB766EF000C7D8D /* LXTechAuraView.swift */,
-				DEE83E641EB766EF000C7D8D /* LXTechAuraView.xib */,
-				DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */,
-				DEE83E5C1EB761F5000C7D8D /* LXTechBiologicalView.swift */,
-				DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */,
-				DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */,
-				DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */,
-				DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */,
-				DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */,
-				DE48C3131EB6ABB600D29A8D /* LXProductGraphView.xib */,
-				DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */,
-				DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */,
 				DE2C90501E9C66E600B5FC4A /* IngredientSkinGraphView.swift */,
 				DE2C90511E9C66E600B5FC4A /* IngredientSkinGraphView.xib */,
 				DE2C90521E9C66E600B5FC4A /* LXCategoryButton.swift */,
@@ -1623,41 +1506,6 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
-				DEC4F72B1EBC29FF007FE8F1 /* lx_ba_second_face_1a.png */,
-				DEC4F72C1EBC29FF007FE8F1 /* lx_ba_second_face_2a.png */,
-				DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */,
-				DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */,
-				DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */,
-				DE507EDF1EB887760095FB78 /* lx_yutaka_treatment_thum_01.png */,
-				DE507EE01EB887760095FB78 /* lx_yutaka_treatment_thum_02.png */,
-				DE507EE11EB887760095FB78 /* lx_yutaka_treatment_thum_03.png */,
-				DE507EE21EB887760095FB78 /* lx_yutaka_treatment_thum_04.png */,
-				DE507EE31EB887760095FB78 /* lx_yutaka_treatment_thum_05.png */,
-				DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */,
-				DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */,
-				DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */,
-				DEE83E7F1EB79160000C7D8D /* lx_eye_graph.png */,
-				DEE83E7B1EB790DD000C7D8D /* lx_intensive_graph.png */,
-				DEE83E7C1EB790DD000C7D8D /* lx_intensive.png */,
-				DEE83E771EB78FE9000C7D8D /* lx_effifacy_c_graph_4.png */,
-				DEE83E781EB78FE9000C7D8D /* lx_effifacy_c_graph_3.png */,
-				DEE83E751EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png */,
-				DEE83E731EB78D74000C7D8D /* lx_effifacy_ba.png */,
-				DEE83E711EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png */,
-				DEE83E671EB78A66000C7D8D /* lx_penetration.png */,
-				DEE83E611EB766CA000C7D8D /* lx_aura.png */,
-				DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */,
-				DE7B7E601EB7547D006F8246 /* lx_product_play_movie.png */,
-				DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */,
-				DE48C3161EB6AC6B00D29A8D /* lx_product_graph_4.png */,
-				DE48C3171EB6AC6B00D29A8D /* lx_product_graph_3.png */,
-				DE48C3181EB6AC6B00D29A8D /* lx_product_graph_2.png */,
-				DE48C3191EB6AC6B00D29A8D /* lx_product_graph_1.png */,
-				DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */,
-				DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */,
-				DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */,
-				DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */,
-				DEB555351EB333540022AB0F /* lx_ba_second_face_2.png */,
 				DE2C913B1E9C682500B5FC4A /* ba_up.png */,
 				DE2C91401E9C682500B5FC4A /* efficacy_dummy.png */,
 				DE2C91431E9C682500B5FC4A /* graphPoint_down.png */,
@@ -2035,22 +1883,18 @@
 				C050C9761E8267450009679D /* defend_bg.png in Resources */,
 				C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */,
 				DE2C90891E9C66E600B5FC4A /* LXIngredientView.xib in Resources */,
-				DE507EEA1EB887760095FB78 /* lx_yutaka_treatment_thum_04.png in Resources */,
 				DE2C90911E9C66E600B5FC4A /* LXProductionBAView.xib in Resources */,
 				C0423F821E3627A500D56960 /* shiseido-finder.db in Resources */,
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
 				C050C9171E82619F0009679D /* whl_slider_1.png in Resources */,
 				C05913D91D67235700F22214 /* LaunchScreen.storyboard in Resources */,
-				DE48C3151EB6ABB600D29A8D /* LXProductGraphView.xib in Resources */,
 				E55194B21DF43E120064C37D /* ProductDetailViewController.storyboard in Resources */,
 				DE2C907F1E9C66E600B5FC4A /* LXCherryGraphView.xib in Resources */,
 				C0BC62E61DB0BFE8005E73CE /* TroubleSelectView.xib in Resources */,
 				C050C9031E82619F0009679D /* sib02_before.png in Resources */,
 				C0880D051E4B2579006A3713 /* CountrySettingViewController.storyboard in Resources */,
-				DEE83E741EB78D74000C7D8D /* lx_effifacy_ba.png in Resources */,
 				C0665ACA1D6ACA3D00B3D8E5 /* NavigationView.xib in Resources */,
-				DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */,
 				C050C9A51E8267450009679D /* utmeye_image.png in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
@@ -2063,15 +1907,11 @@
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
 				C050C9721E8267450009679D /* d_block_3_5m.png in Resources */,
 				C03520D61D9E8825005129B5 /* IdealResultCollectionView.xib in Resources */,
-				DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */,
-				DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */,
 				DE2C917E1E9C682500B5FC4A /* efficacy_dummy.png in Resources */,
-				DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */,
 				E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */,
 				C050C97F1E8267450009679D /* efficacy_slider_full.png in Resources */,
 				C050C99F1E8267450009679D /* t_gray_graph.png in Resources */,
 				DE2C90A31E9C66E600B5FC4A /* MoviePlayerView.xib in Resources */,
-				DEE83E6F1EB78B2B000C7D8D /* LXProductEfficacyView.xib in Resources */,
 				C050C97B1E8267450009679D /* efficacy_slider_circle.png in Resources */,
 				800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */,
 				E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */,
@@ -2079,7 +1919,6 @@
 				C050C90B1E82619F0009679D /* ss_ibuki_bg.png in Resources */,
 				C050C9971E8267450009679D /* t_btn_white.png in Resources */,
 				C050C9961E8267450009679D /* t_btn_bg.png in Resources */,
-				DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */,
 				C050C98E1E8267450009679D /* effect_redlight.png in Resources */,
 				E5E0D3F11DF3D1DB0053373F /* RecommendedViewController.storyboard in Resources */,
 				C050C9A01E8267450009679D /* t_red_graph.png in Resources */,
@@ -2089,7 +1928,6 @@
 				C0BC717C1DCB41920038AE1A /* RecommendProductView.xib in Resources */,
 				C0998BF21DA63DE500220321 /* PagingProductView.xib in Resources */,
 				C05913D61D67235700F22214 /* Assets.xcassets in Resources */,
-				DEE83E7A1EB78FE9000C7D8D /* lx_effifacy_c_graph_3.png in Resources */,
 				E5E0D4031DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard in Resources */,
 				C050C9111E82619F0009679D /* wab01_after.jpg in Resources */,
 				C00D555E1DC6146A008795D4 /* ColorballCollectionView.xib in Resources */,
@@ -2121,7 +1959,6 @@
 				EBBEB4DD1D9FC49800846786 /* ideal_background.mp4 in Resources */,
 				C050C99A1E8267450009679D /* t_effect_redlight.png in Resources */,
 				C050C91D1E82619F0009679D /* orange_C.png in Resources */,
-				DEE83E6B1EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib in Resources */,
 				E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */,
 				C050C9881E8267450009679D /* utm03_befor.png in Resources */,
 				E5E0D3EE1DF3D04C0053373F /* IdealSecondSelectViewController.storyboard in Resources */,
@@ -2131,20 +1968,12 @@
 				DE2C918B1E9C682500B5FC4A /* lx_icon_recommend_large@2x.png in Resources */,
 				C02818AE1E6D44CA00D4DADA /* MakeupUsageView.xib in Resources */,
 				C091BA7D1D6982B00073FEDB /* HeaderView.xib in Resources */,
-				DEE83E761EB78DC3000C7D8D /* lx_effifacy_c_graph_2.png in Resources */,
 				C050C9851E8267450009679D /* utm02_after.png in Resources */,
 				C037CBAA1D87F6ED00DEFE14 /* IdealSelectCell.xib in Resources */,
-				DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */,
 				C050C96E1E8267450009679D /* d_arrow_2.png in Resources */,
 				C050C9741E8267450009679D /* d_graph_line.png in Resources */,
-				DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */,
-				DEE83E801EB79160000C7D8D /* lx_eye_graph.png in Resources */,
-				DEE83E681EB78A66000C7D8D /* lx_penetration.png in Resources */,
-				DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
-				DE507EEC1EB887760095FB78 /* lx_yutaka_treatment_thum_06.png in Resources */,
 				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
-				DE48C31C1EB6AC6B00D29A8D /* lx_product_graph_2.png in Resources */,
 				DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */,
 				C097F5C31DDF2D0C004814F8 /* IbukiFeaturesView.xib in Resources */,
 				C0306D501D6EC52C00D56F45 /* CollectionProductView.xib in Resources */,
@@ -2154,19 +1983,16 @@
 				DE2C908F1E9C66E600B5FC4A /* LXProductDetailTransitionView.xib in Resources */,
 				C050C91E1E82619F0009679D /* orange_L.png in Resources */,
 				C050C90D1E82619F0009679D /* ss_mizu_bg.png in Resources */,
-				DE7B7E611EB7547D006F8246 /* lx_product_play_movie.png in Resources */,
 				C050C9151E82619F0009679D /* whl01_after.jpg in Resources */,
 				C050C9A81E8267450009679D /* sizle_base.png in Resources */,
 				C050C9771E8267450009679D /* defend_triangle.png in Resources */,
 				DE2C90811E9C66E600B5FC4A /* LXEfficacyResultView.xib in Resources */,
-				DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */,
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
 				C050C9021E82619F0009679D /* sib02_after.jpg in Resources */,
 				DE2C91861E9C682500B5FC4A /* lx_header_home.png in Resources */,
 				DE2C91881E9C682500B5FC4A /* lx_header_option.png in Resources */,
-				DE507EEB1EB887760095FB78 /* lx_yutaka_treatment_thum_05.png in Resources */,
 				C050C9091E82619F0009679D /* ss_hukidashi_2.png in Resources */,
 				C050C9731E8267450009679D /* d_block_3_5s.png in Resources */,
 				C050C9BE1E8276C60009679D /* Shiseido-ExtraBoldx.otf in Resources */,
@@ -2182,25 +2008,19 @@
 				C050C9C11E8276C60009679D /* Shiseido-Light.otf in Resources */,
 				C050C9131E82619F0009679D /* wab_slider_1_18.png in Resources */,
 				C050C9701E8267450009679D /* d_block_2m.png in Resources */,
-				DE48C31D1EB6AC6B00D29A8D /* lx_product_graph_1.png in Resources */,
 				DE2C919E1E9C682500B5FC4A /* lx_top_menu.png in Resources */,
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
-				DEE83E601EB76247000C7D8D /* lx_tech_bio.png in Resources */,
 				DE2C8F511E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf in Resources */,
 				DE2C91371E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard in Resources */,
 				DE2C91891E9C682500B5FC4A /* lx_icon_day.png in Resources */,
-				DEC4F72E1EBC2A00007FE8F1 /* lx_ba_second_face_2a.png in Resources */,
 				E5E0D3F41DF3D32E0053373F /* LanguageSettingViewController.storyboard in Resources */,
-				DEB555341EB333490022AB0F /* lx_ba_second_face_1.png in Resources */,
 				C050C9831E8267450009679D /* utm01_after.png in Resources */,
 				C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */,
-				DEE83E621EB766CA000C7D8D /* lx_aura.png in Resources */,
 				C050C99C1E8267450009679D /* t_graph_gray_eye.png in Resources */,
 				DE2C909B1E9C66E600B5FC4A /* LXYutakaConceptSubView.xib in Resources */,
 				C050C8FF1E82619F0009679D /* features_whitelucent_1.png in Resources */,
 				C050C9BF1E8276C60009679D /* Shiseido-ExtraLight.otf in Resources */,
 				C03C884C1D76AB1E009F526E /* LifeStyleProductView.xib in Resources */,
-				DE48C30D1EB6A9AA00D29A8D /* lx_bls_dummy.png in Resources */,
 				C050C8FE1E82619F0009679D /* features_smk_3.png in Resources */,
 				C050C91F1E82619F0009679D /* orange_R.png in Resources */,
 				C050C9BD1E8276C60009679D /* Shiseido-ExtraBold.otf in Resources */,
@@ -2212,14 +2032,11 @@
 				C05C779F1D9E5EFA00E38B7B /* IdealProductView.xib in Resources */,
 				DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */,
 				DE2C908B1E9C66E600B5FC4A /* LXNavigationView.xib in Resources */,
-				DEE83E791EB78FE9000C7D8D /* lx_effifacy_c_graph_4.png in Resources */,
 				C050C9841E8267450009679D /* utm01_befor.png in Resources */,
 				E5E0D3FA1DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard in Resources */,
 				C050C97A1E8267450009679D /* efficacy_face2_01.png in Resources */,
 				C050C98C1E8267450009679D /* f_effect_3.png in Resources */,
 				C050C90C1E82619F0009679D /* ss_ibuki_hoshi.png in Resources */,
-				DEE83E7D1EB790DD000C7D8D /* lx_intensive_graph.png in Resources */,
-				DE507EE91EB887760095FB78 /* lx_yutaka_treatment_thum_03.png in Resources */,
 				C050C9A31E8267450009679D /* utm_bg_02.png in Resources */,
 				C050C9711E8267450009679D /* d_block_2s.png in Resources */,
 				C050C9121E82619F0009679D /* wab01_before.png in Resources */,
@@ -2247,22 +2064,16 @@
 				DE2C908D1E9C66E600B5FC4A /* LXProductDetailTag.xib in Resources */,
 				C050C99E1E8267450009679D /* t_graph_red_eye.png in Resources */,
 				E56956791DF2F52C00BE9308 /* TopViewController.storyboard in Resources */,
-				DEC4F72D1EBC2A00007FE8F1 /* lx_ba_second_face_1a.png in Resources */,
 				C050C8FD1E82619F0009679D /* features_smk_2.png in Resources */,
 				DE2C918C1E9C682500B5FC4A /* lx_icon_recommend_selected.png in Resources */,
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
-				DE48C31B1EB6AC6B00D29A8D /* lx_product_graph_3.png in Resources */,
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
 				DE2C918D1E9C682500B5FC4A /* lx_icon_recommend_selected@2x.png in Resources */,
 				C050C9801E8267450009679D /* efficacy_triangle.png in Resources */,
-				DE507EE71EB887760095FB78 /* lx_yutaka_treatment_thum_01.png in Resources */,
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
-				DEE83E721EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png in Resources */,
-				DEB555361EB333540022AB0F /* lx_ba_second_face_2.png in Resources */,
 				DE2C91251E9C67FD00B5FC4A /* yutaka.m4a in Resources */,
 				C050C9081E82619F0009679D /* ss_hukidashi_1.png in Resources */,
 				C050C9AD1E8267450009679D /* utm_square.png in Resources */,
-				DEE83E7E1EB790DD000C7D8D /* lx_intensive.png in Resources */,
 				C03520DA1D9E88D7005129B5 /* IdealResultCell.xib in Resources */,
 				C050C99B1E8267450009679D /* t_glaph_line_eye.png in Resources */,
 				C050C91C1E82619F0009679D /* green_R.png in Resources */,
@@ -2277,29 +2088,23 @@
 				C050C98D1E8267450009679D /* f_effect_bg.png in Resources */,
 				C050C98A1E8267450009679D /* f_effect_1_.png in Resources */,
 				C050C9A61E8267450009679D /* effect_redlight.png in Resources */,
-				DE507EED1EB887760095FB78 /* lx_yutaka_treatment_thum_07.png in Resources */,
 				C050C9A41E8267450009679D /* utm_wh_back.png in Resources */,
 				E5E0D40C1DF3E1670053373F /* IdealSpecialItemViewController.storyboard in Resources */,
-				DE507EE81EB887760095FB78 /* lx_yutaka_treatment_thum_02.png in Resources */,
 				DE2C918A1E9C682500B5FC4A /* lx_icon_night.png in Resources */,
 				C050C9951E8267450009679D /* t_bg_eye.png in Resources */,
-				DE48C31A1EB6AC6B00D29A8D /* lx_product_graph_4.png in Resources */,
 				DE2C91321E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard in Resources */,
 				C0CDEB0C1D98076C00420667 /* UtmFeaturesView.xib in Resources */,
 				C050C9BA1E8276C60009679D /* Reader-Bold.otf in Resources */,
 				C050C96D1E8267450009679D /* d_3_5.png in Resources */,
 				C050C97C1E8267450009679D /* efficacy_slider_circle_.png in Resources */,
 				C050C9871E8267450009679D /* utm03_after.png in Resources */,
-				DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */,
 				C050C9011E82619F0009679D /* sib01_before.png in Resources */,
-				DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */,
 				E57BB3211E597BE000D4F5FB /* ProductLineViewController.storyboard in Resources */,
 				DE2C91811E9C682500B5FC4A /* graphPoint_down.png in Resources */,
 				C0D1953E1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.xib in Resources */,
 				C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */,
 				C050C97D1E8267450009679D /* efficacy_slider_circle_eye.png in Resources */,
 				C0DA9AEF1DB8CC7E00692058 /* Info.plist in Resources */,
-				DE48C3101EB6AA4400D29A8D /* LXProductBLSView.xib in Resources */,
 				DE2C90991E9C66E600B5FC4A /* LXYutakaConceptContentThirdView.xib in Resources */,
 				DE2C90851E9C66E600B5FC4A /* LXGreenTeaView.xib in Resources */,
 				C0D57C651DD5C0090087258B /* LifeStyleCollectionViewCell.xib in Resources */,
@@ -2401,7 +2206,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -2431,7 +2236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -2446,7 +2251,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {
@@ -2484,7 +2289,6 @@
 				EB7365981D83126300D223BA /* StepLowerTranslateTable.swift in Sources */,
 				EB8F34161D884D5600641976 /* AppItemTranslateTable.swift in Sources */,
 				DE2C8EF01E9B9BAF00B5FC4A /* LuxuryViewController.swift in Sources */,
-				DEE83E5A1EB75C04000C7D8D /* LXProductTechnologyView.swift in Sources */,
 				C091BA7F1D69876F0073FEDB /* TopViewController.swift in Sources */,
 				EBBF4E1C1D95596A001CD8B3 /* UnitTranslateEntity.swift in Sources */,
 				DE2C908E1E9C66E600B5FC4A /* LXProductDetailTransitionView.swift in Sources */,
@@ -2508,7 +2312,6 @@
 				C08C93211E8A56DD0096C98F /* ItemsDisplayedViewController.swift in Sources */,
 				DE2C90941E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.swift in Sources */,
 				C0998BF01DA63DCC00220321 /* PagingProductView.swift in Sources */,
-				DEE83E5E1EB761F5000C7D8D /* LXTechBiologicalView.swift in Sources */,
 				EB8F34151D884D5600641976 /* AppItemTable.swift in Sources */,
 				C0449ED61D76D2320041903E /* NSMutableAttributedString+Additions.m in Sources */,
 				EB7365AD1D83156F00D223BA /* StepLowerTranslateEntity.swift in Sources */,
@@ -2556,7 +2359,6 @@
 				C0E4DCBD1D71807500931B66 /* ProductListView.swift in Sources */,
 				C03520D91D9E88D7005129B5 /* IdealResultCell.swift in Sources */,
 				C05818381D6DB51A00C8FB55 /* Array+safe.swift in Sources */,
-				DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */,
 				DE2C90801E9C66E600B5FC4A /* LXEfficacyResultView.swift in Sources */,
 				C0FE16491D853CE700415B65 /* SideBar.swift in Sources */,
 				C0BC717B1DCB41920038AE1A /* RecommendProductView.swift in Sources */,
@@ -2565,7 +2367,6 @@
 				C0DA9AEC1DB8CC7E00692058 /* DPDConstants.swift in Sources */,
 				E57BB3271E598C0100D4F5FB /* ProductLineCollectionViewCell.swift in Sources */,
 				C0423F7F1E35EE7000D56960 /* ProductListViewController.swift in Sources */,
-				DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */,
 				C03B08E41D7C2F7C00935CBE /* LifeStyleFirstDetailViewController.swift in Sources */,
 				C0880CF21E4B2048006A3713 /* TargetSettingViewController.swift in Sources */,
 				C00EFB121D7EBF0200F9EC8F /* LifeStyleSecondDetailViewController.swift in Sources */,
@@ -2585,7 +2386,6 @@
 				EBC0148A1D99DA710006827C /* LineDetailData.swift in Sources */,
 				C0DA9AED1DB8CC7E00692058 /* DPDKeyboardListener.swift in Sources */,
 				C0880CF81E4B209C006A3713 /* RegionTable.swift in Sources */,
-				DEE83E651EB766EF000C7D8D /* LXTechAuraView.swift in Sources */,
 				EB5798041DE2B4A90096C62E /* LogTable.swift in Sources */,
 				C0306D4E1D6EC51800D56F45 /* CollectionProductView.swift in Sources */,
 				DE2C909A1E9C66E600B5FC4A /* LXYutakaConceptSubView.swift in Sources */,
@@ -2630,7 +2430,6 @@
 				C0D1954A1DE7130400C8B88E /* SunCareFeaturesView.swift in Sources */,
 				C0AFC97F1D85645D0066B988 /* LanguageSettingViewController.swift in Sources */,
 				C0AFC9811D85648D0066B988 /* RecommendedViewController.swift in Sources */,
-				DEE83E6C1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift in Sources */,
 				EBBF4E161D955955001CD8B3 /* UnitTranslateTable.swift in Sources */,
 				EB7365AA1D83156F00D223BA /* ProductEntity.swift in Sources */,
 				EB7365941D83121300D223BA /* StepUpperTranslateTable.swift in Sources */,
@@ -2643,8 +2442,6 @@
 				EB5A4E9F1DC5EA1D00BCC2B7 /* ColorballTable.swift in Sources */,
 				C0DA9AF11DB8CC7E00692058 /* DropDown+Appearance.swift in Sources */,
 				DE2C8EF21E9B9BAF00B5FC4A /* LuxuryProductDetailViewController.swift in Sources */,
-				DE48C3111EB6AA4400D29A8D /* LXProductBLSView.swift in Sources */,
-				DE48C3141EB6ABB600D29A8D /* LXProductGraphView.swift in Sources */,
 				C0449ED31D76D2110041903E /* StringUtils.m in Sources */,
 				EB7365B11D83156F00D223BA /* TroubleTranslateEntity.swift in Sources */,
 				C02818B01E6D4A2C00D4DADA /* StepUsageView.swift in Sources */,

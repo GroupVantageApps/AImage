@@ -25,7 +25,7 @@ class LineTranslateTable: NSObject {
 
             entity.lineTranslateId = Utility.toInt(resultSet.string(forColumn: "id"))
 
-            Utility.log(resultSet.string(forColumn: "content"))
+            //Utility.log(resultSet.string(forColumn: "content"))
             let json = Utility.parseContent(resultSet)
             entity.name = Utility.toStr(json["name"])
             entity.subTitle = Utility.toStr(json["sub_title"])
@@ -54,6 +54,7 @@ class LineTranslateTable: NSObject {
             entity.displayOrder = Utility.toInt(resultSet.string(forColumn: "display_order"))
             entity.lastUpdateTs = Utility.toStr(resultSet.string(forColumn: "last_update_ts"))
             entity.useFlg = Utility.toInt(resultSet.string(forColumn: "use_flg"))
+            entity.displayFlg = Utility.toInt(resultSet.string(forColumn: "display_flg"))
         }
 
         database.close()
@@ -65,7 +66,7 @@ class LineTranslateTable: NSObject {
         database.open()
 
         let languageId = LanguageConfigure.languageId
-        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_line_translate WHERE language_id = ?", withArgumentsIn: [languageId])
+        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_line_translate WHERE language_id = ? AND use_flg = 1 ", withArgumentsIn: [languageId])
 
         var entities = [LineTranslateEntity]()
 
@@ -79,6 +80,7 @@ class LineTranslateTable: NSObject {
             entity.name = Utility.toStr(json["name"])
             entity.subTitle = Utility.toStr(json["sub_title"])
             entity.useFlg = Utility.toInt(resultSet.string(forColumn: "use_flg"))
+            entity.displayFlg = Utility.toInt(resultSet.string(forColumn: "display_flg"))
             if isOnlyUseFlg {
                 if entity.useFlg == 1{
                     entities.append(entity)
@@ -93,12 +95,12 @@ class LineTranslateTable: NSObject {
         return entities
     }
 
-    class func changeUseFlg(lineId: Int, isUse: Bool) {
+    class func changeDisplayFlg(lineId: Int, isDisplay: Bool) {
         let database = ModelDatabase.getDatabase()
         let languageId: Int? = LanguageConfigure.languageId
-        let use_flg = Int(isUse as NSNumber)
+        let display_flg = Int(isDisplay as NSNumber)
         database.open()
-        database.executeUpdate("UPDATE m_line_translate SET use_flg = ? WHERE line_id = ? AND language_id = ?", withArgumentsIn: [use_flg, lineId, languageId!])
+        database.executeUpdate("UPDATE m_line_translate SET display_flg = ? WHERE line_id = ? AND language_id = ?", withArgumentsIn: [display_flg, lineId, languageId!])
         database.close()
     }
 }
