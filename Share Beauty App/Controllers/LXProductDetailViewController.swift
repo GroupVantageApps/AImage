@@ -178,6 +178,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
 
             self.setSpecialCaseConstraints(targetView: mSuncareFeaturesView, viewHeight: 300)
         }
+        print(product.troubles)
         mTroubleSelectView.troubles = product.troubles
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 

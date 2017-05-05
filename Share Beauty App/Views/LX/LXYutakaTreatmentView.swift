@@ -47,19 +47,18 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
 
             self.mScrollView.addSubview(subView)
         }
-        self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 7, height: self.mScrollView.frame.size.height)
+        self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 8, height: self.mScrollView.frame.size.height)
         self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(page), y:0), animated: false)
         self.mScrollView.isPagingEnabled = true
-        mPageControl.numberOfPages = 7
-        mPageControl.currentPage = page
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
         configurePageControl()
+        self.mPageControl.numberOfPages = 8
+        mPageControl.currentPage = page
     }
     
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        self.mPageControl.numberOfPages = colors.count
-        self.mPageControl.currentPage = 0
+
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
