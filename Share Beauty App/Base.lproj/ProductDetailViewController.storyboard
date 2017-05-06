@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
                                 <rect key="frame" x="0.0" y="0.0" width="547" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -505,7 +505,7 @@
                                                                                             <constraint firstAttribute="trailing" secondItem="Z3l-C7-hXm" secondAttribute="trailing" id="jSV-fL-P2U"/>
                                                                                         </constraints>
                                                                                     </view>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tse-pJ-1GY">
+                                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tse-pJ-1GY">
                                                                                         <rect key="frame" x="120" y="2" width="15" height="18"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                         <state key="normal" backgroundImage="open_line_detail"/>

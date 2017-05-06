@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
                                 <rect key="frame" x="0.0" y="0.0" width="547" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -48,10 +48,10 @@
                                                         <rect key="frame" x="20" y="5" width="984" height="30"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-ju-dYM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="984" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="922" height="30"/>
                                                                 <subviews>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IP6-cP-TY8" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="2" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="2" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="96" id="XGt-KU-Daz"/>
                                                                             <constraint firstAttribute="height" constant="41" id="eN6-nP-LfJ"/>
@@ -70,7 +70,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4p-hS-PLc" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="198.5" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="186" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="hXa-jc-mku"/>
                                                                             <constraint firstAttribute="width" constant="96" id="vyN-2g-bev"/>
@@ -83,7 +83,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S57-Ce-Sni" userLabel="MBtn How To Use" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="395" y="2" width="194" height="26"/>
+                                                                        <rect key="frame" x="370" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="D5Y-Rm-FhP"/>
                                                                             <constraint firstAttribute="width" constant="96" id="G54-0c-UIL"/>
@@ -96,7 +96,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-QN-ehF" userLabel="Efficacy Results" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="591" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="554" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="IOQ-GA-y6t"/>
                                                                             <constraint firstAttribute="width" constant="96" id="p3O-0V-TBG"/>
@@ -109,7 +109,7 @@
                                                                         </variation>
                                                                     </view>
                                                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldJ-ru-pkX" customClass="LXCategoryButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="787.5" y="2" width="194.5" height="26"/>
+                                                                        <rect key="frame" x="738" y="2" width="182" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="41" id="SJX-5q-uTy"/>
                                                                             <constraint firstAttribute="width" constant="96" id="YKU-PF-FVT"/>
@@ -145,9 +145,17 @@
                                                                     <constraint firstItem="X4p-hS-PLc" firstAttribute="width" secondItem="IP6-cP-TY8" secondAttribute="width" id="wXR-hK-j2G"/>
                                                                 </constraints>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loE-f8-G0e">
+                                                                <rect key="frame" x="942" y="0.0" width="42" height="30"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" image="lx_product_play_movie.png"/>
+                                                                <connections>
+                                                                    <action selector="onTapMovie:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="Tj2-nz-Gk1"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="YeN-ju-dYM" secondAttribute="trailing" id="0Xk-Ac-MTl"/>
+                                                            <constraint firstAttribute="trailing" secondItem="YeN-ju-dYM" secondAttribute="trailing" constant="62" id="0Xk-Ac-MTl"/>
                                                             <constraint firstItem="YeN-ju-dYM" firstAttribute="top" secondItem="qnl-bG-utb" secondAttribute="top" id="2Xz-nN-kQg"/>
                                                             <constraint firstAttribute="bottom" secondItem="YeN-ju-dYM" secondAttribute="bottom" id="8GD-vk-08t"/>
                                                             <constraint firstItem="YeN-ju-dYM" firstAttribute="leading" secondItem="qnl-bG-utb" secondAttribute="leading" id="iqC-YC-AaW"/>
@@ -221,7 +229,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wx1-mu-ifn">
-                                                                <rect key="frame" x="0.0" y="236" width="60" height="129"/>
+                                                                <rect key="frame" x="0.0" y="236.5" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
@@ -321,7 +329,7 @@
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXN-On-kxw">
                                                                                         <rect key="frame" x="0.0" y="28" width="636" height="0.0"/>
-                                                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="15"/>
+                                                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                                                                                         <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -416,7 +424,7 @@
                                                                                 <rect key="frame" x="0.0" y="87" width="636" height="0.0"/>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-2k-hNf">
-                                                                                <rect key="frame" x="0.0" y="87" width="636" height="46"/>
+                                                                                <rect key="frame" x="0.0" y="87" width="636" height="49"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0Q-Mc-ggP">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="80.5" height="21"/>
@@ -446,8 +454,8 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how to use" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-Cy-zqz">
-                                                                                        <rect key="frame" x="0.0" y="31" width="636" height="15"/>
-                                                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="15"/>
+                                                                                        <rect key="frame" x="0.0" y="31" width="636" height="18"/>
+                                                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                                                                                         <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -461,8 +469,66 @@
                                                                                     <constraint firstItem="L0Q-Mc-ggP" firstAttribute="leading" secondItem="HK7-2k-hNf" secondAttribute="leading" id="n7N-z8-6FP"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-sR-Nnj" customClass="LXTroubleSelectView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="163" width="636" height="806"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1g-sR-Nnj" customClass="LXProductDetailSkinConcernView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="166" width="636" height="803"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1P-Aj-co8">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="18"/>
+                                                                                        <subviews>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skin Concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-cf-3gq">
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="95.5" height="17"/>
+                                                                                                <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                                                                                                <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                <nil key="highlightedColor"/>
+                                                                                            </label>
+                                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ho-KC-TBn">
+                                                                                                <rect key="frame" x="0.0" y="17" width="95.5" height="1"/>
+                                                                                                <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="1" id="qIc-jF-iWx"/>
+                                                                                                </constraints>
+                                                                                            </view>
+                                                                                        </subviews>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="trailing" secondItem="9ho-KC-TBn" secondAttribute="trailing" id="4RY-9K-Yi9"/>
+                                                                                            <constraint firstItem="hMo-cf-3gq" firstAttribute="leading" secondItem="Z1P-Aj-co8" secondAttribute="leading" id="8FI-yK-cza"/>
+                                                                                            <constraint firstAttribute="bottom" secondItem="9ho-KC-TBn" secondAttribute="bottom" id="BET-Im-Zgi"/>
+                                                                                            <constraint firstItem="9ho-KC-TBn" firstAttribute="top" secondItem="hMo-cf-3gq" secondAttribute="bottom" id="FwW-kI-2Sf"/>
+                                                                                            <constraint firstItem="9ho-KC-TBn" firstAttribute="leading" secondItem="Z1P-Aj-co8" secondAttribute="leading" id="Mva-S9-BDL"/>
+                                                                                            <constraint firstItem="hMo-cf-3gq" firstAttribute="top" secondItem="Z1P-Aj-co8" secondAttribute="top" id="SnI-HL-71N"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="hMo-cf-3gq" secondAttribute="trailing" id="mhN-jI-zfw"/>
+                                                                                        </constraints>
+                                                                                    </view>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRC-Ga-nKB">
+                                                                                        <rect key="frame" x="105.5" y="2" width="15" height="18"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="18" id="1Tf-3x-fNi"/>
+                                                                                            <constraint firstAttribute="width" constant="15" id="hKu-zx-98o"/>
+                                                                                        </constraints>
+                                                                                        <state key="normal" backgroundImage="lx_open_line_detail.png"/>
+                                                                                        <connections>
+                                                                                            <action selector="onTapOpen:" destination="h1g-sR-Nnj" eventType="touchUpInside" id="kSe-k7-dmM"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALC-zR-d1g" customClass="LXTroubleSelectView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="28" width="636" height="775"/>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="Z1P-Aj-co8" firstAttribute="top" secondItem="h1g-sR-Nnj" secondAttribute="top" id="2aW-wg-IkG"/>
+                                                                                    <constraint firstItem="ALC-zR-d1g" firstAttribute="top" secondItem="Z1P-Aj-co8" secondAttribute="bottom" constant="10" id="8Nq-lW-8SG"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="ALC-zR-d1g" secondAttribute="trailing" id="QUI-ca-S9D"/>
+                                                                                    <constraint firstItem="bRC-Ga-nKB" firstAttribute="top" secondItem="h1g-sR-Nnj" secondAttribute="top" constant="2" id="Syz-Yc-Aha"/>
+                                                                                    <constraint firstItem="Z1P-Aj-co8" firstAttribute="leading" secondItem="h1g-sR-Nnj" secondAttribute="leading" id="acF-n3-5gN"/>
+                                                                                    <constraint firstItem="bRC-Ga-nKB" firstAttribute="leading" secondItem="Z1P-Aj-co8" secondAttribute="trailing" constant="10" id="nbR-fV-1e2"/>
+                                                                                    <constraint firstItem="ALC-zR-d1g" firstAttribute="leading" secondItem="h1g-sR-Nnj" secondAttribute="leading" id="p9o-LK-IM7"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="ALC-zR-d1g" secondAttribute="bottom" id="vFn-FT-i3x"/>
+                                                                                </constraints>
+                                                                                <connections>
+                                                                                    <outlet property="mTroubleSelectView" destination="ALC-zR-d1g" id="6mY-YX-CIh"/>
+                                                                                    <outlet property="mVSkinConcernLabel" destination="Z1P-Aj-co8" id="cHI-0q-4a1"/>
+                                                                                    <outlet property="openButton" destination="bRC-Ga-nKB" id="ua5-eV-pQC"/>
+                                                                                </connections>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbQ-Ai-fK0">
                                                                                 <rect key="frame" x="0.0" y="969" width="636" height="31"/>
@@ -705,6 +771,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="mBtnMovie" destination="loE-f8-G0e" id="VMy-gh-kAC"/>
                         <outlet property="mCategoryButtonDefend" destination="ldJ-ru-pkX" id="BRN-TJ-ooY"/>
                         <outlet property="mCategoryButtonEfficacy" destination="g5a-QN-ehF" id="yQO-sL-SB1"/>
                         <outlet property="mCategoryButtonFeatures" destination="IP6-cP-TY8" id="Vta-Bx-owK"/>
@@ -731,7 +798,7 @@
                         <outlet property="mRelationScrollV" destination="IJq-sz-snI" id="N54-uL-aWu"/>
                         <outlet property="mScrollVPinch" destination="wAl-8s-SCs" id="Eo8-UU-pWR"/>
                         <outlet property="mTransitionView" destination="qP3-J2-RYj" id="Vjp-e6-5ua"/>
-                        <outlet property="mTroubleSelectView" destination="h1g-sR-Nnj" id="v8p-ka-lJV"/>
+                        <outlet property="mTroubleSelectView" destination="ALC-zR-d1g" id="C4Z-KE-z3z"/>
                         <outlet property="mTroubleView" destination="RQE-Q2-05k" id="EUq-Sz-3Zk"/>
                         <outlet property="mVBaseFeaturesView" destination="ral-Qk-yLK" id="Tvy-kt-YXy"/>
                         <outlet property="mVBaseIbukiBtn" destination="Wx1-mu-ifn" id="XPi-B8-TxF"/>
@@ -742,6 +809,7 @@
                         <outlet property="mVMain" destination="fmO-Po-Pdd" id="kdi-9c-MBS"/>
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
                         <outlet property="mVScrollContent" destination="6m6-Dv-mB3" id="Zci-5v-P55"/>
+                        <outlet property="mVSkinConcern" destination="h1g-sR-Nnj" id="LAc-4D-ivO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaD-mL-MOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -753,6 +821,8 @@
         <image name="features_smk_1.png" width="92" height="66"/>
         <image name="features_smk_2.png" width="92" height="66"/>
         <image name="features_smk_3.png" width="92" height="66"/>
+        <image name="lx_open_line_detail.png" width="30" height="30"/>
+        <image name="lx_product_play_movie.png" width="74" height="53"/>
         <image name="ss_bg.png" width="997" height="1219"/>
     </resources>
 </document>

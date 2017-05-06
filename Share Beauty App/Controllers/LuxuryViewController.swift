@@ -20,7 +20,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     private var mConstraintWidthZero: NSLayoutConstraint?
     var bgAudioPlayer: AVAudioPlayer!
     var moviePlay: MoviePlayerView!
-
+    var ndGoProductVC = false
     @IBOutlet weak var mLogoImgV: UIImageView!
     @IBOutlet weak var mTopBGImgV: UIImageView!
     @IBOutlet weak var mBottomLogoImgV: UIImageView!
@@ -65,6 +65,13 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         self.ingredientBtn.setBackgroundImage(FileTable.getLXFileImage("lx_ingredients_btn.png"), for: .normal)
         self.productBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_btn.png"), for: .normal)
         self.yutakaBtn.setBackgroundImage(FileTable.getLXFileImage("lx_yutaka_btn.png"), for: .normal)
+        
+        if ndGoProductVC {
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+            let LXProductVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductViewController", targetClass: LuxuryProductViewController.self) as! LuxuryProductViewController
+            navigationController?.pushViewController(LXProductVc, animated: false)
+            moviePlay.isHidden = true
+        }
     }
     @IBAction private func onTapLuxuryMenu(_ sender: AnyObject) {
         print("onTapLuxuryMenu tag:" + sender.tag.description)
@@ -101,6 +108,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     }
     override func viewDidDisappear(_ animated: Bool) {
         print("LuxuryViewController.viewDidDisappear")
+        moviePlay.isHidden = true
     }
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVContent
