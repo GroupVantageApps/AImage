@@ -26,6 +26,7 @@ class MoviePlayerView: UIView {
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         }
+        self.frame = CGRect(x: 0, y: 22, width: 1024, height: 746)
         self.addSubview(mXbutton)
     }
     
@@ -35,7 +36,6 @@ class MoviePlayerView: UIView {
         let videoURL = NSURL(fileURLWithPath: path)
         player = AVPlayer(url: videoURL as URL)
         playerLayer = AVPlayerLayer(player: player)
-        self.frame = CGRect(x: 0, y: 22, width: 1024, height: 746)
         playerLayer.frame = self.frame
         self.backgroundColor = UIColor.black
         

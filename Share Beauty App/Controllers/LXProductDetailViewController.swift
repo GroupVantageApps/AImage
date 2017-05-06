@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-class LXProductDetailViewController: UIViewController, NavigationControllerAnnotation, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, UIScrollViewDelegate {
+class LXProductDetailViewController: UIViewController, NavigationControllerAnnotation, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, MoviePlayerViewDelegate, LXIngredientViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
@@ -35,7 +35,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     @IBOutlet weak private var mCategoryButtonHowToUse: LXCategoryButton!
     @IBOutlet weak private var mCategoryButtonEfficacy: LXCategoryButton!
     @IBOutlet weak private var mCategoryButtonDefend: LXCategoryButton!
-    @IBOutlet weak private var mBtnMovie: BaseButton!
+    @IBOutlet weak private var mBtnMovie: UIButton!
     @IBOutlet weak private var mBtnBrush: BaseButton!
     @IBOutlet weak private var mBtnRecommend: BaseButton!
 
@@ -102,7 +102,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
 
         product = ProductDetailData(productId: productId)
         self.checkSpecialCase()
-        print("product.image:", product.image)
+        print("product.image:", productId)
 
         mCategoryButtonFeatures.delegate = self
         mCategoryButtonTechnologies.delegate = self
@@ -123,10 +123,10 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
-        mCategoryButtonTechnologies.title = mItemsCommon["05"]
-        mCategoryButtonDefend.title = mItemsSideMenu["16"]
+        mCategoryButtonTechnologies.title = "Technology"
+        mCategoryButtonDefend.title = "Skingencel Enmei"
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
-
+        
         mImgVProduct.image = FileTable.getImage(product.image)
         mLblBeautyName.text = product.beautyName
         mLblLineName.text = product.lineName
@@ -134,11 +134,41 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         mLblFeature.text = product.feature
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.unitName
-
-        mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
-        mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
-        mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
-        mCategoryButtonDefend.enabled = mIsUtm
+        
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonDefend.enabled = true
+        } else {
+            mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
+            mCategoryButtonDefend.enabled = mIsUtm
+        }
+        if productId == 516 || productId == 517 || productId == 519 || productId == 522 || productId == 523 {
+            mCategoryButtonEfficacy.enabled = true
+        } else {
+            mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+        }
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 522{
+            self.mBtnMovie.isEnabled = true
+        } else {
+            self.mBtnMovie.isEnabled = false
+        }
+        if productId == 39  || productId == 521{
+            mCategoryButtonEfficacy.enabled = false
+        }
+        
+        if productId == 522 || productId == 523 {
+            mCategoryButtonHowToUse.enabled = true
+        } else {
+            mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
+        }
+        
+        mImgVProduct.image = FileTable.getImage(product.image)
+        mLblBeautyName.text = product.beautyName
+        mLblLineName.text = product.lineName
+        mLblProductName.text = product.productName
+        mLblFeature.text = product.feature
+        mLblHowToUse.text = product.howToUse
+        mLblUnit.text = product.unitName
 
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
@@ -391,31 +421,54 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             mVCategoryImage.isHidden = true
             return
         }
+        mCategoryButtonFeatures.selected = true
+        sender.selected = false
+        sender.enabled = true
+
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
-            makeCategoryImages(product.technologyImage)
+            mVCategoryImage.isHidden = true
+            let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+            technologyV.setUI(productId: productId)
+            technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
+            //            mVCategoryImage.isHidden = true
+            //            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
+            //            efficacyV.setUI()
+            //            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            //            self.view.addSubview(efficacyV)
             mVCategoryImage.isHidden = true
-            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-            efficacyV.setUI()
-            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-            self.view.addSubview(efficacyV)
+            let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
+            popup.setUI(productId: productId)
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         } else if sender === mCategoryButtonDefend {
-
+            mVCategoryImage.isHidden = true
+            let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+            popup.setAction()
+            popup.delegate = self
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
         }
     }
 
     private func showMovie(movieId: Int) {
-        let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movieId))
-        let avPlayerVc: AVPlayerViewController = AVPlayerViewController()
-        avPlayerVc.player = avPlayer
-        if #available(iOS 9.0, *) {
-            avPlayerVc.allowsPictureInPicturePlayback = false
-        }
-        self.present(avPlayerVc, animated: true, completion: nil)
-        avPlayer.play()
+        let movieName = String(format: "%d_17AWLX", productId)
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        print(CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - 100.0))
+//        moviePlay.setUI()
+        moviePlay.backgroundColor = UIColor.white
+        moviePlay.delegate = self
+        moviePlay.bounds = CGRect(x: 0.0 , y: 80.0, width: self.view.width, height: self.view.height)
+        moviePlay.playMovie(movie: movieName)
+        print(moviePlay.bounds)
+        moviePlay.tag = 50
+        mTroubleView.isHidden = false
+        mTroubleView.addSubview(moviePlay)
+
     }
 
     @objc private func onTapRelationProduct(_ sender: BaseButton) {
@@ -457,17 +510,10 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     @IBAction private func onTapLineDetail(_ sender: AnyObject) {
-        let line = LineDetailData(lineId: self.product.lineId)
-        if line.feature != "" && Bool(line.lineStepFlg as NSNumber) {
-            let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
-            lineDetailVc.lineId = self.product.lineId
-            lineDetailVc.beautySecondId = self.product.beautySecondId
-            delegate?.nextVc(lineDetailVc)
-        } else {
-            let lineListVc = UIViewController.GetViewControllerFromStoryboard("LineListViewController", targetClass: LineListViewController.self) as! LineListViewController
-            lineListVc.line = line
-            delegate?.nextVc(lineListVc)
-        }
+        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryViewController", targetClass: LuxuryViewController.self) as! LuxuryViewController
+        let navigationController = UINavigationController(rootViewController: toVc)
+        toVc.ndGoProductVC = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
 
     @IBAction private func onTapOnTrendBeauty(_ sender: Any) {
@@ -548,6 +594,8 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
 
     func didTapClose() {
         mTroubleView.isHidden = true
+        let moviePlay = mTroubleView.viewWithTag(50)
+        moviePlay?.removeFromSuperview()
     }
     func didTapTrouble(_ trouble: DataStructTrouble) {
         mTroubleView.image = FileTable.getImage(trouble.image)
@@ -562,5 +610,25 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
 
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
+    }
+    func didTapshowSkinGraph() {
+        let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.setUI()
+        skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(skingraph)
+    }
+
+    func movieAct(){
+        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay.setUI()
+        moviePlay.center = CGPoint(x: self.view.size.width*0.5, y: self.view.size.height*0.5 - 20)
+        moviePlay.delegate = self
+        moviePlay.playMovie(movie: "lx_ingredient")
+        self.view.addSubview(moviePlay)
+    }
+    
+    func endMovie() {
+        let moviePlay = mTroubleView.viewWithTag(50)
+        moviePlay?.removeFromSuperview()
     }
 }

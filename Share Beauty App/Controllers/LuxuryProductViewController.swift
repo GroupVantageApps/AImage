@@ -84,6 +84,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     }
     override func viewWillAppear(_ animated: Bool) {
         print("LuxuryProductViewController.viewWillAppear")
+        self.navigationController?.isNavigationBarHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
         print("LuxuryProductViewController.viewDidAppear")
