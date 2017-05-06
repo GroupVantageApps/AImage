@@ -164,7 +164,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         } else {
             self.mBtnMovie.isEnabled = false
         }
-        if productId == 39 {
+        if productId == 39  || productId == 521{
             mCategoryButtonEfficacy.enabled = false
         }
         
@@ -394,6 +394,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     private func showUtmInfo(_ sender: LXCategoryButton) {
+      
+
         if sender === mCategoryButtonFeatures {
             mVContent.isHidden = true
             return
@@ -427,6 +429,9 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             mVCategoryImage.isHidden = true
             return
         }
+        mCategoryButtonFeatures.selected = true
+        sender.selected = false
+
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
             mVCategoryImage.isHidden = true
