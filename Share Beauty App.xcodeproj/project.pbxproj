@@ -281,6 +281,8 @@
 		C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */; };
 		C0FE16491D853CE700415B65 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE16481D853CE700415B65 /* SideBar.swift */; };
 		DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */; };
+		DE0DB6EF1EBE163F00663C4A /* lx_close_line_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0DB6ED1EBE163F00663C4A /* lx_close_line_detail.png */; };
+		DE0DB6F01EBE163F00663C4A /* lx_open_line_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0DB6EE1EBE163F00663C4A /* lx_open_line_detail.png */; };
 		DE1509401EBAAC87003402FE /* lx_ingredient_bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */; };
 		DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */; };
 		DE1509421EBAAC87003402FE /* lx_ingredient_bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */; };
@@ -816,6 +818,8 @@
 		C0FE16481D853CE700415B65 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
 		DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailSkinConcernView.swift; sourceTree = "<group>"; };
+		DE0DB6ED1EBE163F00663C4A /* lx_close_line_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_close_line_detail.png; sourceTree = "<group>"; };
+		DE0DB6EE1EBE163F00663C4A /* lx_open_line_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_open_line_detail.png; sourceTree = "<group>"; };
 		DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_3.png; sourceTree = "<group>"; };
 		DE15093E1EBAAC87003402FE /* lx_ingredient_bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_2.png; sourceTree = "<group>"; };
 		DE15093F1EBAAC87003402FE /* lx_ingredient_bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_ingredient_bg_1.png; sourceTree = "<group>"; };
@@ -1626,6 +1630,8 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DE0DB6ED1EBE163F00663C4A /* lx_close_line_detail.png */,
+				DE0DB6EE1EBE163F00663C4A /* lx_open_line_detail.png */,
 				DEC4F72B1EBC29FF007FE8F1 /* lx_ba_second_face_1a.png */,
 				DEC4F72C1EBC29FF007FE8F1 /* lx_ba_second_face_2a.png */,
 				DE15093D1EBAAC87003402FE /* lx_ingredient_bg_3.png */,
@@ -2096,6 +2102,7 @@
 				E5E0D4031DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard in Resources */,
 				C050C9111E82619F0009679D /* wab01_after.jpg in Resources */,
 				C00D555E1DC6146A008795D4 /* ColorballCollectionView.xib in Resources */,
+				DE0DB6F01EBE163F00663C4A /* lx_open_line_detail.png in Resources */,
 				C050C9811E8267450009679D /* eye_after.png in Resources */,
 				DE2C91361E9C681100B5FC4A /* LuxuryViewController.storyboard in Resources */,
 				C037CBB21D88112A00DEFE14 /* IdealSelectCollectionView.xib in Resources */,
@@ -2158,6 +2165,7 @@
 				C050C91E1E82619F0009679D /* orange_L.png in Resources */,
 				C050C90D1E82619F0009679D /* ss_mizu_bg.png in Resources */,
 				DE7B7E611EB7547D006F8246 /* lx_product_play_movie.png in Resources */,
+				DE0DB6EF1EBE163F00663C4A /* lx_close_line_detail.png in Resources */,
 				C050C9151E82619F0009679D /* whl01_after.jpg in Resources */,
 				C050C9A81E8267450009679D /* sizle_base.png in Resources */,
 				C050C9771E8267450009679D /* defend_triangle.png in Resources */,

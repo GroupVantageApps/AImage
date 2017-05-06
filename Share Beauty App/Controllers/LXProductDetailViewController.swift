@@ -22,6 +22,8 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     @IBOutlet weak private var mVBaseFeaturesView: UIView!
     @IBOutlet weak private var mRelationScrollV: UIScrollView!
     @IBOutlet weak private var mVScrollContent: UIView!
+
+    @IBOutlet weak private var mVSkinConcern: LXProductDetailSkinConcernView!
     @IBOutlet weak private var mTroubleSelectView: LXTroubleSelectView!
     @IBOutlet weak private var mColorballCollectionView: ColorballCollectionView!
     @IBOutlet weak private var mVRelationProductBase: UIView!
@@ -209,7 +211,10 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             self.setSpecialCaseConstraints(targetView: mSuncareFeaturesView, viewHeight: 300)
         }
         print(product.troubles)
+        
+        mVSkinConcern.troubles = product.troubles
         mTroubleSelectView.troubles = product.troubles
+
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示
@@ -220,7 +225,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         }
 
         var datas = [LXProductDetailTransitionData]()
-        datas.append(LXProductDetailTransitionData(title: "Line Detail", selector: #selector(self.onTapLineDetail(_:))))
+        datas.append(LXProductDetailTransitionData(title: product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
             datas.append(LXProductDetailTransitionData(title: "Life Style Beauty", selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
