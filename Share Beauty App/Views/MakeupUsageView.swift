@@ -11,7 +11,7 @@ import UIKit
 class MakeupUsageView: BaseView {
     @IBOutlet weak private var mVContent: UIView!
 
-    let space: CGFloat = 30
+    let space: CGFloat = 30 //30
 
     var movies = [Int]()
 
@@ -28,7 +28,7 @@ class MakeupUsageView: BaseView {
         let items = AppItemTable.getItemsByScreenCode("17AWSMK")
         let basic = AppItemTable.getNameByItemId(itemId: 7899)
         let cateye = AppItemTable.getNameByItemId(itemId: 7900)
-        if productId == 513 {
+        if productId == 513 { //ink eyeliner
             var movieInfo1 = MovieInfo()
             movieInfo1.title = basic
             movieInfo1.movieId = 6025
@@ -36,22 +36,22 @@ class MakeupUsageView: BaseView {
             var stepInfo1 = StepUsageInfo()
             stepInfo1.stepNumber = 1
             stepInfo1.text = items["11"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7861)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7862)
+            stepInfo1.startTime = 0 //AppItemTable.getSeekByItemId(itemId: 7861) 以下時間ベタがきに変更　t-hirai
+            stepInfo1.endTime = 10//AppItemTable.getSeekByItemId(itemId: 7862)
             var stepInfo2 = StepUsageInfo()
             stepInfo2.stepNumber = 2
             stepInfo2.text = items["12"]
-            stepInfo2.startTime = AppItemTable.getSeekByItemId(itemId: 7862)
-            stepInfo2.endTime = AppItemTable.getSeekByItemId(itemId: 7863)
+            stepInfo2.startTime = 10//AppItemTable.getSeekByItemId(itemId: 7862)
+            stepInfo2.endTime = 15.00//AppItemTable.getSeekByItemId(itemId: 7863)
             var stepInfo3 = StepUsageInfo()
             stepInfo3.stepNumber = 3
             stepInfo3.text = items["13"]
-            stepInfo3.startTime = AppItemTable.getSeekByItemId(itemId: 7863)
-            stepInfo3.endTime = AppItemTable.getSeekByItemId(itemId: 7864)
+            stepInfo3.startTime = 15.00//AppItemTable.getSeekByItemId(itemId: 7863) //7863
+            stepInfo3.endTime = 30//AppItemTable.getSeekByItemId(itemId: 7864)
             var stepInfo4 = StepUsageInfo()
             stepInfo4.stepNumber = 4
             stepInfo4.text = items["14"]
-            stepInfo4.startTime = AppItemTable.getSeekByItemId(itemId: 7864)
+            stepInfo4.startTime = 30//AppItemTable.getSeekByItemId(itemId: 7864)
             stepInfo4.endTime = 47
             // Cateyeを表示
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3] //BasicなのでstepInfo4を削除
@@ -63,7 +63,7 @@ class MakeupUsageView: BaseView {
             movieInfos = [movieInfo1, movieInfo2]
             
            // movieInfos = [movieInfo1]
-        } else if productId == 514 {
+        } else if productId == 514 { //Brush
             var movieInfo1 = MovieInfo()
             movieInfo1.title = basic
             movieInfo1.movieId = 6028 //変更平井
@@ -71,22 +71,22 @@ class MakeupUsageView: BaseView {
             var stepInfo1 = StepUsageInfo()
             stepInfo1.stepNumber = 1
             stepInfo1.text = items["21"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7906)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7907)
+            stepInfo1.startTime = 0 //AppItemTable.getSeekByItemId(itemId: 7906)
+            stepInfo1.endTime = 3 //AppItemTable.getSeekByItemId(itemId: 7907)
             var stepInfo2 = StepUsageInfo()
             stepInfo2.stepNumber = 2
             stepInfo2.text = items["22"]
-            stepInfo2.startTime = AppItemTable.getSeekByItemId(itemId: 7907)
-            stepInfo2.endTime = AppItemTable.getSeekByItemId(itemId: 7908)
+            stepInfo2.startTime = 3 //AppItemTable.getSeekByItemId(itemId: 7907)
+            stepInfo2.endTime = 7 //AppItemTable.getSeekByItemId(itemId: 7908)
             var stepInfo3 = StepUsageInfo()
             stepInfo3.stepNumber = 3
             stepInfo3.text = items["23"]
-            stepInfo3.startTime = AppItemTable.getSeekByItemId(itemId: 7908)
-            stepInfo3.endTime = AppItemTable.getSeekByItemId(itemId: 7909)
+            stepInfo3.startTime = 8 //AppItemTable.getSeekByItemId(itemId: 7908)
+            stepInfo3.endTime = 22 //AppItemTable.getSeekByItemId(itemId: 7909)
             var stepInfo4 = StepUsageInfo()
             stepInfo4.stepNumber = 4
             stepInfo4.text = items["24"]
-            stepInfo4.startTime = AppItemTable.getSeekByItemId(itemId: 7909)//開始キー
+            stepInfo4.startTime = 24 //AppItemTable.getSeekByItemId(itemId: 7909)//開始キー
             stepInfo4.endTime = 44
         
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3]
@@ -100,25 +100,30 @@ class MakeupUsageView: BaseView {
         } else if productId == 313 {
             var movieInfo1 = MovieInfo()
             movieInfo1.title = basic
-            movieInfo1.movieId = 5990
+            movieInfo1.movieId = 5992
 
             var stepInfo1 = StepUsageInfo()
             stepInfo1.stepNumber = 1
             stepInfo1.text = items["31"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7903)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7904)
+            stepInfo1.startTime = 0 //AppItemTable.getSeekByItemId(itemId: 7903)
+            stepInfo1.endTime = 12 //AppItemTable.getSeekByItemId(itemId: 7904)
             var stepInfo2 = StepUsageInfo()
             stepInfo2.stepNumber = 2
-            stepInfo2.text = items["32"]
-            stepInfo2.startTime = AppItemTable.getSeekByItemId(itemId: 7904)
-            stepInfo2.endTime = AppItemTable.getSeekByItemId(itemId: 7905)
+            stepInfo2.text = items["33"]
+            stepInfo2.startTime = 13 //AppItemTable.getSeekByItemId(itemId: 7904)
+            stepInfo2.endTime = 21 //AppItemTable.getSeekByItemId(itemId: 7905)
             var stepInfo3 = StepUsageInfo()
             stepInfo3.stepNumber = 3
-            stepInfo3.text = items["33"]
-            stepInfo3.startTime = AppItemTable.getSeekByItemId(itemId: 7905)
-            stepInfo3.endTime = 37
+            stepInfo3.text = items["32"]
+            stepInfo3.startTime = 21//AppItemTable.getSeekByItemId(itemId: 7905)
+            stepInfo3.endTime = 27
+            var stepInfo4 = StepUsageInfo()
+            stepInfo4.stepNumber = 4
+            stepInfo4.text = items["32"]
+            stepInfo4.startTime = 28 //AppItemTable.getSeekByItemId(itemId: 7905)
+            stepInfo4.endTime = 33
 
-            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3]
+            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
             movieInfos = [movieInfo1]
 
         } else if productId == 252 {
@@ -129,12 +134,12 @@ class MakeupUsageView: BaseView {
             var stepInfo1 = StepUsageInfo()
             stepInfo1.stepNumber = 1
             stepInfo1.text = items["41"]
-            stepInfo1.startTime = AppItemTable.getSeekByItemId(itemId: 7901)
-            stepInfo1.endTime = AppItemTable.getSeekByItemId(itemId: 7902)
+            stepInfo1.startTime = 0//AppItemTable.getSeekByItemId(itemId: 7901)
+            stepInfo1.endTime = 6//AppItemTable.getSeekByItemId(itemId: 7902)
             var stepInfo2 = StepUsageInfo()
             stepInfo2.stepNumber = 2
             stepInfo2.text = items["42"]
-            stepInfo2.startTime = AppItemTable.getSeekByItemId(itemId: 7902)
+            stepInfo2.startTime = 6//AppItemTable.getSeekByItemId(itemId: 7902)
             stepInfo2.endTime = 13
 
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2]
