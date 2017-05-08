@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("LanguageId: " + LanguageConfigure.languageId.description)
 
         self.getLifeStyleBeautyCount()
-
+        UIApplication.shared.isIdleTimerDisabled = true //スリープさせない t-hirai
         return true
     }
 
