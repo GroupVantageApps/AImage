@@ -52,7 +52,7 @@ class MakeupUsageView: BaseView {
             stepInfo4.stepNumber = 4
             stepInfo4.text = items["14"]
             stepInfo4.startTime = 30//AppItemTable.getSeekByItemId(itemId: 7864)
-            stepInfo4.endTime = 47
+            stepInfo4.endTime = 46
             // Cateyeを表示
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3] //BasicなのでstepInfo4を削除
             var movieInfo2 = MovieInfo()
