@@ -442,11 +442,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
-            //            mVCategoryImage.isHidden = true
-            //            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-            //            efficacyV.setUI()
-            //            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-            //            self.view.addSubview(efficacyV)
+
             mVCategoryImage.isHidden = true
             let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
             popup.setUI(productId: productId)
@@ -465,18 +461,22 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     private func showMovie(movieId: Int) {
+        
         let movieName = String(format: "%d_17AWLX", productId)
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        print(CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - 100.0))
-//        moviePlay.setUI()
-        moviePlay.backgroundColor = UIColor.white
-        moviePlay.delegate = self
-        moviePlay.bounds = CGRect(x: 0.0 , y: 80.0, width: self.view.width, height: self.view.height)
-        moviePlay.playMovie(movie: movieName)
-        print(moviePlay.bounds)
-        moviePlay.tag = 50
-        mTroubleView.isHidden = false
-        mTroubleView.addSubview(moviePlay)
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/%@.mp4",movieName))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+//            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
+        
 
     }
 
@@ -628,19 +628,20 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     func movieAct(){
-        
-        let movieName = String(format: "%d_17AWLX", productId)
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        print(CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - 100.0))
-        //        moviePlay.setUI()
-        moviePlay.backgroundColor = UIColor.white
-        moviePlay.delegate = self
-        moviePlay.bounds = CGRect(x: 0.0 , y: 80.0, width: self.view.width, height: self.view.height)
-        moviePlay.playMovie(movie: "lx_ingredient")
-        print(moviePlay.bounds)
-        moviePlay.tag = 50
-        mTroubleView.isHidden = false
-        mTroubleView.addSubview(moviePlay)
+
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+//            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
     }
     
     func endMovie() {
