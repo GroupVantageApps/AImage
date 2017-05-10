@@ -431,7 +431,9 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         }
         mCategoryButtonFeatures.selected = true
         sender.selected = false
-
+        sender.enabled = true
+        mBtnCurrentSelect = mCategoryButtonFeatures
+        
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
             mVCategoryImage.isHidden = true

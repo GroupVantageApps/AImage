@@ -429,25 +429,24 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         mCategoryButtonFeatures.selected = true
         sender.selected = false
         sender.enabled = true
+        mBtnCurrentSelect = mCategoryButtonFeatures
 
         mVCategoryImage.isHidden = false
         if sender === mCategoryButtonTechnologies {
             mVCategoryImage.isHidden = true
             let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
             technologyV.setUI(productId: productId)
+             technologyV.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
             makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
-            //            mVCategoryImage.isHidden = true
-            //            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-            //            efficacyV.setUI()
-            //            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-            //            self.view.addSubview(efficacyV)
+
             mVCategoryImage.isHidden = true
             let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
             popup.setUI(productId: productId)
+             popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
         } else if sender === mCategoryButtonDefend {
@@ -455,24 +454,29 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
             popup.setAction()
             popup.delegate = self
+            popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
         }
     }
 
     private func showMovie(movieId: Int) {
+        
         let movieName = String(format: "%d_17AWLX", productId)
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        print(CGPoint(x: self.view.width * 0.5, y: self.view.height * 0.5 - 100.0))
-//        moviePlay.setUI()
-        moviePlay.backgroundColor = UIColor.white
-        moviePlay.delegate = self
-        moviePlay.bounds = CGRect(x: 0.0 , y: 80.0, width: self.view.width, height: self.view.height)
-        moviePlay.playMovie(movie: movieName)
-        print(moviePlay.bounds)
-        moviePlay.tag = 50
-        mTroubleView.isHidden = false
-        mTroubleView.addSubview(moviePlay)
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/%@.mp4",movieName))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+//            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
+        
 
     }
 
@@ -624,12 +628,20 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     func movieAct(){
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.center = CGPoint(x: self.view.size.width*0.5, y: self.view.size.height*0.5 - 20)
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: "lx_ingredient")
-        self.view.addSubview(moviePlay)
+
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+//            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
     }
     
     func endMovie() {
