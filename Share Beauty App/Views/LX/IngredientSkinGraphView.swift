@@ -25,7 +25,6 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
     
       func setUI() {
 
-        configurePageControl()
         
         self.mScrollView.delegate = self
         self.mScrollView.showsHorizontalScrollIndicator = false
@@ -83,6 +82,9 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             graphView.setUp(left: 57, right: 30, l_title: "Without\nSkingenecellEnmei",r_title: "With\nSkingenecellEnmei")
             graphView.bgImage = "ingredient_graph_bg.png"
         }
+        
+        configurePageControl()
+
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 3, height: self.mScrollView.frame.size.height)
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
 
