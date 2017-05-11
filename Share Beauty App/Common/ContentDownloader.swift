@@ -382,5 +382,25 @@ class ContentDownloader: NSObject {
         } catch let e {
             print(e)
         }
+        
+        let csvFilePathStr = NSHomeDirectory() + "/Documents/lx_csv"
+        if manager.fileExists(atPath: csvFilePathStr) {
+            do {
+                let filePath: URL = URL.init(string: csvFilePathStr)!
+                print(filePath)
+                try manager.removeItem(at: filePath)
+            } catch let e {
+                print(e)
+            }
+        }
+        
+        let csvFileUrl: URL = FileTable.getPath(6092)
+        print(csvFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvFileUrl)
+            print(destinationURL)
+        } catch let e {
+            print(e)
+        }
     }
 }

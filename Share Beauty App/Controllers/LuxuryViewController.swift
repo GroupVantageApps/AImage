@@ -43,10 +43,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         super.viewDidLoad()
         mScrollV.delegate = self
         
-        lxArr = Utility.csvToArray(file: "010483lx")
-
-        let ud = UserDefaults.standard
-        ud.set(lxArr, forKey: "LX_ARR")
+        lxArr = LanguageConfigure.lxcsv
         
         self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryViewController.viewDidLoad")

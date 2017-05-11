@@ -220,13 +220,14 @@ class Utility: NSObject {
     }
     class func csvToArray (file: String ) -> [String : String]{
         var result: [String : String] = [:]
-        if let csvPath = Bundle.main.path(forResource: file, ofType: "csv") {
+        let filePath: URL = URL.init(string: String(format: "file://%@/Documents/lx_csv/lx_csv/%@.csv", NSHomeDirectory(), file))!
+        if let data = try? Data(contentsOf: filePath) {
             do {
-                let csvStr = try String(contentsOfFile:csvPath, encoding:String.Encoding.utf8)
+                let csvStr = String(data: data, encoding: .utf8)
                 var index = ""
                 var value = ""
                 var isStartDC = true
-                csvStr.enumerateLines { (line, stop) -> () in
+                csvStr?.enumerateLines { (line, stop) -> () in
                     let count = Utility.numberOfOccurrences(of: "\"", string: line)
                     
                     if count == 2 {
