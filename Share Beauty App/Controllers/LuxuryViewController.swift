@@ -43,11 +43,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         super.viewDidLoad()
         mScrollV.delegate = self
         
-        lxArr = Utility.csvToArray(file: "010483lx")
-
-        let ud = UserDefaults.standard
-        ud.set(lxArr, forKey: "LX_ARR")
-        
+        lxArr = LanguageConfigure.lxcsv
+        print(lxArr["1"])
         self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryViewController.viewDidLoad")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
@@ -98,6 +95,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     override func viewWillAppear(_ animated: Bool) {
         print("LuxuryViewController.viewWillAppear")
         self.navigationController?.isNavigationBarHidden = true
+         if (bgAudioPlayer != nil){ bgAudioPlayer.play() }
     }
     override func viewDidAppear(_ animated: Bool) {
         print("LuxuryViewController.viewDidAppear")

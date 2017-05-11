@@ -8,7 +8,7 @@
 
 import Foundation
 import AVFoundation
-
+import AVKit
 class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXYutakaConceptViewDelegate ,LXYutakaTreatmentViewDelegate , MoviePlayerViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
@@ -43,6 +43,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     }
     override func viewWillAppear(_ animated: Bool) {
         print("LuxuryYutakaViewController.viewWillAppear")
+         if (bgAudioPlayer != nil){ bgAudioPlayer.play() }
     }
     override func viewDidAppear(_ animated: Bool) {
         print("LuxuryYutakaViewController.viewDidAppear")
@@ -88,13 +89,21 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         }
     }
     func movieAct(){
-        bgAudioPlayer.pause()
         
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: "lx_yutaka")
-        self.view.addSubview(moviePlay)
+        self.bgAudioPlayer.pause()
+        
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_yutaka.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
     }
     
     func endMovie() {

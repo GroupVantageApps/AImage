@@ -8,7 +8,7 @@
 
 import Foundation
 import AVFoundation
-
+import AVKit
 class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate, UIScrollViewDelegate{
 
     @IBOutlet weak var mBGImgV: UIImageView!
@@ -46,6 +46,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     }
     override func viewWillAppear(_ animated: Bool) {
         print("LuxuryIngredientViewController.viewWillAppear")
+         if (bgAudioPlayer != nil){ bgAudioPlayer.play() }
     }
     override func viewDidAppear(_ animated: Bool) {
         print("LuxuryIngredientViewController.viewDidAppear")
@@ -97,13 +98,18 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         
         bgAudioPlayer.pause()
         
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: "lx_ingredient")
-        self.view.addSubview(moviePlay)
-        
-        
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()        
     }
     
     func endMovie() {

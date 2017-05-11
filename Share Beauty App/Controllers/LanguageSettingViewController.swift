@@ -51,6 +51,9 @@ class LanguageSettingViewController: UIViewController, NavigationControllerAnnot
 
     @IBAction func onTapSet(_ sender: AnyObject) {
         LanguageConfigure.languageId = mLanguageId
+        let languageCode = LanguageTable.getEntity(mLanguageId)
+        let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
+        LanguageConfigure.lxcsv = csv
         delegate?.backRootVc()
     }
 

@@ -149,6 +149,11 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         DownloadConfigure.downloadStatus = .success
         DownloadConfigure.releaseTarget()
         LanguageConfigure.languageId = LanguageTable.getFirstEntity().languageId!
+
+        let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+        let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
+        LanguageConfigure.lxcsv = csv
+
         SwiftSpinner.hide()
         if delegate == nil {
             UIApplication.shared.delegate?.window??.rootViewController =
