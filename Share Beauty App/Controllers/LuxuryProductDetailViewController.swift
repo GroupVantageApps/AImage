@@ -270,6 +270,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         super.viewWillAppear(animated)
         product = ProductDetailData(productId: productId)
         mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
+        if (bgAudioPlayer != nil){ bgAudioPlayer.play() }
     }
 
     // MARK: - PrivateMethod
@@ -467,12 +468,20 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     private func showMovie(movieId: Int) {
         let movieName = String(format: "%d_17AWLX", productId)
         bgAudioPlayer.pause()
-
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: movieName)
-        self.view.addSubview(moviePlay)
+        
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/%@.mp4",movieName))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+            //            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
 
     }
 
@@ -614,11 +623,18 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         
         bgAudioPlayer.pause()
         
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: "lx_ingredient")
-        self.view.addSubview(moviePlay)
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
     }
 
     func endMovie() {

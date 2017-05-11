@@ -8,7 +8,7 @@
 
 import Foundation
 import AVFoundation
-
+import AVKit
 class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegate, MoviePlayerViewDelegate, LXNavigationViewDelegte, LXHeaderViewDelegate, UIScrollViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
@@ -85,6 +85,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     override func viewWillAppear(_ animated: Bool) {
         print("LuxuryProductViewController.viewWillAppear")
         self.navigationController?.isNavigationBarHidden = true
+         if (bgAudioPlayer != nil){ bgAudioPlayer.play() }
     }
     override func viewDidAppear(_ animated: Bool) {
         print("LuxuryProductViewController.viewDidAppear")
@@ -130,11 +131,18 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     func movieAct(){
         
         bgAudioPlayer.pause()
-        let moviePlay: MoviePlayerView = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.setUI()
-        moviePlay.delegate = self
-        moviePlay.playMovie(movie: "17AW_LX")
-        self.view.addSubview(moviePlay)
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/17AW_LX.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
     }
     func endMovie() {
         bgAudioPlayer.play()
