@@ -14,6 +14,12 @@ class LXYutakaConceptContentFirstView: UIView {
     @IBOutlet weak var mImgV: UIImageView!
     func setUI(){
         self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_1.png")
+        let lxArr = LanguageConfigure.lxcsv
+        let titleLabel = self.viewWithTag(10) as! UILabel
+        titleLabel.text = lxArr["83"]
+        let descriptionLabel = self.viewWithTag(11) as! UILabel
+        descriptionLabel.text = lxArr["84"]
+
     }
     
 

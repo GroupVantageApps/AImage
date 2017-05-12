@@ -18,7 +18,7 @@ class LXYutakaConceptContentThirdView: UIView {
     @IBOutlet weak var mSub3ImgV: UIImageView!
     func setUI(){
         let ud = UserDefaults.standard
-        let items :[String:String] = ud.object(forKey: "LX_ARR") as! [String : String]
+        let items = LanguageConfigure.lxcsv
         for i in 0..<5 {
             let label = self.viewWithTag(i + 10) as! UILabel
             let content = items[String(format: "%d", i + 110)]

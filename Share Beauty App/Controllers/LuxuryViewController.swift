@@ -44,7 +44,10 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         mScrollV.delegate = self
         
         lxArr = LanguageConfigure.lxcsv
-        print(lxArr["1"])
+        productBtn.setTitle(lxArr["1"], for: .normal) 
+        ingredientBtn.setTitle(lxArr["2"], for: .normal) 
+        yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+        
         self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryViewController.viewDidLoad")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")

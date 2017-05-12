@@ -38,15 +38,18 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryProductViewController")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
-
+        
+        let lxArr = LanguageConfigure.lxcsv
+        
         let line = LineDetailData.init(lineId: 1)
         mUpperSteps = line.step
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
-
+        var beautyCsvId = 7
         for (i, step) in mLowerSteps.enumerated() {
                 let baseV = self.view.viewWithTag(i + 10)! as UIView
                 let stepLbl = baseV.viewWithTag(i + 60) as! UILabel
-                stepLbl.text = step.stepName
+                let stepCsvId = i + 4
+                stepLbl.text = lxArr[String(stepCsvId)]
                 products = ProductListData(productIds: step.product).products
                 for (index, product) in products.enumerated() {
                     let productLbl = baseV.viewWithTag(index + 40) as! UILabel
@@ -74,8 +77,16 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                     } else {
                         beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
                     }
-                    print(!(index == 2 && i == 0))
-                    if !(index > 1 && i == 0) && !((index == 0 || index == 3 ) && i == 1) && !(index == 0 && i == 2) {
+                    if (index > 1 && i == 0) || ( index == 3  && i == 1) || (index == 0 && i == 2) {
+                        if !(index == 3 && i == 0) {
+                        print("\(index) \(i)")
+                        beautyLbl.text = lxArr[String(beautyCsvId)]
+                        print("\(beautyCsvId):\(lxArr[String(beautyCsvId)])")
+                        beautyCsvId = beautyCsvId + 1
+                            if beautyCsvId == 8 { beautyCsvId = beautyCsvId + 1}
+                        }
+                        
+                    } else {      
                         beautyLbl.text = product.beautyName
                         print("\(product.beautyName)")
                     }

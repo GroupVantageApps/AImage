@@ -14,7 +14,10 @@ class LXYutakaConceptContentSecondView: UIView {
     @IBOutlet weak var mImgV: UIImageView!
     @IBOutlet var mDetailLbl: UILabel!
     func setUI(){
-        self.mDetailLbl.text = "YUTAKA OMOTENASHI SOUND  ows with the rhythm of the massage therapist’s arm movements, a technology unique to SHISEIDO.\nThe composition includes natural sounds recorded at Mount Koya, one of Japan’s most spiritual sites. \nThese sounds create an immersive relaxation effect that deepens the skincare experience."
+        let lxArr = LanguageConfigure.lxcsv
+        let titleLabel = self.viewWithTag(10) as! UILabel
+        titleLabel.text = lxArr["85"]
+        self.mDetailLbl.text = lxArr["86"]
         self.mDetailLbl.clipsToBounds = true
         self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_2.png")
     }

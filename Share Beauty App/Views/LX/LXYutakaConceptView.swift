@@ -38,6 +38,13 @@ class LXYutakaConceptView: UIView {
         self.mToolBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_1.png"), for: .normal)
         self.mMusicBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_2.png"), for: .normal)
         self.mSmellBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_3.png"), for: .normal)
+        
+        let lxArr = LanguageConfigure.lxcsv
+        for i in 0..<5 {
+            let label = self.viewWithTag(i + 10) as! UILabel
+            let content = lxArr[String(format: "%d", i + 78)]
+            label.text = content
+        }
     }
     @IBAction func showMovie(_ sender: Any) {
         self.isHidden = true
