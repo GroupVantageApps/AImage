@@ -31,6 +31,29 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
+        let lxArr = LanguageConfigure.lxcsv
+
+        let conceptBtn = self.view.viewWithTag(30) as! UIButton
+        conceptBtn.setTitle(lxArr["67"], for: .normal)
+        
+        let titleLabel  = self.view.viewWithTag(20) as! UILabel
+        titleLabel.text = lxArr["66"]
+        let treatmentTitleLabel  = self.view.viewWithTag(21) as! UILabel
+        treatmentTitleLabel.text = lxArr["68"] 
+        let extraTreatmentTitleLabel  = self.view.viewWithTag(22) as! UILabel
+        extraTreatmentTitleLabel.text = lxArr["74"] 
+    
+        for i in 0..<8 {
+            let btn = self.view.viewWithTag(10 + i) as! UIButton
+            if i < 5 { 
+                let csvId = i + 69
+                btn.setTitle(lxArr[String(csvId)], for: .normal)
+            } else {
+                let csvId = i + 70
+                btn.setTitle(lxArr[String(csvId)], for: .normal)
+            }
+        }
+        
         print("LuxuryYutakaViewController.viewDidLoad")
     }
 
