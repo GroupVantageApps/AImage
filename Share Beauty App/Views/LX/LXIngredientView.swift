@@ -41,6 +41,14 @@ class LXIngredientView: UIView {
         apngImageV = self.viewWithTag(50) as! APNGImageView!
         apngImageV.image = image
         apngImageV.startAnimating()
+        let lxArr = LanguageConfigure.lxcsv
+        
+        for i in 0..<4 {
+            let label = self.viewWithTag(10 + i) as! UILabel
+            let csvId = 17 + i
+            label.text = lxArr[String(csvId)]
+        }
+        
     }
     
     @IBAction func close(_ sender: Any) {

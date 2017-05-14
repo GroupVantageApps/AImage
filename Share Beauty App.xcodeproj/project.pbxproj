@@ -362,6 +362,8 @@
 		DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91701E9C682500B5FC4A /* pick.png */; };
 		DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */; };
 		DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */; };
+		DE32704F1EC85337001B58D9 /* IngredientSkinGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */; };
+		DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */; };
 		DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */; };
 		DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */; };
 		DE48C30D1EB6A9AA00D29A8D /* lx_bls_dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */; };
@@ -899,6 +901,8 @@
 		DE2C91701E9C682500B5FC4A /* pick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick.png; sourceTree = "<group>"; };
 		DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailViewController.swift; sourceTree = "<group>"; };
 		DE2C91B81E9C6F8000B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LXProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSkinGraphContentView.swift; sourceTree = "<group>"; };
+		DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSkinGraphContentView.xib; sourceTree = "<group>"; };
 		DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_btn.png; sourceTree = "<group>"; };
 		DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_bls_btn.png; sourceTree = "<group>"; };
 		DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bls_dummy.png; sourceTree = "<group>"; };
@@ -1573,6 +1577,8 @@
 				DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */,
 				DE2C90501E9C66E600B5FC4A /* IngredientSkinGraphView.swift */,
 				DE2C90511E9C66E600B5FC4A /* IngredientSkinGraphView.xib */,
+				DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */,
+				DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */,
 				DE2C90521E9C66E600B5FC4A /* LXCategoryButton.swift */,
 				DE2C90531E9C66E600B5FC4A /* LXCategoryButton.xib */,
 				DE2C90541E9C66E600B5FC4A /* LXCherryGraphView.swift */,
@@ -2270,6 +2276,7 @@
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
 				DEE83E721EB78BEB000C7D8D /* lx_effifacy_c_graph_1.png in Resources */,
 				DEB555361EB333540022AB0F /* lx_ba_second_face_2.png in Resources */,
+				DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */,
 				DE2C91251E9C67FD00B5FC4A /* yutaka.m4a in Resources */,
 				C050C9081E82619F0009679D /* ss_hukidashi_1.png in Resources */,
 				C050C9AD1E8267450009679D /* utm_square.png in Resources */,
@@ -2620,6 +2627,7 @@
 				803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */,
 				E5CCCE921E6A605A008A4481 /* EfficacyResultView.swift in Sources */,
 				C0880CF71E4B209C006A3713 /* CountryTable.swift in Sources */,
+				DE32704F1EC85337001B58D9 /* IngredientSkinGraphContentView.swift in Sources */,
 				C0880CF01E4B2048006A3713 /* CountrySettingViewController.swift in Sources */,
 				C0CDEB0A1D98075600420667 /* UtmFeaturesView.swift in Sources */,
 				DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */,

@@ -17,6 +17,14 @@ class LXAngelicaView: UIView{
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal) 
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
+        
+        let lxArr = LanguageConfigure.lxcsv
+        
+        for i in 0..<3 {
+            let label = self.viewWithTag(10 + i) as! UILabel
+            let csvId = 63 + i
+            label.text = lxArr[String(csvId)]
+        }
     }
     
     @IBAction func close(_ sender: Any) {

@@ -42,6 +42,15 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         self.mCherryBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_3.png"), for: .normal)
         self.mGreenTeaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_4.png"), for: .normal)
         self.mSkingeneceBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_1.png"), for: .normal)
+        
+        let lxArr = LanguageConfigure.lxcsv
+        
+        for i in 0..<4 {
+            let label = self.view.viewWithTag(10 + i) as! UILabel
+            let csvId = 13 + i
+            label.text = lxArr[String(csvId)]
+        }
+        
         print("LuxuryIngredientViewController.viewDidLoad")
     }
     override func viewWillAppear(_ animated: Bool) {
