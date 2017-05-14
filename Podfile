@@ -13,7 +13,7 @@ target 'Share Beauty App' do
   pod 'APNGKit', '~> 0.5'
   pod 'AImage', :git => 'https://github.com/wangjwchn/AImage', :branch => 'Swift3'
   pod 'Zip'
-
+  pod 'TouchVisualizer', '~>2.0.1'
   target 'Share Beauty AppTests' do
     inherit! :search_paths
     # Pods for testing

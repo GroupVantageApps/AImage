@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftyJSON
-
+import TouchVisualizer
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //TouchVisualizer t-hirai
+        // Initialize with config - octocat
+        var config = Configuration()
+        config.color = UIColor.red
+        //		config.showsTimer = true
+        //		config.showsTouchRadius = true
+        //		config.showsLog = true
+        //		config.image = UIImage(named: "octocat")
+        Visualizer.start(config)
 
         if DownloadConfigure.downloadStatus != .success {
             window?.rootViewController = UIViewController.GetViewControllerFromStoryboard(targetClass: CountrySettingViewController.self) as! CountrySettingViewController
