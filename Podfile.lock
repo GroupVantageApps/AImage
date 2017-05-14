@@ -5,6 +5,7 @@ PODS:
   - SCLAlertView (0.7.0)
   - SwiftSpinner (1.1.0)
   - SwiftyJSON (3.1.3)
+  - TouchVisualizer (2.0.1)
   - Zip (0.7.0)
 
 DEPENDENCIES:
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - SCLAlertView
   - SwiftSpinner
   - SwiftyJSON
+  - TouchVisualizer (~> 2.0.1)
   - Zip
 
 EXTERNAL SOURCES:
@@ -33,8 +35,9 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
+  TouchVisualizer: d1bd1b438d084245332c222d9e14416c271c5f25
   Zip: e34513299ac38c0686d5b24504da7ce343799ab9
 
-PODFILE CHECKSUM: ba9bc4068843e8f1b45a5ec3493e2a83209e1a21
+PODFILE CHECKSUM: 1812bdfd5f973a5435fe30dc05b382acb5415f2b
 
-COCOAPODS: 1.2.1.beta.1
+COCOAPODS: 1.2.0

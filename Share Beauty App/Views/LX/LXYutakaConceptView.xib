@@ -27,17 +27,8 @@
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-<<<<<<< HEAD
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-JF-6sM">
-                    <rect key="frame" x="50" y="100" width="751" height="176"/>
-=======
                 <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-JF-6sM">
-<<<<<<< HEAD
-                    <rect key="frame" x="50" y="100" width="660" height="176"/>
->>>>>>> LX_APP_2
-=======
                     <rect key="frame" x="50" y="100" width="660" height="169"/>
->>>>>>> LX_APP_2
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <attributedString key="attributedText">
                         <fragment>
@@ -86,11 +77,7 @@
                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-<<<<<<< HEAD
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fragrance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNi-ad-WpM">
-=======
                 <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Smell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNi-ad-WpM">
->>>>>>> LX_APP_2
                     <rect key="frame" x="634" y="567" width="200" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
