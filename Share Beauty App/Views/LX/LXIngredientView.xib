@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SkingenecellEnmei" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-Cn-4uH">
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SkingenecellEnmei" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-Cn-4uH">
                     <rect key="frame" x="57" y="44" width="394" height="49"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="394" id="jax-zZ-ehj"/>
@@ -39,10 +39,16 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRG-zu-kRB">
                             <rect key="frame" x="0.0" y="0.0" width="473" height="470"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0e-de-7rC">
+                                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0e-de-7rC">
                                     <rect key="frame" x="0.0" y="0.0" width="473" height="470"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <mutableString key="text">Enmei herb is a legendary Japanese botanical that in ancient times, was known to have substantial healing properties. Shiseido researchers picked the Enmei herb from the foot of Mt. Koya, and watched over their re-growth on the company property. An extract of the cultivated plants has been paired with Skingenecell 1P and Vitamin C Ethyl ll to create a more advanced and highly effective ingredient, SkingenecellEnmei. SkingenecellEnmei brings out the ultimate vitalizing potential of the skin through a regenerative process. The formula helps the skin become impervious to damage, and superior in strength.・Promotes the expression of the longevity gene sirtuin 1 to vitalize skin cells.・Inhibits the negative factor Serpin b3 to promote the natural loss of the nuclei and to fundamentally improve skin quality. ・Suppresses factors that attack Langerhans cells to comprehensively strengthen the skin’s natural power.　</mutableString>
+                                    <string key="text">Enmei herb is a legendary Japanese botanical that in ancient times, was known to have substantial healing properties. Shiseido researchers picked the Enmei herb from the foot of Mt. Koya, and watched over their re-growth on the company property.
+ An extract of the cultivated plants has been paired with Skingenecell 1P and Vitamin C Ethyl ll to create a more advanced and highly effective ingredient, SkingenecellEnmei. 
+
+SkingenecellEnmei brings out the ultimate vitalizing potential of the skin through a regenerative process. The formula helps the skin become impervious to damage, and superior in strength.
+・Promotes the expression of the longevity gene sirtuin 1 to vitalize skin cells.
+・Inhibits the negative factor Serpin b3 to promote the natural loss of the nuclei and to fundamentally improve skin quality. 
+・Suppresses factors that attack Langerhans cells to comprehensively strengthen the skin’s natural power.　</string>
                                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21.700000762939453"/>
                                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -70,7 +76,7 @@
                         <constraint firstAttribute="width" constant="43" id="xjb-23-05I"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-Uh-LEu">
+                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FP-Uh-LEu">
                     <rect key="frame" x="630" y="480" width="75" height="41"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="4fL-2Z-i8b"/>
@@ -86,7 +92,7 @@
                         <constraint firstAttribute="height" constant="41" id="4zn-92-b1J"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbG-1Z-eNJ">
+                <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 effects" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbG-1Z-eNJ">
                     <rect key="frame" x="629" y="533" width="200" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="AbH-fI-pNm"/>

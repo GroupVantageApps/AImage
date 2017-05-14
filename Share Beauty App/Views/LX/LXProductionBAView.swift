@@ -43,8 +43,24 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         
         var firstView = self.viewWithTag(100)! as UIView
         firstView.frame = CGRect(x: 0, y: 0, width: 960, height: 700)
+        
+        let lxArr = LanguageConfigure.lxcsv
+        
+        for i in 0..<5 {
+            let label = firstView.viewWithTag(10 + i) as! UILabel
+            let csvId = 116 + i
+            label.text = lxArr[String(csvId)]
+        }
+        
         let secondView = self.viewWithTag(101)! as UIView
         secondView.frame = CGRect(x: 960, y: 0, width: 960, height: 700)
+        
+        for i in 0..<5 {
+            let label = secondView.viewWithTag(10 + i) as! UILabel
+            let csvId = 121 + i
+            label.text = lxArr[String(csvId)]
+        }
+        
         self.mScrollV.addSubview(firstView)
         self.mScrollV.addSubview(secondView)
         self.mScrollV.delegate = self
