@@ -32,6 +32,21 @@ class LXProductBLSView: UIView {
         let mUpperSteps = line.step
         let mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
         let products = ProductListData(productIds: mLowerSteps[0].product).products
+        for i in 0..<5 {
+            print(i)
+            let label = self.viewWithTag(20 + i) as! UILabel
+            if i == 2 {
+                let productName = String(format: "%@/%@", products[i].productName, products[i + 1].productName)
+                label.text = productName
+                print(productName)
+            } else if i < 2 { 
+                label.text = products[i + 1].productName
+                print(products[i].productName )
+            } else {
+                label.text = products[i].productName
+                print(products[i + 1].productName )            
+            }
+        }
     }
     
     func close() {
