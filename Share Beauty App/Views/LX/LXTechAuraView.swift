@@ -15,6 +15,14 @@ class LXTechAuraView: UIView{
         let firstView = self.viewWithTag(100)! as UIView
         firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
         self.addSubview(firstView)
+        
+        let lxArr = LanguageConfigure.lxcsv
+        for i in 0..<11 {
+            let label = firstView.viewWithTag(10 + i) as! UILabel
+            let csvId = 366 + i
+            label.text = lxArr[String(csvId)]
+            
+        }
     }
     
     @IBAction func close(_ sender: Any) {
