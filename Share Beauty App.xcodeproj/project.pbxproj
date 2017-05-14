@@ -383,6 +383,8 @@
 		DE507EEC1EB887760095FB78 /* lx_yutaka_treatment_thum_06.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */; };
 		DE507EED1EB887760095FB78 /* lx_yutaka_treatment_thum_07.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */; };
 		DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */; };
+		DE61C59A1EC8950A00415910 /* LXProductGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5981EC8950A00415910 /* LXProductGraphContentView.xib */; };
+		DE61C59B1EC8950A00415910 /* LXProductGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */; };
 		DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */; };
 		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
 		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
@@ -922,6 +924,8 @@
 		DE507EE41EB887760095FB78 /* lx_yutaka_treatment_thum_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_06.png; sourceTree = "<group>"; };
 		DE507EE51EB887760095FB78 /* lx_yutaka_treatment_thum_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_07.png; sourceTree = "<group>"; };
 		DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_08.png; sourceTree = "<group>"; };
+		DE61C5981EC8950A00415910 /* LXProductGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductGraphContentView.xib; sourceTree = "<group>"; };
+		DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductGraphContentView.swift; sourceTree = "<group>"; };
 		DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_angelica.png; sourceTree = "<group>"; };
 		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
 		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
@@ -1571,10 +1575,12 @@
 				DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */,
 				DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */,
 				DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */,
-				DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */,
 				DE48C3131EB6ABB600D29A8D /* LXProductGraphView.xib */,
+				DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */,
 				DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */,
 				DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */,
+				DE61C5981EC8950A00415910 /* LXProductGraphContentView.xib */,
+				DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */,
 				DE2C90501E9C66E600B5FC4A /* IngredientSkinGraphView.swift */,
 				DE2C90511E9C66E600B5FC4A /* IngredientSkinGraphView.xib */,
 				DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */,
@@ -2283,6 +2289,7 @@
 				DEE83E7E1EB790DD000C7D8D /* lx_intensive.png in Resources */,
 				C03520DA1D9E88D7005129B5 /* IdealResultCell.xib in Resources */,
 				C050C99B1E8267450009679D /* t_glaph_line_eye.png in Resources */,
+				DE61C59A1EC8950A00415910 /* LXProductGraphContentView.xib in Resources */,
 				C050C91C1E82619F0009679D /* green_R.png in Resources */,
 				C03520EC1DA0F3D1005129B5 /* TroubleView.xib in Resources */,
 				C0665B3F1D6B252400B3D8E5 /* TestView.xib in Resources */,
@@ -2518,6 +2525,7 @@
 				EB7365AF1D83156F00D223BA /* StepUpperTranslateEntity.swift in Sources */,
 				8008921E1EA0DF66007C592A /* TelopData.swift in Sources */,
 				C0880CFA1E4B20B1006A3713 /* RegionEntitiy.swift in Sources */,
+				DE61C59B1EC8950A00415910 /* LXProductGraphContentView.swift in Sources */,
 				C037CBAC1D87FB9D00DEFE14 /* UIColor+FQExtention.swift in Sources */,
 				8008921C1EA0DF59007C592A /* TelopTranslateEntity.swift in Sources */,
 				C03520EA1DA0F36E005129B5 /* TroubleView.swift in Sources */,

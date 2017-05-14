@@ -15,6 +15,29 @@ class LXEfficacyPenetrationView: UIView{
         let firstView = self.viewWithTag(100)! as UIView
         firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
         self.addSubview(firstView)
+        let lxArr = LanguageConfigure.lxcsv
+        for i in 0..<13 {
+            let label = self.viewWithTag(10 + i) as! UILabel
+            var csvId = 181 + i
+            if i > 8 { csvId = csvId + 6 } 
+            label.text = lxArr[String(csvId)]
+            
+        }
+        
+        for i in 0..<5 {
+            let label = self.viewWithTag(30 + i) as! UILabel
+            let label2 = self.viewWithTag(35 + i) as! UILabel
+            let label3 = self.viewWithTag(40 + i) as! UILabel
+            let csvId = 190 + i
+            label.text = lxArr[String(csvId)]
+            label2.text = lxArr[String(csvId)]
+            label3.text = lxArr[String(csvId)]
+        }
+        for i in 0..<3 {
+            let label = self.viewWithTag(50 + i) as! UILabel
+            let csvId = 195
+            label.text = lxArr[String(csvId)]
+        }
 
     }
     
