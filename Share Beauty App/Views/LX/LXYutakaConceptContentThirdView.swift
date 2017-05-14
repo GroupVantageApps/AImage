@@ -21,7 +21,7 @@ class LXYutakaConceptContentThirdView: UIView {
         let items = LanguageConfigure.lxcsv
         for i in 0..<5 {
             let label = self.viewWithTag(i + 10) as! UILabel
-            let content = items[String(format: "%d", i + 110)]
+            let content = items[String(format: "%d", i + 87)]
             print(content)
             label.text = content
         }
