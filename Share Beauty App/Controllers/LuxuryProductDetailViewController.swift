@@ -443,13 +443,14 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
-            makeCategoryImages(product.usageImage)
+            
+            mVCategoryImage.isHidden = true
+            let popup: LXProductHowToUseView = UINib(nibName: "LXProductHowToUseView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductHowToUseView
+            popup.setUI(productId: productId)
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
+        
         } else if sender === mCategoryButtonEfficacy {
-//            mVCategoryImage.isHidden = true
-//            let efficacyV: LXEfficacyResultView = UINib(nibName: "LXEfficacyResultView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyResultView
-//            efficacyV.setUI()
-//            efficacyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-//            self.view.addSubview(efficacyV)
             mVCategoryImage.isHidden = true
             let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
             popup.setUI(productId: productId)

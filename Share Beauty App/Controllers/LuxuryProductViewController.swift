@@ -45,6 +45,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         mUpperSteps = line.step
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
         var beautyCsvId = 7
+        print(mLowerSteps)
         for (i, step) in mLowerSteps.enumerated() {
                 let baseV = self.view.viewWithTag(i + 10)! as UIView
                 let stepLbl = baseV.viewWithTag(i + 60) as! UILabel

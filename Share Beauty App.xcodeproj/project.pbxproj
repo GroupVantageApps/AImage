@@ -385,6 +385,10 @@
 		DE507EEE1EB887760095FB78 /* lx_yutaka_treatment_thum_08.png in Resources */ = {isa = PBXBuildFile; fileRef = DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */; };
 		DE61C59A1EC8950A00415910 /* LXProductGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5981EC8950A00415910 /* LXProductGraphContentView.xib */; };
 		DE61C59B1EC8950A00415910 /* LXProductGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */; };
+		DE61C59E1EC8C4B400415910 /* LXProductHowToUseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */; };
+		DE61C59F1EC8C4B400415910 /* LXProductHowToUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */; };
+		DE61C5A21EC8C4CB00415910 /* lx_howtouse_523.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */; };
+		DE61C5A31EC8C4CB00415910 /* lx_howtouse_522.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */; };
 		DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */; };
 		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
 		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
@@ -926,6 +930,10 @@
 		DE507EE61EB887760095FB78 /* lx_yutaka_treatment_thum_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_yutaka_treatment_thum_08.png; sourceTree = "<group>"; };
 		DE61C5981EC8950A00415910 /* LXProductGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductGraphContentView.xib; sourceTree = "<group>"; };
 		DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductGraphContentView.swift; sourceTree = "<group>"; };
+		DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductHowToUseView.xib; sourceTree = "<group>"; };
+		DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductHowToUseView.swift; sourceTree = "<group>"; };
+		DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_523.png; sourceTree = "<group>"; };
+		DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_522.png; sourceTree = "<group>"; };
 		DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_angelica.png; sourceTree = "<group>"; };
 		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
 		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
@@ -1562,6 +1570,8 @@
 		DE2C904F1E9C66E600B5FC4A /* LX */ = {
 			isa = PBXGroup;
 			children = (
+				DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */,
+				DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */,
 				DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */,
 				DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */,
 				DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */,
@@ -1642,6 +1652,8 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */,
+				DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */,
 				DE0DB6ED1EBE163F00663C4A /* lx_close_line_detail.png */,
 				DE0DB6EE1EBE163F00663C4A /* lx_open_line_detail.png */,
 				DEC4F72B1EBC29FF007FE8F1 /* lx_ba_second_face_1a.png */,
@@ -2261,6 +2273,7 @@
 				C050C9A91E8267450009679D /* sizle_highlight.png in Resources */,
 				C050C9AC1E8267450009679D /* utm_line.png in Resources */,
 				C050C9821E8267450009679D /* eye_befor.png in Resources */,
+				DE61C5A21EC8C4CB00415910 /* lx_howtouse_523.png in Resources */,
 				E5E0D4061DF3DA7E0053373F /* ScreenSaveViewController.storyboard in Resources */,
 				E5E0D3F71DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard in Resources */,
 				C050C9061E82619F0009679D /* sib_slider_1_40.png in Resources */,
@@ -2315,6 +2328,7 @@
 				C050C96D1E8267450009679D /* d_3_5.png in Resources */,
 				C050C97C1E8267450009679D /* efficacy_slider_circle_.png in Resources */,
 				C050C9871E8267450009679D /* utm03_after.png in Resources */,
+				DE61C5A31EC8C4CB00415910 /* lx_howtouse_522.png in Resources */,
 				DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */,
 				C050C9011E82619F0009679D /* sib01_before.png in Resources */,
 				DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */,
@@ -2329,6 +2343,7 @@
 				DE2C90851E9C66E600B5FC4A /* LXGreenTeaView.xib in Resources */,
 				C0D57C651DD5C0090087258B /* LifeStyleCollectionViewCell.xib in Resources */,
 				DE2C909F1E9C66E600B5FC4A /* LXYutakaTreatmentContentFirstView.xib in Resources */,
+				DE61C59E1EC8C4B400415910 /* LXProductHowToUseView.xib in Resources */,
 				C050C9BB1E8276C60009679D /* Shiseido-Bold.otf in Resources */,
 				C050C9781E8267450009679D /* defendThumnail.png in Resources */,
 				C050C9141E82619F0009679D /* wab_slider_24.png in Resources */,
@@ -2576,6 +2591,7 @@
 				EBC014801D99A32A0006827C /* ProductListData.swift in Sources */,
 				C091BA781D69809F0073FEDB /* HeaderView.swift in Sources */,
 				C05C779D1D9E5ECA00E38B7B /* IdealProductView.swift in Sources */,
+				DE61C59F1EC8C4B400415910 /* LXProductHowToUseView.swift in Sources */,
 				EBC014881D99DA710006827C /* IdealBeautySecondsData.swift in Sources */,
 				EB7365AE1D83156F00D223BA /* StepUpperEntity.swift in Sources */,
 				EBBF4E1B1D95596A001CD8B3 /* UnitEntity.swift in Sources */,
