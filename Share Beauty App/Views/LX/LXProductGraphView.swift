@@ -36,7 +36,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                 view.mImageView.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
             }
             self.mScrollV.addSubview(view)
-            for i in 0..<9 {
+            for i in 0..<9 { 
                 if index == 0 {
                     let label = view.viewWithTag(10 + i) as! UILabel
                     var csvId = 0
