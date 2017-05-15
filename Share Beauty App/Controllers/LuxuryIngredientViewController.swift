@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 import AVKit
-class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate, UIScrollViewDelegate{
+class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDelegte, LXHeaderViewDelegate, LXIngredientViewDelegate, MoviePlayerViewDelegate, IngredientSkinGraphViewDelegate, UIScrollViewDelegate{
 
     @IBOutlet weak var mBGImgV: UIImageView!
     @IBOutlet weak var mAngelicaBtn: UIButton!
@@ -50,6 +50,10 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
             let csvId = 13 + i
             label.text = lxArr[String(csvId)]
         }
+        
+        let showMovieBtn = self.view.viewWithTag(20) as! UIButton!
+        showMovieBtn?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        showMovieBtn?.addTarget(self, action: #selector(playIngredientMovie), for: .touchUpInside)
         
         print("LuxuryIngredientViewController.viewDidLoad")
     }
@@ -100,8 +104,26 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     func didTapshowSkinGraph() {
         let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
         skingraph.setUI()
+        skingraph.delegate = self
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
+    }
+    
+    func playIngredientMovie(){
+        bgAudioPlayer.pause()
+        
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/IngredientVIew.mp4"))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
     }
     func movieAct(){
         
@@ -119,6 +141,24 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         self.present(avPlayerVc, animated: true, completion: {
         })
         avPlayer.play()        
+    }
+
+    func ingredientMoviePlay(index: Int){
+        
+        bgAudioPlayer.pause()
+        
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/3e%d.mp4",index))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
     }
     
     func endMovie() {

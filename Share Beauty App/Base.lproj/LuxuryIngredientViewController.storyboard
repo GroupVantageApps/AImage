@@ -102,6 +102,11 @@ Ujicya</string>
                                                     <action selector="showGraphView2:" destination="T4m-bh-eTl" eventType="touchUpInside" id="5hy-F5-Kgf"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyS-si-zyP">
+                                                <rect key="frame" x="958" y="683" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="lx_music.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -166,4 +171,7 @@ Ujicya</string>
             <point key="canvasLocation" x="-7437.3046874999991" y="2291.40625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lx_music.png" width="80" height="80"/>
+    </resources>
 </document>
