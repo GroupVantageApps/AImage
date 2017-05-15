@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ss_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iib-X9-yAM">
                                 <rect key="frame" x="0.0" y="0.0" width="547" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -145,7 +145,7 @@
                                                                     <constraint firstItem="X4p-hS-PLc" firstAttribute="width" secondItem="IP6-cP-TY8" secondAttribute="width" id="wXR-hK-j2G"/>
                                                                 </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loE-f8-G0e">
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loE-f8-G0e">
                                                                 <rect key="frame" x="942" y="0.0" width="42" height="30"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <state key="normal" image="lx_product_play_movie.png"/>

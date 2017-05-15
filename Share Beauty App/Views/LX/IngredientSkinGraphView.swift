@@ -61,6 +61,9 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         }
         let label = subView.viewWithTag(16) as! UILabel 
         label.text = lxArr["39"]
+        let upImg = subView.viewWithTag(30) as! UIImageView
+        upImg.image = FileTable.getLXFileImage("graphPoint_up.png")
+        
         let nib = UINib(nibName: "LXGraphView", bundle: nil)
         let views = nib.instantiate(withOwner: self, options: nil)
         guard let graphView = views[0] as? LXGraphView else { return }
@@ -72,7 +75,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         showMovieBtn?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
-        graphView.setUp(left: 57, right: 30, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
+        graphView.setUp(left: 86, right: 23, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         graphView.bgImage = "ingredient_graph_bg.png"
         
         let subvewNib2 = UINib(nibName: "IngredientSkinGraphContentView", bundle: nil)
@@ -88,6 +91,13 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
                 label.text = lxArr[String(csvId)]    
         }
         
+        let downImg = subView2.viewWithTag(30) as! UIImageView
+        downImg.image = FileTable.getLXFileImage("graphPoint_down.png")
+        downImg.center.y = 420
+        
+        let lowLabel = subView2.viewWithTag(14) as! UILabel 
+        lowLabel.center.y = 390
+        
         let label2 = subView2.viewWithTag(16) as! UILabel 
         label2.text = lxArr["39"]
         let nib2 = UINib(nibName: "LXGraphView", bundle: nil)
@@ -101,7 +111,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         showMovieBtn2?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn2?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
-        graphView2.setUp(left: 57, right: 30, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
+        graphView2.setUp(left: 54, right: 118, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
         graphView2.bgImage = "ingredient_graph_bg.png"
         
         let subvewNib3 = UINib(nibName: "IngredientSkinGraphContentView", bundle: nil)
@@ -125,6 +135,13 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         let label3 = subView2.viewWithTag(16) as! UILabel 
         label3.text = lxArr["39"]
         
+        let downImg2 = subView3.viewWithTag(30) as! UIImageView
+        downImg2.image = FileTable.getLXFileImage("graphPoint_down.png")
+        downImg2.center.y = 420
+        
+        let amountLabel = subView3.viewWithTag(14) as! UILabel 
+        amountLabel.center.y = 380
+        
         let showMovieBtn3 = subView3.viewWithTag(20) as! UIButton!
         showMovieBtn3?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn3?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
@@ -136,7 +153,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         subView3.addSubview(graphView3)
         self.mScrollView.addSubview(subView3)
         
-        graphView3.setUp(left: 57, right: 30, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
+        graphView3.setUp(left: 54, right: 80, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         graphView3.bgImage = "ingredient_graph_bg.png"
         
         configurePageControl()
