@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-class LXProductDetailViewController: UIViewController, NavigationControllerAnnotation, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, MoviePlayerViewDelegate, LXIngredientViewDelegate, UIScrollViewDelegate {
+class LXProductDetailViewController: UIViewController, NavigationControllerAnnotation, LXCategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, LXTroubleSelectViewDelegate, MoviePlayerViewDelegate, IngredientSkinGraphViewDelegate, LXIngredientViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
@@ -623,6 +623,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     func didTapshowSkinGraph() {
         let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
         skingraph.setUI()
+        skingraph.delegate = self
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
     }
@@ -640,6 +641,21 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         self.present(avPlayerVc, animated: true, completion: {
             // dismissを監視するため、オブザーバ登録する
 //            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
+    }
+    func ingredientMoviePlay(index: Int){
+                
+        let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/3e%d.mp4",index))
+        let videoURL = NSURL(fileURLWithPath: path)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL as URL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
         })
         avPlayer.play()
     }

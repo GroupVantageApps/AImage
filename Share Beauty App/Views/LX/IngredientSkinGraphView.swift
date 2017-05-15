@@ -9,9 +9,12 @@
 
 import Foundation
 import UIKit
-
+protocol IngredientSkinGraphViewDelegate: NSObjectProtocol {
+    func ingredientMoviePlay(index: Int)
+} 
 class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
     
+    weak var delegate: IngredientSkinGraphViewDelegate?  
 
     @IBOutlet weak var mScrollView: UIScrollView!
     var mframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
@@ -43,6 +46,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         let subviews = subvewNib.instantiate(withOwner: self, options: nil)
         guard let subView = subviews[0] as? IngredientSkinGraphContentView else { return }
         subView.frame = mframe
+        subView.tag = 100
         let lxArr = LanguageConfigure.lxcsv
         
         for i in 0..<7 {
@@ -66,6 +70,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         
         let showMovieBtn = subView.viewWithTag(20) as! UIButton!
         showMovieBtn?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        showMovieBtn?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
         graphView.setUp(left: 57, right: 30, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         graphView.bgImage = "ingredient_graph_bg.png"
@@ -75,7 +80,8 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         guard let subView2 = subviews2[0] as? IngredientSkinGraphContentView else { return }
         mframe.origin.x = self.mScrollView.frame.size.width
         subView2.frame = mframe
-        
+        subView2.tag = 101
+    
         for i in 0..<7 {
                 let label = subView2.viewWithTag(10 + i) as! UILabel  
                 let csvId = 31 + i
@@ -93,6 +99,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         
         let showMovieBtn2 = subView2.viewWithTag(20) as! UIButton!
         showMovieBtn2?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        showMovieBtn2?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
         graphView2.setUp(left: 57, right: 30, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
         graphView2.bgImage = "ingredient_graph_bg.png"
@@ -102,7 +109,8 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         guard let subView3 = subviews3[0] as? IngredientSkinGraphContentView else { return }
         mframe.origin.x = self.mScrollView.frame.size.width * 2
         subView3.frame = mframe
-        
+        subView3.tag = 102
+
         for i in 0..<7 {
             if i < 5 {
                 let label = subView3.viewWithTag(10 + i) as! UILabel  
@@ -119,7 +127,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         
         let showMovieBtn3 = subView3.viewWithTag(20) as! UIButton!
         showMovieBtn3?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
-//        showMovieBtn.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
+        showMovieBtn3?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
         let nib3 = UINib(nibName: "LXGraphView", bundle: nil)
         let views3 = nib3.instantiate(withOwner: self, options: nil)
@@ -159,5 +167,9 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.isHidden = true
         print("Button pressed")
     }
-
+    @IBAction func showMovie(_ sender: Any) {
+        let btn = sender as! UIButton
+        let superV = btn.superview
+        delegate?.ingredientMoviePlay(index: superV!.tag - 99)
+    }
 }
