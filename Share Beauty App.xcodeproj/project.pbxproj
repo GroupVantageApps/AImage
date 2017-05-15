@@ -389,6 +389,7 @@
 		DE61C59F1EC8C4B400415910 /* LXProductHowToUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */; };
 		DE61C5A21EC8C4CB00415910 /* lx_howtouse_523.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */; };
 		DE61C5A31EC8C4CB00415910 /* lx_howtouse_522.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */; };
+		DE61C5A51EC9EFA800415910 /* lx_efficacy_before.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A41EC9EFA800415910 /* lx_efficacy_before.png */; };
 		DE7B7E5B1EB73D3E006F8246 /* lx_angelica.png in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */; };
 		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
 		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
@@ -934,6 +935,7 @@
 		DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductHowToUseView.swift; sourceTree = "<group>"; };
 		DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_523.png; sourceTree = "<group>"; };
 		DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_522.png; sourceTree = "<group>"; };
+		DE61C5A41EC9EFA800415910 /* lx_efficacy_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_efficacy_before.png; sourceTree = "<group>"; };
 		DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_angelica.png; sourceTree = "<group>"; };
 		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
 		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
@@ -1652,6 +1654,7 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				DE61C5A41EC9EFA800415910 /* lx_efficacy_before.png */,
 				DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */,
 				DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */,
 				DE0DB6ED1EBE163F00663C4A /* lx_close_line_detail.png */,
@@ -2213,6 +2216,7 @@
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
 				C02818AA1E6C26FF00D4DADA /* NewApproachViewController.storyboard in Resources */,
 				C050C9001E82619F0009679D /* sib01_after.jpg in Resources */,
+				DE61C5A51EC9EFA800415910 /* lx_efficacy_before.png in Resources */,
 				C050C9861E8267450009679D /* utm02_befor.png in Resources */,
 				C050C9C11E8276C60009679D /* Shiseido-Light.otf in Resources */,
 				C050C9131E82619F0009679D /* wab_slider_1_18.png in Resources */,

@@ -13,10 +13,29 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     @IBOutlet weak var mScrollV: UIScrollView!
     var mContentV: UIView!
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 655, width: 200, height: 50))
- 
+
+    @IBOutlet weak var c1GraphV: UIView!
+    @IBOutlet weak var c2GraphV: UIView!
+    @IBOutlet weak var c3GraphV: UIView!
+    @IBOutlet weak var c4GraphV: UIView!
+    
+    @IBOutlet weak var intensiveV: UIView!
+    
+    @IBOutlet weak var intensiveGraphV: UIView!
+    
+    @IBOutlet weak var eyeGrapgV: UIView!
+    
+    @IBOutlet weak var baV: UIView!
+    
+    @IBOutlet weak var afterImgV: UIImageView!
+    @IBOutlet weak var beforeImgV: UIImageView!
+    
+    
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(productId: Int){
-  
+        
+        let lxArr = LanguageConfigure.lxcsv
+        
         if productId == 516 {
             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
             let efficacyV: LXEfficacyPenetrationView = UINib(nibName: "LXEfficacyPenetrationView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyPenetrationView
@@ -24,58 +43,251 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             efficacyV.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
             self.mContentV.addSubview(efficacyV)
             
-            let secondV = UIImageView.init(frame: CGRect(x: 960, y: 0, width: 960, height: 700))
-                secondV.image = UIImage(named: "lx_effifacy_c_graph_1")
-            self.mContentV.addSubview(secondV)
+            let secondV = self.c1GraphV
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            for i in 0..<8 {
+                let label = secondV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 200
+                case 1:
+                    csvId = 202
+                case 2:
+                    csvId = 204
+                case 3:
+                    csvId = 205
+                case 4:
+                    csvId = 207
+                case 5:
+                    csvId = 208
+                case 6:
+                    csvId = 210
+                case 7:
+                    csvId = 211
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
+
+            self.mContentV.addSubview(secondV!)
+            print(self.mContentV.subviews)
             
             self.mPageControl.numberOfPages = 2
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else if productId == 517 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
-            let firstV = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
-            firstV.image = UIImage(named: "lx_effifacy_ba")
-            self.mContentV.addSubview(firstV)
+            let firstV = self.baV
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            for i in 0..<4 {
+                let label = firstV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 212
+                case 1:
+                    csvId = 213
+                case 2:
+                    csvId = 214
+                case 3:
+                    csvId = 215
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
+            self.mContentV.addSubview(firstV!)
             
-            let secondV = UIImageView.init(frame: CGRect(x: 960, y: 0, width: 960, height: 700))
-            secondV.image = UIImage(named: "lx_effifacy_c_graph_2")
-            self.mContentV.addSubview(secondV)
+            let secondV = self.c2GraphV
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            for i in 0..<7 {
+                let label = secondV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 216
+                case 1:
+                    csvId = 218
+                case 2:
+                    csvId = 219
+                case 3:
+                    csvId = 221
+                case 4:
+                    csvId = 222
+                case 5:
+                    csvId = 224
+                case 6:
+                    csvId = 225
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
             
+            self.mContentV.addSubview(secondV!)
+
             self.mPageControl.numberOfPages = 2
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else if productId == 519 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
-            let firstV = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
-            firstV.image = UIImage(named: "lx_effifacy_c_graph_3")
-            self.mContentV.addSubview(firstV)
+            let firstV = self.c3GraphV
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            for i in 0..<9 {
+                let label = firstV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 250
+                case 1:
+                    csvId = 252
+                case 2:
+                    csvId = 253
+                case 3:
+                    csvId = 255
+                case 4:
+                    csvId = 256
+                case 5:
+                    csvId = 258
+                case 6:
+                    csvId = 259
+                case 7:
+                    csvId = 261
+                case 8:
+                    csvId = 262
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
             
-            let secondV = UIImageView.init(frame: CGRect(x: 960, y: 0, width: 960, height: 700))
-            secondV.image = UIImage(named: "lx_effifacy_c_graph_4")
-            self.mContentV.addSubview(secondV)
+            self.mContentV.addSubview(firstV!)
+            
+            let secondV = self.c4GraphV
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            for i in 0..<9 {
+                let label = secondV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 263
+                case 1:
+                    csvId = 265
+                case 2:
+                    csvId = 266
+                case 3:
+                    csvId = 268
+                case 4:
+                    csvId = 269
+                case 5:
+                    csvId = 271
+                case 6:
+                    csvId = 272
+                case 7:
+                    csvId = 274
+                case 8:
+                    csvId = 275
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
+            
+            self.mContentV.addSubview(secondV!)
             
             self.mPageControl.numberOfPages = 2
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else  if productId ==  523 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
-            let firstV = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
-            firstV.image = UIImage(named: "lx_intensive")
-            self.mContentV.addSubview(firstV)
+            let firstV = self.intensiveV
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            for i in 0..<5 {
+                let label = firstV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 348
+                case 1:
+                    csvId = 349
+                case 2:
+                    csvId = 350
+                case 3:
+                    csvId = 351
+                case 4:
+                    csvId = 352
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
             
-            let secondV = UIImageView.init(frame: CGRect(x: 960, y: 0, width: 960, height: 700))
-            secondV.image = UIImage(named: "lx_intensive_graph")
-            self.mContentV.addSubview(secondV)
+            self.mContentV.addSubview(firstV!)
+            
+            
+            
+            let secondV = self.intensiveGraphV
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            for i in 0..<9 {
+                let label = secondV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 353
+                case 1:
+                    csvId = 355
+                case 2:
+                    csvId = 356
+                case 3:
+                    csvId = 358
+                case 4:
+                    csvId = 359
+                case 5:
+                    csvId = 361
+                case 6:
+                    csvId = 362
+                case 7:
+                    csvId = 364
+                case 8:
+                    csvId = 365
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
+            
+            self.mContentV.addSubview(secondV!)
             
             self.mPageControl.numberOfPages = 2
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else  if productId == 522 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
-            let firstV = UIImageView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
-            firstV.image = UIImage(named: "lx_eye_graph")
-            self.mContentV.addSubview(firstV)
+            let firstV = self.eyeGrapgV
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            for i in 0..<9 {
+                let label = firstV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 325
+                case 1:
+                    csvId = 327
+                case 2:
+                    csvId = 328
+                case 3:
+                    csvId = 330
+                case 4:
+                    csvId = 331
+                case 5:
+                    csvId = 333
+                case 6:
+                    csvId = 334
+                case 7:
+                    csvId = 336
+                case 8:
+                    csvId = 337
+                default: break
+                }
+                label.text = lxArr[String(csvId)]
+            }
             
+            self.mContentV.addSubview(firstV!)
             self.mPageControl.isHidden = true
             self.mScrollV.contentSize = CGSize(width: 960, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
@@ -108,10 +320,6 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         let x = CGFloat(mPageControl.currentPage) * self.mScrollV.frame.size.width
         self.mScrollV.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
-    @IBAction func changeValue(_ sender: UISlider) {
-        
-    }
-
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         
         return self.mContentV
@@ -121,6 +329,13 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         self.isHidden = true
         print("Button pressed")
     }
+    
+    @IBAction func changeValue(_ sender: UISlider) {
+        print(Float(sender.value))
+        self.beforeImgV.alpha = 1 - CGFloat(Float(sender.value))
+        
+    }
+    
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         if scale == 1.0 {
             self.mScrollV.isPagingEnabled = true
