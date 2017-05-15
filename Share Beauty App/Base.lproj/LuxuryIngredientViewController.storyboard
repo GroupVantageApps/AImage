@@ -172,6 +172,6 @@ Ujicya</string>
         </scene>
     </scenes>
     <resources>
-        <image name="lx_music.png" width="80" height="80"/>
+        <image name="lx_music.png" width="30" height="42"/>
     </resources>
 </document>
