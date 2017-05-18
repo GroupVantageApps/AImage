@@ -13,6 +13,10 @@ class LXProductGraphContentView: UIView, UIScrollViewDelegate {
     @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mImageView2: UIImageView!
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
+    var hasAnimated :Bool = false 
+    var animCount :Int = 0
+    var animPieCount :Int = 0
+    var maxCount = 8
     func setUI(){
     }    
 }
