@@ -11,7 +11,9 @@ import Foundation
 class LXProductGraphView: UIView, UIScrollViewDelegate {    
     @IBOutlet weak var mScrollV: UIScrollView!
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 655, width: 200, height: 50))
-
+    
+    var aaaa :CircleGraphView = CircleGraphView()
+    
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(){
         mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
@@ -28,12 +30,13 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
             let view: LXProductGraphContentView = UINib(nibName: "LXProductGraphContentView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphContentView
             view.frame = CGRect(x:  960 * index, y: 0, width: 960, height: 700)
             if index == 3{
-                let subview = view.viewWithTag(101)
+                let subview = view.viewWithTag(201)
                 view.mImageView.isHidden = true
-                view.mImageView2.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
+                view.maxCount = 6
+//                view.mImageView2.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
                 subview?.isHidden = false
             } else {
-                view.mImageView.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
+//                view.mImageView.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
             }
             self.mScrollV.addSubview(view)
             for i in 0..<9 { 
@@ -144,7 +147,42 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     }
                 }
             }
+            if index != 3 {
+                for i in 0..<6 {
+                    let circleV = view.viewWithTag(50 + i) as! CircleGraphView
+                    let contentStr = lxArr["127"]
+                    var csvId = 128 + i*2 + index*15
+                    if i > 2 { csvId = csvId + 1 }
+                    let percentStr = lxArr[String(csvId)]
+                    print("\(csvId):\(percentStr)")
+                    let image = String(format: "lx_graph_%@", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
+                    print(image)
+                    circleV.graphImgV.image = UIImage(named: image)
+                    circleV.contentLabel.text = contentStr
+                    circleV.percentLabel.text = percentStr
+                    circleV.drawCircle()
+                }
+            } else {
+                let subview = view.viewWithTag(201)
+                for i in 0..<4 {
+                    let circleV = subview?.viewWithTag(50 + i) as! CircleGraphView
+                    let contentStr = lxArr["127"]
+                    var csvId = 172 + i*2
+                    if i > 1 { csvId = csvId + 1 }
+                    let percentStr = lxArr[String(csvId)]
+                    print("\(csvId):\(percentStr)")
+                    let image = String(format: "lx_graph_%@", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
+                    print((percentStr?.replacingOccurrences(of: "%", with: ""))!)
+                    circleV.graphImgV.image = UIImage(named: image)
+                    circleV.contentLabel.text = contentStr
+                    circleV.percentLabel.text = percentStr
+                    circleV.drawCircle()
+                }
+            }
+            
+            view.tag = 100 + index
         }
+
         self.mScrollV.delegate = self
         // The total number of pages that are available is based on how many available colors we have.
         self.mPageControl.numberOfPages = 4
@@ -160,6 +198,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         self.mPageControl.currentPage = Int(pageNumber)
+        self.startAnimation(tag: 100 + Int(pageNumber))
     }
     func changePage(sender: AnyObject) {
         let x = CGFloat(mPageControl.currentPage) * self.mScrollV.frame.size.width
@@ -169,7 +208,67 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         self.isHidden = true
         print("Button pressed")
     }
-    
+
+    func updateAnimation(timer: Timer) {
+        // do something
+        let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+        var tempV = userInfo["view"] as! LXProductGraphContentView
+        if tempV.tag == 103 {
+            let subV = tempV.viewWithTag(201)
+            if tempV.animCount < tempV.maxCount {
+                if tempV.animCount == 0 || tempV.animCount == 3 {
+                    let hiddenV = subV?.viewWithTag(60 + tempV.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        hiddenV?.alpha = 0
+                    }, completion: nil)  
+                    tempV.animCount = tempV.animCount + 1
+                    
+                } else {
+                    let label = subV?.viewWithTag(10 + tempV.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        label?.alpha = 1
+                    }, completion: nil)
+                    
+                    let pieGraphV = subV?.viewWithTag(50 + tempV.animPieCount) as! CircleGraphView 
+                    pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
+                    tempV.animCount = tempV.animCount + 1
+                    tempV.animPieCount = tempV.animPieCount + 1
+                }
+            } else {
+                timer.invalidate()
+            }
+        } else {
+            if tempV.animCount < tempV.maxCount {
+                if tempV.animCount == 0 || tempV.animCount == 4 {
+                    let hiddenV = tempV.viewWithTag(60 + tempV.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        hiddenV?.alpha = 0
+                    }, completion: nil)  
+                    tempV.animCount = tempV.animCount + 1
+                } else {
+                    let label = tempV.viewWithTag(10 + tempV.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        label?.alpha = 1
+                    }, completion: nil)
+                    let pieGraphV = tempV.viewWithTag(50 + tempV.animPieCount) as! CircleGraphView 
+                    pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
+                    tempV.animCount = tempV.animCount + 1
+                    tempV.animPieCount = tempV.animPieCount + 1
+                }
+            } else {
+                timer.invalidate()
+            }
+        }
+    }
+    func startAnimation(tag: Int){
+        let view = self.mScrollV.viewWithTag(tag) as! LXProductGraphContentView
+        if view.hasAnimated { return }
+        
+        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
+        timer.fire()
+        view.hasAnimated = true
+        
+    }
 }
 
  
