@@ -71,7 +71,7 @@ class LifeStyleProductView: BaseView {
     @IBInspectable var whyText: String? {
         didSet {
             mLblWhy.text = whyText
-            mBtnWhy.setTitle(whyText, for: UIControlState())
+            //mBtnWhy.setTitle(whyText, for: UIControlState()) //ボタン切ってみた
         }
     }
 

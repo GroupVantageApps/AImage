@@ -62,10 +62,28 @@ class RecommendedViewController: UIViewController, NavigationControllerAnnotatio
     }
 
     internal func didSelect(product: ProductData) {
-        let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        //LXか通常かのViewに遷移　t-hirai
+        let productId: Int? = product.productId
+        if productId == nil {return}
+        
+        if Const.lineIdLX == product.lineId {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LXProductDetailViewController", targetClass: LXProductDetailViewController.self) as! LXProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+        } else {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            nextVc.productId = productId!
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+        }
+        
+
+         //オリジナル　t-hirai
+        /**let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         productDetailVc.productId = product.productId
         productDetailVc.relationProducts = mProducts
-        delegate?.nextVc(productDetailVc)
+        delegate?.nextVc(productDetailVc)**/
     }
 
     private func setupDropDownFileterByLine() {

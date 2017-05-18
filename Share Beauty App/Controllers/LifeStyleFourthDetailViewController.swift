@@ -71,7 +71,7 @@ class LifeStyleFourthDetailViewController: UIViewController, NavigationControlle
         let transitionData = Utility.parseJson(strJson)
 
         if let shadowfilter = transitionData?["shadowfilter"].string {
-            return shadowfilter == "1"
+            return shadowfilter == "2" //グレーフィルタを今後のために数値を１＞2に変更　t-hirai
         } else {
             return false
         }
