@@ -29,8 +29,11 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     
     @IBOutlet weak var afterImgV: UIImageView!
     @IBOutlet weak var beforeImgV: UIImageView!
-    
-    
+    var hasAnimated: Bool = false 
+    var animCount :Int = 0
+    var animPieCount :Int = 0
+    var maxCount = 8
+    var secondPageTag = 0
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(productId: Int){
         
@@ -44,6 +47,8 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mContentV.addSubview(efficacyV)
             
             let secondV = self.c1GraphV
+            secondV?.tag = 200
+            secondPageTag = (secondV?.tag)!
             secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
             for i in 0..<8 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
@@ -68,6 +73,22 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 default: break
                 }
                 label.text = lxArr[String(csvId)]
+            }
+
+            for i in 0..<4 {
+                let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                var csvId = 201 + i*2
+                if i > 1 {  csvId = 200 + i*3}
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
             }
 
             self.mContentV.addSubview(secondV!)
@@ -97,8 +118,11 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 label.text = lxArr[String(csvId)]
             }
             self.mContentV.addSubview(firstV!)
+
             
             let secondV = self.c2GraphV
+            secondV?.tag = 201
+            secondPageTag = (secondV?.tag)!
             secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
             for i in 0..<7 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
@@ -123,6 +147,20 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 label.text = lxArr[String(csvId)]
             }
             
+            for i in 0..<3 {
+                let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                let csvId = 217 + i*3
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
             self.mContentV.addSubview(secondV!)
 
             self.mPageControl.numberOfPages = 2
@@ -131,6 +169,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         } else if productId == 519 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
             let firstV = self.c3GraphV
+            firstV?.tag = 202
             firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
             for i in 0..<9 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
@@ -158,10 +197,25 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 }
                 label.text = lxArr[String(csvId)]
             }
-            
+            for i in 0..<4 {
+                let circleV = firstV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                let csvId = 251 + i*3
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
             self.mContentV.addSubview(firstV!)
             
             let secondV = self.c4GraphV
+            secondV?.tag = 203
+            secondPageTag = (secondV?.tag)!
             secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
             for i in 0..<9 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
@@ -189,7 +243,20 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 }
                 label.text = lxArr[String(csvId)]
             }
-            
+            for i in 0..<4 {
+                let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                let csvId = 264 + i*3
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
             self.mContentV.addSubview(secondV!)
             
             self.mPageControl.numberOfPages = 2
@@ -217,12 +284,13 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 }
                 label.text = lxArr[String(csvId)]
             }
-            
             self.mContentV.addSubview(firstV!)
             
             
             
             let secondV = self.intensiveGraphV
+            secondV?.tag = 204
+            secondPageTag = (secondV?.tag)!
             secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
             for i in 0..<9 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
@@ -250,7 +318,21 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 }
                 label.text = lxArr[String(csvId)]
             }
-            
+            for i in 0..<4 {
+                let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                let csvId = 354 + i*3
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                print(image)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
             self.mContentV.addSubview(secondV!)
             
             self.mPageControl.numberOfPages = 2
@@ -259,6 +341,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         } else  if productId == 522 {
              self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
             let firstV = self.eyeGrapgV
+            firstV?.tag = 205
             firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
             for i in 0..<9 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
@@ -286,7 +369,21 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 }
                 label.text = lxArr[String(csvId)]
             }
-            
+            for i in 0..<4 {
+                let circleV = firstV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                let csvId = 326 + i*3
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                print("\(csvId):\(percentStr)")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                print(image)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
             self.mContentV.addSubview(firstV!)
             self.mPageControl.isHidden = true
             self.mScrollV.contentSize = CGSize(width: 960, height: self.size.height)
@@ -315,6 +412,9 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         self.mPageControl.currentPage = Int(pageNumber)
+        if  Int(pageNumber) == 1 {
+            self.startAnimation(tag: secondPageTag)
+        }
     }
     func changePage(sender: AnyObject) {
         let x = CGFloat(mPageControl.currentPage) * self.mScrollV.frame.size.width
@@ -342,6 +442,112 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         } else {
             self.mScrollV.isPagingEnabled = false        
         }
+    }
+    
+    func updateAnimation(timer: Timer) {
+        // do something
+        let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
+        var tempV = userInfo["view"]
+        if tempV?.tag == 200 {
+            if self.animCount < self.maxCount {
+                if self.animCount == 0 || self.animCount == 3  || self.animCount == 5 {
+                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        hiddenV?.alpha = 0
+                    }, completion: nil)  
+                    self.animCount = self.animCount + 1
+                    
+                } else {
+                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        label?.alpha = 1
+                    }, completion: nil)
+                    
+                    if self.animCount == 2 {
+                        let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                        UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                            hiddenV?.alpha = 0
+                        }, completion: nil) 
+                    }
+                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
+                    self.animCount = self.animCount + 1
+                    self.animPieCount = self.animPieCount + 1
+                }
+            } else {
+                timer.invalidate()
+            }
+        } else if tempV?.tag == 201 {
+            if self.animCount < self.maxCount {
+                if self.animCount == 0 || self.animCount == 2  || self.animCount == 4 {
+                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        hiddenV?.alpha = 0
+                    }, completion: nil)  
+                    self.animCount = self.animCount + 1
+                    
+                } else {
+                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        label?.alpha = 1
+                    }, completion: nil)
+                    
+                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
+                    self.animCount = self.animCount + 1
+                    self.animPieCount = self.animPieCount + 1
+                }
+            } else {
+                timer.invalidate()
+            }
+        } else {
+            if self.animCount < self.maxCount {
+                if self.animCount == 0 || self.animCount == 2  || self.animCount == 4  || self.animCount == 6 {
+                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        hiddenV?.alpha = 0
+                    }, completion: nil)  
+                    self.animCount = self.animCount + 1
+                    
+                } else {
+                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
+                        label?.alpha = 1
+                    }, completion: nil)
+                    
+                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
+                    self.animCount = self.animCount + 1
+                    self.animPieCount = self.animPieCount + 1
+                }
+            } else {
+                timer.invalidate()
+            }
+        }
+    }
+
+    func startAnimation(tag: Int){
+        let view = self.mScrollV.viewWithTag(tag)
+        if tag == secondPageTag {
+            if self.hasAnimated { return }
+            self.animCount = 0
+            self.animPieCount = 0
+            if tag == 200 {
+                self.maxCount = 7
+            } else if tag == 201 {
+                self.maxCount = 6
+            }
+            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
+            timer.fire()
+            
+            self.hasAnimated = true
+        } else {
+            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
+            timer.fire()
+            self.animCount = 0
+            self.animPieCount = 0
+           
+        }     
     }
 }
  

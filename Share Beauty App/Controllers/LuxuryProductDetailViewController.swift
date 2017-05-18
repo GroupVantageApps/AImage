@@ -456,6 +456,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             popup.setUI(productId: productId)
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
+            if productId == 519 {
+                popup.startAnimation(tag: 202)
+            } else if productId == 522  {
+                popup.startAnimation(tag: 205)
+            }
         } else if sender === mCategoryButtonDefend {
             mVCategoryImage.isHidden = true
             let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
