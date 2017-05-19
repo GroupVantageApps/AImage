@@ -443,7 +443,6 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
-            
             mVCategoryImage.isHidden = true
             let popup: LXProductHowToUseView = UINib(nibName: "LXProductHowToUseView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductHowToUseView
             popup.setUI(productId: productId)

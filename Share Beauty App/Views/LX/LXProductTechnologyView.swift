@@ -33,7 +33,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             bioV.setUI()
             bioV.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
             self.mContentV.addSubview(bioV)
-    
+            bioV.startAnimation()
             let popup: LXYutakaConceptContentThirdView = UINib(nibName: "LXYutakaConceptContentThirdView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptContentThirdView
             popup.setUI()
             popup.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
@@ -49,7 +49,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             bioV.setUI()
             bioV.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
             self.mContentV.addSubview(bioV)
-                       
+            bioV.startAnimation()
             let auraV: LXTechAuraView = UINib(nibName: "LXTechAuraView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechAuraView
             auraV.setUI()
             auraV.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
