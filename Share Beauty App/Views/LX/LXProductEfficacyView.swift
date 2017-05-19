@@ -176,52 +176,6 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 var csvId = 0
                 switch i {
                 case 0:
-                    csvId = 250
-                case 1:
-                    csvId = 252
-                case 2:
-                    csvId = 253
-                case 3:
-                    csvId = 255
-                case 4:
-                    csvId = 256
-                case 5:
-                    csvId = 258
-                case 6:
-                    csvId = 259
-                case 7:
-                    csvId = 261
-                case 8:
-                    csvId = 262
-                default: break
-                }
-                label.text = lxArr[String(csvId)]
-            }
-            for i in 0..<4 {
-                let circleV = firstV?.viewWithTag(50 + i) as! CircleGraphView
-                let contentStr = lxArr["127"]
-                let csvId = 251 + i*3
-                var percentStr = lxArr[String(csvId)]
-                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
-                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
-                let image = String(format: "lx_graph_%@", percentStr!)
-                circleV.graphImgV.image = UIImage(named: image)
-                circleV.contentLabel.text = contentStr
-                circleV.percentLabel.text = percentStr
-                circleV.drawCircle()
-            }
-            self.mContentV.addSubview(firstV!)
-            
-            let secondV = self.c4GraphV
-            secondV?.tag = 203
-            secondPageTag = (secondV?.tag)!
-            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
-            for i in 0..<9 {
-                let label = secondV?.viewWithTag(10 + i) as! UILabel
-                var csvId = 0
-                switch i {
-                case 0:
                     csvId = 263
                 case 1:
                     csvId = 265
@@ -241,12 +195,72 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                     csvId = 275
                 default: break
                 }
+                if LanguageConfigure.countryId != 1 {
+                    csvId = csvId - 13
+                } 
+                
+                label.text = lxArr[String(csvId)]
+            }
+            for i in 0..<4 {
+                let circleV = firstV?.viewWithTag(50 + i) as! CircleGraphView
+                let contentStr = lxArr["127"]
+                var csvId = 264 + i*3
+                if LanguageConfigure.countryId != 1 {
+                        csvId = csvId - 13
+                } 
+                var percentStr = lxArr[String(csvId)]
+                percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
+                percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
+                let image = String(format: "lx_graph_%@", percentStr!)
+                circleV.graphImgV.image = UIImage(named: image)
+                circleV.contentLabel.text = contentStr
+                circleV.percentLabel.text = percentStr
+                circleV.drawCircle()
+            }
+            self.mContentV.addSubview(firstV!)
+            
+            let secondV = self.c4GraphV
+            secondV?.tag = 203
+            secondPageTag = (secondV?.tag)!
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            for i in 0..<9 {
+                let label = secondV?.viewWithTag(10 + i) as! UILabel
+                var csvId = 0
+                switch i {
+                case 0:
+                    csvId = 289
+                case 1:
+                    csvId = 291
+                case 2:
+                    csvId = 292
+                case 3:
+                    csvId = 294
+                case 4:
+                    csvId = 295
+                case 5:
+                    csvId = 297
+                case 6:
+                    csvId = 298
+                case 7:
+                    csvId = 300
+                case 8:
+                    csvId = 301
+                default: break
+                }
+                if LanguageConfigure.countryId != 1
+                {
+                    csvId = csvId - 13
+                } 
                 label.text = lxArr[String(csvId)]
             }
             for i in 0..<4 {
                 let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
                 let contentStr = lxArr["127"]
-                let csvId = 264 + i*3
+                var csvId = 290 + i*3
+                if LanguageConfigure.countryId != 1
+                {
+                    csvId = csvId - 13
+                } 
                 var percentStr = lxArr[String(csvId)]
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")

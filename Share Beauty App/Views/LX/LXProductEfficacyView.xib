@@ -487,14 +487,7 @@ soft glow to my skin.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Immediately after use" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkP-1u-4kk">
-                    <rect key="frame" x="236" y="276" width="174" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Han-l8-DHx">
-                    <rect key="frame" x="577" y="277" width="159" height="41"/>
+                    <rect key="frame" x="226" y="276" width="174" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -525,7 +518,7 @@ soft glow to my skin.</string>
                     <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7D-XN-bn7">
-                    <rect key="frame" x="576" y="577" width="159" height="41"/>
+                    <rect key="frame" x="566" y="577" width="159" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -539,7 +532,7 @@ soft glow to my skin.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnI-LA-yNR">
-                    <rect key="frame" x="242" y="576" width="159" height="41"/>
+                    <rect key="frame" x="234" y="577" width="159" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -725,6 +718,13 @@ soft glow to my skin.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Han-l8-DHx">
+                    <rect key="frame" x="566" y="276" width="159" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -739,14 +739,14 @@ soft glow to my skin.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Immediately after use" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvh-JQ-XVA">
-                    <rect key="frame" x="236" y="276" width="174" height="41"/>
+                    <rect key="frame" x="225" y="276" width="174" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxL-2s-9Qv">
-                    <rect key="frame" x="577" y="277" width="159" height="41"/>
+                    <rect key="frame" x="567" y="276" width="159" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -776,13 +776,6 @@ soft glow to my skin.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ake-O5-zTT">
-                    <rect key="frame" x="576" y="577" width="159" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" tag="18" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of tested monitor:110" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meG-sr-eCt">
                     <rect key="frame" x="384" y="619" width="525" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -791,7 +784,7 @@ soft glow to my skin.</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ8-dd-aeD">
-                    <rect key="frame" x="242" y="576" width="159" height="41"/>
+                    <rect key="frame" x="234" y="577" width="159" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -977,6 +970,13 @@ soft glow to my skin.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ake-O5-zTT">
+                    <rect key="frame" x="568" y="577" width="159" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1040,13 +1040,6 @@ The sagging areas are toned for a more youthful look.</string>
                     <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Immediately after use" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-85-bjT">
-                    <rect key="frame" x="236" y="276" width="174" height="41"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I feel my skin is more moisturized." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOG-sn-UFH">
                     <rect key="frame" x="165" y="339" width="314" height="63"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1274,6 +1267,13 @@ The sagging areas are toned for a more youthful look.</string>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-gg-K7c">
                     <rect key="frame" x="569" y="276" width="159" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Immediately after use" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-85-bjT">
+                    <rect key="frame" x="226" y="276" width="174" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
