@@ -15,6 +15,9 @@ class WasoGraphEfficacyView: BaseView {
     @IBOutlet weak private var mImgVLeft: APNGImageView!
     @IBOutlet weak private var mImgVCenter: APNGImageView!
     @IBOutlet weak private var mImgVRight: APNGImageView!
+	@IBOutlet weak var mLblVLeft: UILabel!
+	@IBOutlet weak var mLblVCenter: UILabel!
+	@IBOutlet weak var mLblVRight: UILabel!
 
     deinit {
         print("deinit")
@@ -28,16 +31,18 @@ class WasoGraphEfficacyView: BaseView {
     }
 
     func setupGreen() {
-        mImgVLeft.image = APNGImage(named: "green_L", progressive: true)
-        mImgVCenter.image = APNGImage(named: "green_C", progressive: true)
-        mImgVRight.image = APNGImage(named: "green_R", progressive: true)
+		mLblVLeft.text = AppItemTranslateTable.getEntity(7917).name
+		mLblVCenter.text = AppItemTranslateTable.getEntity(7918).name
+		mLblVRight.text = AppItemTranslateTable.getEntity(7919).name
+		mImgVCenter.image = FileTable.getAImage(6081)
         self.startAnimating()
     }
 
     func setupOrange() {
-        mImgVLeft.image = APNGImage(named: "orange_L", progressive: true)
-        mImgVCenter.image = APNGImage(named: "orange_C", progressive: true)
-        mImgVRight.image = APNGImage(named: "orange_R", progressive: true)
+		mLblVLeft.text = AppItemTranslateTable.getEntity(7914).name
+		mLblVCenter.text = AppItemTranslateTable.getEntity(7915).name
+		mLblVRight.text = AppItemTranslateTable.getEntity(7916).name
+		mImgVCenter.image = FileTable.getAImage(6082)
         self.startAnimating()
     }
 
