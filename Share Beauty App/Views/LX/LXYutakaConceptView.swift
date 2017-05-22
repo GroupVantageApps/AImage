@@ -15,7 +15,7 @@ protocol LXYutakaConceptViewDelegate: NSObjectProtocol {
     func didLXYutakaConceptViewAction(_ type: LXYutakaConceptViewActionType)
     func movieAct()
 }
-class LXYutakaConceptView: UIView {
+class LXYutakaConceptView: UIView  ,UIScrollViewDelegate{
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     weak var delegate: LXYutakaConceptViewDelegate?
     var showMovieBtn: UIButton!
@@ -25,12 +25,17 @@ class LXYutakaConceptView: UIView {
     @IBOutlet weak var mMusicBtn: UIButton!
     
     @IBOutlet weak var mSmellBtn: UIButton!
-    
+    @IBOutlet weak var mContentV: UIView!
+    @IBOutlet weak var mScrollV: UIScrollView!
     func setAction(){
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
-        
+
+        self.mScrollV.delegate = self        
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
+    
         showMovieBtn = self.viewWithTag(30) as! UIButton!
         showMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
@@ -65,5 +70,17 @@ class LXYutakaConceptView: UIView {
 
     @IBAction func close(_ sender: Any) {
         self.isHidden = true
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
     }
 }

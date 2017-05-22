@@ -10,17 +10,28 @@ import Foundation
 protocol LXProductBLSViewDelegate: NSObjectProtocol {
     func movieAct()
 } 
-class LXProductBLSView: UIView {
+class LXProductBLSView: UIView, UIScrollViewDelegate{
     weak var delegate: LXProductBLSViewDelegate? 
     var mframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38 , y: 16.7, width: 38, height: 38))
-    
+
+    @IBOutlet weak var mPlayMovieBtn: UIButton!
+    @IBOutlet weak var mScrollV: UIScrollView!
+    @IBOutlet weak var mContentV: UIView!
+
     func setUI() {
         
-        
+        mPlayMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
+
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
+        self.mScrollV.contentSize = self.mContentV.size
+        
+        self.mScrollV.delegate = self
+        self.mScrollV.showsHorizontalScrollIndicator = false
         
         let lxArr = LanguageConfigure.lxcsv
         for i in 0..<8 {
@@ -57,5 +68,17 @@ class LXProductBLSView: UIView {
     @IBAction func onTapMovie(_ sender: Any) {
         self.isHidden = true
         delegate?.movieAct()
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
     }
 }

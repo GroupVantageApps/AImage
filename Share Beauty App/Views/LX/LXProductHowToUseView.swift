@@ -7,16 +7,27 @@
 //
 
 import Foundation
-class LXProductHowToUseView: UIView{
+class LXProductHowToUseView: UIView, UIScrollViewDelegate {
 
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
+    var mContentV: UIView!
+    var mScrollV: UIScrollView!
 
     func setUI(productId: Int) {
         let lxArr = LanguageConfigure.lxcsv
+        self.mContentV = UIView.init(frame: self.frame)
+        self.mScrollV = UIScrollView.init(frame:  self.frame)
+        self.mScrollV.addSubview(mContentV)
+        self.addSubview(mScrollV)
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
+        self.mScrollV.delegate = self
+        self.mScrollV.contentSize = self.mContentV.size
         if productId == 522 {
             let firstView = self.viewWithTag(100)! as UIView
             firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
-            self.addSubview(firstView)
+            firstView.isHidden = false
+            self.mContentV.addSubview(firstView)
             for i in 0..<10 {
                 let label = firstView.viewWithTag(10 + i) as! UILabel
                 let csvId = 315 + i
@@ -26,7 +37,8 @@ class LXProductHowToUseView: UIView{
         } else {
             let firstView = self.viewWithTag(101)! as UIView
             firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
-            self.addSubview(firstView)
+            firstView.isHidden = false
+            self.mContentV.addSubview(firstView)
             for i in 0..<9 {
                 let label = firstView.viewWithTag(10 + i) as! UILabel
                 let csvId = 338 + i
@@ -44,6 +56,19 @@ class LXProductHowToUseView: UIView{
     
     @IBAction func close(_ sender: Any) {
         self.isHidden = true
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
     }
 
 }

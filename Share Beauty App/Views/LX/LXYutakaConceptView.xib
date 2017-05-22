@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,81 +20,151 @@
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Concept" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H97-K9-8Fi">
-                    <rect key="frame" x="50" y="50" width="200" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
-                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMt-JF-6sM">
-                    <rect key="frame" x="50" y="100" width="660" height="169"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">Indulge all five senses in an extraordinary experience, featuring Future Solution LX.Delight in the soothing touch of our lmari porcelain YUTAKA massage tools while relaxing to the sounds of the Mt. Koya's mountain streams.Pure indulgence for your skin.</string>
-                            <attributes>
-                                <color key="NSColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <font key="NSFont" size="21" name="ACaslonPro-Regular"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Np-sC-CzV">
-                    <rect key="frame" x="120" y="356" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="tappedToolBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="xjU-nC-zEq"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-cE-Rrl">
-                    <rect key="frame" x="377" y="355" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="tappedMusicBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="IcD-s9-ohC"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwi-IR-Wo6">
-                    <rect key="frame" x="634" y="355" width="200" height="200"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="tappedSmellBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="vQ9-z2-q5S"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yA-dw-vhb">
-                    <rect key="frame" x="120" y="567" width="200" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCQ-Lr-NqL">
-                    <rect key="frame" x="377" y="567" width="200" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Smell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNi-ad-WpM">
-                    <rect key="frame" x="634" y="567" width="200" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYg-Op-2CD">
-                    <rect key="frame" x="50" y="284" width="40" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9TO-ef-QG4">
+                    <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60c-3s-T7u">
+                            <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MA-OX-Wzd">
+                                    <rect key="frame" x="51" y="100" width="660" height="169"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="169" id="h0c-pF-nND"/>
+                                        <constraint firstAttribute="width" constant="660" id="uz0-uq-kER"/>
+                                    </constraints>
+                                    <attributedString key="attributedText">
+                                        <fragment>
+                                            <string key="content">Indulge all five senses in an extraordinary experience, featuring Future Solution LX.
+Delight in the soothing touch of our lmari porcelain YUTAKA massage tools while relaxing to the sounds of the Mt. Koya's mountain streams.
+Pure indulgence for your skin.</string>
+                                            <attributes>
+                                                <color key="NSColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="21" name="ACaslonPro-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBU-sL-7z5">
+                                    <rect key="frame" x="635" y="568" width="200" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="E0a-tB-wp2"/>
+                                        <constraint firstAttribute="width" constant="200" id="tFP-hH-gGR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-mD-Wjx">
+                                    <rect key="frame" x="635" y="356" width="200" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="fhi-kq-pIL"/>
+                                        <constraint firstAttribute="height" constant="200" id="hfM-kx-rym"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="tappedMusicBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="O6l-gQ-nPa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-6p-wBn">
+                                    <rect key="frame" x="378" y="356" width="200" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="IUg-FP-RgW"/>
+                                        <constraint firstAttribute="width" constant="200" id="YHg-l1-4tU"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="tappedToolBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="cmH-LF-LHB"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlm-xN-AX6">
+                                    <rect key="frame" x="120" y="568" width="200" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="86b-h0-uIg"/>
+                                        <constraint firstAttribute="height" constant="21" id="Qot-Yl-krH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concept" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-3i-QNj">
+                                    <rect key="frame" x="51" y="49" width="200" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Pw6-Zh-9Dk"/>
+                                        <constraint firstAttribute="height" constant="31" id="cI0-cN-Ogf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6N-Qi-iym">
+                                    <rect key="frame" x="874" y="616" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f21-LW-UO2">
+                                    <rect key="frame" x="120" y="356" width="200" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Len-OY-dJn"/>
+                                        <constraint firstAttribute="height" constant="200" id="ag4-wC-Akl"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="tappedSmellBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="izZ-dZ-qnj"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-Je-5Ze">
+                                    <rect key="frame" x="378" y="568" width="200" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="PLD-nA-5vo"/>
+                                        <constraint firstAttribute="width" constant="200" id="w0d-Ij-oh7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                                    <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="f21-LW-UO2" firstAttribute="leading" secondItem="60c-3s-T7u" secondAttribute="leading" constant="120" id="BbX-CQ-mCg"/>
+                                <constraint firstItem="vBU-sL-7z5" firstAttribute="top" secondItem="uX8-mD-Wjx" secondAttribute="bottom" constant="12" id="FSj-Dt-kTb"/>
+                                <constraint firstItem="3MA-OX-Wzd" firstAttribute="top" secondItem="cWH-3i-QNj" secondAttribute="bottom" constant="20" id="Fci-4o-iIL"/>
+                                <constraint firstItem="kfb-Je-5Ze" firstAttribute="leading" secondItem="r6Q-6p-wBn" secondAttribute="leading" id="KoI-Lb-hBD"/>
+                                <constraint firstItem="uX8-mD-Wjx" firstAttribute="top" secondItem="f21-LW-UO2" secondAttribute="top" id="SRM-9l-R1q"/>
+                                <constraint firstItem="r6Q-6p-wBn" firstAttribute="leading" secondItem="f21-LW-UO2" secondAttribute="trailing" constant="58" id="SpM-o3-5vb"/>
+                                <constraint firstItem="vBU-sL-7z5" firstAttribute="leading" secondItem="uX8-mD-Wjx" secondAttribute="leading" id="Ubf-wQ-NA9"/>
+                                <constraint firstItem="cWH-3i-QNj" firstAttribute="top" secondItem="60c-3s-T7u" secondAttribute="top" constant="49" id="Xia-aL-AK1"/>
+                                <constraint firstItem="kfb-Je-5Ze" firstAttribute="top" secondItem="r6Q-6p-wBn" secondAttribute="bottom" constant="12" id="YSZ-XY-PTQ"/>
+                                <constraint firstItem="uX8-mD-Wjx" firstAttribute="leading" secondItem="r6Q-6p-wBn" secondAttribute="trailing" constant="57" id="bZE-Zx-U8p"/>
+                                <constraint firstItem="3MA-OX-Wzd" firstAttribute="leading" secondItem="60c-3s-T7u" secondAttribute="leading" constant="51" id="iY1-Gh-1FD"/>
+                                <constraint firstItem="cWH-3i-QNj" firstAttribute="leading" secondItem="60c-3s-T7u" secondAttribute="leading" constant="51" id="j2y-UB-b5S"/>
+                                <constraint firstItem="Qlm-xN-AX6" firstAttribute="leading" secondItem="f21-LW-UO2" secondAttribute="leading" id="oC2-hX-8sf"/>
+                                <constraint firstItem="Qlm-xN-AX6" firstAttribute="top" secondItem="f21-LW-UO2" secondAttribute="bottom" constant="12" id="rHl-zb-hcY"/>
+                                <constraint firstItem="r6Q-6p-wBn" firstAttribute="top" secondItem="f21-LW-UO2" secondAttribute="top" id="rIw-Zi-glb"/>
+                                <constraint firstItem="f21-LW-UO2" firstAttribute="top" secondItem="3MA-OX-Wzd" secondAttribute="bottom" constant="87" id="zD7-1C-wLA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="60c-3s-T7u" firstAttribute="top" secondItem="9TO-ef-QG4" secondAttribute="top" id="Ahy-nh-kZL"/>
+                        <constraint firstItem="60c-3s-T7u" firstAttribute="centerX" secondItem="9TO-ef-QG4" secondAttribute="centerX" id="MB9-KL-QFl"/>
+                        <constraint firstItem="60c-3s-T7u" firstAttribute="leading" secondItem="9TO-ef-QG4" secondAttribute="leading" id="OgW-95-oW8"/>
+                        <constraint firstAttribute="trailing" secondItem="60c-3s-T7u" secondAttribute="trailing" id="UDz-Dz-wCx"/>
+                        <constraint firstAttribute="bottom" secondItem="60c-3s-T7u" secondAttribute="bottom" id="YtG-fp-dLO"/>
+                        <constraint firstItem="60c-3s-T7u" firstAttribute="centerY" secondItem="9TO-ef-QG4" secondAttribute="centerY" id="hJZ-i7-lJO"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9TO-ef-QG4" secondAttribute="bottom" id="RaG-TK-Ef9"/>
+                <constraint firstItem="9TO-ef-QG4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vpw-Fq-Pw7"/>
+                <constraint firstItem="9TO-ef-QG4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bUk-fu-SQn"/>
+                <constraint firstAttribute="trailing" secondItem="9TO-ef-QG4" secondAttribute="trailing" id="fsw-fY-FId"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="mMusicBtn" destination="3zq-cE-Rrl" id="dN2-gE-5iZ"/>
-                <outlet property="mSmellBtn" destination="lwi-IR-Wo6" id="1u6-1u-i5i"/>
-                <outlet property="mToolBtn" destination="5Np-sC-CzV" id="IFD-g8-goU"/>
+                <outlet property="mContentV" destination="60c-3s-T7u" id="bCU-i6-TZV"/>
+                <outlet property="mMusicBtn" destination="r6Q-6p-wBn" id="zdH-Sw-0cM"/>
+                <outlet property="mScrollV" destination="9TO-ef-QG4" id="NuF-fR-Y6R"/>
+                <outlet property="mSmellBtn" destination="uX8-mD-Wjx" id="2uV-Hz-zKR"/>
+                <outlet property="mToolBtn" destination="f21-LW-UO2" id="Ixm-02-H60"/>
             </connections>
             <point key="canvasLocation" x="155" y="156"/>
         </view>

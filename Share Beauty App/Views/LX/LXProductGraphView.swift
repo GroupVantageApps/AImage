@@ -11,11 +11,12 @@ import Foundation
 class LXProductGraphView: UIView, UIScrollViewDelegate {    
     @IBOutlet weak var mScrollV: UIScrollView!
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 655, width: 200, height: 50))
-    
-    var aaaa :CircleGraphView = CircleGraphView()
-    
+
+    var mContentV: UIView!
+
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(){
+        mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.size.width*4, height: self.size.height))
         mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
@@ -31,14 +32,13 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
             view.frame = CGRect(x:  960 * index, y: 0, width: 960, height: 700)
             if index == 3{
                 let subview = view.viewWithTag(201)
-                view.mImageView.isHidden = true
                 view.maxCount = 6
 //                view.mImageView2.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
                 subview?.isHidden = false
             } else {
 //                view.mImageView.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
             }
-            self.mScrollV.addSubview(view)
+            self.mContentV.addSubview(view)
             for i in 0..<9 { 
                 if index == 0 {
                     let label = view.viewWithTag(10 + i) as! UILabel
@@ -182,6 +182,10 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
             
             view.tag = 100 + index
         }
+        self.mScrollV.addSubview(mContentV)
+        
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
 
         self.mScrollV.delegate = self
         // The total number of pages that are available is based on how many available colors we have.
@@ -209,10 +213,8 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         print("Button pressed")
     }
 
-    func updateAnimation(timer: Timer) {
-        // do something
-        let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
-        var tempV = userInfo["view"] as! LXProductGraphContentView
+    func updateAnimation(view: LXProductGraphContentView) {
+        var tempV = view as! LXProductGraphContentView
         if tempV.tag == 103 {
             let subV = tempV.viewWithTag(201)
             if tempV.animCount < tempV.maxCount {
@@ -235,7 +237,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     tempV.animPieCount = tempV.animPieCount + 1
                 }
             } else {
-                timer.invalidate()
+                
             }
         } else {
             if tempV.animCount < tempV.maxCount {
@@ -256,7 +258,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     tempV.animPieCount = tempV.animPieCount + 1
                 }
             } else {
-                timer.invalidate()
+                
             }
         }
     }
@@ -264,10 +266,24 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         let view = self.mScrollV.viewWithTag(tag) as! LXProductGraphContentView
         if view.hasAnimated { return }
         
-        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
-        timer.fire()
+        for i in 0..<view.maxCount {
+            self.updateAnimation(view: view)
+        }
+
         view.hasAnimated = true
         
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
     }
 }
 
