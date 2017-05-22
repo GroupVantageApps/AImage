@@ -20,149 +20,257 @@
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bls_dummy.png" translatesAutoresizingMaskIntoConstraints="NO" id="COW-Ms-Bkj">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-Xu-GZm">
                     <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPP-zO-cfb">
-                    <rect key="frame" x="153" y="42" width="674" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">SkingenecellEnmei is efficiently delivered to the skin for an enhanced effect 
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-6f-vSZ">
+                            <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_bls_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-p9-hbb">
+                                    <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="700" id="7uv-82-0rq"/>
+                                        <constraint firstAttribute="width" constant="960" id="FHf-XX-Hvg"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7Q-4E-Bpn">
+                                    <rect key="frame" x="143" y="42" width="674" height="72"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="72" id="h5C-mI-gik"/>
+                                        <constraint firstAttribute="width" constant="674" id="iPT-6I-Hzh"/>
+                                    </constraints>
+                                    <string key="text">SkingenecellEnmei is efficiently delivered to the skin for an enhanced effect 
 It defends and regenerates</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24 hours Activates the factor that promotes skin functions" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psd-Dq-fPf">
-                    <rect key="frame" x="436" y="139" width="266" height="68"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="19"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-Sa-TlO">
-                    <rect key="frame" x="54" y="231" width="149" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 hours Activates the factor that promotes skin functions" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U6-yh-rgI">
+                                    <rect key="frame" x="437" y="140" width="266" height="68"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="266" id="AX0-En-xvg"/>
+                                        <constraint firstAttribute="height" constant="68" id="Nip-Aa-jdQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="19"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWB-Ml-1aM">
+                                    <rect key="frame" x="53" y="461" width="149" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="149" id="og3-5V-nhN"/>
+                                        <constraint firstAttribute="height" constant="70" id="u3Y-9h-Rf0"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-o9-RlD">
-                    <rect key="frame" x="54" y="456" width="149" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hB3-cX-ZYc">
+                                    <rect key="frame" x="580" y="226" width="149" height="75"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="149" id="iQv-XY-BuT"/>
+                                        <constraint firstAttribute="height" constant="75" id="ihg-nE-S0q"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmu-g2-wHA">
-                    <rect key="frame" x="228" y="456" width="149" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="21" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfP-zh-EHk">
+                                    <rect key="frame" x="233" y="454" width="149" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="149" id="FVH-pp-1be"/>
+                                        <constraint firstAttribute="height" constant="70" id="fEO-f7-dmZ"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvs-8B-5D9">
-                    <rect key="frame" x="406" y="456" width="149" height="70"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-lY-4EX">
+                                    <rect key="frame" x="53" y="231" width="149" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="149" id="SR4-F9-ktS"/>
+                                        <constraint firstAttribute="height" constant="70" id="jJA-kY-Axc"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-tV-j6H">
-                    <rect key="frame" x="579" y="456" width="149" height="46"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYq-tt-75f">
+                                    <rect key="frame" x="228" y="226" width="149" height="73"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="73" id="QSv-uU-RPc"/>
+                                        <constraint firstAttribute="width" constant="149" id="jTq-eM-eC4"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="24" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-To-GwZ">
-                    <rect key="frame" x="755" y="463" width="149" height="39"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daq-S6-UZx">
+                                    <rect key="frame" x="406" y="227" width="149" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="33" id="NAd-PY-BRC"/>
+                                        <constraint firstAttribute="width" constant="149" id="m9E-cn-W5X"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcN-qs-lcL">
-                    <rect key="frame" x="228" y="227" width="149" height="73"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="23" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5D1-4F-Pn6">
+                                    <rect key="frame" x="575" y="454" width="149" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="DH3-x4-gOe"/>
+                                        <constraint firstAttribute="width" constant="149" id="RSe-fK-3n7"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-1V-GUA">
-                    <rect key="frame" x="406" y="227" width="149" height="33"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="24" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAd-Yk-jnF">
+                                    <rect key="frame" x="752" y="461" width="149" height="39"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="39" id="TEU-sO-J6M"/>
+                                        <constraint firstAttribute="width" constant="149" id="p4E-CJ-qs4"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-ke-KyQ">
-                    <rect key="frame" x="579" y="227" width="149" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcJ-cC-aT5">
+                                    <rect key="frame" x="754" y="219" width="149" height="88"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="88" id="CVj-0b-NKT"/>
+                                        <constraint firstAttribute="width" constant="149" id="y3N-ZO-G9j"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-SX-8Cy">
-                    <rect key="frame" x="755" y="220" width="149" height="88"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">For skin that takes 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppN-tt-jZx">
+                                    <rect key="frame" x="897" y="632" width="46" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="BSd-rc-Xpg"/>
+                                        <constraint firstAttribute="width" constant="46" id="XLy-oC-Tin"/>
+                                    </constraints>
+                                    <state key="normal" image="lx_play.png"/>
+                                    <connections>
+                                        <action selector="onTapMovie:" destination="iN0-l3-epB" eventType="touchUpInside" id="cld-kF-uT2"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-XJ-Vjv">
+                                    <rect key="frame" x="406" y="460" width="149" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="149" id="XId-no-bcN"/>
+                                        <constraint firstAttribute="height" constant="70" id="o5C-pc-YgG"/>
+                                    </constraints>
+                                    <string key="text">For skin that takes 
 in effective 
 ingredients</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-lh-Kcb">
-                    <rect key="frame" x="897" y="636" width="46" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <connections>
-                        <action selector="onTapMovie:" destination="iN0-l3-epB" eventType="touchUpInside" id="PdY-KH-qo5"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAF-F5-gSZ">
-                    <rect key="frame" x="124" y="566" width="674" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">SkingenecellEnmei is efficiently delivered to the skin for an enhanced effect 
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="18"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" tag="17" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BO-1Y-KtI">
+                                    <rect key="frame" x="159" y="582" width="643" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="OSd-Em-Z9O"/>
+                                        <constraint firstAttribute="width" constant="642.5" id="Stm-20-DgT"/>
+                                    </constraints>
+                                    <string key="text">SkingenecellEnmei is efficiently delivered to the skin for an enhanced effect 
 It defends and regenerates</string>
-                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21"/>
-                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                                    <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21"/>
+                                    <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="OWB-Ml-1aM" firstAttribute="leading" secondItem="DQH-6f-vSZ" secondAttribute="leading" constant="53" id="0eV-N4-J6J"/>
+                                <constraint firstItem="5D1-4F-Pn6" firstAttribute="leading" secondItem="dhZ-XJ-Vjv" secondAttribute="trailing" constant="20" id="2AC-nJ-3Uu"/>
+                                <constraint firstItem="NcJ-cC-aT5" firstAttribute="top" secondItem="P7Q-4E-Bpn" secondAttribute="bottom" constant="105" id="3B7-96-XTw"/>
+                                <constraint firstItem="daq-S6-UZx" firstAttribute="leading" secondItem="XYq-tt-75f" secondAttribute="trailing" constant="29" id="52h-Oa-JmR"/>
+                                <constraint firstItem="BfP-zh-EHk" firstAttribute="leading" secondItem="OWB-Ml-1aM" secondAttribute="trailing" constant="31" id="6nH-3B-Qyk"/>
+                                <constraint firstItem="P7Q-4E-Bpn" firstAttribute="centerX" secondItem="DQH-6f-vSZ" secondAttribute="centerX" id="A1E-BG-cy2"/>
+                                <constraint firstItem="J0f-lY-4EX" firstAttribute="leading" secondItem="DQH-6f-vSZ" secondAttribute="leading" constant="53" id="Abf-W9-rEJ"/>
+                                <constraint firstItem="Vmi-p9-hbb" firstAttribute="centerY" secondItem="DQH-6f-vSZ" secondAttribute="centerY" id="ELz-b8-FY8"/>
+                                <constraint firstItem="Vmi-p9-hbb" firstAttribute="centerX" secondItem="DQH-6f-vSZ" secondAttribute="centerX" id="Ifx-Wy-AMf"/>
+                                <constraint firstItem="vAd-Yk-jnF" firstAttribute="leading" secondItem="5D1-4F-Pn6" secondAttribute="trailing" constant="28" id="J9H-ET-mgS"/>
+                                <constraint firstAttribute="bottom" secondItem="3BO-1Y-KtI" secondAttribute="bottom" constant="76" id="Mdp-tV-XUh"/>
+                                <constraint firstItem="7U6-yh-rgI" firstAttribute="top" secondItem="P7Q-4E-Bpn" secondAttribute="bottom" constant="26" id="NDK-bF-ot7"/>
+                                <constraint firstAttribute="bottom" secondItem="ppN-tt-jZx" secondAttribute="bottom" constant="24" id="Q6U-eR-LtT"/>
+                                <constraint firstItem="J0f-lY-4EX" firstAttribute="top" secondItem="P7Q-4E-Bpn" secondAttribute="bottom" constant="117" id="QFi-zm-cZD"/>
+                                <constraint firstItem="daq-S6-UZx" firstAttribute="top" secondItem="7U6-yh-rgI" secondAttribute="bottom" constant="19" id="Rok-2M-6vH"/>
+                                <constraint firstItem="hB3-cX-ZYc" firstAttribute="leading" secondItem="daq-S6-UZx" secondAttribute="trailing" constant="25" id="V5T-lk-doa"/>
+                                <constraint firstItem="dhZ-XJ-Vjv" firstAttribute="leading" secondItem="BfP-zh-EHk" secondAttribute="trailing" constant="24" id="YMN-IV-W87"/>
+                                <constraint firstItem="NcJ-cC-aT5" firstAttribute="leading" secondItem="hB3-cX-ZYc" secondAttribute="trailing" constant="25" id="gRw-X3-48M"/>
+                                <constraint firstAttribute="trailing" secondItem="7U6-yh-rgI" secondAttribute="trailing" constant="257" id="ipa-QZ-k8Q"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="top" secondItem="vAd-Yk-jnF" secondAttribute="bottom" constant="82" id="o98-WR-RPP"/>
+                                <constraint firstItem="XYq-tt-75f" firstAttribute="leading" secondItem="J0f-lY-4EX" secondAttribute="trailing" constant="26" id="rF7-Fg-x4o"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="top" secondItem="OWB-Ml-1aM" secondAttribute="bottom" constant="51" id="raQ-eU-0JJ"/>
+                                <constraint firstAttribute="trailing" secondItem="ppN-tt-jZx" secondAttribute="trailing" constant="17" id="rc0-JM-DIl"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="top" secondItem="5D1-4F-Pn6" secondAttribute="bottom" constant="82" id="ueX-oj-knq"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="top" secondItem="BfP-zh-EHk" secondAttribute="bottom" constant="58" id="usd-6A-A6J"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="centerX" secondItem="DQH-6f-vSZ" secondAttribute="centerX" id="wAg-Gu-uV4"/>
+                                <constraint firstItem="XYq-tt-75f" firstAttribute="top" secondItem="P7Q-4E-Bpn" secondAttribute="bottom" constant="112" id="wan-da-lbF"/>
+                                <constraint firstItem="3BO-1Y-KtI" firstAttribute="top" secondItem="dhZ-XJ-Vjv" secondAttribute="bottom" constant="52" id="yRl-BZ-zMu"/>
+                                <constraint firstItem="hB3-cX-ZYc" firstAttribute="top" secondItem="7U6-yh-rgI" secondAttribute="bottom" constant="18" id="ylJ-ak-w13"/>
+                                <constraint firstItem="P7Q-4E-Bpn" firstAttribute="top" secondItem="DQH-6f-vSZ" secondAttribute="top" constant="42" id="zi9-79-noB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DQH-6f-vSZ" secondAttribute="trailing" id="1Zr-bc-C1M"/>
+                        <constraint firstItem="DQH-6f-vSZ" firstAttribute="centerX" secondItem="VmY-Xu-GZm" secondAttribute="centerX" id="CNE-oW-9hS"/>
+                        <constraint firstItem="DQH-6f-vSZ" firstAttribute="centerY" secondItem="VmY-Xu-GZm" secondAttribute="centerY" id="QyQ-sV-hFY"/>
+                        <constraint firstItem="DQH-6f-vSZ" firstAttribute="leading" secondItem="VmY-Xu-GZm" secondAttribute="leading" id="akF-Qo-Xdh"/>
+                        <constraint firstItem="DQH-6f-vSZ" firstAttribute="top" secondItem="VmY-Xu-GZm" secondAttribute="top" id="gwj-U1-nq7"/>
+                        <constraint firstAttribute="bottom" secondItem="DQH-6f-vSZ" secondAttribute="bottom" id="xep-3j-OQx"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VmY-Xu-GZm" secondAttribute="trailing" id="ZNP-K6-t5l"/>
+                <constraint firstAttribute="bottom" secondItem="VmY-Xu-GZm" secondAttribute="bottom" id="jPf-6Q-bp8"/>
+                <constraint firstItem="VmY-Xu-GZm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nd0-A0-RtE"/>
+                <constraint firstItem="VmY-Xu-GZm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rLa-3V-hgm"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mContentV" destination="DQH-6f-vSZ" id="O4K-rt-0YY"/>
+                <outlet property="mPlayMovieBtn" destination="ppN-tt-jZx" id="uAb-op-YMg"/>
+                <outlet property="mScrollV" destination="VmY-Xu-GZm" id="1g9-kB-Dow"/>
+            </connections>
             <point key="canvasLocation" x="155" y="156"/>
         </view>
     </objects>
     <resources>
-        <image name="lx_bls_dummy.png" width="1916" height="1384"/>
+        <image name="lx_bls_bg.png" width="1916" height="1384"/>
+        <image name="lx_play.png" width="1916" height="1384"/>
     </resources>
 </document>

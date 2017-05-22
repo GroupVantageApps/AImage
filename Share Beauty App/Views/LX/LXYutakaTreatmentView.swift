@@ -14,16 +14,25 @@ protocol LXYutakaTreatmentViewDelegate: NSObjectProtocol {
 class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentContentFirstViewDelegate {
     weak var delegate: LXYutakaTreatmentViewDelegate? 
     
-    let mScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
     var mframe: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var colors:[UIColor] = [UIColor.white, UIColor.white, UIColor.white]
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 650, width: 200, height: 50))
     var mSkingeneceintrolbl = UILabel(frame:CGRect(x: 58, y: 43, width: 376, height: 66))
     var thumArray = ["lx_yutaka_treatment_thum_01.png","lx_yutaka_treatment_thum_02.png","lx_yutaka_treatment_thum_03.png","lx_yutaka_treatment_thum_04.png","lx_yutaka_treatment_thum_05.png","lx_yutaka_treatment_thum_06.png","lx_yutaka_treatment_thum_07.png","lx_yutaka_treatment_thum_08.png"]
-
+   
+    var mScrollView = UIScrollView()
+    var mContentV: UIView!
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38 , y: 16.7, width: 38, height: 38))
     
     func setUI(page: Int) {
+        
+        self.mScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 960, height: self.size.height))
+        self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.mScrollView.frame.size.width * 8, height: self.size.height))
+        self.mScrollView.addSubview(mContentV)
+        self.mScrollView.minimumZoomScale = 1.0
+        self.mScrollView.maximumZoomScale = 6.0
+        self.mScrollView.contentSize = self.mContentV.size
+
         self.mScrollView.delegate = self
         self.mScrollView.showsHorizontalScrollIndicator = false
         self.addSubview(self.mScrollView)
@@ -46,7 +55,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
             popup.delegate = self
             subView.addSubview(popup)
 
-            self.mScrollView.addSubview(subView)
+            self.mContentV.addSubview(subView)
         }
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 8, height: self.mScrollView.frame.size.height)
         self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(page), y:0), animated: false)
@@ -81,5 +90,18 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
     
     func playSounds () {
         delegate?.playSounds()
+    }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollView.isPagingEnabled = true
+        } else {
+            self.mScrollView.isPagingEnabled = false        
+        }
     }
 }

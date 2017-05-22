@@ -51,8 +51,7 @@ class LXTechBiologicalView: UIView, UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if self.mScrollV.contentOffset.y + self.mScrollV.frame.size.height > self.mScrollV.contentSize.height && self.mScrollV.isDragging {
-            print("一番下に来た時の処理")
-            
+
             if self.isAnimated { return }
             UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                 let graph = self.viewWithTag(60)

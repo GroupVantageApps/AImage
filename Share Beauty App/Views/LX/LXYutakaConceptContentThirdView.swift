@@ -17,12 +17,10 @@ class LXYutakaConceptContentThirdView: UIView {
     
     @IBOutlet weak var mSub3ImgV: UIImageView!
     func setUI(){
-        let ud = UserDefaults.standard
         let items = LanguageConfigure.lxcsv
         for i in 0..<5 {
             let label = self.viewWithTag(i + 10) as! UILabel
             let content = items[String(format: "%d", i + 87)]
-            print(content)
             label.text = content
         }
         self.mSub1ImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_3_1.png")

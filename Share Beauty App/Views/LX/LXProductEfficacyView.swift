@@ -35,21 +35,33 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     var maxCount = 8
     var secondPageTag = 0
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
+    
+    
+    @IBOutlet weak var mG3ConstraintBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var mIntensiveConstraintBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var mG4ConstraintBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var mEyeConstraintBottom: NSLayoutConstraint!
+    @IBOutlet weak var mG1ConstraintBottom: NSLayoutConstraint!
+    
     func setUI(productId: Int){
         
         let lxArr = LanguageConfigure.lxcsv
         
         if productId == 516 {
-            self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
+            self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: self.size.height))
             let efficacyV: LXEfficacyPenetrationView = UINib(nibName: "LXEfficacyPenetrationView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXEfficacyPenetrationView
             efficacyV.setUI()
-            efficacyV.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            efficacyV.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
             self.mContentV.addSubview(efficacyV)
             
             let secondV = self.c1GraphV
             secondV?.tag = 200
             secondPageTag = (secondV?.tag)!
-            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
+            if self.size.height != 700 { self.mG1ConstraintBottom.constant = 0 }
             for i in 0..<8 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -98,9 +110,9 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else if productId == 517 {
-             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
+             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: self.size.height))
             let firstV = self.baV
-            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
             for i in 0..<4 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -123,7 +135,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             let secondV = self.c2GraphV
             secondV?.tag = 201
             secondPageTag = (secondV?.tag)!
-            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
             for i in 0..<7 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -167,10 +179,12 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else if productId == 519 {
-             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
+             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: self.size.height))
             let firstV = self.c3GraphV
             firstV?.tag = 202
-            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
+            
+            if self.size.height != 700 { self.mG3ConstraintBottom.constant = 0 }
             for i in 0..<9 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -222,7 +236,9 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             let secondV = self.c4GraphV
             secondV?.tag = 203
             secondPageTag = (secondV?.tag)!
-            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
+            if self.size.height != 700 { self.mG4ConstraintBottom.constant = 0 }
+
             for i in 0..<9 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -277,9 +293,9 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else  if productId ==  523 {
-             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: 700))
+             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: self.size.height))
             let firstV = self.intensiveV
-            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
             for i in 0..<5 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -305,7 +321,8 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             let secondV = self.intensiveGraphV
             secondV?.tag = 204
             secondPageTag = (secondV?.tag)!
-            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: 700)
+            secondV?.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
+            if self.size.height != 700 { self.mIntensiveConstraintBottom.constant = 0 }
             for i in 0..<9 {
                 let label = secondV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -353,10 +370,11 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
         } else  if productId == 522 {
-             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960, height: 700))
+             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960, height: self.size.height))
             let firstV = self.eyeGrapgV
             firstV?.tag = 205
-            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: 700)
+            firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
+            if self.size.height != 700 { self.mEyeConstraintBottom.constant = 0 }
             for i in 0..<9 {
                 let label = firstV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
@@ -458,84 +476,81 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         }
     }
     
-    func updateAnimation(timer: Timer) {
-        // do something
-        let userInfo = timer.userInfo as! Dictionary<String, AnyObject>
-        var tempV = userInfo["view"]
-        if tempV?.tag == 200 {
+    func updateAnimation(view: UIView) {
+        var tempV = view
+        if tempV.tag == 200 {
             if self.animCount < self.maxCount {
                 if self.animCount == 0 || self.animCount == 3  || self.animCount == 5 {
-                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    let hiddenV = tempV.viewWithTag(60 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         hiddenV?.alpha = 0
                     }, completion: nil)  
                     self.animCount = self.animCount + 1
                     
                 } else {
-                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    let label = tempV.viewWithTag(10 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         label?.alpha = 1
                     }, completion: nil)
                     
                     if self.animCount == 2 {
-                        let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                        let hiddenV = tempV.viewWithTag(60 + self.animCount)
                         UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                             hiddenV?.alpha = 0
                         }, completion: nil) 
                     }
-                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    let pieGraphV = tempV.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
                     pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
                     self.animCount = self.animCount + 1
                     self.animPieCount = self.animPieCount + 1
                 }
             } else {
-                timer.invalidate()
+                
+                
             }
-        } else if tempV?.tag == 201 {
+        } else if tempV.tag == 201 {
             if self.animCount < self.maxCount {
                 if self.animCount == 0 || self.animCount == 2  || self.animCount == 4 {
-                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    let hiddenV = tempV.viewWithTag(60 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         hiddenV?.alpha = 0
                     }, completion: nil)  
                     self.animCount = self.animCount + 1
                     
                 } else {
-                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    let label = tempV.viewWithTag(10 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         label?.alpha = 1
                     }, completion: nil)
                     
-                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    let pieGraphV = tempV.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
                     pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
                     self.animCount = self.animCount + 1
                     self.animPieCount = self.animPieCount + 1
                 }
             } else {
-                timer.invalidate()
             }
         } else {
             if self.animCount < self.maxCount {
                 if self.animCount == 0 || self.animCount == 2  || self.animCount == 4  || self.animCount == 6 {
-                    let hiddenV = tempV?.viewWithTag(60 + self.animCount)
+                    let hiddenV = tempV.viewWithTag(60 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         hiddenV?.alpha = 0
                     }, completion: nil)  
                     self.animCount = self.animCount + 1
                     
                 } else {
-                    let label = tempV?.viewWithTag(10 + self.animCount)
+                    let label = tempV.viewWithTag(10 + self.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         label?.alpha = 1
                     }, completion: nil)
                     
-                    let pieGraphV = tempV?.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
+                    let pieGraphV = tempV.viewWithTag(50 + self.animPieCount) as! CircleGraphView 
                     pieGraphV.drawCircleAnimation(key: "strokeEnd", animeName: "updateGageAnimation", fromValue: 1.0, toValue: 0.0, duration: 1.0, repeatCount: 1.0)
                     self.animCount = self.animCount + 1
                     self.animPieCount = self.animPieCount + 1
                 }
             } else {
-                timer.invalidate()
             }
         }
     }
@@ -551,16 +566,19 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             } else if tag == 201 {
                 self.maxCount = 6
             }
-            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
-            timer.fire()
+
+            for i in 0..<maxCount {
+                self.updateAnimation(view: view!)
+            }
             
             self.hasAnimated = true
         } else {
-            let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAnimation), userInfo: [ "view" : view ], repeats: true)
-            timer.fire()
+            
             self.animCount = 0
             self.animPieCount = 0
-           
+            for i in 0..<maxCount {
+                self.updateAnimation(view: view!)
+            }
         }     
     }
 }

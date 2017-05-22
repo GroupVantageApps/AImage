@@ -24,6 +24,8 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
     @IBOutlet weak var mSSecondAfterImgV: UIImageView!
     @IBOutlet var mSFirstSlider: UISlider!
     @IBOutlet var mSSecondSlider: UISlider!
+    
+    var mContentV: UIView!
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 655, width: 200, height: 50))
 
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
@@ -31,6 +33,8 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
+
+        self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.size.width*2, height: self.size.height))
         
         self.firstImgV.image =  FileTable.getLXFileImage("photo_1_before.png")
         self.mFirstAfterImgV.image =  FileTable.getLXFileImage("photo_1_after.png")
@@ -61,9 +65,13 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
             label.text = lxArr[String(csvId)]
         }
         
-        self.mScrollV.addSubview(firstView)
-        self.mScrollV.addSubview(secondView)
+        self.mContentV.addSubview(firstView)
+        self.mContentV.addSubview(secondView)
+        self.mScrollV.addSubview(mContentV)
         self.mScrollV.delegate = self
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
+
         // The total number of pages that are available is based on how many available colors we have.
         self.mPageControl.numberOfPages = 2
         self.mPageControl.currentPage = 0
@@ -100,7 +108,19 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.isHidden = true
         print("Button pressed")
     }
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
     
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
+    }
 }
 
 class BAUIScrollView: UIScrollView {

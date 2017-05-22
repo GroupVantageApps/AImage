@@ -435,18 +435,24 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         if sender === mCategoryButtonTechnologies {
             mVCategoryImage.isHidden = true
             let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+            technologyV.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             technologyV.setUI(productId: productId)
-             technologyV.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(technologyV)
         } else if sender === mCategoryButtonHowToUse {
-            makeCategoryImages(product.usageImage)
+            mVCategoryImage.isHidden = true
+            let popup: LXProductHowToUseView = UINib(nibName: "LXProductHowToUseView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductHowToUseView
+            popup.setUI(productId: productId)
+            popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
+            popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+            self.view.addSubview(popup)
+            
         } else if sender === mCategoryButtonEfficacy {
 
             mVCategoryImage.isHidden = true
             let popup: LXProductEfficacyView = UINib(nibName: "LXProductEfficacyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductEfficacyView
+            popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             popup.setUI(productId: productId)
-             popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
             if productId == 519 {
@@ -457,9 +463,9 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         } else if sender === mCategoryButtonDefend {
             mVCategoryImage.isHidden = true
             let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
-            popup.setAction()
             popup.delegate = self
             popup.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
+            popup.setAction()
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
         }

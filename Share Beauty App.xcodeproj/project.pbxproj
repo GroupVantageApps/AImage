@@ -395,7 +395,7 @@
 		DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */; };
 		DE48C30A1EB6A79100D29A8D /* lx_product_graph_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */; };
 		DE48C30B1EB6A79100D29A8D /* lx_product_bls_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */; };
-		DE48C30D1EB6A9AA00D29A8D /* lx_bls_dummy.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */; };
+		DE48C30D1EB6A9AA00D29A8D /* lx_bls_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30C1EB6A9AA00D29A8D /* lx_bls_bg.png */; };
 		DE48C3101EB6AA4400D29A8D /* LXProductBLSView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */; };
 		DE48C3111EB6AA4400D29A8D /* LXProductBLSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */; };
 		DE48C3141EB6ABB600D29A8D /* LXProductGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */; };
@@ -972,7 +972,7 @@
 		DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSkinGraphContentView.xib; sourceTree = "<group>"; };
 		DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_graph_btn.png; sourceTree = "<group>"; };
 		DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_product_bls_btn.png; sourceTree = "<group>"; };
-		DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bls_dummy.png; sourceTree = "<group>"; };
+		DE48C30C1EB6A9AA00D29A8D /* lx_bls_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bls_bg.png; sourceTree = "<group>"; };
 		DE48C30E1EB6AA4400D29A8D /* LXProductBLSView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductBLSView.xib; sourceTree = "<group>"; };
 		DE48C30F1EB6AA4400D29A8D /* LXProductBLSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductBLSView.swift; sourceTree = "<group>"; };
 		DE48C3121EB6ABB600D29A8D /* LXProductGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductGraphView.swift; sourceTree = "<group>"; };
@@ -1782,7 +1782,7 @@
 				DEE83E5F1EB76247000C7D8D /* lx_tech_bio.png */,
 				DE7B7E601EB7547D006F8246 /* lx_product_play_movie.png */,
 				DE7B7E5A1EB73D3E006F8246 /* lx_angelica.png */,
-				DE48C30C1EB6A9AA00D29A8D /* lx_bls_dummy.png */,
+				DE48C30C1EB6A9AA00D29A8D /* lx_bls_bg.png */,
 				DE48C3081EB6A79100D29A8D /* lx_product_graph_btn.png */,
 				DE48C3091EB6A79100D29A8D /* lx_product_bls_btn.png */,
 				DEB555331EB333490022AB0F /* lx_ba_second_face_1.png */,
@@ -2352,7 +2352,7 @@
 				DE1CB03E1ECD9E4500F17E7A /* lx_graph_81.png in Resources */,
 				DE72E1CE1ECF093100E93A78 /* lx_bio_left.png in Resources */,
 				C03C884C1D76AB1E009F526E /* LifeStyleProductView.xib in Resources */,
-				DE48C30D1EB6A9AA00D29A8D /* lx_bls_dummy.png in Resources */,
+				DE48C30D1EB6A9AA00D29A8D /* lx_bls_bg.png in Resources */,
 				C050C8FE1E82619F0009679D /* features_smk_3.png in Resources */,
 				C050C91F1E82619F0009679D /* orange_R.png in Resources */,
 				C050C9BD1E8276C60009679D /* Shiseido-ExtraBold.otf in Resources */,
@@ -2567,7 +2567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -2597,7 +2597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -2612,7 +2612,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {

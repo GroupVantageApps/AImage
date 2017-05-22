@@ -14,19 +14,30 @@ protocol LXIngredientViewDelegate: NSObjectProtocol {
     func didTapshowSkinGraph()
     func movieAct()
 } 
-class LXIngredientView: UIView { 
+class LXIngredientView: UIView, UIScrollViewDelegate { 
     private var apngImageV: APNGImageView!
     @IBOutlet var skinGeneceTextLabel: UITextView!
     weak var delegate: LXIngredientViewDelegate?  
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     
+    @IBOutlet weak var mScrollV: UIScrollView!
+    @IBOutlet weak var mConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var mPlayImgV: UIImageView!
     @IBOutlet weak var mEffectImgV: UIImageView!
+    @IBOutlet weak var mContentV: UIView!
 
     var mGraphBtn: UIButton!
     var mMovieBtn: UIButton!
     func setAction(){
-
+        self.mScrollV.size = self.size
+        self.mConstraintHeight.constant = self.size.height
+        self.mContentV.center = CGPoint(x: self.size.width*0.5 ,y: self.size.height*0.5)
+        self.mScrollV.minimumZoomScale = 1.0
+        self.mScrollV.maximumZoomScale = 6.0
+        self.mScrollV.delegate = self
+        self.mScrollV.contentSize = self.mContentV.size
+        print(self.mContentV.size)
+        print(self.size.height)
         self.mPlayImgV.image = FileTable.getLXFileImage("skingenece_playImg.png")
         self.mEffectImgV.image = FileTable.getLXFileImage("skingenece_graphimg.png")
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
@@ -64,4 +75,17 @@ class LXIngredientView: UIView {
         self.isHidden = true
         delegate?.movieAct()
     }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return self.mContentV
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        if scale == 1.0 {
+            self.mScrollV.isPagingEnabled = true
+        } else {
+            self.mScrollV.isPagingEnabled = false        
+        }
+    }
+    
 }
