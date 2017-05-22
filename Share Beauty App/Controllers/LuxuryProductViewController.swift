@@ -138,6 +138,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         blsView.setUI()
         blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(blsView)
+        blsView.startAnimation(tag: 100)
 
     }
     func movieAct(){
