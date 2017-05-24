@@ -100,7 +100,7 @@ class LifeStyleSecondDetailViewController: UIViewController, NavigationControlle
             delegate?.nextVc(productDetailVc)
         }
 
-        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
+        LogManager.tapLifeStyleProduct(screenCode: mScreen.code, productId: product!.productId)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

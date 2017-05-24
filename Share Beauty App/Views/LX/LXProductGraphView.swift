@@ -191,6 +191,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         // The total number of pages that are available is based on how many available colors we have.
         self.mPageControl.numberOfPages = 4
         self.mPageControl.currentPage = 0
+        self.mPageControl.frame = CGRect(x: 960/2 - 100, y: self.size.height - 45, width: 200, height: 50)
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
