@@ -99,7 +99,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXM-xV-tty">
-                            <rect key="frame" x="109" y="563" width="745" height="55"/>
+                            <rect key="frame" x="109" y="549" width="745" height="55"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Achieves lustrous, smooth, firm, and translucent skin with a rosy glow, while minimizing the visibility of pores, fine lines, and uneven skin tone through a light diffusion effect.  </string>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="21"/>
