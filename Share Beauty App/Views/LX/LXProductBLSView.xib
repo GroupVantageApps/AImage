@@ -262,6 +262,8 @@ It defends and regenerates</string>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="mConstraintBottom" destination="Mdp-tV-XUh" id="sgA-c0-DDN"/>
+                <outlet property="mConstraintTop" destination="zi9-79-noB" id="we8-PB-WoQ"/>
                 <outlet property="mContentV" destination="DQH-6f-vSZ" id="O4K-rt-0YY"/>
                 <outlet property="mPlayMovieBtn" destination="ppN-tt-jZx" id="uAb-op-YMg"/>
                 <outlet property="mScrollV" destination="VmY-Xu-GZm" id="1g9-kB-Dow"/>

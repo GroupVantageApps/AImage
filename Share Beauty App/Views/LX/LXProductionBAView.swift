@@ -40,13 +40,13 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.mFirstAfterImgV.image =  FileTable.getLXFileImage("photo_1_after.png")
         self.secondImgV.image =  FileTable.getLXFileImage("photo_2_before.png")
         self.mSecondAfterImgV.image =  FileTable.getLXFileImage("photo_2_after.png")
-        self.mScrollV.contentSize = CGSize(width: 960 * 2, height: 700)
+        self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
         self.mScrollV.isPagingEnabled = true
         self.mScrollV.delaysContentTouches = false
         self.mScrollV.canCancelContentTouches = true
         
         var firstView = self.viewWithTag(100)! as UIView
-        firstView.frame = CGRect(x: 0, y: 0, width: 960, height: 700)
+        firstView.frame = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
         
         let lxArr = LanguageConfigure.lxcsv
         
@@ -57,7 +57,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         }
         
         let secondView = self.viewWithTag(101)! as UIView
-        secondView.frame = CGRect(x: 960, y: 0, width: 960, height: 700)
+        secondView.frame = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
         
         for i in 0..<5 {
             let label = secondView.viewWithTag(10 + i) as! UILabel
@@ -76,6 +76,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.mPageControl.numberOfPages = 2
         self.mPageControl.currentPage = 0
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
+        self.mPageControl.frame = CGRect(x: 960/2 - 100, y: self.size.height - 45, width: 200, height: 50)
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
         self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)

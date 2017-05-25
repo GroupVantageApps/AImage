@@ -10,6 +10,13 @@ import Foundation
 
 class LXProductGraphContentView: UIView, UIScrollViewDelegate {    
    
+    @IBOutlet weak var mConstraintSecondBottom: NSLayoutConstraint!
+    @IBOutlet weak var mConstraintSecondTop: NSLayoutConstraint!
+    @IBOutlet weak var mConstraintFirstBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var mConstraintFirstTop: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mImageView2: UIImageView!
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
