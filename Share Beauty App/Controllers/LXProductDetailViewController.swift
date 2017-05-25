@@ -4,7 +4,7 @@
 //
 //  Created by tuntun34 on 2016/08/25.
 //  Copyright © 2016年 AQUA Co., Ltd. All rights reserved.
-//
+// sharedBeauty(白)から遷移する用のLX詳細画面
 
 import UIKit
 import AVFoundation
@@ -530,10 +530,8 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
 
     @IBAction private func onTapLineDetail(_ sender: AnyObject) {
-        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryViewController", targetClass: LuxuryViewController.self) as! LuxuryViewController
-        let navigationController = UINavigationController(rootViewController: toVc)
-        toVc.ndGoProductVC = true
-        UIApplication.shared.keyWindow?.rootViewController = navigationController
+        let nextVc = UIViewController.GetViewControllerFromStoryboard("LXProductViewController", targetClass: LXProductViewController.self) as! LXProductViewController
+        delegate?.nextVc(nextVc)
     }
 
     @IBAction private func onTapOnTrendBeauty(_ sender: Any) {

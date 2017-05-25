@@ -19,12 +19,20 @@ class LXProductBLSView: UIView, UIScrollViewDelegate{
     @IBOutlet weak var mScrollV: UIScrollView!
     @IBOutlet weak var mContentV: UIView!
 
+    @IBOutlet weak var mConstraintBottom: NSLayoutConstraint!
+    
+    @IBOutlet weak var mConstraintTop: NSLayoutConstraint!
+    
     func setUI() {
         
         mPlayMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
+        if self.size.height != 700 { 
+            self.mConstraintBottom.constant = 41
+            self.mConstraintTop.constant = 7
+        }
 
         self.mScrollV.minimumZoomScale = 1.0
         self.mScrollV.maximumZoomScale = 6.0

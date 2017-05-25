@@ -21,7 +21,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         
-        self.mScrollV.contentSize = CGSize(width: 960 * 4, height: 700)
+        self.mScrollV.contentSize = CGSize(width: 960 * 4, height: self.size.height)
         self.mScrollV.isPagingEnabled = true
         self.mScrollV.delaysContentTouches = false
         self.mScrollV.canCancelContentTouches = true
@@ -29,13 +29,23 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         let lxArr = LanguageConfigure.lxcsv
         for index in 0..<4 {
             let view: LXProductGraphContentView = UINib(nibName: "LXProductGraphContentView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphContentView
-            view.frame = CGRect(x:  960 * index, y: 0, width: 960, height: 700)
+            view.frame = CGRect(x:  960 * index, y: 0, width: 960, height: Int(self.size.height))
+            print(Int(self.size.height))
             if index == 3{
                 let subview = view.viewWithTag(201)
                 view.maxCount = 6
 //                view.mImageView2.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
                 subview?.isHidden = false
+                if self.size.height != 700 {
+                    view.mConstraintFirstBottom.constant = 20
+                    view.mConstraintFirstTop.constant = 20
+                }
             } else {
+                
+                if self.size.height != 700 {
+                    view.mConstraintSecondBottom.constant = 20
+                    view.mConstraintSecondTop.constant = 56
+                }
 //                view.mImageView.image = UIImage(named: String(format: "lx_product_graph_%d",index + 1))
             }
             self.mContentV.addSubview(view)
@@ -218,6 +228,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         var tempV = view as! LXProductGraphContentView
         if tempV.tag == 103 {
             let subV = tempV.viewWithTag(201)
+  
             if tempV.animCount < tempV.maxCount {
                 if tempV.animCount == 0 || tempV.animCount == 3 {
                     let hiddenV = subV?.viewWithTag(60 + tempV.animCount)
@@ -227,7 +238,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     tempV.animCount = tempV.animCount + 1
                     
                 } else {
-                    let label = subV?.viewWithTag(10 + tempV.animCount)
+                    let label = subV?.viewWithTag(20 + tempV.animCount)
                     UIView.animate(withDuration: 1.0, delay: 0.0, options: [.curveEaseOut], animations: {
                         label?.alpha = 1
                     }, completion: nil)

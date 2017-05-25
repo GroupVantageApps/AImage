@@ -20,133 +20,27 @@
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view tag="100" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-7p-vyH">
-                    <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2W-CN-eit">
-                            <rect key="frame" x="136" y="223" width="237" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-iI-E8q">
-                            <rect key="frame" x="136" y="223" width="237" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The effect of Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zP-MR-X1s">
-                            <rect key="frame" x="50" y="46" width="436" height="28"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="28"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-2a-cbE">
-                            <rect key="frame" x="452" y="223" width="400" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBP-3e-nUi">
-                            <rect key="frame" x="452" y="223" width="400" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <slider opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pw1-dh-wAn">
-                            <rect key="frame" x="102" y="492" width="304" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                            <connections>
-                                <action selector="changeValue:" destination="xd7-s1-vLX" eventType="valueChanged" id="OkI-op-dqF"/>
-                            </connections>
-                        </slider>
-                        <slider opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AuB-G7-A9J">
-                            <rect key="frame" x="510" y="492" width="304" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                            <connections>
-                                <action selector="changeValue:" destination="xd7-s1-vLX" eventType="valueChanged" id="Daq-2b-sVq"/>
-                            </connections>
-                        </slider>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="yab-C4-OpC">
-                            <rect key="frame" x="98" y="515" width="10" height="13"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-l5-7yb">
-                            <rect key="frame" x="47" y="530" width="112" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-Gv-wak">
-                            <rect key="frame" x="347" y="530" width="112" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="px0-Eb-XAU">
-                            <rect key="frame" x="398" y="515" width="10" height="13"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="oA3-nb-c10">
-                            <rect key="frame" x="507" y="515" width="10" height="13"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQu-Fb-w7N">
-                            <rect key="frame" x="456" y="530" width="112" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ti-6c-m1n">
-                            <rect key="frame" x="756" y="530" width="112" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-gL-ey5">
-                            <rect key="frame" x="807" y="515" width="10" height="13"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" The skin became  rmer and brighter while the wrinkles  became less visible." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bze-nr-g0J">
-                            <rect key="frame" x="493" y="575" width="339" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The skin’s uneven tone was improved with a smoother texture and less visible pores." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyn-JW-juc">
-                            <rect key="frame" x="84" y="575" width="340" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
-                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
                 <view tag="101" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5j-nG-5OF">
                     <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_1a.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLy-jU-Ks8">
-                            <rect key="frame" x="136" y="223" width="237" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GKZ-pH-CEV">
-                            <rect key="frame" x="136" y="223" width="237" height="240"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The effect of Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vng-60-4uo">
-                            <rect key="frame" x="50" y="46" width="436" height="28"/>
+                            <rect key="frame" x="59" y="51" width="436" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="28"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_1a.png" translatesAutoresizingMaskIntoConstraints="NO" id="PLy-jU-Ks8">
+                            <rect key="frame" x="159" y="189" width="237" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="GKZ-pH-CEV">
+                            <rect key="frame" x="159" y="189" width="237" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <slider opaque="NO" tag="22" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-qR-2XQ">
-                            <rect key="frame" x="102" y="492" width="304" height="31"/>
+                            <rect key="frame" x="125" y="458" width="304" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -155,7 +49,7 @@
                             </connections>
                         </slider>
                         <slider opaque="NO" tag="23" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OBg-WV-Vkl">
-                            <rect key="frame" x="510" y="492" width="304" height="31"/>
+                            <rect key="frame" x="533" y="458" width="304" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -164,58 +58,58 @@
                             </connections>
                         </slider>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-tx-wCT">
-                            <rect key="frame" x="98" y="515" width="10" height="13"/>
+                            <rect key="frame" x="121" y="481" width="10" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we5-0L-vFL">
-                            <rect key="frame" x="47" y="530" width="112" height="21"/>
+                            <rect key="frame" x="70" y="496" width="112" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxs-Yj-0QL">
-                            <rect key="frame" x="347" y="530" width="112" height="21"/>
+                            <rect key="frame" x="370" y="496" width="112" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhG-gE-7D1">
-                            <rect key="frame" x="398" y="515" width="10" height="13"/>
+                            <rect key="frame" x="421" y="481" width="10" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="tIp-pr-Xw4">
-                            <rect key="frame" x="507" y="515" width="10" height="13"/>
+                            <rect key="frame" x="530" y="481" width="10" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQC-as-Vsa">
-                            <rect key="frame" x="456" y="530" width="112" height="21"/>
+                            <rect key="frame" x="479" y="496" width="112" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOJ-iH-ayS">
-                            <rect key="frame" x="756" y="530" width="112" height="21"/>
+                            <rect key="frame" x="779" y="496" width="112" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-Lu-fQN">
-                            <rect key="frame" x="807" y="515" width="10" height="13"/>
+                            <rect key="frame" x="830" y="481" width="10" height="13"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" The skin was plumped up for a more youthful look.  e pores became less visible, and the skin was smoother overall." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNE-Wn-f7l">
-                            <rect key="frame" x="80" y="575" width="335" height="65"/>
+                            <rect key="frame" x="103" y="541" width="335" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-ll-Yig">
-                            <rect key="frame" x="478" y="570" width="368" height="67"/>
+                            <rect key="frame" x="501" y="536" width="368" height="67"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text">Fine lines became less visible for a smooth, youthful look.  e skin became plump and resilient, diminishing the sunken look of the eyes.</string>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
@@ -223,13 +117,119 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_2a.png" translatesAutoresizingMaskIntoConstraints="NO" id="zzo-gs-kMc">
-                            <rect key="frame" x="507" y="223" width="310" height="240"/>
+                            <rect key="frame" x="530" y="189" width="310" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_ba_second_face_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-K0-xc9">
-                            <rect key="frame" x="507" y="223" width="310" height="240"/>
+                            <rect key="frame" x="530" y="189" width="310" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view tag="100" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-7p-vyH">
+                    <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The effect of Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zP-MR-X1s">
+                            <rect key="frame" x="59" y="51" width="436" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="28"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t2W-CN-eit">
+                            <rect key="frame" x="159" y="180" width="237" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-iI-E8q">
+                            <rect key="frame" x="159" y="180" width="237" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-2a-cbE">
+                            <rect key="frame" x="475" y="180" width="400" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBP-3e-nUi">
+                            <rect key="frame" x="475" y="180" width="400" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <slider opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pw1-dh-wAn">
+                            <rect key="frame" x="125" y="449" width="304" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="changeValue:" destination="xd7-s1-vLX" eventType="valueChanged" id="OkI-op-dqF"/>
+                            </connections>
+                        </slider>
+                        <slider opaque="NO" tag="21" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="AuB-G7-A9J">
+                            <rect key="frame" x="533" y="449" width="304" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="minimumTrackTintColor" red="0.60784313729999995" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="maximumTrackTintColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="changeValue:" destination="xd7-s1-vLX" eventType="valueChanged" id="Daq-2b-sVq"/>
+                            </connections>
+                        </slider>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="yab-C4-OpC">
+                            <rect key="frame" x="121" y="472" width="10" height="13"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-l5-7yb">
+                            <rect key="frame" x="70" y="487" width="112" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRK-Gv-wak">
+                            <rect key="frame" x="370" y="487" width="112" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="px0-Eb-XAU">
+                            <rect key="frame" x="421" y="472" width="10" height="13"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="oA3-nb-c10">
+                            <rect key="frame" x="530" y="472" width="10" height="13"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQu-Fb-w7N">
+                            <rect key="frame" x="479" y="487" width="112" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="After 4 weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ti-6c-m1n">
+                            <rect key="frame" x="779" y="487" width="112" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ba_up.png" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-gL-ey5">
+                            <rect key="frame" x="830" y="472" width="10" height="13"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" The skin became  rmer and brighter while the wrinkles  became less visible." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bze-nr-g0J">
+                            <rect key="frame" x="516" y="532" width="339" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The skin’s uneven tone was improved with a smoother texture and less visible pores." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyn-JW-juc">
+                            <rect key="frame" x="107" y="532" width="340" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="16"/>
+                            <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
@@ -258,7 +258,7 @@
                 <outlet property="mSecondAfterImgV" destination="yH9-2a-cbE" id="T0c-Ex-Rwz"/>
                 <outlet property="secondImgV" destination="KBP-3e-nUi" id="QtN-4V-sCA"/>
             </connections>
-            <point key="canvasLocation" x="-52" y="508"/>
+            <point key="canvasLocation" x="-52" y="582"/>
         </view>
     </objects>
     <resources>
