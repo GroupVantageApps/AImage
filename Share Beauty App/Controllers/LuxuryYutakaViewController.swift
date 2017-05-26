@@ -90,7 +90,6 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         treatmentView.setUI(page: sender.tag - 10)
         treatmentView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(treatmentView)
-        
     }
     
     func didLXYutakaConceptViewAction(_ type: LXYutakaConceptViewActionType) {
@@ -133,16 +132,19 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         bgAudioPlayer.play()
     }
     
-    func playSounds() {
-        //再生する音源のURLを生成.
-        bgAudioPlayer.pause()
-        let soundFilePath: String = Bundle.main.path(forResource: "yutaka", ofType: "m4a")!
-        let fileURL = URL(fileURLWithPath: soundFilePath)
-        do {
-            try yAudioPlayer = AVAudioPlayer(contentsOf: fileURL)
-            yAudioPlayer.play()
-        } catch {
-            print(error)
+    func playSounds(tag: Int) {
+        let url = URL.init(string: String(format:"yutakaSounds://%d",tag))
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.openURL(url!)
+        } else {
+            let alertVc = UIAlertController(
+                title: "Warning",
+                message: "App is not installed",
+                preferredStyle: .alert
+            )
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVc.addAction(defaultAction)
+            self.present(alertVc, animated: true, completion: nil)
         }
     }
 }
