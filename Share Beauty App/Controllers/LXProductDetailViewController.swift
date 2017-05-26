@@ -631,6 +631,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     }
     func didTapshowSkinGraph() {
         let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
+        skingraph.frame = CGRect(x: 0,y: 0,width: 700,height: 630)
         skingraph.setUI()
         skingraph.delegate = self
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
