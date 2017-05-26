@@ -11,7 +11,7 @@ import AVFoundation
 
 
 protocol LXYutakaTreatmentContentFirstViewDelegate: NSObjectProtocol {
-    func playSounds()
+    func playSounds(tag: Int)
 } 
 class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
@@ -22,17 +22,19 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
 
     weak var delegate: LXYutakaTreatmentContentFirstViewDelegate?  
     var mPlaySound: UIButton!
-    func setUI(image: String, title: String, description: String){
+    func setUI(image: String, title: String, description: String, index: Int){
         mPlaySound = self.viewWithTag(30) as! UIButton!
         mPlaySound.addTarget(self, action: #selector(playSound), for: .touchUpInside)
+        mPlaySound.tag = index
         mPlaySound.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         self.mImgV.image = UIImage(named: image)
         mTitleLabel.text = title
         mDescriptionLabel.text = description
     }
 
-    func playSound () {
-        delegate?.playSounds()
+    func playSound (sender: Any) {
+        let tag = (sender as AnyObject).tag
+        delegate?.playSounds(tag: tag!)
     }
 
 }

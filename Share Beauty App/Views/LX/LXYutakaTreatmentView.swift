@@ -8,7 +8,7 @@
 
 import Foundation
 protocol LXYutakaTreatmentViewDelegate: NSObjectProtocol {
-    func playSounds()
+    func playSounds(tag: Int)
 } 
 
 class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentContentFirstViewDelegate {
@@ -51,7 +51,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
             let popup: LXYutakaTreatmentContentFirstView = UINib(nibName: "LXYutakaTreatmentContentFirstView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentContentFirstView
             let csvTitleId = index*2 + 92
             let csvDescriptionId = index*2 + 93
-            popup.setUI(image: thumArray[index], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!)
+            popup.setUI(image: thumArray[index], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!, index: index)
             popup.delegate = self
             subView.addSubview(popup)
 
@@ -88,8 +88,8 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         print("Button pressed")
     }
     
-    func playSounds () {
-        delegate?.playSounds()
+    func playSounds (tag: Int) {
+        delegate?.playSounds(tag: tag)
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
