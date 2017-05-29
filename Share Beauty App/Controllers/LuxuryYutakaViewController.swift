@@ -25,6 +25,9 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(LanguageConfigure.lxyutaka)
+        let lxTreatMentArr = LanguageConfigure.lxyutaka
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
@@ -45,6 +48,24 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     
         for i in 0..<8 {
             let btn = self.view.viewWithTag(10 + i) as! UIButton
+            let index = i + 1
+            if lxTreatMentArr.contains(index) {
+                print(String(format: "id%d",index))
+                if let myconstraint = btn.constraints.filter( { c in return c.identifier == String(format: "id%d",index) }).first {
+                    myconstraint.constant = 0
+                    btn.isHidden = true
+                }
+                if index == 5 || index == 8 {
+                    if let myconstraint = mVContent.constraints.filter( { c in return c.identifier == String(format: "id%d",index + 9) }).first {
+                        myconstraint.constant = 0
+                    }
+                } else {
+                    if let myconstraint = mVContent.constraints.filter( { c in return c.identifier == String(format: "id%d",index + 10) }).first {
+                        myconstraint.constant = 0
+                    }
+                }
+            }
+            
             if i < 5 { 
                 let csvId = i + 69
                 btn.setTitle(lxArr[String(csvId)], for: .normal)

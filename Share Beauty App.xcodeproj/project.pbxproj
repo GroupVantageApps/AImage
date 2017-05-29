@@ -415,6 +415,7 @@
 		DE61C5A21EC8C4CB00415910 /* lx_howtouse_523.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */; };
 		DE61C5A31EC8C4CB00415910 /* lx_howtouse_522.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */; };
 		DE61C5A51EC9EFA800415910 /* lx_efficacy_before.png in Resources */ = {isa = PBXBuildFile; fileRef = DE61C5A41EC9EFA800415910 /* lx_efficacy_before.png */; };
+		DE6C2DB81EDBF7A9006233B3 /* lx_treatment_control.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE6C2DB71EDBF7A9006233B3 /* lx_treatment_control.plist */; };
 		DE72E1CC1ECF093100E93A78 /* lx_bio_bg_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72E1C71ECF093100E93A78 /* lx_bio_bg_left.png */; };
 		DE72E1CD1ECF093100E93A78 /* lx_bio_bg_right.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72E1C81ECF093100E93A78 /* lx_bio_bg_right.png */; };
 		DE72E1CE1ECF093100E93A78 /* lx_bio_left.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72E1C91ECF093100E93A78 /* lx_bio_left.png */; };
@@ -994,6 +995,7 @@
 		DE61C5A01EC8C4CB00415910 /* lx_howtouse_523.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_523.png; sourceTree = "<group>"; };
 		DE61C5A11EC8C4CB00415910 /* lx_howtouse_522.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_howtouse_522.png; sourceTree = "<group>"; };
 		DE61C5A41EC9EFA800415910 /* lx_efficacy_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_efficacy_before.png; sourceTree = "<group>"; };
+		DE6C2DB71EDBF7A9006233B3 /* lx_treatment_control.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lx_treatment_control.plist; sourceTree = "<group>"; };
 		DE72E1C71ECF093100E93A78 /* lx_bio_bg_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bio_bg_left.png; sourceTree = "<group>"; };
 		DE72E1C81ECF093100E93A78 /* lx_bio_bg_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bio_bg_right.png; sourceTree = "<group>"; };
 		DE72E1C91ECF093100E93A78 /* lx_bio_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_bio_left.png; sourceTree = "<group>"; };
@@ -1248,6 +1250,7 @@
 				C050C8F91E82619E0009679D /* orange_R.png */,
 				C050C8FA1E82619E0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg */,
 				C050C8FB1E82619E0009679D /* SHI-Web-F16-39_W27_HP_Ultimune_opt.jpg */,
+				DE6C2DB71EDBF7A9006233B3 /* lx_treatment_control.plist */,
 			);
 			name = temp;
 			path = Resources/temp;
@@ -2313,6 +2316,7 @@
 				DE2C90811E9C66E600B5FC4A /* LXEfficacyResultView.xib in Resources */,
 				DE1509411EBAAC87003402FE /* lx_ingredient_bg_2.png in Resources */,
 				DE72E1CD1ECF093100E93A78 /* lx_bio_bg_right.png in Resources */,
+				DE6C2DB81EDBF7A9006233B3 /* lx_treatment_control.plist in Resources */,
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,

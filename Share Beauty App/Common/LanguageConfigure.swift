@@ -14,6 +14,7 @@ class LanguageConfigure: NSObject {
     private static let defaultCountryId = 6
     private static let defaultLanguageId = 21
     private static let lxCsv = "LxCsv"
+    private static let lxYutaka = "lxYutaka"
     
     private enum UserDefaultKey: String {
         case region = "RegionId"
@@ -116,6 +117,21 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: lxCsv)
+            userDefault.synchronize()
+        }
+    }
+    
+    static var lxyutaka: [ Int ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: lxYutaka) {
+                return value as! [ Int ]
+            } else {
+                return [] 
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: lxYutaka)
             userDefault.synchronize()
         }
     }

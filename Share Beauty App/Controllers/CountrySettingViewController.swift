@@ -140,6 +140,15 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
             LanguageConfigure.lxcsv = csv
 
+            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+            let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
+            if let dic = NSDictionary(contentsOfFile: path!) as? [String: Any] {
+                print(dic)
+                print(countryCode.code)
+                let yutakaArr = dic[countryCode.code]
+                LanguageConfigure.lxyutaka = yutakaArr as! [Int]
+            }
+
             if self.delegate == nil {
                 UIApplication.shared.delegate?.window??.rootViewController =
                     UIViewController.GetViewControllerFromMainStoryboard(NavigationViewController.self) as! NavigationViewController
@@ -157,6 +166,13 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
         let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
         LanguageConfigure.lxcsv = csv
+
+        let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
+        if let dic = NSDictionary(contentsOfFile: path!) as? [String: Any] {
+            let yutakaArr = dic[countryCode.code] as! [Int]
+            LanguageConfigure.lxyutaka = yutakaArr
+        }
 
         SwiftSpinner.hide()
         if delegate == nil {

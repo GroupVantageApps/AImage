@@ -425,7 +425,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
         
         self.mScrollV.canCancelContentTouches = true
         self.mScrollV.delegate = self
-
+        self.mScrollV.isPagingEnabled = true
         
         self.mPageControl.currentPage = 0
         self.mPageControl.frame = CGRect(x: 960/2 - 100, y: self.size.height - 45, width: 200, height: 50)
