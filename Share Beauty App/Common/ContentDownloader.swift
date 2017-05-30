@@ -69,6 +69,8 @@ class ContentDownloader: NSObject {
     private var chunkedDownloadFileInfos: [[(fileId: String, fileUrl: URL)]]!
 
     func download(completion: ((ContentDownloadResult) -> ())?) {
+        Utility.log("ContentDownloader.download")
+        SwiftSpinner.show("")
         self.completion = completion
         if DownloadConfigure.apiKey == nil {
             downloadKey()
@@ -141,6 +143,7 @@ class ContentDownloader: NSObject {
     }
 
     private func downloadMaster() {
+        Utility.log("ContentDownloader.downloadMaster")
         Alamofire.request(Router.downloadMaster()).responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -159,6 +162,7 @@ class ContentDownloader: NSObject {
 
     // マスタデータをSQLiteに保存
     private func saveMasterData(json: JSON) {
+        Utility.log("ContentDownloader.saveMasterData")
         let db = ModelDatabase.getDatabase()
         if !(db.open() && db.beginTransaction()) {
             self.completion?(.failure(ContentDownloadError.dbError(db.lastError())))
