@@ -110,7 +110,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         let showMovieBtn2 = subView2.viewWithTag(20) as! UIButton!
         showMovieBtn2?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn2?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
-        
+        graphView2.tag = 60
         graphView2.setUp(left: 54, right: 118, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
         graphView2.bgImage = "ingredient_graph_bg.png"
         
@@ -152,7 +152,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         graphView3.center = CGPoint(x: (subView3.bounds.size.width)*0.5 + 15, y: 340)
         subView3.addSubview(graphView3)
         self.mScrollView.addSubview(subView3)
-        
+        graphView3.tag = 61
         graphView3.setUp(left: 54, right: 80, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         graphView3.bgImage = "ingredient_graph_bg.png"
         
@@ -169,7 +169,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
-
+        
     }
     func changePage(sender: AnyObject) {
         let x = CGFloat(self.mPageControl.currentPage) * self.mScrollView.frame.size.width

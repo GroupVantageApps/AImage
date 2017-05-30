@@ -154,7 +154,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     }
     
     func playSounds(tag: Int) {
-        let url = URL.init(string: String(format:"yutakaSounds://%d",tag))
+        let url = URL.init(string: String(format:"yutakasounds://%d",tag))
         if UIApplication.shared.canOpenURL(url!) {
             UIApplication.shared.openURL(url!)
         } else {
