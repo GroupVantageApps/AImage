@@ -26,7 +26,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-6f-vSZ">
                             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_bls_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-p9-hbb">
+                                <imageView userInteractionEnabled="NO" tag="60" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lx_bls_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-p9-hbb">
                                     <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="700" id="7uv-82-0rq"/>

@@ -141,8 +141,9 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             LanguageConfigure.lxcsv = csv
 
             let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
-            let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
-            if let dic = NSDictionary(contentsOfFile: path!) as? [String: Any] {
+//            let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
+            let path = FileTable.getPath(6104)
+            if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
                 print(dic)
                 print(countryCode.code)
                 let yutakaArr = dic[countryCode.code]
@@ -168,8 +169,9 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         LanguageConfigure.lxcsv = csv
 
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
-        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
-        if let dic = NSDictionary(contentsOfFile: path!) as? [String: Any] {
+//        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
+        let path = FileTable.getPath(6104)
+        if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
             let yutakaArr = dic[countryCode.code] as! [Int]
             LanguageConfigure.lxyutaka = yutakaArr
         }

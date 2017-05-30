@@ -25,6 +25,11 @@ class LXAngelicaView: UIView{
             let csvId = 63 + i
             label.text = lxArr[String(csvId)]
         }
+        
+        let imageBg = self.viewWithTag(60) as! UIImageView
+        imageBg.image = FileTable.getLXFileImage("lx_angelica.png")
+        
+        
     }
     
     @IBAction func close(_ sender: Any) {

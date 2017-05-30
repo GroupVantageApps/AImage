@@ -24,6 +24,8 @@ class LXProductBLSView: UIView, UIScrollViewDelegate{
     @IBOutlet weak var mConstraintTop: NSLayoutConstraint!
     
     func setUI() {
+        let imageBg = self.viewWithTag(60) as! UIImageView
+        imageBg.image = FileTable.getLXFileImage("lx_bls_bg.png")
         
         mPlayMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)

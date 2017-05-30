@@ -24,6 +24,28 @@ class LXTechBiologicalView: UIView, UIScrollViewDelegate{
         }
         self.mScrollV.delegate = self
         self.mScrollV.addSubview(firstView)
+        
+        let bgLeft = self.viewWithTag(50) as! UIImageView
+        bgLeft.image = FileTable.getLXFileImage("lx_bio_bg_left.png")
+        
+        let bgRight = self.viewWithTag(51) as! UIImageView
+        bgRight.image = FileTable.getLXFileImage("lx_bio_bg_right.png")   
+       
+        let bioRight = self.viewWithTag(70) as! UIImageView
+        bioRight.image = FileTable.getLXFileImage("lx_bio_right.png")
+        
+        let bioLeft = self.viewWithTag(71) as! UIImageView
+        bioLeft.image = FileTable.getLXFileImage("lx_bio_left.png")
+
+        let bioLoop = self.viewWithTag(72) as! UIImageView
+        bioLoop.image = FileTable.getLXFileImage("lx_bio_roop.png")
+        
+        let graphBg = self.viewWithTag(64) as! UIImageView
+        graphBg.image = FileTable.getLXFileImage("lx_bio_graph_bg.png")
+        
+        let graphBg2 = self.viewWithTag(65) as! UIImageView
+        graphBg2.image = FileTable.getLXFileImage("lx_bio_graph_bg.png")
+ 
     }
     
     func startAnimation() {

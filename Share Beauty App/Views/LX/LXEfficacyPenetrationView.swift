@@ -16,6 +16,9 @@ class LXEfficacyPenetrationView: UIView{
         firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
         self.addSubview(firstView)
         let lxArr = LanguageConfigure.lxcsv
+        let imageBg = self.viewWithTag(60) as! UIImageView
+        imageBg.image = FileTable.getLXFileImage("lx_penetration.png")
+
         for i in 0..<13 {
             let label = self.viewWithTag(10 + i) as! UILabel
             var csvId = 181 + i

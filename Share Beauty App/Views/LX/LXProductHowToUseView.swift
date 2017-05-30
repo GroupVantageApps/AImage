@@ -25,6 +25,9 @@ class LXProductHowToUseView: UIView, UIScrollViewDelegate {
         self.mScrollV.contentSize = self.mContentV.size
         if productId == 522 {
             let firstView = self.viewWithTag(100)! as UIView
+            let imageBg =  self.viewWithTag(30)! as! UIImageView
+            imageBg.image = FileTable.getLXFileImage("lx_howtouse_522.png")
+
             firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
             firstView.isHidden = false
             self.mContentV.addSubview(firstView)
@@ -36,6 +39,9 @@ class LXProductHowToUseView: UIView, UIScrollViewDelegate {
             }
         } else {
             let firstView = self.viewWithTag(101)! as UIView
+            let imageBg =  self.viewWithTag(31)! as! UIImageView
+            imageBg.image = FileTable.getLXFileImage("lx_howtouse_523.png")
+            
             firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
             firstView.isHidden = false
             self.mContentV.addSubview(firstView)

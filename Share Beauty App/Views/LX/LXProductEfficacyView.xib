@@ -1382,7 +1382,7 @@ soft glow to my skin.</string>
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_intensive.png" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-wO-3D4">
+                <imageView userInteractionEnabled="NO" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_intensive.png" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-wO-3D4">
                     <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>

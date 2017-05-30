@@ -27,7 +27,7 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
         mPlaySound.addTarget(self, action: #selector(playSound), for: .touchUpInside)
         mPlaySound.tag = index
         mPlaySound.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
-        self.mImgV.image = UIImage(named: image)
+        self.mImgV.image = FileTable.getLXFileImage(image)
         mTitleLabel.text = title
         mDescriptionLabel.text = description
     }

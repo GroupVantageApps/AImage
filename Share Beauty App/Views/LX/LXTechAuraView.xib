@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="959" height="984"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_aura.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dk0-wz-f33">
+                        <imageView userInteractionEnabled="NO" tag="60" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_aura.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dk0-wz-f33">
                             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>

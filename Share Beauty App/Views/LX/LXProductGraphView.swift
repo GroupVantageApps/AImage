@@ -165,9 +165,9 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     if i > 2 { csvId = csvId + 1 }
                     let percentStr = lxArr[String(csvId)]
                     print("\(csvId):\(percentStr)")
-                    let image = String(format: "lx_graph_%@", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
+                    let image = String(format: "lx_graph_%@.png", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
                     print(image)
-                    circleV.graphImgV.image = UIImage(named: image)
+                    circleV.graphImgV.image = FileTable.getLXFileImage(image)
                     circleV.contentLabel.text = contentStr
                     circleV.percentLabel.text = percentStr
                     circleV.drawCircle()
@@ -181,9 +181,9 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     if i > 1 { csvId = csvId + 1 }
                     let percentStr = lxArr[String(csvId)]
                     print("\(csvId):\(percentStr)")
-                    let image = String(format: "lx_graph_%@", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
+                    let image = String(format: "lx_graph_%@.png", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
                     print((percentStr?.replacingOccurrences(of: "%", with: ""))!)
-                    circleV.graphImgV.image = UIImage(named: image)
+                    circleV.graphImgV.image = FileTable.getLXFileImage(image)
                     circleV.contentLabel.text = contentStr
                     circleV.percentLabel.text = percentStr
                     circleV.drawCircle()

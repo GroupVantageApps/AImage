@@ -120,7 +120,7 @@
                             <rect key="frame" x="598" y="341" width="316" height="239"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ls-0A-UPm">
+                                <imageView userInteractionEnabled="NO" tag="70" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ls-0A-UPm">
                                     <rect key="frame" x="0.0" y="0.0" width="316" height="239"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -164,7 +164,7 @@ Defensive Gene: </string>
                             <rect key="frame" x="40" y="126" width="336" height="263"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-gY-etQ">
+                                <imageView userInteractionEnabled="NO" tag="71" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-gY-etQ">
                                     <rect key="frame" x="0.0" y="0.0" width="336" height="263"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -208,7 +208,7 @@ Defensive Gene: </string>
                             <rect key="frame" x="302" y="193" width="340" height="387"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_roop.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dyz-an-cWC">
+                                <imageView userInteractionEnabled="NO" tag="72" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_roop.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dyz-an-cWC">
                                     <rect key="frame" x="6" y="14" width="310" height="288"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -261,11 +261,11 @@ on the skin</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_graph_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-U0-0KO">
+                        <imageView userInteractionEnabled="NO" tag="64" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_graph_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-U0-0KO">
                             <rect key="frame" x="114" y="697" width="230" height="178"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_graph_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iw3-vY-CHI">
+                        <imageView userInteractionEnabled="NO" tag="65" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_bio_graph_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iw3-vY-CHI">
                             <rect key="frame" x="637" y="697" width="230" height="178"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>

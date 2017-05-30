@@ -16,6 +16,9 @@ class LXTechAuraView: UIView{
         firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
         self.addSubview(firstView)
         
+        let imageBg = self.viewWithTag(60) as! UIImageView
+        imageBg.image = FileTable.getLXFileImage("lx_aura.png")
+        
         let lxArr = LanguageConfigure.lxcsv
         for i in 0..<11 {
             let label = firstView.viewWithTag(10 + i) as! UILabel
