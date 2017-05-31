@@ -334,7 +334,6 @@
 		DE2C90A11E9C66E600B5FC4A /* LXYutakaTreatmentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2C90771E9C66E600B5FC4A /* LXYutakaTreatmentView.xib */; };
 		DE2C90A21E9C66E600B5FC4A /* MoviePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C90781E9C66E600B5FC4A /* MoviePlayerView.swift */; };
 		DE2C90A31E9C66E600B5FC4A /* MoviePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2C90791E9C66E600B5FC4A /* MoviePlayerView.xib */; };
-		DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */; };
 		DE2C91321E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91261E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard */; };
 		DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91281E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard */; };
 		DE2C91341E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C912A1E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard */; };
@@ -845,7 +844,6 @@
 		DE2C90771E9C66E600B5FC4A /* LXYutakaTreatmentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXYutakaTreatmentView.xib; sourceTree = "<group>"; };
 		DE2C90781E9C66E600B5FC4A /* MoviePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerView.swift; sourceTree = "<group>"; };
 		DE2C90791E9C66E600B5FC4A /* MoviePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
-		DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lx_bg.m4a; sourceTree = "<group>"; };
 		DE2C91271E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemsDisplayedViewController.storyboard; sourceTree = "<group>"; };
 		DE2C91291E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryIngredientViewController.storyboard; sourceTree = "<group>"; };
 		DE2C912B1E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryProductDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -1576,15 +1574,6 @@
 			path = LX;
 			sourceTree = "<group>";
 		};
-		DE2C91211E9C67FD00B5FC4A /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */,
-			);
-			name = Sounds;
-			path = Resources/Sounds;
-			sourceTree = "<group>";
-		};
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
@@ -1770,7 +1759,6 @@
 			isa = PBXGroup;
 			children = (
 				DE2C91381E9C682500B5FC4A /* lx_app */,
-				DE2C91211E9C67FD00B5FC4A /* Sounds */,
 				C050C9B01E8276C60009679D /* Font */,
 				C050C9221E8267450009679D /* utm */,
 				C050C8D41E82619E0009679D /* 17SS */,
@@ -2063,7 +2051,6 @@
 				DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
 				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
-				DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */,
 				C097F5C31DDF2D0C004814F8 /* IbukiFeaturesView.xib in Resources */,
 				C0306D501D6EC52C00D56F45 /* CollectionProductView.xib in Resources */,
 				C050C98B1E8267450009679D /* f_effect_2.png in Resources */,

@@ -136,7 +136,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         }
     }
     func endMovie() {
-            let soundFilePath: String = Bundle.main.path(forResource: "lx_bg", ofType: "m4a")!
+        let soundFilePath = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_bg.m4a"))
             let fileURL = URL(fileURLWithPath: soundFilePath)
             do {
                 try bgAudioPlayer = AVAudioPlayer(contentsOf: fileURL)
