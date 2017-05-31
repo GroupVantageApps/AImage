@@ -220,7 +220,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         self.mScrollV.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
     func close() {
-        self.isHidden = true
+        self.removeFromSuperview()
         print("Button pressed")
     }
 

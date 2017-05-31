@@ -465,7 +465,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     }
 
     func close() {
-        self.isHidden = true
+        self.removeFromSuperview()
         print("Button pressed")
     }
     

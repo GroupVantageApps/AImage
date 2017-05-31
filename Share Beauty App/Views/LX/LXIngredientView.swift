@@ -64,16 +64,16 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
     }
     
     @IBAction func close(_ sender: Any) {
-         self.isHidden = true
+         self.removeFromSuperview()
     }
     
     @IBAction func showSkinGraph(_ sender: Any) {
-        self.isHidden = true
+        self.removeFromSuperview()
         delegate?.didTapshowSkinGraph()
     }
     @IBAction func showMovie(_ sender: Any) {
         
-        self.isHidden = true
+        self.removeFromSuperview()
         delegate?.movieAct()
     }
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

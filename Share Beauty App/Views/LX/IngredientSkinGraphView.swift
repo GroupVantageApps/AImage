@@ -186,7 +186,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         }
     }
     func close() {
-        self.isHidden = true
+        self.removeFromSuperview()
         print("Button pressed")
     }
     @IBAction func showMovie(_ sender: Any) {

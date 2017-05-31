@@ -80,7 +80,7 @@ class LXYutakaConceptSubView: UIView ,UIScrollViewDelegate{
         mPageControl.currentPage = Int(pageNumber)
     }
     func close() {
-        self.isHidden = true
+        self.removeFromSuperview()
         print("Button pressed")
     }
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

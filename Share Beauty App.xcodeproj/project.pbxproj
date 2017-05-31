@@ -335,7 +335,6 @@
 		DE2C90A21E9C66E600B5FC4A /* MoviePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C90781E9C66E600B5FC4A /* MoviePlayerView.swift */; };
 		DE2C90A31E9C66E600B5FC4A /* MoviePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2C90791E9C66E600B5FC4A /* MoviePlayerView.xib */; };
 		DE2C91241E9C67FD00B5FC4A /* lx_bg.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */; };
-		DE2C91251E9C67FD00B5FC4A /* yutaka.m4a in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91231E9C67FD00B5FC4A /* yutaka.m4a */; };
 		DE2C91321E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91261E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard */; };
 		DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91281E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard */; };
 		DE2C91341E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C912A1E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard */; };
@@ -847,7 +846,6 @@
 		DE2C90781E9C66E600B5FC4A /* MoviePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerView.swift; sourceTree = "<group>"; };
 		DE2C90791E9C66E600B5FC4A /* MoviePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
 		DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lx_bg.m4a; sourceTree = "<group>"; };
-		DE2C91231E9C67FD00B5FC4A /* yutaka.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = yutaka.m4a; sourceTree = "<group>"; };
 		DE2C91271E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemsDisplayedViewController.storyboard; sourceTree = "<group>"; };
 		DE2C91291E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryIngredientViewController.storyboard; sourceTree = "<group>"; };
 		DE2C912B1E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryProductDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -1582,7 +1580,6 @@
 			isa = PBXGroup;
 			children = (
 				DE2C91221E9C67FD00B5FC4A /* lx_bg.m4a */,
-				DE2C91231E9C67FD00B5FC4A /* yutaka.m4a */,
 			);
 			name = Sounds;
 			path = Resources/Sounds;
@@ -2165,7 +2162,6 @@
 				C050C9801E8267450009679D /* efficacy_triangle.png in Resources */,
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
 				DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */,
-				DE2C91251E9C67FD00B5FC4A /* yutaka.m4a in Resources */,
 				C050C9081E82619F0009679D /* ss_hukidashi_1.png in Resources */,
 				C050C9AD1E8267450009679D /* utm_square.png in Resources */,
 				C03520DA1D9E88D7005129B5 /* IdealResultCell.xib in Resources */,

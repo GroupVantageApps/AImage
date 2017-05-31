@@ -45,7 +45,7 @@ class LXEfficacyPenetrationView: UIView{
     }
     
     @IBAction func close(_ sender: Any) {
-        self.isHidden = true
+        self.removeFromSuperview()
     }
 
 }
