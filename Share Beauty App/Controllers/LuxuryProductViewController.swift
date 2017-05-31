@@ -24,13 +24,17 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     
     var bgAudioPlayer: AVAudioPlayer!
 
+    @IBOutlet weak var mGraphBtn: UIButton!
     @IBOutlet weak var mBABtn: UIButton!
+    @IBOutlet weak var mBLSBtn: UIButton!
 
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     override
     func viewDidLoad() {
         super.viewDidLoad()
         self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
+        self.mBLSBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_bls_btn.png"), for: .normal)
+        self.mGraphBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_graph_btn.png"), for: .normal)
 
         mScrollV.delegate = self
         mHeaderView.delegate = self
@@ -134,8 +138,12 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         self.view.addSubview(blsView)
     }
     @IBAction func onTapGraph(_ sender: Any) {
+        if let gView = self.view.viewWithTag(150) {
+            gView.removeFromSuperview()
+        }
         let blsView: LXProductGraphView = UINib(nibName: "LXProductGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphView
         blsView.setUI()
+        blsView.tag = 150
         blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(blsView)
         blsView.startAnimation(tag: 100)

@@ -73,15 +73,15 @@ class LogManager: NSObject {
         value.product = productId
         LogTable.insertProductLog(value)
     }
-
-    class func tapLifeStyleProduct(screenCode: String, productId: Int) {
+    class func tapLifeStyleItem(screenCode: String, itemId: String) {
+        
         var value: DBInsertValueLog = DBInsertValueLog()
         value.screen = screenCode
-        value.action = Const.logActionTapProduct
-        value.product = productId
+        value.action = Const.logActionTapItem
+        value.item = itemId
+        
         LogTable.insert(value)
     }
-
     class func sendLog() {
 
         let log = LogTable.total()

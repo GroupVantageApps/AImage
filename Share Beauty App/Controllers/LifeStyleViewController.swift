@@ -249,7 +249,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         mCollectionV.reloadData()
         let logItemId = "1" + String(index)
         print(logItemId)
-        LogManager.tapItem(screenCode: mScreen.code, itemId: logItemId)
+        LogManager.tapLifeStyleItem(screenCode: mScreen.code, itemId: logItemId)
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

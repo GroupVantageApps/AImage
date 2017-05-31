@@ -37,7 +37,6 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.addSubview(mXbutton)
         
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 3, height: self.mScrollView.frame.size.height)
-        self.mScrollView.isPagingEnabled = true
         
         mframe.size = self.mScrollView.frame.size
         print(mframe)
@@ -111,7 +110,6 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         showMovieBtn2?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn2?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         graphView2.tag = 60
-        graphView2.setUp(left: 54, right: 118, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
         graphView2.bgImage = "ingredient_graph_bg.png"
         
         let subvewNib3 = UINib(nibName: "IngredientSkinGraphContentView", bundle: nil)
@@ -153,11 +151,11 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         subView3.addSubview(graphView3)
         self.mScrollView.addSubview(subView3)
         graphView3.tag = 61
-        graphView3.setUp(left: 54, right: 80, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         graphView3.bgImage = "ingredient_graph_bg.png"
         
         configurePageControl()
         
+        self.mScrollView.isPagingEnabled = true
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
         
     }
@@ -176,9 +174,16 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.mScrollView.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
+        let lxArr = LanguageConfigure.lxcsv
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         self.mPageControl.currentPage = Int(pageNumber)
+        if  Int(pageNumber) == 1 {
+            let graphView2 = self.viewWithTag(60) as! LXGraphView
+            graphView2.setUp(left: 54, right: 118, l_title: lxArr["37"]!,r_title: lxArr["38"]!)
+        } else if Int(pageNumber) == 2 {
+            let graphView3 = self.viewWithTag(61) as! LXGraphView
+            graphView3.setUp(left: 54, right: 80, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
+        }
     }
     func close() {
         self.isHidden = true

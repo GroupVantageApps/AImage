@@ -132,9 +132,13 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
         self.view.addSubview(blsView)
     }
     @IBAction func onTapGraph(_ sender: Any) {
+        if let gView = self.view.viewWithTag(150) {
+            gView.removeFromSuperview()
+        }
         let blsView: LXProductGraphView = UINib(nibName: "LXProductGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductGraphView
         blsView.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
         blsView.setUI()
+        blsView.tag = 150
         blsView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(blsView)
         blsView.startAnimation(tag: 100)

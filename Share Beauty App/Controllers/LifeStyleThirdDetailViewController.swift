@@ -109,7 +109,7 @@ class LifeStyleThirdDetailViewController: UIViewController, NavigationController
                 productDetailVc.relationProducts = productList.products
                 delegate?.nextVc(productDetailVc)
             }
-
+            
             LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
         }
     }

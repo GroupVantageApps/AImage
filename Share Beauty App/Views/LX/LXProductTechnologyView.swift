@@ -96,6 +96,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
         
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         self.mPageControl.currentPage = Int(pageNumber)
+
     }
     func changePage(sender: AnyObject) {
         let x = CGFloat(mPageControl.currentPage) * self.mScrollV.frame.size.width

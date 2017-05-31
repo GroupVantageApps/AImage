@@ -618,9 +618,13 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
     }
     func didTapshowSkinGraph() {
+        if let gView = self.view.viewWithTag(150) {
+            gView.removeFromSuperview()
+        }
         let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
         skingraph.setUI()
         skingraph.delegate = self
+        skingraph.tag = 150
         skingraph.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(skingraph)
     }
