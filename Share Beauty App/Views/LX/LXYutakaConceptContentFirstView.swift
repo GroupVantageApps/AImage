@@ -13,7 +13,18 @@ class LXYutakaConceptContentFirstView: UIView {
 
     @IBOutlet weak var mImgV: UIImageView!
     func setUI(){
-        self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_1.png")
+        let path = FileTable.getPath(6108)
+        if let arr = NSArray(contentsOf: path) as? [String] {
+            print(arr)
+            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+            if arr.contains(countryCode.code){
+                self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_1b.png")
+            } else {
+                self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_1.png")
+            }
+        } else {
+            self.mImgV.image = FileTable.getLXFileImage("lx_yutaka_sub_1.png")
+        }
         let lxArr = LanguageConfigure.lxcsv
         let titleLabel = self.viewWithTag(10) as! UILabel
         titleLabel.text = lxArr["83"]

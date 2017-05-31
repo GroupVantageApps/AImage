@@ -141,7 +141,6 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             LanguageConfigure.lxcsv = csv
 
             let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
-//            let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
             let path = FileTable.getPath(6104)
             if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
                 print(dic)

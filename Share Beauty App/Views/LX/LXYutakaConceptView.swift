@@ -40,7 +40,19 @@ class LXYutakaConceptView: UIView  ,UIScrollViewDelegate{
         showMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
-        self.mToolBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_1.png"), for: .normal)
+        let path = FileTable.getPath(6108)
+        if let arr = NSArray(contentsOf: path) as? [String] {
+            print(arr)
+            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+            if arr.contains(countryCode.code){
+                self.mToolBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_1b.png"), for: .normal)
+            } else {
+                self.mToolBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_1.png"), for: .normal)
+            }
+        } else {
+            self.mToolBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_1.png"), for: .normal)
+        }
+        
         self.mMusicBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_2.png"), for: .normal)
         self.mSmellBtn.setImage(FileTable.getLXFileImage("lx_yutaka_c_3.png"), for: .normal)
         
