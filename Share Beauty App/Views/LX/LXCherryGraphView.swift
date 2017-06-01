@@ -29,6 +29,7 @@ class LXCherryGraphView: UIView{
             let label = self.viewWithTag(10 + i) as! UILabel
             var csvId = 49 + i
             if i == 3 { csvId = 39 }
+            else if i == 2 { csvId = 51 }
             label.text = lxArr[String(csvId)]
             
         }

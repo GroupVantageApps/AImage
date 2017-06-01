@@ -23,15 +23,12 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
     var mScrollView = UIScrollView()
     var mContentV: UIView!
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38 , y: 16.7, width: 38, height: 38))
+    var defaultArr = [0,1,2,3,4,5,6,7]
     
     func setUI(page: Int) {
         
         self.mScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 960, height: self.size.height))
-        self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.mScrollView.frame.size.width * 8, height: self.size.height))
-        self.mScrollView.addSubview(mContentV)
-        self.mScrollView.minimumZoomScale = 1.0
-        self.mScrollView.maximumZoomScale = 6.0
-        self.mScrollView.contentSize = self.mContentV.size
+        
 
         self.mScrollView.delegate = self
         self.mScrollView.showsHorizontalScrollIndicator = false
@@ -43,27 +40,45 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         self.addSubview(mXbutton)
         
         let lxArr = LanguageConfigure.lxcsv
-        for index in 0..<8 {
+
+        let lxTreatMentArr = LanguageConfigure.lxyutaka
+        for id in lxTreatMentArr {
+            if defaultArr.contains(id - 1){
+                let index = defaultArr.index(of: id - 1)
+                defaultArr.remove(at: index!)
+            }
+        }
+        print("-----------------------------")
+        print(defaultArr.index(of: page)!)
+
+        self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.mScrollView.frame.size.width * CGFloat(defaultArr.count), height: self.size.height))
+        self.mScrollView.addSubview(mContentV)
+        self.mScrollView.minimumZoomScale = 1.0
+        self.mScrollView.maximumZoomScale = 6.0
+        self.mScrollView.contentSize = self.mContentV.size
+        
+        for index in 0..<defaultArr.count {
             mframe.origin.x = self.mScrollView.frame.size.width * CGFloat(index)
             mframe.size = self.mScrollView.frame.size
             let subView = UIView(frame: mframe)
             
             let popup: LXYutakaTreatmentContentFirstView = UINib(nibName: "LXYutakaTreatmentContentFirstView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentContentFirstView
-            let csvTitleId = index*2 + 92
-            let csvDescriptionId = index*2 + 93
-            popup.setUI(image: thumArray[index], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!, index: index)
+            let csvTitleId = (defaultArr[index])*2 + 92
+            let csvDescriptionId = (defaultArr[index])*2 + 93
+            popup.setUI(image: thumArray[defaultArr[index]], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!, index: index)
             popup.delegate = self
             subView.addSubview(popup)
 
             self.mContentV.addSubview(subView)
         }
-        self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * 8, height: self.mScrollView.frame.size.height)
-        self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(page), y:0), animated: false)
+        self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * CGFloat(defaultArr.count), height: self.mScrollView.frame.size.height)
+        self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(defaultArr.index(of: page)!), y:0), animated: false)
         self.mScrollView.isPagingEnabled = true
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
         configurePageControl()
-        self.mPageControl.numberOfPages = 8
-        mPageControl.currentPage = page
+        self.mPageControl.numberOfPages = defaultArr.count
+
+        mPageControl.currentPage = defaultArr.index(of: page)!
     }
     
     func configurePageControl() {

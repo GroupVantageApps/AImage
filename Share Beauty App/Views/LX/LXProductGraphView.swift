@@ -132,7 +132,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     label.text = lxArr[String(csvId)]
                     
                 } else{
-                    if i < 5{
+                    if i < 7 {
                         let label = view.viewWithTag(20 + i) as! UILabel
                         var csvId = 0
                         switch i {
@@ -147,12 +147,11 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                         case 4:
                             csvId = 178
                         case 5:
-                            csvId = 181
+                            csvId = 180
                         case 6:
                             csvId = 141
                         default: break
                         }
-                        
                         label.text = lxArr[String(csvId)]
                     }
                 }

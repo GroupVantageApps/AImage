@@ -24,7 +24,7 @@ class LXEfficacyPenetrationView: UIView{
             var csvId = 181 + i
             if i > 8 { csvId = csvId + 6 } 
             label.text = lxArr[String(csvId)]
-            
+            label.adjustsFontSizeToFitWidth = true
         }
         
         for i in 0..<5 {
@@ -35,11 +35,16 @@ class LXEfficacyPenetrationView: UIView{
             label.text = lxArr[String(csvId)]
             label2.text = lxArr[String(csvId)]
             label3.text = lxArr[String(csvId)]
+            
+            label.adjustsFontSizeToFitWidth = true
+            label2.adjustsFontSizeToFitWidth = true
+            label3.adjustsFontSizeToFitWidth = true
         }
         for i in 0..<3 {
             let label = self.viewWithTag(50 + i) as! UILabel
             let csvId = 195
             label.text = lxArr[String(csvId)]
+            label.adjustsFontSizeToFitWidth = true
         }
 
     }

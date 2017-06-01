@@ -33,8 +33,17 @@ class LXGreenTeaView: UIView{
         for i in 0..<5 {
             let label = self.viewWithTag(10 + i) as! UILabel
             var csvId = 55 + i
-            if i > 4 { csvId = csvId + 3 }
+            if i > 3 { csvId = csvId + 3 }
+            if i == 4 { csvId = 61
+                print(lxArr[String(csvId)] ?? "なし") }
             label.text = lxArr[String(csvId)]
+            
+            if i == 3 || i == 4 {
+                let label = self.viewWithTag(30 + i) as! UILabel
+                var csvId = 55 + i
+                if i == 4 { csvId = 61 }
+                label.text = lxArr[String(csvId)]
+            }
             
         }
         

@@ -54,6 +54,12 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
             let label = firstView.viewWithTag(10 + i) as! UILabel
             let csvId = 116 + i
             label.text = lxArr[String(csvId)]
+            
+            if i == 1 || i == 2 {
+                let label = firstView.viewWithTag(30 + i) as! UILabel
+                let csvId = 121 + i
+                label.text = lxArr[String(csvId)]
+            }
         }
         
         let secondView = self.viewWithTag(101)! as UIView
@@ -63,6 +69,12 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
             let label = secondView.viewWithTag(10 + i) as! UILabel
             let csvId = 121 + i
             label.text = lxArr[String(csvId)]
+            
+            if i == 1 || i == 2 {
+                let label = secondView.viewWithTag(30 + i) as! UILabel
+                let csvId = 121 + i
+                label.text = lxArr[String(csvId)]
+            }
         }
         
         self.mContentV.addSubview(firstView)

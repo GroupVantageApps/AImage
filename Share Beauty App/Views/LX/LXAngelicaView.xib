@@ -21,14 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angelica Root Extract" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENB-ej-ekw">
-                    <rect key="frame" x="180" y="139" width="338" height="41"/>
+                    <rect key="frame" x="145" y="139" width="408" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Kge-Va-kEB"/>
-                        <constraint firstAttribute="width" constant="338" id="wPp-Ko-O4s"/>
+                        <constraint firstAttribute="width" constant="408" id="wPp-Ko-O4s"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="31"/>
                     <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <imageView userInteractionEnabled="NO" tag="60" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_angelica.png" translatesAutoresizingMaskIntoConstraints="NO" id="8HA-jF-HTA">
                     <rect key="frame" x="175" y="295" width="365" height="240"/>
@@ -59,6 +62,9 @@
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VE-aR-QK0">
                     <rect key="frame" x="128" y="199" width="444" height="21"/>
@@ -77,6 +83,9 @@
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +94,7 @@
                 <constraint firstItem="3VE-aR-QK0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="128" id="DgW-NY-4bC"/>
                 <constraint firstItem="CN6-pT-gVA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="177" id="KN4-As-Gnf"/>
                 <constraint firstItem="CN6-pT-gVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="127" id="MMj-jK-8Qu"/>
-                <constraint firstItem="ENB-ej-ekw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="180" id="a0c-ZK-e8D"/>
+                <constraint firstItem="ENB-ej-ekw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="145" id="a0c-ZK-e8D"/>
                 <constraint firstItem="3VE-aR-QK0" firstAttribute="top" secondItem="CN6-pT-gVA" secondAttribute="bottom" constant="1" id="q6t-kx-IkX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
