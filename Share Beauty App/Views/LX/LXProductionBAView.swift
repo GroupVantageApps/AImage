@@ -40,6 +40,12 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.mFirstAfterImgV.image =  FileTable.getLXFileImage("photo_1_after.png")
         self.secondImgV.image =  FileTable.getLXFileImage("photo_2_before.png")
         self.mSecondAfterImgV.image =  FileTable.getLXFileImage("photo_2_after.png")
+        
+        self.mSFirstImgV.image =  FileTable.getLXFileImage("lx_ba_second_face_1.png")
+        self.mSFirstAfterImgV.image =  FileTable.getLXFileImage("lx_ba_second_face_1a.png")
+        self.mSSecondImgV.image =  FileTable.getLXFileImage("lx_ba_second_face_2.png")
+        self.mSSecondAfterImgV.image =  FileTable.getLXFileImage("lx_ba_second_face_2a.png")
+
         self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
         self.mScrollV.isPagingEnabled = true
         self.mScrollV.delaysContentTouches = false
