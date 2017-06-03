@@ -403,6 +403,9 @@ class ContentDownloader: NSObject {
         do {
             let destinationURL = try Zip.quickUnzipFile(csvFileUrl)
             print(destinationURL)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
+            LanguageConfigure.lxcsv = csv
         } catch let e {
             print(e)
         }

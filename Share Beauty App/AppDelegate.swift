@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func getLifeStyleBeautyCount() {
         Alamofire.request(Const.lifeStyleBeautyCountUrl).responseJSON { response in
+            print(response)
             if let value = response.result.value {
                 LifeStyleBeautyCount.save(remoteData: JSON(value)["summary"])
             }
