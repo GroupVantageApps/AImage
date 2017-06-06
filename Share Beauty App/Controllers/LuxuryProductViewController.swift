@@ -16,6 +16,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Luxury Products"
     var products: [ProductData]!
+    var tmpProducts: [ProductData]!
     private var mUpperSteps = [DBStructStep]()
     private var mLowerSteps = [DBStructLineStep]()
     var isEnterWithNavigationView: Bool = true
@@ -35,7 +36,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
         self.mBLSBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_bls_btn.png"), for: .normal)
         self.mGraphBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_graph_btn.png"), for: .normal)
-
+        tmpProducts = []
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
@@ -57,6 +58,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                 stepLbl.text = lxArr[String(stepCsvId)]
                 products = ProductListData(productIds: step.product).products
                 for (index, product) in products.enumerated() {
+                    tmpProducts.append(product)
                     let productLbl = baseV.viewWithTag(index + 40) as! UILabel
                     productLbl.text = product.productName
                     let lineHeight: CGFloat = 20.0
@@ -72,6 +74,12 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                     let image = baseV.viewWithTag(index + 30) as! UIImageView
                     image.image =  FileTable.getImage(product.image)
 
+                    let btn = baseV.viewWithTag(index + 80) as! BaseButton
+                    btn.isSelected = Bool(product.recommend as NSNumber)
+                    btn.addTarget(self, action: #selector(LuxuryProductViewController.onTapRecommend(_:)), for: UIControlEvents.touchUpInside)
+                    if i == 1 { btn.tag = btn.tag + 6 }
+                    if i == 2 { btn.tag = btn.tag + 11 }
+                    
                     let button = baseV.viewWithTag(index + 50) as! UIButton
                     button.tag = product.productId
                     button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControlEvents.touchUpInside)
@@ -167,5 +175,24 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     }
     func endMovie() {
         bgAudioPlayer.play()
+    }
+
+    func onTapRecommend(_ sender: BaseButton) {
+        sender.isSelected = !sender.isSelected
+        let product = tmpProducts[sender.tag - 80]
+        
+        if sender.isSelected {
+            if RecommendTable.check(product.productId) == 0 {
+                var value: DBInsertValueRecommend = DBInsertValueRecommend()
+                value.product = product.productId
+                value.line = product.lineId
+                value.beautySecond = product.beautySecondId
+                RecommendTable.insert(value)
+            }
+            LogManager.tapProductReccomend(recommedFlg: 1, productId: product.productId, screenCode: self.mScreen.code)
+        } else {
+            RecommendTable.delete(product.productId)
+            LogManager.tapProductReccomend(recommedFlg: -1, productId: product.productId, screenCode: self.mScreen.code)
+        }
     }
 }

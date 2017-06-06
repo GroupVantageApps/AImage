@@ -241,6 +241,42 @@
                                                             <action selector="onTapGraph:" destination="T4m-bh-eTl" eventType="touchUpInside" id="5iE-uh-puk"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" tag="80" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-4M-Blr" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="53" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="81" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLJ-km-Rlz" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="211" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="82" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziZ-qP-2Hz" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="358" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="83" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrl-1Y-kNv" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="492" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="84" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29F-Z9-26n" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="631" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="85" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2Q-Y7-BAU" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="795" y="226" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                             </view>
@@ -405,6 +441,36 @@
                                                         <rect key="frame" x="495" y="80" width="100" height="180"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </button>
+                                                    <button opaque="NO" tag="80" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpC-Cg-QJ6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="52" y="164" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="81" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR5-hF-Vja" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="158" y="164" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="83" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qp-1j-hbE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="266" y="164" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="82" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7i-26-5tI" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="369" y="164" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="84" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpT-DR-O6b" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="472" y="164" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.30021551724137929" colorSpace="calibratedRGB"/>
                                             </view>
@@ -483,6 +549,18 @@
                                                         <rect key="frame" x="158" y="80" width="100" height="180"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </button>
+                                                    <button opaque="NO" tag="80" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zU-ea-n2L" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="26" y="165" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
+                                                    <button opaque="NO" tag="81" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg1-jv-UWw" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="140" y="165" width="51" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" image="lx_icon_recommend_large.png"/>
+                                                        <state key="selected" image="lx_icon_recommend_selected.png"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.29916487068965519" colorSpace="calibratedRGB"/>
                                             </view>
@@ -520,6 +598,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lx_icon_recommend_large.png" width="31" height="31"/>
+        <image name="lx_icon_recommend_selected.png" width="31" height="31"/>
         <image name="lx_product_bls_btn.png" width="78" height="78"/>
         <image name="lx_product_graph_btn.png" width="78" height="79"/>
     </resources>

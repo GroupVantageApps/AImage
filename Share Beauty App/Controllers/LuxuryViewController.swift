@@ -117,6 +117,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     @IBAction func outApp(_ sender: Any) {
         mDropDown.show()
     }
+
     @IBAction func goTop(_ sender: Any) {
         self.showTop()
     }

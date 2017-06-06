@@ -80,7 +80,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
 
         mPageControl.currentPage = defaultArr.index(of: page)!
     }
-    
+
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
 
