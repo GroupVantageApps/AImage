@@ -118,6 +118,13 @@ class LifeStyleProductView: BaseView {
             mBtnRecommend.isSelected = self.isRecommend
         }
     }
+	
+	var isHiddenRecommendButton: Bool {
+		get { return self.mBtnRecommend.isHidden }
+		set {
+			self.mBtnRecommend.isHidden = newValue
+		}
+	}
 
     var isHighlighted: Bool = false {
         didSet {
