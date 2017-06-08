@@ -69,7 +69,7 @@ Pure indulgence for your skin.</string>
                                         <constraint firstAttribute="height" constant="200" id="hfM-kx-rym"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="tappedMusicBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="O6l-gQ-nPa"/>
+                                        <action selector="tappedSmellBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="tDD-JE-FzJ"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-6p-wBn">
@@ -79,7 +79,7 @@ Pure indulgence for your skin.</string>
                                         <constraint firstAttribute="width" constant="200" id="YHg-l1-4tU"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="tappedToolBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="cmH-LF-LHB"/>
+                                        <action selector="tappedMusicBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="6B5-vA-VN6"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlm-xN-AX6">
@@ -119,7 +119,7 @@ Pure indulgence for your skin.</string>
                                         <constraint firstAttribute="height" constant="200" id="ag4-wC-Akl"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="tappedSmellBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="izZ-dZ-qnj"/>
+                                        <action selector="tappedToolBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="a6J-s2-S5V"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-Je-5Ze">

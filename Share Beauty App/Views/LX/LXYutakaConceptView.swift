@@ -8,7 +8,7 @@
 
 import Foundation
 enum LXYutakaConceptViewActionType: Int {
-    case sounds, tool, music, smell
+    case tool, music, smell
 }
 
 protocol LXYutakaConceptViewDelegate: NSObjectProtocol {
