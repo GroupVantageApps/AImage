@@ -13,6 +13,7 @@ class LifeStyleThirdDetailViewController: UIViewController, NavigationController
     @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak private var mVContent: UIView!
+	@IBOutlet weak var mTopImageView: UIImageView!
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
@@ -30,6 +31,9 @@ class LifeStyleThirdDetailViewController: UIViewController, NavigationController
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
+		
+		let imageId = AppItemTranslateTable.getEntity(7800).mainImage.first
+		self.mTopImageView.image = FileTable.getImage(imageId)
     }
 
     override func viewWillAppear(_ animated: Bool) {

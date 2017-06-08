@@ -27,6 +27,7 @@ class LifeStyleProductView: BaseView {
     @IBOutlet weak private var mLblWhy: UILabel!
     @IBOutlet weak private var mBtnWhy: BaseButton!
     @IBOutlet weak private var mLblHeader: UILabel!
+	@IBOutlet weak var mBackImageView: UIImageView!
 
     @IBOutlet weak private var mAnswerViewTopToTop: NSLayoutConstraint!
     @IBOutlet weak private var mAnswerViewTopToBottom: NSLayoutConstraint!
@@ -152,6 +153,9 @@ class LifeStyleProductView: BaseView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         mBtnProduct.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+		
+		let imageId = AppItemTranslateTable.getEntity(7920).mainImage.first
+		self.mBackImageView.image = FileTable.getImage(imageId)
     }
 
     override func updateConstraints() {

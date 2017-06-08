@@ -116,13 +116,11 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     func didLXYutakaConceptViewAction(_ type: LXYutakaConceptViewActionType) {
         mConceptView.isHidden = true
         let subView: LXYutakaConceptSubView = UINib(nibName: "LXYutakaConceptSubView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptSubView
-        subView.setUI()
+        subView.setUI(page: type.rawValue)
         subView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
         self.view.addSubview(subView)
         
         switch type {
-        case .sounds:
-            print("tapped sounds")
         case .tool:
             print("tapped tool")
         case .music:
