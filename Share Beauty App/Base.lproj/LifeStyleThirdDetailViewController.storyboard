@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,42 +23,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-Yc-VdE">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="168" width="1024" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41k-i0-R4D">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRL-hy-DpI">
-                                                <rect key="frame" x="0.0" y="100" width="1024" height="568"/>
+                                                <rect key="frame" x="0.0" y="78" width="1024" height="444"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0c1-Qg-9tV">
-                                                        <rect key="frame" x="340.5" y="0.0" width="1" height="568"/>
+                                                        <rect key="frame" x="340.5" y="0.0" width="1" height="444"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1" id="mAL-me-cxH"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5t7-Gi-EXo">
-                                                        <rect key="frame" x="682.5" y="0.0" width="1" height="568"/>
+                                                        <rect key="frame" x="682.5" y="0.0" width="1" height="444"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1" id="5Oh-Nj-b4L"/>
                                                         </constraints>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-fO-Tfy" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="568"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="444"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-mQ-ojG" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="341.5" y="0.0" width="341" height="568"/>
+                                                        <rect key="frame" x="341.5" y="0.0" width="341" height="444"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-BQ-aQd" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="683.5" y="0.0" width="340.5" height="568"/>
+                                                        <rect key="frame" x="683.5" y="0.0" width="340.5" height="444"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="beautyName" value="Beauty Tips"/>
@@ -110,19 +110,29 @@ work on dark circles.</string>
                                     <constraint firstItem="41k-i0-R4D" firstAttribute="height" secondItem="QUo-Yc-VdE" secondAttribute="height" id="yDa-oU-BcZ"/>
                                 </constraints>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-TY-pFf">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="k0T-pJ-xNG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8Y0-TY-pFf" firstAttribute="top" secondItem="Hbt-Ki-zzj" secondAttribute="bottom" id="OR1-Ih-Poy"/>
                             <constraint firstAttribute="trailing" secondItem="QUo-Yc-VdE" secondAttribute="trailing" id="OZ2-LC-BY6"/>
-                            <constraint firstItem="QUo-Yc-VdE" firstAttribute="top" secondItem="Hbt-Ki-zzj" secondAttribute="bottom" id="PuV-8N-ayO"/>
                             <constraint firstItem="QUo-Yc-VdE" firstAttribute="leading" secondItem="93o-ge-JAx" secondAttribute="leading" id="ZYX-qM-OE9"/>
+                            <constraint firstItem="QUo-Yc-VdE" firstAttribute="top" secondItem="8Y0-TY-pFf" secondAttribute="bottom" id="bd8-k2-A6p"/>
+                            <constraint firstAttribute="trailing" secondItem="8Y0-TY-pFf" secondAttribute="trailing" id="mX9-9W-Tae"/>
                             <constraint firstItem="yyi-n0-VeF" firstAttribute="top" secondItem="QUo-Yc-VdE" secondAttribute="bottom" id="q5G-lJ-k12"/>
+                            <constraint firstItem="8Y0-TY-pFf" firstAttribute="leading" secondItem="93o-ge-JAx" secondAttribute="leading" id="rRe-YK-4qZ"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="mLifeStyleProductViewTips" destination="eJG-BQ-aQd" id="0Gq-4H-85j"/>
                         <outlet property="mScrollV" destination="QUo-Yc-VdE" id="q96-yZ-Hfa"/>
+                        <outlet property="mTopImageView" destination="8Y0-TY-pFf" id="DgI-dB-jGv"/>
                         <outlet property="mVContent" destination="41k-i0-R4D" id="Cnt-oX-4KL"/>
                         <outletCollection property="mLifeStyleProductViews" destination="1dW-fO-Tfy" collectionClass="NSMutableArray" id="lP6-sM-Gda"/>
                         <outletCollection property="mLifeStyleProductViews" destination="fbq-mQ-ojG" collectionClass="NSMutableArray" id="1NP-Au-bIT"/>
