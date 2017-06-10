@@ -22,25 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="h0w-ck-vZv">
-                                <rect key="frame" x="0.0" y="223" width="1024" height="545"/>
+                                <rect key="frame" x="0.0" y="223" width="1024" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8T-dE-5YO">
-                                        <rect key="frame" x="0.0" y="50" width="1024" height="495"/>
+                                        <rect key="frame" x="0.0" y="35" width="1024" height="480"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-v3-tQX" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="329.5" height="480"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="329.5" height="465"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elc-oN-q1g" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                <rect key="frame" x="347.5" y="0.0" width="329" height="480"/>
+                                                <rect key="frame" x="347.5" y="0.0" width="329" height="465"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i1-UG-KHM" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                <rect key="frame" x="694.5" y="0.0" width="329.5" height="480"/>
+                                                <rect key="frame" x="694.5" y="0.0" width="329.5" height="465"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
@@ -48,14 +48,14 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="elc-oN-q1g" firstAttribute="width" secondItem="s5n-v3-tQX" secondAttribute="width" id="6xi-8a-Anb"/>
-                                            <constraint firstAttribute="trailing" secondItem="8i1-UG-KHM" secondAttribute="trailing" id="74s-dA-PpG"/>
+                                            <constraint firstAttribute="trailing" secondItem="8i1-UG-KHM" secondAttribute="trailing" constant="18" id="74s-dA-PpG"/>
                                             <constraint firstItem="elc-oN-q1g" firstAttribute="leading" secondItem="s5n-v3-tQX" secondAttribute="trailing" constant="18" id="7yx-3y-mQQ"/>
                                             <constraint firstAttribute="bottom" secondItem="elc-oN-q1g" secondAttribute="bottom" constant="15" id="DlI-98-aoZ"/>
                                             <constraint firstItem="8i1-UG-KHM" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="N5n-Zw-v8x"/>
                                             <constraint firstItem="elc-oN-q1g" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="S8X-JV-EB2"/>
                                             <constraint firstItem="8i1-UG-KHM" firstAttribute="width" secondItem="s5n-v3-tQX" secondAttribute="width" id="bFV-2m-Kwn"/>
                                             <constraint firstAttribute="bottom" secondItem="8i1-UG-KHM" secondAttribute="bottom" constant="15" id="hvq-mv-bzn"/>
-                                            <constraint firstItem="s5n-v3-tQX" firstAttribute="leading" secondItem="A8T-dE-5YO" secondAttribute="leading" id="kus-sx-IGL"/>
+                                            <constraint firstItem="s5n-v3-tQX" firstAttribute="leading" secondItem="A8T-dE-5YO" secondAttribute="leading" constant="18" id="kus-sx-IGL"/>
                                             <constraint firstAttribute="bottom" secondItem="s5n-v3-tQX" secondAttribute="bottom" constant="15" id="mQt-3B-FkQ"/>
                                             <constraint firstItem="s5n-v3-tQX" firstAttribute="top" secondItem="A8T-dE-5YO" secondAttribute="top" id="w2j-je-fAs"/>
                                             <constraint firstItem="8i1-UG-KHM" firstAttribute="leading" secondItem="elc-oN-q1g" secondAttribute="trailing" constant="18" id="xY4-cR-pwj"/>
@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="trailing" secondItem="A8T-dE-5YO" secondAttribute="trailing" id="Ekh-bv-G7N"/>
                                     <constraint firstItem="A8T-dE-5YO" firstAttribute="height" secondItem="h0w-ck-vZv" secondAttribute="height" constant="-50" id="FQP-1k-B49"/>
                                     <constraint firstAttribute="bottom" secondItem="A8T-dE-5YO" secondAttribute="bottom" id="ZMr-Aq-H9w"/>
-                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="top" constant="50" id="aq8-t2-UMY"/>
+                                    <constraint firstItem="A8T-dE-5YO" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="top" constant="35" id="aq8-t2-UMY"/>
                                     <constraint firstItem="A8T-dE-5YO" firstAttribute="leading" secondItem="h0w-ck-vZv" secondAttribute="leading" id="jgx-zp-BL1"/>
                                     <constraint firstItem="A8T-dE-5YO" firstAttribute="width" secondItem="h0w-ck-vZv" secondAttribute="width" id="vrv-RV-meN"/>
                                 </constraints>
@@ -85,7 +85,7 @@
                             <constraint firstAttribute="trailing" secondItem="h0w-ck-vZv" secondAttribute="trailing" id="LHV-nQ-TJH"/>
                             <constraint firstItem="h0w-ck-vZv" firstAttribute="leading" secondItem="kuH-T4-qaY" secondAttribute="leading" id="S84-Wl-NPh"/>
                             <constraint firstAttribute="trailing" secondItem="3Mp-Qb-e9D" secondAttribute="trailing" id="eiw-Db-WB7"/>
-                            <constraint firstItem="ApE-l4-zsA" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="bottom" constant="15" id="oCz-zJ-70e"/>
+                            <constraint firstItem="ApE-l4-zsA" firstAttribute="top" secondItem="h0w-ck-vZv" secondAttribute="bottom" id="oCz-zJ-70e"/>
                             <constraint firstItem="3Mp-Qb-e9D" firstAttribute="top" secondItem="JQd-iR-dj4" secondAttribute="bottom" id="uyy-Kc-ezX"/>
                         </constraints>
                     </view>
