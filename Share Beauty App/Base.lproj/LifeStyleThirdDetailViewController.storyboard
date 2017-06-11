@@ -28,22 +28,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRL-hy-DpI">
-                                                <rect key="frame" x="0.0" y="65" width="1024" height="520"/>
+                                                <rect key="frame" x="0.0" y="40" width="1024" height="545"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-fO-Tfy" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="18" y="0.0" width="317.5" height="520"/>
+                                                        <rect key="frame" x="18" y="0.0" width="317.5" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-mQ-ojG" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="353.5" y="0.0" width="317" height="520"/>
+                                                        <rect key="frame" x="353.5" y="0.0" width="317" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-BQ-aQd" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="688.5" y="0.0" width="317.5" height="520"/>
+                                                        <rect key="frame" x="688.5" y="0.0" width="317.5" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="beautyName" value="Beauty Tips"/>
@@ -73,7 +73,7 @@ work on dark circles.</string>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="top" secondItem="41k-i0-R4D" secondAttribute="top" constant="65" id="7gp-vK-Vm9"/>
+                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="top" secondItem="41k-i0-R4D" secondAttribute="top" constant="40" id="7gp-vK-Vm9"/>
                                             <constraint firstItem="mRL-hy-DpI" firstAttribute="leading" secondItem="41k-i0-R4D" secondAttribute="leading" id="I9T-Ja-r1s"/>
                                             <constraint firstAttribute="trailing" secondItem="mRL-hy-DpI" secondAttribute="trailing" id="PLU-KW-Dhj"/>
                                             <constraint firstAttribute="bottom" secondItem="mRL-hy-DpI" secondAttribute="bottom" constant="15" id="b5O-rG-Vk7"/>
