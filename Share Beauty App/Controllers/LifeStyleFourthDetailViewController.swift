@@ -14,6 +14,7 @@ class LifeStyleFourthDetailViewController: UIViewController, NavigationControlle
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mLblTopics: UILabel!
+	@IBOutlet weak var mTopImageView: UIImageView!
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
@@ -32,6 +33,12 @@ class LifeStyleFourthDetailViewController: UIViewController, NavigationControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
+		
+		let imageId = AppItemTranslateTable.getEntity(7801).mainImage.first
+		self.mTopImageView.image = FileTable.getImage(imageId)
+		
+		self.mLifeStyleProductViews[0].isHiddenRecommendButton = true
+		self.mLifeStyleProductViews[2].isHiddenRecommendButton = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

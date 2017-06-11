@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,37 +23,35 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoE-RB-gRx">
-                                <rect key="frame" x="0.0" y="0.0" width="426" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="507" height="748"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPy-jX-cZZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="426" height="768"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dPy-jX-cZZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="507" height="748"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="dPy-jX-cZZ" secondAttribute="height" multiplier="383:690" id="toV-O9-gf4"/>
-                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dPy-jX-cZZ" secondAttribute="trailing" id="FIr-f4-npx"/>
                                     <constraint firstItem="dPy-jX-cZZ" firstAttribute="top" secondItem="PoE-RB-gRx" secondAttribute="top" id="KXM-7M-HMj"/>
+                                    <constraint firstAttribute="width" constant="507" id="OUH-Lu-g3p"/>
                                     <constraint firstItem="dPy-jX-cZZ" firstAttribute="leading" secondItem="PoE-RB-gRx" secondAttribute="leading" id="Uks-90-J9i"/>
                                     <constraint firstAttribute="bottom" secondItem="dPy-jX-cZZ" secondAttribute="bottom" id="b5B-fK-kzu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHi-aa-YBh">
-                                <rect key="frame" x="426" y="0.0" width="598" height="748"/>
+                                <rect key="frame" x="507" y="0.0" width="517" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oX-Ge-abp">
-                                        <rect key="frame" x="0.0" y="0.0" width="598" height="248.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="507" height="248.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxy-Rp-0rr">
-                                                <rect key="frame" x="0.0" y="0.0" width="298.5" height="248.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="kHZ-f8-KPQ">
-                                                        <rect key="frame" x="149" y="124" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBd-Up-qFw" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="135" y="108" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="108" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="sxG-5J-655"/>
                                                         </connections>
@@ -76,13 +74,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzB-Me-Y1w">
-                                                <rect key="frame" x="299.5" y="0.0" width="298.5" height="248.5"/>
+                                                <rect key="frame" x="254" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-TM-6Lg">
-                                                        <rect key="frame" x="148.5" y="124" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="126.5" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Ik-ocE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="134.5" y="108" width="30" height="34"/>
+                                                        <rect key="frame" x="111.5" y="108" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="DwQ-nG-lMk"/>
                                                         </connections>
@@ -118,16 +116,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3S-OX-J0C">
-                                        <rect key="frame" x="0.0" y="249.5" width="598" height="249"/>
+                                        <rect key="frame" x="5" y="249.5" width="507" height="249"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exJ-E1-bNM">
-                                                <rect key="frame" x="0.0" y="0.0" width="298.5" height="249"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="249"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Skj-px-jub">
-                                                        <rect key="frame" x="149" y="124.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124.5" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-47-XsE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="135" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="TBf-FD-542"/>
                                                         </connections>
@@ -150,13 +148,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFO-gk-aq7">
-                                                <rect key="frame" x="299.5" y="0.0" width="298.5" height="249"/>
+                                                <rect key="frame" x="254" y="0.0" width="253" height="249"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Bqv-j9-9G3">
-                                                        <rect key="frame" x="148.5" y="124.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="126.5" y="124.5" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-D2-Lg6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="134.5" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="111.5" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="uDb-Vq-0b5"/>
                                                         </connections>
@@ -192,16 +190,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4z-kB-BN7">
-                                        <rect key="frame" x="0.0" y="499.5" width="598" height="248.5"/>
+                                        <rect key="frame" x="5" y="499.5" width="507" height="248.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9M-4h-Hfl">
-                                                <rect key="frame" x="0.0" y="0.0" width="298.5" height="248.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="S5x-Ra-z1y">
-                                                        <rect key="frame" x="149" y="123.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="123.5" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-V3-ObH" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="135" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapSignatureBeauty:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="SQ5-7i-vf0"/>
                                                         </connections>
@@ -236,13 +234,13 @@
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQO-LS-JQV">
-                                                <rect key="frame" x="299.5" y="0.0" width="298.5" height="248.5"/>
+                                                <rect key="frame" x="254" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-Tt-QCF">
-                                                        <rect key="frame" x="148.5" y="123.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="126.5" y="123.5" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-a3-xfg" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="134.5" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="111.5" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="LZI-vp-sSZ"/>
                                                         </connections>
@@ -280,23 +278,23 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="C3S-OX-J0C" secondAttribute="trailing" id="0tF-EY-XMP"/>
+                                    <constraint firstAttribute="trailing" secondItem="C3S-OX-J0C" secondAttribute="trailing" constant="5" id="0tF-EY-XMP"/>
                                     <constraint firstItem="C3S-OX-J0C" firstAttribute="top" secondItem="1oX-Ge-abp" secondAttribute="bottom" constant="1" id="2eB-Rm-dZg"/>
                                     <constraint firstAttribute="width" secondItem="FHi-aa-YBh" secondAttribute="height" multiplier="239:344" id="4IQ-Me-yTH"/>
                                     <constraint firstItem="l4z-kB-BN7" firstAttribute="top" secondItem="C3S-OX-J0C" secondAttribute="bottom" constant="1" id="Gk3-tv-ebl"/>
                                     <constraint firstItem="C3S-OX-J0C" firstAttribute="height" secondItem="1oX-Ge-abp" secondAttribute="height" id="KjA-Ev-6sa"/>
                                     <constraint firstItem="l4z-kB-BN7" firstAttribute="width" secondItem="1oX-Ge-abp" secondAttribute="width" id="LCW-YE-6Ez"/>
                                     <constraint firstItem="1oX-Ge-abp" firstAttribute="top" secondItem="FHi-aa-YBh" secondAttribute="top" id="QfV-UZ-f0F"/>
-                                    <constraint firstItem="l4z-kB-BN7" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" id="Srp-V8-7qb"/>
+                                    <constraint firstItem="l4z-kB-BN7" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" constant="5" id="Srp-V8-7qb"/>
                                     <constraint firstItem="l4z-kB-BN7" firstAttribute="height" secondItem="1oX-Ge-abp" secondAttribute="height" id="UzH-h9-QBK"/>
-                                    <constraint firstItem="C3S-OX-J0C" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" id="VeN-as-MxD"/>
+                                    <constraint firstItem="C3S-OX-J0C" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" constant="5" id="VeN-as-MxD"/>
                                     <constraint firstAttribute="bottom" secondItem="l4z-kB-BN7" secondAttribute="bottom" id="fdM-68-XY0"/>
                                     <constraint firstItem="C3S-OX-J0C" firstAttribute="width" secondItem="1oX-Ge-abp" secondAttribute="width" id="h1e-Ss-0cN"/>
-                                    <constraint firstItem="1oX-Ge-abp" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" id="iqz-Tl-j2K"/>
+                                    <constraint firstItem="1oX-Ge-abp" firstAttribute="leading" secondItem="FHi-aa-YBh" secondAttribute="leading" constant="5" id="iqz-Tl-j2K"/>
                                     <constraint firstAttribute="width" secondItem="FHi-aa-YBh" secondAttribute="height" multiplier="239:314" id="mL0-2U-ul6"/>
-                                    <constraint firstAttribute="trailing" secondItem="l4z-kB-BN7" secondAttribute="trailing" id="mlp-9a-Usz"/>
+                                    <constraint firstAttribute="trailing" secondItem="l4z-kB-BN7" secondAttribute="trailing" constant="5" id="mlp-9a-Usz"/>
                                     <constraint firstAttribute="width" secondItem="FHi-aa-YBh" secondAttribute="height" multiplier="239:344" constant="42" id="syz-fE-EUv"/>
-                                    <constraint firstAttribute="trailing" secondItem="1oX-Ge-abp" secondAttribute="trailing" id="upe-ON-7C2"/>
+                                    <constraint firstAttribute="trailing" secondItem="1oX-Ge-abp" secondAttribute="trailing" constant="5" id="upe-ON-7C2"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -316,7 +314,7 @@
                             <constraint firstItem="FHi-aa-YBh" firstAttribute="leading" secondItem="PoE-RB-gRx" secondAttribute="trailing" id="205-iC-RDv"/>
                             <constraint firstAttribute="trailing" secondItem="FHi-aa-YBh" secondAttribute="trailing" id="GDl-u1-dK7"/>
                             <constraint firstAttribute="bottom" secondItem="FHi-aa-YBh" secondAttribute="bottom" constant="20" id="MAT-mR-Gl4"/>
-                            <constraint firstAttribute="bottom" secondItem="PoE-RB-gRx" secondAttribute="bottom" id="ZeX-2L-IZe"/>
+                            <constraint firstAttribute="bottom" secondItem="PoE-RB-gRx" secondAttribute="bottom" constant="20" id="ZeX-2L-IZe"/>
                             <constraint firstItem="PoE-RB-gRx" firstAttribute="top" secondItem="e2V-gZ-P4Y" secondAttribute="top" id="cvS-WG-VoX"/>
                             <constraint firstItem="PoE-RB-gRx" firstAttribute="leading" secondItem="e2V-gZ-P4Y" secondAttribute="leading" id="lgz-0g-y0Z"/>
                         </constraints>
