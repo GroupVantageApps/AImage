@@ -13,6 +13,7 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
     @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak private var mVContent: UIView!
+	@IBOutlet weak var mTopImageView: UIImageView!
 
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
 
@@ -30,6 +31,9 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
+		
+		let imageId = AppItemTranslateTable.getEntity(7798).mainImage.first
+		self.mTopImageView.image = FileTable.getImage(imageId)
     }
 
     override func viewWillAppear(_ animated: Bool) {
