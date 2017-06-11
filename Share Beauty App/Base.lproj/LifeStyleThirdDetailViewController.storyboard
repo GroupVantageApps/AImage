@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,36 +28,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRL-hy-DpI">
-                                                <rect key="frame" x="0.0" y="78" width="1024" height="444"/>
+                                                <rect key="frame" x="0.0" y="40" width="1024" height="545"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0c1-Qg-9tV">
-                                                        <rect key="frame" x="340.5" y="0.0" width="1" height="444"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="1" id="mAL-me-cxH"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5t7-Gi-EXo">
-                                                        <rect key="frame" x="682.5" y="0.0" width="1" height="444"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="1" id="5Oh-Nj-b4L"/>
-                                                        </constraints>
-                                                    </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-fO-Tfy" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="340.5" height="444"/>
+                                                        <rect key="frame" x="18" y="0.0" width="317.5" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-mQ-ojG" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="341.5" y="0.0" width="341" height="444"/>
+                                                        <rect key="frame" x="353.5" y="0.0" width="317" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-BQ-aQd" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="683.5" y="0.0" width="340.5" height="444"/>
+                                                        <rect key="frame" x="688.5" y="0.0" width="317.5" height="545"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="beautyName" value="Beauty Tips"/>
@@ -71,33 +56,27 @@ work on dark circles.</string>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="fbq-mQ-ojG" firstAttribute="leading" secondItem="1dW-fO-Tfy" secondAttribute="trailing" constant="18" id="6gZ-bl-elI"/>
                                                     <constraint firstAttribute="bottom" secondItem="eJG-BQ-aQd" secondAttribute="bottom" id="BgU-YQ-Esq"/>
+                                                    <constraint firstItem="eJG-BQ-aQd" firstAttribute="leading" secondItem="fbq-mQ-ojG" secondAttribute="trailing" constant="18" id="C58-IQ-AbC"/>
                                                     <constraint firstItem="eJG-BQ-aQd" firstAttribute="width" secondItem="1dW-fO-Tfy" secondAttribute="width" id="DL4-f3-lQa"/>
                                                     <constraint firstItem="1dW-fO-Tfy" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="I9H-6J-B7o"/>
-                                                    <constraint firstItem="0c1-Qg-9tV" firstAttribute="leading" secondItem="1dW-fO-Tfy" secondAttribute="trailing" id="Jkv-0M-1Dl"/>
-                                                    <constraint firstItem="1dW-fO-Tfy" firstAttribute="leading" secondItem="mRL-hy-DpI" secondAttribute="leading" id="Q8u-u2-cBw"/>
-                                                    <constraint firstItem="fbq-mQ-ojG" firstAttribute="leading" secondItem="0c1-Qg-9tV" secondAttribute="trailing" id="SgO-IK-jUU"/>
-                                                    <constraint firstItem="5t7-Gi-EXo" firstAttribute="leading" secondItem="fbq-mQ-ojG" secondAttribute="trailing" id="VBk-oF-la8"/>
+                                                    <constraint firstItem="1dW-fO-Tfy" firstAttribute="leading" secondItem="mRL-hy-DpI" secondAttribute="leading" constant="18" id="Q8u-u2-cBw"/>
                                                     <constraint firstItem="fbq-mQ-ojG" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="YhT-0j-IcR"/>
-                                                    <constraint firstItem="0c1-Qg-9tV" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="ZBK-kJ-RKk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eJG-BQ-aQd" secondAttribute="trailing" id="aFA-EV-bh6"/>
-                                                    <constraint firstItem="5t7-Gi-EXo" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="ekQ-ha-efH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0c1-Qg-9tV" secondAttribute="bottom" id="g6s-DH-pzU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eJG-BQ-aQd" secondAttribute="trailing" constant="18" id="aFA-EV-bh6"/>
                                                     <constraint firstAttribute="bottom" secondItem="1dW-fO-Tfy" secondAttribute="bottom" id="gjo-RV-IDr"/>
                                                     <constraint firstItem="eJG-BQ-aQd" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="hGt-s9-kzU"/>
                                                     <constraint firstAttribute="bottom" secondItem="fbq-mQ-ojG" secondAttribute="bottom" id="nQ7-sr-mib"/>
-                                                    <constraint firstItem="eJG-BQ-aQd" firstAttribute="leading" secondItem="5t7-Gi-EXo" secondAttribute="trailing" id="qEp-Cv-CMn"/>
                                                     <constraint firstItem="fbq-mQ-ojG" firstAttribute="width" secondItem="1dW-fO-Tfy" secondAttribute="width" id="sQU-MJ-i83"/>
-                                                    <constraint firstAttribute="bottom" secondItem="5t7-Gi-EXo" secondAttribute="bottom" id="sq4-fp-pa4"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="top" secondItem="41k-i0-R4D" secondAttribute="top" constant="40" id="7gp-vK-Vm9"/>
                                             <constraint firstItem="mRL-hy-DpI" firstAttribute="leading" secondItem="41k-i0-R4D" secondAttribute="leading" id="I9T-Ja-r1s"/>
-                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="centerY" secondItem="41k-i0-R4D" secondAttribute="centerY" id="KsP-wK-nJs"/>
                                             <constraint firstAttribute="trailing" secondItem="mRL-hy-DpI" secondAttribute="trailing" id="PLU-KW-Dhj"/>
-                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="height" secondItem="41k-i0-R4D" secondAttribute="height" multiplier="568:768" id="oF9-Re-ia2"/>
+                                            <constraint firstAttribute="bottom" secondItem="mRL-hy-DpI" secondAttribute="bottom" constant="15" id="b5O-rG-Vk7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
