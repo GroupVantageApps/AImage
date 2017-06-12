@@ -56,9 +56,9 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-HW-d9A">
-                            <rect key="frame" x="18" y="190" width="282" height="16"/>
+                            <rect key="frame" x="18" y="190" width="282" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="16" id="784-hv-t6E"/>
+                                <constraint firstAttribute="height" constant="18" id="784-hv-t6E"/>
                                 <constraint firstAttribute="width" constant="282" id="pNb-sr-0JR"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -66,9 +66,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8R-r0-flp">
-                            <rect key="frame" x="18" y="174" width="282" height="16"/>
+                            <rect key="frame" x="18" y="174" width="282" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="16" id="7XW-UN-O1d"/>
+                                <constraint firstAttribute="height" constant="18" id="7XW-UN-O1d"/>
                                 <constraint firstAttribute="width" constant="282" id="l0g-L8-r13"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
