@@ -18,6 +18,8 @@
 		800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */; };
 		800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */; };
 		803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803566E81EA506F100B27C60 /* TouchTransmissionView.swift */; };
+		8045C1E61EEE85FE00284CF9 /* LifeStyleFirstProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */; };
+		8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
 		C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D55571DC611A0008795D4 /* ColorballView.swift */; };
 		C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00D55581DC611A0008795D4 /* ColorballView.xib */; };
@@ -508,6 +510,8 @@
 		8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoBrandViewController.swift; sourceTree = "<group>"; };
 		800892221EA26E3A007C592A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoBrandViewController.storyboard; sourceTree = "<group>"; };
 		803566E81EA506F100B27C60 /* TouchTransmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransmissionView.swift; sourceTree = "<group>"; };
+		8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFirstProductView.swift; sourceTree = "<group>"; };
+		8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFirstProductView.xib; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1366,6 +1370,8 @@
 				C0D57C631DD5C0090087258B /* LifeStyleCollectionViewCell.xib */,
 				C03C88491D76AB0D009F526E /* LifeStyleProductView.swift */,
 				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
+				8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */,
+				8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */,
 				C023C2151E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.swift */,
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
@@ -2071,6 +2077,7 @@
 				C050C99D1E8267450009679D /* t_graph_red_2_eye.png in Resources */,
 				C0423F7D1E35EE4F00D56960 /* ProductListViewController.storyboard in Resources */,
 				DE2C8F501E9B9F5800B5FC4A /* ACaslonPro-Regular.otf in Resources */,
+				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
 				C02818AA1E6C26FF00D4DADA /* NewApproachViewController.storyboard in Resources */,
 				C050C9001E82619F0009679D /* sib01_after.jpg in Resources */,
@@ -2483,6 +2490,7 @@
 				C0306D661D6F354400D56F45 /* ProductDetailViewController.swift in Sources */,
 				C0880CF41E4B2075006A3713 /* String+Regex.swift in Sources */,
 				C042C2121DD46A7200BA0211 /* LineListViewController.swift in Sources */,
+				8045C1E61EEE85FE00284CF9 /* LifeStyleFirstProductView.swift in Sources */,
 				C037CBA61D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift in Sources */,
 				C00EFB141D7EBF1800F9EC8F /* LifeStyleThirdDetailViewController.swift in Sources */,
 				EB8F34081D884D4800641976 /* AppItemTranslateEntity.swift in Sources */,
