@@ -9,9 +9,8 @@
 import UIKit
 import SwiftyJSON
 
-class LifeStyleFirstDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleProductViewDelegate, UIScrollViewDelegate {
-    @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
-    @IBOutlet weak private var mScrollV: UIScrollView!
+class LifeStyleFirstDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleFirstProductViewDelegate {
+    @IBOutlet private var mLifeStyleProductViews: [LifeStyleFirstProductView]!
     @IBOutlet weak private var mVContent: UIView!
 	@IBOutlet weak var mTopImageView: UIImageView!
 
@@ -30,7 +29,6 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mScrollV.delegate = self
 		
 		let imageId = AppItemTranslateTable.getEntity(7798).mainImage.first
 		self.mTopImageView.image = FileTable.getImage(imageId)
