@@ -44,10 +44,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4c8-Gp-NZz" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                            <rect key="frame" x="18" y="218" width="22" height="22"/>
+                            <rect key="frame" x="18" y="218" width="31" height="31"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="22" id="Cz5-O0-gDD"/>
-                                <constraint firstAttribute="width" constant="22" id="FtV-23-9Mv"/>
+                                <constraint firstAttribute="height" constant="31" id="Cz5-O0-gDD"/>
+                                <constraint firstAttribute="width" constant="31" id="FtV-23-9Mv"/>
                             </constraints>
                             <state key="normal" image="icon_recommend_large"/>
                             <state key="selected" image="icon_recommend_selected_large"/>
