@@ -18,6 +18,8 @@
 		800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */; };
 		800892231EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */; };
 		803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803566E81EA506F100B27C60 /* TouchTransmissionView.swift */; };
+		80429B711EEF05FE0022C99D /* LifeStyleFourthProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */; };
+		80429B731EEF06160022C99D /* LifeStyleFourthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */; };
 		8045C1E61EEE85FE00284CF9 /* LifeStyleFirstProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */; };
 		8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
@@ -510,6 +512,8 @@
 		8008921F1EA26DD1007C592A /* AboutShiseidoBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoBrandViewController.swift; sourceTree = "<group>"; };
 		800892221EA26E3A007C592A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoBrandViewController.storyboard; sourceTree = "<group>"; };
 		803566E81EA506F100B27C60 /* TouchTransmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransmissionView.swift; sourceTree = "<group>"; };
+		80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFourthProductView.swift; sourceTree = "<group>"; };
+		80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFourthProductView.xib; sourceTree = "<group>"; };
 		8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFirstProductView.swift; sourceTree = "<group>"; };
 		8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFirstProductView.xib; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1372,6 +1376,8 @@
 				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
 				8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */,
 				8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */,
+				80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */,
+				80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */,
 				C023C2151E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.swift */,
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
@@ -1612,9 +1618,9 @@
 				E5E0D3F21DF3D32E0053373F /* LanguageSettingViewController.storyboard */,
 				C05913D71D67235700F22214 /* LaunchScreen.storyboard */,
 				E5E0D3F81DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard */,
-				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E5E0D3FB1DF3D6DF0053373F /* LifeStyleSecondDetailViewController.storyboard */,
 				E5E0D3F51DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard */,
+				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */,
 				E52891D51DF2FF2D007B92B2 /* LineDetailViewController.storyboard */,
 				E5E0D3E91DF3CDEB0053373F /* LineListViewController.storyboard */,
@@ -2131,6 +2137,7 @@
 				DE2C91831E9C682500B5FC4A /* icon_recommend_large.png in Resources */,
 				C050C9A91E8267450009679D /* sizle_highlight.png in Resources */,
 				C050C9AC1E8267450009679D /* utm_line.png in Resources */,
+				80429B731EEF06160022C99D /* LifeStyleFourthProductView.xib in Resources */,
 				C050C9821E8267450009679D /* eye_befor.png in Resources */,
 				E5E0D4061DF3DA7E0053373F /* ScreenSaveViewController.storyboard in Resources */,
 				E5E0D3F71DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard in Resources */,
@@ -2554,6 +2561,7 @@
 				8008921B1EA0DF59007C592A /* TelopEntity.swift in Sources */,
 				EBF938301D814FDF00DF9D1B /* FMDatabaseQueue.m in Sources */,
 				EB7365AB1D83156F00D223BA /* ProductTranslateEntity.swift in Sources */,
+				80429B711EEF05FE0022C99D /* LifeStyleFourthProductView.swift in Sources */,
 				C0880CEA1E4B1E6A006A3713 /* DownloadConfigure.swift in Sources */,
 				EB3C67C31D83678000BCF95A /* LineTranslateEntity.swift in Sources */,
 				EBB3BCD91E9F685B0071FE0F /* ProductDetailSkinConcernView.swift in Sources */,

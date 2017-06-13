@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleFourthProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <connections>
+                <outlet property="mBackImageView" destination="X2s-Rm-yLg" id="Bk9-1x-fXY"/>
+                <outlet property="mBeautyLabel" destination="QCH-Kg-aSv" id="hpo-vv-hPQ"/>
+                <outlet property="mContentsView" destination="FBA-95-tP2" id="Jt7-O9-yHW"/>
+                <outlet property="mLineNameLabel" destination="nzA-94-TxI" id="LxE-Oj-OZv"/>
+                <outlet property="mNumberLabel" destination="WMU-9H-mh8" id="tTB-A6-Ega"/>
+                <outlet property="mProductButton" destination="G8h-vP-xWm" id="5uZ-1H-0Vt"/>
+                <outlet property="mProductNameLabel" destination="rNd-FP-xNW" id="qiF-xn-eTQ"/>
+                <outlet property="mRecommendButton" destination="kOf-FV-FN5" id="gYo-Ox-gJV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="316"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X2s-Rm-yLg" propertyAccessControl="all">
+                    <rect key="frame" x="0.0" y="0.0" width="318" height="316"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBA-95-tP2">
+                    <rect key="frame" x="0.0" y="0.0" width="318" height="316"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOf-FV-FN5" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                            <rect key="frame" x="18" y="94" width="31" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="PnM-QR-0hm"/>
+                                <constraint firstAttribute="height" constant="31" id="SQ3-zI-23h"/>
+                            </constraints>
+                            <state key="normal" image="icon_recommend_large"/>
+                            <state key="selected" image="icon_recommend_selected_large"/>
+                            <connections>
+                                <action selector="handleRecommendButton_Tap:" destination="-1" eventType="touchUpInside" id="vgM-kC-wWr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8h-vP-xWm" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                            <rect key="frame" x="59" y="95" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="9dj-Au-3dh"/>
+                                <constraint firstAttribute="height" constant="200" id="QWV-nR-iY3"/>
+                            </constraints>
+                            <connections>
+                                <action selector="handleProductButton_Tap:" destination="-1" eventType="touchUpInside" id="ktM-Gv-VIS"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-9H-mh8">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="aAv-xk-vnA"/>
+                                <constraint firstAttribute="height" constant="70" id="mr3-du-UMQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="80"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNd-FP-xNW">
+                            <rect key="frame" x="80" y="47" width="238" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="238" id="8Bc-Tg-4AF"/>
+                                <constraint firstAttribute="height" constant="34" id="RSo-x1-bce"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzA-94-TxI">
+                            <rect key="frame" x="80" y="30" width="238" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="238" id="AWI-CL-WSS"/>
+                                <constraint firstAttribute="height" constant="17" id="YEi-CU-QhY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCH-Kg-aSv">
+                            <rect key="frame" x="80" y="0.0" width="238" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="238" id="Mt9-P5-z3Z"/>
+                                <constraint firstAttribute="height" constant="25" id="fOi-Ho-6jf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="WMU-9H-mh8" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" id="8nT-dr-Jng"/>
+                        <constraint firstItem="kOf-FV-FN5" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" constant="18" id="B5X-nU-TLd"/>
+                        <constraint firstItem="nzA-94-TxI" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" constant="30" id="Fh6-0j-pcQ"/>
+                        <constraint firstItem="G8h-vP-xWm" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" constant="95" id="JUX-ZY-LRi"/>
+                        <constraint firstItem="rNd-FP-xNW" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" constant="47" id="KR0-1n-i0s"/>
+                        <constraint firstItem="kOf-FV-FN5" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" constant="94" id="Zvv-Va-i9U"/>
+                        <constraint firstItem="nzA-94-TxI" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" constant="80" id="d22-ck-dMD"/>
+                        <constraint firstItem="QCH-Kg-aSv" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" constant="80" id="dsV-vM-Xma"/>
+                        <constraint firstItem="rNd-FP-xNW" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" constant="80" id="giu-8Q-Riy"/>
+                        <constraint firstItem="QCH-Kg-aSv" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" id="i1X-vB-8Za"/>
+                        <constraint firstItem="G8h-vP-xWm" firstAttribute="leading" secondItem="FBA-95-tP2" secondAttribute="leading" constant="59" id="l5q-5H-YOz"/>
+                        <constraint firstItem="WMU-9H-mh8" firstAttribute="top" secondItem="FBA-95-tP2" secondAttribute="top" id="seu-TO-FhY"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="X2s-Rm-yLg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3Qd-6U-gdh"/>
+                <constraint firstAttribute="trailing" secondItem="X2s-Rm-yLg" secondAttribute="trailing" id="XQ6-eS-bfQ"/>
+                <constraint firstAttribute="bottom" secondItem="FBA-95-tP2" secondAttribute="bottom" id="ZGZ-jR-Izk"/>
+                <constraint firstItem="FBA-95-tP2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fuq-sb-hfk"/>
+                <constraint firstItem="X2s-Rm-yLg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="k31-E9-Xki"/>
+                <constraint firstItem="FBA-95-tP2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="thf-sF-yAE"/>
+                <constraint firstAttribute="bottom" secondItem="X2s-Rm-yLg" secondAttribute="bottom" id="tuu-VG-Uks"/>
+                <constraint firstAttribute="trailing" secondItem="FBA-95-tP2" secondAttribute="trailing" id="uIw-e4-j23"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_recommend_large" width="31" height="31"/>
+        <image name="icon_recommend_selected_large" width="31" height="31"/>
+    </resources>
+</document>

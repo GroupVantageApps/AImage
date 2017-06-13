@@ -9,8 +9,8 @@
 import UIKit
 import SwiftyJSON
 
-class LifeStyleFourthDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleProductViewDelegate, UIScrollViewDelegate {
-    @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
+class LifeStyleFourthDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleFourthProductViewDelegate, UIScrollViewDelegate {
+    @IBOutlet private var mLifeStyleProductViews: [LifeStyleFourthProductView]!
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mLblTopics: UILabel!
@@ -55,12 +55,13 @@ class LifeStyleFourthDetailViewController: UIViewController, NavigationControlle
                 continue
             } 
             lifeStyleProductView.delegate = self
+			lifeStyleProductView.numberString = "\(i+1)"
 			if i != 1 {
 				lifeStyleProductView.style = .beautyOnly
 			}
             lifeStyleProductView.product = product
-            lifeStyleProductView.whyText = itemsA["01"]
-            lifeStyleProductView.answerText = itemsD[("0" + String(i+1))]
+//            lifeStyleProductView.whyText = itemsA["01"]
+//            lifeStyleProductView.answerText = itemsD[("0" + String(i+1))]
 
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)

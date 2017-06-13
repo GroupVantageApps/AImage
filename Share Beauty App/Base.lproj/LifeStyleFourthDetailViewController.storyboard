@@ -38,53 +38,50 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5G-qQ-S4G">
-                                                <rect key="frame" x="0.0" y="150" width="1024" height="415"/>
+                                                <rect key="frame" x="0.0" y="150" width="1024" height="316"/>
                                                 <subviews>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgY-aw-hiH" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="18" y="0.0" width="323" height="415"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="numberString" value="1"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-eA-8os" customClass="LifeStyleFourthProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="17" y="0.0" width="318" height="316"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="84v-0M-2ka"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbL-Uw-NxF" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="359" y="0.0" width="323.5" height="415"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="numberString" value="2"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szR-50-Np0" customClass="LifeStyleFourthProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="353" y="0.0" width="318" height="316"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="RC3-jj-766"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRT-R7-zYN" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="700.5" y="0.0" width="323" height="415"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="numberString" value="3"/>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowAnswerView" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTy-nn-u3G" customClass="LifeStyleFourthProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="689" y="0.0" width="318" height="316"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="Mxf-qs-19J"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="sRT-R7-zYN" secondAttribute="trailing" id="0bX-mm-CbY"/>
-                                                    <constraint firstAttribute="bottom" secondItem="CgY-aw-hiH" secondAttribute="bottom" id="38g-SE-5KY"/>
-                                                    <constraint firstItem="YbL-Uw-NxF" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="AQM-3E-Q8J"/>
-                                                    <constraint firstItem="YbL-Uw-NxF" firstAttribute="leading" secondItem="CgY-aw-hiH" secondAttribute="trailing" constant="18" id="LB0-Sw-xxD"/>
-                                                    <constraint firstItem="sRT-R7-zYN" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="LMZ-0p-3hK"/>
-                                                    <constraint firstItem="YbL-Uw-NxF" firstAttribute="width" secondItem="CgY-aw-hiH" secondAttribute="width" id="NzT-5e-hRL"/>
-                                                    <constraint firstItem="CgY-aw-hiH" firstAttribute="leading" secondItem="u5G-qQ-S4G" secondAttribute="leading" constant="18" id="UZl-SP-xFd"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sRT-R7-zYN" secondAttribute="bottom" id="agf-Py-Fxf"/>
-                                                    <constraint firstItem="sRT-R7-zYN" firstAttribute="width" secondItem="CgY-aw-hiH" secondAttribute="width" id="bHJ-be-Ivs"/>
-                                                    <constraint firstItem="CgY-aw-hiH" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="dYg-lG-rxE"/>
-                                                    <constraint firstAttribute="bottom" secondItem="YbL-Uw-NxF" secondAttribute="bottom" id="fgq-YI-bKw"/>
-                                                    <constraint firstItem="sRT-R7-zYN" firstAttribute="leading" secondItem="YbL-Uw-NxF" secondAttribute="trailing" constant="18" id="xNR-eA-H5H"/>
+                                                    <constraint firstItem="JTy-nn-u3G" firstAttribute="leading" secondItem="szR-50-Np0" secondAttribute="trailing" constant="18" id="3dF-Mv-3wV"/>
+                                                    <constraint firstItem="szR-50-Np0" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="BCR-qX-OKm"/>
+                                                    <constraint firstItem="j8x-eA-8os" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="DEB-9B-WxG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="szR-50-Np0" secondAttribute="bottom" id="RzT-5o-sgl"/>
+                                                    <constraint firstItem="j8x-eA-8os" firstAttribute="leading" secondItem="u5G-qQ-S4G" secondAttribute="leading" constant="17" id="Xxf-MX-Mxq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JTy-nn-u3G" secondAttribute="bottom" id="aXx-IU-T1H"/>
+                                                    <constraint firstAttribute="bottom" secondItem="j8x-eA-8os" secondAttribute="bottom" id="bkt-B4-gwf"/>
+                                                    <constraint firstItem="szR-50-Np0" firstAttribute="leading" secondItem="j8x-eA-8os" secondAttribute="trailing" constant="18" id="gWn-QM-xg4"/>
+                                                    <constraint firstItem="JTy-nn-u3G" firstAttribute="top" secondItem="u5G-qQ-S4G" secondAttribute="top" id="tpa-cm-QZt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JTy-nn-u3G" secondAttribute="trailing" constant="17" id="uFq-fE-iLY"/>
+                                                    <constraint firstAttribute="height" constant="316" id="uNV-7M-vxq"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="u5G-qQ-S4G" secondAttribute="bottom" constant="15" id="129-bz-LA7"/>
                                             <constraint firstItem="u5G-qQ-S4G" firstAttribute="top" secondItem="51Z-qT-La0" secondAttribute="top" constant="150" id="4q6-L4-Eoq"/>
                                             <constraint firstItem="q5K-nA-MUV" firstAttribute="leading" secondItem="51Z-qT-La0" secondAttribute="leading" constant="40" id="GQq-4Y-BRl"/>
                                             <constraint firstAttribute="trailing" secondItem="u5G-qQ-S4G" secondAttribute="trailing" id="Itf-44-XyX"/>
-                                            <constraint firstItem="u5G-qQ-S4G" firstAttribute="top" secondItem="q5K-nA-MUV" secondAttribute="bottom" id="L1J-Nh-Ckv"/>
                                             <constraint firstItem="q5K-nA-MUV" firstAttribute="top" secondItem="51Z-qT-La0" secondAttribute="top" constant="22" id="aAx-wT-IIz"/>
                                             <constraint firstItem="u5G-qQ-S4G" firstAttribute="leading" secondItem="51Z-qT-La0" secondAttribute="leading" id="pEe-6U-GiG"/>
                                         </constraints>
@@ -122,9 +119,9 @@
                         <outlet property="mScrollV" destination="EDj-9X-S0J" id="kva-p8-1gC"/>
                         <outlet property="mTopImageView" destination="bXt-ou-hpN" id="3DR-Nt-eXu"/>
                         <outlet property="mVContent" destination="51Z-qT-La0" id="5kY-Ub-wrz"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="CgY-aw-hiH" collectionClass="NSMutableArray" id="ZFN-KZ-23M"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="YbL-Uw-NxF" collectionClass="NSMutableArray" id="M7n-n3-3gd"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="sRT-R7-zYN" collectionClass="NSMutableArray" id="Fax-ul-LA7"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="j8x-eA-8os" collectionClass="NSMutableArray" id="8Vc-1m-2XG"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="szR-50-Np0" collectionClass="NSMutableArray" id="PKT-Fh-VED"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="JTy-nn-u3G" collectionClass="NSMutableArray" id="g2S-BV-xCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y21-xM-FdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
