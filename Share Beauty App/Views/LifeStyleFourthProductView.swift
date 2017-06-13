@@ -37,13 +37,14 @@ class LifeStyleFourthProductView: BaseView {
 	}
 	var style: eStyle = .normal {
 		didSet {
-			switch style {
-			case .normal:
-				self.mBeautyLabel.translatesAutoresizingMaskIntoConstraints = false
-			case .beautyOnly:
-				self.mBeautyLabel.translatesAutoresizingMaskIntoConstraints = true
-				self.mBeautyLabel.frame.origin.y = 23.0
-			}
+			// 特殊フォーマット対応は無かったことになってる？よく分からないので、コメントとして残しておく
+//			switch style {
+//			case .normal:
+//				self.mBeautyLabel.translatesAutoresizingMaskIntoConstraints = false
+//			case .beautyOnly:
+//				self.mBeautyLabel.translatesAutoresizingMaskIntoConstraints = true
+//				self.mBeautyLabel.frame.origin.y = 23.0
+//			}
 		}
 	}
 	
