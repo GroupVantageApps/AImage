@@ -20,6 +20,8 @@
 		803566E91EA506F100B27C60 /* TouchTransmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803566E81EA506F100B27C60 /* TouchTransmissionView.swift */; };
 		80429B711EEF05FE0022C99D /* LifeStyleFourthProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */; };
 		80429B731EEF06160022C99D /* LifeStyleFourthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */; };
+		80429B781EF04D7E0022C99D /* LifeStyleThirdProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */; };
+		80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */; };
 		8045C1E61EEE85FE00284CF9 /* LifeStyleFirstProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */; };
 		8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
@@ -514,6 +516,8 @@
 		803566E81EA506F100B27C60 /* TouchTransmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTransmissionView.swift; sourceTree = "<group>"; };
 		80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFourthProductView.swift; sourceTree = "<group>"; };
 		80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFourthProductView.xib; sourceTree = "<group>"; };
+		80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleThirdProductView.swift; sourceTree = "<group>"; };
+		80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleThirdProductView.xib; sourceTree = "<group>"; };
 		8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFirstProductView.swift; sourceTree = "<group>"; };
 		8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFirstProductView.xib; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1376,6 +1380,8 @@
 				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
 				8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */,
 				8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */,
+				80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */,
+				80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */,
 				80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */,
 				80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */,
 				C023C2151E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.swift */,
@@ -1976,6 +1982,7 @@
 				DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */,
 				C050C9A51E8267450009679D /* utmeye_image.png in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
+				80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
 				DE2C907D1E9C66E600B5FC4A /* LXCategoryButton.xib in Resources */,
 				C0D1954B1DE7130400C8B88E /* SunCareFeaturesView.xib in Resources */,
@@ -2370,6 +2377,7 @@
 				C0D195451DE7025D00C8B88E /* NSMutableAttributedString+Additions.h in Sources */,
 				C0880CF11E4B2048006A3713 /* SettingViewController.swift in Sources */,
 				EBBF4E151D955955001CD8B3 /* UnitTable.swift in Sources */,
+				80429B781EF04D7E0022C99D /* LifeStyleThirdProductView.swift in Sources */,
 				C0A335F31D8035DF006A8FD1 /* ProductView.swift in Sources */,
 				EBF9382D1D814FDF00DF9D1B /* FMDatabase.m in Sources */,
 				DE2C8EF11E9B9BAF00B5FC4A /* LuxuryProductViewController.swift in Sources */,

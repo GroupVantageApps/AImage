@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LifeStyleThirdDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleProductViewDelegate, UIScrollViewDelegate {
-    @IBOutlet weak private var mLifeStyleProductViewTips: LifeStyleProductView!
-    @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
+class LifeStyleThirdDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleThirdProductViewDelegate, UIScrollViewDelegate {
+    @IBOutlet weak private var mLifeStyleProductViewTips: LifeStyleThirdProductView!
+    @IBOutlet private var mLifeStyleProductViews: [LifeStyleThirdProductView]!
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak private var mVContent: UIView!
 	@IBOutlet weak var mTopImageView: UIImageView!
@@ -44,6 +44,8 @@ class LifeStyleThirdDetailViewController: UIViewController, NavigationController
         mLifeStyleProductViewTips.delegate = self
         mLifeStyleProductViewTips.beautyName = items["01"]
         mLifeStyleProductViewTips.lineName = items["02"]
+		mLifeStyleProductViewTips.productName = "";
+		mLifeStyleProductViewTips.productImage = #imageLiteral(resourceName: "beauty_tips_img")
 
         for enumerated in productList.products.enumerated() {
             let i = enumerated.offset

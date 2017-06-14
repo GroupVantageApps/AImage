@@ -28,55 +28,50 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="600"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRL-hy-DpI">
-                                                <rect key="frame" x="0.0" y="40" width="1024" height="545"/>
+                                                <rect key="frame" x="0.0" y="65" width="1024" height="400"/>
                                                 <subviews>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dW-fO-Tfy" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="18" y="0.0" width="317.5" height="545"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVp-3J-q6d" customClass="LifeStyleThirdProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="17" y="0.0" width="318" height="400"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="k0l-wc-PL7"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-mQ-ojG" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="353.5" y="0.0" width="317" height="545"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Oo-dl-2qh" customClass="LifeStyleThirdProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="353" y="0.0" width="318" height="400"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="o7d-Si-onH"/>
+                                                        </constraints>
                                                     </view>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-BQ-aQd" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="688.5" y="0.0" width="317.5" height="545"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShowContentView" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="beautyName" value="Beauty Tips"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="lineName">
-                                                                <string key="value">Pressure points that
-work on dark circles.</string>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="imgProduct" value="beauty_tips_img"/>
-                                                        </userDefinedRuntimeAttributes>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ial-17-Snp" customClass="LifeStyleThirdProductView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="689" y="0.0" width="318" height="400"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="318" id="Uwz-xd-XQ5"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="fbq-mQ-ojG" firstAttribute="leading" secondItem="1dW-fO-Tfy" secondAttribute="trailing" constant="18" id="6gZ-bl-elI"/>
-                                                    <constraint firstAttribute="bottom" secondItem="eJG-BQ-aQd" secondAttribute="bottom" id="BgU-YQ-Esq"/>
-                                                    <constraint firstItem="eJG-BQ-aQd" firstAttribute="leading" secondItem="fbq-mQ-ojG" secondAttribute="trailing" constant="18" id="C58-IQ-AbC"/>
-                                                    <constraint firstItem="eJG-BQ-aQd" firstAttribute="width" secondItem="1dW-fO-Tfy" secondAttribute="width" id="DL4-f3-lQa"/>
-                                                    <constraint firstItem="1dW-fO-Tfy" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="I9H-6J-B7o"/>
-                                                    <constraint firstItem="1dW-fO-Tfy" firstAttribute="leading" secondItem="mRL-hy-DpI" secondAttribute="leading" constant="18" id="Q8u-u2-cBw"/>
-                                                    <constraint firstItem="fbq-mQ-ojG" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="YhT-0j-IcR"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eJG-BQ-aQd" secondAttribute="trailing" constant="18" id="aFA-EV-bh6"/>
-                                                    <constraint firstAttribute="bottom" secondItem="1dW-fO-Tfy" secondAttribute="bottom" id="gjo-RV-IDr"/>
-                                                    <constraint firstItem="eJG-BQ-aQd" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="hGt-s9-kzU"/>
-                                                    <constraint firstAttribute="bottom" secondItem="fbq-mQ-ojG" secondAttribute="bottom" id="nQ7-sr-mib"/>
-                                                    <constraint firstItem="fbq-mQ-ojG" firstAttribute="width" secondItem="1dW-fO-Tfy" secondAttribute="width" id="sQU-MJ-i83"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3Oo-dl-2qh" secondAttribute="bottom" id="9jC-R5-A3u"/>
+                                                    <constraint firstItem="bVp-3J-q6d" firstAttribute="leading" secondItem="mRL-hy-DpI" secondAttribute="leading" constant="17" id="AFn-ic-hJ6"/>
+                                                    <constraint firstItem="Ial-17-Snp" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="BbT-hT-L9p"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ial-17-Snp" secondAttribute="trailing" constant="17" id="Hpm-qu-wnw"/>
+                                                    <constraint firstAttribute="height" constant="400" id="Jaf-iI-SR7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bVp-3J-q6d" secondAttribute="bottom" id="T12-9s-tvB"/>
+                                                    <constraint firstItem="bVp-3J-q6d" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="dPU-lU-Kmk"/>
+                                                    <constraint firstItem="Ial-17-Snp" firstAttribute="leading" secondItem="3Oo-dl-2qh" secondAttribute="trailing" constant="18" id="iil-kl-nkg"/>
+                                                    <constraint firstItem="3Oo-dl-2qh" firstAttribute="leading" secondItem="bVp-3J-q6d" secondAttribute="trailing" constant="18" id="j0F-Hn-jeM"/>
+                                                    <constraint firstItem="3Oo-dl-2qh" firstAttribute="top" secondItem="mRL-hy-DpI" secondAttribute="top" id="qaX-ec-vNs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ial-17-Snp" secondAttribute="bottom" id="uon-kk-5Ij"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="top" secondItem="41k-i0-R4D" secondAttribute="top" constant="40" id="7gp-vK-Vm9"/>
+                                            <constraint firstItem="mRL-hy-DpI" firstAttribute="top" secondItem="41k-i0-R4D" secondAttribute="top" constant="65" id="7gp-vK-Vm9"/>
                                             <constraint firstItem="mRL-hy-DpI" firstAttribute="leading" secondItem="41k-i0-R4D" secondAttribute="leading" id="I9T-Ja-r1s"/>
                                             <constraint firstAttribute="trailing" secondItem="mRL-hy-DpI" secondAttribute="trailing" id="PLU-KW-Dhj"/>
-                                            <constraint firstAttribute="bottom" secondItem="mRL-hy-DpI" secondAttribute="bottom" constant="15" id="b5O-rG-Vk7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -109,12 +104,12 @@ work on dark circles.</string>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="mLifeStyleProductViewTips" destination="eJG-BQ-aQd" id="0Gq-4H-85j"/>
+                        <outlet property="mLifeStyleProductViewTips" destination="Ial-17-Snp" id="qSH-HB-1ai"/>
                         <outlet property="mScrollV" destination="QUo-Yc-VdE" id="q96-yZ-Hfa"/>
                         <outlet property="mTopImageView" destination="8Y0-TY-pFf" id="DgI-dB-jGv"/>
                         <outlet property="mVContent" destination="41k-i0-R4D" id="Cnt-oX-4KL"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="1dW-fO-Tfy" collectionClass="NSMutableArray" id="lP6-sM-Gda"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="fbq-mQ-ojG" collectionClass="NSMutableArray" id="1NP-Au-bIT"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="bVp-3J-q6d" collectionClass="NSMutableArray" id="dBJ-Ur-onm"/>
+                        <outletCollection property="mLifeStyleProductViews" destination="3Oo-dl-2qh" collectionClass="NSMutableArray" id="Hb4-cv-knL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BG0-6J-gyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +117,4 @@ work on dark circles.</string>
             <point key="canvasLocation" x="-7430.2734374999991" y="1101.5625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="beauty_tips_img" width="260" height="88"/>
-    </resources>
 </document>
