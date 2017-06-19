@@ -8,6 +8,8 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 class TopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet private var mBtnMenus: [BaseButton]!
@@ -352,6 +354,13 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             let toVc = UIViewController.GetViewControllerFromStoryboard(targetClass: arrNextVc[sender.tag]) as! LifeStyleViewController
             delegate?.nextVc(toVc)
             logItemId = "02"
+
+            Alamofire.request(Const.lifeStyleBeautyCountUrl).responseJSON { response in
+                print(response)
+                if let value = response.result.value {
+                    LifeStyleBeautyCount.save(remoteData: JSON(value)["summary"])
+                }
+            }
 
         } else if IconicViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard(targetClass: arrNextVc[sender.tag]) as! IconicViewController
