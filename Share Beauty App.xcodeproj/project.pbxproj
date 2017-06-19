@@ -22,6 +22,8 @@
 		80429B731EEF06160022C99D /* LifeStyleFourthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */; };
 		80429B781EF04D7E0022C99D /* LifeStyleThirdProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */; };
 		80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */; };
+		80429B881EF5C23D0022C99D /* LifeStyleSecondProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80429B871EF5C23D0022C99D /* LifeStyleSecondProductView.swift */; };
+		80429B8A1EF5C2550022C99D /* LifeStyleSecondProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80429B891EF5C2550022C99D /* LifeStyleSecondProductView.xib */; };
 		8045C1E61EEE85FE00284CF9 /* LifeStyleFirstProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */; };
 		8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */; };
 		C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D554F1DC5D5C0008795D4 /* ScreenSaveViewController.swift */; };
@@ -518,6 +520,8 @@
 		80429B721EEF06160022C99D /* LifeStyleFourthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFourthProductView.xib; sourceTree = "<group>"; };
 		80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleThirdProductView.swift; sourceTree = "<group>"; };
 		80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleThirdProductView.xib; sourceTree = "<group>"; };
+		80429B871EF5C23D0022C99D /* LifeStyleSecondProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleSecondProductView.swift; sourceTree = "<group>"; };
+		80429B891EF5C2550022C99D /* LifeStyleSecondProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleSecondProductView.xib; sourceTree = "<group>"; };
 		8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFirstProductView.swift; sourceTree = "<group>"; };
 		8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFirstProductView.xib; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1380,6 +1384,8 @@
 				C03C884B1D76AB1E009F526E /* LifeStyleProductView.xib */,
 				8045C1E51EEE85FE00284CF9 /* LifeStyleFirstProductView.swift */,
 				8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */,
+				80429B871EF5C23D0022C99D /* LifeStyleSecondProductView.swift */,
+				80429B891EF5C2550022C99D /* LifeStyleSecondProductView.xib */,
 				80429B771EF04D7E0022C99D /* LifeStyleThirdProductView.swift */,
 				80429B791EF04D990022C99D /* LifeStyleThirdProductView.xib */,
 				80429B701EEF05FE0022C99D /* LifeStyleFourthProductView.swift */,
@@ -2171,6 +2177,7 @@
 				C050C91C1E82619F0009679D /* green_R.png in Resources */,
 				C03520EC1DA0F3D1005129B5 /* TroubleView.xib in Resources */,
 				C0665B3F1D6B252400B3D8E5 /* TestView.xib in Resources */,
+				80429B8A1EF5C2550022C99D /* LifeStyleSecondProductView.xib in Resources */,
 				C050C9C01E8276C60009679D /* Shiseido-ExtraLightx.otf in Resources */,
 				DE2C90951E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.xib in Resources */,
 				DE2C90971E9C66E600B5FC4A /* LXYutakaConceptContentSecondView.xib in Resources */,
@@ -2428,6 +2435,7 @@
 				C0B263E51E6E98FB00452C12 /* WasoGraphEfficacyView.swift in Sources */,
 				C00D55591DC611A0008795D4 /* ColorballView.swift in Sources */,
 				DE2C90881E9C66E600B5FC4A /* LXIngredientView.swift in Sources */,
+				80429B881EF5C23D0022C99D /* LifeStyleSecondProductView.swift in Sources */,
 				800892171EA0DA24007C592A /* TelopTable.swift in Sources */,
 				C046D9801D75733E007F57CA /* AVPlayerView.swift in Sources */,
 				800892201EA26DD1007C592A /* AboutShiseidoBrandViewController.swift in Sources */,
