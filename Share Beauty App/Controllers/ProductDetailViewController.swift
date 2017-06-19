@@ -52,6 +52,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mItemFeature: UILabel!
     @IBOutlet weak private var mItemDailyCare: UILabel!
     @IBOutlet weak private var mItemHowToUse: UILabel!
+    @IBOutlet weak private var mItemSkinConcern: UILabel!
+    @IBOutlet weak private var mItemColorVariation: UILabel!
     @IBOutlet weak private var mConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintRight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
@@ -149,6 +151,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonTechnologies.title = mItemsCommon["05"]
 		mCategoryButtonDefend.title =  product.makeupLook ? mItemsCommon["06"] : mItemsSideMenu["16"]
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
+
+        mItemSkinConcern.text = AppItemTable.getNameByItemId(itemId: 54)
+        mItemColorVariation.text = AppItemTable.getNameByItemId(itemId: 87)
 
         mImgVProduct.image = FileTable.getImage(product.image)
         mImgVBackImage.image = FileTable.getImage(product.backImage)
