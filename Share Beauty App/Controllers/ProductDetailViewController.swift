@@ -30,6 +30,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mTroubleView: TroubleView!
     @IBOutlet weak private var mVColorBall: UIView!
 
+    @IBOutlet weak private var mVHowToUse: UIView!
+    
     @IBOutlet weak private var mCategoryButtonFeatures: CategoryButton!
     @IBOutlet weak private var mCategoryButtonTechnologies: CategoryButton!
     @IBOutlet weak private var mCategoryButtonHowToUse: CategoryButton!
@@ -55,6 +57,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballBottom: NSLayoutConstraint!
 
+
+    @IBOutlet weak var mConstraintTop: NSLayoutConstraint!
+    
     @IBOutlet weak private var mImageBackgroundDot: UIImageView!        //17SS移植用 水玉背景画像
 
     @IBOutlet weak private var mTransitionView: ProductDetailTransitionView!
@@ -157,6 +162,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+        
+        // HowToUseがからの時はViewを非表示
+        if product.howToUse.isEmpty {
+            mVHowToUse.isHidden = true
+//            print(mConstraintTop.secondItem)
+        }
 		
 		if product.makeupLook {
 			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0
