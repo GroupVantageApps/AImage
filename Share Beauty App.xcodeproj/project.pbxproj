@@ -1620,6 +1620,7 @@
 			isa = PBXGroup;
 			children = (
 				E52891D21DF2FD9E007B92B2 /* AboutBrandViewController.storyboard */,
+				800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */,
 				C0880CFF1E4B2579006A3713 /* CountrySettingViewController.storyboard */,
 				E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */,
 				E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */,
@@ -1630,9 +1631,9 @@
 				E5E0D3F21DF3D32E0053373F /* LanguageSettingViewController.storyboard */,
 				C05913D71D67235700F22214 /* LaunchScreen.storyboard */,
 				E5E0D3F81DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard */,
+				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E5E0D3FB1DF3D6DF0053373F /* LifeStyleSecondDetailViewController.storyboard */,
 				E5E0D3F51DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard */,
-				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */,
 				E52891D51DF2FF2D007B92B2 /* LineDetailViewController.storyboard */,
 				E5E0D3E91DF3CDEB0053373F /* LineListViewController.storyboard */,
@@ -1657,7 +1658,6 @@
 				C0880D031E4B2579006A3713 /* TargetSettingViewController.storyboard */,
 				E5E0D3FE1DF3D8BE0053373F /* TipsViewController.storyboard */,
 				E56956771DF2F52C00BE9308 /* TopViewController.storyboard */,
-				800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
