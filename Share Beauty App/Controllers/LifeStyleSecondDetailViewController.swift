@@ -40,13 +40,23 @@ class LifeStyleSecondDetailViewController: UIViewController, NavigationControlle
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeautyC)
 		
 		// 商品数によるレイアウト決定
+		for view in self.mLifeStyleProductViews {
+			view.removeFromSuperview()
+		}
+		self.mLifeStyleProductViews.removeAll()
+		for _ in 0..<productList.products.count {
+			self.mLifeStyleProductViews.append(LifeStyleSecondProductView())
+		}
+		
 		switch productList.products.count {
 		case 1:
-			self.oneProductsLayout()
+			LifeStyleDefault1ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
 		case 2:
-			self.twoProductsLayout()
+			LifeStyleDefault2ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
+		case 3:
+			LifeStyleDefault3ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
 		default:
-			self.threeProductsLayout()
+			debugPrint("対応レイアウトが実装されていません");
 		}
 
         for enumerate in productList.products.enumerated() {
@@ -68,94 +78,6 @@ class LifeStyleSecondDetailViewController: UIViewController, NavigationControlle
         }
         Utility.log(items)
     }
-	
-	/// 1商品レイアウト
-	fileprivate func oneProductsLayout() {
-		for view in self.mLifeStyleProductViews {
-			view.removeFromSuperview()
-		}
-		self.mLifeStyleProductViews.removeAll()
-		
-		let view = LifeStyleSecondProductView()
-		self.mLifeStyleProductViews.append(view)
-		
-		self.mVContent.addSubview(view)
-		
-		view.translatesAutoresizingMaskIntoConstraints = false
-		self.mVContent.addConstraints([
-			NSLayoutConstraint(item: view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-			NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: view, attribute: .centerX, relatedBy: .equal, toItem: self.mVContent, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-		])
-	}
-	
-	/// 2商品レイアウト
-	fileprivate func twoProductsLayout() {
-		for view in self.mLifeStyleProductViews {
-			view.removeFromSuperview()
-		}
-		self.mLifeStyleProductViews.removeAll()
-		
-		let leftView = LifeStyleSecondProductView()
-		let rightView = LifeStyleSecondProductView()
-		self.mLifeStyleProductViews.append(leftView)
-		self.mLifeStyleProductViews.append(rightView)
-		
-		self.mVContent.addSubview(leftView)
-		self.mVContent.addSubview(rightView)
-		
-		leftView.translatesAutoresizingMaskIntoConstraints = false
-		rightView.translatesAutoresizingMaskIntoConstraints = false
-		self.mVContent.addConstraints([
-			NSLayoutConstraint(item: leftView, attribute: .leading, relatedBy: .equal, toItem: self.mVContent, attribute: .leading, multiplier: 1.0, constant: 130.0),
-			NSLayoutConstraint(item: leftView, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: leftView, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: leftView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-			NSLayoutConstraint(item: rightView, attribute: .trailing, relatedBy: .equal, toItem: self.mVContent, attribute: .trailing, multiplier: 1.0, constant: -130.0),
-			NSLayoutConstraint(item: rightView, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: rightView, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: rightView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-			NSLayoutConstraint(item: rightView, attribute: .leadingMargin, relatedBy: .equal, toItem: leftView, attribute: .trailing, multiplier: 1.0, constant: 130.0),
-		])
-	}
-	
-	/// 3商品レイアウト
-	fileprivate func threeProductsLayout() {
-		for view in self.mLifeStyleProductViews {
-			view.removeFromSuperview()
-		}
-		self.mLifeStyleProductViews.removeAll()
-		
-		let leftView = LifeStyleSecondProductView()
-		let centerView = LifeStyleSecondProductView()
-		let rightView = LifeStyleSecondProductView()
-		self.mLifeStyleProductViews.append(leftView)
-		self.mLifeStyleProductViews.append(centerView)
-		self.mLifeStyleProductViews.append(rightView)
-		
-		self.mVContent.addSubview(leftView)
-		self.mVContent.addSubview(centerView)
-		self.mVContent.addSubview(rightView)
-		
-		leftView.translatesAutoresizingMaskIntoConstraints = false
-		centerView.translatesAutoresizingMaskIntoConstraints = false
-		rightView.translatesAutoresizingMaskIntoConstraints = false
-		self.mVContent.addConstraints([
-			NSLayoutConstraint(item: leftView, attribute: .leading, relatedBy: .equal, toItem: self.mVContent, attribute: .leading, multiplier: 1.0, constant: 17.0),
-			NSLayoutConstraint(item: leftView, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: leftView, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: leftView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-			NSLayoutConstraint(item: centerView, attribute: .centerX, relatedBy: .equal, toItem: self.mVContent, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: centerView, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: centerView, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: centerView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-			NSLayoutConstraint(item: rightView, attribute: .trailing, relatedBy: .equal, toItem: self.mVContent, attribute: .trailing, multiplier: 1.0, constant: -17.0),
-			NSLayoutConstraint(item: rightView, attribute: .top, relatedBy: .equal, toItem: self.mVContent, attribute: .top, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: rightView, attribute: .bottom, relatedBy: .equal, toItem: self.mVContent, attribute: .bottom, multiplier: 1.0, constant: 0.0),
-			NSLayoutConstraint(item: rightView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1.0, constant: 318.0),
-		])
-	}
 
     private func isHighlighted (strJson: String) -> Bool {
         let transitionData = Utility.parseJson(strJson)

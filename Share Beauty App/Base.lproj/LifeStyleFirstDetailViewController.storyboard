@@ -23,40 +23,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
                                 <rect key="frame" x="0.0" y="228" width="1024" height="430"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-F9-lYe" customClass="LifeStyleFirstProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="0.0" width="318" height="430"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="318" id="mc8-kY-xhi"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-6A-xsk" customClass="LifeStyleFirstProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                        <rect key="frame" x="353" y="0.0" width="318" height="430"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="318" id="RnT-G7-FxJ"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNN-ZX-f6L" customClass="LifeStyleFirstProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                        <rect key="frame" x="689" y="0.0" width="318" height="430"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="318" id="oxa-AG-wSE"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <constraints>
-                                    <constraint firstItem="fNN-ZX-f6L" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="EMJ-Ca-RKt"/>
-                                    <constraint firstItem="xXC-6A-xsk" firstAttribute="leading" secondItem="8mF-F9-lYe" secondAttribute="trailing" constant="18" id="GZa-dl-pHy"/>
-                                    <constraint firstAttribute="bottom" secondItem="8mF-F9-lYe" secondAttribute="bottom" id="ORY-eC-9P2"/>
-                                    <constraint firstAttribute="bottom" secondItem="fNN-ZX-f6L" secondAttribute="bottom" id="Pvo-3s-sys"/>
-                                    <constraint firstAttribute="bottom" secondItem="xXC-6A-xsk" secondAttribute="bottom" id="XTK-2u-HnG"/>
-                                    <constraint firstItem="8mF-F9-lYe" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" constant="17" id="l0c-Qg-pBM"/>
-                                    <constraint firstAttribute="trailing" secondItem="fNN-ZX-f6L" secondAttribute="trailing" constant="17" id="lS4-31-SIk"/>
-                                    <constraint firstItem="fNN-ZX-f6L" firstAttribute="leading" secondItem="xXC-6A-xsk" secondAttribute="trailing" constant="18" id="rGn-tk-Fu9"/>
-                                    <constraint firstItem="8mF-F9-lYe" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="s2f-vK-U7X"/>
-                                    <constraint firstItem="xXC-6A-xsk" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="tiK-9g-Fe3"/>
                                     <constraint firstAttribute="height" constant="430" id="xFj-zu-25K"/>
                                 </constraints>
                             </view>
@@ -80,9 +47,6 @@
                     <connections>
                         <outlet property="mTopImageView" destination="unn-nd-aGG" id="t7R-ZI-a9P"/>
                         <outlet property="mVContent" destination="PSx-Hb-PSG" id="IFb-5o-aO6"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="8mF-F9-lYe" collectionClass="NSMutableArray" id="bXj-NC-CM2"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="xXC-6A-xsk" collectionClass="NSMutableArray" id="6nO-Lw-8IO"/>
-                        <outletCollection property="mLifeStyleProductViews" destination="fNN-ZX-f6L" collectionClass="NSMutableArray" id="UVU-gb-ixJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aj-4H-wE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
