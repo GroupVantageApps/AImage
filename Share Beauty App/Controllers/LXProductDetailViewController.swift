@@ -52,6 +52,8 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     @IBOutlet weak private var mItemFeature: UILabel!
     @IBOutlet weak private var mItemDailyCare: UILabel!
     @IBOutlet weak private var mItemHowToUse: UILabel!
+    @IBOutlet weak private var mItemSkinConcern: UILabel!
+    @IBOutlet weak private var mItemColorVariation: UILabel!
     @IBOutlet weak private var mConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintRight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
@@ -214,7 +216,10 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         
         mVSkinConcern.troubles = product.troubles
         mTroubleSelectView.troubles = product.troubles
-
+        
+        mItemSkinConcern.text = AppItemTable.getNameByItemId(itemId: 54)
+        mItemColorVariation.text = AppItemTable.getNameByItemId(itemId: 87)
+        
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示

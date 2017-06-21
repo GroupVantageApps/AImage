@@ -793,9 +793,11 @@
                         <outlet property="mImgVFirstDailyCare" destination="Mz1-Jh-WaH" id="4cS-35-z5L"/>
                         <outlet property="mImgVProduct" destination="H4D-Kx-hbY" id="BZB-as-eMy"/>
                         <outlet property="mImgVSecondDailyCare" destination="1aa-P5-gd4" id="cxk-U3-TiM"/>
+                        <outlet property="mItemColorVariation" destination="sAJ-7O-ICs" id="LqH-gW-CbV"/>
                         <outlet property="mItemDailyCare" destination="zfD-RI-NXu" id="fPi-iY-qKM"/>
                         <outlet property="mItemFeature" destination="XA5-xa-1xC" id="a3m-gZ-LPe"/>
                         <outlet property="mItemHowToUse" destination="RMe-9z-Tji" id="uK3-jM-20X"/>
+                        <outlet property="mItemSkinConcern" destination="hMo-cf-3gq" id="uYJ-Fm-1XU"/>
                         <outlet property="mLblBeautyName" destination="Iyt-T5-OWT" id="B2C-Pe-aVl"/>
                         <outlet property="mLblFeature" destination="PXN-On-kxw" id="mya-ED-58P"/>
                         <outlet property="mLblHowToUse" destination="wsZ-Cy-zqz" id="ER0-aZ-mSH"/>
