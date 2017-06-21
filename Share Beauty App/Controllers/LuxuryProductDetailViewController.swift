@@ -128,9 +128,20 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mItemsCommon = AppItemTable.getItems(screenId: Const.screenIdProductDetailCommon)
 
         print(mItemsCommon)
-        mItemFeature.text = mItems["08"]
-        mItemHowToUse.text = mItems["09"]
-        mItemDailyCare.text = mItems["11"]
+        let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)
+        
+        let mItemFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["08"]!, attributes: [NSFontAttributeName:font!])
+        mItemFeatureString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["08"]?.count)!))
+        mItemFeature.attributedText = mItemFeatureString
+        
+        let mItemHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["09"]!, attributes: [NSFontAttributeName:font!])
+        mItemHowToUseString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["09"]?.count)!))
+        mItemHowToUse.attributedText = mItemFeatureString
+        
+        let mItemDailyCareString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["11"]!, attributes: [NSFontAttributeName:font!])
+        mItemDailyCareString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["11"]?.count)!))
+        mItemDailyCare.attributedText = mItemFeatureString
+        
         //TODO:csv参照
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
