@@ -30,6 +30,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mTroubleView: TroubleView!
     @IBOutlet weak private var mVColorBall: UIView!
 
+    @IBOutlet weak private var mVHowToUse: UIView!
+    
     @IBOutlet weak private var mCategoryButtonFeatures: CategoryButton!
     @IBOutlet weak private var mCategoryButtonTechnologies: CategoryButton!
     @IBOutlet weak private var mCategoryButtonHowToUse: CategoryButton!
@@ -50,11 +52,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mItemFeature: UILabel!
     @IBOutlet weak private var mItemDailyCare: UILabel!
     @IBOutlet weak private var mItemHowToUse: UILabel!
+    @IBOutlet weak private var mItemSkinConcern: UILabel!
+    @IBOutlet weak private var mItemColorVariation: UILabel!
     @IBOutlet weak private var mConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintRight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballBottom: NSLayoutConstraint!
 
+
+    @IBOutlet weak var mConstraintTop: NSLayoutConstraint!
+    
     @IBOutlet weak private var mImageBackgroundDot: UIImageView!        //17SS移植用 水玉背景画像
 
     @IBOutlet weak private var mTransitionView: ProductDetailTransitionView!
@@ -145,6 +152,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		mCategoryButtonDefend.title =  product.makeupLook ? mItemsCommon["06"] : mItemsSideMenu["16"]
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
 
+        mItemSkinConcern.text = AppItemTable.getNameByItemId(itemId: 54)
+        mItemColorVariation.text = AppItemTable.getNameByItemId(itemId: 87)
+
         mImgVProduct.image = FileTable.getImage(product.image)
         mImgVBackImage.image = FileTable.getImage(product.backImage)
         mLblBeautyName.text = product.beautyName
@@ -157,6 +167,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
+        
+        // HowToUseがからの時はViewを非表示
+        if product.howToUse.isEmpty {
+            mVHowToUse.isHidden = true
+//            print(mConstraintTop.secondItem)
+        }
 		
 		if product.makeupLook {
 			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0

@@ -8,6 +8,8 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Alamofire
+import SwiftyJSON
 
 class TopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet private var mBtnMenus: [BaseButton]!
@@ -23,19 +25,41 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
 
     private var mTimer: Timer?
     private var mTimerAnimation: Timer?
+	private var mTimerChangeMainVisual: Timer?
     private var mGuardView: UIView?
     private var mIsShowHelpAnimation = false
+	
+	fileprivate var mainVisualIds = [Int]()
+	fileprivate var currentMainVisualIndex: Int = 0
+	
+	fileprivate var mLeftGradientLayer: CAGradientLayer!
+	fileprivate var mRightGradientLayer: CAGradientLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print("TopViewController.viewDidLoad")
+		
+		let fileId = AppItemTable.getMainImageByItemId(itemId: 7911).first
+		mImgVMainVisual.image = FileTable.getImage(fileId)
+		self.mainVisualIds = AppItemTable.getMainImageByItemId(itemId: 7911)
+		
+		// メニュー背景にグラデーションを設定
+		let centerColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+		let endColor = UIColor.white
+		let gradientColors = [endColor.cgColor, centerColor.cgColor, endColor.cgColor]
+		
+		self.mLeftGradientLayer = CAGradientLayer()
+		self.mLeftGradientLayer.colors = gradientColors
+		self.mVMenuContainer.layer.insertSublayer(self.mLeftGradientLayer, at: 0)
+		
+		self.mRightGradientLayer = CAGradientLayer()
+		self.mRightGradientLayer.colors = gradientColors
+		self.mVMenuContainer.layer.insertSublayer(self.mRightGradientLayer, at: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.delegate?.requestReloadUpdateStatus()
-        let fileId = AppItemTable.getMainImageByItemId(itemId: 7911).first
-        mImgVMainVisual.image = FileTable.getImage(fileId)
 
         let imageItemIds = [
             (main: 7785, discription: 7837),
@@ -84,17 +108,31 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             self.fadeInMenu()
         }
         self.startTimer()
+		
+		// endTimer()をコールするべきタイミングが異なるので、startTimer()には含めない
+		self.mTimerChangeMainVisual?.invalidate()
+		self.mTimerChangeMainVisual = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scheduleChangeMainVisual(timer:)), userInfo: nil, repeats: true)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         print("TopViewController.viewWillDisappear")
         self.stopTimer()
         self.stopHelpAnimation()
+		
+		self.mTimerChangeMainVisual?.invalidate()
+		self.mTimerChangeMainVisual = nil
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         print("TopViewController.viewDidDisappear")
     }
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		self.mLeftGradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: 5.0, height: self.mVMenuContainer.height)
+		self.mRightGradientLayer.frame = CGRect(x: self.mVMenuContainer.width - 5.0, y: 0.0, width: 5.0, height: self.mVMenuContainer.height)
+	}
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -139,7 +177,21 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
                 completion?()
         })
     }
-
+	
+	/// 画像切り替えタイマーハンドラ
+	@objc fileprivate func scheduleChangeMainVisual(timer: Timer) {
+		self.currentMainVisualIndex += 1
+		if self.currentMainVisualIndex >= self.mainVisualIds.count {
+			self.currentMainVisualIndex = 0
+		}
+		
+		mImgVMainVisual.image = FileTable.getImage(self.mainVisualIds[self.currentMainVisualIndex])
+		
+		let transition = CATransition()
+		transition.duration = 1.5
+		transition.type = kCATransitionFade
+		self.mImgVMainVisual.layer.add(transition, forKey: nil)
+	}
 
     private func fadeInMenu(delay: TimeInterval = 0, completion: (() -> ())? = nil) {
         mBtnMenus.enumerated().forEach { (i: Int, btnMenu: BaseButton) in
@@ -302,6 +354,13 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             let toVc = UIViewController.GetViewControllerFromStoryboard(targetClass: arrNextVc[sender.tag]) as! LifeStyleViewController
             delegate?.nextVc(toVc)
             logItemId = "02"
+
+            Alamofire.request(Const.lifeStyleBeautyCountUrl).responseJSON { response in
+                print(response)
+                if let value = response.result.value {
+                    LifeStyleBeautyCount.save(remoteData: JSON(value)["summary"])
+                }
+            }
 
         } else if IconicViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard(targetClass: arrNextVc[sender.tag]) as! IconicViewController

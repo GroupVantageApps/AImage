@@ -9,10 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class LifeStyleFirstDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleProductViewDelegate, UIScrollViewDelegate {
-    @IBOutlet private var mLifeStyleProductViews: [LifeStyleProductView]!
-    @IBOutlet weak private var mScrollV: UIScrollView!
+class LifeStyleFirstDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleFirstProductViewDelegate {
     @IBOutlet weak private var mVContent: UIView!
+	@IBOutlet weak var mTopImageView: UIImageView!
+	
+	private var mLifeStyleProductViews = [LifeStyleFirstProductView]()
 
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyA)
 
@@ -29,13 +30,37 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mScrollV.delegate = self
+		
+		let imageId = AppItemTranslateTable.getEntity(7798).mainImage.first
+		self.mTopImageView.image = FileTable.getImage(imageId)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let productList = ProductListData(screenId: Const.screenIdLifeStyleBeautyA)
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeautyE)
+		
+		// 商品数によるレイアウト決定
+		for view in self.mLifeStyleProductViews {
+			view.removeFromSuperview()
+		}
+		self.mLifeStyleProductViews.removeAll()
+		for _ in 0..<productList.products.count {
+			self.mLifeStyleProductViews.append(LifeStyleFirstProductView())
+		}
+		
+		switch productList.products.count {
+		case 1:
+			LifeStyleDefault1ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
+		case 2:
+			LifeStyleDefault2ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
+		case 3:
+			LifeStyleDefault3ProductsLayoutUnit.layout(containerView: self.mVContent, productViews: self.mLifeStyleProductViews)
+		default:
+			debugPrint("対応レイアウトが実装されていません");
+			break;
+		}
+		
         for enumerated in productList.products.enumerated() {
             let i = enumerated.offset
             let product = enumerated.element
