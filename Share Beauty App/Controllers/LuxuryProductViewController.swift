@@ -150,15 +150,36 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                                 label.isHidden = true
                             }
                         }
-                        
+                        let beautyLbl: UILabel
                         
                         if (index > 2 && i == 0) || (index > 0 && i == 1) {
-                            let beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
-                            beautyLbl.isHidden = true
+                            beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
                         } else {
-                            let beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
-                            beautyLbl.isHidden = true
+                            beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
                         }
+
+                        if (index > 1 && i == 0) || ( index == 3  && i == 1) || (index == 0 && i == 2) {
+                            if !(index == 3 && i == 0) {
+                                print("\(index) \(i)")
+                                beautyLbl.text = lxArr[String(beautyCsvId)]
+                                print("\(beautyCsvId):\(lxArr[String(beautyCsvId)])")
+                                beautyCsvId = beautyCsvId + 1
+                                if beautyCsvId == 8 { beautyCsvId = beautyCsvId + 1}
+                            }
+                            
+                        } else {      
+                            beautyLbl.text = product.beautyName
+                            print("\(product.beautyName)")
+                        }
+                        
+                        
+//                        if (index > 2 && i == 0) || (index > 0 && i == 1) {
+//                            let beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
+//                            beautyLbl.isHidden = true
+//                        } else {
+//                            let beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
+//                            beautyLbl.isHidden = true
+//                        }
                     }
             }
         }
