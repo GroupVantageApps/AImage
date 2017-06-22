@@ -510,8 +510,10 @@ class ProductListData: NSObject {
         }
 
         dicProducts.keys.sorted {$0 < $1}.forEach { lineId in
-            self.appendLineByArray(lineId)
-            self.appendProductByArray(dicProducts[lineId]!.map {$0.productId})
+            if(lineId != 38){
+                self.appendLineByArray(lineId)
+                self.appendProductByArray(dicProducts[lineId]!.map {$0.productId})
+            }
         }
     }
 
