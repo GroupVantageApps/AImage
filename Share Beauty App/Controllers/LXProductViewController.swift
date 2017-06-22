@@ -59,6 +59,7 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
                 products = ProductListData(productIds: step.product).products
                 for (index, product) in products.enumerated() {
                     tmpProducts.append(product)
+                    if product.defaultDisplay == 1 {
                     let productLbl = baseV.viewWithTag(index + 40) as! UILabel
                     productLbl.text = product.productName
                     let lineHeight: CGFloat = 20.0
@@ -114,6 +115,64 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
                             label.text = product.beautyName
                         }
                     } 
+            } else {
+                
+                let productLbl = baseV.viewWithTag(index + 40) as! UILabel
+                productLbl.isHidden = true
+                
+                let image = baseV.viewWithTag(index + 30) as! UIImageView
+                image.isHidden = true
+                
+                let btn = baseV.viewWithTag(index + 80) as! BaseButton
+                btn.isHidden = true
+                
+                let button = baseV.viewWithTag(index + 50) as! UIButton
+                button.isHidden = true
+                
+                if i == 0  {
+                    if index == 2 {
+                        let label = baseV.viewWithTag(index + 70) as! UILabel
+                        label.isHidden = true
+                    }
+                    
+                    if index == 3 {
+                        let label = baseV.viewWithTag(index + 70) as! UILabel
+                        label.isHidden = true
+                    }
+                }
+                let beautyLbl: UILabel
+                
+                if (index > 2 && i == 0) || (index > 0 && i == 1) {
+                    beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
+                } else {
+                    beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
+                }
+                
+                if (index > 1 && i == 0) || ( index == 3  && i == 1) || (index == 0 && i == 2) {
+                    if !(index == 3 && i == 0) {
+                        print("\(index) \(i)")
+                        beautyLbl.text = lxArr[String(beautyCsvId)]
+                        print("\(beautyCsvId):\(lxArr[String(beautyCsvId)])")
+                        beautyCsvId = beautyCsvId + 1
+                        if beautyCsvId == 8 { beautyCsvId = beautyCsvId + 1}
+                    }
+                    
+                } else {      
+                    beautyLbl.text = product.beautyName
+                    print("\(product.beautyName)")
+                }
+                
+                
+                //                        if (index > 2 && i == 0) || (index > 0 && i == 1) {
+                //                            let beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
+                //                            beautyLbl.isHidden = true
+                //                        } else {
+                //                            let beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
+                //                            beautyLbl.isHidden = true
+                //                        }
+            
+                
+                    }   
             }
         }
     }

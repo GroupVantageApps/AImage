@@ -227,12 +227,6 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         }
         
         mImgVProduct.image = FileTable.getImage(product.image)
-        mLblBeautyName.text = product.beautyName
-        mLblLineName.text = product.lineName
-        mLblProductName.text = product.productName
-        mLblFeature.text = product.feature
-        mLblHowToUse.text = product.howToUse
-        mLblUnit.text = product.unitName
 
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
