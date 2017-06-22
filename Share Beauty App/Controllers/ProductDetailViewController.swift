@@ -169,7 +169,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
         // HowToUseがからの時はViewを非表示
-        if product.howToUse.isEmpty {
+        if product.howToUse == "" {
             mVHowToUse.isHidden = true
 //            print(mConstraintTop.secondItem)
         }

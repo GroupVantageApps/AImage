@@ -25,6 +25,7 @@ struct Const {
     static let lineIdUTM = 2                    //ULTIMUNのline_id
     static let lineIdBioPerformance = 8         //BIO-PERFORMANCEのline_id
     static let lineIdSHISEIDO = 16              //SHISEIDOのline_id
+    static let lineIdSUNCARE = 17               //SUNCAREのline_id
     static let lineIdMAKEUP = 18                //MAKEUPのline_id
     static let lineIdWASO = 37                  //WASOのline_id
 
