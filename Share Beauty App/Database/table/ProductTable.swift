@@ -120,8 +120,13 @@ class ProductTable: NSObject {
     }
     class func getProductIdsByLineIdOrderByDisplayOrder(_ lineId: Int) -> [Int] {
         let database = ModelDatabase.getDatabase()
+        let languageId: Int? = LanguageConfigure.languageId
         database.open()
-        let resultSet: FMResultSet! = database.executeQuery("SELECT t1.id FROM m_product AS t1, m_product_translate AS t2 WHERE t1.line_id = ? AND t1.id = t2.product_id ORDER BY  t2.display_order ", withArgumentsIn: [lineId])
+        let resultSet: FMResultSet! = database.executeQuery(
+            "SELECT t1.id FROM m_product AS t1, m_product_translate AS t2 " +
+            " WHERE t1.line_id = ? AND t2.language_id = ? AND t1.id = t2.product_id " +
+            " ORDER BY t2.display_order ",
+            withArgumentsIn: [lineId, languageId!])
         
         var productIds: [Int] = []
         
