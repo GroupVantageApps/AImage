@@ -38,7 +38,16 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
 
         let conceptBtn = self.view.viewWithTag(30) as! UIButton
         conceptBtn.setTitle(lxArr["67"], for: .normal)
-        
+        if ((lxArr["67"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+            conceptBtn.setTitle(lxArr["67"], for: .normal)  
+        } else {   
+            
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 28)   
+            let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["67"]!, attributes: [NSFontAttributeName: font!])
+            btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["67"]?.count)!))
+            conceptBtn.titleLabel?.attributedText = btnString
+            conceptBtn.setTitle(lxArr["67"], for: .normal)
+        }
         let titleLabel  = self.view.viewWithTag(20) as! UILabel
         titleLabel.text = lxArr["66"]
         let treatmentTitleLabel  = self.view.viewWithTag(21) as! UILabel
@@ -68,10 +77,29 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
             
             if i < 5 { 
                 let csvId = i + 69
-                btn.setTitle(lxArr[String(csvId)], for: .normal)
+                
+                if ((lxArr[String(csvId)]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+                    btn.setTitle(lxArr[String(csvId)], for: .normal)  
+                } else {   
+                    
+                    let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 19)   
+                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSFontAttributeName: font!])
+                    btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
+                    btn.titleLabel?.attributedText = btnString
+                    btn.setTitle(lxArr[String(csvId)], for: .normal)
+                }
             } else {
                 let csvId = i + 70
-                btn.setTitle(lxArr[String(csvId)], for: .normal)
+                if ((lxArr[String(csvId)]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+                    btn.setTitle(lxArr[String(csvId)], for: .normal)  
+                } else {   
+                    
+                    let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 19)   
+                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSFontAttributeName: font!])
+                    btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
+                    btn.titleLabel?.attributedText = btnString
+                    btn.setTitle(lxArr[String(csvId)], for: .normal)
+                }
             }
         }
         

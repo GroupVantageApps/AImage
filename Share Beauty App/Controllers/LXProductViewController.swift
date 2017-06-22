@@ -47,8 +47,15 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
         for (i, step) in mLowerSteps.enumerated() {
                 let baseV = self.view.viewWithTag(i + 10)! as UIView
                 let stepLbl = baseV.viewWithTag(i + 60) as! UILabel
-                let stepCsvId = i + 4
+            let stepCsvId = i + 4
+            if ((lxArr[String(stepCsvId)]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {  
                 stepLbl.text = lxArr[String(stepCsvId)]
+            } else {
+                let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 20)   
+                let stepLblString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(stepCsvId)]!, attributes: [NSFontAttributeName: font!])
+                stepLblString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(stepCsvId)]?.count)!))
+                stepLbl.attributedText = stepLblString
+            }
                 products = ProductListData(productIds: step.product).products
                 for (index, product) in products.enumerated() {
                     tmpProducts.append(product)
@@ -96,6 +103,17 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
                         beautyLbl.text = product.beautyName
                         print("\(product.beautyName)")
                     }
+                    if i == 0  {
+                        if index == 2 {
+                            let label = baseV.viewWithTag(index + 70) as! UILabel
+                            label.text = lxArr["80"]
+                        }
+                        
+                        if index == 3 {
+                            let label = baseV.viewWithTag(index + 70) as! UILabel
+                            label.text = product.beautyName
+                        }
+                    } 
             }
         }
     }

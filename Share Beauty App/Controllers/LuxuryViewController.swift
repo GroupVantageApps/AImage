@@ -44,9 +44,31 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         mScrollV.delegate = self
         
         lxArr = LanguageConfigure.lxcsv
-        productBtn.setTitle(lxArr["1"], for: .normal) 
-        ingredientBtn.setTitle(lxArr["2"], for: .normal) 
-        yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+        if ((lxArr["1"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+            
+            productBtn.setTitle(lxArr["1"], for: .normal) 
+            ingredientBtn.setTitle(lxArr["2"], for: .normal) 
+            yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+            
+        } else {   
+            
+        let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 30)   
+            let productBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["1"]!, attributes: [NSFontAttributeName: font!])
+            productBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["1"]?.count)!))
+            productBtn.titleLabel?.attributedText = productBtnString
+            
+            let ingredientBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["2"]!, attributes: [NSFontAttributeName: font!])
+            ingredientBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["2"]?.count)!))
+            ingredientBtn.titleLabel?.attributedText = ingredientBtnString
+            
+            let yutakaBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["3"]!, attributes: [NSFontAttributeName: font!])
+            yutakaBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["3"]?.count)!))
+            yutakaBtn.titleLabel?.attributedText = yutakaBtnString
+            
+            productBtn.setTitle(lxArr["1"], for: .normal) 
+            ingredientBtn.setTitle(lxArr["2"], for: .normal) 
+            yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+        }
         
         self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         print("LuxuryViewController.viewDidLoad")

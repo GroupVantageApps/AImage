@@ -96,10 +96,10 @@ Pure indulgence for your skin.</string>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concept" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-3i-QNj">
-                                    <rect key="frame" x="51" y="49" width="200" height="31"/>
+                                    <rect key="frame" x="51" y="45" width="200" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="200" id="Pw6-Zh-9Dk"/>
-                                        <constraint firstAttribute="height" constant="31" id="cI0-cN-Ogf"/>
+                                        <constraint firstAttribute="height" constant="35" id="cI0-cN-Ogf"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
                                     <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -144,7 +144,7 @@ Pure indulgence for your skin.</string>
                                 <constraint firstItem="uX8-mD-Wjx" firstAttribute="top" secondItem="f21-LW-UO2" secondAttribute="top" id="SRM-9l-R1q"/>
                                 <constraint firstItem="r6Q-6p-wBn" firstAttribute="leading" secondItem="f21-LW-UO2" secondAttribute="trailing" constant="58" id="SpM-o3-5vb"/>
                                 <constraint firstItem="vBU-sL-7z5" firstAttribute="leading" secondItem="uX8-mD-Wjx" secondAttribute="leading" id="Ubf-wQ-NA9"/>
-                                <constraint firstItem="cWH-3i-QNj" firstAttribute="top" secondItem="60c-3s-T7u" secondAttribute="top" constant="49" id="Xia-aL-AK1"/>
+                                <constraint firstItem="cWH-3i-QNj" firstAttribute="top" secondItem="60c-3s-T7u" secondAttribute="top" constant="45" id="Xia-aL-AK1"/>
                                 <constraint firstItem="kfb-Je-5Ze" firstAttribute="top" secondItem="r6Q-6p-wBn" secondAttribute="bottom" constant="12" id="YSZ-XY-PTQ"/>
                                 <constraint firstItem="uX8-mD-Wjx" firstAttribute="leading" secondItem="r6Q-6p-wBn" secondAttribute="trailing" constant="57" id="bZE-Zx-U8p"/>
                                 <constraint firstItem="3MA-OX-Wzd" firstAttribute="leading" secondItem="60c-3s-T7u" secondAttribute="leading" constant="51" id="iY1-Gh-1FD"/>

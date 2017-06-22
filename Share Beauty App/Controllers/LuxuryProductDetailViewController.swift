@@ -53,6 +53,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     @IBOutlet weak private var mItemFeature: UILabel!
     @IBOutlet weak private var mItemDailyCare: UILabel!
     @IBOutlet weak private var mItemHowToUse: UILabel!
+    @IBOutlet weak private var mItemSkinConcern: UILabel!
+    @IBOutlet weak private var mItemColorVariation: UILabel!
     @IBOutlet weak private var mConstraintLeft: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintRight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
@@ -128,9 +130,74 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mItemsCommon = AppItemTable.getItems(screenId: Const.screenIdProductDetailCommon)
 
         print(mItemsCommon)
-        mItemFeature.text = mItems["08"]
-        mItemHowToUse.text = mItems["09"]
-        mItemDailyCare.text = mItems["11"]
+        if ((mItems["08"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+            
+            mItemFeature.text = mItems["08"]
+            mItemHowToUse.text = mItems["09"]
+            mItemDailyCare.text = mItems["11"]
+            
+            mLblBeautyName.text = product.beautyName
+            mLblLineName.text = product.lineName
+            mLblProductName.text = product.productName
+            
+            let style = NSMutableParagraphStyle()
+            style.minimumLineHeight = 18
+            style.maximumLineHeight = 18
+            
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)   
+            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSFontAttributeName: font!])
+            mLblFeatureString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.feature.count))
+            mLblFeature.attributedText = mLblFeatureString
+            
+            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSFontAttributeName: font!])
+            mLblHowToUseString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.howToUse.count))
+            mLblHowToUse.attributedText = mLblHowToUseString
+            
+            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSFontAttributeName: font!])
+            mLblUnitString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.unitName.count))
+            mLblUnit.attributedText = mLblUnitString
+            
+        } else {   
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)    
+            let mItemFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["08"]!, attributes: [NSFontAttributeName:font!])
+            mItemFeatureString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["08"]?.count)!))
+            mItemFeature.attributedText = mItemFeatureString
+            
+            let mItemHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["09"]!, attributes: [NSFontAttributeName:font!])
+            mItemHowToUseString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["09"]?.count)!))
+            mItemHowToUse.attributedText = mItemHowToUseString
+            
+            let mItemDailyCareString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["11"]!, attributes: [NSFontAttributeName:font!])
+            mItemDailyCareString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["11"]?.count)!))
+            mItemDailyCare.attributedText = mItemDailyCareString
+            
+            
+            
+            let mLblBeautyNameString: NSMutableAttributedString = NSMutableAttributedString(string: product.beautyName, attributes: [NSFontAttributeName:font!])
+            mLblBeautyNameString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: product.beautyName.count))
+            mLblBeautyName.attributedText = mLblBeautyNameString
+            
+            mLblLineName.text = product.lineName
+            mLblProductName.text = product.productName
+            
+            let style = NSMutableParagraphStyle()
+            style.minimumLineHeight = 18
+            style.maximumLineHeight = 18
+
+            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSFontAttributeName: font!])
+            mLblFeatureString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.feature.count))
+            mLblFeature.attributedText = mLblFeatureString
+            
+            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSFontAttributeName: font!])
+            mLblHowToUseString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.howToUse.count))
+            mLblHowToUse.attributedText = mLblHowToUseString
+            
+            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSFontAttributeName: font!])
+            mLblUnitString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.unitName.count))
+            mLblUnit.attributedText = mLblUnitString
+
+        }
+
         //TODO:csv参照
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
@@ -138,15 +205,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mCategoryButtonTechnologies.title = "Technology"
         mCategoryButtonDefend.title = "Skingencel Enmei"
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
-
+        
         mImgVProduct.image = FileTable.getImage(product.image)
-        mLblBeautyName.text = product.beautyName
-        mLblLineName.text = product.lineName
-        mLblProductName.text = product.productName
-        mLblFeature.text = product.feature
-        mLblHowToUse.text = product.howToUse
-        mLblUnit.text = product.unitName
-
         if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonDefend.enabled = true
@@ -217,6 +277,9 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mVSkinConcern.troubles = product.troubles
         mTroubleSelectView.troubles = product.troubles
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
+        
+        mItemSkinConcern.text = AppItemTable.getNameByItemId(itemId: 54)
+        mItemColorVariation.text = AppItemTable.getNameByItemId(itemId: 87)
 
         //#804 スライド5.6の背景の水玉表示
         if self.product.productId == 498 || self.product.productId == 499 {

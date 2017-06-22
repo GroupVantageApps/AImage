@@ -30,18 +30,27 @@ class LXGreenTeaView: UIView{
         view?.addSubview(graphView)
         
         let lxArr = LanguageConfigure.lxcsv
-        for i in 0..<5 {
+        for i in 0..<6 {
+            print("i:\(i)")
             let label = self.viewWithTag(10 + i) as! UILabel
             var csvId = 55 + i
             if i > 3 { csvId = csvId + 3 }
-            if i == 4 { csvId = 61
-                print(lxArr[String(csvId)] ?? "なし") }
+            if i == 4 { 
+                csvId = 61
+                print(lxArr[String(csvId)] ?? "なし") 
+            }
+            print(lxArr[String(csvId)])
             label.text = lxArr[String(csvId)]
             
             if i == 3 || i == 4 {
                 let label = self.viewWithTag(30 + i) as! UILabel
                 var csvId = 55 + i
                 if i == 4 { csvId = 61 }
+                label.text = lxArr[String(csvId)]
+            }
+            
+            if i == 2 || i == 5 {
+                let label = self.viewWithTag(30 + i) as! UILabel
                 label.text = lxArr[String(csvId)]
             }
             

@@ -25,7 +25,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The effect of Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vng-60-4uo">
-                            <rect key="frame" x="59" y="51" width="436" height="28"/>
+                            <rect key="frame" x="59" y="51" width="436" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="28"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,7 +153,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The effect of Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zP-MR-X1s">
-                            <rect key="frame" x="59" y="51" width="436" height="28"/>
+                            <rect key="frame" x="59" y="51" width="436" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="28"/>
                             <color key="textColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -300,7 +300,7 @@
     <resources>
         <image name="ba_up.png" width="30" height="42"/>
         <image name="lx_ba_second_face_1.png" width="959" height="957"/>
-        <image name="lx_ba_second_face_1a.png" width="800" height="800"/>
+        <image name="lx_ba_second_face_1a.png" width="80" height="80"/>
         <image name="lx_ba_second_face_2.png" width="619" height="479"/>
         <image name="lx_ba_second_face_2a.png" width="480" height="371"/>
     </resources>
