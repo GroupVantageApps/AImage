@@ -67,6 +67,8 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                 products = ProductListData(productIds: step.product).products
                 for (index, product) in products.enumerated() {
                     tmpProducts.append(product)
+                    if product.defaultDisplay == 1 {
+                    print("\(product.productId):\(product.defaultDisplay)")
                     let productLbl = baseV.viewWithTag(index + 40) as! UILabel
                     productLbl.text = product.productName
                     let lineHeight: CGFloat = 20.0
@@ -115,12 +117,47 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                     if i == 0  {
                         if index == 2 {
                             let label = baseV.viewWithTag(index + 70) as! UILabel
-                            label.text = lxArr["80"]
+                            label.text = lxArr["8"]
                         }
                         
                         if index == 3 {
                             let label = baseV.viewWithTag(index + 70) as! UILabel
                             label.text = product.beautyName
+                        }
+                    }
+                    } else {
+                        
+                        let productLbl = baseV.viewWithTag(index + 40) as! UILabel
+                        productLbl.isHidden = true
+                        
+                        let image = baseV.viewWithTag(index + 30) as! UIImageView
+                        image.isHidden = true
+                        
+                        let btn = baseV.viewWithTag(index + 80) as! BaseButton
+                        btn.isHidden = true
+                        
+                        let button = baseV.viewWithTag(index + 50) as! UIButton
+                        button.isHidden = true
+                        
+                        if i == 0  {
+                            if index == 2 {
+                                let label = baseV.viewWithTag(index + 70) as! UILabel
+                                label.isHidden = true
+                            }
+                            
+                            if index == 3 {
+                                let label = baseV.viewWithTag(index + 70) as! UILabel
+                                label.isHidden = true
+                            }
+                        }
+                        
+                        
+                        if (index > 2 && i == 0) || (index > 0 && i == 1) {
+                            let beautyLbl = baseV.viewWithTag(index + 20 - 1) as! UILabel
+                            beautyLbl.isHidden = true
+                        } else {
+                            let beautyLbl = baseV.viewWithTag(index + 20) as! UILabel
+                            beautyLbl.isHidden = true
                         }
                     }
             }

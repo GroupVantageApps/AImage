@@ -287,10 +287,8 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
                 print("\(csvId):\(percentStr)")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
-                if image != nil {
-                    circleV.graphImgV.image = FileTable.getLXFileImage(image)
-                    circleV.drawCircle()
-                }
+                circleV.graphImgV.image = FileTable.getLXFileImage(image)
+                circleV.drawCircle()
             }
             self.mContentV.addSubview(secondV!)
             

@@ -106,7 +106,7 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
                     if i == 0  {
                         if index == 2 {
                             let label = baseV.viewWithTag(index + 70) as! UILabel
-                            label.text = lxArr["80"]
+                            label.text = lxArr["8"]
                         }
                         
                         if index == 3 {
