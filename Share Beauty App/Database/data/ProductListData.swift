@@ -474,7 +474,12 @@ class ProductListData: NSObject {
 
         self.init()
 
-        let productIds = ProductTable.getProductIdsByLineId(lineId)
+        var productIds: [Int] = []
+        if lineId == Const.lineIdSUNCARE || lineId == Const.lineIdMAKEUP {
+            productIds = ProductTable.getProductIdsByLineIdOrderByDisplayOrder(lineId)
+        }else{
+            productIds = ProductTable.getProductIdsByLineId(lineId)
+        }
         //let productIdsSorted = ProductTable.sortIdsByBeautySecond(productIds)   //美類ソート
 
         self.appendProductByArray(productIds, isIgnoreDisplayFlg: isIgnoreDisplayFlg)

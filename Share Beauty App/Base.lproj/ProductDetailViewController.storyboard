@@ -815,6 +815,7 @@
                         <outlet property="mVCategoryImageBase" destination="yHV-lG-PXe" id="Aue-PM-y5w"/>
                         <outlet property="mVColorBall" destination="CbQ-Ai-fK0" id="QoF-Rz-Jdr"/>
                         <outlet property="mVContent" destination="eQA-cW-fKQ" id="NYv-PP-6o0"/>
+                        <outlet property="mVHowToUse" destination="HK7-2k-hNf" id="Thc-bY-3uV"/>
                         <outlet property="mVMain" destination="fmO-Po-Pdd" id="kdi-9c-MBS"/>
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
                         <outlet property="mVScrollContent" destination="6m6-Dv-mB3" id="Zci-5v-P55"/>
