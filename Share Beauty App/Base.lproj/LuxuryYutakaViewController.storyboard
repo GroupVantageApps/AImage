@@ -41,14 +41,17 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YUTAKA Treatment Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpN-UO-3OL">
-                                                <rect key="frame" x="55" y="104" width="508" height="33"/>
+                                                <rect key="frame" x="55" y="100" width="708" height="37"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="508" id="bL6-fz-lUq"/>
-                                                    <constraint firstAttribute="height" constant="33" id="oAW-nw-9oM"/>
+                                                    <constraint firstAttribute="width" constant="708" id="bL6-fz-lUq"/>
+                                                    <constraint firstAttribute="height" constant="37" id="oAW-nw-9oM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
                                                 <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-zC-qpm">
                                                 <rect key="frame" x="524" y="148" width="500" height="40"/>
@@ -62,6 +65,9 @@
                                                 <state key="normal" title="Concept">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedConceptBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="siU-8Z-Edy"/>
                                                 </connections>
@@ -78,6 +84,9 @@
                                                 <state key="normal" title="Essential Treatment">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Enw-x8-YiH"/>
                                                 </connections>
@@ -94,6 +103,9 @@
                                                 <state key="normal" title="Ultimate Brightening">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="K7F-Z8-FCa"/>
                                                 </connections>
@@ -110,6 +122,9 @@
                                                 <state key="normal" title="Ultimate Brightening with Hand Treatment">
                                                     <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="8td-fy-9gn"/>
                                                 </connections>
@@ -126,6 +141,9 @@
                                                 <state key="normal" title="Ultimate Moisture Firming">
                                                     <color key="titleColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="y9i-XH-i7l"/>
                                                 </connections>
@@ -142,6 +160,9 @@
                                                 <state key="normal" title="Ultimate Moisture Firming with Hand Treatment">
                                                     <color key="titleColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Ztj-oo-3iC"/>
                                                 </connections>
@@ -158,6 +179,9 @@
                                                 <state key="normal" title="Essential Express">
                                                     <color key="titleColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="RIn-WA-ymu"/>
                                                 </connections>
@@ -174,6 +198,9 @@
                                                 <state key="normal" title="Brightening Express">
                                                     <color key="titleColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Gsw-tG-twr"/>
                                                 </connections>
@@ -190,6 +217,9 @@
                                                 <state key="normal" title="Moisture Firming Express">
                                                     <color key="titleColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="titleLabel.adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="tappedTreatmentBtn:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Ghs-ZO-Jxi"/>
                                                 </connections>
@@ -204,6 +234,9 @@
                                                 <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="27"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="22" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YUTAKA Express Treatment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUY-pL-Di9">
                                                 <rect key="frame" x="579" y="513" width="445" height="42"/>
@@ -215,11 +248,14 @@
                                                 <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="27"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsFontSizeToFitWidth" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="GpN-UO-3OL" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="104" id="0ZG-QB-DoI"/>
+                                            <constraint firstItem="GpN-UO-3OL" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="100" id="0ZG-QB-DoI"/>
                                             <constraint firstItem="fUY-pL-Di9" firstAttribute="top" secondItem="Tbs-y0-43x" secondAttribute="bottom" constant="18" id="1Cf-Om-iu7"/>
                                             <constraint firstAttribute="trailing" secondItem="CgF-nl-ENQ" secondAttribute="trailing" id="3Yl-JD-flF"/>
                                             <constraint firstItem="RR6-h1-p8q" firstAttribute="top" secondItem="MYy-MR-lMB" secondAttribute="bottom" constant="5" identifier="id13" id="5DA-QN-hGi"/>

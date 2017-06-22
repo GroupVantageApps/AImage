@@ -22,11 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TouchVisualizer t-hirai
         // Initialize with config - octocat
         var config = Configuration()
-        //config.color = UIColor.red
-        //		config.showsTimer = true
-        //		config.showsTouchRadius = true
-        //		config.showsLog = true
-        		config.image = UIImage(named: "hanatubaki")
+        config.image = UIImage(named: "hanatubaki")
         Visualizer.start(config)
 
         if DownloadConfigure.downloadStatus != .success {

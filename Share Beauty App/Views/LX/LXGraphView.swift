@@ -33,6 +33,20 @@ class LXGraphView: UIView {
         self.mImgVBashLine.centerY = CGFloat(left)
         self.right_y = right
         self.mBtnRightGraph.addTarget(self, action: #selector(tappedRightGraphBtn), for: .touchUpInside)
+        if ((r_title.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
+            
+        } else {   
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 13) 
+            
+            let mBtnRightGraphString: NSMutableAttributedString = NSMutableAttributedString(string: r_title, attributes: [NSFontAttributeName: font!])
+            mBtnRightGraphString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: r_title.count))
+            mBtnRightGraph.titleLabel?.attributedText = mBtnRightGraphString
+            
+            let mBtnLeftGraphString: NSMutableAttributedString = NSMutableAttributedString(string: l_title, attributes: [NSFontAttributeName: font!])
+            mBtnLeftGraphString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: l_title.count))
+            mBtnLeftGraph.titleLabel?.attributedText = mBtnLeftGraphString
+            
+        }
         self.mBtnRightGraph.setTitle(r_title, for: .normal)
         self.mBtnLeftGraph.setTitle(l_title, for: .normal)
         self.mBtnRightGraph.titleLabel?.textAlignment = .center
