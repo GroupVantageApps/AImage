@@ -187,8 +187,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             firstV?.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
             
             if self.size.height != 700 { self.mG3ConstraintBottom.constant = 0 }
-            for i in 0..<9 {
-                let label = firstV?.viewWithTag(10 + i) as! UILabel
+            for i in 0..<9 {                let label = firstV?.viewWithTag(10 + i) as! UILabel
                 var csvId = 0
                 switch i {
                 case 0:
@@ -218,6 +217,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 label.text = lxArr[String(csvId)]
             }
             for i in 0..<4 {
+                print(i)
                 let circleV = firstV?.viewWithTag(50 + i) as! CircleGraphView
                 let contentStr = lxArr["127"]
                 var csvId = 264 + i*3
@@ -272,6 +272,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 label.text = lxArr[String(csvId)]
             }
             for i in 0..<4 {
+                print(i)
                 let circleV = secondV?.viewWithTag(50 + i) as! CircleGraphView
                 let contentStr = lxArr["127"]
                 var csvId = 290 + i*3
@@ -286,8 +287,10 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
                 print("\(csvId):\(percentStr)")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
-                circleV.graphImgV.image = FileTable.getLXFileImage(image)
-                circleV.drawCircle()
+                if image != nil {
+                    circleV.graphImgV.image = FileTable.getLXFileImage(image)
+                    circleV.drawCircle()
+                }
             }
             self.mContentV.addSubview(secondV!)
             
