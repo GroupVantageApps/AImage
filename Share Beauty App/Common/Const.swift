@@ -31,7 +31,7 @@ struct Const {
 
     static let tagSignatureBeauty = 5
 
-    static let urlSchemeSignatureBeauty = "sfslx2://"
+    //static let urlSchemeSignatureBeauty = "sfslx2://"
     static let outAppInfoNavigator = OutAppInfo(title: "Navigator", url: "ssdcatalog://")
     static let outAppInfoUltimune = OutAppInfo(title: "Ultimune", url: "ssdutm://")
     static let outAppInfoUvInfo = OutAppInfo(title: "UVinfo", url: "ssduvi://")
