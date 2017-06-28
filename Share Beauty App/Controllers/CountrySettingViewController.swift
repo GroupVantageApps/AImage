@@ -132,7 +132,18 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         ModelDatabase.switchDatabase()
 
         if DownloadConfigure.downloadStatus != .success {
-            initAppData()
+            if Utility.checkReachability() == true {
+                initAppData()
+
+            } else {
+                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertControllerStyle.alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                    (_) -> Void in
+                    print("OK")
+                })
+                alert.addAction(defaultAction)
+                present(alert, animated: true, completion: nil)
+            }
         } else {
             DownloadConfigure.releaseTarget()
             LanguageConfigure.languageId = LanguageTable.getFirstEntity().languageId!

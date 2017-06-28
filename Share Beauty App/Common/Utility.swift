@@ -287,4 +287,15 @@ class Utility: NSObject {
         }
         return count
     }
+    class func checkReachability()->Bool{
+        
+        let reachability = SCNetworkReachabilityCreateWithName(nil, "google.com")!
+        var flags = SCNetworkReachabilityFlags.connectionAutomatic
+        if !SCNetworkReachabilityGetFlags(reachability, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
 }
