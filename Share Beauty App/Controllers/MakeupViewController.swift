@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MakeupViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, IdealProductViewDelegate {
 
@@ -18,10 +19,17 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
+    @IBOutlet weak var mBtnOutApp: UIButton!
+    
 
     private var products: [ProductData]!
     private var mProducts: [ProductData]!
     private var mDropDown = DropDown()
+    private let mOutApps  = DropDown()
+    private var firstAppear: Bool = false
+    private var productIds: [Int] = []
+    
+    private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +37,29 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mCollectionView.allowsSelection = false
         mScrollVPinch.delegate = self
         mProducts = ProductListData(lineId: Const.lineIdMAKEUP).products
+        
+        productIds = [530, 502, 470, 500, 423]
+        /*
+         Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
+             print(response)
+             if let value = response.result.value {
+                LifeStyleBeautyCount.save(remoteData: JSON(value)["products"])
+             }
+         }
+        */
+        for productId in productIds {
+            if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
+                mProducts.remove(at: product.offset)
+                mProducts.insert(product.element, at: 0)
+            }
+        }
+        
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
             product.uiImage = FileTable.getImage(product.image)
         }
         products = mProducts
         setupDropDown()
+        setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
     }
 
     private func setupDropDown() {
@@ -63,6 +89,37 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
 
     @IBAction private func onTapDropDown(_ sender: AnyObject) {
         mDropDown.show()
+    }
+    
+    func setDropDownForOutApp(dataSource: [String]) {
+        mOutApps.dataSource = dataSource
+        mOutApps.anchorView = mBtnOutApp
+        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
+        mOutApps.selectionAction = { [unowned self] (index, item) in
+            self.didSelectOutApp(index: index)
+            self.mOutApps.deselectRowAtIndexPath(index)
+        }
+        mOutApps.direction = .bottom
+    }
+    
+    func didSelectOutApp(index: Int) {
+        let outAppInfo = type(of: self).outAppInfos[index]
+        if UIApplication.shared.canOpenURL(outAppInfo.url) {
+            UIApplication.shared.openURL(outAppInfo.url)
+        } else {
+            let alertVc = UIAlertController(
+                title: "Warning",
+                message: "App is not installed",
+                preferredStyle: .alert
+            )
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVc.addAction(defaultAction)
+            self.present(alertVc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func onTapOutApp(_ sender: Any) {
+        mOutApps.show()
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -62,6 +62,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     fileprivate var mIsShowSideBar: Bool = false
     private var mScreensaveTimer: Timer?
     private var mUpdateStatusClosure: ((ContentDownloadResult) -> ())?
+    
+    var productIdForDeeplink: Int = 0
 
     fileprivate func animateSideBar(_ show: Bool, completion: (() -> ())?) {
         if show {
@@ -122,6 +124,12 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
 
         let topVc = UIViewController.GetViewControllerFromStoryboard("TopViewController", targetClass: TopViewController.self) as! TopViewController
+        
+        // for custom url scheme
+        if productIdForDeeplink != 0 {
+            topVc.productIdForDeeplink = productIdForDeeplink
+        }
+        
         nextVc(topVc, animated: false)
     }
 

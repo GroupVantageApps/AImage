@@ -10,6 +10,7 @@ import AVKit
 import AVFoundation
 import Alamofire
 import SwiftyJSON
+import SwiftSpinner
 
 class TopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet private var mBtnMenus: [BaseButton]!
@@ -34,6 +35,8 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
 	
 	fileprivate var mLeftGradientLayer: CAGradientLayer!
 	fileprivate var mRightGradientLayer: CAGradientLayer!
+    
+    var productIdForDeeplink: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +115,34 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
 		// endTimer()をコールするべきタイミングが異なるので、startTimer()には含めない
 		self.mTimerChangeMainVisual?.invalidate()
 		self.mTimerChangeMainVisual = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scheduleChangeMainVisual(timer:)), userInfo: nil, repeats: true)
+        
+        
+        // for custom url scheme
+        if productIdForDeeplink != 0 {
+            SwiftSpinner.show("Loading")
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
+            let productIds: [Int] = [289, 393, 423]
+            /*
+             Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
+                 print(response)
+                 if let value = response.result.value {
+                    LifeStyleBeautyCount.save(remoteData: JSON(value)["products"])
+                 }
+             }
+             */
+            for productId in productIds {
+                if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
+                    mProducts.remove(at: product.offset)
+                    mProducts.insert(product.element, at: 0)
+                }
+            }
+            nextVc.productId = productIdForDeeplink
+            productIdForDeeplink = 0
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+            SwiftSpinner.hide()
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {

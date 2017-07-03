@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,12 +128,21 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrR-jz-fz0" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                <rect key="frame" x="72" y="31" width="23" height="22"/>
+                                                <state key="normal" image="header_option"/>
+                                                <connections>
+                                                    <action selector="onTapOutApp:" destination="TYu-Ly-iev" eventType="touchUpInside" id="5wB-ve-mTY"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="rdY-RT-hgV" firstAttribute="leading" secondItem="iNn-wk-4mK" secondAttribute="leading" constant="20" id="1Yp-hr-GTb"/>
                                             <constraint firstItem="rdY-RT-hgV" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="20" id="35S-vC-RFe"/>
                                             <constraint firstItem="3HT-ep-D08" firstAttribute="top" secondItem="nDq-xP-e7Q" secondAttribute="bottom" constant="30" id="X2q-nd-WKc"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="30" id="Xk8-Fj-WlN"/>
+                                            <constraint firstItem="FrR-jz-fz0" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="31" id="d6d-Zr-8Dn"/>
+                                            <constraint firstItem="FrR-jz-fz0" firstAttribute="leading" secondItem="rdY-RT-hgV" secondAttribute="trailing" constant="18" id="g7a-qh-gcH"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="centerX" secondItem="iNn-wk-4mK" secondAttribute="centerX" id="hT9-UV-Qtd"/>
                                             <constraint firstAttribute="trailing" secondItem="3HT-ep-D08" secondAttribute="trailing" id="s6D-zi-Tyq"/>
                                             <constraint firstAttribute="bottom" secondItem="3HT-ep-D08" secondAttribute="bottom" constant="30" id="sHa-Wf-wct"/>
@@ -161,6 +170,7 @@
                     </view>
                     <connections>
                         <outlet property="mBtnDropDown" destination="U9s-ag-WIT" id="ytk-N3-FdC"/>
+                        <outlet property="mBtnOutApp" destination="FrR-jz-fz0" id="3b4-PD-WGJ"/>
                         <outlet property="mCollectionView" destination="3HT-ep-D08" id="Nv9-ye-B2A"/>
                         <outlet property="mScrollVPinch" destination="74k-RY-O5j" id="SO7-EQ-Akf"/>
                         <outlet property="mVMain" destination="iNn-wk-4mK" id="QrO-V9-CI8"/>
@@ -172,4 +182,7 @@
             <point key="canvasLocation" x="-5752.1484375" y="-5999.21875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="header_option" width="23" height="22"/>
+    </resources>
 </document>
