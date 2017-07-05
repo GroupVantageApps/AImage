@@ -41,7 +41,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("TopViewController.viewDidLoad")
-		
+        
 		let fileId = AppItemTable.getMainImageByItemId(itemId: 7911).first
 		mImgVMainVisual.image = FileTable.getImage(fileId)
 		self.mainVisualIds = AppItemTable.getMainImageByItemId(itemId: 7911)

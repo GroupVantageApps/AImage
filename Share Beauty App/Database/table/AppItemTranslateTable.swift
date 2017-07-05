@@ -54,4 +54,22 @@ class AppItemTranslateTable: NSObject {
         database.close()
         return entity
     }
+    
+    class func getProductList(_ appItemId: Int) -> [Int] {
+        let languageId: Int? = LanguageConfigure.languageId
+        let database = ModelDatabase.getDatabase()
+        database.open()
+        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_app_item_translate WHERE app_item_id = ? AND language_id = ?", withArgumentsIn: [appItemId, languageId!])
+        var productIds:[Int] = []
+        if resultSet.next() {
+            let json = Utility.parseContent(resultSet)
+            let productIdsJsonString = Utility.toStr(json["name"])
+            let productIdsJson = Utility.parseJson(productIdsJsonString)
+            productIds = productIdsJson!["products"].arrayValue.map { $0.intValue}
+
+        }
+        database.close()
+        return productIds
+
+    }
 }

@@ -38,7 +38,8 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mScrollVPinch.delegate = self
         mProducts = ProductListData(lineId: Const.lineIdMAKEUP).products
         
-        productIds = [530, 502, 470, 500, 423]
+        productIds = AppItemTranslateTable.getProductList(7921)
+        
         /*
          Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
              print(response)
