@@ -39,7 +39,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mProducts = ProductListData(lineId: Const.lineIdMAKEUP).products
         
         productIds = AppItemTranslateTable.getProductList(7921)
-        
+        print(productIds)
         /*
          Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
              print(response)
@@ -48,10 +48,12 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
              }
          }
         */
+        var productIdCount = 0
         for productId in productIds {
             if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
                 mProducts.remove(at: product.offset)
-                mProducts.insert(product.element, at: 0)
+                mProducts.insert(product.element, at:productIdCount)
+                productIdCount += 1
             }
         }
         
