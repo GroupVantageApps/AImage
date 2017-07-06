@@ -12,15 +12,15 @@ import Alamofire
 class MakeupViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, IdealProductViewDelegate {
 
     weak var delegate: NavigationControllerDelegate?
-    var theme: String? = "MAKE UP BEAUTY"
+    var theme: String? = ""
     var isEnterWithNavigationView = true
 
     @IBOutlet weak var mCollectionView: UICollectionView!
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
+    @IBOutlet weak private var mLblLineName: UILabel!
 //    @IBOutlet weak var mBtnOutApp: UIButton!
-    
 
     private var products: [ProductData]!
     private var mProducts: [ProductData]!
@@ -33,6 +33,9 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        theme = AppItemTable.getNameByItemId(itemId: 7842)
+
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.allowsSelection = false
         mScrollVPinch.delegate = self
@@ -63,6 +66,10 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         products = mProducts
         setupDropDown()
         //setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        
+        let line: LineDetailData!
+        line = LineDetailData(lineId: Const.lineIdMAKEUP)
+        mLblLineName.text = line.lineName
     }
 
     private func setupDropDown() {
