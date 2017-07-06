@@ -22,7 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TouchVisualizer t-hirai
         // Initialize with config - octocat
         var config = Configuration()
-        config.image = UIImage(named: "hanatubaki")
+        //config.color = UIColor.red
+        //		config.showsTimer = true
+        //		config.showsTouchRadius = true
+        //		config.showsLog = true
+        		config.image = UIImage(named: "hanatubaki")
         Visualizer.start(config)
 
         if DownloadConfigure.downloadStatus != .success {
@@ -35,6 +39,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.getLifeStyleBeautyCount()
         UIApplication.shared.isIdleTimerDisabled = true //スリープさせない t-hirai
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        // example: ssdsba://product?product_id=XXX
+        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        if urlComponents?.host == "product" {
+            if let query = urlComponents?.queryItems {
+                if query.first?.name == "product_id", let product_id = Int((query.first?.value)!) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                        let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
+                        print("requset product_id: " + product_id.description)
+                        toVc.productIdForDeeplink = product_id
+                        UIApplication.shared.keyWindow?.rootViewController = toVc
+                    })
+                }
+            }
+        }
         return true
     }
 
