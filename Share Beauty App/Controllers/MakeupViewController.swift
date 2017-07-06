@@ -19,7 +19,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
-    @IBOutlet weak var mBtnOutApp: UIButton!
+//    @IBOutlet weak var mBtnOutApp: UIButton!
     
 
     private var products: [ProductData]!
@@ -62,7 +62,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         }
         products = mProducts
         setupDropDown()
-        setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        //setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
     }
 
     private func setupDropDown() {
@@ -94,16 +94,16 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mDropDown.show()
     }
     
-    func setDropDownForOutApp(dataSource: [String]) {
-        mOutApps.dataSource = dataSource
-        mOutApps.anchorView = mBtnOutApp
-        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
-        mOutApps.selectionAction = { [unowned self] (index, item) in
-            self.didSelectOutApp(index: index)
-            self.mOutApps.deselectRowAtIndexPath(index)
-        }
-        mOutApps.direction = .bottom
-    }
+//    func mBtnOutApp(dataSource: [String]) {
+//        mOutApps.dataSource = dataSource
+//        mOutApps.anchorView = mBtnOutApp
+//        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
+//        mOutApps.selectionAction = { [unowned self] (index, item) in
+//            self.didSelectOutApp(index: index)
+//            self.mOutApps.deselectRowAtIndexPath(index)
+//        }
+//        mOutApps.direction = .bottom
+//    }
     
     func didSelectOutApp(index: Int) {
         let outAppInfo = type(of: self).outAppInfos[index]
