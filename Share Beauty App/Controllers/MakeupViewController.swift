@@ -19,7 +19,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
-//    @IBOutlet weak var mBtnOutApp: UIButton!
+    @IBOutlet weak var mBtnOutApp: UIButton!
     
 
     private var products: [ProductData]!
@@ -62,7 +62,8 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         }
         products = mProducts
         setupDropDown()
-        //setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        
     }
 
     private func setupDropDown() {
@@ -93,17 +94,19 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBAction private func onTapDropDown(_ sender: AnyObject) {
         mDropDown.show()
     }
-    
-//    func mBtnOutApp(dataSource: [String]) {
-//        mOutApps.dataSource = dataSource
-//        mOutApps.anchorView = mBtnOutApp
-//        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
-//        mOutApps.selectionAction = { [unowned self] (index, item) in
-//            self.didSelectOutApp(index: index)
-//            self.mOutApps.deselectRowAtIndexPath(index)
-//        }
-//        mOutApps.direction = .bottom
-//    }
+    func setDropDownForOutApp(dataSource: [String]) {
+//        mBtnOutApp.layer.borderColor = UIColor(red: 219, green: 44, blue: 56, alpha: 1.0).cgColor
+        mBtnOutApp.layer.borderColor = UIColor(red255: 219, green255: 44, blue255: 56, alpha: 1.0).cgColor
+        mBtnOutApp.layer.borderWidth = 1.0
+        mOutApps.dataSource = dataSource
+        mOutApps.anchorView = mBtnOutApp
+        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
+        mOutApps.selectionAction = { [unowned self] (index, item) in
+            self.didSelectOutApp(index: index)
+            self.mOutApps.deselectRowAtIndexPath(index)
+        }
+        mOutApps.direction = .bottom
+    }
     
     func didSelectOutApp(index: Int) {
         let outAppInfo = type(of: self).outAppInfos[index]

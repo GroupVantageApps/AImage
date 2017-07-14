@@ -116,6 +116,13 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let topVc = UIViewController.GetViewControllerFromStoryboard("TopViewController", targetClass: TopViewController.self) as! TopViewController
+        // for custom url scheme
+        if productIdForDeeplink != 0 {
+            LoadingView.show(vc: self)
+            topVc.productIdForDeeplink = productIdForDeeplink
+        }
 
         mHeaderView.delegate = self
         mNavigationView.delegate = self
@@ -123,12 +130,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
 
-        let topVc = UIViewController.GetViewControllerFromStoryboard("TopViewController", targetClass: TopViewController.self) as! TopViewController
         
-        // for custom url scheme
-        if productIdForDeeplink != 0 {
-            topVc.productIdForDeeplink = productIdForDeeplink
-        }
+        
         
         nextVc(topVc, animated: false)
     }
@@ -255,6 +258,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
                         toVc.endAppearanceTransition()
                         toVc.didMove(toParentViewController: self)
                         fromVc.view.removeFromSuperview()
+                        LoadingView.dismiss(vc: self)
                 })
             }
         } else {
