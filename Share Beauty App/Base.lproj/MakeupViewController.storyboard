@@ -179,6 +179,7 @@
                         <outlet property="mBtnDropDown" destination="U9s-ag-WIT" id="ytk-N3-FdC"/>
                         <outlet property="mBtnOutApp" destination="Ss0-Sb-s05" id="tsc-J9-07W"/>
                         <outlet property="mCollectionView" destination="3HT-ep-D08" id="Nv9-ye-B2A"/>
+                        <outlet property="mLblLineName" destination="nDq-xP-e7Q" id="q0a-c3-dGF"/>
                         <outlet property="mScrollVPinch" destination="74k-RY-O5j" id="SO7-EQ-Akf"/>
                         <outlet property="mVMain" destination="iNn-wk-4mK" id="QrO-V9-CI8"/>
                     </connections>
