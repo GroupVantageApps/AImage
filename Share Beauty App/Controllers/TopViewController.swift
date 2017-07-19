@@ -119,7 +119,6 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         
         // for custom url scheme
         if productIdForDeeplink != 0 {
-            SwiftSpinner.show("Loading")
             let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
             let productIds: [Int] = [289, 393, 423]
@@ -141,7 +140,6 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             productIdForDeeplink = 0
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
-            SwiftSpinner.hide()
         }
     }
 

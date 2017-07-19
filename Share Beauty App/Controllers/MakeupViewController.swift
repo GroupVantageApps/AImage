@@ -10,18 +10,18 @@ import UIKit
 import Alamofire
 
 class MakeupViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, IdealProductViewDelegate {
-
+    
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = ""
     var isEnterWithNavigationView = true
-
+    
     @IBOutlet weak var mCollectionView: UICollectionView!
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
     @IBOutlet weak private var mLblLineName: UILabel!
-//    @IBOutlet weak var mBtnOutApp: UIButton!
-
+    @IBOutlet weak var mBtnOutApp: UIButton!
+    
     private var products: [ProductData]!
     private var mProducts: [ProductData]!
     private var mDropDown = DropDown()
@@ -30,12 +30,12 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     private var productIds: [Int] = []
     
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         theme = AppItemTable.getNameByItemId(itemId: 7842)
-
+        
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.allowsSelection = false
         mScrollVPinch.delegate = self
@@ -45,12 +45,12 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         print(productIds)
         /*
          Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
-             print(response)
-             if let value = response.result.value {
-                LifeStyleBeautyCount.save(remoteData: JSON(value)["products"])
-             }
+         print(response)
+         if let value = response.result.value {
+         LifeStyleBeautyCount.save(remoteData: JSON(value)["products"])
          }
-        */
+         }
+         */
         var productIdCount = 0
         for productId in productIds {
             if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
@@ -65,13 +65,13 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         }
         products = mProducts
         setupDropDown()
-        //setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
         
         let line: LineDetailData!
         line = LineDetailData(lineId: Const.lineIdMAKEUP)
         mLblLineName.text = line.lineName
     }
-
+    
     private func setupDropDown() {
         var lowerNames = [String]()
         let item = AppItemTable.getItems(screenId: Const.screenIdProductList)
@@ -96,21 +96,23 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
             self.mCollectionView.reloadData()
         }
     }
-
+    
     @IBAction private func onTapDropDown(_ sender: AnyObject) {
         mDropDown.show()
     }
-    
-//    func mBtnOutApp(dataSource: [String]) {
-//        mOutApps.dataSource = dataSource
-//        mOutApps.anchorView = mBtnOutApp
-//        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
-//        mOutApps.selectionAction = { [unowned self] (index, item) in
-//            self.didSelectOutApp(index: index)
-//            self.mOutApps.deselectRowAtIndexPath(index)
-//        }
-//        mOutApps.direction = .bottom
-//    }
+    func setDropDownForOutApp(dataSource: [String]) {
+        //        mBtnOutApp.layer.borderColor = UIColor(red: 219, green: 44, blue: 56, alpha: 1.0).cgColor
+        mBtnOutApp.layer.borderColor = UIColor(red255: 219, green255: 44, blue255: 56, alpha: 1.0).cgColor
+        mBtnOutApp.layer.borderWidth = 1.0
+        mOutApps.dataSource = dataSource
+        mOutApps.anchorView = mBtnOutApp
+        mOutApps.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
+        mOutApps.selectionAction = { [unowned self] (index, item) in
+            self.didSelectOutApp(index: index)
+            self.mOutApps.deselectRowAtIndexPath(index)
+        }
+        mOutApps.direction = .bottom
+    }
     
     func didSelectOutApp(index: Int) {
         let outAppInfo = type(of: self).outAppInfos[index]
@@ -131,11 +133,11 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBAction func onTapOutApp(_ sender: Any) {
         mOutApps.show()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         mCollectionView.reloadData()
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         viewDidLayoutSubviewsOnce {
@@ -143,7 +145,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
             mCollectionView.dataSource = self
         }
     }
-
+    
     // MARK: - IdealProductListViewDelegate
     func didTap(_ sender: IdealProductView) {
         let productId: Int? = sender.product?.productId
@@ -153,21 +155,21 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
         self.delegate?.nextVc(nextVc)
     }
-
+    
     func didTapTrouble(_ sender: DataStructTrouble) {
     }
-
+    
     func didTapMirror(_ show: Bool, product: ProductData) {
     }
-
+    
     // MARK: - CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
-            cell.delegate = self
-            cell.product = mProducts[indexPath.row]
-            cell.productImage = mProducts[indexPath.row].uiImage
-            cell.indexPath = indexPath
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
+        cell.delegate = self
+        cell.product = mProducts[indexPath.row]
+        cell.productImage = mProducts[indexPath.row].uiImage
+        cell.indexPath = indexPath
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return mProducts.count
@@ -180,7 +182,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         let height: CGFloat = collectionView.height
         return CGSize(width: width, height: height)
     }
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVMain
     }
@@ -188,15 +190,15 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

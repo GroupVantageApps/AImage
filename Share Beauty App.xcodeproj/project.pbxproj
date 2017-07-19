@@ -291,6 +291,8 @@
 		C0E85A681E221F710035CCC4 /* ProductDetailTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */; };
 		C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */; };
 		C0FE16491D853CE700415B65 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FE16481D853CE700415B65 /* SideBar.swift */; };
+		C94638D11F18CC1E009D1480 /* bundles.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C94638D01F18CC1D009D1480 /* bundles.bundle */; };
+		C94638D31F18CC45009D1480 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94638D21F18CC45009D1480 /* LoadingView.swift */; };
 		DE0CA25B1ECAAA410051D5C1 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */; };
 		DE0CA25D1ECAAC370051D5C1 /* CircleGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0CA25C1ECAAC370051D5C1 /* CircleGraphView.xib */; };
 		DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */; };
@@ -809,6 +811,8 @@
 		C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailTransitionView.swift; sourceTree = "<group>"; };
 		C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTransitionView.xib; sourceTree = "<group>"; };
 		C0FE16481D853CE700415B65 /* SideBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		C94638D01F18CC1D009D1480 /* bundles.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = bundles.bundle; path = Resources/bundles.bundle; sourceTree = "<group>"; };
+		C94638D21F18CC45009D1480 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
 		DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
 		DE0CA25C1ECAAC370051D5C1 /* CircleGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleGraphView.xib; sourceTree = "<group>"; };
@@ -1375,6 +1379,7 @@
 		C091BA721D69809F0073FEDB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C94638D21F18CC45009D1480 /* LoadingView.swift */,
 				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
 				C0AFC9861D86AF1B0066B988 /* BaseButton.swift */,
 				C091BA731D69809F0073FEDB /* BaseView.swift */,
@@ -1801,6 +1806,7 @@
 		EBF938131D812DC900DF9D1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C94638D01F18CC1D009D1480 /* bundles.bundle */,
 				DE2C91381E9C682500B5FC4A /* lx_app */,
 				C050C9B01E8276C60009679D /* Font */,
 				C050C9221E8267450009679D /* utm */,
@@ -2084,6 +2090,7 @@
 				E5E0D3EE1DF3D04C0053373F /* IdealSecondSelectViewController.storyboard in Resources */,
 				C050C96C1E8267450009679D /* d_2.png in Resources */,
 				E5E0D4091DF3DFD00053373F /* IdealResultViewController.storyboard in Resources */,
+				C94638D11F18CC1E009D1480 /* bundles.bundle in Resources */,
 				E5CCCE901E6A6032008A4481 /* EfficacyResultView.xib in Resources */,
 				DE2C918B1E9C682500B5FC4A /* lx_icon_recommend_large@2x.png in Resources */,
 				C02818AE1E6D44CA00D4DADA /* MakeupUsageView.xib in Resources */,
@@ -2615,6 +2622,7 @@
 				C0DA9AF21DB8CC7E00692058 /* DropDown.swift in Sources */,
 				C02818AC1E6D449300D4DADA /* MakeupUsageView.swift in Sources */,
 				C0DA9AEE1DB8CC7E00692058 /* DPDUIView+Extension.swift in Sources */,
+				C94638D31F18CC45009D1480 /* LoadingView.swift in Sources */,
 				C0880CEC1E4B1E6A006A3713 /* Router.swift in Sources */,
 				C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */,
 				EB8F34171D884D5600641976 /* AppScreenTable.swift in Sources */,
