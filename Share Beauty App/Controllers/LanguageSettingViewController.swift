@@ -52,8 +52,14 @@ class LanguageSettingViewController: UIViewController, NavigationControllerAnnot
     @IBAction func onTapSet(_ sender: AnyObject) {
         LanguageConfigure.languageId = mLanguageId
         let languageCode = LanguageTable.getEntity(mLanguageId)
-        let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
+        let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
+        let csv = Utility.csvToArray(file: filePath)
         LanguageConfigure.lxcsv = csv
+        
+        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+        let gscCsv = Utility.csvToArray(file: gscFilePath)
+        LanguageConfigure.gsccsv = gscCsv
+
         delegate?.backRootVc()
     }
 

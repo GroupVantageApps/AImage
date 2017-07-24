@@ -485,7 +485,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     }
     
     func updateAnimation(view: UIView) {
-        var tempV = view
+        let tempV = view
         if tempV.tag == 200 {
             if self.animCount < self.maxCount {
                 if self.animCount == 0 || self.animCount == 3  || self.animCount == 5 {

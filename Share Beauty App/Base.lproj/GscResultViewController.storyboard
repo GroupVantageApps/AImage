@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gsc Result View Controller-->
+        <scene sceneID="a2T-yI-CPx">
+            <objects>
+                <viewController storyboardIdentifier="GscResultViewController" id="T4m-bh-eTl" customClass="GscResultViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Dc-Ys-UgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccM-iA-GLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nfh-Xa-TPF">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-HZ-YPi">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="746"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
+                                        <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-em-Qkh">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="736"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm" customClass="GscHeaderView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-10" width="1024" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
+                                                    <constraint firstAttribute="width" constant="1024" id="fxV-1e-rnv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8to-iq-NYs">
+                                                <rect key="frame" x="0.0" y="546" width="1024" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="deu-nd-4gK"/>
+                                                </constraints>
+                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rtV-91-VC1">
+                                                <rect key="frame" x="0.0" y="606" width="1024" height="130"/>
+                                                <color key="backgroundColor" white="1" alpha="0.72784674660000004" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="6L2-X5-LwC"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tbp-KU-ulP">
+                                                    <size key="itemSize" width="100" height="125"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GscCell" id="SNR-l9-FRH" customClass="GscThumnailCollectionViewCell" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="2.5" width="100" height="125"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="125"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P58-KF-EOg">
+                                                                    <rect key="frame" x="9" y="0.0" width="82" height="85"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="82" id="iju-85-nze"/>
+                                                                        <constraint firstAttribute="height" constant="85" id="jmM-EK-nAy"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkl-fH-lpw">
+                                                                    <rect key="frame" x="3" y="85" width="94" height="40"/>
+                                                                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="10"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="jkl-fH-lpw" firstAttribute="top" secondItem="P58-KF-EOg" secondAttribute="bottom" id="2I1-dg-bOz"/>
+                                                            <constraint firstItem="P58-KF-EOg" firstAttribute="centerX" secondItem="SNR-l9-FRH" secondAttribute="centerX" id="6tz-0C-Goz"/>
+                                                            <constraint firstItem="P58-KF-EOg" firstAttribute="top" secondItem="SNR-l9-FRH" secondAttribute="top" id="OrO-sh-8Km"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jkl-fH-lpw" secondAttribute="bottom" id="abk-Jp-3LQ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jkl-fH-lpw" secondAttribute="trailing" constant="3" id="ctl-10-5JM"/>
+                                                            <constraint firstItem="jkl-fH-lpw" firstAttribute="leading" secondItem="SNR-l9-FRH" secondAttribute="leading" constant="3" id="jgg-P4-xXv"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="mNameLbl" destination="jkl-fH-lpw" id="jAe-6T-UbS"/>
+                                                            <outlet property="mThumnailImgV" destination="P58-KF-EOg" id="kJb-rX-bQl"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="736" id="0g5-H1-Wlp"/>
+                                            <constraint firstAttribute="bottom" secondItem="rtV-91-VC1" secondAttribute="bottom" id="0v9-PV-pHs"/>
+                                            <constraint firstAttribute="width" constant="1024" id="9Vr-7m-E66"/>
+                                            <constraint firstItem="xqr-em-Qkh" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="PRO-Qf-plQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rtV-91-VC1" secondAttribute="trailing" id="Pi3-2C-jL9"/>
+                                            <constraint firstAttribute="trailing" secondItem="8to-iq-NYs" secondAttribute="trailing" id="UGV-G2-S7G"/>
+                                            <constraint firstItem="8to-iq-NYs" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="Vmo-eP-DOe"/>
+                                            <constraint firstItem="rtV-91-VC1" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="fnA-lQ-WP5"/>
+                                            <constraint firstAttribute="bottom" secondItem="xqr-em-Qkh" secondAttribute="bottom" id="jwm-j3-3x9"/>
+                                            <constraint firstItem="23k-mA-0zm" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="kE6-zw-Xeq"/>
+                                            <constraint firstItem="xqr-em-Qkh" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="rIl-wo-o71"/>
+                                            <constraint firstItem="rtV-91-VC1" firstAttribute="top" secondItem="8to-iq-NYs" secondAttribute="bottom" id="svj-X1-cnx"/>
+                                            <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="-10" id="xhZ-8N-Tj8"/>
+                                            <constraint firstAttribute="trailing" secondItem="xqr-em-Qkh" secondAttribute="trailing" id="ySa-QS-eLL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" constant="-10" id="g9g-Bb-EOv"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="nre-A9-77r"/>
+                                    <constraint firstAttribute="bottom" secondItem="PSx-Hb-PSG" secondAttribute="bottom" id="sub-0A-3Ti"/>
+                                    <constraint firstAttribute="trailing" secondItem="PSx-Hb-PSG" secondAttribute="trailing" id="xgc-49-alw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cPZ-HZ-YPi" secondAttribute="trailing" id="7Hf-vS-yXc"/>
+                            <constraint firstItem="ccM-iA-GLD" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="bottom" id="9hR-jY-jLm"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" constant="22" id="NYr-TU-jab"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="R5P-Bp-fuN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mBGImgV" destination="xqr-em-Qkh" id="ovq-V5-7Wi"/>
+                        <outlet property="mGscHeaderView" destination="23k-mA-0zm" id="neS-Dz-zRH"/>
+                        <outlet property="mProductNameV" destination="8to-iq-NYs" id="IWj-mG-X5K"/>
+                        <outlet property="mScrollV" destination="cPZ-HZ-YPi" id="rSG-nH-eCh"/>
+                        <outlet property="mThumnailCollectionV" destination="rtV-91-VC1" id="THz-hp-HWs"/>
+                        <outlet property="mVContent" destination="PSx-Hb-PSG" id="UVt-fs-4hq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aj-4H-wE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7437.3046874999991" y="2291.40625"/>
+        </scene>
+    </scenes>
+</document>

@@ -175,7 +175,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         avPlayer.play()
     }
     
-    func endMovie() {
+    func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     

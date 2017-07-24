@@ -733,7 +733,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         avPlayer.play()
     }
     
-    func endMovie() {
+    func endMovie(type: Int) {
         let moviePlay = mTroubleView.viewWithTag(50)
         moviePlay?.removeFromSuperview()
     }

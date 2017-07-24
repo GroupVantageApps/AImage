@@ -220,9 +220,8 @@ class Utility: NSObject {
     }
     class func csvToArray (file: String ) -> [String : String]{
         var result: [String : String] = [:]
-        let filePath: URL = URL.init(string: String(format: "file://%@/Documents/lx_csv/lx_csv/%@.csv", NSHomeDirectory(), file))!
+        let filePath: URL = URL.init(string: file)!
         if let data = try? Data(contentsOf: filePath) {
-            do {
                 let csvStr = String(data: data, encoding: .utf8)
                 var index = ""
                 var value = ""
@@ -271,9 +270,7 @@ class Utility: NSObject {
                 }
                 
                 print(result.count)
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
+
         }
         
         return result

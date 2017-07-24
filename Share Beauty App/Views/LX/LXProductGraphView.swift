@@ -224,7 +224,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
     }
 
     func updateAnimation(view: LXProductGraphContentView) {
-        var tempV = view as! LXProductGraphContentView
+        let tempV = view as! LXProductGraphContentView
         if tempV.tag == 103 {
             let subV = tempV.viewWithTag(201)
   

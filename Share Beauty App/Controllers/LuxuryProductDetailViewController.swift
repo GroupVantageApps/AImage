@@ -728,7 +728,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         avPlayer.play()
     }
     
-    func endMovie() {
+    func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
 }

@@ -14,6 +14,9 @@ class LanguageConfigure: NSObject {
     private static let defaultCountryId = 6
     private static let defaultLanguageId = 21
     private static let lxCsv = "LxCsv"
+    private static let gscCsv = "GscCsv"
+    private static let gscPlist = "GscPlist"
+    private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
     
     private enum UserDefaultKey: String {
@@ -117,6 +120,52 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: lxCsv)
+            userDefault.synchronize()
+        }
+    }
+    
+    
+    static var gsccsv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: gscCsv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ] 
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: gscCsv)
+            userDefault.synchronize()
+        }
+    }
+   
+    static var gscplist:  Dictionary<String, AnyObject>  {
+        get {
+            if let value = UserDefaults.standard.object(forKey: gscPlist) {
+                return value as! Dictionary<String, AnyObject>
+            } else {
+                return [ "" : "" as AnyObject ]   
+            } 
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: gscPlist)
+            userDefault.synchronize()
+        }
+    }
+    
+    static var gscgroup: String {
+        get {
+            if let value = UserDefaults.standard.object(forKey: gscGroup) {
+                return value as! String
+            } else {
+                return "A" 
+            } 
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: gscGroup)
             userDefault.synchronize()
         }
     }

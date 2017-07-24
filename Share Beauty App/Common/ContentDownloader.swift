@@ -367,6 +367,15 @@ class ContentDownloader: NSObject {
             print(e)
         }
         
+        let gscMovieFileUrl: URL = FileTable.getPath(6260)
+        print(gscMovieFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(gscMovieFileUrl)
+            print(destinationURL)
+        } catch let e {
+            print(e)
+        }
+        
         let imageFilePathStr = NSHomeDirectory() + "/Documents/lx_app"
         if manager.fileExists(atPath: imageFilePathStr) {
             do {
@@ -404,10 +413,46 @@ class ContentDownloader: NSObject {
             let destinationURL = try Zip.quickUnzipFile(csvFileUrl)
             print(destinationURL)
             let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-            let csv = Utility.csvToArray(file: String(format:"%@lx", languageCode.code))
+            let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
             LanguageConfigure.lxcsv = csv
+            
         } catch let e {
             print(e)
         }
+        
+        let gscCsvFileUrl: URL = FileTable.getPath(6275)
+        print(csvFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(gscCsvFileUrl)
+            print(destinationURL)
+//            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+//            let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+            
+            let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/000000gsc.csv", NSHomeDirectory())
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.gsccsv = csv
+            
+        } catch let e {
+            print(e)
+        }
+        
+        let gscPlistFileUrl: URL = FileTable.getPath(6299)
+        print(csvFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(gscPlistFileUrl)
+            print(destinationURL)
+            //            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            //            let filePath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+            
+            let gscFilePath = NSHomeDirectory() + "/Documents/gsc_plist/gsc_plist/suncare_A.plist"
+            if let dataDic = NSDictionary(contentsOfFile: gscFilePath) as? Dictionary<String, AnyObject> {
+                LanguageConfigure.gscplist = dataDic
+            }
+            
+        } catch let e {
+            print(e)
+        }
+        
     }
 }

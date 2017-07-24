@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,13 +29,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="507" height="748"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfl-x2-Qdx">
+                                        <rect key="frame" x="38" y="693" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="QYJ-RR-QJ9"/>
+                                            <constraint firstAttribute="height" constant="30" id="VaO-8P-qGh"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="goGscView:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="JOM-y9-qLP"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wfl-x2-Qdx" secondAttribute="bottom" constant="25" id="AFO-iN-J2p"/>
                                     <constraint firstAttribute="trailing" secondItem="dPy-jX-cZZ" secondAttribute="trailing" id="FIr-f4-npx"/>
                                     <constraint firstItem="dPy-jX-cZZ" firstAttribute="top" secondItem="PoE-RB-gRx" secondAttribute="top" id="KXM-7M-HMj"/>
                                     <constraint firstAttribute="width" constant="507" id="OUH-Lu-g3p"/>
                                     <constraint firstItem="dPy-jX-cZZ" firstAttribute="leading" secondItem="PoE-RB-gRx" secondAttribute="leading" id="Uks-90-J9i"/>
                                     <constraint firstAttribute="bottom" secondItem="dPy-jX-cZZ" secondAttribute="bottom" id="b5B-fK-kzu"/>
+                                    <constraint firstItem="wfl-x2-Qdx" firstAttribute="leading" secondItem="PoE-RB-gRx" secondAttribute="leading" constant="38" id="iIU-fg-Hif"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHi-aa-YBh">
@@ -77,10 +90,10 @@
                                                 <rect key="frame" x="254" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-TM-6Lg">
-                                                        <rect key="frame" x="126.5" y="124" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Ik-ocE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="111.5" y="108" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="108" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="DwQ-nG-lMk"/>
                                                         </connections>
@@ -122,7 +135,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="249"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Skj-px-jub">
-                                                        <rect key="frame" x="127" y="124.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-47-XsE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="112" y="107" width="30" height="34"/>
@@ -151,10 +164,10 @@
                                                 <rect key="frame" x="254" y="0.0" width="253" height="249"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Bqv-j9-9G3">
-                                                        <rect key="frame" x="126.5" y="124.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-D2-Lg6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="111.5" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="uDb-Vq-0b5"/>
                                                         </connections>
@@ -196,7 +209,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="S5x-Ra-z1y">
-                                                        <rect key="frame" x="127" y="123.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-V3-ObH" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="112" y="107" width="30" height="34"/>
@@ -237,10 +250,10 @@
                                                 <rect key="frame" x="254" y="0.0" width="253" height="248.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="VXV-Tt-QCF">
-                                                        <rect key="frame" x="126.5" y="123.5" width="0.0" height="0.0"/>
+                                                        <rect key="frame" x="127" y="124" width="0.0" height="0.0"/>
                                                     </imageView>
                                                     <button alpha="0.0" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-a3-xfg" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="111.5" y="107" width="30" height="34"/>
+                                                        <rect key="frame" x="112" y="107" width="30" height="34"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="LZI-vp-sSZ"/>
                                                         </connections>
