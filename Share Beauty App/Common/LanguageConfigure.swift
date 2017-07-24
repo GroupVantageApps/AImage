@@ -135,4 +135,8 @@ class LanguageConfigure: NSObject {
             userDefault.synchronize()
         }
     }
+
+    static var isMyanmar: Bool {
+        get { return self.regionId == 2 && self.countryId == 23 && self.languageId == 58 }
+    }
 }

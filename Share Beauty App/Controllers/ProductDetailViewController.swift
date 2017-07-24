@@ -164,6 +164,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.spec
 
+        //Utility.log("=====   RegionId: " + LanguageConfigure.regionId.description)
+        //Utility.log("=====  CountryId: " + LanguageConfigure.countryId.description)
+        //Utility.log("===== LanguageId: " + LanguageConfigure.languageId.description)
+        if LanguageConfigure.isMyanmar {
+            let lineHeight:CGFloat = 30.0
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.minimumLineHeight = lineHeight
+            paragraphStyle.maximumLineHeight = lineHeight
+            
+            let featureText = NSMutableAttributedString(string: product.feature)
+            featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+            mLblFeature.attributedText = featureText
+            
+            let howToUseText = NSMutableAttributedString(string: product.feature)
+            howToUseText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
+            mLblHowToUse.attributedText = howToUseText
+        }
+
         mCategoryButtonTechnologies.enabled = (product.technologyImage.count != 0)
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
