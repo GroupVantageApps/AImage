@@ -64,9 +64,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             ] as [AnyClass]
 
         (0..<nextVcs.count).forEach { i in
-            let image = UIImage(named:("lifestyle" + String(i + 1)))
+            let image = UIImage(named:("lifestyle" + String(i + 5)))
 
-            let key = "0" + String(i + 1)
+            let key = "0" + String(i + 5)
             var text: String = items[key]!
             text = text.replacingOccurrences(of: "\n", with: "<br>")
             var isFocus = false
@@ -222,22 +222,22 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if index == 0 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleFirstDetailViewController", targetClass: LifeStyleFirstDetailViewController.self) as! LifeStyleFirstDetailViewController
             self.delegate?.nextVc(nextVc)
-            logItemId = "01"
+            logItemId = "05"
 
         } else if index == 1 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleSecondDetailViewController", targetClass: LifeStyleSecondDetailViewController.self) as! LifeStyleSecondDetailViewController
             self.delegate?.nextVc(nextVc)
-            logItemId = "02"
+            logItemId = "06"
 
         } else if index == 2 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleThirdDetailViewController", targetClass: LifeStyleThirdDetailViewController.self) as! LifeStyleThirdDetailViewController
             self.delegate?.nextVc(nextVc)
-            logItemId = "03"
+            logItemId = "07"
 
         } else if index == 3 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleFourthDetailViewController", targetClass: LifeStyleFourthDetailViewController.self) as! LifeStyleFourthDetailViewController
             self.delegate?.nextVc(nextVc)
-            logItemId = "04"
+            logItemId = "08"
         }
 
         LogManager.tapItem(screenCode: mScreen.code, itemId: logItemId)

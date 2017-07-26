@@ -31,7 +31,7 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		let imageId = AppItemTranslateTable.getEntity(7798).mainImage.first
+		let imageId = AppItemTranslateTable.getEntity(7922).mainImage.first
 		self.mTopImageView.image = FileTable.getImage(imageId)
     }
 
@@ -70,11 +70,11 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
             }
             lifeStyleProductView.delegate = self
             lifeStyleProductView.product = product
-            lifeStyleProductView.headerText = items["0" + String(i+2)]
-            lifeStyleProductView.explainText = items["1" + String(i+2)]
+            lifeStyleProductView.headerText = items["1" + String(i*2+1)]
+            lifeStyleProductView.explainText = items["1" + String(i*2+2)]
 
             lifeStyleProductView.logScreenId = mScreen.code
-            lifeStyleProductView.logItemId = "0" + String(i+1)
+            lifeStyleProductView.logItemId = "1" + String(i*2+1)
 
         }
         Utility.log(items)

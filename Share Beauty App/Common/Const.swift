@@ -85,7 +85,7 @@ struct Const {
     static let troubleDisplayNormal = 2
     static let troubleDisplayHide = 1
 
-    static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
+    static let lifeStyleBeautyListA = [101, 359, 455]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [115, 497, 511] //waso追加　平井20170217　（アイテムは暫定）
     static let lifeStyleBeautyListC = [372, 421]
     static let lifeStyleBeautyListD = [533, 359, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
