@@ -38,14 +38,21 @@ class GscBaseViewController: UIViewController {
         switch type {
         case .home:
             self.showTop()
+            
         case .play:
             self.playMovie()
+            
         case .update:
             self.updateData()
+            
         case .find:
-            break
+            let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
+            toVc.fromFindBtn = true
+            self.navigationController?.pushViewController(toVc, animated: false)
+            
         case .back:
             self.backVC()
+            
         default:
             break
         }

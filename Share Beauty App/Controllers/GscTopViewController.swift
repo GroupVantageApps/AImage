@@ -26,6 +26,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     var ndGoProductVC = false
     var mSelectType: String = ""
     var mGroupType: String = ""
+    var fromFindBtn: Bool = false
     
     @IBOutlet weak var mLogoImgV: UIImageView!
     @IBOutlet weak var mTopBGImgV: UIImageView!
@@ -36,17 +37,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     var mBaseView: UIView!
     var mSunCareSelectView1: UIView!
     var mSunCareSelectView2: UIView!
-//    func setDropDown(dataSource: [String]) {
-//        mDropDown.dataSource = dataSource
-//        mDropDown.anchorView = mBtnOutApp
-//        mDropDown.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
-//        mDropDown.selectionAction = { [unowned self] (index, item) in
-//            self.didSelectOutApp(index: index)
-//            self.mDropDown.deselectRowAtIndexPath(index)
-//        }
-//        mDropDown.direction = .bottom
-//    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,57 +51,61 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         mGroupType = LanguageConfigure.gscgroup
         
-//        self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         
         print("GscViewController.viewDidLoad")
 //        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
       
-        
+    
         mBaseView = UIView.init(frame: CGRect(x: 0, y: 40, width: selfWidth, height: selfHeight - 72 ))
         mVContent.addSubview(mBaseView)
         mVContent.bringSubview(toFront: mGscHeaderView)
         
-        moviePlay2 = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay2.isTop = true
-        moviePlay2.delegate = self
-        moviePlay2.type = 2
-        moviePlay2.setUI()
-//        moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie2")
-        self.view.addSubview(moviePlay2)
-        
-        
-        
-        moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
-        moviePlay.isTop = true
-        moviePlay.delegate = self
-        moviePlay.setUI()
-        moviePlay.type = 1
-        moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie_top")
-        self.view.addSubview(moviePlay)
-        
         let gscArr = LanguageConfigure.gsccsv
-        mTapLabel = UILabel()
-        mTapLabel.text = gscArr["2"]
-        mTapLabel.textAlignment = .center
-        mTapLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
-        mTapLabel.textColor = UIColor.white
-        mTapLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 340, width: 500, height: 100)
-        moviePlay.addSubview(mTapLabel)
         
+        if !fromFindBtn {
+            moviePlay2 = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+            moviePlay2.isTop = true
+            moviePlay2.delegate = self
+            moviePlay2.type = 2
+            moviePlay2.setUI()
+            //        moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie2")
+            self.view.addSubview(moviePlay2)
+            
+            
+            
+            moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+            moviePlay.isTop = true
+            moviePlay.delegate = self
+            moviePlay.setUI()
+            moviePlay.type = 1
+            moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie_top")
+            self.view.addSubview(moviePlay)
+            
+            mTapLabel = UILabel()
+            mTapLabel.text = gscArr["2"]
+            mTapLabel.textAlignment = .center
+            mTapLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
+            mTapLabel.textColor = UIColor.white
+            mTapLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 340, width: 500, height: 100)
+            moviePlay.addSubview(mTapLabel)
+    
         
-        mFindLabel = UILabel()
-        mFindLabel.text = gscArr["3"]
-        mFindLabel.textAlignment = .center
-        mFindLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
-        mFindLabel.textColor = UIColor.white
-        mFindLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 550, width: 500, height: 100)
-        moviePlay.addSubview(mFindLabel)
-        
+            mFindLabel = UILabel()
+            mFindLabel.text = gscArr["3"]
+            mFindLabel.textAlignment = .center
+            mFindLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
+            mFindLabel.textColor = UIColor.white
+            mFindLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 550, width: 500, height: 100)
+            moviePlay.addSubview(mFindLabel)
+        }
         mGscHeaderView.mLblTitle.text = ""
         mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"]
         
         self.setSelet1View()
         self.setSelet2View()
+        
+        mSunCareSelectView2.isHidden = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -126,8 +121,10 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     }
     override func viewDidDisappear(_ animated: Bool) {
         print("GscViewController.viewDidDisappear")
-        moviePlay.isHidden = true
-        moviePlay2.isHidden = true
+        if (moviePlay != nil) && (moviePlay2 != nil) {
+            moviePlay.isHidden = true
+            moviePlay2.isHidden = true
+        }
     }
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVContent
@@ -159,9 +156,6 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         if type == 1 {
             moviePlay2.playMovie(movie: "gsc_movie/gsc_movie/scMovie2")
         }
-        
-        mSunCareSelectView2.isHidden = true
-
     }
     
     func setSelet1View() {
@@ -220,7 +214,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     func onTapFaceBtn() {
         if mGroupType == "A" {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
-            nextVc.mSelect1Type = mSelectType
+            nextVc.mSelect1Type = "face"
             self.navigationController?.pushViewController(nextVc, animated: false)
         } else {
             mGscHeaderView.mBtnFind.isHidden = false
@@ -236,7 +230,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     func onTapBodyBtn() {
         if mGroupType == "A" {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
-            nextVc.mSelect1Type = mSelectType
+            nextVc.mSelect1Type = "body"
             self.navigationController?.pushViewController(nextVc, animated: false)
         } else {
             mGscHeaderView.mBtnFind.isHidden = false

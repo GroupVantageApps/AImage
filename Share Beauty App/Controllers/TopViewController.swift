@@ -385,11 +385,5 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         delegate?.pushVc(toVc)
         LogManager.tapItem(screenCode: mScreen.code, itemId: "06")
     }
-    
-    @IBAction func goGscView(_ sender: UIButton) {
-        let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
-        delegate?.pushVc(toVc)
-        
-    }
-    
+
 }

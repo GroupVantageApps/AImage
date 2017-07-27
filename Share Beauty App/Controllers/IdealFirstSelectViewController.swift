@@ -148,6 +148,12 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
                 mSelectedLineIds.remove(at: index)
             }
         }
+        
+        //Suncareボタンをtapした場合 GSCへ遷移 
+        if line.lineId == 17 {
+            let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
+            delegate?.pushVc(toVc)
+        }
     }
     func didSelectCellSomeone(_ sender: IdealSelectCollectionView) {
         print("didSelectCellSomeone")

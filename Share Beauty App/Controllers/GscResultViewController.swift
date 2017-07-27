@@ -33,22 +33,12 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     
     @IBOutlet weak var mProductNameV: UIView!
     @IBOutlet weak var mBGImgV: UIImageView!
-    
-    //    func setDropDown(dataSource: [String]) {
-    //        mDropDown.dataSource = dataSource
-    //        mDropDown.anchorView = mBtnOutApp
-    //        mDropDown.bottomOffset = CGPoint(x: 0, y: mBtnOutApp.height)
-    //        mDropDown.selectionAction = { [unowned self] (index, item) in
-    //            self.didSelectOutApp(index: index)
-    //            self.mDropDown.deselectRowAtIndexPath(index)
-    //        }
-    //        mDropDown.direction = .bottom
-    //    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mGscHeaderView.delegate = self
+        mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height
@@ -66,7 +56,6 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         
         //TODO
         mGroupType = LanguageConfigure.gscgroup
-        mSelect1Type = "body"
         
         if mGroupType == "A" {
             if mSelect1Type == "face" {
@@ -309,7 +298,11 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         let product = ProductData.init(productId: tag ?? 0)
         if product.productId != 0 {
             print(product.productId)
-            print(product.productName)
+            
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("GscProductDetailViewController", targetClass: GscProductDetailViewController.self) as! GscProductDetailViewController
+            nextVc.mProductId = product.productId
+            self.navigationController?.pushViewController(nextVc, animated: false)
+            
         }
     }
     
