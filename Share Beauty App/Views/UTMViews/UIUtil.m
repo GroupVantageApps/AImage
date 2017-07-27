@@ -241,15 +241,216 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
 
 + (NSMutableArray *)getUtmArray
 {
-    // CSVファイルからセクションデータを取得する
+    // CSVファイルからセクションデータを取得する utmコンテンツ
     NSInteger languageId = LanguageConfigure.languageId;
     int fileId = 0;
     switch (languageId) {
-        case 21:
+        case 2:
+            fileId = 5766;
+            break;
+        case 3:
+            fileId = 5766;
+            break;
+        case 4:
+            fileId =5770 ;
+            break;
+        case 5:
+            fileId = 5788;
+            break;
+        case 6:
+            fileId = 5789;
+            break;
+        case 7:
+            fileId = 5808;
+            break;
+        case 8:
+            fileId = 5784;
+            break;
+        case 9:
+            fileId = 5770;
+            break;
+        case 10:
+            fileId = 5788;
+            break;
+        case 11:
+            fileId = 5789;
+            break;
+        case 12:
+            fileId = 5808;
+            break;
+        case 13:
+            fileId = 5784;
+            break;
+        case 14:
+            fileId = 5780;
+            break;
+        case 15:
+            fileId = 5780;
+            break;
+        case 16:
+            fileId = 5766;
+            break;
+        case 17:
+            fileId = 5783;
+            break;
+        case 18:
+            fileId = 5784;
+            break;
+        case 20:
+            fileId = 5785;
+            break;
+        case 21:    //hk
             fileId = 5786;
             break;
-        case 22:
+        case 22:    //hk
             fileId = 5787;
+            break;
+        case 23:
+            fileId = 5788;
+            break;
+        case 24:
+            fileId = 5789;
+            break;
+        case 26:
+            fileId = 5785;
+            break;
+        case 27:
+            fileId = 5808;
+            break;
+        case 28:
+            fileId = 5766;
+            break;
+        case 29:
+            fileId = 5794;
+            break;
+        case 30:
+            fileId = 5766;
+            break;
+        case 31:
+            fileId = 5808;
+            break;
+        case 32:
+            fileId = 5766;
+            break;
+        case 33:
+            fileId = 5785;
+            break;
+        case 34:
+            fileId = 5766;
+            break;
+        case 35:
+            fileId = 5780;
+            break;
+        case 36:
+            fileId = 5788;
+            break;
+        case 37:
+            fileId = 5785;
+            break;
+        case 38:
+            fileId = 5808;
+            break;
+        case 39:
+            fileId = 5786;
+            break;
+        case 40:
+            fileId = 5794;
+            break;
+        case 41:
+            fileId = 5789;
+            break;
+        case 42:
+            fileId = 5808;
+            break;
+        case 43:
+            fileId = 5780;
+            break;
+        case 48:
+            fileId = 5766;
+            break;
+        case 49:
+            fileId = 5766;
+            break;
+        case 55:
+            fileId = 5766;
+            break;
+        case 58:
+            fileId = 6243;
+            break;
+        case 59:
+            fileId = 5766;
+            break;
+        case 60:
+            fileId = 5766;
+            break;
+        case 61:
+            fileId = 5808;
+            break;
+        case 62:
+            fileId = 5785;
+            break;
+        case 63:
+            fileId = 5770;
+            break;
+        case 64:
+            fileId = 5780;
+            break;
+        case 65:
+            fileId = 5784;
+            break;
+        case 66:
+            fileId = 5794;
+            break;
+        case 67:
+            fileId = 5786;
+            break;
+        case 68:
+            fileId = 5766;
+            break;
+        case 69:
+            fileId = 5808;
+            break;
+        case 70:
+            fileId = 5785;
+            break;
+        case 71:
+            fileId = 5770;
+            break;
+        case 72:
+            fileId = 5780;
+            break;
+        case 73:
+            fileId = 5784;
+            break;
+        case 74:
+            fileId = 5794;
+            break;
+        case 75:
+            fileId = 5786;
+            break;
+        case 76:
+            fileId = 5766;
+            break;
+        case 77:
+            fileId = 5808;
+            break;
+        case 78:
+            fileId = 5785;
+            break;
+        case 79:
+            fileId = 5770;
+            break;
+        case 80:
+            fileId = 5780;
+            break;
+        case 81:
+            fileId = 5784;
+            break;
+        case 82:
+            fileId = 5794;
+            break;
+        case 83:
+            fileId = 5786;
             break;
         default:
             fileId = 5766;
@@ -263,16 +464,217 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
 }
 
 + (NSArray *)get17SSArray {
-    // CSVファイルからセクションデータを取得する
+    // CSVファイルからセクションデータを取得する 17SS
 
     NSInteger languageId = LanguageConfigure.languageId;
     int fileId = 0;
     switch (languageId) {
-        case 21:
+        case 2:
+            fileId = 6324;
+            break;
+        case 3:
+            fileId = 6324;
+            break;
+        case 4:
+            fileId = 6325;
+            break;
+        case 5:
+            fileId = 6327;
+            break;
+        case 6:
+            fileId = 6328;
+            break;
+        case 7:
+            fileId = 6330;
+            break;
+        case 8:
+            fileId = 6333;
+            break;
+        case 9:
+            fileId = 6325;
+            break;
+        case 10:
+            fileId = 6327;
+            break;
+        case 11:
+            fileId = 6328;
+            break;
+        case 12:
+            fileId = 6330;
+            break;
+        case 13:
+            fileId = 6333;
+            break;
+        case 14:
+            fileId = 6324;
+            break;
+        case 15:
+            fileId = 6324;
+            break;
+        case 16:
+            fileId = 6324;
+            break;
+        case 17:
+            fileId = 6332;
+            break;
+        case 18:
+            fileId = 6333;
+            break;
+        case 20:
+            fileId = 5326;
+            break;
+        case 21:            //hk
             fileId = 5914;
             break;
-        case 22:
+        case 22:            //hk
             fileId = 5915;
+            break;
+        case 23:
+            fileId = 6327;
+            break;
+        case 24:
+            fileId = 6328;
+            break;
+        case 26:
+            fileId = 5326;
+            break;
+        case 27:
+            fileId = 6330;
+            break;
+        case 28:
+            fileId = 6324;
+            break;
+        case 29:
+            fileId = 6329;
+            break;
+        case 30:
+            fileId = 6324;
+            break;
+        case 31:
+            fileId = 6330;
+            break;
+        case 32:
+            fileId = 6324;
+            break;
+        case 33:
+            fileId = 5326;
+            break;
+        case 34:
+            fileId = 6324;
+            break;
+        case 35:
+            fileId = 6324;
+            break;
+        case 36:
+            fileId = 6327;
+            break;
+        case 37:
+            fileId = 5326;
+            break;
+        case 38:
+            fileId = 6330;
+            break;
+        case 39:
+            fileId = 5914;
+            break;
+        case 40:
+            fileId = 6329;
+            break;
+        case 41:
+            fileId = 6328;
+            break;
+        case 42:
+            fileId = 6330;
+            break;
+        case 43:
+            fileId = 6324;
+            break;
+        case 48:
+            fileId = 6324;
+            break;
+        case 49:
+            fileId = 6324;
+            break;
+        case 55:
+            fileId = 6324;
+            break;
+        case 58:
+            fileId = 6331;
+            break;
+        case 59:
+            fileId = 6324;
+            break;
+        case 60:
+            fileId = 6324;
+            break;
+        case 61:
+            fileId = 6330;
+            break;
+        case 62:
+            fileId = 5326;
+            break;
+        case 63:
+            fileId = 6325;
+            break;
+        case 64:
+            fileId = 6324;
+            break;
+        case 65:
+            fileId = 6333;
+            break;
+        case 66:
+            fileId = 6329;
+            break;
+        case 67:
+            fileId = 5914;
+            break;
+        case 68:
+            fileId = 6324;
+            break;
+        case 69:
+            fileId = 6330;
+            break;
+        case 70:
+            fileId = 5326;
+            break;
+        case 71:
+            fileId = 6325;
+            break;
+        case 72:
+            fileId = 6324;
+            break;
+        case 73:
+            fileId = 6333;
+            break;
+        case 74:
+            fileId = 6329;
+            break;
+        case 75:
+            fileId = 5914;
+            break;
+        case 76:
+            fileId = 6324;
+            break;
+        case 77:
+            fileId = 6330;
+            break;
+        case 78:
+            fileId = 5326;
+            break;
+        case 79:
+            fileId = 6325;
+            break;
+        case 80:
+            fileId = 6324;
+            break;
+        case 81:
+            fileId = 6333;
+            break;
+        case 82:
+            fileId = 6329;
+            break;
+        case 83:
+            fileId = 5914;
             break;
         default:
             fileId = 5916;
