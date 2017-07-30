@@ -45,7 +45,7 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         items = AppItemTable.getItems(screenId: Const.screenIdIdealBeauty3)
         Utility.log(items)
         mItemTitle.text = items["01"]
-        mButtonView.titleLabel?.text = items["02"]
+        mButtonView.setTitle(items["02"], for: .normal)//mButtonView.titleLabel?.text = items["02"] t-hirai
         mBtnAllItem.setTitle(items["03"], for: .normal)
         mBtnAllItem.setTitle(items["03"], for: .selected)
     }
