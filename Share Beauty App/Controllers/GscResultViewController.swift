@@ -201,11 +201,11 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                             useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
                             useTypeLbl.textColor = UIColor.black
                         case "lip" :
-                            useTypeLbl.text = "[WIP]CSVの更新待ち/背景色未決定"
+                            useTypeLbl.text =  gscArr["23"]
                             useTypeLbl.backgroundColor = UIColor.white
                             useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
                         case "anytime" :
-                            useTypeLbl.text = "[WIP]CSVの更新待ち/背景色未決定"
+                            useTypeLbl.text =  gscArr["22"]
                             useTypeLbl.backgroundColor = UIColor.white
                             useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
                         default:

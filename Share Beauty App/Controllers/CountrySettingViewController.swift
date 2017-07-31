@@ -141,7 +141,9 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let csv = Utility.csvToArray(file: filePath)
             LanguageConfigure.lxcsv = csv
 //            
-            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+//            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+            
+            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
             let gscCsv = Utility.csvToArray(file: gscFilePath)
             LanguageConfigure.gsccsv = gscCsv
             
@@ -149,7 +151,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let gscGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
             let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath!) as? [String: Any]
             let group = groupingDic?[String(LanguageConfigure.countryId)]
-            LanguageConfigure.gscgroup = group as? String ?? "A"
+//            LanguageConfigure.gscgroup = group as? String ?? "A"
+            LanguageConfigure.gscgroup = "A"
 
             let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
             let path = FileTable.getPath(6104)
@@ -179,14 +182,15 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let csv = Utility.csvToArray(file: filePath)
         LanguageConfigure.lxcsv = csv
           
-        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+        //        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
         let gscCsv = Utility.csvToArray(file: gscFilePath)
         LanguageConfigure.gsccsv = gscCsv
 
         let gecGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
         let groupingDic = NSDictionary.init(contentsOf: URL.init(string: gecGroupingPlistPath!)!)
         let group = groupingDic?[LanguageConfigure.countryId] as? String ?? "A"
-        LanguageConfigure.gscgroup = group
+        LanguageConfigure.gscgroup = "A"
         
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
 //        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
