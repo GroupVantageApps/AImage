@@ -531,7 +531,7 @@ class ProductListData: NSObject {
                     if secondsProducts[data.beautySecondId] == nil {
                         secondsProducts[data.beautySecondId] = [data]
                     } else {
-                        secondsProducts[data.beautySecondId]?.append(data)
+                        secondsProducts[data.beautySecondId]?.append(data) 
                     }
                 }
             }

@@ -189,7 +189,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
 
         let gecGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
         let groupingDic = NSDictionary.init(contentsOf: URL.init(string: gecGroupingPlistPath!)!)
-        let group = groupingDic?[LanguageConfigure.countryId] as? String ?? "A"
+//        let group = groupingDic?[LanguageConfigure.countryId] as? String ?? "A"
         LanguageConfigure.gscgroup = "A"
         
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)

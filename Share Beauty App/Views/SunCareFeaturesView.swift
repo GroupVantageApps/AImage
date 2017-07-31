@@ -35,6 +35,7 @@ class SunCareFeaturesView: BaseView {
     weak var delegate: UtmFeaturesViewDelegate?
     var isSCP = false
     var isGSC = true
+    var isGSCFragrance = false
 
     private var mSSArr: [String]!
     private var mShowTag: Int = 0
@@ -96,7 +97,20 @@ class SunCareFeaturesView: BaseView {
                 lineHeight: 0,
                 lbl: mLblBalloon3
             )
+        } else if isGSCFragrance {
+            let gscArr = LanguageConfigure.gsccsv
+            mVBalloon2.isHidden = false
+            mVBalloon3.isHidden = true
+            self.applyAttrText(
+                gscArr["21"] ?? "not seted GSC csv No.21",
+                fontSize: 18,
+                tracking: 0,
+                lineHeight: 0,
+                lbl: mLblBalloon2
+            )
+            mButtonBalloon3.setBackgroundImage(UIImage.init(named: "ss_pink"), for: .normal)
         }
+
         mLblhukidashi.numberOfLines = 0
         mLblhukidashi.textAlignment = .center
     }

@@ -440,7 +440,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
-        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
+//        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
         mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
         mIsMakeUp = Const.productIdMakeUp == self.productId
     }

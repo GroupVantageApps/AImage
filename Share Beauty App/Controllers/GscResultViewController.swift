@@ -124,13 +124,20 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             print("gcodeDic:\(String(describing: gcodeDic))")
             print("typeDic:\(String(describing: typeDic))")
             
-            if ((gcodeDic) != nil) {
-                 let productList = gcodeDic?[mSelect1Type] as! [String]
+            if (gcodeDic != nil) {
+                var productList :[String] = []
+                
+                if mGroupType == "A" {
+                    productList = gcodeDic?[mSelect1Type] as! [String]
+                } else {
+                    let upperDic = gcodeDic?[mSelect1Type] as? Dictionary<String, AnyObject>
+                    productList = upperDic?[mSelect2Type] as! [String]
+                }
                 
                 //defaultDisplay が 1のproductのみ表示
-//                let disPlayProductList = productList.filter { 
-//                    ProductData.init(productId: Int($0)!).defaultDisplay == 1
-//                }
+                //                let disPlayProductList = productList.filter { 
+                //                    ProductData.init(productId: Int($0)!).defaultDisplay == 1
+                //                }
                 
                 //imgがあるもののみ表示
                 let disPlayProductList = productList.filter { 

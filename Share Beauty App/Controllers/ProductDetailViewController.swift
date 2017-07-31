@@ -84,6 +84,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsWhiteLucentOnMakeUp: Bool = false
     var mIsWhiteLucentWhiteLucentAllDay: Bool = false
     var mIsSunCareBBSports: Bool = false
+    var mIsSunCareFragrance: Bool = false
     var mIsSunCarePerfectUv: Bool = false
     var mIsMakeUp: Bool = false
     var mIsWaso: Bool = false
@@ -215,7 +216,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示
-        if self.product.productId == 498 || self.product.productId == 499 {
+        if self.product.productId == 498 || self.product.productId == 499 || (545 <= self.product.productId && self.product.productId <= 550){
             mImageBackgroundDot.isHidden = false
         } else {
             mImageBackgroundDot.isHidden = true
@@ -424,6 +425,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mSuncareFeaturesView = SunCareFeaturesView()
             mSuncareFeaturesView.isGSC = mIsSunCareBBSports
             mSuncareFeaturesView.isSCP = mIsSunCarePerfectUv
+            mSuncareFeaturesView.isGSCFragrance = mIsSunCareFragrance
             mSuncareFeaturesView.bottomPadding = 30
 
             self.setSpecialCaseConstraints(targetView: mSuncareFeaturesView, viewHeight: 300)
@@ -479,7 +481,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
-        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
+        mIsSunCareBBSports = Const.productIdSunCareBBSports.contains(self.productId)
+        mIsSunCareFragrance = Const.productIdSunCareFragrance.contains(self.productId)
         mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
         mIsMakeUp = Const.productIdMakeUp == self.productId
         mIsWaso = Const.lineIdWASO == self.product.lineId

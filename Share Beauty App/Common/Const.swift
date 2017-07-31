@@ -123,7 +123,8 @@ struct Const {
     static let productIdIbuki = 495
     static let productIdWhiteLucentOnMakeUp = 496
     static let productIdWhiteLucentAllDay = 497
-    static let productIdSunCareBBSports = 498
+    static let productIdSunCareBBSports = [498, 549]
+    static let productIdSunCareFragrance = [545, 546, 547, 548]
     static let productIdSunCarePerfectUv = 499
     static let productIdMakeUp = 501
 
