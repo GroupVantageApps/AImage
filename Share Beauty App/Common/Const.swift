@@ -55,6 +55,10 @@ struct Const {
     static let screenIdLifeStyleBeautyC = 7798
     static let screenIdLifeStyleBeautyD = 7799
     static let screenIdLifeStyleBeautyE = 7805
+    static let screenIdLifeStyleBeautyF = 7818
+    static let screenIdLifeStyleBeautyG = 7819
+    static let screenIdLifeStyleBeautyH = 7820
+    static let screenIdLifeStyleBeautyI = 7821
     static let screenIdIdealBeauty1 = 7789
     static let screenIdIdealBeauty2 = 7790
     static let screenIdIdealBeauty3 = 7791
@@ -85,11 +89,15 @@ struct Const {
     static let troubleDisplayNormal = 2
     static let troubleDisplayHide = 1
 
-    static let lifeStyleBeautyListA = [101, 359, 455]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
+    static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [115, 497, 511] //waso追加　平井20170217　（アイテムは暫定）
     static let lifeStyleBeautyListC = [372, 421]
     static let lifeStyleBeautyListD = [533, 359, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
     static let lifeStyleBeautyListE = [513, 252, 313]
+    static let lifeStyleBeautyListF = [101, 359, 455]
+    static let lifeStyleBeautyListG = [553, 555, 359]
+    static let lifeStyleBeautyListH = [470, 500, 551]
+    static let lifeStyleBeautyListI = [545, 549, 122]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
     static let productIdsUTM = [359, 28]

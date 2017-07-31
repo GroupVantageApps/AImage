@@ -392,7 +392,11 @@ class ProductListData: NSObject {
         if screenId == Const.screenIdLifeStyleBeautyA ||
             screenId == Const.screenIdLifeStyleBeautyB ||
             screenId == Const.screenIdLifeStyleBeautyC ||
-            screenId == Const.screenIdLifeStyleBeautyD {
+            screenId == Const.screenIdLifeStyleBeautyD ||
+            screenId == Const.screenIdLifeStyleBeautyF ||
+            screenId == Const.screenIdLifeStyleBeautyG ||
+            screenId == Const.screenIdLifeStyleBeautyH ||
+            screenId == Const.screenIdLifeStyleBeautyI {
 
             if productEntity.beautyId == Const.beautySecondIdMoisturizer {
                 //全MoisturizerBP順
@@ -438,7 +442,19 @@ class ProductListData: NSObject {
         } else if screenId == Const.screenIdLifeStyleBeautyD {
             self.appendProductByArray(Const.lifeStyleBeautyListD)
 
+        //Life Style Beauty F
+        } else if screenId == Const.screenIdLifeStyleBeautyF {
+            self.appendProductByArray(Const.lifeStyleBeautyListF)
         //On Trend Beauty
+        } else if screenId == Const.screenIdLifeStyleBeautyG {
+            self.appendProductByArray(Const.lifeStyleBeautyListG)
+            //On Trend Beauty
+        } else if screenId == Const.screenIdLifeStyleBeautyH {
+            self.appendProductByArray(Const.lifeStyleBeautyListH)
+            //On Trend Beauty
+        } else if screenId == Const.screenIdLifeStyleBeautyI {
+            self.appendProductByArray(Const.lifeStyleBeautyListI)
+            //On Trend Beauty
         } else if screenId == Const.screenIdOnTrendBeauty {
             let items: [String: String] = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
             guard let item = items["03"],
