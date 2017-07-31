@@ -46,6 +46,17 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private var finished: ((_ afterIndex: Int) -> ())!
     private var mLifeStyles = [LifeStyle]()
     private var mCounts = [String: Int]()
+    
+    private let nextVcs: DictionaryLiteral = [
+        4:LifeStyleFifthDetailViewController.self,
+        5:LifeStyleSixthDetailViewController.self,
+        6:LifeStyleSeventhDetailViewController.self,
+        7:LifeStyleEighthDetailViewController.self,
+        0:LifeStyleFirstDetailViewController.self,
+        1:LifeStyleSecondDetailViewController.self,
+        2:LifeStyleThirdDetailViewController.self,
+        3:LifeStyleFourthDetailViewController.self,
+        ]
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -56,17 +67,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         super.viewDidLoad()
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
-        let nextVcs: DictionaryLiteral = [
-            4:LifeStyleFifthDetailViewController.self,
-            5:LifeStyleFifthDetailViewController.self,
-            6:LifeStyleFifthDetailViewController.self,
-            7:LifeStyleFifthDetailViewController.self,
-            0:LifeStyleFirstDetailViewController.self,
-            1:LifeStyleSecondDetailViewController.self,
-            2:LifeStyleThirdDetailViewController.self,
-            3:LifeStyleFourthDetailViewController.self,
-            ]
-
+        
         for (i, nextVc) in nextVcs {
             
             let image = UIImage(named:("lifestyle" + String(i+1)))
@@ -196,7 +197,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             cell.text = lifeStyle.text
             cell.isRecommend = lifeStyle.isRecommend
             cell.index = indexPath.row / 2
-            cell.mCountsLabel.text = String(mCounts[String(indexPath.row / 2)] ?? 0)
+            cell.mCountsLabel.text = String(mCounts[String(nextVcs[(indexPath.row / 2)].key)] ?? 0)
             cell.resetAnimation()
             if lifeStyle.focus {
                 cell.focusAnimation()
@@ -274,11 +275,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     }
 
     func didTapRecommend(index: Int) {
-        LifeStyleBeautyCount.incrementLocal(index: index)
+        LifeStyleBeautyCount.incrementLocal(index: nextVcs[index].key)
         mCounts = LifeStyleBeautyCount.getCounts()
         mCollectionV.reloadData()
-        let logItemId = "1" + String(index)
-        print(logItemId)
+        let logItemId = "1" + String(nextVcs[index].key)
         LogManager.tapLifeStyleItem(screenCode: mScreen.code, itemId: logItemId)
     }
 

@@ -36,7 +36,7 @@ class LifeStyleBeautyCount {
         var dict = getDictionary()
 
         // 0で初期化
-        for index in 0...3 {
+        for index in 0...7 {
             let i = String(index)
             if let localCount = dict[i]?[local] {
                 dict[i] = [remote: 0, local: localCount]
@@ -52,6 +52,10 @@ class LifeStyleBeautyCount {
             case "11": dict["1"]?["remote"] = data["count"].int
             case "12": dict["2"]?["remote"] = data["count"].int
             case "13": dict["3"]?["remote"] = data["count"].int
+            case "14": dict["4"]?["remote"] = data["count"].int
+            case "15": dict["5"]?["remote"] = data["count"].int
+            case "16": dict["6"]?["remote"] = data["count"].int
+            case "17": dict["7"]?["remote"] = data["count"].int
             default: break
             }
         }
