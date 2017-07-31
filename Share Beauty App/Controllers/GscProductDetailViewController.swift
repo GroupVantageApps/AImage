@@ -48,7 +48,6 @@ class GscProductDetailViewController: GscBaseViewController, UIScrollViewDelegat
         
         mScrollV.delegate = self
         
-        
         let vcChild = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         vcChild.productId = mProductId
         

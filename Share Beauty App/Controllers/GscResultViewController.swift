@@ -189,11 +189,9 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 115, width: 97, height: 30))
                     useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
                     useTypeLbl.numberOfLines = 2
-                    
-                    let productUseType = typeDic?[productId] as! String
-                    print(productUseType)
-  
+ 
                     if mGroupType == "A"{
+                        let productUseType = typeDic?[productId] as! String
                         switch productUseType {
                         case "urban" :
                             useTypeLbl.text = gscArr["12"]

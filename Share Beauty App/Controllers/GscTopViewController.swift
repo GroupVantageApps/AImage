@@ -387,7 +387,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
-        nextVc.mSelect2Type = "children"
+        nextVc.mSelect2Type = "child"
         self.navigationController?.pushViewController(nextVc, animated: false)
         
     }
