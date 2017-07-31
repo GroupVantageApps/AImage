@@ -174,6 +174,20 @@ class IdealProductView: UICollectionViewCell {
             mLblLineDetailMarginTop.constant = 20
             openLineButton.isHidden = true
             closeLineButton.isHidden = false
+
+        
+            if LanguageConfigure.isMyanmar {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
+                paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
+                
+                let lineFeatureText = NSMutableAttributedString(string: (product?.lineFeature)!)
+                lineFeatureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, lineFeatureText.length))
+                mLblLineDetail.attributedText = lineFeatureText
+            }
+        
+        
+        
         } else {
             self.mLblLineDetail.text = nil
             mLblLineDetailMarginTop.constant = 0

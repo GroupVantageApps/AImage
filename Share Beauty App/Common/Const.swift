@@ -131,6 +131,8 @@ struct Const {
     static let movieIdMakeUpEvening = 5892
     static let movieIdMakeUpNight = 5891
 
+    static let  lineHeightMyanmar:CGFloat = 30.0
+
     static let apiSendLog = "https://nscp-ga.heteml.jp/sab/applog.php"
     static let logActionTapItem = 1
     static let logActionTapProduct = 2

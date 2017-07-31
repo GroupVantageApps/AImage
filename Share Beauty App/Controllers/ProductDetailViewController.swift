@@ -168,10 +168,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         //Utility.log("=====  CountryId: " + LanguageConfigure.countryId.description)
         //Utility.log("===== LanguageId: " + LanguageConfigure.languageId.description)
         if LanguageConfigure.isMyanmar {
-            let lineHeight:CGFloat = 30.0
             let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.minimumLineHeight = lineHeight
-            paragraphStyle.maximumLineHeight = lineHeight
+            paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
+            paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
             
             let featureText = NSMutableAttributedString(string: product.feature)
             featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))

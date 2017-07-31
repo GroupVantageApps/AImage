@@ -73,6 +73,16 @@ class LineDetailViewController: UIViewController, NavigationControllerAnnotation
             self.subTitle = self.line.subTitle
             self.feature = self.line.feature
             self.showMovie = Bool(line.movie as NSNumber)
+
+            if LanguageConfigure.isMyanmar {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
+                paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
+                
+                let featureText = NSMutableAttributedString(string: self.line.feature)
+                featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+                mLblFeature.attributedText = featureText
+            }
         }
         mScrollVPinch.delegate = self
     }
