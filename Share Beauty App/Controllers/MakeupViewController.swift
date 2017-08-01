@@ -28,12 +28,12 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     private let mOutApps  = DropDown()
     private var firstAppear: Bool = false
     private var productIds: [Int] = []
+    var productIdForDeeplink = 0
     
     private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    
+    private static let mOutAppInfos = [Const.outAppInfoFoundation]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         theme = AppItemTable.getNameByItemId(itemId: 7842)
         
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -65,11 +65,15 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         }
         products = mProducts
         setupDropDown()
-        setDropDownForOutApp(dataSource: type(of: self).outAppInfos.map {$0.title})
+        setDropDownForOutApp(dataSource: type(of: self).mOutAppInfos.map {$0.title})
         
         let line: LineDetailData!
         line = LineDetailData(lineId: Const.lineIdMAKEUP)
         mLblLineName.text = line.lineName
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // for custom url scheme
     }
     
     private func setupDropDown() {
@@ -189,7 +193,27 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
     }
-    
+    override func viewWillLayoutSubviews() {
+        if productIdForDeeplink != 0 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            //var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
+//            let productIds: [Int] = [289, 393, 423]
+            var isHaveProductId = false
+            for Product in mProducts {
+                if productIdForDeeplink == Product.productId {
+                    isHaveProductId = true
+                }
+            }
+            guard isHaveProductId else {
+                return;
+            }
+            nextVc.productId = productIdForDeeplink
+            productIdForDeeplink = 0
+            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+            self.reloadInputViews()
+        }
+    }
     
     /*
      // MARK: - Navigation
