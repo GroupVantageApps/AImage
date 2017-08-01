@@ -421,7 +421,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mWhiteLucentAllDayFeaturesView.bottomPadding = 30
 
             self.setSpecialCaseConstraints(targetView: mWhiteLucentAllDayFeaturesView, viewHeight: 330)
-        } else if mIsSunCareBBSports || mIsSunCarePerfectUv {
+        } else if mIsSunCareBBSports || mIsSunCarePerfectUv || mIsSunCareFragrance {
             mSuncareFeaturesView = SunCareFeaturesView()
             mSuncareFeaturesView.isGSC = mIsSunCareBBSports
             mSuncareFeaturesView.isSCP = mIsSunCarePerfectUv
@@ -481,9 +481,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
-        mIsSunCareBBSports = Const.productIdSunCareBBSports.contains(self.productId)
+        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
         mIsSunCareFragrance = Const.productIdSunCareFragrance.contains(self.productId)
-        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
+        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv.contains(self.productId)
         mIsMakeUp = Const.productIdMakeUp == self.productId
         mIsWaso = Const.lineIdWASO == self.product.lineId
     }

@@ -102,13 +102,20 @@ class SunCareFeaturesView: BaseView {
             mVBalloon2.isHidden = false
             mVBalloon3.isHidden = true
             self.applyAttrText(
+                mSSArr[12],
+                fontSize: 18,
+                tracking: 0,
+                lineHeight: 0,
+                lbl: mLblBalloon1
+            )
+            self.applyAttrText(
                 gscArr["21"] ?? "not seted GSC csv No.21",
                 fontSize: 18,
                 tracking: 0,
                 lineHeight: 0,
                 lbl: mLblBalloon2
             )
-            mButtonBalloon3.setBackgroundImage(UIImage.init(named: "ss_pink"), for: .normal)
+            mImgBalloon2.image = UIImage.init(named: "ss_pink")
         }
 
         mLblhukidashi.numberOfLines = 0
@@ -132,7 +139,7 @@ class SunCareFeaturesView: BaseView {
         // You can change this to anything you want
         let bshearTransform = CGAffineTransform(a: 1.0, b: 0.0, c: bshearValue, d: 1.0, tx: 0.0, ty: 0.0)
         var imageView: UIImageView?
-        if isSCP {
+        if isSCP || isGSCFragrance {
             imageView = mImgBalloon1
         } else {
             let ran = arc4random() % 3 + 1

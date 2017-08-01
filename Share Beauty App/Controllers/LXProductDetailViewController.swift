@@ -435,7 +435,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
 //        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
-        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
+//        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
         mIsMakeUp = Const.productIdMakeUp == self.productId
     }
 

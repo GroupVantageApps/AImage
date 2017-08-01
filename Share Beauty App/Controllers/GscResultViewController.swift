@@ -154,12 +154,16 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     var descriptionLabelWidth = 240
                     var margin_x = 0
                     
-                    if mSelect1Type == "body" {
+                    if disPlayProductList.count < 5 {
                         x = i*240
-                    } else {
+                    } else if disPlayProductList.count == 5 {
                         x = i*200
                         descriptionLabelWidth = 200 - 20
                         margin_x = -20
+                    } else {
+                        x = i*160
+                        descriptionLabelWidth = 160 - 20
+                        margin_x = -40
                     }
                     
                     if (img != nil) {
@@ -171,6 +175,12 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         productImgV.layer.shadowOpacity = 0.5
                         productImgV.layer.shadowRadius  = 10
                         productImgV.clipsToBounds = false
+                        
+                        if disPlayProductList.count > 5 {
+                            
+                            productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 240.0, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
+                            productImgV.contentMode = .scaleAspectFill
+                        }
                         
                         mVContent.addSubview(productImgV)
                     }
@@ -206,11 +216,11 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                             useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
                             useTypeLbl.textColor = UIColor.black
                         case "lip" :
-                            useTypeLbl.text =  gscArr["23"]
+                            useTypeLbl.text =  gscArr["23"] ?? "not set No.23"
                             useTypeLbl.backgroundColor = UIColor.white
                             useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
                         case "anytime" :
-                            useTypeLbl.text =  gscArr["22"]
+                            useTypeLbl.text =  gscArr["22"] ?? "not set No.22"
                             useTypeLbl.backgroundColor = UIColor.white
                             useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
                         default:
@@ -229,12 +239,16 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     var x = i*240
                     var w = 240
                     var margin_x = 70
-                    if mSelect1Type == "body" {
+                    if disPlayProductList.count < 5 {
                         x = i*240
-                    } else {
+                    } else if disPlayProductList.count == 5 {
                         x = i*200
-                        w = 200
+                        w = 200 - 20
                         margin_x = 50
+                    } else {
+                        x = i*160
+                        w = 160 - 20
+                        margin_x = 40
                     }
                     
                     let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 110, width: w, height: 350))
