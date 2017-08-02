@@ -317,8 +317,8 @@
 		DE06F7241F16450200EF2FE2 /* mainbarSuncare.png in Resources */ = {isa = PBXBuildFile; fileRef = DE06F70C1F16450200EF2FE2 /* mainbarSuncare.png */; };
 		DE06F7291F16457800EF2FE2 /* GscHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE06F7271F16457800EF2FE2 /* GscHeaderView.swift */; };
 		DE06F72A1F16457800EF2FE2 /* GscHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE06F7281F16457800EF2FE2 /* GscHeaderView.xib */; };
-		DE0AF0D51F29AB4F00CF0202 /* GscProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF0D41F29AB4F00CF0202 /* GscProductDetailViewController.swift */; };
-		DE0AF0D81F29AB6600CF0202 /* GscProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0AF0D61F29AB6600CF0202 /* GscProductDetailViewController.storyboard */; };
+		DE0AF0D51F29AB4F00CF0202 /* GscNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF0D41F29AB4F00CF0202 /* GscNavigationViewController.swift */; };
+		DE0AF0D81F29AB6600CF0202 /* GscNavigationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0AF0D61F29AB6600CF0202 /* GscNavigationViewController.storyboard */; };
 		DE0CA25B1ECAAA410051D5C1 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */; };
 		DE0CA25D1ECAAC370051D5C1 /* CircleGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0CA25C1ECAAC370051D5C1 /* CircleGraphView.xib */; };
 		DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */; };
@@ -871,8 +871,8 @@
 		DE06F70C1F16450200EF2FE2 /* mainbarSuncare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainbarSuncare.png; sourceTree = "<group>"; };
 		DE06F7271F16457800EF2FE2 /* GscHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscHeaderView.swift; sourceTree = "<group>"; };
 		DE06F7281F16457800EF2FE2 /* GscHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GscHeaderView.xib; sourceTree = "<group>"; };
-		DE0AF0D41F29AB4F00CF0202 /* GscProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscProductDetailViewController.swift; sourceTree = "<group>"; };
-		DE0AF0D71F29AB6600CF0202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		DE0AF0D41F29AB4F00CF0202 /* GscNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscNavigationViewController.swift; sourceTree = "<group>"; };
+		DE0AF0D71F29AB6600CF0202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscNavigationViewController.storyboard; sourceTree = "<group>"; };
 		DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
 		DE0CA25C1ECAAC370051D5C1 /* CircleGraphView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleGraphView.xib; sourceTree = "<group>"; };
 		DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailSkinConcernView.swift; sourceTree = "<group>"; };
@@ -1571,7 +1571,7 @@
 				DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */,
 				DE8041581F0F69F100F7DED6 /* GscBaseViewController.swift */,
 				DE80415A1F0F6ED800F7DED6 /* GscTopViewController.swift */,
-				DE0AF0D41F29AB4F00CF0202 /* GscProductDetailViewController.swift */,
+				DE0AF0D41F29AB4F00CF0202 /* GscNavigationViewController.swift */,
 				DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */,
 			);
 			path = Controllers;
@@ -1790,7 +1790,7 @@
 				DE7D08201ED6E412006513FD /* LXProductViewController.storyboard */,
 				DE2A16581F0F7BEE00D2B2A1 /* GscTopViewController.storyboard */,
 				DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */,
-				DE0AF0D61F29AB6600CF0202 /* GscProductDetailViewController.storyboard */,
+				DE0AF0D61F29AB6600CF0202 /* GscNavigationViewController.storyboard */,
 				C05913CF1D67235700F22214 /* Main.storyboard */,
 				C0417E701E65A4D3009519EC /* MakeupViewController.storyboard */,
 				C02818A81E6C26FF00D4DADA /* NewApproachViewController.storyboard */,
@@ -2172,7 +2172,7 @@
 				C050C96B1E8267450009679D /* bottom_line.png in Resources */,
 				C050C9751E8267450009679D /* d_utm.png in Resources */,
 				C0BC717C1DCB41920038AE1A /* RecommendProductView.xib in Resources */,
-				DE0AF0D81F29AB6600CF0202 /* GscProductDetailViewController.storyboard in Resources */,
+				DE0AF0D81F29AB6600CF0202 /* GscNavigationViewController.storyboard in Resources */,
 				C0998BF21DA63DE500220321 /* PagingProductView.xib in Resources */,
 				C05913D61D67235700F22214 /* Assets.xcassets in Resources */,
 				E5E0D4031DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard in Resources */,
@@ -2584,7 +2584,7 @@
 				C0A950491E642FBE0058E40C /* PagingHorizontalLayout.swift in Sources */,
 				EB7365AF1D83156F00D223BA /* StepUpperTranslateEntity.swift in Sources */,
 				8008921E1EA0DF66007C592A /* TelopData.swift in Sources */,
-				DE0AF0D51F29AB4F00CF0202 /* GscProductDetailViewController.swift in Sources */,
+				DE0AF0D51F29AB4F00CF0202 /* GscNavigationViewController.swift in Sources */,
 				C0880CFA1E4B20B1006A3713 /* RegionEntitiy.swift in Sources */,
 				DE61C59B1EC8950A00415910 /* LXProductGraphContentView.swift in Sources */,
 				C037CBAC1D87FB9D00DEFE14 /* UIColor+FQExtention.swift in Sources */,
@@ -2893,12 +2893,12 @@
 			name = TargetSettingViewController.storyboard;
 			sourceTree = "<group>";
 		};
-		DE0AF0D61F29AB6600CF0202 /* GscProductDetailViewController.storyboard */ = {
+		DE0AF0D61F29AB6600CF0202 /* GscNavigationViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE0AF0D71F29AB6600CF0202 /* Base */,
 			);
-			name = GscProductDetailViewController.storyboard;
+			name = GscNavigationViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		DE2A16581F0F7BEE00D2B2A1 /* GscTopViewController.storyboard */ = {

@@ -98,7 +98,25 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             mFindLabel.textColor = UIColor.white
             mFindLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 550, width: 500, height: 100)
             moviePlay.addSubview(mFindLabel)
+            
+            
+//            let lineDetailBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width/2 - 250, y: 150, width: 500, height: 100))
+//            lineDetailBtn.titleLabel?.text = "Line Detail" //TODO csvの更新後に当て込み
+            
+           let lineDetailLabel = UILabel()
+            lineDetailLabel.text =  "Line Detail"
+            lineDetailLabel.textAlignment = .center
+            lineDetailLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
+            lineDetailLabel.textColor = UIColor.white
+            lineDetailLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 650, width: 500, height: 100)
+            moviePlay.addSubview(lineDetailLabel)
+            
+            let lineDetailBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width/2 - 250, y: 650, width: 500, height: 100))
+            lineDetailBtn.addTarget(self, action: #selector(GscTopViewController.onTapLineDetail), for: .touchUpInside)
+            moviePlay.addSubview(lineDetailBtn)
+            
         }
+        
         mGscHeaderView.mLblTitle.text = ""
         mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"]
         
@@ -234,12 +252,16 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             self.navigationController?.pushViewController(nextVc, animated: false)
         } else {
             mGscHeaderView.mBtnFind.isHidden = false
-            
             mSelectType = "body"
             self.mSunCareSelectView1.isHidden = true
             self.mSunCareSelectView2.isHidden = false
         }
         
+    }
+    
+    func onTapLineDetail() {
+        let nextVc = UIViewController.GetViewControllerFromStoryboard("GscNavigationViewController", targetClass: GscNavigationViewController.self) as! GscNavigationViewController
+        self.navigationController?.pushViewController(nextVc, animated: false)
     }
     
     func setSelet2View() {

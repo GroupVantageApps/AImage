@@ -318,7 +318,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         if product.productId != 0 {
             print(product.productId)
             
-            let nextVc = UIViewController.GetViewControllerFromStoryboard("GscProductDetailViewController", targetClass: GscProductDetailViewController.self) as! GscProductDetailViewController
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("GscNavigationViewController", targetClass: GscNavigationViewController.self) as! GscNavigationViewController
             nextVc.mProductId = product.productId
             self.navigationController?.pushViewController(nextVc, animated: false)
             
