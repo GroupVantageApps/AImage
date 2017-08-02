@@ -152,7 +152,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath!) as? [String: Any]
             let group = groupingDic?[String(LanguageConfigure.countryId)]
 //            LanguageConfigure.gscgroup = group as? String ?? "A"
-            LanguageConfigure.gscgroup = "E"
+            LanguageConfigure.gscgroup = "A"
 
             let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
             let path = FileTable.getPath(6104)
@@ -190,7 +190,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let gecGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
         let groupingDic = NSDictionary.init(contentsOf: URL.init(string: gecGroupingPlistPath!)!)
 //        let group = groupingDic?[LanguageConfigure.countryId] as? String ?? "A"
-        LanguageConfigure.gscgroup = "E"
+        LanguageConfigure.gscgroup = "A"
         
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
 //        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")

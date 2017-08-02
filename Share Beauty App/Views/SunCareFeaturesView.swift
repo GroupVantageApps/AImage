@@ -99,6 +99,7 @@ class SunCareFeaturesView: BaseView {
             )
         } else if isGSCFragrance {
             let gscArr = LanguageConfigure.gsccsv
+            print(gscArr)
             mVBalloon2.isHidden = false
             mVBalloon3.isHidden = true
             self.applyAttrText(
