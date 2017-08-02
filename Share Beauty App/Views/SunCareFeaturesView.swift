@@ -116,7 +116,6 @@ class SunCareFeaturesView: BaseView {
                 lineHeight: 0,
                 lbl: mLblBalloon2
             )
-            mImgBalloon2.image = UIImage.init(named: "ss_pink")
         }
 
         mLblhukidashi.numberOfLines = 0
