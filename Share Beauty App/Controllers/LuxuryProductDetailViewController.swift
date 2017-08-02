@@ -198,6 +198,24 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
 
         }
 
+        if LanguageConfigure.isMyanmar {
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)  
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
+            paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
+            
+            let featureText = NSMutableAttributedString(string: product.feature)
+            featureText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: featureText.length))
+            featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+            mLblFeature.attributedText = featureText
+            
+            let howToUseText = NSMutableAttributedString(string: product.feature)
+            howToUseText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: howToUseText.length))
+            howToUseText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
+            mLblHowToUse.attributedText = howToUseText
+        }
+
         //TODO:csv参照
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
