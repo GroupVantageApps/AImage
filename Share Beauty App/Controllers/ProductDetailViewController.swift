@@ -492,6 +492,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     private func checkSpecialCase() {
         mIsUtm = Const.productIdUtm == self.productId
+        mIsUtm = Const.productIdUtm2 == self.productId //utm trex t-hirai
         mIsUtmEye = Const.productIdUtmEye == self.productId
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
