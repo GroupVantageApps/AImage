@@ -119,7 +119,6 @@ struct Const {
     static let troubleIdNotImage = [15, 16, 17, 18]
 
     static let productIdUtm = 359
-    static let productIdUtm2 = 559 //utm trex t-hirai
     static let productIdUtmEye = 28
     static let productIdIbuki = 495
     static let productIdWhiteLucentOnMakeUp = 496
