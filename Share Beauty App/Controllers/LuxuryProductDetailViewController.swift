@@ -110,6 +110,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId)
 
         product = ProductDetailData(productId: productId)

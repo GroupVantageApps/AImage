@@ -139,4 +139,11 @@ class LanguageConfigure: NSObject {
     static var isMyanmar: Bool {
         get { return self.regionId == 2 && self.countryId == 23 && self.languageId == 58 }
     }
+    
+    static var isOutAppBtnHiddenCountry: Bool {
+        get {
+            let countryCode = CountryTable.getEntity(self.countryId)
+            return  ( countryCode.code == "0104" || countryCode.code == "0105" || countryCode.code == "0215" || countryCode.code == "0306" )
+        }
+    }
 }

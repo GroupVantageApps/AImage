@@ -127,12 +127,13 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mSideBar.delegate = self
-
+        
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-
-        
-        
-        
         nextVc(topVc, animated: false)
     }
 

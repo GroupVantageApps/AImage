@@ -98,6 +98,23 @@ class HeaderView: BaseView {
         }
     }
 	
+    func setOutAppEnabled(_ isEnabled: Bool) {
+        mBtnOutApp.isHidden = !isEnabled
+        if isEnabled {
+            mConstraintUpdateToOutApp.constant = 20
+            if mConstraintWidthZero != nil {
+                mBtnOutApp.removeConstraint(mConstraintWidthZero!)
+                mConstraintWidthZero = nil
+            }
+        } else {
+            mConstraintUpdateToOutApp.constant = 0
+            if mConstraintWidthZero == nil {
+                mConstraintWidthZero = NSLayoutConstraint.makeWidth(item: mBtnOutApp, constant: 0)
+                mBtnOutApp.addConstraint(mConstraintWidthZero!)
+            }
+        }
+    }
+    
 	func setAboutShiseidoEnabled(_ isEnabled: Bool) {
 		mBtnShiseido.isHidden = !isEnabled
 		if isEnabled {
