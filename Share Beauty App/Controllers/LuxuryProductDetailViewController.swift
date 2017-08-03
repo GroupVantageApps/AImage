@@ -458,7 +458,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     private func checkSpecialCase() {
-        mIsUtm = Const.productIdUtm == self.productId
+        mIsUtm = Const.productIdUtm.contains(self.productId)
         mIsUtmEye = Const.productIdUtmEye == self.productId
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
