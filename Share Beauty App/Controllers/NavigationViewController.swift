@@ -22,6 +22,7 @@ protocol NavigationControllerDelegate: NSObjectProtocol {
     func showVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?, didTapFunction: @escaping () -> ())
     func hideVideoSkipButtonWithDuration(_ animateDuration: TimeInterval?)
 	func setAboutShiseidoButtonEnabled(_ isEnabled: Bool)
+    func setOutAppBtn()
 }
 
 protocol NavigationControllerAnnotation: NSObjectProtocol {
@@ -127,13 +128,14 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mSideBar.delegate = self
-
+        
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-
-        
-        
-        
         nextVc(topVc, animated: false)
+        setOutAppBtn()
+    }
+    
+    func setOutAppBtn() {
+        mHeaderView.setOutAppEnabled(!LanguageConfigure.isOutAppBtnHiddenCountry)
     }
 
     override func viewDidAppear(_ animated: Bool) {

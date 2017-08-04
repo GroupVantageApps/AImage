@@ -36,7 +36,12 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
-
+        
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         self.mBGImgV.image = FileTable.getLXFileImage("lx_ingredient.png")
         self.mAngelicaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_2.png"), for: .normal)
         self.mCherryBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_3.png"), for: .normal)

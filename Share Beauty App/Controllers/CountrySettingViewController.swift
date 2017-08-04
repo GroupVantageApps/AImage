@@ -164,6 +164,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
                 UIApplication.shared.delegate?.window??.rootViewController =
                     UIViewController.GetViewControllerFromMainStoryboard(NavigationViewController.self) as! NavigationViewController
             } else {
+                delegate!.setOutAppBtn()
                 delegate!.backRootVc()
             }
         }
@@ -191,6 +192,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             UIApplication.shared.delegate?.window??.rootViewController =
                 UIViewController.GetViewControllerFromMainStoryboard(NavigationViewController.self) as! NavigationViewController
         } else {
+            delegate!.setOutAppBtn()
             delegate!.backRootVc()
         }
     }
