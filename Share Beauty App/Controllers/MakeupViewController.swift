@@ -135,7 +135,21 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     }
     
     @IBAction func onTapOutApp(_ sender: Any) {
-        mOutApps.show()
+//        mOutApps.show()
+        var outAppInfo = Const.outAppInfoFoundation
+        if UIApplication.shared.canOpenURL(outAppInfo.url) {
+            UIApplication.shared.openURL(outAppInfo.url)
+        } else {
+            let alertVc = UIAlertController(
+                title: "Warning",
+                message: "App is not installed",
+                preferredStyle: .alert
+            )
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVc.addAction(defaultAction)
+            self.present(alertVc, animated: true, completion: nil)
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
