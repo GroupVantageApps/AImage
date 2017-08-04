@@ -28,8 +28,10 @@ class HeaderView: BaseView {
     private let mDropDown = DropDown()
     weak var delegate: HeaderViewDelegate?
 
+    @IBOutlet weak var mConstraintOutApp: NSLayoutConstraint!
     private var mConstraintWidthZero: NSLayoutConstraint?
-	private var mShiseidoConstraintWidthZero: NSLayoutConstraint?
+    private var mShiseidoConstraintWidthZero: NSLayoutConstraint?
+    private var mOutAppConstraintWidthZero: NSLayoutConstraint?
 
     func setDropDown(dataSource: [String]) {
         mDropDown.dataSource = dataSource
@@ -101,16 +103,16 @@ class HeaderView: BaseView {
     func setOutAppEnabled(_ isEnabled: Bool) {
         mBtnOutApp.isHidden = !isEnabled
         if isEnabled {
-            mConstraintUpdateToOutApp.constant = 20
-            if mConstraintWidthZero != nil {
-                mBtnOutApp.removeConstraint(mConstraintWidthZero!)
-                mConstraintWidthZero = nil
+            mConstraintOutApp.constant = 20
+            if mOutAppConstraintWidthZero != nil {
+                mBtnOutApp.removeConstraint(mOutAppConstraintWidthZero!)
+                mOutAppConstraintWidthZero = nil
             }
         } else {
-            mConstraintUpdateToOutApp.constant = 0
-            if mConstraintWidthZero == nil {
-                mConstraintWidthZero = NSLayoutConstraint.makeWidth(item: mBtnOutApp, constant: 0)
-                mBtnOutApp.addConstraint(mConstraintWidthZero!)
+            mConstraintOutApp.constant = 0
+            if mOutAppConstraintWidthZero == nil {
+                mOutAppConstraintWidthZero = NSLayoutConstraint.makeWidth(item: mBtnOutApp, constant: 0)
+                mBtnOutApp.addConstraint(mOutAppConstraintWidthZero!)
             }
         }
     }

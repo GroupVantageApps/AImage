@@ -142,8 +142,8 @@ class LanguageConfigure: NSObject {
     
     static var isOutAppBtnHiddenCountry: Bool {
         get {
-            let countryCode = CountryTable.getEntity(self.countryId)
-            return  ( countryCode.code == "0104" || countryCode.code == "0105" || countryCode.code == "0215" || countryCode.code == "0306" )
+            print(self.countryId)
+            return  ( self.countryId == 4 || self.countryId == 24 || self.countryId == 25 || self.countryId == 26 )
         }
     }
 }

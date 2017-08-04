@@ -16,6 +16,7 @@
                 <outlet property="mBtnShiseido" destination="N6V-K3-yhB" id="CeJ-wG-Ur4"/>
                 <outlet property="mBtnSkip" destination="UwT-h8-zFU" id="brf-hL-1ei"/>
                 <outlet property="mBtnUpdate" destination="ntz-Cn-Elz" id="xAz-01-5nD"/>
+                <outlet property="mConstraintOutApp" destination="n1a-Uz-6w0" id="H2n-Wr-tvF"/>
                 <outlet property="mConstraintShiseidoToUpdate" destination="ICK-Ks-7Ar" id="CYI-Oa-4Jz"/>
                 <outlet property="mConstraintUpdateToOutApp" destination="fxO-OK-ah6" id="DrP-GJ-pMI"/>
             </connections>
