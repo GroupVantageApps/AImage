@@ -239,6 +239,8 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
     return image;
 }
 
+
+//UTM コンテンツ始め
 + (NSMutableArray *)getUtmArray
 {
     // CSVファイルからセクションデータを取得する utmコンテンツ
@@ -252,7 +254,7 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
             fileId = 5766;
             break;
         case 4:
-            fileId =5770 ;
+            fileId = 5770 ;
             break;
         case 5:
             fileId = 5788;
@@ -462,6 +464,7 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
     }
     return array;
 }
+//UTM コンテンツ終わり
 
 + (NSArray *)get17SSArray {
     // CSVファイルからセクションデータを取得する 17SS

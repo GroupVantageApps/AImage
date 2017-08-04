@@ -110,6 +110,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mNavigationView.delegate = self
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId)
 
         product = ProductDetailData(productId: productId)
@@ -196,6 +201,24 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             mLblUnitString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.unitName.count))
             mLblUnit.attributedText = mLblUnitString
 
+        }
+
+        if LanguageConfigure.isMyanmar {
+            let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)  
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
+            paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
+            
+            let featureText = NSMutableAttributedString(string: product.feature)
+            featureText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: featureText.length))
+            featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+            mLblFeature.attributedText = featureText
+            
+            let howToUseText = NSMutableAttributedString(string: product.feature)
+            howToUseText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: howToUseText.length))
+            howToUseText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
+            mLblHowToUse.attributedText = howToUseText
         }
 
         //TODO:csv参照
@@ -435,7 +458,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     }
 
     private func checkSpecialCase() {
-        mIsUtm = Const.productIdUtm == self.productId
+        mIsUtm = Const.productIdUtm.contains(self.productId)
         mIsUtmEye = Const.productIdUtmEye == self.productId
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId

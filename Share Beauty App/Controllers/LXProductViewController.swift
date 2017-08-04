@@ -36,7 +36,7 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
         mScrollV.delegate = self
         print("LuxuryProductViewController")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
-        
+   
         let lxArr = LanguageConfigure.lxcsv
         tmpProducts = []
         let line = LineDetailData.init(lineId: 1)

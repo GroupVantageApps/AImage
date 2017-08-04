@@ -28,8 +28,10 @@ class HeaderView: BaseView {
     private let mDropDown = DropDown()
     weak var delegate: HeaderViewDelegate?
 
+    @IBOutlet weak var mConstraintOutApp: NSLayoutConstraint!
     private var mConstraintWidthZero: NSLayoutConstraint?
-	private var mShiseidoConstraintWidthZero: NSLayoutConstraint?
+    private var mShiseidoConstraintWidthZero: NSLayoutConstraint?
+    private var mOutAppConstraintWidthZero: NSLayoutConstraint?
 
     func setDropDown(dataSource: [String]) {
         mDropDown.dataSource = dataSource
@@ -98,6 +100,23 @@ class HeaderView: BaseView {
         }
     }
 	
+    func setOutAppEnabled(_ isEnabled: Bool) {
+        mBtnOutApp.isHidden = !isEnabled
+        if isEnabled {
+            mConstraintOutApp.constant = 20
+            if mOutAppConstraintWidthZero != nil {
+                mBtnOutApp.removeConstraint(mOutAppConstraintWidthZero!)
+                mOutAppConstraintWidthZero = nil
+            }
+        } else {
+            mConstraintOutApp.constant = 0
+            if mOutAppConstraintWidthZero == nil {
+                mOutAppConstraintWidthZero = NSLayoutConstraint.makeWidth(item: mBtnOutApp, constant: 0)
+                mBtnOutApp.addConstraint(mOutAppConstraintWidthZero!)
+            }
+        }
+    }
+    
 	func setAboutShiseidoEnabled(_ isEnabled: Bool) {
 		mBtnShiseido.isHidden = !isEnabled
 		if isEnabled {

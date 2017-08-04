@@ -43,6 +43,11 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         super.viewDidLoad()
         mScrollV.delegate = self
         
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mBtnOutApp.isHidden = true
+        }
+        
         lxArr = LanguageConfigure.lxcsv
         if ((lxArr["1"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
             

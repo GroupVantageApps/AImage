@@ -33,6 +33,12 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
         self.mBLSBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_bls_btn.png"), for: .normal)
         self.mGraphBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_graph_btn.png"), for: .normal)

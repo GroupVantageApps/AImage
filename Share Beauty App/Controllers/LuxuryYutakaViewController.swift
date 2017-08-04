@@ -31,6 +31,12 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
+        
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            print("OutAppBtn Hidden Country")
+            mHeaderView.setOutAppEnabled(false)
+        }
+        
         mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
