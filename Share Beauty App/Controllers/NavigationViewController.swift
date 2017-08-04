@@ -135,10 +135,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
     
     func setOutAppBtn() {
-        if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mHeaderView.setOutAppEnabled(false)
-        }
+        mHeaderView.setOutAppEnabled(!LanguageConfigure.isOutAppBtnHiddenCountry)
     }
 
     override func viewDidAppear(_ animated: Bool) {
