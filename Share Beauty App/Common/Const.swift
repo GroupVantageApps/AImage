@@ -36,6 +36,7 @@ struct Const {
     static let outAppInfoUltimune = OutAppInfo(title: "Ultimune", url: "ssdutm://")
     static let outAppInfoUvInfo = OutAppInfo(title: "UVinfo", url: "ssduvi://")
     static let outAppInfoSoftener = OutAppInfo(title: "Softner", url: "ssdsoftner://")
+    static let outAppInfoFoundation = OutAppInfo(title: "Foundation Finder", url: "jp.co.shiseido.gs.fdf")
 
     static let screenIdCountrySetting = 2
     static let screenIdLanguageSetting = 3
@@ -132,7 +133,6 @@ struct Const {
     static let movieIdMakeUpNight = 5891
 
     static let  lineHeightMyanmar:CGFloat = 30.0
-
     static let apiSendLog = "https://nscp-ga.heteml.jp/sab/applog.php"
     static let logActionTapItem = 1
     static let logActionTapProduct = 2
