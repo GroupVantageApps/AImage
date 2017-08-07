@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -229,7 +229,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wx1-mu-ifn">
-                                                                <rect key="frame" x="0.0" y="189" width="60" height="129"/>
+                                                                <rect key="frame" x="0.0" y="189.5" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
@@ -301,16 +301,16 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="636" height="70"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-9H-NeN">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="16"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="16"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Features" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA5-xa-1xC">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="15"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="15"/>
                                                                                                 <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="15"/>
                                                                                                 <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuB-ni-Vps">
-                                                                                                <rect key="frame" x="0.0" y="15" width="51" height="1"/>
+                                                                                                <rect key="frame" x="0.0" y="15" width="50.5" height="1"/>
                                                                                                 <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="height" constant="1" id="uD2-qp-nOi"/>
@@ -534,16 +534,16 @@
                                                                                 <rect key="frame" x="0.0" y="971" width="636" height="29"/>
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLE-br-xpH">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="19"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="19"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Variation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAJ-7O-ICs">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="95" height="18"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="18"/>
                                                                                                 <fontDescription key="fontDescription" name="BigCaslonFB-Regular" family="Big Caslon FB" pointSize="15"/>
                                                                                                 <color key="textColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ev-2a-imB">
-                                                                                                <rect key="frame" x="0.0" y="18" width="95" height="1"/>
+                                                                                                <rect key="frame" x="0.0" y="18" width="94.5" height="1"/>
                                                                                                 <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="height" constant="1" id="gMx-OR-VF2"/>
@@ -658,7 +658,7 @@
                                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-cW-fKQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="549"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="-134" width="1024" height="768"/>
                                                             </view>
                                                         </subviews>
