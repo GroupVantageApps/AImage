@@ -221,12 +221,15 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             mLblHowToUse.attributedText = howToUseText
         }
 
-        //TODO:csv参照
+        
+        let techText = AppItemTable.getNameByItemId(itemId: 129)
+        let lxArr = LanguageConfigure.lxcsv
+        
         mCategoryButtonFeatures.title = mItemsCommon["01"]
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
-        mCategoryButtonTechnologies.title = "Technology"
-        mCategoryButtonDefend.title = "Skingencel Enmei"
+        mCategoryButtonTechnologies.title = techText
+        mCategoryButtonDefend.title = lxArr["17"]
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
         
         mImgVProduct.image = FileTable.getImage(product.image)

@@ -45,7 +45,7 @@ class LXProductHowToUseView: UIView, UIScrollViewDelegate {
             firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
             firstView.isHidden = false
             self.mContentV.addSubview(firstView)
-            for i in 0..<9 {
+            for i in 0..<10 {
                 let label = firstView.viewWithTag(10 + i) as! UILabel
                 let csvId = 338 + i
                 label.text = lxArr[String(csvId)]
