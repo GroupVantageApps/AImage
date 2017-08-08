@@ -8,15 +8,7 @@
 
 import Foundation
 import AVFoundation
-protocol GscNavigationControllerDelegate: NSObjectProtocol {
-    func nextVc<T: UIViewController>(_ toVc: T) where T: GscNavigationControllerAnnotation
-}
-
-protocol GscNavigationControllerAnnotation: NSObjectProtocol {
-    weak var gscDelegate: GscNavigationControllerDelegate? {get set}
-}
-
-class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, GscHeaderViewDelegate, GscNavigationControllerDelegate {
+class GscProductDetailViewController: GscBaseViewController, UIScrollViewDelegate, GscHeaderViewDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
@@ -56,26 +48,9 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         
         mScrollV.delegate = self
         
-
-        if (mProductId != nil) {
-            let vcChild = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-            vcChild.productId = mProductId
-            vcChild.gscDelegate = self
-            vcChild.fromGscVc = true
-            self.setVc(vcChild: vcChild)
-        } else {
-            let line = LineDetailData(lineId: 17)
-            let lineListVc = UIViewController.GetViewControllerFromStoryboard("LineListViewController", targetClass: LineListViewController.self) as! LineListViewController
-            lineListVc.line = line
-            lineListVc.gscDelegate = self
-            lineListVc.fromGscVc = true
-            self.setVc(vcChild: lineListVc)
-        }
-
-
-    }
-
-    func setVc(vcChild: UIViewController) {
+        let vcChild = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        vcChild.productId = mProductId
+        
         addChildViewController(vcChild)
         
         mVContent.addSubview(vcChild.view)
@@ -91,28 +66,8 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         self.view.layoutIfNeeded()
         
         vcChild.didMove(toParentViewController: self)
-    }
-    
-    func nextVc<T: UIViewController>(_ toVc: T) where T: GscNavigationControllerAnnotation {
-        print(#function)
-        toVc.gscDelegate = self
-        addChildViewController(toVc)
-        
-        mVContent.addSubview(toVc.view)
-        
-        toVc.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        let equalWidth = NSLayoutConstraint(item: toVc.view, attribute: .width, relatedBy: .equal, toItem: mVContent, attribute: .width, multiplier: 1.0, constant: 0)
-        let equalHeight = NSLayoutConstraint(item: toVc.view, attribute: .height, relatedBy: .equal, toItem: mVContent, attribute: .height, multiplier: 1.0, constant: 0)
-        let top = NSLayoutConstraint(item: toVc.view, attribute: .top, relatedBy: .equal, toItem: mVContent, attribute: .top, multiplier: 1.0, constant: 0)
-        let left = NSLayoutConstraint(item: toVc.view, attribute: .left, relatedBy: .equal, toItem: mVContent, attribute: .left, multiplier: 1.0, constant: 0)
-        
-        mVContent.addConstraints([equalWidth, equalHeight, top, left])
-        self.view.layoutIfNeeded()
-        
-        toVc.didMove(toParentViewController: self)
 
-    }      
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         print("GscViewController.viewWillAppear")

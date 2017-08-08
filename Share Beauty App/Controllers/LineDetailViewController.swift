@@ -10,18 +10,14 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class LineDetailViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation, UIScrollViewDelegate {
+class LineDetailViewController: UIViewController, NavigationControllerAnnotation, UIScrollViewDelegate {
 
     private let mScreen = ScreenData(screenId: Const.screenIdLineDetail)
 
     weak var delegate: NavigationControllerDelegate?
-    weak var gscDelegate: GscNavigationControllerDelegate?
-    
     var theme: String?
     var isEnterWithNavigationView: Bool = true
-    
-    var fromGscVc: Bool = false
-    
+
     @IBOutlet weak private var mImgVLine: UIImageView!
     @IBOutlet weak private var mLblLineName: UILabel!
     @IBOutlet weak private var mLblSubTitle: UILabel!
@@ -86,12 +82,7 @@ class LineDetailViewController: UIViewController, NavigationControllerAnnotation
         lineStepVc.line = self.line
         lineStepVc.beautySecondId = self.beautySecondId
 
-        if fromGscVc {
-            lineStepVc.fromGscVc = true
-            gscDelegate?.nextVc(lineStepVc)
-        } else {
-            delegate?.nextVc(lineStepVc)
-        }
+        delegate?.nextVc(lineStepVc)
     }
 
     @IBAction func onTapPlay(_ sender: AnyObject) {

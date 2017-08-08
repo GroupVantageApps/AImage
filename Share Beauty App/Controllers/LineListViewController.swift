@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LineListViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation,RecommendProductViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class LineListViewController: UIViewController, NavigationControllerAnnotation, RecommendProductViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var mLblTitle: UILabel!
     @IBOutlet private weak var mCollectionView: UICollectionView!
@@ -18,13 +18,9 @@ class LineListViewController: UIViewController, NavigationControllerAnnotation, 
 //    private let mScreen = ScreenData(screenId: Const.screenIdIconicBeauty)
 
     weak var delegate: NavigationControllerDelegate?
-    weak var gscDelegate: GscNavigationControllerDelegate?
-    
     var theme: String? = ""
     var isEnterWithNavigationView: Bool = true
-    
-    var fromGscVc: Bool = false
-    
+
     private var mProducts: [ProductData]!
 
     var line: LineDetailData!
@@ -51,12 +47,7 @@ class LineListViewController: UIViewController, NavigationControllerAnnotation, 
         let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         productDetailVc.productId = product.productId
         productDetailVc.relationProducts = mProducts
-        if fromGscVc {
-            productDetailVc.fromGscVc = true
-            gscDelegate?.nextVc(productDetailVc)
-        } else {
-            delegate?.nextVc(productDetailVc)
-        }
+        delegate?.nextVc(productDetailVc)
     }
 
     // MARK: - CollectionViewDelegate

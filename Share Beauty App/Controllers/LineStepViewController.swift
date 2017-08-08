@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LineStepViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation, ProductViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class LineStepViewController: UIViewController, NavigationControllerAnnotation, ProductViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak private var mCollectionViewProduct: UICollectionView!
     @IBOutlet weak private var mCollectionViewLower: UICollectionView!
     @IBOutlet weak private var mCollectionViewUpper: UICollectionView!
@@ -23,13 +23,9 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
     var beautySecondId: Int!
 
     weak var delegate: NavigationControllerDelegate?
-    weak var gscDelegate: GscNavigationControllerDelegate?
-    
     var theme: String?
     var isEnterWithNavigationView: Bool = true
-    
-    var fromGscVc: Bool = false
-    
+
     private var mProducts = [ProductData]()
     private var mUpperSteps = [DBStructStep]()
     private var mLowerSteps = [DBStructLineStep]()
@@ -106,12 +102,8 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
         let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         productDetailVc.productId = product.productId
         productDetailVc.relationProducts = mProducts
-        if fromGscVc {
-            productDetailVc.fromGscVc = true
-            gscDelegate?.nextVc(productDetailVc)
-        } else {
-            delegate?.nextVc(productDetailVc)
-        }    }
+        delegate?.nextVc(productDetailVc)
+    }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "contentSize" {

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gsc Navigation View Controller-->
+        <!--Gsc Product Detail View Controller-->
         <scene sceneID="a2T-yI-CPx">
             <objects>
-                <viewController storyboardIdentifier="GscNavigationViewController" id="T4m-bh-eTl" customClass="GscNavigationViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GscProductDetailViewController" id="T4m-bh-eTl" customClass="GscProductDetailViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Dc-Ys-UgS"/>
                         <viewControllerLayoutGuide type="bottom" id="ccM-iA-GLD"/>
