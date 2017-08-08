@@ -93,11 +93,11 @@ struct Const {
     static let lifeStyleBeautyListB = [115, 497, 511] //waso追加　平井20170217　（アイテムは暫定）
     static let lifeStyleBeautyListC = [372, 421]
     static let lifeStyleBeautyListD = [533, 359, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
-    static let lifeStyleBeautyListE = [513, 252, 313]
-    static let lifeStyleBeautyListF = [101, 359, 455]
-    static let lifeStyleBeautyListG = [553, 554, 556] //item 変更　t-hirai 0803 >>555,556はどちらか排他表示にしたいです。
+    static let lifeStyleBeautyListE = [313, 513] //[513, 252, 313]
+    static let lifeStyleBeautyListF = [455, 101] //[101,  455]
+    static let lifeStyleBeautyListG = [553, 554] //item 変更　t-hirai 0803 >>[553, 554, 556] 555,556はどちらか排他表示にしたいです。
     static let lifeStyleBeautyListH = [470, 500, 551]
-    static let lifeStyleBeautyListI = [545, 549, 456] 
+    static let lifeStyleBeautyListI = [545, 549, 498]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
     static let productIdsUTM = [359, 28]
