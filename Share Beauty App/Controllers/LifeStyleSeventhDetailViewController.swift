@@ -9,11 +9,11 @@
 import UIKit
 import SwiftyJSON
 
-class LifeStyleSeventhDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleSixthProductViewDelegate {
+class LifeStyleSeventhDetailViewController: UIViewController, NavigationControllerAnnotation, LifeStyleSeventhProductViewDelegate {
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak var mTopImageView: UIImageView!
     
-    private var mLifeStyleProductViews = [LifeStyleSixthProductView]()
+    private var mLifeStyleProductViews = [LifeStyleSeventhProductView]()
     
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeautyG)
     
@@ -46,7 +46,7 @@ class LifeStyleSeventhDetailViewController: UIViewController, NavigationControll
         }
         self.mLifeStyleProductViews.removeAll()
         for _ in 0..<productList.products.count {
-            self.mLifeStyleProductViews.append(LifeStyleSixthProductView())
+            self.mLifeStyleProductViews.append(LifeStyleSeventhProductView())
         }
         
         switch productList.products.count {

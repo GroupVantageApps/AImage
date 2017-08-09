@@ -12,10 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleEighthProductView" customModule="Share_Beauty_App" customModuleProvider="target">
             <connections>
                 <outlet property="mBackImageView" destination="wHr-wq-sTz" id="YUY-GH-yJc"/>
-                <outlet property="mBeautyLabel" destination="7GX-Ml-6p8" id="XeJ-sB-6Pz"/>
                 <outlet property="mContentsView" destination="ba1-df-LtI" id="CUw-pr-swg"/>
                 <outlet property="mHeaderLabel" destination="yxY-lL-x4g" id="08w-L7-DsM"/>
-                <outlet property="mLineNameLabel" destination="TyA-cY-Tcg" id="kT6-eq-mkw"/>
                 <outlet property="mProductButton" destination="CBN-xh-6cO" id="1Tw-W9-vhp"/>
                 <outlet property="mProductNameLabel" destination="yoU-8w-xCQ" id="mCt-Yj-hKW"/>
                 <outlet property="mRecommendButton" destination="ITw-BA-sL4" id="qix-3Y-Qmg"/>
@@ -52,26 +50,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyA-cY-Tcg">
-                            <rect key="frame" x="18" y="78" width="282" height="18"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="18" id="1eJ-sW-I5s"/>
-                                <constraint firstAttribute="width" constant="282" id="rQq-vc-iEg"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GX-Ml-6p8">
-                            <rect key="frame" x="18" y="46" width="282" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="KrZ-zX-FTD"/>
-                                <constraint firstAttribute="width" constant="282" id="wRO-OJ-eyW"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yxY-lL-x4g">
                             <rect key="frame" x="18" y="0.0" width="282" height="52"/>
                             <constraints>
@@ -97,16 +75,12 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="CBN-xh-6cO" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="59" id="3fa-IX-kFW"/>
-                        <constraint firstItem="7GX-Ml-6p8" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="18" id="7st-PO-CI4"/>
-                        <constraint firstItem="TyA-cY-Tcg" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="18" id="DaC-Da-lnr"/>
                         <constraint firstItem="yxY-lL-x4g" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="18" id="EoC-D1-itc"/>
                         <constraint firstItem="ITw-BA-sL4" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="18" id="WjF-ub-3NT"/>
                         <constraint firstItem="CBN-xh-6cO" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" constant="164" id="bTk-de-YyC"/>
                         <constraint firstItem="yxY-lL-x4g" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" id="blE-3Q-rDD"/>
                         <constraint firstItem="yoU-8w-xCQ" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" constant="96" id="eat-LO-NFI"/>
                         <constraint firstItem="ITw-BA-sL4" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" constant="164" id="mIU-dM-UWy"/>
-                        <constraint firstItem="TyA-cY-Tcg" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" constant="78" id="uEi-cs-nLI"/>
-                        <constraint firstItem="7GX-Ml-6p8" firstAttribute="top" secondItem="ba1-df-LtI" secondAttribute="top" constant="46" id="zTw-Xu-l9V"/>
                         <constraint firstItem="yoU-8w-xCQ" firstAttribute="leading" secondItem="ba1-df-LtI" secondAttribute="leading" constant="18" id="znL-AR-GKT"/>
                     </constraints>
                 </view>

@@ -42,7 +42,7 @@ class LifeStyleFifthDetailViewController: UIViewController, NavigationController
         let productList = ProductListData(screenId: Const.screenIdLifeStyleBeautyF)
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeautyF)
         
-        for enumerated in productList.products.enumerated() {
+        for enumerated in productList.products.reversed().enumerated() {
             let i = enumerated.offset
             let product = enumerated.element
             
@@ -50,7 +50,6 @@ class LifeStyleFifthDetailViewController: UIViewController, NavigationController
                 continue
             }
             lifeStyleProductView.delegate = self
-            lifeStyleProductView.numberString = "\(i+1)"
             lifeStyleProductView.product = product
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)
