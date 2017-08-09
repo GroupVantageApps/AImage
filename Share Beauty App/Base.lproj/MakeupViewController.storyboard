@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdY-RT-hgV">
-                                                <rect key="frame" x="20" y="20" width="34" height="44"/>
+                                                <rect key="frame" x="20" y="9" width="34" height="44"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="La3-kt-tme">
                                                         <rect key="frame" x="0.0" y="0.0" width="1" height="44"/>
@@ -129,7 +129,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss0-Sb-s05">
-                                                <rect key="frame" x="69" y="20" width="151" height="44"/>
+                                                <rect key="frame" x="20" y="62" width="151" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="151" id="F86-Zq-zU4"/>
                                                 </constraints>
@@ -144,16 +144,15 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="rdY-RT-hgV" firstAttribute="leading" secondItem="iNn-wk-4mK" secondAttribute="leading" constant="20" id="1Yp-hr-GTb"/>
-                                            <constraint firstItem="rdY-RT-hgV" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="20" id="35S-vC-RFe"/>
-                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="20" id="Kou-NW-WNi"/>
+                                            <constraint firstItem="rdY-RT-hgV" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="9" id="35S-vC-RFe"/>
+                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="top" secondItem="rdY-RT-hgV" secondAttribute="bottom" constant="9" id="MeE-Lu-Fvv"/>
                                             <constraint firstItem="3HT-ep-D08" firstAttribute="top" secondItem="nDq-xP-e7Q" secondAttribute="bottom" constant="30" id="X2q-nd-WKc"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="30" id="Xk8-Fj-WlN"/>
-                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="leading" secondItem="rdY-RT-hgV" secondAttribute="trailing" constant="15" id="Z0a-gg-ZDT"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="centerX" secondItem="iNn-wk-4mK" secondAttribute="centerX" id="hT9-UV-Qtd"/>
                                             <constraint firstAttribute="trailing" secondItem="3HT-ep-D08" secondAttribute="trailing" id="s6D-zi-Tyq"/>
                                             <constraint firstAttribute="bottom" secondItem="3HT-ep-D08" secondAttribute="bottom" constant="30" id="sHa-Wf-wct"/>
+                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="leading" secondItem="iNn-wk-4mK" secondAttribute="leading" constant="20" id="smN-h2-5HC"/>
                                             <constraint firstItem="3HT-ep-D08" firstAttribute="leading" secondItem="iNn-wk-4mK" secondAttribute="leading" id="ugy-Ah-fpS"/>
-                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="top" secondItem="rdY-RT-hgV" secondAttribute="top" id="vHa-P5-gS9"/>
                                             <constraint firstItem="Ss0-Sb-s05" firstAttribute="height" secondItem="rdY-RT-hgV" secondAttribute="height" id="vPd-py-2k2"/>
                                         </constraints>
                                     </view>
