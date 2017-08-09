@@ -547,10 +547,8 @@ class ProductListData: NSObject {
             } else {
                 if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                     if secondsProducts[data.beautySecondId] == nil {
-                        print("before - productId: \(productId), beautySecondId: \(data.beautySecondId)")
                         secondsProducts[data.beautySecondId] = [data]
                     } else {
-                        print("before - productId: \(productId), beautySecondId: \(data.beautySecondId)")
                         secondsProducts[data.beautySecondId]?.append(data)
                     }
                 }
@@ -564,10 +562,6 @@ class ProductListData: NSObject {
             let old = secondProduct.filter {$0.newItemFlg == 0}
             tempProducts += (new + old)
         })
-
-        for value in tempProducts {
-            print("after - productId: \(value.productId)")
-        }
         self.products += tempProducts
     }
 

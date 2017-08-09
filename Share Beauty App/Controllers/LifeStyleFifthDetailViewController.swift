@@ -42,7 +42,7 @@ class LifeStyleFifthDetailViewController: UIViewController, NavigationController
         let productList = ProductListData(screenId: Const.screenIdLifeStyleBeautyF)
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeautyF)
         
-        for enumerated in productList.products.enumerated() {
+        for enumerated in productList.products.reversed().enumerated() {
             let i = enumerated.offset
             let product = enumerated.element
             
