@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-class ProductDetailViewController: UIViewController, NavigationControllerAnnotation, CategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, TroubleSelectViewDelegate, UIScrollViewDelegate {
+class ProductDetailViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation,CategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, TroubleSelectViewDelegate, UIScrollViewDelegate {
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
     @IBOutlet weak private var mImgVSecondDailyCare: UIImageView!
@@ -73,9 +73,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     private let mScreen = ScreenData(screenId: Const.screenIdProductDetail)
 
     weak var delegate: NavigationControllerDelegate?
+    weak var gscDelegate: GscNavigationControllerDelegate?
+    
     var theme: String?
     var isEnterWithNavigationView: Bool = true
-
+    
+    var fromGscVc: Bool = false
+    
     var productId: Int!
 
     var mIsUtm: Bool = false
@@ -84,9 +88,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsWhiteLucentOnMakeUp: Bool = false
     var mIsWhiteLucentWhiteLucentAllDay: Bool = false
     var mIsSunCareBBSports: Bool = false
+    var mIsSunCareFragrance: Bool = false
     var mIsSunCarePerfectUv: Bool = false
     var mIsMakeUp: Bool = false
     var mIsWaso: Bool = false
+    
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -232,7 +238,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示
-        if self.product.productId == 498 || self.product.productId == 499 {
+        if self.product.productId == 498 || self.product.productId == 499 || (545 <= self.product.productId && self.product.productId <= 550){
             mImageBackgroundDot.isHidden = false
         } else {
             mImageBackgroundDot.isHidden = true
@@ -437,10 +443,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mWhiteLucentAllDayFeaturesView.bottomPadding = 30
 
             self.setSpecialCaseConstraints(targetView: mWhiteLucentAllDayFeaturesView, viewHeight: 330)
-        } else if mIsSunCareBBSports || mIsSunCarePerfectUv {
+        } else if mIsSunCareBBSports || mIsSunCarePerfectUv || mIsSunCareFragrance {
             mSuncareFeaturesView = SunCareFeaturesView()
             mSuncareFeaturesView.isGSC = mIsSunCareBBSports
             mSuncareFeaturesView.isSCP = mIsSunCarePerfectUv
+            mSuncareFeaturesView.isGSCFragrance = mIsSunCareFragrance
             mSuncareFeaturesView.bottomPadding = 30
 
             self.setSpecialCaseConstraints(targetView: mSuncareFeaturesView, viewHeight: 300)
@@ -497,7 +504,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
         mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
-        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
+        mIsSunCareFragrance = Const.productIdSunCareFragrance.contains(self.productId)
+        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv.contains(self.productId)
         mIsMakeUp = Const.productIdMakeUp == self.productId
         mIsWaso = Const.lineIdWASO == self.product.lineId
     }
@@ -710,7 +718,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         nextVc.productId = sender.tag
         nextVc.relationProducts = self.relationProducts
-        delegate?.nextVc(nextVc)
+        
+        if fromGscVc {
+            nextVc.fromGscVc = true
+            gscDelegate?.nextVc(nextVc)
+        } else {
+            delegate?.nextVc(nextVc)
+        }
     }
 
     // MARK: - IBAction
@@ -718,7 +732,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBAction private func onTapRecommend(_ sender: AnyObject) {
         let btnRecommend = sender as! UIButton
         btnRecommend.isSelected = !btnRecommend.isSelected
-
+                                           
         if btnRecommend.isSelected {
             //insert
             if RecommendTable.check(product.productId) == 0 {
@@ -742,11 +756,23 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
             lineDetailVc.lineId = self.product.lineId
             lineDetailVc.beautySecondId = self.product.beautySecondId
-            delegate?.nextVc(lineDetailVc)
+            
+            if fromGscVc {
+                lineDetailVc.fromGscVc = true
+                gscDelegate?.nextVc(lineDetailVc)
+            } else {
+                delegate?.nextVc(lineDetailVc)
+            }
         } else {
             let lineListVc = UIViewController.GetViewControllerFromStoryboard("LineListViewController", targetClass: LineListViewController.self) as! LineListViewController
             lineListVc.line = line
-            delegate?.nextVc(lineListVc)
+            
+            if fromGscVc {
+                lineListVc.fromGscVc = true
+                gscDelegate?.nextVc(lineListVc)
+            } else {
+                delegate?.nextVc(lineListVc)
+            }
         }
     }
 
@@ -779,7 +805,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         nextVc.productId = productId
-        delegate?.nextVc(nextVc)
+        
+        if fromGscVc {
+            gscDelegate?.nextVc(nextVc)
+        } else {
+            delegate?.nextVc(nextVc)
+        }
     }
 
     @IBAction private func onTapMakeUpMorning(_ sender: AnyObject) {

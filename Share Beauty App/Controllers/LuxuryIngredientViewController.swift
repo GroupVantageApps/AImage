@@ -166,7 +166,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         avPlayer.play()
     }
     
-    func endMovie() {
+    func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
 }

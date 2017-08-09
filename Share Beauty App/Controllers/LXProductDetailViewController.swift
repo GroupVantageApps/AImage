@@ -457,8 +457,8 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         mIsIbuki = Const.productIdIbuki == self.productId
         mIsWhiteLucentOnMakeUp = Const.productIdWhiteLucentOnMakeUp == self.productId
         mIsWhiteLucentWhiteLucentAllDay = Const.productIdWhiteLucentAllDay == self.productId
-        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
-        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
+//        mIsSunCareBBSports = Const.productIdSunCareBBSports == self.productId
+//        mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv == self.productId
         mIsMakeUp = Const.productIdMakeUp == self.productId
     }
 
@@ -756,7 +756,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         avPlayer.play()
     }
     
-    func endMovie() {
+    func endMovie(type: Int) {
         let moviePlay = mTroubleView.viewWithTag(50)
         moviePlay?.removeFromSuperview()
     }

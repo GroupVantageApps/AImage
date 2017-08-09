@@ -83,7 +83,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         moviePlay.isTop = true
         moviePlay.delegate = self
         moviePlay.setUI()
-        moviePlay.playMovie(movie: "lx_top")
+        moviePlay.playMovie(movie: "lx_movie/lx_movie/lx_top")
         self.view.addSubview(moviePlay)
         
         self.mTopBGImgV.image = FileTable.getLXFileImage("lx_top_bg.png")
@@ -163,7 +163,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             print("interruption ended")
         }
     }
-    func endMovie() {
+    func endMovie(type: Int) {
         let soundFilePath = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_bg.m4a"))
             let fileURL = URL(fileURLWithPath: soundFilePath)
             do {

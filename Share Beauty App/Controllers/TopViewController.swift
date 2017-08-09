@@ -414,4 +414,5 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         delegate?.pushVc(toVc)
         LogManager.tapItem(screenCode: mScreen.code, itemId: "06")
     }
+
 }

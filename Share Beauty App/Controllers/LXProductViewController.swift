@@ -245,7 +245,7 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
         })
         avPlayer.play()
     }
-    func endMovie() {
+    func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     func onTapRecommend(_ sender: BaseButton) {

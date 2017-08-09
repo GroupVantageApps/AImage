@@ -51,7 +51,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.mScrollV.delaysContentTouches = false
         self.mScrollV.canCancelContentTouches = true
         
-        var firstView = self.viewWithTag(100)! as UIView
+        let firstView = self.viewWithTag(100)! as UIView
         firstView.frame = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
         
         let lxArr = LanguageConfigure.lxcsv

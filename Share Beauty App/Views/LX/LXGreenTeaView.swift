@@ -39,7 +39,7 @@ class LXGreenTeaView: UIView{
                 csvId = 61
                 print(lxArr[String(csvId)] ?? "なし") 
             }
-            print(lxArr[String(csvId)])
+            
             label.text = lxArr[String(csvId)]
             
             if i == 3 || i == 4 {
