@@ -20,8 +20,6 @@ class LifeStyleSixthProductView: BaseView {
     @IBOutlet weak var mContentsView: UIView!
     
     @IBOutlet weak var mHeaderLabel: UILabel!
-    @IBOutlet weak var mBeautyLabel: UILabel!
-    @IBOutlet weak var mLineNameLabel: UILabel!
     @IBOutlet weak var mProductNameLabel: UILabel!
     
     @IBOutlet weak var mRecommendButton: BaseButton!
@@ -32,16 +30,6 @@ class LifeStyleSixthProductView: BaseView {
     var headerText: String? {
         get { return self.mHeaderLabel.text }
         set { self.mHeaderLabel.text = newValue }
-    }
-    
-    var beautyName: String? {
-        get { return self.mBeautyLabel.text }
-        set { self.mBeautyLabel.text = newValue }
-    }
-    
-    var lineName: String? {
-        get { return self.mLineNameLabel.text }
-        set { self.mLineNameLabel.text = newValue }
     }
     
     var productName: String? {
@@ -61,8 +49,6 @@ class LifeStyleSixthProductView: BaseView {
     
     var product: ProductData? {
         didSet {
-            self.beautyName = product?.beautyName
-            self.lineName = product?.lineName
             self.productName = product?.productName
             self.productImage = FileTable.getImage(product?.image)
             if product != nil {
