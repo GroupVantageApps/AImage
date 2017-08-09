@@ -46,6 +46,17 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private var finished: ((_ afterIndex: Int) -> ())!
     private var mLifeStyles = [LifeStyle]()
     private var mCounts = [String: Int]()
+    
+    private let nextVcs: DictionaryLiteral = [
+        4:LifeStyleFifthDetailViewController.self,
+        5:LifeStyleSixthDetailViewController.self,
+        6:LifeStyleSeventhDetailViewController.self,
+        7:LifeStyleEighthDetailViewController.self,
+        0:LifeStyleFirstDetailViewController.self,
+        1:LifeStyleSecondDetailViewController.self,
+        2:LifeStyleThirdDetailViewController.self,
+        3:LifeStyleFourthDetailViewController.self,
+        ]
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -56,17 +67,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         super.viewDidLoad()
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
-        let nextVcs = [
-            LifeStyleFirstDetailViewController.self,
-            LifeStyleSecondDetailViewController.self,
-            LifeStyleThirdDetailViewController.self,
-            LifeStyleFourthDetailViewController.self,
-            ] as [AnyClass]
-
-        (0..<nextVcs.count).forEach { i in
-            let image = UIImage(named:("lifestyle" + String(i + 1)))
-
-            let key = "0" + String(i + 1)
+        
+        for (i, nextVc) in nextVcs {
+            
+            let image = UIImage(named:("lifestyle" + String(i+1)))
+            let key = "0" + String(i+1)
+            
             var text: String = items[key]!
             text = text.replacingOccurrences(of: "\n", with: "<br>")
             var isFocus = false
@@ -74,7 +80,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     isFocus = true
             }
 
-            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVcs[i], focus: isFocus)
+            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
             mLifeStyles.append(lifestyle)
         }
         mCollectionV.register(UINib(nibName: "LifeStyleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -142,6 +148,14 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 index = 2
             case Const.screenIdLifeStyleBeautyD:
                 index = 3
+            case Const.screenIdLifeStyleBeautyF:
+                index = 4
+            case Const.screenIdLifeStyleBeautyG:
+                index = 5
+            case Const.screenIdLifeStyleBeautyH:
+                index = 6
+            case Const.screenIdLifeStyleBeautyI:
+                index = 7
             default:
                 index = nil
             }
@@ -183,7 +197,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             cell.text = lifeStyle.text
             cell.isRecommend = lifeStyle.isRecommend
             cell.index = indexPath.row / 2
-            cell.mCountsLabel.text = String(mCounts[String(indexPath.row / 2)] ?? 0)
+            cell.mCountsLabel.text = String(mCounts[String(nextVcs[(indexPath.row / 2)].key)] ?? 0)
             cell.resetAnimation()
             if lifeStyle.focus {
                 cell.focusAnimation()
@@ -199,6 +213,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
         let width: CGFloat!
         if indexPath.row % 2 == 0 {
             if indexPath.row == 0 {
@@ -207,8 +222,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 width = 15
             }
         } else {
-            let w = view.frame.size.width
-            width = (w - (45 * 2) - (15 * 3)) / CGFloat(mLifeStyles.count)
+            width = 222.25
         }
         let height: CGFloat = collectionView.height
 
@@ -218,37 +232,53 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     func didSelect(index: Int) {
 
         var logItemId: String = ""
-
         if index == 0 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleFifthDetailViewController", targetClass: LifeStyleFifthDetailViewController.self) as! LifeStyleFifthDetailViewController
+            self.delegate?.nextVc(nextVc)
+            logItemId = "05"
+        } else if index == 1 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleSixthDetailViewController", targetClass: LifeStyleSixthDetailViewController.self) as! LifeStyleSixthDetailViewController
+            self.delegate?.nextVc(nextVc)
+            logItemId = "06"
+        } else if index == 2 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleSeventhDetailViewController", targetClass: LifeStyleSeventhDetailViewController.self) as! LifeStyleSeventhDetailViewController
+            self.delegate?.nextVc(nextVc)
+            logItemId = "07"
+
+        } else if index == 3 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleEighthDetailViewController", targetClass: LifeStyleEighthDetailViewController.self) as! LifeStyleEighthDetailViewController
+            self.delegate?.nextVc(nextVc)
+            logItemId = "08"
+        } else if index == 4 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleFirstDetailViewController", targetClass: LifeStyleFirstDetailViewController.self) as! LifeStyleFirstDetailViewController
             self.delegate?.nextVc(nextVc)
             logItemId = "01"
-
-        } else if index == 1 {
+            
+        } else if index == 5 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleSecondDetailViewController", targetClass: LifeStyleSecondDetailViewController.self) as! LifeStyleSecondDetailViewController
             self.delegate?.nextVc(nextVc)
             logItemId = "02"
 
-        } else if index == 2 {
+        } else if index == 6 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleThirdDetailViewController", targetClass: LifeStyleThirdDetailViewController.self) as! LifeStyleThirdDetailViewController
             self.delegate?.nextVc(nextVc)
             logItemId = "03"
 
-        } else if index == 3 {
+        } else if index == 7 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LifeStyleFourthDetailViewController", targetClass: LifeStyleFourthDetailViewController.self) as! LifeStyleFourthDetailViewController
             self.delegate?.nextVc(nextVc)
             logItemId = "04"
+            
         }
 
         LogManager.tapItem(screenCode: mScreen.code, itemId: logItemId)
     }
 
     func didTapRecommend(index: Int) {
-        LifeStyleBeautyCount.incrementLocal(index: index)
+        LifeStyleBeautyCount.incrementLocal(index: nextVcs[index].key)
         mCounts = LifeStyleBeautyCount.getCounts()
         mCollectionV.reloadData()
-        let logItemId = "1" + String(index)
-        print(logItemId)
+        let logItemId = "1" + String(nextVcs[index].key)
         LogManager.tapLifeStyleItem(screenCode: mScreen.code, itemId: logItemId)
     }
 
