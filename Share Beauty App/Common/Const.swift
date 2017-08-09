@@ -94,10 +94,10 @@ struct Const {
     static let lifeStyleBeautyListC = [372, 421]
     static let lifeStyleBeautyListD = [533, 359, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
     static let lifeStyleBeautyListE = [513, 252, 313]
-    static let lifeStyleBeautyListF = [101, 359, 455]
+    static let lifeStyleBeautyListF = [101, 455]
     static let lifeStyleBeautyListG = [553, 555, 359]
     static let lifeStyleBeautyListH = [470, 500, 551]
-    static let lifeStyleBeautyListI = [545, 549, 122]
+    static let lifeStyleBeautyListI = [545, 549, 498]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
     static let productIdsUTM = [359, 28]

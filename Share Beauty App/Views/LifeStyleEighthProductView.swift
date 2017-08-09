@@ -18,9 +18,7 @@ class LifeStyleEighthProductView: BaseView {
     
     @IBOutlet weak var mBackImageView: UIImageView!
     @IBOutlet weak var mContentsView: UIView!
-    
-    @IBOutlet weak var mBeautyLabel: UILabel!
-    @IBOutlet weak var mLineNameLabel: UILabel!
+
     @IBOutlet weak var mProductNameLabel: UILabel!
     @IBOutlet weak var mHeaderLabel: UILabel!
     
@@ -52,17 +50,7 @@ class LifeStyleEighthProductView: BaseView {
         get { return self.mHeaderLabel.text }
         set { self.mHeaderLabel.text = newValue }
     }
-    
-    var beautyName: String? {
-        get { return self.mBeautyLabel.text }
-        set { self.mBeautyLabel.text = newValue }
-    }
-    
-    var lineName: String? {
-        get { return self.mLineNameLabel.text }
-        set { self.mLineNameLabel.text = self.style == .beautyOnly ? nil : newValue }
-    }
-    
+
     var productName: String? {
         get { return self.mProductNameLabel.text }
         set { self.mProductNameLabel.text = self.style == .beautyOnly ? nil : newValue }
@@ -80,8 +68,6 @@ class LifeStyleEighthProductView: BaseView {
     
     var product: ProductData? {
         didSet {
-            self.beautyName = product?.beautyName
-            self.lineName = product?.lineName
             self.productName = product?.productName
             self.productImage = FileTable.getImage(product?.image)
             if product != nil {

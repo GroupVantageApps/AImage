@@ -50,7 +50,6 @@ class LifeStyleFifthDetailViewController: UIViewController, NavigationController
                 continue
             }
             lifeStyleProductView.delegate = self
-            lifeStyleProductView.numberString = "\(i+1)"
             lifeStyleProductView.product = product
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)
