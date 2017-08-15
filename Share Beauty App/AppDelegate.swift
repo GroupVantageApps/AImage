@@ -56,7 +56,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     })
                 }
             }
+        // ssdsba://line?line_id=XXX
+        } else if urlComponents?.host == "line" {
+            if let query = urlComponents?.queryItems {
+                if query.first?.name == "line_id", let line_id = Int((query.first?.value)!) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                        let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
+                        print("requset line_id: " + line_id.description)
+                        toVc.lineIdForDeeplink = line_id
+                        UIApplication.shared.keyWindow?.rootViewController = toVc
+                    })
+                }
+            }
         }
+        
         return true
     }
 

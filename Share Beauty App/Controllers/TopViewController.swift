@@ -37,6 +37,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
 	fileprivate var mRightGradientLayer: CAGradientLayer!
     
     var productIdForDeeplink: Int = 0
+    var lineIdForDeeplink: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +140,14 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             nextVc.productId = productIdForDeeplink
             productIdForDeeplink = 0
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+            self.delegate?.nextVc(nextVc)
+        }
+        if lineIdForDeeplink != 0 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("LineStepViewController", targetClass: LineStepViewController.self) as! LineStepViewController
+            //            var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
+            nextVc.line = LineDetailData(lineId: lineIdForDeeplink)
+            lineIdForDeeplink = 0
+            //            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
         }
     }
