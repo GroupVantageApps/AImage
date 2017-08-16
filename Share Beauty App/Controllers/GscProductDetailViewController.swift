@@ -93,5 +93,5 @@ class GscProductDetailViewController: GscBaseViewController, UIScrollViewDelegat
     @IBAction func goTop(_ sender: Any) {
         self.showTop()
     }
-
+    
 }

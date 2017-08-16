@@ -20,7 +20,7 @@ protocol GscHeaderViewDelegate: NSObjectProtocol {
 class GscHeaderView: BaseView {
     @IBOutlet weak private var mBtnHome: BaseButton!
     @IBOutlet weak private var mBtnPlay: BaseButton!
-    @IBOutlet weak private var mBtnBack: BaseButton!
+    @IBOutlet weak var mBtnBack: BaseButton!
     @IBOutlet weak var mBtnFind: BaseButton!
     @IBOutlet weak private var mBtnOutApp: BaseButton!
     @IBOutlet weak private var mBtnUpdate: BaseButton!
