@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -163,7 +163,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="YeN-ju-dYM" firstAttribute="top" secondItem="qnl-bG-utb" secondAttribute="top" id="2Xz-nN-kQg"/>
                                                             <constraint firstAttribute="bottom" secondItem="YeN-ju-dYM" secondAttribute="bottom" id="8GD-vk-08t"/>
@@ -760,6 +760,7 @@
                             </scrollView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -804,6 +805,7 @@
                         <outlet property="mLblLineName" destination="kiK-N3-HhH" id="VIY-GH-PZa"/>
                         <outlet property="mLblProductName" destination="4qw-ed-MOa" id="zrH-o1-obh"/>
                         <outlet property="mLblUnit" destination="bVb-tm-MfS" id="BIP-Mh-Wji"/>
+                        <outlet property="mRelationPearentView" destination="Lqj-6e-0a8" id="fiF-um-Bh2"/>
                         <outlet property="mRelationScrollV" destination="IJq-sz-snI" id="N54-uL-aWu"/>
                         <outlet property="mScrollVPinch" destination="wAl-8s-SCs" id="Eo8-UU-pWR"/>
                         <outlet property="mTransitionView" destination="qP3-J2-RYj" id="Vjp-e6-5ua"/>
@@ -820,6 +822,8 @@
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
                         <outlet property="mVScrollContent" destination="6m6-Dv-mB3" id="Zci-5v-P55"/>
                         <outlet property="mVSkinConcern" destination="h1g-sR-Nnj" id="5tL-Qi-WM7"/>
+                        <outlet property="productDetailFeaturesView" destination="cRh-dU-sP7" id="rxT-7P-TmQ"/>
+                        <outlet property="productNamesView" destination="Hrs-Nf-pIZ" id="cBI-Pp-gg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaD-mL-MOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
