@@ -38,6 +38,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     
     var productIdForDeeplink: Int = 0
     var lineIdForDeeplink: Int = 0
+    var lineStepForDeepLink: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,12 +143,16 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
         }
+        
         if lineIdForDeeplink != 0 {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("LineStepViewController", targetClass: LineStepViewController.self) as! LineStepViewController
-            //            var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
+//            var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
+            if lineStepForDeepLink != 0 {
+                nextVc.lineStep = lineStepForDeepLink
+                lineStepForDeepLink = 0
+            }
             nextVc.line = LineDetailData(lineId: lineIdForDeeplink)
             lineIdForDeeplink = 0
-            //            nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
         }
     }
