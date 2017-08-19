@@ -138,5 +138,5 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
     @IBAction func goTop(_ sender: Any) {
         self.showTop()
     }
-    
+
 }
