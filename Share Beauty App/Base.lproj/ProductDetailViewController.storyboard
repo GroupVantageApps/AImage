@@ -707,6 +707,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="hBN-OY-8nf" secondAttribute="bottom" id="KmP-ZS-oMS"/>
                                                                     <constraint firstItem="hBN-OY-8nf" firstAttribute="leading" secondItem="v8h-GX-k0o" secondAttribute="leading" id="Xfj-Ee-7a8"/>
