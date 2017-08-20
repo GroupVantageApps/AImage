@@ -2162,10 +2162,8 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = RXGH2B4R28;
 						DevelopmentTeam = J62CVNNG5Q;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Manual;
 						ProvisioningStyle = Automatic;
 					};
 					C05913DE1D67235700F22214 = {
@@ -2349,8 +2347,11 @@
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
+<<<<<<< HEAD
 				DE06F70F1F16450200EF2FE2 /* children.png in Resources */,
+=======
 				B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */,
+>>>>>>> feature-3865-image
 				C050C9021E82619F0009679D /* sib02_after.jpg in Resources */,
 				DE2C91861E9C682500B5FC4A /* lx_header_home.png in Resources */,
 				DE2C91881E9C682500B5FC4A /* lx_header_option.png in Resources */,
@@ -2504,11 +2505,11 @@
 				C050C9781E8267450009679D /* defendThumnail.png in Resources */,
 				C050C9141E82619F0009679D /* wab_slider_24.png in Resources */,
 				DE2C90871E9C66E600B5FC4A /* LXHeaderView.xib in Resources */,
-
+<<<<<<< HEAD
 				DE06F70D1F16450200EF2FE2 /* urban.png in Resources */,
-
+=======
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
-
+>>>>>>> feature-3865-image
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3395,6 +3396,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: 円 五十嵐 (75H3NE7JT7)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+<<<<<<< HEAD
+				DEVELOPMENT_TEAM = "";
+=======
+				DEVELOPMENT_TEAM = J62CVNNG5Q;
+>>>>>>> feature-3865-image
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3426,6 +3432,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SHISEIDO COMPANY, LIMITED";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

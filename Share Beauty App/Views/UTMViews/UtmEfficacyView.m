@@ -772,6 +772,163 @@
                              enter:YES];
 
         [scrollView setContentSize:CGSizeMake(self.bounds.size.width,550)];
+        
+    } else if (_isEssentialEnergyMoisturizingCream) {
+        isSerum = YES;
+        self.scrollView.backgroundColor = [UIColor clearColor];
+        self.viewForLastBaselineLayout.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(50,10, self.scrollView.frame.size.width - 100,self.scrollView.frame.size.height - 20)];
+        backgroundView.backgroundColor = [UIColor whiteColor];
+        [self.scrollView addSubview:backgroundView];
+        CGSize titleLabel = [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[47]]
+                                            frame:CGRectMake(98 , 29, 400 , 24)
+                                         fontSize:23
+                                         tracking:0
+                                       lineHeight:0 red:NO bold:NO];
+        float x = 98 + titleLabel.width + 30;
+        // 説明文
+        NSString *str = @"塗布直後に、色むらが解消され肌の明るさとつやを感じられる";
+        [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
+                         frame:CGRectMake( x, 29, 800, 25)
+                      fontSize:23
+                      tracking:0
+                    lineHeight:0 red:NO bold:NO];
+        
+        //After Left Image   410 × 560
+        [self showUtmImage:CGRectMake(188, 108, 205, 280) image:@"MoisturizingCream01_after"];
+        
+        //Before Left Image
+        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(188, 108, 205, 280)];
+        UIImage *utm01image = [UIImage imageNamed:@"MoisturizingCream01_before"];
+        self.utm01.image = utm01image;
+        [scrollView addSubview:self.utm01];
+        
+        //Right Image
+        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 205, 280)];
+        UIImage *utm02image_bafter = [UIImage imageNamed:@"MoisturizingCream02_after"];
+        utm02_bafter.image = utm02image_bafter;
+        [scrollView addSubview:utm02_bafter];
+        
+        //Before Right Image
+        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 205, 280)];
+        UIImage *utm02image = [UIImage imageNamed:@"MoisturizingCream02_before"];
+        self.utm02.image = utm02image;
+        [scrollView addSubview:self.utm02];
+        
+        UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
+        UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
+        
+        //Slider Left
+        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(105, 420, 359,30)];
+        [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_left setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
+        [slider_left setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
+        slider_left.tag = 1;
+        [slider_left addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        [scrollView addSubview:slider_left];
+        
+        //Slider Right
+        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(557, 420, 359, 30)];
+        [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_right setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
+        [slider_right setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
+        slider_right.tag = 2;
+        [slider_right addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        [scrollView addSubview:slider_right];
+        
+        //左
+        //Before use   93 x 67
+        [self showUtmImage:CGRectMake(109, 461, 93/3, 67/3) image:@"Befor_use"];
+        
+        //After 4 weeks of us 139 x 67
+        [self showUtmImage:CGRectMake(445, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        
+        //右
+        //Before use
+        [self showUtmImage:CGRectMake(561, 461, 93/3, 67/3) image:@"Befor_use"];
+        
+        //After 4 weeks of use
+        [self showUtmImage:CGRectMake(908, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        
+    } else if (_isEssentialEnergyDayCream) {
+        isSerum = YES;
+        self.scrollView.backgroundColor = [UIColor clearColor];
+        self.viewForLastBaselineLayout.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(50,10, self.scrollView.frame.size.width - 100,self.scrollView.frame.size.height - 20)];
+        backgroundView.backgroundColor = [UIColor whiteColor];
+        [self.scrollView addSubview:backgroundView];
+        CGSize titleLabel = [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[47]]
+                                            frame:CGRectMake(98 , 29, 400 , 24)
+                                         fontSize:23
+                                         tracking:0
+                                       lineHeight:0 red:NO bold:NO];
+        float x = 98 + titleLabel.width + 30;
+        // 説明文
+        NSString *str = @"塗布直後に、色むらが解消され肌の明るさとつやを感じられる";
+        [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
+                         frame:CGRectMake( x, 29, 800, 25)
+                      fontSize:23
+                      tracking:0
+                    lineHeight:0 red:NO bold:NO];
+        
+        //After Left Image   754 × 555
+        [self showUtmImage:CGRectMake(98, 108, 754/2, 555/2) image:@"DayCream01_after"];
+        
+        //Before Left Image
+        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(98, 108, 754/2, 555/2)];
+        UIImage *utm01image = [UIImage imageNamed:@"DayCream01_before"];
+        self.utm01.image = utm01image;
+        [scrollView addSubview:self.utm01];
+        
+        //Right Image
+        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(550, 108, 754/2, 555/2)];
+        UIImage *utm02image_bafter = [UIImage imageNamed:@"DayCream02_after"];
+        utm02_bafter.image = utm02image_bafter;
+        [scrollView addSubview:utm02_bafter];
+        
+        //Before Right Image
+        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(550, 108, 754/2, 555/2)];
+        UIImage *utm02image = [UIImage imageNamed:@"DayCream02_before"];
+        self.utm02.image = utm02image;
+        [scrollView addSubview:self.utm02];
+        
+        UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
+        UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
+        
+        //Slider Left
+        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(105, 420, 359,30)];
+        [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_left setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
+        [slider_left setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
+        slider_left.tag = 1;
+        [slider_left addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        [scrollView addSubview:slider_left];
+        
+        //Slider Right
+        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(557, 420, 359, 30)];
+        [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_right setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
+        [slider_right setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
+        slider_right.tag = 2;
+        [slider_right addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+        [scrollView addSubview:slider_right];
+        
+        //左
+        //Before use   93 x 67
+        [self showUtmImage:CGRectMake(109, 461, 93/3, 67/3) image:@"Befor_use"];
+        
+        //After 4 weeks of us 139 x 67
+        [self showUtmImage:CGRectMake(445, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        
+        //右
+        //Before use
+        [self showUtmImage:CGRectMake(561, 461, 93/3, 67/3) image:@"Befor_use"];
+        
+        //After 4 weeks of use
+        [self showUtmImage:CGRectMake(908, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        
     }
 }
 
