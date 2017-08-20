@@ -20,10 +20,10 @@ protocol GscHeaderViewDelegate: NSObjectProtocol {
 class GscHeaderView: BaseView {
     @IBOutlet weak private var mBtnHome: BaseButton!
     @IBOutlet weak private var mBtnPlay: BaseButton!
-    @IBOutlet weak private var mBtnBack: BaseButton!
+    @IBOutlet weak var mBtnBack: BaseButton!
     @IBOutlet weak var mBtnFind: BaseButton!
     @IBOutlet weak private var mBtnOutApp: BaseButton!
-    @IBOutlet weak private var mBtnUpdate: BaseButton!                                                                                                                                                                    
+    @IBOutlet weak private var mBtnUpdate: BaseButton!
     @IBOutlet weak private var mConstraintUpdateToOutApp: NSLayoutConstraint!
 
     @IBOutlet weak var mLblTitle: UILabel!
@@ -47,7 +47,7 @@ class GscHeaderView: BaseView {
     @IBAction private func onTapHome(_ sender: AnyObject) {
         print(#function)
         delegate?.didHeaderViewAction(.home)
-    }                                                                     
+    }
     @IBAction func onTapOutApp(_ sender: Any) {
         print(#function)
         mDropDown.show()
@@ -56,7 +56,7 @@ class GscHeaderView: BaseView {
         print(#function)
         delegate?.didHeaderViewAction(.update)
     }
- 
+
     @IBAction func onTapFind(_ sender: Any) {
         print(#function)
         delegate?.didHeaderViewAction(.find)

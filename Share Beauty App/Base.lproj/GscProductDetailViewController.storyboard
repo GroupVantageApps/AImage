@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gsc Navigation View Controller-->
+        <scene sceneID="a2T-yI-CPx">
+            <objects>
+                <viewController storyboardIdentifier="GscNavigationViewController" id="T4m-bh-eTl" customClass="GscNavigationViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Dc-Ys-UgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="ccM-iA-GLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nfh-Xa-TPF">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-HZ-YPi">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm" customClass="GscHeaderView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
+                                        <rect key="frame" x="0.0" y="50" width="1024" height="696"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1024" id="9Vr-7m-E66"/>
+                                            <constraint firstAttribute="height" constant="696" id="kBn-Yd-mVu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" id="7iV-MN-DBh"/>
+                                    <constraint firstItem="23k-mA-0zm" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="FWF-JP-muK"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="QZe-Bz-4c3"/>
+                                    <constraint firstAttribute="trailing" secondItem="PSx-Hb-PSG" secondAttribute="trailing" id="ZkX-YM-K0w"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="23k-mA-0zm" secondAttribute="bottom" id="gBr-53-vYF"/>
+                                    <constraint firstAttribute="bottom" secondItem="PSx-Hb-PSG" secondAttribute="bottom" id="sub-0A-3Ti"/>
+                                    <constraint firstAttribute="trailing" secondItem="23k-mA-0zm" secondAttribute="trailing" id="vWe-ym-iOh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cPZ-HZ-YPi" secondAttribute="trailing" id="7Hf-vS-yXc"/>
+                            <constraint firstItem="ccM-iA-GLD" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="bottom" id="9hR-jY-jLm"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" id="NYr-TU-jab"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="R5P-Bp-fuN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mGscHeaderView" destination="23k-mA-0zm" id="neS-Dz-zRH"/>
+                        <outlet property="mScrollV" destination="cPZ-HZ-YPi" id="rSG-nH-eCh"/>
+                        <outlet property="mVContent" destination="PSx-Hb-PSG" id="UVt-fs-4hq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aj-4H-wE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7437.3046874999991" y="2291.40625"/>
+        </scene>
+    </scenes>
+</document>
