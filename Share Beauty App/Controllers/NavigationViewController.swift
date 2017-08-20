@@ -65,6 +65,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     private var mUpdateStatusClosure: ((ContentDownloadResult) -> ())?
     
     var productIdForDeeplink: Int = 0
+    var lineIdForDeeplink: Int = 0
+    var lineStepForDeepLink: Int = 0
 
     fileprivate func animateSideBar(_ show: Bool, completion: (() -> ())?) {
         if show {
@@ -124,7 +126,14 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             LoadingView.show(vc: self)
             topVc.productIdForDeeplink = productIdForDeeplink
         }
-
+        if lineIdForDeeplink != 0 {
+            if lineStepForDeepLink != 0 {
+                topVc.lineStepForDeepLink = lineStepForDeepLink
+            }
+            LoadingView.show(vc: self)
+            topVc.lineIdForDeeplink = lineIdForDeeplink
+        }
+        
         mHeaderView.delegate = self
         mNavigationView.delegate = self
         mSideBar.delegate = self

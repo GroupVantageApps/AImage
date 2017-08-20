@@ -20,8 +20,10 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
     private let mScreen = ScreenData(screenId: Const.screenIdLineStep)
 
     var line: LineDetailData!
+    var lineId: Int = 0
     var beautySecondId: Int!
-
+    var lineStep: Int = 0
+    
     weak var delegate: NavigationControllerDelegate?
     weak var gscDelegate: GscNavigationControllerDelegate?
     
@@ -44,13 +46,28 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Line_Step View")
         mCollectionViewProduct.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         mCollectionViewProduct.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
 
         mLblLine.text = line.lineName
 
         mUpperSteps = line.step
+        
+        if lineStep != 0 {
+            for (i,mUpperStep) in mUpperSteps.enumerated() {
+                let indexLineStep = mUpperStep.lineStep
+                for (index,value) in indexLineStep.enumerated() {
+                    if value.stepId == lineStep {
+                        mUpperSteps[i].lineStep.remove(at: index)
+                        mUpperSteps[i].lineStep.insert(value, at: 0)
+                        let forwardStep = mUpperSteps[i]
+                        mUpperSteps.remove(at: i)
+                        mUpperSteps.insert(forwardStep, at: 0)
+                    }
+                }
+            }
+        }
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
         mProducts = mLowerSteps.flatMap {$0.productData}
 
@@ -131,8 +148,13 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
         if (beautySecondId == nil) {
             return
         }
-
-        let filtered = mProducts.filter {$0.lineId == self.line.lineId && $0.beautySecondId == self.beautySecondId}
+        
+        var filtered = mProducts.filter {$0.lineId == self.line.lineId && $0.beautySecondId == self.beautySecondId}
+        if lineId != 0 {
+            filtered = mProducts.filter {$0.lineId == self.lineId && $0.beautySecondId == self.beautySecondId}
+        }
+        print("--------filtered")
+        print(filtered)
         let index: Int? = mProducts.enumerated().filter { $1.productId == filtered[safe: 0]?.productId }[safe: 0]?.offset
 
         if index != nil {
