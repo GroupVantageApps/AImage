@@ -54,20 +54,20 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
 
         mUpperSteps = line.step
         
-        if lineStep != 0 {
-            for (i,mUpperStep) in mUpperSteps.enumerated() {
-                let indexLineStep = mUpperStep.lineStep
-                for (index,value) in indexLineStep.enumerated() {
-                    if value.stepId == lineStep {
-                        mUpperSteps[i].lineStep.remove(at: index)
-                        mUpperSteps[i].lineStep.insert(value, at: 0)
-                        let forwardStep = mUpperSteps[i]
-                        mUpperSteps.remove(at: i)
-                        mUpperSteps.insert(forwardStep, at: 0)
-                    }
-                }
-            }
-        }
+//        if lineStep != 0 {
+//            for (i,mUpperStep) in mUpperSteps.enumerated() {
+//                let indexLineStep = mUpperStep.lineStep
+//                for (index,value) in indexLineStep.enumerated() {
+//                    if value.stepId == lineStep {
+//                        mUpperSteps[i].lineStep.remove(at: index)
+//                        mUpperSteps[i].lineStep.insert(value, at: 0)
+//                        let forwardStep = mUpperSteps[i]
+//                        mUpperSteps.remove(at: i)
+//                        mUpperSteps.insert(forwardStep, at: 0)
+//                    }
+//                }
+//            }
+//        }
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
         mProducts = mLowerSteps.flatMap {$0.productData}
 
@@ -145,18 +145,22 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
     }
 
     private func setupOffset() {
-        if (beautySecondId == nil) {
+        var filtered:[ProductData] = []
+        if lineStep != 0 {
+        } else if (beautySecondId == nil) {
             return
+        } else if (beautySecondId != nil) {
+            filtered = mProducts.filter {$0.lineId == self.line.lineId && $0.beautySecondId == self.beautySecondId}
         }
-        
-        var filtered = mProducts.filter {$0.lineId == self.line.lineId && $0.beautySecondId == self.beautySecondId}
         if lineId != 0 {
             filtered = mProducts.filter {$0.lineId == self.lineId && $0.beautySecondId == self.beautySecondId}
         }
         print("--------filtered")
         print(filtered)
-        let index: Int? = mProducts.enumerated().filter { $1.productId == filtered[safe: 0]?.productId }[safe: 0]?.offset
-
+        var index: Int? = mProducts.enumerated().filter { $1.productId == filtered[safe: 0]?.productId }[safe: 0]?.offset
+        if lineStep != 0 {
+            index = lineStep
+        }
         if index != nil {
             DispatchQueue.main.async(execute: {
                 self.mCollectionViewProduct.scrollToItem(at: IndexPath(item: index!, section: 0), at: .left, animated: false)
