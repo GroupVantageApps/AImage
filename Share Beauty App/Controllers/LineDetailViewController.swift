@@ -29,6 +29,7 @@ class LineDetailViewController: UIViewController, NavigationControllerAnnotation
     @IBOutlet weak private var mBtnMovie: BaseButton!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mVMain: UIView!
+    var backgroundImage: UIImage!
 
     var image: UIImage? {
         didSet {
@@ -89,6 +90,14 @@ class LineDetailViewController: UIViewController, NavigationControllerAnnotation
             }
         }
         mScrollVPinch.delegate = self
+        print("lineid==="+String(lineId))
+        if lineId == 39 {
+            // 背景設定
+            var image = backgroundImage
+            image?.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 50))
+            image = UIGraphicsGetImageFromCurrentImageContext()!
+            self.mVMain.backgroundColor = UIColor(patternImage: image!)
+        }
     }
 
     @IBAction func onTapEnter(_ sender: AnyObject) {
