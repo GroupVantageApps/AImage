@@ -171,10 +171,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         // 背景
         if productId >= 553 && productId <= 556 {
             mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
-            var image: UIImage = FileTable.getImage(product.backImage)!
-            let resize = CGSize(width: self.view.width, height: self.view.height + 50)
+            var image: UIImage = FileTable.getImage(6355)!
+            let resize = CGSize(width: self.view.width, height: self.view.height)
             UIGraphicsBeginImageContext(resize)
-            image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 50))
+            image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height))
             image = UIGraphicsGetImageFromCurrentImageContext()!
             self.view.backgroundColor = UIColor(patternImage: image)
             mRelationScrollV.backgroundColor = UIColor.clear
@@ -599,7 +599,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             if productId >= 553 && productId <= 556 {
                 mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
-                var image: UIImage = FileTable.getImage(product.backImage)!
+                var image: UIImage = FileTable.getImage(6355)!
                 let resize = CGSize(width: self.view.width, height: self.view.height + 200)
                 UIGraphicsBeginImageContext(resize)
                 image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 200))
