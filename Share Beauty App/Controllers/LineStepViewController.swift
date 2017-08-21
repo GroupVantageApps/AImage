@@ -151,7 +151,18 @@ class LineStepViewController: UIViewController, NavigationControllerAnnotation, 
         print(filtered)
         var index: Int? = mProducts.enumerated().filter { $1.productId == filtered[safe: 0]?.productId }[safe: 0]?.offset
         if lineStep != 0 {
-            index = lineStep
+            var indexCount = 0
+            for (_,mUpperStep) in mUpperSteps.enumerated() {
+                let indexLineStep = mUpperStep.lineStep
+                for (_,value) in indexLineStep.enumerated() {
+                    let valueCount = value.product.count
+                    
+                    if value.stepId == lineStep && valueCount != 0{
+                        index = indexCount - 1
+                    }
+                    indexCount += valueCount
+                }
+            }
         }
         if index != nil {
             DispatchQueue.main.async(execute: {
