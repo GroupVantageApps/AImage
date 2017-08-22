@@ -795,23 +795,23 @@
                       tracking:0
                     lineHeight:0 red:NO bold:NO];
         
-        //After Left Image   410 × 560
-        [self showUtmImage:CGRectMake(188, 108, 205, 280) image:@"MoisturizingCream01_after"];
+        //After Left Image   410 × 560 >正寸467 × 558>233 × 279
+        [self showUtmImage:CGRectMake(188, 108, 233, 280) image:@"MoisturizingCream01_after"];
         
         //Before Left Image
-        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(188, 108, 205, 280)];
+        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(188, 108, 233, 280)];
         UIImage *utm01image = [UIImage imageNamed:@"MoisturizingCream01_before"];
         self.utm01.image = utm01image;
         [scrollView addSubview:self.utm01];
         
         //Right Image
-        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 205, 280)];
+        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 233, 280)];
         UIImage *utm02image_bafter = [UIImage imageNamed:@"MoisturizingCream02_after"];
         utm02_bafter.image = utm02image_bafter;
         [scrollView addSubview:utm02_bafter];
         
         //Before Right Image
-        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 205, 280)];
+        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 233, 280)];
         UIImage *utm02image = [UIImage imageNamed:@"MoisturizingCream02_before"];
         self.utm02.image = utm02image;
         [scrollView addSubview:self.utm02];
