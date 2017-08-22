@@ -788,10 +788,10 @@
                                        lineHeight:0 red:NO bold:NO];
         float x = 98 + titleLabel.width + 30;
         // 説明文
-        NSString *str = @"塗布直後に、色むらが解消され肌の明るさとつやを感じられる";
+        NSString *str = @"The skin’s  appearance of dullness improved for a brighter, more glowing look.";
         [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
                          frame:CGRectMake( x, 29, 800, 25)
-                      fontSize:23
+                      fontSize:18
                       tracking:0
                     lineHeight:0 red:NO bold:NO];
         
@@ -866,10 +866,10 @@
                                        lineHeight:0 red:NO bold:NO];
         float x = 98 + titleLabel.width + 30;
         // 説明文
-        NSString *str = @"塗布直後に、色むらが解消され肌の明るさとつやを感じられる";
+        NSString *str = @"The skin’s  appearance of dullness improved for a brighter, more glowing look.";
         [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
                          frame:CGRectMake( x, 29, 800, 25)
-                      fontSize:23
+                      fontSize:18
                       tracking:0
                     lineHeight:0 red:NO bold:NO];
         
@@ -899,7 +899,7 @@
         
         //Slider Left
         UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(105, 420, 359,30)];
-        [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_Emulsion"] forState:UIControlStateNormal];
         [slider_left setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_left setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
         slider_left.tag = 1;
@@ -908,7 +908,7 @@
         
         //Slider Right
         UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(557, 420, 359, 30)];
-        [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
+        [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_Emulsion"] forState:UIControlStateNormal];
         [slider_right setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_right setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
         slider_right.tag = 2;

@@ -29,6 +29,7 @@
 		8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */; };
 		807F43791EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */; };
 		807F437B1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */; };
+		914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */ = {isa = PBXBuildFile; fileRef = 914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */; };
 		B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B11F47682700176804 /* After_4_weeks.png */; };
 		B38F63BE1F47682700176804 /* Befor_use.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B21F47682700176804 /* Befor_use.png */; };
 		B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B31F47682700176804 /* DayCream01_after.png */; };
@@ -595,6 +596,7 @@
 		8045C1E71EEE862700284CF9 /* LifeStyleFirstProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFirstProductView.xib; sourceTree = "<group>"; };
 		807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleDefault2ProductsLayoutUnit.swift; sourceTree = "<group>"; };
 		807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleDefault1ProductsLayoutUnit.swift; sourceTree = "<group>"; };
+		914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = efficacy_slider_circle_Emulsion.png; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1328,6 +1330,7 @@
 				B38F63B91F47682700176804 /* MoisturizingCream01_after.png */,
 				B38F63BA1F47682700176804 /* MoisturizingCream01_before.png */,
 				B38F63BB1F47682700176804 /* MoisturizingCream02_after.png */,
+				914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */,
 				B38F63BC1F47682700176804 /* MoisturizingCream02_before.png */,
 				C050C9331E8267450009679D /* efficacy_face1_01.png */,
 				C050C9341E8267450009679D /* efficacy_face2_01.png */,
@@ -2012,7 +2015,6 @@
 			isa = PBXGroup;
 			children = (
 				C94638D01F18CC1D009D1480 /* bundles.bundle */,
-
 				DE006A171F0E309D00960D75 /* gsc */,
 				DE2C91381E9C682500B5FC4A /* lx_app */,
 				C050C9B01E8276C60009679D /* Font */,
@@ -2162,10 +2164,8 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = RXGH2B4R28;
 						DevelopmentTeam = J62CVNNG5Q;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Manual;
 						ProvisioningStyle = Automatic;
 					};
 					C05913DE1D67235700F22214 = {
@@ -2232,6 +2232,7 @@
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
 				80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
+				914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */,
 				DE2C907D1E9C66E600B5FC4A /* LXCategoryButton.xib in Resources */,
 				C0D1954B1DE7130400C8B88E /* SunCareFeaturesView.xib in Resources */,
 				C050C9201E82619F0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg in Resources */,
@@ -2504,11 +2505,8 @@
 				C050C9781E8267450009679D /* defendThumnail.png in Resources */,
 				C050C9141E82619F0009679D /* wab_slider_24.png in Resources */,
 				DE2C90871E9C66E600B5FC4A /* LXHeaderView.xib in Resources */,
-
 				DE06F70D1F16450200EF2FE2 /* urban.png in Resources */,
-
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
-
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
