@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print("url=========")
+        print(url)
         // example: ssdsba://product?product_id=XXX
         let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
         if urlComponents?.host == "product" {
@@ -52,6 +54,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
                         print("requset product_id: " + product_id.description)
                         toVc.productIdForDeeplink = product_id
+                        UIApplication.shared.keyWindow?.rootViewController = toVc
+                    })
+                }
+            }
+        // ssdsba://line?line_id=XXX
+        } else if urlComponents?.host == "line" {
+            if let query = urlComponents?.queryItems {
+                if query.first?.name == "line_id", let line_id = Int((query.first?.value)!) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                        let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
+                        print("requset line_id: " + line_id.description)
+                        toVc.lineIdForDeeplink = line_id
+                        if query.count > 1 && query[1].name == "line_step", let line_step = Int((query[1].value)!) {
+                            print("line_step=========")
+                            toVc.lineStepForDeepLink = line_step
+                        }
                         UIApplication.shared.keyWindow?.rootViewController = toVc
                     })
                 }

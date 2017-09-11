@@ -20,6 +20,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mVBaseIbukiBtn: UIView!
     @IBOutlet weak private var mVBaseFeaturesView: UIView!
     @IBOutlet weak private var mRelationScrollV: UIScrollView!
+    @IBOutlet weak var mRelationPearentView: UIView!
     @IBOutlet weak private var mVScrollContent: UIView!
     @IBOutlet weak private var mVSkinConcern: ProductDetailSkinConcernView!
     @IBOutlet weak private var mTroubleSelectView: TroubleSelectView!
@@ -59,6 +60,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mConstraintColorballHeight: NSLayoutConstraint!
     @IBOutlet weak private var mConstraintColorballBottom: NSLayoutConstraint!
 
+    @IBOutlet weak var productNamesView: UIView!
+    @IBOutlet weak var productDetailFeaturesView: UIView!
 
     @IBOutlet weak var mConstraintTop: NSLayoutConstraint!
     
@@ -93,6 +96,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsMakeUp: Bool = false
     var mIsWaso: Bool = false
     
+    var mIsEE: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -163,6 +167,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
         mImgVProduct.image = FileTable.getImage(product.image)
         mImgVBackImage.image = FileTable.getImage(product.backImage)
+        
+        // 背景
+        if productId >= 553 && productId <= 556 {
+            mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
+            var image: UIImage = FileTable.getImage(6355)!
+            let resize = CGSize(width: self.view.width, height: self.view.height)
+            UIGraphicsBeginImageContext(resize)
+            image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height))
+            image = UIGraphicsGetImageFromCurrentImageContext()!
+            self.view.backgroundColor = UIColor(patternImage: image)
+            mRelationScrollV.backgroundColor = UIColor.clear
+            mRelationPearentView.backgroundColor = UIColor.clear
+        }
+        
         mLblBeautyName.text = product.beautyName
         mLblLineName.text = product.lineName
         mLblProductName.text = product.productName
@@ -191,6 +209,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
+        // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
+        if LanguageConfigure.languageId == 19 {
+            if productId == 553 || productId == 556 {
+                self.mIsEE = true
+                mCategoryButtonEfficacy.enabled = true
+            } else if productId == 554 || productId == 555 {
+                mCategoryButtonEfficacy.enabled = false
+            }
+        }
         // HowToUseがからの時はViewを非表示
         if product.howToUse == "" {
             mVHowToUse.isHidden = true
@@ -569,6 +596,21 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             mVCurrentSelect = nil
+            
+            if productId >= 553 && productId <= 556 {
+                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
+                var image: UIImage = FileTable.getImage(6355)!
+                let resize = CGSize(width: self.view.width, height: self.view.height + 200)
+                UIGraphicsBeginImageContext(resize)
+                image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 200))
+                image = UIGraphicsGetImageFromCurrentImageContext()!
+                self.view.backgroundColor = UIColor(patternImage: image)
+                mRelationScrollV.backgroundColor = UIColor.clear
+                mRelationPearentView.backgroundColor = UIColor.clear
+                productDetailFeaturesView.isHidden = false
+                productNamesView.isHidden = false
+            }
+            
             return
         }
         mVContent.isHidden = false
@@ -597,7 +639,47 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     wasoEfficacyView.setupOrange()
                 }
                 mVCurrentSelect = wasoEfficacyView
-            } else {
+            } else if productId == 553 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isEssentialEnergyMoisturizingCream = true
+                utmEfficacyView?.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+                
+                // 背景設定
+                mImgVBackImage.image = UIImage(named: "")
+                var image = UIImage(named: "EEBackGround.png")
+                image?.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height))
+                image = UIGraphicsGetImageFromCurrentImageContext()!
+                self.view.backgroundColor = UIColor(patternImage: image!)
+            } else if productId == 556 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isEssentialEnergyDayCream = true
+                utmEfficacyView?.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+                
+                // 背景設定
+                for view in self.view.subviews {
+                    view.backgroundColor = UIColor.clear
+                }
+                for view in self.mVMain.subviews {
+                    view.backgroundColor = UIColor.clear
+                }
+                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
+                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "EEBackGround.png")!)
+            }
+            else {
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 utmEfficacyView?.isUtm = mIsUtm
                 utmEfficacyView?.isUtmEye = mIsUtmEye
@@ -756,6 +838,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
             lineDetailVc.lineId = self.product.lineId
             lineDetailVc.beautySecondId = self.product.beautySecondId
+            lineDetailVc.backgroundImage = FileTable.getImage(product.backImage)!
             
             if fromGscVc {
                 lineDetailVc.fromGscVc = true
@@ -841,7 +924,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             makeupUsageView.productId = productId
             mVCurrentSelect = makeupUsageView
         } else {
-            if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso {
+            if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
                 showUtmInfo(sender)
             } else {
                 showInfo(sender)

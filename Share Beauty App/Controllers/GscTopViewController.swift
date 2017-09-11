@@ -43,6 +43,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         mGscHeaderView.delegate = self
         mGscHeaderView.mBtnFind.isHidden = true
+        mGscHeaderView.mBtnBack.isHidden = true
         
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height
@@ -236,6 +237,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             self.navigationController?.pushViewController(nextVc, animated: false)
         } else {
             mGscHeaderView.mBtnFind.isHidden = false
+            mGscHeaderView.mBtnBack.isHidden = false
             
             mSelectType = "face"
             self.mSunCareSelectView1.isHidden = true
@@ -252,6 +254,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             self.navigationController?.pushViewController(nextVc, animated: false)
         } else {
             mGscHeaderView.mBtnFind.isHidden = false
+            
             mSelectType = "body"
             self.mSunCareSelectView1.isHidden = true
             self.mSunCareSelectView2.isHidden = false
@@ -431,4 +434,14 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         self.navigationController?.pushViewController(nextVc, animated: false)
         
     }
+    
+    override func backVC() {
+        mGscHeaderView.mBtnFind.isHidden = true
+        mGscHeaderView.mBtnBack.isHidden = true
+        
+        mSelectType = ""
+        self.mSunCareSelectView1.isHidden = false
+        self.mSunCareSelectView2.isHidden = true
+    }
 }
+

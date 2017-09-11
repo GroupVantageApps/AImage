@@ -1,7 +1,7 @@
 PODS:
   - AImage (1.0.0)
-  - Alamofire (4.5.0)
-  - APNGKit (0.6.1)
+  - Alamofire (4.5.1)
+  - APNGKit (0.6.2)
   - SCLAlertView (0.7.0)
   - SwiftSpinner (1.3.0)
   - SwiftyJSON (3.1.4)
@@ -30,8 +30,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AImage: 67dd5909d0782adbd03719b88dcd3414d43199b6
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  APNGKit: 85c576b4ce74254ae9cc64e3ec69cf0e47789f87
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  APNGKit: ba1af552e9ba262eec2215811b05ac5b4cc6c44b
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SwiftSpinner: c249fffed3e74b5f3e6492dcc05d6bc1525a8220
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220

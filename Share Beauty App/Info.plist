@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.4</string>
+	<string>1.0.8.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>20170726</string>
+	<string>20170807</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -44,6 +44,7 @@
 		<string>sfslx2</string>
 		<string>ssdsba</string>
 		<string>yutakasounds</string>
+		<string>ssdfdf</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
