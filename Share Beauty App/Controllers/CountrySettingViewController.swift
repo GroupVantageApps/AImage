@@ -151,20 +151,19 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
             let csv = Utility.csvToArray(file: filePath)
             LanguageConfigure.lxcsv = csv
-//            
-//            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
-            
-            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
+
+            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
             let gscCsv = Utility.csvToArray(file: gscFilePath)
             LanguageConfigure.gsccsv = gscCsv
             
+            let gscGroupingPlistPath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
             
-            let gscGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
-            let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath!) as? [String: Any]
-            let group = groupingDic?[String(LanguageConfigure.countryId)]
-//            LanguageConfigure.gscgroup = group as? String ?? "A"
-            LanguageConfigure.gscgroup = "A"
+            if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
+                let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+                LanguageConfigure.gscgroup = group
+            }
 
+            
             let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
             let path = FileTable.getPath(6104)
             if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
@@ -194,18 +193,19 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let csv = Utility.csvToArray(file: filePath)
         LanguageConfigure.lxcsv = csv
           
-        //        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
-        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
+        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
         let gscCsv = Utility.csvToArray(file: gscFilePath)
         LanguageConfigure.gsccsv = gscCsv
 
-        let gecGroupingPlistPath = Bundle.main.path(forResource: "s_grouping", ofType: "plist")
-        let groupingDic = NSDictionary.init(contentsOf: URL.init(string: gecGroupingPlistPath!)!)
-//        let group = groupingDic?[LanguageConfigure.countryId] as? String ?? "A"
-        LanguageConfigure.gscgroup = "A"
+        
+        let gscGroupingPlistPath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+        if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
+            let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+            LanguageConfigure.gscgroup = group
+        }
+
         
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
-//        let path = Bundle.main.path(forResource: "lx_treatment_control", ofType: "plist")
         let path = FileTable.getPath(6104)
         if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
             let yutakaArr = dic[countryCode.code] as! [Int]

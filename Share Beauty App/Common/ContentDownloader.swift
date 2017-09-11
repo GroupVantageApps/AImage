@@ -442,10 +442,9 @@ class ContentDownloader: NSObject {
         do {
             let destinationURL = try Zip.quickUnzipFile(gscPlistFileUrl)
             print(destinationURL)
-            //            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-            //            let filePath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let gscFilePath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/%@gsc.csv", NSHomeDirectory(), languageCode.code)
             
-            let gscFilePath = NSHomeDirectory() + "/Documents/gsc_plist/gsc_plist/suncare_A.plist"
             if let dataDic = NSDictionary(contentsOfFile: gscFilePath) as? Dictionary<String, AnyObject> {
                 LanguageConfigure.gscplist = dataDic
             }
