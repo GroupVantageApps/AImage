@@ -426,10 +426,10 @@ class ContentDownloader: NSObject {
         do {
             let destinationURL = try Zip.quickUnzipFile(gscCsvFileUrl)
             print(destinationURL)
-//            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-//            let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
             
-            let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/000000gsc.csv", NSHomeDirectory())
+//              let filePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/000000gsc.csv", NSHomeDirectory())
             let csv = Utility.csvToArray(file: filePath)
             LanguageConfigure.gsccsv = csv
             
@@ -442,10 +442,23 @@ class ContentDownloader: NSObject {
         do {
             let destinationURL = try Zip.quickUnzipFile(gscPlistFileUrl)
             print(destinationURL)
-            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-            let gscFilePath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/%@gsc.csv", NSHomeDirectory(), languageCode.code)
             
+            let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+            
+            if let groupingDic = NSDictionary.init(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
+                let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+                LanguageConfigure.gscgroup = group
+            } else {
+                LanguageConfigure.gscgroup = "A"
+            }
+            
+            print(LanguageConfigure.gscgroup)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let gscFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
+            print(gscFilePath)
+
             if let dataDic = NSDictionary(contentsOfFile: gscFilePath) as? Dictionary<String, AnyObject> {
+                print(dataDic)
                 LanguageConfigure.gscplist = dataDic
             }
             

@@ -277,6 +277,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             attributedText.addAttribute(NSKernAttributeName, value: customLetterSpacing, range: NSRange(location: 0, length: attributedText.length))
             AgroupSubTitleLbl.attributedText = attributedText
             AgroupSubTitleLbl.textColor = UIColor.black
+            AgroupSubTitleLbl.adjustsFontSizeToFitWidth = true
             mVContent.addSubview(AgroupSubTitleLbl)
         }
         
