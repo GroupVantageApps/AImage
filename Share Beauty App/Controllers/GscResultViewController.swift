@@ -349,10 +349,17 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO
         let product = mThumnailProducts[indexPath.row]
         print(product.productName)
         print(product.productId)
+        if product.productId != 0 {
+            print(product.productId)
+            
+            let nextVc = UIViewController.GetViewControllerFromStoryboard("GscNavigationViewController", targetClass: GscNavigationViewController.self) as! GscNavigationViewController
+            nextVc.mProductId = product.productId
+            self.navigationController?.pushViewController(nextVc, animated: false)
+            
+        }
     }
 
 }
