@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LineListViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation,RecommendProductViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -40,6 +41,17 @@ class LineListViewController: UIViewController, NavigationControllerAnnotation, 
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
         mProducts = ProductListData.init(lineId: self.line.lineId).products
+        let productsString = Utility.parseJson(JSON(AppItemTranslateTable.getEntity(7950).name).rawString()!)
+        let frontProductIds = productsString!["products"].arrayValue.map { $0.intValue}
+        var productIdCount = 0
+        for productId in frontProductIds {
+            if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
+                mProducts.remove(at: product.offset)
+                mProducts.insert(product.element, at:productIdCount)
+                productIdCount += 1
+            }
+        }
+        
         mLblTitle.text = self.line.lineName
         mCollectionView.delegate = self
         mCollectionView.dataSource = self
