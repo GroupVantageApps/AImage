@@ -117,7 +117,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         }
         
         mGscHeaderView.mLblTitle.text = ""
-        mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"]
+        mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"] ?? ""
         
         self.setSelet1View()
         self.setSelet2View()

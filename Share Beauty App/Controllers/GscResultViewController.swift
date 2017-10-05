@@ -197,9 +197,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     productNameLbl.font = UIFont.init(name: "Optima-Bold", size: 14.0)
                     productNameLbl.numberOfLines = 3
                     
-                    let desType = mGroupType == "A" ? mSelect1Type : mSelect2Type
-                    let defaltMsg = String("null: suncare_\(mGroupType).plistのdescribe_\(desType)に\(productId)の項目を追加してください。") 
-                    productNameLbl.text = desDic?[productId] as? String ?? defaltMsg
+                    productNameLbl.text = product.productName 
                     
                     productNameLbl.textColor = UIColor.black
                     productNameLbl.adjustsFontSizeToFitWidth = true
