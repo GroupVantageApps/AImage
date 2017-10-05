@@ -55,8 +55,6 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         
         print("GscViewController.viewDidLoad")
-//        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
-      
     
         mBaseView = UIView.init(frame: CGRect(x: 0, y: 40, width: selfWidth, height: selfHeight - 72 ))
         mVContent.addSubview(mBaseView)
@@ -352,7 +350,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             //Sensitive,Children Btn
             let sensitiveBtnImg = UIImage.init(named: "sensitive_children")
             let sensitiveBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/3, height: selfHeight - 74))
-            sensitiveBtn.addTarget(self, action: #selector(GscTopViewController.onTapSensitiveBtn), for: .touchUpInside)
+            sensitiveBtn.addTarget(self, action: #selector(GscTopViewController.onTapChildrenBtn), for: .touchUpInside)
             sensitiveBtn.setBackgroundImage(sensitiveBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(sensitiveBtn)
             

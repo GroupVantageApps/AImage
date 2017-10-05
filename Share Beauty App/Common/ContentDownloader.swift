@@ -445,15 +445,16 @@ class ContentDownloader: NSObject {
             
             let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
             
+            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+            
             if let groupingDic = NSDictionary.init(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
-                let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+                let group = groupingDic[String(countryCode.code)] as? String ?? "A"
                 LanguageConfigure.gscgroup = group
             } else {
                 LanguageConfigure.gscgroup = "A"
             }
             
             print(LanguageConfigure.gscgroup)
-            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
             let gscFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
             print(gscFilePath)
 

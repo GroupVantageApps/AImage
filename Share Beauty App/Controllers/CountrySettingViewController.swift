@@ -156,15 +156,17 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             let gscCsv = Utility.csvToArray(file: gscFilePath)
             LanguageConfigure.gsccsv = gscCsv
             
-            let gscGroupingPlistPath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+            let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+            
+            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
             
             if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
-                let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+                print(LanguageConfigure.countryId)
+                let group = groupingDic[String(countryCode.code)] as? String ?? "A"
                 LanguageConfigure.gscgroup = group
             }
 
             
-            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
             let path = FileTable.getPath(6104)
             if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
                 print(dic)
@@ -196,16 +198,16 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
         let gscCsv = Utility.csvToArray(file: gscFilePath)
         LanguageConfigure.gsccsv = gscCsv
-
         
-        let gscGroupingPlistPath = String(format: "file://%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+        let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+        
+        let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
         if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
-            let group = groupingDic[String( LanguageConfigure.countryId)] as? String ?? "A"
+            let group = groupingDic[String(countryCode.code)] as? String ?? "A"
             LanguageConfigure.gscgroup = group
         }
 
         
-        let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
         let path = FileTable.getPath(6104)
         if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
             let yutakaArr = dic[countryCode.code] as! [Int]

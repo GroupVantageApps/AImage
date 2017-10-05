@@ -112,7 +112,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         
         
             let dataDic = LanguageConfigure.gscplist
-            print(dataDic)
+            print("dataDic:\(dataDic)")
             
             let desDic = dataDic[String(format: "description_%@", mSelect1Type)] as? Dictionary<String, AnyObject>
             
@@ -128,10 +128,17 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                 var productList :[String] = []
                 
                 if mGroupType == "A" {
-                    productList = gcodeDic?[mSelect1Type] as! [String]
+                    if gcodeDic?[mSelect1Type] as! [String]  != nil {
+                        productList = gcodeDic?[mSelect1Type] as! [String] 
+                        
+                    }
                 } else {
                     let upperDic = gcodeDic?[mSelect1Type] as? Dictionary<String, AnyObject>
-                    productList = upperDic?[mSelect2Type] as! [String]
+                    if upperDic?[mSelect2Type] as! [String] != nil {
+                        productList = upperDic?[mSelect2Type] as! [String] 
+                    } else {
+                        
+                    }
                 }
                 
                 //defaultDisplay が 1のproductのみ表示
@@ -139,11 +146,13 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                 //                    ProductData.init(productId: Int($0)!).defaultDisplay == 1
                 //                }
                 
+                
                 //imgがあるもののみ表示
                 let disPlayProductList = productList.filter { 
                     FileTable.getImage(ProductData.init(productId: Int($0)!).image) != nil
                 }
-
+                
+                let product = ProductData.init(productId: Int(productList[0])!)
                 
                 for (i, productId) in disPlayProductList.enumerated() {
                     let product = ProductData.init(productId: Int(productId)!)
