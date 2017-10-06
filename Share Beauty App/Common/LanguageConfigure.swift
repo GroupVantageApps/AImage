@@ -192,7 +192,7 @@ class LanguageConfigure: NSObject {
     static var isOutAppBtnHiddenCountry: Bool {
         get {
             print(self.countryId)
-            return  ( self.countryId == 4 || self.countryId == 24 || self.countryId == 25 || self.countryId == 26 )
+            return  ( self.countryId == 24 || self.countryId == 25 || self.countryId == 26 )
         }
     }
 }
