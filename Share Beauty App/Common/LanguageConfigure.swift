@@ -18,6 +18,7 @@ class LanguageConfigure: NSObject {
     private static let gscPlist = "GscPlist"
     private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
+    private static let suncareStandAlone = "suncareStandAlone"
     
     private enum UserDefaultKey: String {
         case region = "RegionId"
@@ -193,6 +194,21 @@ class LanguageConfigure: NSObject {
         get {
             print(self.countryId)
             return  ( self.countryId == 24 || self.countryId == 25 || self.countryId == 26 )
+        }
+    }
+    
+    static var isSuncareStandAloneApp: Bool {
+        get {
+            if let value = UserDefaults.standard.object(forKey: suncareStandAlone) {
+                return value as! Bool
+            } else {
+                return false 
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: suncareStandAlone)
+            userDefault.synchronize()
         }
     }
 }

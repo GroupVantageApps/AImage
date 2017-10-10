@@ -28,6 +28,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     var mGroupType: String = ""
     var fromFindBtn: Bool = false
     
+    var standAloneBtnTapCount: Int = 0
+    
     @IBOutlet weak var mLogoImgV: UIImageView!
     @IBOutlet weak var mTopBGImgV: UIImageView!
     @IBOutlet weak var mBottomLogoImgV: UIImageView!
@@ -99,11 +101,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             moviePlay.addSubview(mFindLabel)
             
             
-//            let lineDetailBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width/2 - 250, y: 150, width: 500, height: 100))
-//            lineDetailBtn.titleLabel?.text = "Line Detail" //TODO csvの更新後に当て込み
-            
-           let lineDetailLabel = UILabel()
-            lineDetailLabel.text =  "Line Detail"
+            let lineDetailLabel = UILabel()
+            lineDetailLabel.text =  AppScreenTranslateTable.getEntity(12).name
             lineDetailLabel.textAlignment = .center
             lineDetailLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
             lineDetailLabel.textColor = UIColor.white
@@ -112,7 +111,12 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             let lineDetailBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width/2 - 250, y: 650, width: 500, height: 100))
             lineDetailBtn.addTarget(self, action: #selector(GscTopViewController.onTapLineDetail), for: .touchUpInside)
+            
             moviePlay.addSubview(lineDetailBtn)
+            
+            let standAloneBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width - 300, y: self.view.bounds.size.height - 200, width: 300, height: 200))
+            standAloneBtn.addTarget(self, action: #selector(GscTopViewController.onTapstandAloneBtn), for: .touchUpInside)
+            moviePlay.addSubview(standAloneBtn)
             
         }
         
@@ -153,6 +157,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     @IBAction func goTop(_ sender: Any) {
         self.showTop()
     }
+    
+    
     
     private func audioSessionInterrupted(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
@@ -432,6 +438,22 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         self.navigationController?.pushViewController(nextVc, animated: false)
         
     }
+    
+    func onTapstandAloneBtn() {
+        print("onTapstandAloneBtn")
+        if standAloneBtnTapCount < 4 {
+            standAloneBtnTapCount = standAloneBtnTapCount + 1
+        } else {
+            let alert = UIAlertController(title: "", message: "アプリの設定を変更しますか？", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+                LanguageConfigure.isSuncareStandAloneApp = !LanguageConfigure.isSuncareStandAloneApp
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+
     
     override func backVC() {
         mGscHeaderView.mBtnFind.isHidden = true

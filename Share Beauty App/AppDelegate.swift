@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if DownloadConfigure.downloadStatus != .success {
             window?.rootViewController = UIViewController.GetViewControllerFromStoryboard(targetClass: CountrySettingViewController.self) as! CountrySettingViewController
         }
+        
+        if LanguageConfigure.isSuncareStandAloneApp {
+            window?.rootViewController = UIViewController.GetViewControllerFromStoryboard(targetClass: GscTopViewController.self) as! GscTopViewController
+        }
+        
 
         print("RegionId: " + LanguageConfigure.regionId.description)
         print("CountryId: " + LanguageConfigure.countryId.description)
