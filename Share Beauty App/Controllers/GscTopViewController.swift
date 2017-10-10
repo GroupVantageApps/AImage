@@ -99,11 +99,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             moviePlay.addSubview(mFindLabel)
             
             
-//            let lineDetailBtn = UIButton.init(frame: CGRect(x: self.view.bounds.size.width/2 - 250, y: 150, width: 500, height: 100))
-//            lineDetailBtn.titleLabel?.text = "Line Detail" //TODO csvの更新後に当て込み
-            
-           let lineDetailLabel = UILabel()
-            lineDetailLabel.text =  "Line Detail"
+            let lineDetailLabel = UILabel()
+            lineDetailLabel.text =  AppScreenTranslateTable.getEntity(12).name
             lineDetailLabel.textAlignment = .center
             lineDetailLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
             lineDetailLabel.textColor = UIColor.white
