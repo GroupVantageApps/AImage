@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,13 +28,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-HZ-YPi">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="746"/>
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
                                         <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
                                         <subviews>
                                             <view tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-sj-2Ff">
-                                                <rect key="frame" x="0.0" y="40" width="1024" height="350"/>
+                                                <rect key="frame" x="0.0" y="62" width="1024" height="350"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="60" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHD-Wt-eNd">
@@ -282,7 +282,7 @@
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="11" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9l-Vy-AGe">
-                                                <rect key="frame" x="0.0" y="395" width="645" height="310"/>
+                                                <rect key="frame" x="0.0" y="417" width="645" height="310"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="61" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-dM-1Ll">
@@ -476,7 +476,7 @@
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.30021551724137929" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view tag="12" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sL4-r4-z5x">
-                                                <rect key="frame" x="650" y="395" width="380" height="310"/>
+                                                <rect key="frame" x="650" y="417" width="380" height="310"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="62" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beauty Longevity System" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMG-CO-v3o">
@@ -600,7 +600,7 @@
                             <constraint firstAttribute="trailing" secondItem="cPZ-HZ-YPi" secondAttribute="trailing" id="7Hf-vS-yXc"/>
                             <constraint firstItem="ccM-iA-GLD" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="bottom" id="9hR-jY-jLm"/>
                             <constraint firstItem="ZRJ-3D-nAq" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="D95-Ua-eD4"/>
-                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" constant="22" id="NYr-TU-jab"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" id="NYr-TU-jab"/>
                             <constraint firstItem="ZRJ-3D-nAq" firstAttribute="top" secondItem="cPx-d8-lS3" secondAttribute="bottom" id="PCq-r8-r1s"/>
                             <constraint firstItem="cPZ-HZ-YPi" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="R5P-Bp-fuN"/>
                             <constraint firstAttribute="trailing" secondItem="ZRJ-3D-nAq" secondAttribute="trailing" id="R78-OX-dCe"/>

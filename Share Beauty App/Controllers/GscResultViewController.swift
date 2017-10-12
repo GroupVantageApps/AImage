@@ -178,7 +178,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     if (img != nil) {
                         let productImgV = UIImageView.init(image: img)
                         
-                        productImgV.frame = CGRect(x: -55.0 + Double(margin_x) + Double(x), y: 140.0, width: 860/2*0.9, height: 819/2*0.9)
+                        productImgV.frame = CGRect(x: -55.0 + Double(margin_x) + Double(x), y: 160.0, width: 860/2*0.9, height: 819/2*0.9)
                         productImgV.layer.shadowColor = UIColor.black.cgColor
                         productImgV.layer.shadowOffset = CGSize(width: 15, height: 15)
                         productImgV.layer.shadowOpacity = 0.5
@@ -187,7 +187,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         
                         if disPlayProductList.count > 5 {
                             
-                            productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 240.0, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
+                            productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 260.0, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
                             productImgV.contentMode = .scaleAspectFill
                         }
                         
@@ -203,7 +203,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     productNameLbl.adjustsFontSizeToFitWidth = true
                     mProductNameV.addSubview(productNameLbl)
                     
-                    let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 115, width: 97, height: 30))
+                    let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
                     useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
                     useTypeLbl.numberOfLines = 2
  
@@ -258,7 +258,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         margin_x = 40
                     }
                     
-                    let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 110, width: w, height: 350))
+                    let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 130, width: w, height: 350))
                     productBtn.tag = Int(productId)!
                     productBtn.titleLabel?.text = ""
                     productBtn.addTarget(self, action: #selector(GscResultViewController.goDetailVc), for: .touchUpInside)
@@ -268,7 +268,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                 
             }
         
-        let subTitleLbl = UILabel.init(frame: CGRect(x: 20, y: 40, width: 500, height: 50))
+        let subTitleLbl = UILabel.init(frame: CGRect(x: 20, y: 60, width: 500, height: 50))
         subTitleLbl.font = UIFont.init(name: "Optima-Bold", size: 20.0)
         subTitleLbl.text = gscArr["10"]
         subTitleLbl.textColor = UIColor.white
@@ -277,7 +277,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         if mGroupType == "A"{
             
             let customLetterSpacing = 0.5
-            let AgroupSubTitleLbl = UILabel.init(frame: CGRect(x: 240, y: 40, width: 750, height: 50))
+            let AgroupSubTitleLbl = UILabel.init(frame: CGRect(x: 240, y: 60, width: 750, height: 50))
             AgroupSubTitleLbl.font = UIFont.init(name: "Optima-Bold", size: 16.0)
             AgroupSubTitleLbl.numberOfLines = 0
             let attributedText = NSMutableAttributedString.init(string: gscArr["18"] ?? "content is null" )

@@ -58,19 +58,25 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         print("GscViewController.viewDidLoad")
     
-        mBaseView = UIView.init(frame: CGRect(x: 0, y: 40, width: selfWidth, height: selfHeight - 72 ))
+        mBaseView = UIView.init(frame: CGRect(x: 0, y: 40, width: selfWidth, height: selfHeight - 69 ))
         mVContent.addSubview(mBaseView)
         mVContent.bringSubview(toFront: mGscHeaderView)
         
         let gscArr = LanguageConfigure.gsccsv
-        
+
         if !fromFindBtn {
+            
             moviePlay2 = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
             moviePlay2.isTop = true
             moviePlay2.delegate = self
             moviePlay2.type = 2
+            
+            let bgImg = UIImage.init(named: "gsc_top_bg.png")
+            let bgImgV = UIImageView.init(image: bgImg)
+            bgImgV.frame = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight)
+            moviePlay2.addSubview(bgImgV)
+            
             moviePlay2.setUI()
-            //        moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie2")
             self.view.addSubview(moviePlay2)
             
             
@@ -78,6 +84,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
             moviePlay.isTop = true
             moviePlay.delegate = self
+            moviePlay.addSubview(bgImgV)
             moviePlay.setUI()
             moviePlay.type = 1
             moviePlay.playMovie(movie: "gsc_movie/gsc_movie/scMovie_top")
@@ -119,6 +126,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             moviePlay.addSubview(standAloneBtn)
             
         }
+        
+        
         
         mGscHeaderView.mLblTitle.text = ""
         mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"] ?? ""
@@ -187,21 +196,21 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height
         
-        mSunCareSelectView1 = UIView.init(frame: CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 72 ))
+        mSunCareSelectView1 = UIView.init(frame: CGRect(x: 0, y: 8, width: selfWidth, height: selfHeight - 69 ))
         mBaseView.addSubview(mSunCareSelectView1)
         
         let bgImg = UIImage.init(named: "suncare_bg")
         let bgImgV = UIImageView.init(image: bgImg)
-        bgImgV.frame = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 72 )
+        bgImgV.frame = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 68 )
         mSunCareSelectView1.addSubview(bgImgV)
         
         //FaceBtn
         let faceBtnImg = UIImage.init(named: "face")
-        let faceBtnBGImgV = UIImageView.init(frame: CGRect(x: 0, y: 4, width: selfWidth/2, height: selfHeight - 74))
+        let faceBtnBGImgV = UIImageView.init(frame: CGRect(x: 0, y: 4, width: selfWidth/2, height: selfHeight - 69))
         faceBtnBGImgV.image = faceBtnImg
         faceBtnBGImgV.contentMode = .scaleAspectFill
         mSunCareSelectView1.addSubview(faceBtnBGImgV)
-        let faceBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/2, height: selfHeight - 74))
+        let faceBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/2, height: selfHeight - 69))
         faceBtn.addTarget(self, action: #selector(GscTopViewController.onTapFaceBtn), for: .touchUpInside)
         mSunCareSelectView1.addSubview(faceBtn)  
         
@@ -215,11 +224,11 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         //Face&BodyBtn
         let bodyBtnImg = UIImage.init(named: "body")
-        let bodyBtnBGImgV = UIImageView.init(frame: CGRect(x: selfWidth/2, y: 3, width: selfWidth/2, height: selfHeight - 72))
+        let bodyBtnBGImgV = UIImageView.init(frame: CGRect(x: selfWidth/2, y: 3, width: selfWidth/2, height: selfHeight - 69))
         bodyBtnBGImgV.image = bodyBtnImg
         bodyBtnBGImgV.contentMode = .scaleAspectFill
         mSunCareSelectView1.addSubview(bodyBtnBGImgV)
-        let bodyBtn = UIButton.init(frame: CGRect(x: selfWidth/2, y: 0, width: selfWidth/2, height: selfHeight - 72))
+        let bodyBtn = UIButton.init(frame: CGRect(x: selfWidth/2, y: 0, width: selfWidth/2, height: selfHeight - 69))
         bodyBtn.addTarget(self, action: #selector(GscTopViewController.onTapBodyBtn), for: .touchUpInside)
         mSunCareSelectView1.addSubview(bodyBtn)  
         
@@ -277,19 +286,19 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height
         
-        mSunCareSelectView2 = UIView.init(frame: CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 72 ))
+        mSunCareSelectView2 = UIView.init(frame: CGRect(x: 0, y: 8, width: selfWidth, height: selfHeight - 69 ))
         mBaseView.addSubview(mSunCareSelectView2)
         mBaseView.bringSubview(toFront: mSunCareSelectView2)
         
         let bgImg = UIImage.init(named: "suncare_bg")
         let bgImgV = UIImageView.init(image: bgImg)
-        bgImgV.frame = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 72 )
+        bgImgV.frame = CGRect(x: 0, y: 0, width: selfWidth, height: selfHeight - 68 )
         mSunCareSelectView2.addSubview(bgImgV)
         
         if mGroupType == "E" {
             //Sensitive Btn
             let sensitiveBtnImg = UIImage.init(named: "sensitive")
-            let sensitiveBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/4, height: selfHeight - 74))
+            let sensitiveBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/4, height: selfHeight - 69))
             sensitiveBtn.addTarget(self, action: #selector(GscTopViewController.onTapSensitiveBtn), for: .touchUpInside)
             sensitiveBtn.setBackgroundImage(sensitiveBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(sensitiveBtn)
@@ -305,7 +314,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             //Children Btn
             let childrenBtnImg = UIImage.init(named: "children")
-            let childrenBtn = UIButton.init(frame: CGRect(x: selfWidth/4, y: 0, width: selfWidth/4, height: selfHeight - 74))
+            let childrenBtn = UIButton.init(frame: CGRect(x: selfWidth/4, y: 0, width: selfWidth/4, height: selfHeight - 69))
             childrenBtn.addTarget(self, action: #selector(GscTopViewController.onTapChildrenBtn), for: .touchUpInside)
             childrenBtn.setBackgroundImage(childrenBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(childrenBtn)  
@@ -321,7 +330,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             //Urban,Daily Btn
             let urbanBtnImg = UIImage.init(named: "urban")
-            let urbanBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 2 , y: 0, width: selfWidth/4, height: selfHeight - 74))
+            let urbanBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 2 , y: 0, width: selfWidth/4, height: selfHeight - 69))
             urbanBtn.addTarget(self, action: #selector(GscTopViewController.onTapUrbanBtn), for: .touchUpInside)
             urbanBtn.setBackgroundImage(urbanBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(urbanBtn)  
@@ -337,7 +346,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             //Active,Sports Btn
             let activeBtnImg = UIImage.init(named: "active")
-            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 3, y: 0, width: selfWidth/4, height: selfHeight - 74))
+            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 3, y: 0, width: selfWidth/4, height: selfHeight - 69))
             activeBtn.addTarget(self, action: #selector(GscTopViewController.onTapActiveBtn), for: .touchUpInside)
             activeBtn.setBackgroundImage(activeBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(activeBtn)  
@@ -355,7 +364,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         } else {
             //Sensitive,Children Btn
             let sensitiveBtnImg = UIImage.init(named: "sensitive_children")
-            let sensitiveBtn = UIButton.init(frame: CGRect(x: 0, y: 0, width: selfWidth/3, height: selfHeight - 74))
+            let sensitiveBtn = UIButton.init(frame: CGRect(x: 0, y: 8, width: selfWidth/3, height: selfHeight - 69))
             sensitiveBtn.addTarget(self, action: #selector(GscTopViewController.onTapChildrenBtn), for: .touchUpInside)
             sensitiveBtn.setBackgroundImage(sensitiveBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(sensitiveBtn)
@@ -371,7 +380,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             //Urban,Daily Btn
             let urbanBtnImg = UIImage.init(named: "urban_daily")
-            let urbanBtn = UIButton.init(frame: CGRect(x: selfWidth/3 , y: 0, width: selfWidth/3, height: selfHeight - 74))
+            let urbanBtn = UIButton.init(frame: CGRect(x: selfWidth/3 , y: 0, width: selfWidth/3, height: selfHeight - 69))
             urbanBtn.addTarget(self, action: #selector(GscTopViewController.onTapUrbanBtn), for: .touchUpInside)
             urbanBtn.setBackgroundImage(urbanBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(urbanBtn)
@@ -387,7 +396,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             //Active,Sports Btn
             let activeBtnImg = UIImage.init(named: "active_sports")
-            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/3 * 2, y: 0, width: selfWidth/3 , height: selfHeight - 74))
+            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/3 * 2, y: 0, width: selfWidth/3 , height: selfHeight - 69))
             activeBtn.addTarget(self, action: #selector(GscTopViewController.onTapActiveBtn), for: .touchUpInside)
             activeBtn.setBackgroundImage(activeBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(activeBtn)  

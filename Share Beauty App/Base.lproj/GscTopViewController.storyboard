@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="cPZ-HZ-YPi">
-                                <rect key="frame" x="0.0" y="22" width="1024" height="746"/>
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
-                                        <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="736"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm" customClass="GscHeaderView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-10" width="1024" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
                                                     <constraint firstAttribute="width" constant="1024" id="fxV-1e-rnv"/>
@@ -40,12 +40,12 @@
                                             <constraint firstAttribute="height" constant="736" id="0g5-H1-Wlp"/>
                                             <constraint firstAttribute="width" constant="1024" id="9Vr-7m-E66"/>
                                             <constraint firstItem="23k-mA-0zm" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="kE6-zw-Xeq"/>
-                                            <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="-10" id="xhZ-8N-Tj8"/>
+                                            <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="xhZ-8N-Tj8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" constant="-10" id="g9g-Bb-EOv"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" id="g9g-Bb-EOv"/>
                                     <constraint firstItem="PSx-Hb-PSG" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="nre-A9-77r"/>
                                     <constraint firstAttribute="bottom" secondItem="PSx-Hb-PSG" secondAttribute="bottom" id="sub-0A-3Ti"/>
                                     <constraint firstAttribute="trailing" secondItem="PSx-Hb-PSG" secondAttribute="trailing" id="xgc-49-alw"/>
@@ -56,7 +56,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cPZ-HZ-YPi" secondAttribute="trailing" id="7Hf-vS-yXc"/>
                             <constraint firstItem="ccM-iA-GLD" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="bottom" id="9hR-jY-jLm"/>
-                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" constant="22" id="NYr-TU-jab"/>
+                            <constraint firstItem="cPZ-HZ-YPi" firstAttribute="top" secondItem="nfh-Xa-TPF" secondAttribute="topMargin" id="NYr-TU-jab"/>
                             <constraint firstItem="cPZ-HZ-YPi" firstAttribute="leading" secondItem="nfh-Xa-TPF" secondAttribute="leading" id="R5P-Bp-fuN"/>
                         </constraints>
                     </view>
