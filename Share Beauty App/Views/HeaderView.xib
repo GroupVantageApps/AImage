@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="Share_Beauty_App" customModuleProvider="target">
             <connections>
@@ -71,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-h8-zFU" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                    <rect key="frame" x="512.5" y="14" width="46.5" height="30"/>
+                    <rect key="frame" x="434.5" y="14" width="46.5" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="UwT-h8-zFU" secondAttribute="height" multiplier="23:15" id="kvG-jP-9KU"/>
                     </constraints>
@@ -89,10 +94,19 @@
                         <action selector="onTapShiseido:" destination="-1" eventType="touchUpInside" id="qTZ-b4-pjt"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-TG-vWA">
+                    <rect key="frame" x="496" y="6.5" width="53" height="45"/>
+                    <state key="normal" image="icon_dr"/>
+                    <connections>
+                        <action selector="onTapNewApproach:" destination="-1" eventType="touchUpInside" id="I59-34-TL7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="centerX" secondItem="RKT-Db-1oc" secondAttribute="centerX" id="7dW-xs-GzQ"/>
+                <constraint firstItem="8oZ-TG-vWA" firstAttribute="leading" secondItem="UwT-h8-zFU" secondAttribute="trailing" constant="15" id="8vF-WS-fuF"/>
+                <constraint firstItem="8oZ-TG-vWA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="Fq4-Qf-sB2"/>
                 <constraint firstItem="ntz-Cn-Elz" firstAttribute="leading" secondItem="N6V-K3-yhB" secondAttribute="trailing" constant="20" id="ICK-Ks-7Ar"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="top" secondItem="RKT-Db-1oc" secondAttribute="top" priority="750" constant="11" id="Ii7-qz-J1r"/>
                 <constraint firstItem="xW0-SQ-wNJ" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="LZM-dP-Jbu"/>
@@ -101,13 +115,13 @@
                 <constraint firstItem="ntz-Cn-Elz" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="ZyP-cF-UEm"/>
                 <constraint firstItem="UwT-h8-zFU" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="bff-0R-CN4"/>
                 <constraint firstItem="Uaa-9l-kCZ" firstAttribute="leading" secondItem="ntz-Cn-Elz" secondAttribute="trailing" constant="20" id="fxO-OK-ah6"/>
+                <constraint firstItem="N6V-K3-yhB" firstAttribute="leading" secondItem="8oZ-TG-vWA" secondAttribute="trailing" constant="20" id="iQT-Vo-6Et"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="lFz-ki-ixp"/>
                 <constraint firstAttribute="trailing" secondItem="Uaa-9l-kCZ" secondAttribute="trailing" constant="20" id="n1a-Uz-6w0"/>
                 <constraint firstItem="buO-mN-OMb" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="sUi-h8-OdE"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="buO-mN-OMb" secondAttribute="trailing" priority="750" constant="20" id="tXE-gk-8zj"/>
                 <constraint firstItem="buO-mN-OMb" firstAttribute="leading" secondItem="xW0-SQ-wNJ" secondAttribute="trailing" constant="20" id="wam-Xf-qhe"/>
                 <constraint firstItem="xW0-SQ-wNJ" firstAttribute="leading" secondItem="RKT-Db-1oc" secondAttribute="leading" constant="20" id="xjB-vy-h0N"/>
-                <constraint firstItem="N6V-K3-yhB" firstAttribute="leading" secondItem="UwT-h8-zFU" secondAttribute="trailing" constant="10" id="yXo-eI-LRf"/>
                 <constraint firstAttribute="bottom" secondItem="Y04-qN-LjA" secondAttribute="bottom" priority="750" constant="12" id="zdX-MK-d9A"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -121,6 +135,7 @@
         <image name="header_menu" width="20" height="17"/>
         <image name="header_option" width="23" height="22"/>
         <image name="header_shiseido" width="123" height="35"/>
+        <image name="icon_dr" width="53" height="45"/>
         <image name="icon_shiseido" width="28" height="29"/>
     </resources>
 </document>
