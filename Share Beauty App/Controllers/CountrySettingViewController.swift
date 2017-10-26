@@ -136,7 +136,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
                 initAppData()
 
             } else {
-                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertControllerStyle.alert)
+                let alert: UIAlertController = UIAlertController(title: "Error", message: "Network is offline. Please check the network.", preferredStyle:  UIAlertControllerStyle.alert)
                 let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
                     (_) -> Void in
                     print("OK")
