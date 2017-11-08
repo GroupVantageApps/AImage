@@ -56,7 +56,10 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         
         //TODO
         mGroupType = LanguageConfigure.gscgroup
-        
+        //mGroupType　言語　A = US
+            //mSelect1Type face or face&bodyページで　faceを選んだら
+                //mLblTitle カスタムせるをdelegateしているから使える
+                    //gscArr["4"] = FACE LanguageConfigure.gsccsv　gscArr["5"] = FACE&BODY
         if mGroupType == "A" {
             if mSelect1Type == "face" {
                 mGscHeaderView.mLblTitle.text = gscArr["4"]
@@ -193,54 +196,41 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         
                         mVContent.addSubview(productImgV)
                     }
+                    //下の白いバーの中の商品名
                     let productNameLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 5, width: descriptionLabelWidth, height: 30))
                     productNameLbl.font = UIFont.init(name: "Optima-Bold", size: 14.0)
                     productNameLbl.numberOfLines = 3
                     
-                    productNameLbl.text = product.productName 
+                    productNameLbl.text = product.productName
                     
                     productNameLbl.textColor = UIColor.black
                     productNameLbl.adjustsFontSizeToFitWidth = true
                     mProductNameV.addSubview(productNameLbl)
                     
-                    let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
-                    useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
-                    useTypeLbl.numberOfLines = 2
- 
-                    if mGroupType == "A"{
-                        let productUseType = typeDic?[productId] as! String
-                        switch productUseType {
-                        case "urban" :
-                            useTypeLbl.text = gscArr["12"]
-                            useTypeLbl.backgroundColor = UIColor.white
-                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                        case "active" :
-                            useTypeLbl.text = gscArr["13"]
-                            useTypeLbl.backgroundColor = UIColor.init(red: 0.99, green: 0.69, blue: 0.24, alpha: 1.0)
-                            useTypeLbl.textColor = UIColor.init(red: 0.10, green: 0.33, blue: 0.49, alpha: 1.0)
-                        case "children" :
-                            useTypeLbl.text = gscArr["14"]
-                            useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
-                            useTypeLbl.textColor = UIColor.black
-                        case "lip" :
-                            useTypeLbl.text =  gscArr["23"] ?? "not set No.23"
-                            useTypeLbl.backgroundColor = UIColor.white
-                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                        case "anytime" :
-                            useTypeLbl.text =  gscArr["22"] ?? "not set No.22"
-                            useTypeLbl.backgroundColor = UIColor.white
-                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                        default:
-                            break
-                        }
+                    //この部分新しく記述 （549だけ表示させることはできた）
+                   //上の beauty on the go を表示したいところ
+                    if productId == "549" {
+                        let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
+                        useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
+                        useTypeLbl.numberOfLines = 2
+                        useTypeLbl.text =  AppItemTranslateTable.getEntity(7946).name
+                        useTypeLbl.backgroundColor = UIColor.white
+                        useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                        useTypeLbl.adjustsFontSizeToFitWidth = true
+                        useTypeLbl.textAlignment = .center;
+                        mVContent.addSubview(useTypeLbl)
+                        
+                        
                     }
-                    useTypeLbl.adjustsFontSizeToFitWidth = true
-                    useTypeLbl.textAlignment = .center;
-                    mVContent.addSubview(useTypeLbl)
+                    
+                
+                    
                     
                 }
                 
                 
+                
+                //productの数に応じて、Label(Button)の大きさを変える
                 for (i, productId) in disPlayProductList.enumerated() {
                     let product = ProductData.init(productId: Int(productId)!)
                     var x = i*240
@@ -261,11 +251,13 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 130, width: w, height: 350))
                     productBtn.tag = Int(productId)!
                     productBtn.titleLabel?.text = ""
+                    //ボタンを押した時に、goDetailVcが反応する。　ボタンを表示させているのはどこ？
+                    //productBtn.backgroundColor = UIColor.white//テスト
                     productBtn.addTarget(self, action: #selector(GscResultViewController.goDetailVc), for: .touchUpInside)
                     mVContent.addSubview(productBtn)
                     
                 }
-                
+ 
             }
         
         let subTitleLbl = UILabel.init(frame: CGRect(x: 20, y: 60, width: 500, height: 50))
@@ -325,6 +317,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         let product = ProductData.init(productId: tag ?? 0)
         if product.productId != 0 {
             print(product.productId)
+            print("ラベル押した時")
             
             let nextVc = UIViewController.GetViewControllerFromStoryboard("GscNavigationViewController", targetClass: GscNavigationViewController.self) as! GscNavigationViewController
             nextVc.mProductId = product.productId

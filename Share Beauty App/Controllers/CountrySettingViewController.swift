@@ -166,6 +166,13 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
                 LanguageConfigure.gscgroup = group
             }
 
+            let gscPlistFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
+            print(gscPlistFilePath)
+            
+            if let dataDic = NSDictionary(contentsOfFile: gscPlistFilePath) as? Dictionary<String, AnyObject> {
+                print(dataDic)
+                LanguageConfigure.gscplist = dataDic
+            }
             
             let path = FileTable.getPath(6104)
             if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
@@ -207,6 +214,14 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             LanguageConfigure.gscgroup = group
         }
 
+        let gscPlistFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
+        print(gscPlistFilePath)
+        
+        if let dataDic = NSDictionary(contentsOfFile: gscPlistFilePath) as? Dictionary<String, AnyObject> {
+            print(dataDic)
+            LanguageConfigure.gscplist = dataDic
+        }
+        
         
         let path = FileTable.getPath(6104)
         if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
