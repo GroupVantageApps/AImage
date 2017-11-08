@@ -9,7 +9,7 @@
 import UIKit
 
 enum HeaderViewActionType: Int {
-    case home, skip, list, update, shiseido
+    case home, skip, list, update, shiseido, newApproach
 }
 
 protocol HeaderViewDelegate: NSObjectProtocol {
@@ -63,7 +63,10 @@ class HeaderView: BaseView {
 	@IBAction func onTapShiseido(_ sender: Any) {
 		delegate?.didHeaderViewAction(.shiseido)
 	}
-
+    @IBAction func onTapNewApproach(_ sender: Any) {
+        delegate?.didHeaderViewAction(.newApproach)
+    }
+    
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
     }

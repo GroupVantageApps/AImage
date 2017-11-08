@@ -406,6 +406,11 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 		let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
 		self.nextVc(vc, animated: true)
 	}
+    
+    fileprivate func showNewApproach() {
+        let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
+        self.nextVc(nextVc, animated:true)
+    }
 
     // MARK: - NavigationControllerDelegate
 
@@ -470,6 +475,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             self.updateData()
 		case .shiseido:
 			self.showAboutShiseido()
+        case .newApproach:
+            self.showNewApproach()
         }
     }
 
