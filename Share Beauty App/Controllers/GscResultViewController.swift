@@ -209,7 +209,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     mProductNameV.addSubview(productNameLbl)
                     
                     
-                    if productId == "549" {
+                    if productId == "549" {//productId == "549"
                         let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
                         useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
                         useTypeLbl.numberOfLines = 2
@@ -219,11 +219,45 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         useTypeLbl.adjustsFontSizeToFitWidth = true
                         useTypeLbl.textAlignment = .center;
                         mVContent.addSubview(useTypeLbl)
+                    
+                    }else{
+                        let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
+                        useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
+                        useTypeLbl.numberOfLines = 2
+                        useTypeLbl.adjustsFontSizeToFitWidth = true
+                        useTypeLbl.textAlignment = .center;
+                        mVContent.addSubview(useTypeLbl)
                         
+                        if mGroupType == "A"{
+                            let productUseType = typeDic?[productId] as! String
+                            switch productUseType {
+                            case "urban" :
+                                useTypeLbl.text = gscArr["12"]
+                                useTypeLbl.backgroundColor = UIColor.white
+                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                            case "active" :
+                                useTypeLbl.text = gscArr["13"]
+                                useTypeLbl.backgroundColor = UIColor.init(red: 0.99, green: 0.69, blue: 0.24, alpha: 1.0)
+                                useTypeLbl.textColor = UIColor.init(red: 0.10, green: 0.33, blue: 0.49, alpha: 1.0)
+                            case "children" :
+                                useTypeLbl.text = gscArr["14"]
+                                useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
+                                useTypeLbl.textColor = UIColor.black
+                            case "lip" :
+                                useTypeLbl.text =  gscArr["23"] ?? "not set No.23"
+                                useTypeLbl.backgroundColor = UIColor.white
+                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                            case "anytime" :
+                                useTypeLbl.text =  gscArr["22"] ?? "not set No.22"
+                                useTypeLbl.backgroundColor = UIColor.white
+                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                            default:
+                                break
+                            }
+                        }
+                       
                         
                     }
-                    
-                
                     
                     
                 }

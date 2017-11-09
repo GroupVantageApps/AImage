@@ -56,7 +56,7 @@ class LanguageSettingViewController: UIViewController, NavigationControllerAnnot
         let csv = Utility.csvToArray(file: filePath)
         LanguageConfigure.lxcsv = csv
         
-        //        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
+        //        let gscFilePa、hyth = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
         let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
         let gscCsv = Utility.csvToArray(file: gscFilePath)
         LanguageConfigure.gsccsv = gscCsv
