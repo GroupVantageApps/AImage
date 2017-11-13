@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,6 +101,13 @@
                         <action selector="onTapNewApproach:" destination="-1" eventType="touchUpInside" id="I59-34-TL7"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iU4-aR-m2Q">
+                    <rect key="frame" x="0.0" y="57" width="706" height="1"/>
+                    <color key="backgroundColor" red="0.72914421558380127" green="0.17195801436901093" blue="0.21176905930042267" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="YQ0-SJ-W1k"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -119,8 +126,11 @@
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="lFz-ki-ixp"/>
                 <constraint firstAttribute="trailing" secondItem="Uaa-9l-kCZ" secondAttribute="trailing" constant="20" id="n1a-Uz-6w0"/>
                 <constraint firstItem="buO-mN-OMb" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="sUi-h8-OdE"/>
+                <constraint firstItem="iU4-aR-m2Q" firstAttribute="leading" secondItem="RKT-Db-1oc" secondAttribute="leading" id="stQ-tO-bG7"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="buO-mN-OMb" secondAttribute="trailing" priority="750" constant="20" id="tXE-gk-8zj"/>
+                <constraint firstAttribute="bottom" secondItem="iU4-aR-m2Q" secondAttribute="bottom" id="vtj-te-suE"/>
                 <constraint firstItem="buO-mN-OMb" firstAttribute="leading" secondItem="xW0-SQ-wNJ" secondAttribute="trailing" constant="20" id="wam-Xf-qhe"/>
+                <constraint firstAttribute="trailing" secondItem="iU4-aR-m2Q" secondAttribute="trailing" id="wtD-fO-rfa"/>
                 <constraint firstItem="xW0-SQ-wNJ" firstAttribute="leading" secondItem="RKT-Db-1oc" secondAttribute="leading" constant="20" id="xjB-vy-h0N"/>
                 <constraint firstAttribute="bottom" secondItem="Y04-qN-LjA" secondAttribute="bottom" priority="750" constant="12" id="zdX-MK-d9A"/>
             </constraints>
