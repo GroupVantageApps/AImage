@@ -12,35 +12,29 @@ import AVFoundation
 class IconicViewController: UIViewController, NavigationControllerAnnotation, CollectionProductViewDelegate {
 
     @IBOutlet weak fileprivate var mPagingProductV: PagingProductView!
-    @IBOutlet weak private var mAVPlayerV: AVPlayerView!
-    @IBOutlet weak var mImgVText: UIImageView!
-
     private let mScreen = ScreenData(screenId: Const.screenIdIconicBeauty)
-
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
     var isEnterWithNavigationView: Bool = true
-
-    private weak var mPlayer: AVPlayer!
     private var mProductList: ProductListData!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.theme = mScreen.name
+        self.theme = "ICONIC BEAUTY"// mScreen.name
     }
 
     override func viewDidLoad() {
         mPagingProductV.delegate = self
 
-        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7814)
-        if let textImage = FileTable.getImage(textImageId.first) {
-            mImgVText.image = textImage
-        }
+//        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7814)
+//        if let textImage = FileTable.getImage(textImageId.first) {
+//            mImgVText.image = textImage
+//        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         print("IdealFirstSelectViewController.viewWillAppear")
-        createVideo()
+//        createVideo()
         mProductList = ProductListData(screenId: Const.screenIdIconicBeauty)
     }
 
@@ -55,37 +49,6 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("IdealFirstSelectViewController.viewDidDisappear")
-        removeVideo()
-    }
-
-    private func createVideo() {
-        guard let movies = AppItemTable.getJsonByItemId(itemId: 7814)?["movie"].arrayObject as? [Int],
-            let fileId = movies.first,
-            let videoUrl = FileTable.getVideoUrl(fileId) else {
-                return
-        }
-        mPlayer = AVPlayer(url: videoUrl)
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.didFinishPlaying),
-            name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-            object: mPlayer.currentItem
-        )
-        let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResize
-        layer.player = mPlayer
-        mPlayer.play()
-    }
-    private func removeVideo() {
-        NotificationCenter.default.removeObserver(self)
-        let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.player = nil
-    }
-
-    func didFinishPlaying() {
-        mPlayer.seek(to: kCMTimeZero)
-        mPlayer.play()
     }
 
     func didSelectProduct(_ targetCollectionProductView: CollectionProductView) {

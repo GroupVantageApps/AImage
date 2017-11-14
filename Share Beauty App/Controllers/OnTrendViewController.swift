@@ -10,13 +10,7 @@ import UIKit
 import AVFoundation
 
 class OnTrendViewController: UIViewController, NavigationControllerAnnotation, CollectionProductViewDelegate {
-    @IBOutlet weak fileprivate var mPagingProductV: PagingProductView!
-    @IBOutlet weak fileprivate var mImgVMainVisual: UIImageView!
-    @IBOutlet weak fileprivate var mAVPlayerV: AVPlayerView!
-    @IBOutlet weak var mImgVText: UIImageView!
-
-    fileprivate weak var mPlayer: AVPlayer!
-
+    @IBOutlet weak var mPagingProductV: PagingProductView!
     private let mScreen = ScreenData(screenId: Const.screenIdOnTrendBeauty)
     fileprivate var mProductList: ProductListData!
 
@@ -28,50 +22,18 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.theme = mScreen.name
+        self.theme = "LATEST BEAUTY" // mScreen.name
     }
 
     override func viewDidLoad() {
-        mPagingProductV.delegate = self
-        addMotionEffect()
-
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
 
-        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7812)
-        if let textImage = FileTable.getImage(textImageId.first) {
-            mImgVText.image = textImage
-        }
-    }
-
-    fileprivate func createVideo() {
-        guard let movies = AppItemTable.getJsonByItemId(itemId: 7812)?["movie"].arrayObject as? [Int],
-            let fileId = movies.first,
-            let videoUrl = FileTable.getVideoUrl(fileId) else {
-            return
-        }
-        mPlayer = AVPlayer(url: videoUrl)
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.didFinishPlaying),
-            name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-            object: mPlayer.currentItem
-        )
-        let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResize
-        layer.player = mPlayer
-        mPlayer.play()
-    }
-    fileprivate func removeVideo() {
-        NotificationCenter.default.removeObserver(self)
-        let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.player = nil
+//        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7812)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         print("IdealFirstSelectViewController.viewWillAppear")
-        createVideo()
         mProductList = ProductListData(screenId: Const.screenIdOnTrendBeauty)
     }
 
@@ -93,12 +55,6 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
     override func viewDidDisappear(_ animated: Bool) {
         print("IdealFirstSelectViewController.viewDidDisappear")
-        removeVideo()
-    }
-
-    func didFinishPlaying() {
-        mPlayer.seek(to: kCMTimeZero)
-        mPlayer.play()
     }
 
     func didSelectProduct(_ collectionProductView: CollectionProductView) {
@@ -110,19 +66,5 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
         delegate?.nextVc(productDetailVc)
 
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId!)
-    }
-
-    fileprivate func addMotionEffect() {
-        let xAxis = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        xAxis.minimumRelativeValue = -40
-        xAxis.maximumRelativeValue = 40
-
-        let yAxis = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        yAxis.minimumRelativeValue = -40
-        yAxis.maximumRelativeValue = 40
-
-        let effectGroup = UIMotionEffectGroup()
-        effectGroup.motionEffects = [xAxis, yAxis]
-        mImgVMainVisual.addMotionEffect(effectGroup)
     }
 }

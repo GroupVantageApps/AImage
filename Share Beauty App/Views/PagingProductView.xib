@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="606" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dy-az-RhB" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Dy-az-RhB" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="319" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="JNA-2o-hri"/>
@@ -34,7 +34,7 @@
                         <action selector="onTapBack:" destination="-1" eventType="touchUpInside" id="9EU-D5-FNC"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUi-cK-FVN" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUi-cK-FVN" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                     <rect key="frame" x="576" y="319" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="66P-rX-cUC"/>
@@ -46,10 +46,10 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="CHe-Tp-Zsm">
-                    <rect key="frame" x="30" y="37" width="546" height="593"/>
+                    <rect key="frame" x="30" y="0.0" width="546" height="617"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fds-ma-BhU">
-                            <rect key="frame" x="0.0" y="0.0" width="546" height="593"/>
+                            <rect key="frame" x="0.0" y="0.0" width="546" height="617"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Id7-Au-dBc">
                                 <size key="itemSize" width="50" height="50"/>
@@ -69,10 +69,10 @@
                     </constraints>
                 </scrollView>
                 <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Xm-1V-hBU">
-                    <rect key="frame" x="284" y="630" width="39" height="37"/>
+                    <rect key="frame" x="284" y="617" width="39" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="39" id="Q3k-rQ-uEO"/>
-                        <constraint firstAttribute="height" constant="37" id="Qdj-Vi-nsd"/>
+                        <constraint firstAttribute="height" constant="50" id="Qdj-Vi-nsd"/>
                     </constraints>
                     <color key="pageIndicatorTintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="currentPageIndicatorTintColor" red="0.85900002720000002" green="0.17100000379999999" blue="0.21899999680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,7 +88,7 @@
                 <constraint firstAttribute="trailing" secondItem="rUi-cK-FVN" secondAttribute="trailing" id="k2a-nM-THs"/>
                 <constraint firstItem="1Xm-1V-hBU" firstAttribute="top" secondItem="CHe-Tp-Zsm" secondAttribute="bottom" id="nOx-hc-HNw"/>
                 <constraint firstAttribute="bottom" secondItem="1Xm-1V-hBU" secondAttribute="bottom" id="nRi-bF-dmC"/>
-                <constraint firstItem="CHe-Tp-Zsm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="o0j-3U-FHu"/>
+                <constraint firstItem="CHe-Tp-Zsm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="o0j-3U-FHu"/>
                 <constraint firstItem="rUi-cK-FVN" firstAttribute="leading" secondItem="CHe-Tp-Zsm" secondAttribute="trailing" id="wpf-R5-nux"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

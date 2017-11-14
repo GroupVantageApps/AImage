@@ -43,6 +43,7 @@ class PagingProductView: BaseView, UICollectionViewDelegate, UICollectionViewDat
             layout.numberOfColumnsHorizontal = horizontalCellCount
             layout.numberOfColumnsVertical = varticalCellCount
             layout.numberOfColumns = CGFloat(products.count)
+            layout.space = 0
 
             mCollectionV.collectionViewLayout = layout
 
@@ -101,7 +102,6 @@ class PagingProductView: BaseView, UICollectionViewDelegate, UICollectionViewDat
         if mPageControl.currentPage != nextPage {
             mPageControl.currentPage = nextPage
         }
-
         mBtnBack.isEnabled = true
         mBtnNext.isEnabled = true
     }
