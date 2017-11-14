@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwT-h8-zFU" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                    <rect key="frame" x="434.5" y="14" width="46.5" height="30"/>
+                    <rect key="frame" x="448.5" y="14" width="46.5" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="UwT-h8-zFU" secondAttribute="height" multiplier="23:15" id="kvG-jP-9KU"/>
                     </constraints>
@@ -95,7 +95,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oZ-TG-vWA">
-                    <rect key="frame" x="496" y="6.5" width="53" height="45"/>
+                    <rect key="frame" x="513" y="12.5" width="39" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="39" id="Unf-Es-Rli"/>
+                        <constraint firstAttribute="height" constant="33" id="jXM-Fa-6mF"/>
+                    </constraints>
                     <state key="normal" image="icon_dr"/>
                     <connections>
                         <action selector="onTapNewApproach:" destination="-1" eventType="touchUpInside" id="I59-34-TL7"/>
@@ -112,7 +116,7 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="centerX" secondItem="RKT-Db-1oc" secondAttribute="centerX" id="7dW-xs-GzQ"/>
-                <constraint firstItem="8oZ-TG-vWA" firstAttribute="leading" secondItem="UwT-h8-zFU" secondAttribute="trailing" constant="15" id="8vF-WS-fuF"/>
+                <constraint firstItem="8oZ-TG-vWA" firstAttribute="leading" secondItem="UwT-h8-zFU" secondAttribute="trailing" constant="18" id="8vF-WS-fuF"/>
                 <constraint firstItem="8oZ-TG-vWA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="Fq4-Qf-sB2"/>
                 <constraint firstItem="ntz-Cn-Elz" firstAttribute="leading" secondItem="N6V-K3-yhB" secondAttribute="trailing" constant="20" id="ICK-Ks-7Ar"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="top" secondItem="RKT-Db-1oc" secondAttribute="top" priority="750" constant="11" id="Ii7-qz-J1r"/>
@@ -122,7 +126,7 @@
                 <constraint firstItem="ntz-Cn-Elz" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="ZyP-cF-UEm"/>
                 <constraint firstItem="UwT-h8-zFU" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="bff-0R-CN4"/>
                 <constraint firstItem="Uaa-9l-kCZ" firstAttribute="leading" secondItem="ntz-Cn-Elz" secondAttribute="trailing" constant="20" id="fxO-OK-ah6"/>
-                <constraint firstItem="N6V-K3-yhB" firstAttribute="leading" secondItem="8oZ-TG-vWA" secondAttribute="trailing" constant="20" id="iQT-Vo-6Et"/>
+                <constraint firstItem="N6V-K3-yhB" firstAttribute="leading" secondItem="8oZ-TG-vWA" secondAttribute="trailing" constant="17" id="iQT-Vo-6Et"/>
                 <constraint firstItem="Y04-qN-LjA" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="lFz-ki-ixp"/>
                 <constraint firstAttribute="trailing" secondItem="Uaa-9l-kCZ" secondAttribute="trailing" constant="20" id="n1a-Uz-6w0"/>
                 <constraint firstItem="buO-mN-OMb" firstAttribute="centerY" secondItem="RKT-Db-1oc" secondAttribute="centerY" id="sUi-h8-OdE"/>
