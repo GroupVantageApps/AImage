@@ -52,7 +52,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBd-Up-qFw" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119.5"/>
-                                                        <state key="normal" backgroundImage="top_1_button"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="sxG-5J-655"/>
                                                         </connections>
@@ -81,7 +80,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Ik-ocE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
-                                                        <state key="normal" backgroundImage="top_2_button"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="DwQ-nG-lMk"/>
                                                         </connections>
@@ -126,7 +124,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-47-XsE" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
-                                                        <state key="normal" backgroundImage="top_3_button"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="TBf-FD-542"/>
                                                         </connections>
@@ -155,7 +152,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-D2-Lg6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
-                                                        <state key="normal" backgroundImage="top_4_button"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="uDb-Vq-0b5"/>
                                                         </connections>
@@ -200,7 +196,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-V3-ObH" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
-                                                        <state key="normal" backgroundImage="top_5_button"/>
                                                         <connections>
                                                             <action selector="onTapSignatureBeauty:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="SQ5-7i-vf0"/>
                                                         </connections>
@@ -229,7 +224,6 @@
                                                 <subviews>
                                                     <button alpha="0.0" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-a3-xfg" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119.5"/>
-                                                        <state key="normal" backgroundImage="top_6_button"/>
                                                         <connections>
                                                             <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="LZI-vp-sSZ"/>
                                                         </connections>
@@ -329,12 +323,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="top_1_button" width="963" height="198"/>
-        <image name="top_2_button" width="963" height="198"/>
-        <image name="top_3_button" width="963" height="198"/>
-        <image name="top_4_button" width="963" height="198"/>
-        <image name="top_5_button" width="963" height="198"/>
-        <image name="top_6_button" width="963" height="198"/>
         <image name="top_thema_image" width="760" height="107"/>
     </resources>
 </document>
