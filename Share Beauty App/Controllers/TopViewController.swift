@@ -47,6 +47,36 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.delegate?.requestReloadUpdateStatus()
+        
+        let imageItemIds = [
+            (main: 7785, discription: 7837),
+            (main: 7786, discription: 7838),
+            (main: 7788, discription: 7840),
+            (main: 7787, discription: 7839),
+            (main: 7790, discription: 7841),
+            (main: 7842, discription: 7843),
+            ]
+        imageItemIds.enumerated().forEach { (i: Int, element: (main: Int, discription: Int)) in
+            let frontFileId = AppItemTable.getMainImageByItemId(itemId: element.main)
+            if let frontImage = FileTable.getImage(frontFileId.first) {
+                if let width = NSLayoutConstraint.findWidth(mBtnMenus[i].constraints, item: mBtnMenus[i]) {
+                    mBtnMenus[i].removeConstraint(width)
+                }
+                if let height = NSLayoutConstraint.findHeight(mBtnMenus[i].constraints, item: mBtnMenus[i]) {
+                    mBtnMenus[i].removeConstraint(height)
+                }
+                let width = NSLayoutConstraint.makeWidth(item: mBtnMenus[i], constant: frontImage.size.width / 2)
+                let height = NSLayoutConstraint.makeHeight(item: mBtnMenus[i], constant: frontImage.size.height / 2)
+                mBtnMenus[i].addConstraints([width, height])
+                
+            }
+            let backFileId = AppItemTable.getMainImageByItemId(itemId: element.discription)
+            if let backImage = FileTable.getImage(backFileId.first) {
+                mBtnMenus[i].setImage(backImage, for: .normal)
+            }
+            
+        }
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
