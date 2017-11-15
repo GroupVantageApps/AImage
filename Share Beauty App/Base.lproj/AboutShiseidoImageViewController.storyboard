@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About Shiseido Image View Controller-->
+        <scene sceneID="uDN-oW-jTD">
+            <objects>
+                <viewController storyboardIdentifier="AboutShiseidoImageViewController" autoresizesArchivedViewToFullSize="NO" id="AfR-5m-E7l" customClass="AboutShiseidoImageViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wpU-7y-9ch"/>
+                        <viewControllerLayoutGuide type="bottom" id="3hj-jo-yo3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2e-gR-vIs">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZuN-s5-efa">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOY-85-IiH">
+                                <rect key="frame" x="437" y="718" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ub9-ml-c2H"/>
+                                    <constraint firstAttribute="width" constant="150" id="aJ9-1A-lOs"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapedPlayMovie:" destination="AfR-5m-E7l" eventType="touchUpInside" id="Tma-ij-DNV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZuN-s5-efa" firstAttribute="leading" secondItem="K2e-gR-vIs" secondAttribute="leading" id="7HG-Wo-rBa"/>
+                            <constraint firstItem="3hj-jo-yo3" firstAttribute="top" secondItem="dOY-85-IiH" secondAttribute="bottom" constant="20" id="Aqv-Gf-cLd"/>
+                            <constraint firstItem="dOY-85-IiH" firstAttribute="centerX" secondItem="K2e-gR-vIs" secondAttribute="centerX" id="OSM-3D-PF9"/>
+                            <constraint firstItem="3hj-jo-yo3" firstAttribute="top" secondItem="ZuN-s5-efa" secondAttribute="bottom" id="eUO-oF-GeE"/>
+                            <constraint firstItem="ZuN-s5-efa" firstAttribute="top" secondItem="K2e-gR-vIs" secondAttribute="top" id="mtC-Bo-V31"/>
+                            <constraint firstAttribute="trailing" secondItem="ZuN-s5-efa" secondAttribute="trailing" id="yRg-iY-SY1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FrontImageView" destination="ZuN-s5-efa" id="Rpe-q9-3Ge"/>
+                        <outlet property="playMovieButton" destination="dOY-85-IiH" id="W8T-p3-YQW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bZ-Ob-5qN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.78125" y="135.9375"/>
+        </scene>
+    </scenes>
+</document>
