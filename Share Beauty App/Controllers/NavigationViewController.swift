@@ -403,7 +403,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 	
 	/// 資生堂About画面への遷移
 	fileprivate func showAboutShiseido() {
-		let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
+//        let vc = AboutShiseidoBrandViewController()
+        let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoImageViewController", targetClass: AboutShiseidoImageViewController.self) as! AboutShiseidoImageViewController
 		self.nextVc(vc, animated: true)
 	}
     
