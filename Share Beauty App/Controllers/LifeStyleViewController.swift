@@ -9,7 +9,20 @@
 import UIKit
 import AVFoundation
 
-class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate {
+
+class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate, LifeStyleProductViewDelegate {
+    
+    
+    func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
+            let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            productDetailVc.productId = product!.productId
+            productDetailVc.relationProducts = productList.products
+            delegate?.nextVc(productDetailVc)
+//        }
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
+    }
+    
 
     struct LifeStyle {
         private(set) var image: UIImage
@@ -33,6 +46,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     @IBOutlet weak private var mScrollV: UIScrollView!
 
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
+    private var mLifeStyleProductViews = [LifeStyleProductView]()
+    weak var lifeStyleViewDelegate: LifeStyleProductViewDelegate?
+    var items: [String: String]!
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
@@ -57,7 +73,18 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         2:LifeStyleThirdDetailViewController.self,
         3:LifeStyleFourthDetailViewController.self,
         ]
-
+    
+    private let productList = ProductListData(productIds: [553,554,101,455,470,500,551,545,549,498])
+    private let imageItemIds = [
+        (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
+        (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
+        (discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
+        (discription: "lifestyle12", x: CGFloat(910), y: CGFloat(90), width: CGFloat(990), height: CGFloat(140)),
+        //(discription: "lifestyle12", x: CGFloat(1120), y: CGFloat(90), width: CGFloat(600), height: CGFloat(180)),
+        (discription: "lifestyle13", x: CGFloat(1900), y: CGFloat(100), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),
+        ]
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.theme = mScreen.name
@@ -99,6 +126,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if !isShowVideo {
             mAVPlayerV.removeFromSuperview()
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setScrollView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -284,5 +316,63 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVMain
+    }
+    
+    func setScrollView() {
+        items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
+        self.mLifeStyleProductViews.removeAll()
+        for _ in 0..<productList.products.count {
+            self.mLifeStyleProductViews.append(LifeStyleProductView())
+        }
+        var contentWidth = CGFloat(60)
+        for enumerated in productList.products.enumerated() {
+            let i = enumerated.offset
+            let product = enumerated.element
+            
+            guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
+                continue
+            }
+            lifeStyleProductView.delegate = self
+            lifeStyleProductView.product = product
+            lifeStyleProductView.headerText = items["0" + String(i+1)]
+            lifeStyleProductView.explainText = items["1" + String(i+2)]
+            lifeStyleProductView.logScreenId = mScreen.code
+            lifeStyleProductView.logItemId = "0" + String(i+1)
+            
+            let viewWidth = CGFloat(246)
+            let viewHeight = CGFloat(480)
+            lifeStyleProductView.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+            lifeStyleProductView.backgroundColor = UIColor.gray
+            mScrollV.addSubview(lifeStyleProductView)
+            contentWidth += viewWidth
+        }
+        mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
+        
+        // 説明用画像をセット
+        setInfoImage()
+    }
+    private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
+        let transitionData = Utility.parseJson(strJson)
+        
+        let productIds = transitionData?["productId"].string
+        let beautyIds = transitionData?["beautyId"].string
+        let lineIds = transitionData?["lineId"].string
+        
+        if productIds == nil && beautyIds == nil && lineIds == nil {
+            return nil
+        } else {
+            return (productIds, beautyIds, lineIds)
+        }
+    }
+    private func setInfoImage() {
+        imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            imageView.frame = CGRect(x: element.x, y: element.y, width: element.width, height: element.height)
+            if let image = UIImage(named: element.discription) {
+                imageView.image = image
+            }
+            mScrollV.addSubview(imageView)
+        }
     }
 }
