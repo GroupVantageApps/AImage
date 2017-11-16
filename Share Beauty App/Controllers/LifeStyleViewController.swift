@@ -11,8 +11,6 @@ import AVFoundation
 
 
 class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate, LifeStyleProductViewDelegate {
-    
-    
     func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
             let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             productDetailVc.productId = product!.productId
@@ -52,7 +50,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
-    var isEnterWithNavigationView: Bool = false
+    var isEnterWithNavigationView: Bool = true
 
     var focusScreenIds: [Int]?
     var isShowVideo: Bool = true
@@ -79,8 +77,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
         (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
         (discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
-        (discription: "lifestyle12", x: CGFloat(910), y: CGFloat(90), width: CGFloat(990), height: CGFloat(140)),
-        //(discription: "lifestyle12", x: CGFloat(1120), y: CGFloat(90), width: CGFloat(600), height: CGFloat(180)),
+        (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)),
         (discription: "lifestyle13", x: CGFloat(1900), y: CGFloat(100), width: CGFloat(400), height: CGFloat(170)),
         (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),
         ]
@@ -95,21 +92,21 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
         
-        for (i, nextVc) in nextVcs {
-            
-            let image = UIImage(named:("lifestyle" + String(i+1)))
-            let key = "0" + String(i+1)
-            
-            var text: String = items[key]!
-            text = text.replacingOccurrences(of: "\n", with: "<br>")
-            var isFocus = false
-            if focusScreenIds != nil && self.getLifeStyleIndexes(screenIds: focusScreenIds!).contains(i) {
-                    isFocus = true
-            }
-
-            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
-            mLifeStyles.append(lifestyle)
-        }
+//        for (i, nextVc) in nextVcs {
+//            
+//            let image = UIImage(named:("lifestyle" + String(i+1)))
+//            let key = "0" + String(i+1)
+//            
+//            var text: String = items[key]!
+//            text = text.replacingOccurrences(of: "\n", with: "<br>")
+//            var isFocus = false
+//            if focusScreenIds != nil && self.getLifeStyleIndexes(screenIds: focusScreenIds!).contains(i) {
+//                    isFocus = true
+//            }
+//
+//            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
+//            mLifeStyles.append(lifestyle)
+//        }
         mCollectionV.register(UINib(nibName: "LifeStyleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionV.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionV.allowsSelection = false
@@ -135,7 +132,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !mFinishedAppear && isShowVideo {
+//        if !mFinishedAppear && isShowVideo {
+        self.didFinishPlaying()
+        if false {
             self.createVideo()
             delegate?.showVideoSkipButtonWithDuration(0.3, didTapFunction: {
                 self.didFinishPlaying()
@@ -203,17 +202,17 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mVMain.alpha = 0
         mAVPlayerV.removeFromSuperview()
         self.removeVideo()
-        delegate?.showNavigationView(0.3)
+//        delegate?.showNavigationView(0.3)
         delegate?.hideVideoSkipButtonWithDuration(0.3)
-        UIView.animateIgnoreInteraction(
-            duration: 0.3,
-            delay: 0,
-            animations: { [unowned self] in
-                self.mVMain.alpha = 1
-            },
-            completion: { finished in
-
-        })
+//        UIView.animateIgnoreInteraction(
+//            duration: 0,
+//            delay: 0,
+//            animations: { [unowned self] in
+//                self.mVMain.alpha = 1
+//            },
+//            completion: { finished in
+//
+//        })
     }
 
     // MARK: - CollectionViewDelegate
