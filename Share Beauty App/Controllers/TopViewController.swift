@@ -282,22 +282,22 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     }
     
     @objc private func helpAnimation() {
-        self.fadeOutMenu(
-            delay: 0, completion: { _ in
-                if !self.mIsShowHelpAnimation {return}
-                self.setGuardViewIfneeded()
+//        self.fadeOutMenu(
+//            delay: 0, completion: { _ in
+//                if !self.mIsShowHelpAnimation {return}
+//                self.setGuardViewIfneeded()
 //                self.fadeInHelp(delay: 0, completion: { _ in
 //                    if !self.mIsShowHelpAnimation {return}
 //                    self.fadeOutHelp(delay: 15, completion: { _ in
 //                        if !self.mIsShowHelpAnimation {return}
-                        self.fadeInMenu(delay: 0, completion: { _ in
-                            if !self.mIsShowHelpAnimation {return}
-                            self.removeGuardView()
-                            self.startTimerAnimation(delay: 15)
-                        })
+//                        self.fadeInMenu(delay: 0, completion: { _ in
+//                            if !self.mIsShowHelpAnimation {return}
+//                            self.removeGuardView()
+//                            self.startTimerAnimation(delay: 15)
+//                        })
 //                    })
 //                })
-        })
+//        })
     }
     
     private func setGuardViewIfneeded() {
