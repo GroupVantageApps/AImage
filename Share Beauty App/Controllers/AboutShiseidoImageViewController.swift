@@ -14,7 +14,7 @@ class AboutShiseidoImageViewController: UIViewController, NavigationControllerAn
     @IBOutlet weak var playMovieButton: UIButton!
     // NavigationControllerAnnotation
     weak var delegate: NavigationControllerDelegate?
-    var theme: String? = "ABOUT SHISEIDO BRAND"
+    var theme: String? = "About Brand Shiseido"
     var isEnterWithNavigationView: Bool = true
     
     deinit {
