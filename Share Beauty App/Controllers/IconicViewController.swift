@@ -42,7 +42,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
         super.viewDidLayoutSubviews()
         viewDidLayoutSubviewsOnce {
             self.view.layoutIfNeeded()
-            mPagingProductV.products = mProductList.products
+            mPagingProductV.products = ProductListData.init(productIds: [359,28,553,545,470,423]).products
         }
     }
 
