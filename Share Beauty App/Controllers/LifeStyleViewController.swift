@@ -338,9 +338,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)
             
-            let viewWidth = self.view.width * 0.24
-            let viewHeight = self.view.height * 0.4
-            lifeStyleProductView.frame = CGRect(x: CGFloat(i) * (viewWidth) + 60, y: 250, width: viewWidth, height: viewHeight)
+            let viewWidth = CGFloat(246)
+            let viewHeight = CGFloat(480)
+            lifeStyleProductView.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
