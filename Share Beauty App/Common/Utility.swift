@@ -252,10 +252,13 @@ class Utility: NSObject {
                     } else if count == 0 {
                         if isStartDC {
                             let string = NSString(string: line)
-                            let range = string.range(of: ",") 
-                            index = string.substring(to: range.location)
-                            value = string.substring(from: range.location + 1)
-                            value = value.replacingOccurrences(of: "\"", with: "")
+                            let range = string.range(of: ",")
+                            print("range.location \(range.location)")
+                            if string.length >= range.location {
+                                index = string.substring(to: range.location)
+                                value = string.substring(from: range.location + 1)
+                                value = value.replacingOccurrences(of: "\"", with: "")
+                            }
                         } else {
                             value = String(format: "%@\n%@",value,line)
                         }

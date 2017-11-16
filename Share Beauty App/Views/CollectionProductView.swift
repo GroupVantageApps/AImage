@@ -16,16 +16,21 @@ class CollectionProductView: UICollectionViewCell {
     @IBOutlet weak private var mBtnProductImg: BaseButton!
     @IBOutlet weak fileprivate var mLblCategory: UILabel!
     @IBOutlet weak fileprivate var mLblLine: UILabel!
-    @IBOutlet weak fileprivate var mLblName: UILabel!
+    @IBOutlet weak fileprivate var mLblBlack: UILabel!
     @IBOutlet weak fileprivate var mBtnRecommend: BaseButton!
     @IBOutlet weak fileprivate var mImgVReward: UIImageView!
     @IBOutlet weak fileprivate var mVContent: UIView!
-
+    @IBOutlet weak var dayImageView: UIImageView!
+    @IBOutlet weak var nightImageView: UIImageView!
+    
     private let mScreen = ScreenData(screenId: Const.screenIdProductList)
 
     @IBInspectable var productImage: UIImage? {
         didSet {
             mBtnProductImg.setImage(productImage, for: .normal)
+            mBtnProductImg.imageView?.contentMode = .scaleAspectFit
+            mBtnProductImg.contentHorizontalAlignment = .fill
+            mBtnProductImg.contentVerticalAlignment = .fill
         }
     }
     @IBInspectable var awardImage: UIImage? {
@@ -46,7 +51,10 @@ class CollectionProductView: UICollectionViewCell {
     }
     @IBInspectable var strName: String? {
         didSet {
-            mLblName.text = strName
+            if let name = strName {
+                mLblBlack.text = name
+                mLblBlack.sizeToFit()
+            }
         }
     }
     var recommend: Bool = false {
@@ -54,15 +62,32 @@ class CollectionProductView: UICollectionViewCell {
             mBtnRecommend.isSelected = recommend
         }
     }
-    var product: ProductData? {
+    var product: ProductData! {
         didSet {
             mVContent.isHidden = (product == nil)
             strCategory = product?.beautyName
             strLine = product?.lineName
             strName = product?.productName
+            
+            let icon_day = UIImage(named: "icon_day")
+            let icon_night = UIImage(named: "icon_night")
+
             if product != nil {
                 recommend = Bool(product!.recommend as NSNumber)
+            } else {
+                return;
             }
+            if Bool(NSNumber(value: product.day)) {
+                self.dayImageView.image = icon_day
+            }
+            if Bool(NSNumber(value: self.product.night)) {
+                if self.dayImageView.image == nil {
+                    self.dayImageView.image = icon_night
+                } else {
+                    self.dayImageView.image = icon_night
+                }
+            }
+            
         }
     }
 

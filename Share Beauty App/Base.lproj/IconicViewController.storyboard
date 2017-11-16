@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Iconic View Controller-->
         <scene sceneID="zWU-yi-fbk">
@@ -22,85 +27,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doO-kJ-oO3" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="453" height="768"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iconic" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-19-UiP">
-                                        <rect key="frame" x="39" y="5" width="262" height="108"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="90"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-Wi-9p1">
-                                        <rect key="frame" x="39" y="83" width="299" height="108"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="90"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your beauty" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SS4-lb-PWN">
-                                        <rect key="frame" x="44" y="186" width="140" height="21.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from Shiseido’s 10 Best" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecO-5L-e3P">
-                                        <rect key="frame" x="44" y="212.5" width="196" height="22"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="doO-kJ-oO3" secondAttribute="height" multiplier="383:650" id="86s-0K-hJ4"/>
-                                    <constraint firstItem="ecO-5L-e3P" firstAttribute="leading" secondItem="SS4-lb-PWN" secondAttribute="leading" id="DFz-59-h28"/>
-                                    <constraint firstItem="SS4-lb-PWN" firstAttribute="top" secondItem="bDd-Wi-9p1" secondAttribute="bottom" constant="-5" id="KbJ-A8-Cec"/>
-                                    <constraint firstItem="e9M-19-UiP" firstAttribute="leading" secondItem="doO-kJ-oO3" secondAttribute="leading" constant="39" id="Qlf-Y2-VTZ"/>
-                                    <constraint firstItem="ecO-5L-e3P" firstAttribute="top" secondItem="SS4-lb-PWN" secondAttribute="bottom" constant="5" id="SK3-9J-uvw"/>
-                                    <constraint firstItem="bDd-Wi-9p1" firstAttribute="top" secondItem="e9M-19-UiP" secondAttribute="bottom" constant="-30" id="VGt-mR-gVc"/>
-                                    <constraint firstItem="SS4-lb-PWN" firstAttribute="leading" secondItem="bDd-Wi-9p1" secondAttribute="leading" constant="5" id="p26-53-rSu"/>
-                                    <constraint firstItem="e9M-19-UiP" firstAttribute="top" secondItem="doO-kJ-oO3" secondAttribute="top" constant="5" id="qix-Ij-mGK"/>
-                                    <constraint firstItem="bDd-Wi-9p1" firstAttribute="leading" secondItem="e9M-19-UiP" secondAttribute="leading" id="v6O-RX-gx8"/>
-                                </constraints>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0yv-G6-NVb">
-                                <rect key="frame" x="0.0" y="0.0" width="383" height="644"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RZ-jv-rne" customClass="PagingProductView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                <rect key="frame" x="453" y="0.0" width="571" height="768"/>
+                                <rect key="frame" x="45" y="170" width="934" height="598"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="horizontalCellCount">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="varticalCellCount">
-                                        <integer key="value" value="2"/>
+                                        <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty scores" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-19-UiP">
+                                <rect key="frame" x="70" y="60" width="326.5" height="57.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a perfect 10." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-Wi-9p1">
+                                <rect key="frame" x="70" y="112.5" width="284.5" height="57.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="5RZ-jv-rne" secondAttribute="trailing" id="2Uy-hJ-i7I"/>
+                            <constraint firstAttribute="trailing" secondItem="5RZ-jv-rne" secondAttribute="trailing" constant="45" id="2Uy-hJ-i7I"/>
+                            <constraint firstItem="e9M-19-UiP" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" constant="40" id="HDh-1u-7Bl"/>
+                            <constraint firstItem="bDd-Wi-9p1" firstAttribute="top" secondItem="e9M-19-UiP" secondAttribute="bottom" constant="-5" id="Ita-cC-FrE"/>
                             <constraint firstItem="i6e-Tu-V06" firstAttribute="top" secondItem="5RZ-jv-rne" secondAttribute="bottom" id="MWu-nW-c9d"/>
-                            <constraint firstItem="doO-kJ-oO3" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leading" id="O2f-y1-FVX"/>
-                            <constraint firstItem="doO-kJ-oO3" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" id="O3a-Xa-Lzz"/>
-                            <constraint firstItem="5RZ-jv-rne" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" id="VnK-Qr-5FH"/>
-                            <constraint firstItem="5RZ-jv-rne" firstAttribute="leading" secondItem="doO-kJ-oO3" secondAttribute="trailing" id="eyf-HK-vKm"/>
-                            <constraint firstItem="i6e-Tu-V06" firstAttribute="top" secondItem="doO-kJ-oO3" secondAttribute="bottom" id="kQC-iG-j3h"/>
+                            <constraint firstItem="5RZ-jv-rne" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" constant="150" id="VnK-Qr-5FH"/>
+                            <constraint firstItem="5RZ-jv-rne" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leading" constant="45" id="duM-aM-hnH"/>
+                            <constraint firstItem="e9M-19-UiP" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leadingMargin" constant="50" id="jOU-mN-MUF"/>
+                            <constraint firstItem="bDd-Wi-9p1" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leadingMargin" constant="50" id="jk3-1Q-qL0"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="mAVPlayerV" destination="doO-kJ-oO3" id="DO9-dj-Sdn"/>
-                        <outlet property="mImgVText" destination="0yv-G6-NVb" id="SPb-Xf-eP0"/>
                         <outlet property="mPagingProductV" destination="5RZ-jv-rne" id="Rmh-C3-FI5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqm-g4-xmo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9336" y="-4607"/>
+            <point key="canvasLocation" x="-9336.328125" y="-4607.03125"/>
         </scene>
     </scenes>
 </document>

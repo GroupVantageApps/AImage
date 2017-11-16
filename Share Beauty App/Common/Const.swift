@@ -50,6 +50,7 @@ struct Const {
     static let screenIdRecommend = 23
     static let screenIdOnTrendBeauty = 42
     static let screenIdTop = 7785
+    static let screenIdAboutShiseidoImage = 7786
     static let screenIdLifeStyleBeauty = 7795
     static let screenIdLifeStyleBeautyA = 7796 //＜＜うっかり日焼け用＞＞7805
     static let screenIdLifeStyleBeautyB = 7797

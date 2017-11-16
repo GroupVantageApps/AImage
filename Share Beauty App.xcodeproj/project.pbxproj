@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B336B249D71D6246E23B7EF /* Pods_Share_Beauty_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */; };
+		338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */; };
+		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
 		5C233F93CC49A1135544BD45 /* Pods_Share_Beauty_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */; };
 		611D84057A55077F8526921F /* Pods_Share_Beauty_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */; };
 		800892171EA0DA24007C592A /* TelopTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892151EA0DA24007C592A /* TelopTable.swift */; };
@@ -575,6 +577,8 @@
 
 /* Begin PBXFileReference section */
 		24AFBABB1CB1A80F7D07FA74 /* Pods-Share Beauty AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoImageViewController.swift; sourceTree = "<group>"; };
+		338DE5711FBC4D2700E353CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoImageViewController.storyboard; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76C9321C537E378B56541512 /* Pods-Share Beauty AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		800892151EA0DA24007C592A /* TelopTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTable.swift; path = Database/table/TelopTable.swift; sourceTree = "<group>"; };
@@ -1614,6 +1618,7 @@
 		C091BA791D6980DE0073FEDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */,
 				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
 				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
 				C0665ACB1D6AE96D00B3D8E5 /* IdealFirstSelectViewController.swift */,
@@ -1851,6 +1856,7 @@
 			isa = PBXGroup;
 			children = (
 				E52891D21DF2FD9E007B92B2 /* AboutBrandViewController.storyboard */,
+				338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */,
 				800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */,
 				C0880CFF1E4B2579006A3713 /* CountrySettingViewController.storyboard */,
 				E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */,
@@ -2217,6 +2223,7 @@
 				DE06F7121F16450200EF2FE2 /* sensitive_children.png in Resources */,
 				C0423F821E3627A500D56960 /* shiseido-finder.db in Resources */,
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
+				338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */,
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
 				C050C9171E82619F0009679D /* whl_slider_1.png in Resources */,
 				C05913D91D67235700F22214 /* LaunchScreen.storyboard in Resources */,
@@ -2595,9 +2602,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share Beauty AppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2639,9 +2649,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share Beauty App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2654,9 +2667,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Share Beauty AppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2669,9 +2685,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AImage/AImage.framework",
+				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TouchVisualizer/TouchVisualizer.framework",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APNGKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TouchVisualizer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2780,6 +2813,7 @@
 				C0E4DCBD1D71807500931B66 /* ProductListView.swift in Sources */,
 				C03520D91D9E88D7005129B5 /* IdealResultCell.swift in Sources */,
 				C05818381D6DB51A00C8FB55 /* Array+safe.swift in Sources */,
+				338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */,
 				DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */,
 				DE2C90801E9C66E600B5FC4A /* LXEfficacyResultView.swift in Sources */,
 				C0FE16491D853CE700415B65 /* SideBar.swift in Sources */,
@@ -2960,6 +2994,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				338DE5711FBC4D2700E353CA /* Base */,
+			);
+			name = AboutShiseidoImageViewController.storyboard;
+			sourceTree = "<group>";
+		};
 		800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

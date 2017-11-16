@@ -403,9 +403,15 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 	
 	/// 資生堂About画面への遷移
 	fileprivate func showAboutShiseido() {
-		let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
+//        let vc = AboutShiseidoBrandViewController()
+        let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoImageViewController", targetClass: AboutShiseidoImageViewController.self) as! AboutShiseidoImageViewController
 		self.nextVc(vc, animated: true)
 	}
+    
+    fileprivate func showNewApproach() {
+        let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
+        self.nextVc(nextVc, animated:true)
+    }
 
     // MARK: - NavigationControllerDelegate
 
@@ -470,6 +476,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             self.updateData()
 		case .shiseido:
 			self.showAboutShiseido()
+        case .newApproach:
+            self.showNewApproach()
         }
     }
 
