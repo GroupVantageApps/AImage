@@ -2100,6 +2100,7 @@
 				C05913C61D67235700F22214 /* Resources */,
 				EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */,
 				0FCD48EBFAD0849F6561ED8F /* [CP] Copy Pods Resources */,
+				DE794BF41FB29C78006E1F5B /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -2617,6 +2618,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DE794BF41FB29C78006E1F5B /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		E44F3AB055ED226229649837 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

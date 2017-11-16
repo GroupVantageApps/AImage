@@ -142,13 +142,16 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         print("GscViewController.viewWillAppear")
         self.navigationController?.isNavigationBarHidden = true
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         print("GscViewController.viewDidAppear")
         
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         print("GscViewController.viewWillDisappear")
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         print("GscViewController.viewDidDisappear")
         if (moviePlay != nil) && (moviePlay2 != nil) {
@@ -156,9 +159,11 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             moviePlay2.isHidden = true
         }
     }
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVContent
     }
+    
     @IBAction func outApp(_ sender: Any) {
         mDropDown.show()
     }
@@ -440,12 +445,10 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     }
     
     func onTapActiveBtn() {
-        
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
         nextVc.mSelect2Type = "active"
         self.navigationController?.pushViewController(nextVc, animated: false)
-        
     }
     
     func onTapstandAloneBtn() {

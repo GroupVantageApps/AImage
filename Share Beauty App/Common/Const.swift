@@ -127,6 +127,7 @@ struct Const {
     // 画像なし悩みID
     static let troubleIdNotImage = [15, 16, 17, 18]
 
+    
     static let productIdUtm = [359, 559, 560]
     static let productIdUtmEye = 28
     static let productIdIbuki = 495
