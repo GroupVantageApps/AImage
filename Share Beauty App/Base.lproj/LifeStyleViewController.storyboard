@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Life Style View Controller-->
         <scene sceneID="YC8-GB-4VK">
@@ -22,10 +27,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-GI-f3H">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-GI-f3H">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wJ-QY-g1s">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty tailors solutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
+                                        <rect key="frame" x="50" y="40" width="538" height="58"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to your lifestyle." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGz-3n-gdW">
+                                        <rect key="frame" x="50" y="93" width="364" height="58"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wJ-QY-g1s">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lfX-pm-UKt">
@@ -40,7 +57,6 @@
                                                 <cells/>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="lfX-pm-UKt" secondAttribute="bottom" id="08P-KB-J7U"/>
                                             <constraint firstAttribute="trailing" secondItem="lfX-pm-UKt" secondAttribute="trailing" id="14D-N4-ZNh"/>
@@ -53,17 +69,21 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="5Et-Sd-cpK"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="75B-xU-00e"/>
+                                    <constraint firstItem="PGz-3n-gdW" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" constant="50" id="Kvu-Ot-gVg"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="Rgq-ng-PCP"/>
-                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="width" secondItem="OWZ-GI-f3H" secondAttribute="width" id="Vdt-3n-zuU"/>
+                                    <constraint firstItem="PGz-3n-gdW" firstAttribute="top" secondItem="uQc-dF-cFB" secondAttribute="bottom" constant="-5" id="dBu-Rj-kKr"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" id="ecR-87-3uP"/>
                                     <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="fLW-b3-w0h"/>
+                                    <constraint firstItem="uQc-dF-cFB" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" constant="50" id="jGt-mA-iYL"/>
+                                    <constraint firstItem="6wJ-QY-g1s" firstAttribute="centerX" secondItem="OWZ-GI-f3H" secondAttribute="centerX" id="l6S-Pt-tXd"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" id="llZ-6z-VuM"/>
+                                    <constraint firstItem="uQc-dF-cFB" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" constant="40" id="nbI-Dt-Lhf"/>
                                     <constraint firstAttribute="bottom" secondItem="6wJ-QY-g1s" secondAttribute="bottom" id="rTu-yo-IiV"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="height" secondItem="OWZ-GI-f3H" secondAttribute="height" id="wED-UC-MAS"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mlv-bI-3Km" customClass="AVPlayerView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.5" width="1024" height="767.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mlv-bI-3Km" secondAttribute="height" multiplier="4:3" id="KuO-nm-oYb"/>
@@ -96,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9h-W7-yMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9336" y="-1114"/>
+            <point key="canvasLocation" x="-9336.328125" y="-1114.0625"/>
         </scene>
     </scenes>
 </document>
