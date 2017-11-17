@@ -14,7 +14,7 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
 	
 	// NavigationControllerAnnotation
 	weak var delegate: NavigationControllerDelegate?
-	var theme: String? = "About Brand Shiseido"
+	var theme: String?
 	var isEnterWithNavigationView: Bool = true
 	
 	fileprivate var player: AVPlayer!
@@ -26,13 +26,15 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
 	@IBOutlet weak var mBtnPlay: BaseButton!
 	@IBOutlet weak var mTelopLabel: UILabel!
 	
+     private let mScreen = ScreenData(screenId: Const.screenIdAboutShiseido)
+    
 	deinit {
 		self.delegate?.setAboutShiseidoButtonEnabled(true)
 	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+        self.theme = mScreen.name
 		self.delegate?.setAboutShiseidoButtonEnabled(false)
 		
         self.preparationMovie()

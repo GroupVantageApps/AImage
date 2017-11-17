@@ -24,16 +24,16 @@ class LifeStyleProductView: BaseView {
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
 	
     let discroptionList = [
-        553:"For smoother,\nsofter skin.",
-        554:"For a lighter,\nfresher look.",
-        101:"",
-        455:"",
-        470:"Discover smoother,\npolished skin.",
-        500:"Illuminate and hydrate \nyour complexion.",
-        551:"Reveal your \nnatural radiance.",
-        545:"Active beauty",
-        549:"Beauty on the go",
-        498:"Active beauty",
+        553:7932,
+        554:7940,
+        101:0,
+        455:0,
+        470:7938,
+        500:7939,
+        551:7940,
+        545:7945,
+        549:7946,
+        498:7947,
     ]
 	// カスタムスタイルの定義。従来のスタイルはnormal
 	// スタイルの変更はproductプロパティに値を設定する前に行う
@@ -144,7 +144,8 @@ class LifeStyleProductView: BaseView {
         didSet {
             print("tintColor: " + (self.mBtnProduct.imageView?.tintColor.description)!)
             self.beautyName = product?.beautyName
-            self.discriptionLabel.text = discroptionList[(product?.productId)!]
+            self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
+            
             self.lineName = product?.lineName
             self.productName = product?.productName
             self.imgProduct = FileTable.getImage(product?.image)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,33 +41,28 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty scores" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-19-UiP">
                                 <rect key="frame" x="70" y="60" width="326.5" height="57.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326.5" id="qha-Ok-eCj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a perfect 10." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-Wi-9p1">
-                                <rect key="frame" x="70" y="112.5" width="284.5" height="57.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5RZ-jv-rne" secondAttribute="trailing" constant="45" id="2Uy-hJ-i7I"/>
                             <constraint firstItem="e9M-19-UiP" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" constant="40" id="HDh-1u-7Bl"/>
-                            <constraint firstItem="bDd-Wi-9p1" firstAttribute="top" secondItem="e9M-19-UiP" secondAttribute="bottom" constant="-5" id="Ita-cC-FrE"/>
                             <constraint firstItem="i6e-Tu-V06" firstAttribute="top" secondItem="5RZ-jv-rne" secondAttribute="bottom" id="MWu-nW-c9d"/>
                             <constraint firstItem="5RZ-jv-rne" firstAttribute="top" secondItem="t8n-mO-3Wv" secondAttribute="bottom" constant="150" id="VnK-Qr-5FH"/>
                             <constraint firstItem="5RZ-jv-rne" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leading" constant="45" id="duM-aM-hnH"/>
                             <constraint firstItem="e9M-19-UiP" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leadingMargin" constant="50" id="jOU-mN-MUF"/>
-                            <constraint firstItem="bDd-Wi-9p1" firstAttribute="leading" secondItem="C0e-Kh-jQb" secondAttribute="leadingMargin" constant="50" id="jk3-1Q-qL0"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="mPagingProductV" destination="5RZ-jv-rne" id="Rmh-C3-FI5"/>
+                        <outlet property="titleLabel" destination="e9M-19-UiP" id="g1H-VA-Lpk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqm-g4-xmo" userLabel="First Responder" sceneMemberID="firstResponder"/>

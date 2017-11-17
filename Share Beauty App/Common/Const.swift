@@ -80,7 +80,7 @@ struct Const {
     static let screenIdLXGraph = 7814
     static let screenIdLXConcept = 7815
     static let screenIdLXTool = 7816
-    
+    static let screenIdAboutShiseido = 7837
 
     static let itemIdBeautyTips = "503301"
 
@@ -128,7 +128,6 @@ struct Const {
     // 画像なし悩みID
     static let troubleIdNotImage = [15, 16, 17, 18]
 
-    
     static let productIdUtm = [359, 559, 560]
     static let productIdUtmEye = 28
     static let productIdIbuki = 495

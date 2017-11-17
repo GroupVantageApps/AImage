@@ -11,6 +11,8 @@ import AVFoundation
 
 class IconicViewController: UIViewController, NavigationControllerAnnotation, CollectionProductViewDelegate {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak fileprivate var mPagingProductV: PagingProductView!
     private let mScreen = ScreenData(screenId: Const.screenIdIconicBeauty)
     weak var delegate: NavigationControllerDelegate?
@@ -20,16 +22,12 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.theme = "ICONIC BEAUTY"// mScreen.name
+        self.theme = mScreen.name
     }
 
     override func viewDidLoad() {
         mPagingProductV.delegate = self
-
-//        let textImageId = AppItemTable.getMainImageByItemId(itemId: 7814)
-//        if let textImage = FileTable.getImage(textImageId.first) {
-//            mImgVText.image = textImage
-//        }
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7840)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +40,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
         super.viewDidLayoutSubviews()
         viewDidLayoutSubviewsOnce {
             self.view.layoutIfNeeded()
-            mPagingProductV.products = ProductListData.init(productIds: [359,28,553,545,470,423]).products
+            mPagingProductV.products = mProductList.products
         }
     }
 

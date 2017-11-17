@@ -13,7 +13,8 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
     @IBOutlet weak var mPagingProductV: PagingProductView!
     private let mScreen = ScreenData(screenId: Const.screenIdOnTrendBeauty)
     fileprivate var mProductList: ProductListData!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
     var isEnterWithNavigationView: Bool = true
@@ -22,10 +23,12 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.theme = "LATEST BEAUTY" // mScreen.name
+        self.theme = mScreen.name
     }
 
     override func viewDidLoad() {
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7839)
+        mPagingProductV.delegate = self
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
 
@@ -39,6 +42,7 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7839)
         viewDidLayoutSubviewsOnce {
             self.view.layoutIfNeeded()
             mPagingProductV.products = mProductList.products
@@ -64,7 +68,6 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
         productDetailVc.productId = productId
         productDetailVc.relationProducts = mProductList.products
         delegate?.nextVc(productDetailVc)
-
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId!)
     }
 }

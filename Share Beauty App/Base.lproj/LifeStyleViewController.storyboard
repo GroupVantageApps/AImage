@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,14 +30,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-GI-f3H">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty tailors solutions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty tailors solutions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
                                         <rect key="frame" x="50" y="40" width="538" height="58"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to your lifestyle." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGz-3n-gdW">
-                                        <rect key="frame" x="50" y="93" width="364" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="538" id="3vc-Hu-RaS"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -69,9 +66,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="5Et-Sd-cpK"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="75B-xU-00e"/>
-                                    <constraint firstItem="PGz-3n-gdW" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" constant="50" id="Kvu-Ot-gVg"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="top" secondItem="OWZ-GI-f3H" secondAttribute="top" id="Rgq-ng-PCP"/>
-                                    <constraint firstItem="PGz-3n-gdW" firstAttribute="top" secondItem="uQc-dF-cFB" secondAttribute="bottom" constant="-5" id="dBu-Rj-kKr"/>
                                     <constraint firstItem="6wJ-QY-g1s" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" id="ecR-87-3uP"/>
                                     <constraint firstAttribute="trailing" secondItem="6wJ-QY-g1s" secondAttribute="trailing" id="fLW-b3-w0h"/>
                                     <constraint firstItem="uQc-dF-cFB" firstAttribute="leading" secondItem="OWZ-GI-f3H" secondAttribute="leading" constant="50" id="jGt-mA-iYL"/>
@@ -112,6 +107,7 @@
                         <outlet property="mCollectionV" destination="lfX-pm-UKt" id="q8l-v7-Hbz"/>
                         <outlet property="mScrollV" destination="OWZ-GI-f3H" id="xZB-GR-vkX"/>
                         <outlet property="mVMain" destination="6wJ-QY-g1s" id="F8b-NX-nh8"/>
+                        <outlet property="titleLabel" destination="uQc-dF-cFB" id="hGZ-z5-Q2D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9h-W7-yMr" userLabel="First Responder" sceneMemberID="firstResponder"/>

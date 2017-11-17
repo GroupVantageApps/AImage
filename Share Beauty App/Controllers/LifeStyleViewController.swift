@@ -42,7 +42,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mCollectionV: UICollectionView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
     private var mLifeStyleProductViews = [LifeStyleProductView]()
     weak var lifeStyleViewDelegate: LifeStyleProductViewDelegate?
@@ -81,6 +82,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: "lifestyle13", x: CGFloat(1900), y: CGFloat(100), width: CGFloat(400), height: CGFloat(170)),
         (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),
         ]
+
+    private let labelItems = [
+        (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
+        (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
+        ]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -91,7 +101,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         super.viewDidLoad()
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
-        
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
 //        for (i, nextVc) in nextVcs {
 //            
 //            let image = UIImage(named:("lifestyle" + String(i+1)))
@@ -349,6 +359,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
         // 説明用画像をセット
         setInfoImage()
+        setLabels()
     }
     private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
         let transitionData = Utility.parseJson(strJson)
@@ -372,6 +383,23 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 imageView.image = image
             }
             mScrollV.addSubview(imageView)
+        }
+    }
+    private func setLabels() {
+        labelItems.enumerated().forEach { (arg: (offset: Int, element: (discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont?))) in
+            
+            let (i, element) = arg
+            let label = UILabel()
+            label.contentMode = .scaleAspectFit
+            label.numberOfLines = 0
+            label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
+            if let labelFont = element.font {
+                label.font = labelFont
+            }
+            if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
+                label.text = text
+            }
+            mScrollV.addSubview(label)
         }
     }
 }
