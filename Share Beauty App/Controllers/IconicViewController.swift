@@ -20,7 +20,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.theme = "ICONIC BEAUTY"// mScreen.name
+        self.theme = mScreen.name
     }
 
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
         super.viewDidLayoutSubviews()
         viewDidLayoutSubviewsOnce {
             self.view.layoutIfNeeded()
-            mPagingProductV.products = ProductListData.init(productIds: [359,28,553,545,470,423]).products
+            mPagingProductV.products = mProductList.products
         }
     }
 

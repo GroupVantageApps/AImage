@@ -26,6 +26,7 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
     }
 
     override func viewDidLoad() {
+        mPagingProductV.delegate = self
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
 
@@ -64,7 +65,6 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
         productDetailVc.productId = productId
         productDetailVc.relationProducts = mProductList.products
         delegate?.nextVc(productDetailVc)
-
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId!)
     }
 }
