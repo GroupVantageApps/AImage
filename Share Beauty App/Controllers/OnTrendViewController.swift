@@ -27,7 +27,6 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
     }
 
     override func viewDidLoad() {
-        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7839)
         mPagingProductV.delegate = self
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)

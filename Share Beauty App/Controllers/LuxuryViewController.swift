@@ -13,7 +13,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
-    private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     var lxArr = [String : String]()

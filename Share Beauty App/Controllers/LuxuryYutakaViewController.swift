@@ -18,7 +18,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
 
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
-    private static let outAppInfos = [Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoFoundation, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     var bgAudioPlayer: AVAudioPlayer!
     var yAudioPlayer: AVAudioPlayer!
     var mConceptView: LXYutakaConceptView!

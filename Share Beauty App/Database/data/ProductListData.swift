@@ -462,7 +462,10 @@ class ProductListData: NSObject {
                 let products = json["products"].arrayObject as? [Int] else {
                     return
             }
-            self.appendProductByArray(products)
+            print(json["products"])
+            print(products)
+            self.appendProductByArrayForonTrendBeauty(products)
+           // self.appendProductByArray(products)
         //Iconic Beauty
         } else if screenId == Const.screenIdIconicBeauty {
             let items: [String: String] = AppItemTable.getItems(screenId: Const.screenIdIconicBeauty)
@@ -474,6 +477,7 @@ class ProductListData: NSObject {
             print(json["products"])
             print(products)
             self.appendProductByArrayForIconicBeauty(products)
+            
         }
     }
 
@@ -590,6 +594,25 @@ class ProductListData: NSObject {
         })
         self.products += tempProducts
     }
+    //【LatestBeauty用】productIdの配列から、ProductData配列を作成する
+    func appendProductByArrayForonTrendBeauty(_ productIds: [Int]) {
+        var secondsProducts = [Int:[ProductData]]()
+        var i = 0
+        for productId in productIds {
+            let data: ProductData = ProductData(productId: productId)
+            secondsProducts[i] = [data]
+            i += 1
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        self.products += tempProducts
+    }
+
 }
 
 struct DataStructIdeal {
