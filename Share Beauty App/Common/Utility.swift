@@ -9,6 +9,7 @@
 import UIKit
 import SystemConfiguration
 import SwiftyJSON
+import APNGKit
 
 class Utility: NSObject {
 
@@ -297,5 +298,20 @@ class Utility: NSObject {
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
+    }
+    
+    @objc class func setAImageFromObjc(view:UIScrollView, rect:CGRect, id:Int, delayTime:Double) {
+        let image = FileTable.getAImage(id)
+        let iv = APNGImageView(image:image)
+        iv.frame = rect
+        view.addSubview(iv)
+        iv.startAnimating()
+//        GCDTimer.delay(delayTime, block: {_ in
+//            iv.startAnimating()
+//        })
+//        GCDTimer.delay(delayTime, queue: DispatchQueue.main, block: {_ in
+//            iv.startAnimating()
+//        })
+        
     }
 }

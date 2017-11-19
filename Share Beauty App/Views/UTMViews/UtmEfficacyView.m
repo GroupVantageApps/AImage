@@ -10,6 +10,7 @@
 #import "UIUtil.h"
 #import "StringUtils.h"
 #import "NSMutableAttributedString+Additions.h"
+#import "Share_Beauty_App-Swift.h"
 
 @implementation UtmEfficacyView
 
@@ -772,23 +773,20 @@
                              enter:YES];
 
         [scrollView setContentSize:CGSizeMake(self.bounds.size.width,550)];
-        
+        [scrollView setAlwaysBounceHorizontal:NO];
+        [scrollView setAlwaysBounceVertical:NO];
     } else if (_isEssentialEnergyMoisturizingCream) {
         isSerum = YES;
-        self.scrollView.backgroundColor = [UIColor clearColor];
+        [self showUtmImageByID:CGRectMake(0, 0, self.bounds.size.width, 513) image:6354];
+        
         self.viewForLastBaselineLayout.backgroundColor = [UIColor clearColor];
         self.backgroundColor = [UIColor clearColor];
         UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(50,10, self.scrollView.frame.size.width - 100,self.scrollView.frame.size.height - 20)];
         backgroundView.backgroundColor = [UIColor whiteColor];
         [self.scrollView addSubview:backgroundView];
-        CGSize titleLabel = [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[47]]
-                                            frame:CGRectMake(98 , 29, 400 , 24)
-                                         fontSize:23
-                                         tracking:0
-                                       lineHeight:0 red:NO bold:NO];
-        float x = 98 + titleLabel.width + 30;
+        float x = 80;
         // 説明文
-        NSString *str = @"The skin’s  appearance of dullness improved for a brighter, more glowing look.";
+        NSString *str = [AppItemTable getNameByItemIdWithItemId:7951];
         [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
                          frame:CGRectMake( x, 29, 800, 25)
                       fontSize:18
@@ -796,31 +794,41 @@
                     lineHeight:0 red:NO bold:NO];
         
         //After Left Image   410 × 560 >正寸467 × 558>233 × 279
-        [self showUtmImage:CGRectMake(188, 108, 233, 280) image:@"MoisturizingCream01_after"];
+        [self showUtmImage:CGRectMake(80, 70, 410, 330) image:@"MoisturizingCream02_after"];
         
         //Before Left Image
-        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(188, 108, 233, 280)];
-        UIImage *utm01image = [UIImage imageNamed:@"MoisturizingCream01_before"];
+        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(80, 70, 410, 330)];
+        UIImage *utm01image = [UIImage imageNamed:@"MoisturizingCream02_before"];
         self.utm01.image = utm01image;
         [scrollView addSubview:self.utm01];
         
         //Right Image
-        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 233, 280)];
-        UIImage *utm02image_bafter = [UIImage imageNamed:@"MoisturizingCream02_after"];
+        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
+        UIImage *utm02image_bafter = [UIImage imageNamed:@"MoisturizingCream01_after"];
         utm02_bafter.image = utm02image_bafter;
         [scrollView addSubview:utm02_bafter];
         
         //Before Right Image
-        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(640, 108, 233, 280)];
-        UIImage *utm02image = [UIImage imageNamed:@"MoisturizingCream02_before"];
+        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
+        UIImage *utm02image = [UIImage imageNamed:@"MoisturizingCream01_before"];
         self.utm02.image = utm02image;
         [scrollView addSubview:self.utm02];
         
         UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
         UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
         
+        //左 Before use   93 x 67
+        [self showUtmImage:CGRectMake(80, 420, 93/3, 67/3) image:@"Befor_use"];
+        //After 4 weeks of us 139 x 67
+        [self showUtmImage:CGRectMake(446, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        
+        //右 Before use
+        [self showUtmImage:CGRectMake(541, 420, 93/3, 67/3) image:@"Befor_use"];
+        //After 4 weeks of use
+        [self showUtmImage:CGRectMake(897, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        
         //Slider Left
-        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(105, 420, 359,30)];
+        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(80, 440, 410,45)];
         [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
         [slider_left setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_left setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
@@ -829,76 +837,109 @@
         [scrollView addSubview:slider_left];
         
         //Slider Right
-        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(557, 420, 359, 30)];
+        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(537, 440, 410, 45)];
         [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_MoisturizingCream"] forState:UIControlStateNormal];
         [slider_right setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_right setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
         slider_right.tag = 2;
         [slider_right addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
         [scrollView addSubview:slider_right];
+        double delay = 0.5;
+        [self showUtmAImage:CGRectMake(0, 513, self.bounds.size.width, 513) image:6364 delayTime:&delay];
+        delay = 3.5;
+        [self showUtmAImage:CGRectMake(0, 513*2, self.bounds.size.width, 513) image:6365 delayTime:&delay];
+        delay = 5.5;
+        [self showUtmAImage:CGRectMake(0, 513*3, self.bounds.size.width, 513) image:6366 delayTime:&delay];
         
-        //左
-        //Before use   93 x 67
-        [self showUtmImage:CGRectMake(109, 461, 93/3, 67/3) image:@"Befor_use"];
+        for (int i = 1; i < 4; i++) {
+            [self setLabel:CGRectMake(140, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+            [self setLabel:CGRectMake(140, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7953] size:36];
+            [self setLabel:CGRectMake(770, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
+            [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+230, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7959] size:13];
+        }
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7956] size:40];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*2+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7957] size:40];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*3+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7958] size:40];
+        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*4)];
         
-        //After 4 weeks of us 139 x 67
-        [self showUtmImage:CGRectMake(445, 461, 139/3, 67/3) image:@"After_4_weeks"];
+    } else if (_isEssentialEnergyMoisturizingGelCream) {
+        isSerum = YES;
+        double delay = 0.5;
+        [self showUtmAImage:CGRectMake(0, 0, self.bounds.size.width, 513) image:6367 delayTime:&delay];
+        delay = 3.5;
+        [self showUtmAImage:CGRectMake(0, 513, self.bounds.size.width, 513) image:6368 delayTime:&delay];
+        delay = 5.5;
+        [self showUtmAImage:CGRectMake(0, 513*2, self.bounds.size.width, 513) image:6369 delayTime:&delay];
         
-        //右
-        //Before use
-        [self showUtmImage:CGRectMake(561, 461, 93/3, 67/3) image:@"Befor_use"];
-        
-        //After 4 weeks of use
-        [self showUtmImage:CGRectMake(908, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        for (int i = 0; i < 3; i++) {
+            [self setLabel:CGRectMake(140, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+            [self setLabel:CGRectMake(140, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7953] size:36];
+            [self setLabel:CGRectMake(770, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
+            [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+230, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7962] size:13];
+        }
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7960] size:40];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*2+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7957] size:40];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*3+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7961] size:40];
+        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*3)];
         
     } else if (_isEssentialEnergyDayCream) {
         isSerum = YES;
+        [self showUtmImageByID:CGRectMake(0, 0, self.bounds.size.width, 513) image:6354];
+
         self.scrollView.backgroundColor = [UIColor clearColor];
         self.viewForLastBaselineLayout.backgroundColor = [UIColor clearColor];
         self.backgroundColor = [UIColor clearColor];
         UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(50,10, self.scrollView.frame.size.width - 100,self.scrollView.frame.size.height - 20)];
         backgroundView.backgroundColor = [UIColor whiteColor];
         [self.scrollView addSubview:backgroundView];
-        CGSize titleLabel = [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[47]]
-                                            frame:CGRectMake(98 , 29, 400 , 24)
-                                         fontSize:23
-                                         tracking:0
-                                       lineHeight:0 red:NO bold:NO];
-        float x = 98 + titleLabel.width + 30;
+        float x = 80;
         // 説明文
-        NSString *str = @"The skin’s  appearance of dullness improved for a brighter, more glowing look.";
+        // 説明文
+        NSString *str = [AppItemTable getNameByItemIdWithItemId:7963];
         [self showUtmLabelText:[NSString stringWithFormat:@"%@",str]
                          frame:CGRectMake( x, 29, 800, 25)
                       fontSize:18
                       tracking:0
                     lineHeight:0 red:NO bold:NO];
         
-        //After Left Image   754 × 555
-        [self showUtmImage:CGRectMake(98, 108, 754/2, 555/2) image:@"DayCream01_after"];
+        //After Left Image   410 × 560 >正寸467 × 558>233 × 279
+        [self showUtmImage:CGRectMake(80, 70, 410, 330) image:@"DayCream02_after"];
         
         //Before Left Image
-        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(98, 108, 754/2, 555/2)];
-        UIImage *utm01image = [UIImage imageNamed:@"DayCream01_before"];
+        self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(80, 70, 410, 330)];
+        UIImage *utm01image = [UIImage imageNamed:@"DayCream02_before"];
         self.utm01.image = utm01image;
         [scrollView addSubview:self.utm01];
         
         //Right Image
-        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(550, 108, 754/2, 555/2)];
-        UIImage *utm02image_bafter = [UIImage imageNamed:@"DayCream02_after"];
+        UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
+        UIImage *utm02image_bafter = [UIImage imageNamed:@"DayCream01_after"];
         utm02_bafter.image = utm02image_bafter;
         [scrollView addSubview:utm02_bafter];
         
         //Before Right Image
-        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(550, 108, 754/2, 555/2)];
-        UIImage *utm02image = [UIImage imageNamed:@"DayCream02_before"];
+        self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
+        UIImage *utm02image = [UIImage imageNamed:@"DayCream01_before"];
         self.utm02.image = utm02image;
         [scrollView addSubview:self.utm02];
         
         UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
         UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
         
+        //左 Before use   93 x 67
+        [self showUtmImage:CGRectMake(80, 420, 93/3, 67/3) image:@"Befor_use"];
+        //After 4 weeks of us 139 x 67
+        [self showUtmImage:CGRectMake(446, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        
+        //右 Before use
+        [self showUtmImage:CGRectMake(541, 420, 93/3, 67/3) image:@"Befor_use"];
+        //After 4 weeks of use
+        [self showUtmImage:CGRectMake(897, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        
         //Slider Left
-        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(105, 420, 359,30)];
+        UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(80, 440, 410,45)];
         [slider_left setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_Emulsion"] forState:UIControlStateNormal];
         [slider_left setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_left setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
@@ -907,7 +948,7 @@
         [scrollView addSubview:slider_left];
         
         //Slider Right
-        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(557, 420, 359, 30)];
+        UISlider * slider_right = [[UISlider alloc]initWithFrame:CGRectMake(537, 440, 410, 45)];
         [slider_right setThumbImage: [UIImage imageNamed:@"efficacy_slider_circle_Emulsion"] forState:UIControlStateNormal];
         [slider_right setMinimumTrackImage:imgMinimum forState:UIControlStateNormal];
         [slider_right setMaximumTrackImage:imgMaximum forState:UIControlStateNormal];
@@ -915,20 +956,33 @@
         [slider_right addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
         [scrollView addSubview:slider_right];
         
-        //左
-        //Before use   93 x 67
-        [self showUtmImage:CGRectMake(109, 461, 93/3, 67/3) image:@"Befor_use"];
+        double delay = 0.5;
+        [self showUtmAImage:CGRectMake(0, 513, self.bounds.size.width, 513) image:6370 delayTime:&delay];
+        delay = 3.5;
+        [self showUtmAImage:CGRectMake(0, 513*2, self.bounds.size.width, 513) image:6371 delayTime:&delay];
         
-        //After 4 weeks of us 139 x 67
-        [self showUtmImage:CGRectMake(445, 461, 139/3, 67/3) image:@"After_4_weeks"];
         
-        //右
-        //Before use
-        [self showUtmImage:CGRectMake(561, 461, 93/3, 67/3) image:@"Befor_use"];
+        [self setLabel:CGRectMake(75, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(75+335, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(75+670, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(120, 513+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+        [self setLabel:CGRectMake(120, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(450, 513+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+        [self setLabel:CGRectMake(450, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(740, 513+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+        [self setLabel:CGRectMake(765, 513+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
         
-        //After 4 weeks of use
-        [self showUtmImage:CGRectMake(908, 461, 139/3, 67/3) image:@"After_4_weeks"];
+        [self setLabel:CGRectMake(215, 513*2+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(600, 513*2+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(250, 513*2+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+        [self setLabel:CGRectMake(250, 513*2+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(650, 513*2+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+        [self setLabel:CGRectMake(650, 513*2+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
         
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513+390, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7965] size:13];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*2+390, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7966] size:13];
+        
+        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*3)];
     }
 }
 
@@ -939,6 +993,45 @@
     UIImage *image = [UIImage imageNamed:name];
     imageUtmView.image = image;
     [scrollView addSubview:imageUtmView];
+}
+-(void)showUtmImageByID:(CGRect)frame
+                  image:(NSInteger *)ID{
+    
+    UIImageView *imageUtmView = [[UIImageView alloc]initWithFrame:frame];
+    NSURL *path = [FileTable getPath:ID];
+    NSData *data = [NSData dataWithContentsOfURL:path];
+    imageUtmView.image = [UIImage imageWithData:data];
+    [scrollView addSubview:imageUtmView];
+}
+-(void)showUtmAImage:(CGRect)frame
+              image:(NSInteger *)ID
+          delayTime:(double *)time{
+    
+    [Utility setAImageFromObjcWithView:scrollView rect:frame id:ID delayTime:*time];
+}
+
+-(void)setLabel:(CGRect)frame
+           text:(NSString *)text
+           size:(NSInteger)point{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.text = text;
+    [label setFont:[UIFont systemFontOfSize:point weight:UIFontWeightBold]];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.numberOfLines = 0;
+    [scrollView addSubview:label];
+}
+-(void)setLabelSmall:(CGRect)frame
+           text:(NSString *)text{
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    label.text = text;
+    [label setFont:[UIFont systemFontOfSize:14 weight:UIFontWeightBold]];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor whiteColor];
+    label.numberOfLines = 0;
+    [scrollView addSubview:label];
 }
 
 
