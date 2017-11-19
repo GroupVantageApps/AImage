@@ -210,14 +210,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
         // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
-        if LanguageConfigure.languageId == 19 {
-            if productId == 553 || productId == 556 || productId == 554 {
+       // if LanguageConfigure.languageId == 19 {
+            if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
                 self.mIsEE = true
                 mCategoryButtonEfficacy.enabled = true
-            } else if productId == 554 || productId == 555 {
+            } else if productId == 1 || productId == 2 {
                 mCategoryButtonEfficacy.enabled = false
             }
-        }
+     //   }
         // HowToUseがからの時はViewを非表示
         if product.howToUse == "" {
             mVHowToUse.isHidden = true
@@ -658,6 +658,18 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 utmEfficacyView?.isEssentialEnergyMoisturizingGelCream = true
+                utmEfficacyView?.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            
+            } else if productId == 555 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isEssentialEnergyDayCX = true
                 utmEfficacyView?.backgroundColor = UIColor.clear
                 mVContent.backgroundColor = UIColor.clear
                 mVContent.addSubview(utmEfficacyView!)

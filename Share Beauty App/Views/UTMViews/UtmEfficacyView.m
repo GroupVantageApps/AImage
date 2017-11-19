@@ -854,7 +854,7 @@
         for (int i = 1; i < 4; i++) {
             [self setLabel:CGRectMake(140, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
             [self setLabel:CGRectMake(140, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
-            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7953] size:36];
+            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];//7953>7952
             [self setLabel:CGRectMake(770, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
             [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+230, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7959] size:13];
         }
@@ -863,7 +863,25 @@
         [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*3+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7958] size:40];
         [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*4)];
         
-    } else if (_isEssentialEnergyMoisturizingGelCream) {
+    }
+    else if (_isEssentialEnergyDayCX) {
+        isSerum = YES;
+        double delay = 0.5;
+        [self showUtmAImage:CGRectMake(0, 0, self.bounds.size.width, 513) image:6371 delayTime:&delay];
+       
+        for (int i = 0; i < 3; i++) {
+            [self setLabel:CGRectMake(250, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
+            [self setLabel:CGRectMake(250, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
+            [self setLabel:CGRectMake(600, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];//7953>7952 t-hirai
+            [self setLabel:CGRectMake(600, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
+            [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+400, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7966] size:13];
+        }
+        [self setLabel:CGRectMake(140, 35, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7956] size:15]; // t-hirai
+        [self setLabel:CGRectMake(530, 35, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7956] size:15]; // t-hirai
+        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*3)];
+        
+    }
+    else if (_isEssentialEnergyMoisturizingGelCream) {
         isSerum = YES;
         double delay = 0.5;
         [self showUtmAImage:CGRectMake(0, 0, self.bounds.size.width, 513) image:6367 delayTime:&delay];
@@ -875,16 +893,18 @@
         for (int i = 0; i < 3; i++) {
             [self setLabel:CGRectMake(140, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
             [self setLabel:CGRectMake(140, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
-            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7953] size:36];
+            [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];//7953>7952 t-hirai
             [self setLabel:CGRectMake(770, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
             [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+230, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7962] size:13];
         }
-        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7960] size:40];
-        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*2+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7957] size:40];
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7960] size:40]; // t-hirai
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7957] size:40]; // t-hirai
+        [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*2+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7961] size:40];
         [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513*3+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7961] size:40];
         [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*3)];
         
-    } else if (_isEssentialEnergyDayCream) {
+    }
+    else if (_isEssentialEnergyDayCream) {
         isSerum = YES;
         [self showUtmImageByID:CGRectMake(0, 0, self.bounds.size.width, 513) image:6354];
 
@@ -958,31 +978,24 @@
         
         double delay = 0.5;
         [self showUtmAImage:CGRectMake(0, 513, self.bounds.size.width, 513) image:6370 delayTime:&delay];
-        delay = 3.5;
-        [self showUtmAImage:CGRectMake(0, 513*2, self.bounds.size.width, 513) image:6371 delayTime:&delay];
+       // delay = 3.5;
+       // [self showUtmAImage:CGRectMake(0, 513*2, self.bounds.size.width, 513) image:6371 delayTime:&delay];
         
         
-        [self setLabel:CGRectMake(75, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
-        [self setLabel:CGRectMake(75+335, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
-        [self setLabel:CGRectMake(75+670, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
+        [self setLabel:CGRectMake(75, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7956] size:18];
+        [self setLabel:CGRectMake(75+335, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7956] size:18];
+        [self setLabel:CGRectMake(75+670, 513+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7956] size:18];
         [self setLabel:CGRectMake(120, 513+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
-        [self setLabel:CGRectMake(120, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(120, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
         [self setLabel:CGRectMake(450, 513+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
-        [self setLabel:CGRectMake(450, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(450, 513+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
         [self setLabel:CGRectMake(740, 513+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
-        [self setLabel:CGRectMake(765, 513+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
-        
-        [self setLabel:CGRectMake(215, 513*2+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
-        [self setLabel:CGRectMake(600, 513*2+50, 210, 50) text:[AppItemTable getNameByItemIdWithItemId:7965] size:18];
-        [self setLabel:CGRectMake(250, 513*2+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
-        [self setLabel:CGRectMake(250, 513*2+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
-        [self setLabel:CGRectMake(650, 513*2+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
-        [self setLabel:CGRectMake(650, 513*2+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
+        [self setLabel:CGRectMake(765, 513+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
         
         [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513+390, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7965] size:13];
         [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*2+390, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7966] size:13];
         
-        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*3)];
+        [self.scrollView setContentSize:CGSizeMake(self.bounds.size.width, 513*2)];
     }
 }
 
