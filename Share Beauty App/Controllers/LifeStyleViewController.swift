@@ -73,7 +73,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
     
-    private let productList = ProductListData(productIds: [553,554,101,455,470,500,551,545,549,498])
+    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
+    private let productList = ProductListData()
+    
     private let imageItemIds = [
         (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
         (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
@@ -89,8 +91,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
+<<<<<<< HEAD
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),t-hirai　FDの文言
+=======
+        (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+>>>>>>> feature-4875-lifeStyle
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
         ]
@@ -333,6 +339,25 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     func setScrollView() {
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
         self.mLifeStyleProductViews.removeAll()
+        var secondsProducts = [Int:[ProductData]]()
+        var i = 0
+        for productId in productIds {
+            let data: ProductData = ProductData(productId: productId)
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                let data: ProductData = ProductData(productId: productId)
+                secondsProducts[i] = [data]
+                i += 1
+            }
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        self.productList.products = tempProducts
+        
         for _ in 0..<productList.products.count {
             self.mLifeStyleProductViews.append(LifeStyleProductView())
         }
@@ -359,7 +384,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             contentWidth += viewWidth
         }
         mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
-        
+        contentWidth = 0
         // 説明用画像をセット
         setInfoImage()
         setLabels()
