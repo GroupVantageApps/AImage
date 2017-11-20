@@ -16,7 +16,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             productDetailVc.productId = product!.productId
             productDetailVc.relationProducts = productList.products
             delegate?.nextVc(productDetailVc)
-//        }
+    }
         
         LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
     }
@@ -79,7 +79,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let imageItemIds = [
         (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
         (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
-<<<<<<< HEAD
+
         (discription: "lifestyle11", x: CGFloat(950), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
         //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
         (discription: "lifestyle12", x: CGFloat(1000), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),
@@ -87,7 +87,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
         (discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
         (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)),
->>>>>>> feature-4875-LifeStyleBeauty
+
         (discription: "lifestyle13", x: CGFloat(1900), y: CGFloat(100), width: CGFloat(400), height: CGFloat(170)),
         (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),
         ]
@@ -95,24 +95,23 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let labelItems = [
         (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-<<<<<<< HEAD
+
         (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
-=======
+
         (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(255), font:UIFont(name: "Reader-Bold", size: 12)),
->>>>>>> feature-4875-LifeStyleBeauty
+
         (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
         ]
-<<<<<<< HEAD
-=======
+
     private let countryFontScale = [
         (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
         (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
         (country: 3, language: 18, scale: CGFloat(0.85)),   // Brazil
          ]
->>>>>>> feature-4875-LifeStyleBeauty
+
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -124,11 +123,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
         titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
-<<<<<<< HEAD
-=======
-        resizeFont(label: titleLabel)
+
+       resizeFont(label: titleLabel)
         
->>>>>>> feature-4875-LifeStyleBeauty
+//>>>>>>> feature-4875-LifeStyleBeauty
 //        for (i, nextVc) in nextVcs {
 //            
 //            let image = UIImage(named:("lifestyle" + String(i+1)))
@@ -445,11 +443,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
             }
-<<<<<<< HEAD
+//<<<<<<< HEAD
             mScrollV.addSubview(label)
         }
     }
-=======
+//=======
+
             resizeFont(label: label)
             mScrollV.addSubview(label)
         }
@@ -461,6 +460,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             label.font = label.font.withSize(label.font.pointSize * arg.element.scale)
         }
         return label
-    }
->>>>>>> feature-4875-LifeStyleBeauty
+    } 
+//>>>>>>> feature-4875-LifeStyleBeauty
 }
