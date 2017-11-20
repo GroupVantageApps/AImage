@@ -800,32 +800,35 @@
         self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(80, 70, 410, 330)];
         UIImage *utm01image = [UIImage imageNamed:@"MoisturizingCream02_before"];
         self.utm01.image = utm01image;
+        self.utm01.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:self.utm01];
         
         //Right Image
         UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
         UIImage *utm02image_bafter = [UIImage imageNamed:@"MoisturizingCream01_after"];
         utm02_bafter.image = utm02image_bafter;
+        utm02_bafter.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:utm02_bafter];
         
         //Before Right Image
         self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
         UIImage *utm02image = [UIImage imageNamed:@"MoisturizingCream01_before"];
         self.utm02.image = utm02image;
+        self.utm02.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:self.utm02];
         
         UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
         UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
         
         //左 Before use   93 x 67
-        [self showUtmImage:CGRectMake(80, 420, 93/3, 67/3) image:@"Befor_use"];
+        [self showUtmImage:CGRectMake(80, 410, 93/3, 67/3) image:@"Befor_use"];
         //After 4 weeks of us 139 x 67
-        [self showUtmImage:CGRectMake(446, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        [self showUtmImage:CGRectMake(446, 410, 139/3, 67/3) image:@"After_4_weeks"];
         
         //右 Before use
-        [self showUtmImage:CGRectMake(541, 420, 93/3, 67/3) image:@"Befor_use"];
+        [self showUtmImage:CGRectMake(541, 410, 93/3, 67/3) image:@"Befor_use"];
         //After 4 weeks of use
-        [self showUtmImage:CGRectMake(897, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        [self showUtmImage:CGRectMake(897, 410, 139/3, 67/3) image:@"After_4_weeks"];
         
         //Slider Left
         UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(80, 440, 410,45)];
@@ -931,32 +934,35 @@
         self.utm01 = [[UIImageView alloc]initWithFrame:CGRectMake(80, 70, 410, 330)];
         UIImage *utm01image = [UIImage imageNamed:@"DayCream02_before"];
         self.utm01.image = utm01image;
+        self.utm01.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:self.utm01];
         
         //Right Image
         UIImageView *utm02_bafter = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
         UIImage *utm02image_bafter = [UIImage imageNamed:@"DayCream01_after"];
         utm02_bafter.image = utm02image_bafter;
+        self.utm02.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:utm02_bafter];
         
         //Before Right Image
         self.utm02 = [[UIImageView alloc]initWithFrame:CGRectMake(541, 70, 410, 330)];
         UIImage *utm02image = [UIImage imageNamed:@"DayCream01_before"];
         self.utm02.image = utm02image;
+        self.utm02.contentMode = UIViewContentModeScaleAspectFit;
         [scrollView addSubview:self.utm02];
         
         UIImage *imgMinimum = [UIImage imageNamed:@"efficacy_slider_full"];
         UIImage *imgMaximum = [UIImage imageNamed:@"efficacy_slider_empty"];
         
         //左 Before use   93 x 67
-        [self showUtmImage:CGRectMake(80, 420, 93/3, 67/3) image:@"Befor_use"];
+        [self showUtmImage:CGRectMake(80, 410, 93/3, 67/3) image:@"Befor_use"];
         //After 4 weeks of us 139 x 67
-        [self showUtmImage:CGRectMake(446, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        [self showUtmImage:CGRectMake(446, 410, 139/3, 67/3) image:@"After_4_weeks"];
         
         //右 Before use
-        [self showUtmImage:CGRectMake(541, 420, 93/3, 67/3) image:@"Befor_use"];
+        [self showUtmImage:CGRectMake(541, 410, 93/3, 67/3) image:@"Befor_use"];
         //After 4 weeks of use
-        [self showUtmImage:CGRectMake(897, 420, 139/3, 67/3) image:@"After_4_weeks"];
+        [self showUtmImage:CGRectMake(897, 410, 139/3, 67/3) image:@"After_4_weeks"];
         
         //Slider Left
         UISlider * slider_left = [[UISlider alloc]initWithFrame:CGRectMake(80, 440, 410,45)];
@@ -1005,6 +1011,7 @@
     UIImageView *imageUtmView = [[UIImageView alloc]initWithFrame:frame];
     UIImage *image = [UIImage imageNamed:name];
     imageUtmView.image = image;
+    imageUtmView.contentMode = UIViewContentModeScaleAspectFit;
     [scrollView addSubview:imageUtmView];
 }
 -(void)showUtmImageByID:(CGRect)frame
