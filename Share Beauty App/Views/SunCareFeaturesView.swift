@@ -102,6 +102,7 @@ class SunCareFeaturesView: BaseView {
             print(gscArr)
             mVBalloon2.isHidden = false
             mVBalloon3.isHidden = true
+            mButtonBalloon2.isHidden = true
             self.applyAttrText(
                 mSSArr[12],
                 fontSize: 18,
@@ -109,8 +110,9 @@ class SunCareFeaturesView: BaseView {
                 lineHeight: 0,
                 lbl: mLblBalloon1
             )
+            
             self.applyAttrText(
-                gscArr["21"] ?? "not seted GSC csv No.21",
+                AppItemTranslateTable.getEntity(7967).name,
                 fontSize: 18,
                 tracking: 0,
                 lineHeight: 0,
