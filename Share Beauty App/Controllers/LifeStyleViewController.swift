@@ -91,12 +91,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
-<<<<<<< HEAD
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
-        //(discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),t-hirai　FDの文言
-=======
         (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
->>>>>>> feature-4875-lifeStyle
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
         ]
