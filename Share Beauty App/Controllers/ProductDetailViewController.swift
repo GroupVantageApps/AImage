@@ -210,14 +210,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
         // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
-        if LanguageConfigure.languageId == 19 {
-            if productId == 553 || productId == 556 {
+       // if LanguageConfigure.languageId == 19 {
+            if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
                 self.mIsEE = true
                 mCategoryButtonEfficacy.enabled = true
-            } else if productId == 554 || productId == 555 {
+            } else if productId == 1 || productId == 2 {
                 mCategoryButtonEfficacy.enabled = false
             }
-        }
+     //   }
         // HowToUseがからの時はViewを非表示
         if product.howToUse == "" {
             mVHowToUse.isHidden = true
@@ -651,33 +651,44 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 utmEfficacyView?.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
                 
-                // 背景設定
-                mImgVBackImage.image = UIImage(named: "")
-                var image = UIImage(named: "EEBackGround.png")
-                image?.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height))
-                image = UIGraphicsGetImageFromCurrentImageContext()!
-                self.view.backgroundColor = UIColor(patternImage: image!)
-            } else if productId == 556 {
+                
+            } else if productId == 554 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView?.isEssentialEnergyDayCream = true
+                utmEfficacyView?.isEssentialEnergyMoisturizingGelCream = true
+                utmEfficacyView?.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            
+            } else if productId == 555 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isEssentialEnergyDayCX = true
                 utmEfficacyView?.backgroundColor = UIColor.clear
                 mVContent.backgroundColor = UIColor.clear
                 mVContent.addSubview(utmEfficacyView!)
                 utmEfficacyView?.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
                 
-                // 背景設定
-                for view in self.view.subviews {
-                    view.backgroundColor = UIColor.clear
-                }
-                for view in self.mVMain.subviews {
-                    view.backgroundColor = UIColor.clear
-                }
-                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
-                self.view.backgroundColor = UIColor(patternImage: UIImage(named: "EEBackGround.png")!)
+                
+            } else if productId == 556 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isEssentialEnergyDayCream = true
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+                
+                
             }
             else {
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))

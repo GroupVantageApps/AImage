@@ -14,29 +14,27 @@ protocol LifeStyleProductViewDelegate: NSObjectProtocol {
 
 class LifeStyleProductView: BaseView {
     @IBOutlet weak private var mLblNumber: UILabel!
-    @IBOutlet weak private var mLblExplain: UILabel!
-    @IBOutlet weak private var mLblText: UILabel!
-    @IBOutlet weak private var mLblBeauty: UILabel!
     @IBOutlet weak private var mLblLine: UILabel!
     @IBOutlet weak private var mLblProduct: UILabel!
-    @IBOutlet weak private var mVWhy: UIView!
-    @IBOutlet weak private var mVExplain: UIView!
-    @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mBtnProduct: BaseButton!
     @IBOutlet weak private var mBtnRecommend: BaseButton!
-    @IBOutlet weak private var mLblWhy: UILabel!
-    @IBOutlet weak private var mBtnWhy: BaseButton!
-    @IBOutlet weak private var mLblHeader: UILabel!
-	@IBOutlet weak var mBackImageView: UIImageView!
-
-    @IBOutlet weak private var mAnswerViewTopToTop: NSLayoutConstraint!
-    @IBOutlet weak private var mAnswerViewTopToBottom: NSLayoutConstraint!
-    @IBOutlet weak private var mContentViewTopToBottom: NSLayoutConstraint!
-    @IBOutlet weak private var mThumbnailViewBottom: NSLayoutConstraint!
-
+    @IBOutlet weak var discriptionLabel: UILabel!
+    
     weak var delegate: LifeStyleProductViewDelegate?
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
 	
+    let discroptionList = [
+        553:7932,
+        554:7940,
+        101:0,
+        455:0,
+        470:7938,
+        500:7939,
+        551:7940,
+        545:7945,
+        549:7946,
+        498:7947,
+    ]
 	// カスタムスタイルの定義。従来のスタイルはnormal
 	// スタイルの変更はproductプロパティに値を設定する前に行う
 	enum eStyle: Int {
@@ -53,32 +51,36 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var headerText: String? {
         didSet {
-            mLblHeader.text = headerText
+//            mLblHeader.text = headerText
+            print("headerText")
+            print(headerText)
         }
     }
 
     @IBInspectable var answerText: String? {
         didSet {
-            mLblText.text = answerText
+            print("answerText")
+            print(answerText)
         }
     }
 
     @IBInspectable var explainText: String? {
         didSet {
-            mLblExplain.text = explainText
+            print("explainText")
+            print(explainText)
         }
     }
 
     @IBInspectable var whyText: String? {
         didSet {
-            mLblWhy.text = whyText
-            //mBtnWhy.setTitle(whyText, for: UIControlState()) //ボタン切ってみた
+            print("wwwwhy")
+            print(whyText)
         }
     }
 
     @IBInspectable var beautyName: String? {
         didSet {
-            mLblBeauty.text = beautyName
+            // ちがう
         }
     }
 
@@ -102,14 +104,13 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var isShowAnswerView: Bool = false {
         didSet {
-            mVWhy.isHidden = !isShowAnswerView
-            mVExplain.isHidden = isShowAnswerView
+            
         }
     }
 
     @IBInspectable var isShowContentView: Bool = true {
         didSet {
-            showContentView()
+            
         }
     }
 
@@ -143,6 +144,8 @@ class LifeStyleProductView: BaseView {
         didSet {
             print("tintColor: " + (self.mBtnProduct.imageView?.tintColor.description)!)
             self.beautyName = product?.beautyName
+            self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
+            
             self.lineName = product?.lineName
             self.productName = product?.productName
             self.imgProduct = FileTable.getImage(product?.image)
@@ -160,56 +163,20 @@ class LifeStyleProductView: BaseView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         mBtnProduct.imageView?.contentMode = UIViewContentMode.scaleAspectFit
-		
-		let imageId = AppItemTranslateTable.getEntity(7920).mainImage.first
-		self.mBackImageView.image = FileTable.getImage(imageId)
     }
 
     override func updateConstraints() {
         print("updateConstraints")
-        print("mContentViewTopToBottom.active", mContentViewTopToBottom.isActive)
-        print("mThumbnailViewBottom.active", mThumbnailViewBottom.isActive)
         super.updateConstraints()
         print("super.updateConstraints")
-        print("mContentViewTopToBottom.active", mContentViewTopToBottom.isActive)
-        print("mThumbnailViewBottom.active", mThumbnailViewBottom.isActive)
     }
 
     override func layoutSubviews() {
         print("layoutSubviews")
-        print("mContentViewTopToBottom.active", mContentViewTopToBottom.isActive)
-        print("mThumbnailViewBottom.active", mThumbnailViewBottom.isActive)
         super.layoutSubviews()
-        print("super.layoutSubviews")
-        print("mContentViewTopToBottom.active", mContentViewTopToBottom.isActive)
-        print("mThumbnailViewBottom.active", mThumbnailViewBottom.isActive)
-        showContentView()
-    }
-
-    private func showContentView() {
-        mVContent.isHidden = !isShowContentView
-        if isShowContentView {
-            print("showContentView")
-            mThumbnailViewBottom.isActive = false
-            mContentViewTopToBottom.isActive = true
-        } else {
-            print("hideContentView")
-            mContentViewTopToBottom.isActive = false
-            mThumbnailViewBottom.isActive = true
-            print("mContentViewTopToBottom.active", mContentViewTopToBottom.isActive)
-            print("mThumbnailViewBottom.active", mThumbnailViewBottom.isActive)
-        }
     }
 
     func showAnswerView(_ show: Bool) {
-        if show {
-            mAnswerViewTopToBottom.isActive = false
-            mAnswerViewTopToTop.isActive = true
-        } else {
-            mAnswerViewTopToTop.isActive = false
-            mAnswerViewTopToBottom.isActive = true
-        }
-
         UIView.animateIgnoreInteraction(
             duration: 0.3,
             animations: {

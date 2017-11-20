@@ -25,5 +25,7 @@
 @property(nonatomic)BOOL isUtm;
 @property(nonatomic)BOOL isUtmEye;
 @property(nonatomic)BOOL isEssentialEnergyMoisturizingCream;
+@property(nonatomic)BOOL isEssentialEnergyMoisturizingGelCream;
+@property(nonatomic)BOOL isEssentialEnergyDayCX;
 @property(nonatomic)BOOL isEssentialEnergyDayCream;
 @end

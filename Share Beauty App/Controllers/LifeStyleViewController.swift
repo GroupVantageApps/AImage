@@ -9,7 +9,18 @@
 import UIKit
 import AVFoundation
 
-class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate {
+
+class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate, LifeStyleProductViewDelegate {
+    func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
+            let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+            productDetailVc.productId = product!.productId
+            productDetailVc.relationProducts = productList.products
+            delegate?.nextVc(productDetailVc)
+//        }
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
+    }
+    
 
     struct LifeStyle {
         private(set) var image: UIImage
@@ -31,12 +42,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mCollectionV: UICollectionView!
     @IBOutlet weak private var mScrollV: UIScrollView!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
+    private var mLifeStyleProductViews = [LifeStyleProductView]()
+    weak var lifeStyleViewDelegate: LifeStyleProductViewDelegate?
+    var items: [String: String]!
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
-    var isEnterWithNavigationView: Bool = false
+    var isEnterWithNavigationView: Bool = true
 
     var focusScreenIds: [Int]?
     var isShowVideo: Bool = true
@@ -57,7 +72,31 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         2:LifeStyleThirdDetailViewController.self,
         3:LifeStyleFourthDetailViewController.self,
         ]
+    
+    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
+    private let productList = ProductListData()
+    
+    private let imageItemIds = [
+        (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
+        (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
+        (discription: "lifestyle11", x: CGFloat(950), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
+        //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
+        (discription: "lifestyle12", x: CGFloat(1000), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),
+        // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
+        (discription: "lifestyle13", x: CGFloat(1900), y: CGFloat(100), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),
+        ]
 
+    private let labelItems = [
+        (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
+        (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
+        ]
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.theme = mScreen.name
@@ -67,22 +106,22 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         super.viewDidLoad()
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
-        
-        for (i, nextVc) in nextVcs {
-            
-            let image = UIImage(named:("lifestyle" + String(i+1)))
-            let key = "0" + String(i+1)
-            
-            var text: String = items[key]!
-            text = text.replacingOccurrences(of: "\n", with: "<br>")
-            var isFocus = false
-            if focusScreenIds != nil && self.getLifeStyleIndexes(screenIds: focusScreenIds!).contains(i) {
-                    isFocus = true
-            }
-
-            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
-            mLifeStyles.append(lifestyle)
-        }
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
+//        for (i, nextVc) in nextVcs {
+//            
+//            let image = UIImage(named:("lifestyle" + String(i+1)))
+//            let key = "0" + String(i+1)
+//            
+//            var text: String = items[key]!
+//            text = text.replacingOccurrences(of: "\n", with: "<br>")
+//            var isFocus = false
+//            if focusScreenIds != nil && self.getLifeStyleIndexes(screenIds: focusScreenIds!).contains(i) {
+//                    isFocus = true
+//            }
+//
+//            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
+//            mLifeStyles.append(lifestyle)
+//        }
         mCollectionV.register(UINib(nibName: "LifeStyleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionV.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionV.allowsSelection = false
@@ -100,10 +139,17 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             mAVPlayerV.removeFromSuperview()
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setScrollView()
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !mFinishedAppear && isShowVideo {
+//        if !mFinishedAppear && isShowVideo {
+        self.didFinishPlaying()
+        if false {
             self.createVideo()
             delegate?.showVideoSkipButtonWithDuration(0.3, didTapFunction: {
                 self.didFinishPlaying()
@@ -171,17 +217,17 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mVMain.alpha = 0
         mAVPlayerV.removeFromSuperview()
         self.removeVideo()
-        delegate?.showNavigationView(0.3)
+//        delegate?.showNavigationView(0.3)
         delegate?.hideVideoSkipButtonWithDuration(0.3)
-        UIView.animateIgnoreInteraction(
-            duration: 0.3,
-            delay: 0,
-            animations: { [unowned self] in
-                self.mVMain.alpha = 1
-            },
-            completion: { finished in
-
-        })
+//        UIView.animateIgnoreInteraction(
+//            duration: 0,
+//            delay: 0,
+//            animations: { [unowned self] in
+//                self.mVMain.alpha = 1
+//            },
+//            completion: { finished in
+//
+//        })
     }
 
     // MARK: - CollectionViewDelegate
@@ -284,5 +330,100 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mVMain
+    }
+    
+    func setScrollView() {
+        items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
+        self.mLifeStyleProductViews.removeAll()
+        var secondsProducts = [Int:[ProductData]]()
+        var i = 0
+        for productId in productIds {
+            let data: ProductData = ProductData(productId: productId)
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                let data: ProductData = ProductData(productId: productId)
+                secondsProducts[i] = [data]
+                i += 1
+            }
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        self.productList.products = tempProducts
+        
+        for _ in 0..<productList.products.count {
+            self.mLifeStyleProductViews.append(LifeStyleProductView())
+        }
+        var contentWidth = CGFloat(60)
+        for enumerated in productList.products.enumerated() {
+            let i = enumerated.offset
+            let product = enumerated.element
+            
+            guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
+                continue
+            }
+            lifeStyleProductView.delegate = self
+            lifeStyleProductView.product = product
+            lifeStyleProductView.headerText = items["0" + String(i+1)]
+            lifeStyleProductView.explainText = items["1" + String(i+2)]
+            lifeStyleProductView.logScreenId = mScreen.code
+            lifeStyleProductView.logItemId = "0" + String(i+1)
+            
+            let viewWidth = CGFloat(246)
+            let viewHeight = CGFloat(480)
+            lifeStyleProductView.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+            lifeStyleProductView.backgroundColor = UIColor.gray
+            mScrollV.addSubview(lifeStyleProductView)
+            contentWidth += viewWidth
+        }
+        mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
+        contentWidth = 0
+        // 説明用画像をセット
+        setInfoImage()
+        setLabels()
+    }
+    private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
+        let transitionData = Utility.parseJson(strJson)
+        
+        let productIds = transitionData?["productId"].string
+        let beautyIds = transitionData?["beautyId"].string
+        let lineIds = transitionData?["lineId"].string
+        
+        if productIds == nil && beautyIds == nil && lineIds == nil {
+            return nil
+        } else {
+            return (productIds, beautyIds, lineIds)
+        }
+    }
+    private func setInfoImage() {
+        imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            imageView.frame = CGRect(x: element.x, y: element.y, width: element.width, height: element.height)
+            if let image = UIImage(named: element.discription) {
+                imageView.image = image
+            }
+            mScrollV.addSubview(imageView)
+        }
+    }
+    private func setLabels() {
+        labelItems.enumerated().forEach { (arg: (offset: Int, element: (discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont?))) in
+            
+            let (i, element) = arg
+            let label = UILabel()
+            label.contentMode = .scaleAspectFit
+            label.numberOfLines = 0
+            label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
+            if let labelFont = element.font {
+                label.font = labelFont
+            }
+            if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
+                label.text = text
+            }
+            mScrollV.addSubview(label)
+        }
     }
 }

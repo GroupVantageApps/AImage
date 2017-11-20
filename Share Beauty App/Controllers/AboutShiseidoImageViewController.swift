@@ -14,8 +14,14 @@ class AboutShiseidoImageViewController: UIViewController, NavigationControllerAn
     @IBOutlet weak var playMovieButton: UIButton!
     // NavigationControllerAnnotation
     weak var delegate: NavigationControllerDelegate?
-    var theme: String? = "ABOUT SHISEIDO BRAND"
+    var theme: String?
     var isEnterWithNavigationView: Bool = true
+    private let mScreen = ScreenData(screenId: Const.screenIdAboutShiseido)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.theme = mScreen.name
+    }
     
     deinit {
         self.delegate?.setAboutShiseidoButtonEnabled(true)
@@ -26,16 +32,15 @@ class AboutShiseidoImageViewController: UIViewController, NavigationControllerAn
         getImage()
         self.delegate?.setAboutShiseidoButtonEnabled(false)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     func getImage() {
-        if let frontImage = FileTable.getImage(6363) {
-            FrontImageView.image = frontImage
-        }
-    }    
+        let frontImage = AppItemTable.getMainImageByItemId(itemId: 7844)
+        FrontImageView.image = FileTable.getImage(frontImage.first)
+    }
     
     @IBAction func tapedPlayMovie(_ sender: Any) {
         let vc = UIViewController.GetViewControllerFromStoryboard("AboutShiseidoBrandViewController", targetClass: AboutShiseidoBrandViewController.self) as! AboutShiseidoBrandViewController
