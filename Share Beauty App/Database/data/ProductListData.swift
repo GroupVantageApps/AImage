@@ -582,8 +582,13 @@ class ProductListData: NSObject {
         var i = 0
         for productId in productIds {
             let data: ProductData = ProductData(productId: productId)
-            secondsProducts[i] = [data]
-            i += 1
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                if secondsProducts[data.beautySecondId] == nil {
+                    let data: ProductData = ProductData(productId: productId)
+                    secondsProducts[i] = [data]
+                    i += 1
+                }
+            }
         }
         var tempProducts = [ProductData]()
         secondsProducts.keys.sorted().forEach({ key in
