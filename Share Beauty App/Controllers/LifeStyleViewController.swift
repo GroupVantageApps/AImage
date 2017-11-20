@@ -77,9 +77,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let productList = ProductListData()
     
     private let imageItemIds = [
-        (discription: "lifestyle9", x: CGFloat(70), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),
+        (discription: "lifestyle9", x: CGFloat(100), y: CGFloat(205), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
+       //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
         (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
-        (discription: "lifestyle11", x: CGFloat(950), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)),
+        (discription: "lifestyle11", x: CGFloat(960), y: CGFloat(180), width: CGFloat(60), height: CGFloat(60)), //t-hirai 太陽の位置
         //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
         (discription: "lifestyle12", x: CGFloat(1000), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),
         // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
@@ -88,15 +89,20 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         ]
 
     private let labelItems = [
-        (discription: 7923, x: CGFloat(130), y: CGFloat(155), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7923, x: CGFloat(170), y: CGFloat(200), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば
         (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7926, x: CGFloat(680), y: CGFloat(190), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)),
+        (discription: 7926, x: CGFloat(680), y: CGFloat(195), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+       // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
         ]
-    
+    private let countryFontScale = [
+      //  (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
+     //   (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
+        (country: 3, language: 18, scale: CGFloat(0.85)),   // Brazil
+    ]
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.theme = mScreen.name
@@ -107,6 +113,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
         titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
+        
 //        for (i, nextVc) in nextVcs {
 //            
 //            let image = UIImage(named:("lifestyle" + String(i+1)))
