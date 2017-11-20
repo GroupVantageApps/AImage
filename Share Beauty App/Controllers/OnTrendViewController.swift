@@ -27,6 +27,7 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
     }
 
     override func viewDidLoad() {
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7839)
         mPagingProductV.delegate = self
         items = AppItemTable.getItems(screenId: Const.screenIdOnTrendBeauty)
         Utility.log(items)
@@ -46,6 +47,7 @@ class OnTrendViewController: UIViewController, NavigationControllerAnnotation, C
             self.view.layoutIfNeeded()
             mPagingProductV.products = mProductList.products
         }
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
