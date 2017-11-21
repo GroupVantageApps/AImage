@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if LanguageConfigure.isSuncareStandAloneApp {
+            print(LanguageConfigure.isSuncareStandAloneApp)
             window?.rootViewController = UIViewController.GetViewControllerFromStoryboard(targetClass: GscTopViewController.self) as! GscTopViewController
         }
         

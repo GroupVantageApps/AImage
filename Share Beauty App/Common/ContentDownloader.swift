@@ -1,4 +1,4 @@
-import Alamofire
+    import Alamofire
 import SwiftSpinner
 import SwiftyJSON
 import Zip

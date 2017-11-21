@@ -459,6 +459,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             let alert = UIAlertController(title: "", message: "アプリの設定を変更しますか？", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
                 LanguageConfigure.isSuncareStandAloneApp = !LanguageConfigure.isSuncareStandAloneApp
+                print(LanguageConfigure.isSuncareStandAloneApp)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

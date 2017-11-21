@@ -480,6 +480,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             self.showNewApproach()
         }
     }
+    
 
     func didSelectOutApp(index: Int) {
         let outAppInfo = type(of: self).outAppInfos[index]

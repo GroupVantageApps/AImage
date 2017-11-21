@@ -17,7 +17,7 @@ class GscBaseViewController: UIViewController {
     private var mUpdateStatusClosure: ((ContentDownloadResult) -> ())?
     
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
         print("GscBase.viewWillAppear")
@@ -38,6 +38,9 @@ class GscBaseViewController: UIViewController {
         switch type {
         case .home:
             self.showTop()
+            
+        case .GSChome:
+            self.showGSChome()
             
         case .play:
             self.playMovie()
@@ -77,12 +80,21 @@ class GscBaseViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: false)
     }
     
+
     func showTop() {
         print("showTop")
+        print("長押しボタン")
         let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
         let navigationController = UINavigationController(rootViewController: toVc)
         navigationController.isNavigationBarHidden = true
         UIApplication.shared.keyWindow?.rootViewController = navigationController
+    }
+    
+    func showGSChome() {
+        print("showGSChome")
+        print("タップボタン")
+         let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
+        self.navigationController?.pushViewController(toVc, animated: false)
     }
     
     func didSelectOutApp(index: Int) {

@@ -9,7 +9,7 @@
 import UIKit
 
 enum GscHeaderViewActionType: Int {
-    case home, play, list, update, find, back
+    case home, GSChome, play, list, update, find, back
 }
 
 protocol GscHeaderViewDelegate: NSObjectProtocol {
@@ -44,10 +44,16 @@ class GscHeaderView: BaseView {
         mDropDown.direction = .bottom
     }
    
-    @IBAction private func onTapHome(_ sender: AnyObject) {
+    @IBAction func pressHome(_ sender: UILongPressGestureRecognizer) {
         print(#function)
         delegate?.didHeaderViewAction(.home)
     }
+    
+    @IBAction private func onTapHome(_ sender: AnyObject) {
+        delegate?.didHeaderViewAction(.GSChome)
+    }
+    
+    
     @IBAction func onTapOutApp(_ sender: Any) {
         print(#function)
         mDropDown.show()
