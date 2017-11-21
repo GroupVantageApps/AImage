@@ -92,9 +92,15 @@ class GscBaseViewController: UIViewController {
     
     func showGSChome() {
         print("showGSChome")
-        print("タップボタン")
-         let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
-        self.navigationController?.pushViewController(toVc, animated: false)
+        if LanguageConfigure.isSuncareStandAloneApp {
+            let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
+            self.navigationController?.pushViewController(toVc, animated: false)
+        } else {
+            let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
+            let navigationController = UINavigationController(rootViewController: toVc)
+            navigationController.isNavigationBarHidden = true
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+        }
     }
     
     func didSelectOutApp(index: Int) {
