@@ -53,6 +53,13 @@ class CollectionProductView: UICollectionViewCell {
         didSet {
             if let name = strName {
                 mLblBlack.text = name
+                let color = UIColor(hex: "C8102E", alpha: 1.0)
+                let underline = NSAttributedString(string: name, attributes:
+                    [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+                     NSUnderlineColorAttributeName: color
+                    ])
+                mLblBlack.attributedText = underline
+                
                 mLblBlack.sizeToFit()
             }
         }

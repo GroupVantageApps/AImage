@@ -87,12 +87,27 @@ class LifeStyleProductView: BaseView {
     @IBInspectable var lineName: String? {
         didSet {
 			mLblLine.text = self.style == .beautyOnly ? nil : lineName
+            let color = UIColor(hex: "C8102E", alpha: 1.0)
+            let underline = NSAttributedString(string: lineName!, attributes:
+                [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+                 NSUnderlineColorAttributeName: color
+                ])
+            mLblLine.attributedText = underline
+            mLblLine.sizeToFit()
+            
         }
     }
 
     @IBInspectable var productName: String? {
         didSet {
+            
 			mLblProduct.text = self.style == .beautyOnly ? nil : productName
+            let color = UIColor(hex: "C8102E", alpha: 1.0)
+            let underline = NSAttributedString(string: lineName!, attributes:
+                [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+                 NSUnderlineColorAttributeName: color
+                ])
+            mLblProduct.attributedText = underline
         }
     }
 
