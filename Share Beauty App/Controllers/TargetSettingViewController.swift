@@ -31,7 +31,7 @@ class TargetSettingViewController: UIViewController, NavigationControllerAnnotat
 
         mTarget = DownloadConfigure.target
         mTargets = DownloadConfigure.targets
-
+        
 
         mTargetTableView.delegate = self
         mTargetTableView.dataSource = self

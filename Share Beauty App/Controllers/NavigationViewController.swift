@@ -219,6 +219,10 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     private func updateData() {
+        //Update Tap時に無理やりdevelopを向かせる
+        DownloadConfigure.target = DownloadConfigure.Target.develop
+        
+        
         ContentDownloader.default.download(completion: { result in
             switch result {
             case .success:
