@@ -196,6 +196,9 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     private func reloadUpdateStatus() {
+        //Update Tap時に無理やりdevelopを向かせる
+        DownloadConfigure.target = DownloadConfigure.Target.develop
+        
         if DownloadConfigure.downloadStatus != .success{return}
         if mUpdateStatusClosure != nil {return}
         mUpdateStatusClosure = {  _ in
