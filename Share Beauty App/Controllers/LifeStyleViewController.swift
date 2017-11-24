@@ -388,6 +388,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
         }
+        if contentWidth < 2520 {
+           contentWidth = 2520
+        }
         mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
         contentWidth = 0
         // 説明用画像をセット
