@@ -31,9 +31,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty tailors solutions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
-                                        <rect key="frame" x="50" y="40" width="538" height="58"/>
+                                        <rect key="frame" x="50" y="40" width="600" height="58"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="538" id="3vc-Hu-RaS"/>
+                                            <constraint firstAttribute="width" constant="600" id="3vc-Hu-RaS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                         <nil key="textColor"/>
