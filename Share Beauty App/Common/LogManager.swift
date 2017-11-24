@@ -178,7 +178,7 @@ class LogManager: NSObject {
         let str = "json=" + json
         let strData = str.data(using: String.Encoding.utf8)
         print(json)
-        let url = NSURL(string: "https://nscp-ga.heteml.jp/ei_ch/log_sharedBeauty/log_DBconnect.php")
+        let url = NSURL(string: "https://nscp-ga.heteml.jp/ei_ch/log_sharedBeauty/log_DBconnect_v2.php")
         let request = NSMutableURLRequest(url: url! as URL)
         
         request.httpMethod = "POST"
