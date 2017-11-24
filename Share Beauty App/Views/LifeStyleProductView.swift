@@ -25,7 +25,7 @@ class LifeStyleProductView: BaseView {
 	
     let discroptionList = [
         553:7932,
-        554:7940,
+        554:7933, //t-hirai 参照修正
         101:0,
         455:0,
         470:7938,
