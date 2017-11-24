@@ -40,9 +40,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beauty scores" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9M-19-UiP">
-                                <rect key="frame" x="70" y="60" width="600" height="57.5"/>
+                                <rect key="frame" x="70" y="60" width="900" height="57.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="qha-Ok-eCj"/>
+                                    <constraint firstAttribute="width" constant="900" id="qha-Ok-eCj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
