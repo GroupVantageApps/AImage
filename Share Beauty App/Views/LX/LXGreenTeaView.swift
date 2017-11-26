@@ -34,7 +34,7 @@ class LXGreenTeaView: UIView{
             print("i:\(i)")
             let label = self.viewWithTag(10 + i) as! UILabel
             var csvId = 55 + i
-            if i > 3 { csvId = csvId + 3 }
+            if i > 3 { csvId = csvId + 2 }//<<<3を2にした　紫外線効果　t-hirai
             if i == 4 { 
                 csvId = 61
                 print(lxArr[String(csvId)] ?? "なし") 

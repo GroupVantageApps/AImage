@@ -26,7 +26,7 @@ class MoviePlayerView: UIView {
         mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         }
-        self.frame = CGRect(x: 0, y: 20, width: 1024, height: 748)
+        self.frame = CGRect(x: 0, y: 0, width: 1024, height: 768)
         self.addSubview(mXbutton)
     }
     
