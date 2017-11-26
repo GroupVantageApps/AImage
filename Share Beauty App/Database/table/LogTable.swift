@@ -86,6 +86,8 @@ class LogTable: NSObject {
         let database = ModelDatabase.getDatabase()
         database.open()
         
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
         let sql: String = "SELECT * FROM m_log_product"
         let resultSet1: FMResultSet! = database.executeQuery(sql, withArgumentsIn: [])
         
@@ -110,7 +112,8 @@ class LogTable: NSObject {
             itemLog["item"] = item
             itemLog["recommendFlg"] = recommend_flg
             itemLog["date"] = date
-            
+            itemLog["uuid"] = uuid
+
             log.append(itemLog)
         }
         
