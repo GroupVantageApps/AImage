@@ -23,7 +23,7 @@ class IdealSelectCell: BaseView {
     @IBOutlet weak fileprivate var mConstraintBottom: NSLayoutConstraint!
     @IBOutlet weak fileprivate var mConstraintWidth: NSLayoutConstraint!
 
-    @IBInspectable var titleFontSize: CGFloat = 18.0 {
+    @IBInspectable var titleFontSize: CGFloat = 20.0 {
         didSet {
             if #available(iOS 8.2, *) {
                 mLblTitle.font = UIFont.systemFont(ofSize: titleFontSize, weight: UIFontWeightSemibold)

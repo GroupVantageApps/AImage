@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,15 +66,15 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-Ga-8bw">
-                            <rect key="frame" x="103" y="272" width="392.5" height="55"/>
+                            <rect key="frame" x="38" y="271.5" width="521.5" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hydrating, Pore minimizing, Anti-Breakouts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-qS-lhV">
-                                    <rect key="frame" x="0.0" y="0.0" width="392.5" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hydrating, Pore minimizing, Anti-Breakouts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-qS-lhV">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="24"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="FMO-ss-QEO">
-                                    <rect key="frame" x="0.0" y="26" width="392.5" height="29"/>
+                                    <rect key="frame" x="0.0" y="26" width="521.5" height="29"/>
                                     <string key="text">BNENEFIANCE
 WrinkleResist</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -114,7 +114,7 @@ WrinkleResist</string>
                         <constraint firstAttribute="bottom" secondItem="FMS-wO-hGE" secondAttribute="bottom" id="ITU-JG-Z56"/>
                         <constraint firstItem="FMS-wO-hGE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TU7-pW-Ixs"/>
                         <constraint firstItem="FMS-wO-hGE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TVZ-on-lWY"/>
-                        <constraint firstItem="VdC-Ga-8bw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qMv-Dd-f4A" secondAttribute="trailing" constant="10" id="W27-mK-FIS"/>
+                        <constraint firstItem="VdC-Ga-8bw" firstAttribute="leading" secondItem="qMv-Dd-f4A" secondAttribute="trailing" constant="1" id="W27-mK-FIS"/>
                         <constraint firstAttribute="bottom" secondItem="FMS-wO-hGE" secondAttribute="bottom" id="axN-sx-M7G"/>
                         <constraint firstItem="qMv-Dd-f4A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="bNo-WX-ZOR"/>
                         <constraint firstAttribute="trailing" secondItem="FMS-wO-hGE" secondAttribute="trailing" id="bnJ-4l-de1"/>
