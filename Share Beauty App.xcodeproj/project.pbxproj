@@ -32,6 +32,7 @@
 		807F43791EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */; };
 		807F437B1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */; };
 		914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */ = {isa = PBXBuildFile; fileRef = 914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */; };
+		ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */; };
 		B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B11F47682700176804 /* After_4_weeks.png */; };
 		B38F63BE1F47682700176804 /* Befor_use.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B21F47682700176804 /* Befor_use.png */; };
 		B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B31F47682700176804 /* DayCream01_after.png */; };
@@ -603,6 +604,7 @@
 		914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = efficacy_slider_circle_Emulsion.png; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialEnergyEfficacy.swift; sourceTree = "<group>"; };
 		AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B38F63B11F47682700176804 /* After_4_weeks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = After_4_weeks.png; sourceTree = "<group>"; };
 		B38F63B21F47682700176804 /* Befor_use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Befor_use.png; sourceTree = "<group>"; };
@@ -1205,6 +1207,7 @@
 		C0449EC21D76C8E90041903E /* ExtendedProducts */ = {
 			isa = PBXGroup;
 			children = (
+				ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */,
 				C02818A11E6BCE7C00D4DADA /* WasoFeatureView.swift */,
 				C02818A01E6BCE7C00D4DADA /* WasoFeatureView.xib */,
 				C0449ECE1D76D1EC0041903E /* UIUtil.h */,
@@ -2940,6 +2943,7 @@
 				EB7365AC1D83156F00D223BA /* StepLowerEntity.swift in Sources */,
 				C0DA9AF21DB8CC7E00692058 /* DropDown.swift in Sources */,
 				C02818AC1E6D449300D4DADA /* MakeupUsageView.swift in Sources */,
+				ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */,
 				C0DA9AEE1DB8CC7E00692058 /* DPDUIView+Extension.swift in Sources */,
 				C94638D31F18CC45009D1480 /* LoadingView.swift in Sources */,
 				C0880CEC1E4B1E6A006A3713 /* Router.swift in Sources */,
