@@ -311,20 +311,37 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset
-        if (!isAnimateAimage01 && contentOffset.y > 513 && contentOffset.y <= 513*2) {
+        if (!isAnimateAimage01 && contentOffset.y >= 513 && contentOffset.y <= 513*2) {
             aimage01.startAnimating()
             isAnimateAimage01 = true
         }
-        if (!isAnimateAimage02 && contentOffset.y > 513*2 && contentOffset.y <= 513*3) {
+        if (!isAnimateAimage02 && contentOffset.y >= 513*2 && contentOffset.y <= 513*3) {
             aimage02.startAnimating()
             isAnimateAimage02 = true
         }
-        if (!isAnimateAimage03 && contentOffset.y > 513*3) {
+        if (!isAnimateAimage03 && contentOffset.y >= 513*3) {
             aimage03.startAnimating()
             isAnimateAimage03 = true
         }
     }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let contentOffset = scrollView.contentOffset
+        if (!decelerate) {
+            if (contentOffset.y <= 513/2) {
+                scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 0), animated: true)
+            }
+            if (contentOffset.y > 513/2 && contentOffset.y <= 513+513/2) {
+                scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513), animated: true)
+            }
+            if (contentOffset.y > 513+513/2 && contentOffset.y <= 513*2+513/2) {
+                scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*2), animated: true)
+            }
+            if (contentOffset.y > 513*2+513/2) {
+                scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*3), animated: true)
+            } 
+        }
+    }
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset
         if (contentOffset.y <= 513/2) {
             scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 0), animated: true)
@@ -339,6 +356,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*3), animated: true)
         }
     }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset
         if (contentOffset.y <= 513/2) {
