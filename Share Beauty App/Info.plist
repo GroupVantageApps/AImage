@@ -25,6 +25,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>jp.co.shiseido.ssdsbatest</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>ssdsba</string>
@@ -45,6 +47,7 @@
 		<string>ssdsba</string>
 		<string>yutakasounds</string>
 		<string>ssdfdf</string>
+		<string>ssdeeapp</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

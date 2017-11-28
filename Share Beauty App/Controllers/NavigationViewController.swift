@@ -48,7 +48,7 @@ struct OutAppInfo {
 class NavigationViewController: UIViewController, NavigationControllerDelegate, HeaderViewDelegate, NavigationViewDelegte, SideBarDelegate {
 
     private static let startScreenSaverSecond = 15
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
 
     @IBOutlet weak fileprivate var mVContainer: UIView!
     @IBOutlet weak fileprivate var mHeaderView: HeaderView!

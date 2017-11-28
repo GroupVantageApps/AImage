@@ -86,7 +86,7 @@ class GscHeaderView: BaseView {
     func setUpdateEnabled(_ isEnabled: Bool) {
         mBtnUpdate.isHidden = !isEnabled
         if isEnabled {
-            mConstraintUpdateToOutApp.constant = 20
+            mConstraintUpdateToOutApp.constant = 0//20
             if mConstraintWidthZero != nil {
                 mBtnUpdate.removeConstraint(mConstraintWidthZero!)
                 mConstraintWidthZero = nil

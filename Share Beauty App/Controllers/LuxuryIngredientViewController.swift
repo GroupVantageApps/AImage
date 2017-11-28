@@ -28,7 +28,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
     var bgAudioPlayer: AVAudioPlayer!
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
