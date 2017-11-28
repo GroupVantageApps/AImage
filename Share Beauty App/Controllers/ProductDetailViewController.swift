@@ -654,39 +654,37 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
-                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView?.isEssentialEnergyMoisturizingGelCream = true
-                utmEfficacyView?.backgroundColor = UIColor.clear
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyMoisturizingGelCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
                 mVContent.backgroundColor = UIColor.clear
-                mVContent.addSubview(utmEfficacyView!)
-                utmEfficacyView?.showEfficacyDetail()
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
             
             } else if productId == 555 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
-                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView?.isEssentialEnergyDayCX = true
-                utmEfficacyView?.backgroundColor = UIColor.clear
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyDayCX = true
+                utmEfficacyView.backgroundColor = UIColor.clear
                 mVContent.backgroundColor = UIColor.clear
-                mVContent.addSubview(utmEfficacyView!)
-                utmEfficacyView?.showEfficacyDetail()
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
-                
                 
             } else if productId == 556 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
-                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView?.isEssentialEnergyDayCream = true
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyDayCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
                 mVContent.backgroundColor = UIColor.clear
-                mVContent.addSubview(utmEfficacyView!)
-                utmEfficacyView?.showEfficacyDetail()
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
-                
-                
             }
             else {
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
