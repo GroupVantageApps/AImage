@@ -16,9 +16,9 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     var utm02:UIImageView = UIImageView()
     var utm03:UIImageView = UIImageView()
     var utmCloseButton:UIButton = UIButton()
-    private var aimage00:APNGImageView!
-    private var aimage01:APNGImageView!
-    private var aimage02:APNGImageView!
+    private var aimage00:APNGImageView
+    private var aimage01:APNGImageView
+    private var aimage02:APNGImageView
     private var aimage03:APNGImageView!
     var isAnimateAimage00 = false
     var isAnimateAimage01 = false
@@ -31,10 +31,18 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     var isEssentialEnergyDayCream = Bool()
     
     required init(coder aDecoder: NSCoder) {
+        aimage00 = APNGImageView(image: FileTable.getAImage(0))
+        aimage01 = APNGImageView(image: FileTable.getAImage(0))
+        aimage02 = APNGImageView(image: FileTable.getAImage(0))
+        aimage03 = APNGImageView(image: FileTable.getAImage(0))
         super.init(coder: aDecoder)!
     }
 
     override init(frame: CGRect) {
+        aimage00 = APNGImageView(image: FileTable.getAImage(0))
+        aimage01 = APNGImageView(image: FileTable.getAImage(0))
+        aimage02 = APNGImageView(image: FileTable.getAImage(0))
+        aimage03 = APNGImageView(image: FileTable.getAImage(0))
         super.init(frame: frame)
     }
     convenience init(frame: CGRect, size:CGSize) {
@@ -314,6 +322,36 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         if (!isAnimateAimage03 && contentOffset.y > 513*3) {
             aimage03.startAnimating()
             isAnimateAimage03 = true
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let contentOffset = scrollView.contentOffset
+        if (contentOffset.y <= 513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 0), animated: true)
+        }
+        if (contentOffset.y > 513/2 && contentOffset.y <= 513+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513), animated: true)
+        }
+        if (contentOffset.y > 513+513/2 && contentOffset.y <= 513*2+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*2), animated: true)
+        }
+        if (contentOffset.y > 513*2+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*3), animated: true)
+        }
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset
+        if (contentOffset.y <= 513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 0), animated: true)
+        }
+        if (contentOffset.y > 513/2 && contentOffset.y <= 513+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513), animated: true)
+        }
+        if (contentOffset.y > 513+513/2 && contentOffset.y <= 513*2+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*2), animated: true)
+        }
+        if (contentOffset.y > 513*2+513/2) {
+            scrollView.setContentOffset(CGPoint(x: contentOffset.x, y: 513*3), animated: true)
         }
     }
     func setLabel(frame:CGRect, text:String?, size:Int) {
