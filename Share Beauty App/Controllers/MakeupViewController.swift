@@ -30,7 +30,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     private var productIds: [Int] = []
     var productIdForDeeplink = 0
     
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     private static let mOutAppInfos = [Const.outAppInfoFoundation]
     override func viewDidLoad() {
         super.viewDidLoad()
