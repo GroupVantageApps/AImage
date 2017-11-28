@@ -11,7 +11,7 @@ import UIKit
 class NewApproachViewController: UIViewController, NavigationControllerAnnotation {
 
     weak var delegate: NavigationControllerDelegate?
-    var theme: String? = "SHISEIDO's New Approach to Skin"
+    var theme: String? = "Shiseido's Approach to Skin"
     var isEnterWithNavigationView = true
     @IBOutlet weak var mBtnDefend: UIButton!
     @IBOutlet weak var mBtnRegenerate: UIButton!
