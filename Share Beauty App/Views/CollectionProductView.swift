@@ -47,6 +47,16 @@ class CollectionProductView: UICollectionViewCell {
     @IBInspectable var strLine: String? {
         didSet {
             mLblLine.text = strLine
+            if let name = strLine {
+                mLblLine.text = name
+                let color = UIColor(hex: "C8102E", alpha: 1.0)
+                let underline = NSAttributedString(string: name, attributes:
+                    [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+                     NSUnderlineColorAttributeName: color
+                    ])
+                mLblLine.attributedText = underline
+                mLblLine.sizeToFit()
+            }
         }
     }
     @IBInspectable var strName: String? {
