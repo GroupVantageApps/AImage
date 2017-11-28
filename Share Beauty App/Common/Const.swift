@@ -81,7 +81,7 @@ struct Const {
     static let screenIdLXGraph = 7814
     static let screenIdLXConcept = 7815
     static let screenIdLXTool = 7816
-    static let screenIdAboutShiseido = 7837
+    static let screenIdAboutShiseido = 7786 //7786　7837
 
     static let itemIdBeautyTips = "503301"
 
