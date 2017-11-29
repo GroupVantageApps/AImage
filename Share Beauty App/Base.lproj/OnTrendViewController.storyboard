@@ -30,7 +30,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shiseido's latest" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaW-MI-h5G">
                                 <rect key="frame" x="70" y="60" width="376" height="147"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="Ck9-7h-Mq7"/>
+                                    <constraint firstAttribute="width" constant="900" id="Ck9-7h-Mq7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
