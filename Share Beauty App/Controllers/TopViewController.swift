@@ -130,13 +130,18 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         }
         
         if lineIdForDeeplink != 0 {
-            let nextVc = UIViewController.GetViewControllerFromStoryboard("LineStepViewController", targetClass: LineStepViewController.self) as! LineStepViewController
+             let nextVc = UIViewController.GetViewControllerFromStoryboard("IdealResultViewController", targetClass: IdealResultViewController.self) as! IdealResultViewController
+            //let nextVc = UIViewController.GetViewControllerFromStoryboard("LineStepViewController", targetClass: LineStepViewController.self) as! LineStepViewController
             //            var mProducts: [ProductData] = ProductListData(lineId: Const.lineIdMAKEUP).products
             if lineStepForDeepLink != 0 {
                 nextVc.lineStep = lineStepForDeepLink
                 lineStepForDeepLink = 0
             }
-            nextVc.line = LineDetailData(lineId: lineIdForDeeplink)
+            //nextVc.line = LineDetailData(lineId: lineIdForDeeplink)
+            let idealBeautySecondsData = IdealBeautySecondsData(lineIds: [lineIdForDeeplink])
+            let lineSteps = idealBeautySecondsData.stepLowers.filter {$0.valid == 1}.map {$0.stepLowerId}
+            let productListData = ProductListData(lineIdsOrigin: [lineIdForDeeplink], stepLowerIdsOrigin: lineSteps, noAddFlg: false)
+            nextVc.products = productListData.products
             lineIdForDeeplink = 0
             self.delegate?.nextVc(nextVc)
         }

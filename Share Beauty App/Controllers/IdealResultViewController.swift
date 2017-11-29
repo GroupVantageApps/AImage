@@ -35,7 +35,10 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     var items: [String: String]!
     var products: [ProductData]?
     var noAddFlg: Bool = false
+    var lineId = 0
+    var lineStep = 0
 
+    
     private var mProducts: [ProductData]!
     private var mProductImages: [Int:UIImage]!
     private var mAspect: CGFloat = 1.0
