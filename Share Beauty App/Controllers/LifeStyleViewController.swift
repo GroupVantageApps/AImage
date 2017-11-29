@@ -14,6 +14,14 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
             let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             productDetailVc.productId = product!.productId
+            var i = 0
+            for product in productList.products {
+                if product.productId == 0 {
+                    productList.products.remove(at: i)
+                } else {
+                    i += 1
+                }
+            }
             productDetailVc.relationProducts = productList.products
             delegate?.nextVc(productDetailVc)
 //        }
@@ -74,12 +82,21 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         ]
     
     private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
+    private let essentialEnagyProducts = [553,554]
+    private var essentialEnagyProductsCount = 0
+    private let whiteLucentProducts = [101,455]
+    private var whiteLucentProductsCount = 0
+    private let makeUpProducts = [470,500,551]
+    private var makeUpProductsCount = 0
+    private let suncareProducts = [545,549,498]
+    private var suncareProductsCount = 0
     private let productList = ProductListData()
     
     private let imageItemIds = [
-        (discription: "lifestyle9", x: CGFloat(100), y: CGFloat(205), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
+        (discription: "lifestyle10", x: CGFloat(100), y: CGFloat(205), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
        //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
-        (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),
+        (discription: "lifestyle9", x: CGFloat(550), y: CGFloat(140), width: CGFloat(400), height: CGFloat(160)),
+        //(discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),//t-hirai
         (discription: "lifestyle11", x: CGFloat(960), y: CGFloat(180), width: CGFloat(60), height: CGFloat(60)), //t-hirai 太陽の位置
         //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
         (discription: "lifestyle12", x: CGFloat(1000), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),
@@ -89,13 +106,14 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         ]
 
     private let labelItems = [
-        (discription: 7923, x: CGFloat(170), y: CGFloat(200), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば
-        (discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7926, x: CGFloat(680), y: CGFloat(195), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
+        (discription: 7923, x: CGFloat(180), y: CGFloat(200), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば
+        (discription: 7922, x: CGFloat(610), y: CGFloat(150), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
+        //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
+        (discription: 7926, x: CGFloat(480), y: CGFloat(530), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
        // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7944, x: CGFloat(2050), y: CGFloat(200), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 10)),
+        (discription: 7944, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
         ]
     private let countryFontScale = [
       //  (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
@@ -113,22 +131,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         self.mCounts = LifeStyleBeautyCount.getCounts()
         let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
         titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
-        
-//        for (i, nextVc) in nextVcs {
-//            
-//            let image = UIImage(named:("lifestyle" + String(i+1)))
-//            let key = "0" + String(i+1)
-//            
-//            var text: String = items[key]!
-//            text = text.replacingOccurrences(of: "\n", with: "<br>")
-//            var isFocus = false
-//            if focusScreenIds != nil && self.getLifeStyleIndexes(screenIds: focusScreenIds!).contains(i) {
-//                    isFocus = true
-//            }
-//
-//            let lifestyle = LifeStyle(image: image!, text: text, isRecommend: false, nextVc: nextVc, focus: isFocus)
-//            mLifeStyles.append(lifestyle)
-//        }
         mCollectionV.register(UINib(nibName: "LifeStyleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionV.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionV.allowsSelection = false
@@ -349,8 +351,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)
                 secondsProducts[i] = [data]
-                i += 1
+            } else {
+                let data: ProductData = ProductData(productId: 0)
+                secondsProducts[i] = [data]
             }
+            i += 1
         }
         var tempProducts = [ProductData]()
         secondsProducts.keys.sorted().forEach({ key in
@@ -366,11 +371,31 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         var contentWidth = CGFloat(60)
         for enumerated in productList.products.enumerated() {
+            let viewWidth = CGFloat(246)
+            let viewHeight = CGFloat(480)
             let i = enumerated.offset
             let product = enumerated.element
-            
+            guard product.productId != 0 else {
+                let view = UIView()
+                view.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+                view.backgroundColor = UIColor.white
+                mScrollV.addSubview(view)
+                continue;
+            }
             guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
                 continue
+            }
+            if essentialEnagyProducts.contains(product.productId) {
+                essentialEnagyProductsCount += 1
+            }
+            if whiteLucentProducts.contains(product.productId) {
+                whiteLucentProductsCount += 1
+            }
+            if makeUpProducts.contains(product.productId) {
+                makeUpProductsCount += 1
+            }
+            if suncareProducts.contains(product.productId) {
+                suncareProductsCount += 1
             }
             lifeStyleProductView.delegate = self
             lifeStyleProductView.product = product
@@ -379,18 +404,24 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)
             
-            let viewWidth = CGFloat(246)
-            let viewHeight = CGFloat(480)
+            
             lifeStyleProductView.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
+        }
+        if contentWidth < 2520 {
+           contentWidth = 2520
         }
         mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
         contentWidth = 0
         // 説明用画像をセット
         setInfoImage()
         setLabels()
+        essentialEnagyProductsCount = 0
+        whiteLucentProductsCount = 0
+        makeUpProductsCount = 0
+        suncareProductsCount = 0
     }
     private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
         let transitionData = Utility.parseJson(strJson)
@@ -407,12 +438,34 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     }
     private func setInfoImage() {
         imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
+            let viewWidth = Int(246)
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFit
             imageView.frame = CGRect(x: element.x, y: element.y, width: element.width, height: element.height)
             if let image = UIImage(named: element.discription) {
                 imageView.image = image
             }
+            if element.discription == "lifestyle10" {
+                if (makeUpProductsCount == 0) {
+                    imageView.frame.size = CGSize(width: 0, height: 0)
+                }
+            }
+            if element.discription == "lifestyle9" || element.discription == "lifestyle11" {
+                if (whiteLucentProductsCount == 0) {
+                    imageView.frame.size = CGSize(width: 0, height: 0)
+                }
+            }
+            if element.discription == "lifestyle12" {
+                if (makeUpProductsCount == 0) {
+                    imageView.frame.size = CGSize(width: 0, height: 0)
+                }
+            }
+            if element.discription == "lifestyle13" || element.discription == "lifestyle14" {
+                if (suncareProductsCount == 0) {
+                    imageView.frame.size = CGSize(width: 0, height: 0)
+                }
+            }
+            
             mScrollV.addSubview(imageView)
         }
     }
@@ -429,6 +482,31 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
+            }
+            // 右詰の設定
+            if element.discription == 7926 || element.discription == 7944 {
+                label.textAlignment = NSTextAlignment.right
+            }
+            
+            if element.discription == 7923 {
+                if (essentialEnagyProductsCount == 0) {
+                    label.text = ""
+                }
+            }
+            if element.discription == 7922 || element.discription == 7926 {
+                if (whiteLucentProductsCount == 0) {
+                    label.text = ""
+                }
+            }
+            if element.discription == 7924 {
+                if (makeUpProductsCount == 0) {
+                    label.text = ""
+                }
+            }
+            if element.discription == 7925 || element.discription == 7944 {
+                if (suncareProductsCount == 0) {
+                    label.text = ""
+                }
             }
             mScrollV.addSubview(label)
         }
