@@ -80,7 +80,7 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var beautyName: String? {
         didSet {
-            // ちがう
+            
         }
     }
 
@@ -101,9 +101,10 @@ class LifeStyleProductView: BaseView {
     @IBInspectable var productName: String? {
         didSet {
             
-			mLblProduct.text = self.style == .beautyOnly ? nil : productName
+//            mLblProduct.text = self.style == .beautyOnly ? nil : productName
+            mLblProduct.text = productName
             let color = UIColor(hex: "C8102E", alpha: 1.0)
-            let underline = NSAttributedString(string: lineName!, attributes:
+            let underline = NSAttributedString(string: productName!, attributes:
                 [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
                  NSUnderlineColorAttributeName: color
                 ])
@@ -160,7 +161,7 @@ class LifeStyleProductView: BaseView {
             print("tintColor: " + (self.mBtnProduct.imageView?.tintColor.description)!)
             self.beautyName = product?.beautyName
             self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
-            
+            print(self.discriptionLabel.text)
             self.lineName = product?.lineName
             self.productName = product?.productName
             self.imgProduct = FileTable.getImage(product?.image)
