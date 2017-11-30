@@ -83,13 +83,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
     private let essentialEnagyProducts = [553,554]
-    private var essentialEnagyProductsCount = 0
     private let whiteLucentProducts = [101,455]
-    private var whiteLucentProductsCount = 0
     private let makeUpProducts = [470,500,551]
-    private var makeUpProductsCount = 0
     private let suncareProducts = [545,549,498]
-    private var suncareProductsCount = 0
+    private var essentialEnagyProductsCount = 0
+    private var whiteLucentProductsCount    = 0
+    private var makeUpProductsCount         = 0
+    private var suncareProductsCount        = 0
     private let productList = ProductListData()
     
     private let imageItemIds = [
@@ -382,20 +382,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         var contentWidth = CGFloat(60)
         for enumerated in productList.products.enumerated() {
-            let viewWidth = CGFloat(246)
-            let viewHeight = CGFloat(480)
-            let i = enumerated.offset
             let product = enumerated.element
-            guard product.productId != 0 else {
-                let view = UIView()
-                view.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
-                view.backgroundColor = UIColor.white
-                mScrollV.addSubview(view)
-                continue;
-            }
-            guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
-                continue
-            }
             if essentialEnagyProducts.contains(product.productId) {
                 essentialEnagyProductsCount += 1
             }
@@ -408,6 +395,29 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             if suncareProducts.contains(product.productId) {
                 suncareProductsCount += 1
             }
+        }
+        var productsCount = 0
+        for enumerated in productList.products.enumerated() {
+            let viewWidth = CGFloat(246)
+            let viewHeight = CGFloat(480)
+            let i = enumerated.offset
+            let product = enumerated.element
+            productsCount += 1
+            guard product.productId != 0 else {
+                if 1 < i && i < 4 && whiteLucentProductsCount == 0{
+                    productsCount -= 1
+                } else {
+                    let view = UIView()
+                    view.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+                    view.backgroundColor = UIColor.white
+                    mScrollV.addSubview(view)
+                }
+                continue;
+            }
+            guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
+                continue
+            }
+            
             lifeStyleProductView.delegate = self
             lifeStyleProductView.product = product
             lifeStyleProductView.headerText = items["0" + String(i+1)]
@@ -416,12 +426,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.logItemId = "0" + String(i+1)
             
             
-            lifeStyleProductView.frame = CGRect(x: CGFloat(i) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+            lifeStyleProductView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
+            
         }
-        if contentWidth < 2520 {
+        if whiteLucentProductsCount != 0 && contentWidth < 2520 {
            contentWidth = 2520
         }
         mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
@@ -470,19 +481,24 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 if (makeUpProductsCount == 0) {
                     imageView.frame.size = CGSize(width: 0, height: 0)
                 }
+                if (whiteLucentProductsCount == 0) {
+                    imageView.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: element.height)
+                }
             }
             if element.discription == "lifestyle13" || element.discription == "lifestyle14" {
                 if (suncareProductsCount == 0) {
                     imageView.frame.size = CGSize(width: 0, height: 0)
                 }
+                if (whiteLucentProductsCount == 0) {
+                    imageView.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: element.height)
+                }
             }
-            
             mScrollV.addSubview(imageView)
         }
     }
     private func setLabels() {
         labelItems.enumerated().forEach { (arg: (offset: Int, element: (discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont?))) in
-            
+            let viewWidth = Int(246)
             let (i, element) = arg
             let label = UILabel()
             label.contentMode = .scaleAspectFit
@@ -513,10 +529,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 if (makeUpProductsCount == 0) {
                     label.text = ""
                 }
+                if (whiteLucentProductsCount == 0) {
+                    label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
+                }
             }
             if element.discription == 7925 || element.discription == 7944 {
                 if (suncareProductsCount == 0) {
                     label.text = ""
+                }
+                if (whiteLucentProductsCount == 0) {
+                    label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
                 }
             }
             mScrollV.addSubview(label)
