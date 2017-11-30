@@ -95,11 +95,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let imageItemIds = [
         (discription: "lifestyle10", x: CGFloat(100), y: CGFloat(205), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
        //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
-<<<<<<< HEAD
-        (discription: "lifestyle10", x: CGFloat(550), y: CGFloat(140), width: CGFloat(400), height: CGFloat(160)),
-=======
         (discription: "lifestyle9", x: CGFloat(550), y: CGFloat(140), width: CGFloat(400), height: CGFloat(160)),
->>>>>>> feature-4876-IconicBeautyTitle
         //(discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),//t-hirai
         (discription: "lifestyle11", x: CGFloat(960), y: CGFloat(180), width: CGFloat(60), height: CGFloat(60)), //t-hirai 太陽の位置
         //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
@@ -110,17 +106,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         ]
 
     private let labelItems = [
-<<<<<<< HEAD
-        (discription: 7923, x: CGFloat(170), y: CGFloat(200), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば
-        (discription: 7922, x: CGFloat(610), y: CGFloat(143), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7926, x: CGFloat(680), y: CGFloat(210), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
-=======
         (discription: 7923, x: CGFloat(180), y: CGFloat(200), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば
         (discription: 7922, x: CGFloat(610), y: CGFloat(150), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7926, x: CGFloat(480), y: CGFloat(530), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
->>>>>>> feature-4876-IconicBeautyTitle
         (discription: 7924, x: CGFloat(1280), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
        // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
         (discription: 7925, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
