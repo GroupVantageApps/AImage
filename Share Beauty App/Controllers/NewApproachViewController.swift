@@ -11,15 +11,22 @@ import UIKit
 class NewApproachViewController: UIViewController, NavigationControllerAnnotation {
 
     weak var delegate: NavigationControllerDelegate?
-    var theme: String? = "Shiseido's Approach to Skin"
+    var theme: String? = "SHISEIDO's New Approach to Skin"
     var isEnterWithNavigationView = true
     @IBOutlet weak var mBtnDefend: UIButton!
     @IBOutlet weak var mBtnRegenerate: UIButton!
     @IBOutlet weak var mLblSynergy: UILabel!
     @IBOutlet weak var mImgVApproach: UIImageView!
-
+    private let mScreen = ScreenData(screenId: Const.screenIdNewApproach)
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.theme = mScreen.name
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func viewDidLayoutSubviews() {
