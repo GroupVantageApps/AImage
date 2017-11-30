@@ -37,7 +37,6 @@ struct Const {
     static let outAppInfoUvInfo = OutAppInfo(title: "UVinfo", url: "ssduvi://")
     static let outAppInfoSoftener = OutAppInfo(title: "Softner", url: "ssdsoftner://")
     static let outAppInfoFoundation = OutAppInfo(title: "Foundation Finder", url: "ssdfdf://")// "jp.co.shiseido.gs.fdf")
-    static let outAppInfoESSENTIAL = OutAppInfo(title: "ESSENTIAL ENERGY", url: "ssdeeapp://")// "jp.co.shiseido.e1.line.app")
 
     static let screenIdCountrySetting = 2
     static let screenIdLanguageSetting = 3
@@ -81,7 +80,8 @@ struct Const {
     static let screenIdLXGraph = 7814
     static let screenIdLXConcept = 7815
     static let screenIdLXTool = 7816
-    static let screenIdAboutShiseido = 7786 //7786　7837
+    static let screenIdAboutShiseido = 7837
+    static let screenIdNewApproach = 7817
 
     static let itemIdBeautyTips = "503301"
 
