@@ -845,7 +845,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
             lineDetailVc.lineId = self.product.lineId
             lineDetailVc.beautySecondId = self.product.beautySecondId
-            lineDetailVc.backgroundImage = FileTable.getImage(product.backImage)!
+            lineDetailVc.backgroundImage = FileTable.getImage(product.backImage)
             
             if fromGscVc {
                 lineDetailVc.fromGscVc = true
