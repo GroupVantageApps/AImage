@@ -28,7 +28,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
     override func viewDidLoad() {
         mPagingProductV.delegate = self
         titleLabel.text = AppItemTable.getNameByItemId(itemId: 7840)
-        if LanguageConfigure.languageId == 43 {  // 日本語時のフォントサイズ調整
+        if Const.japaneaseLanguageIds.contains(LanguageConfigure.languageId) {  // 日本語時のフォントサイズ調整
             titleLabel.font = UIFont.boldSystemFont(ofSize: 36)
         }
     }

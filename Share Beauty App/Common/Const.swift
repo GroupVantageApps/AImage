@@ -154,4 +154,6 @@ struct Const {
     static let userAgent = "Safari-iOS10-iPad"
 
     static let lifeStyleBeautyCountUrl = "https://nscp-ga.heteml.jp/sab/summary/summary.json"
+    
+    static let japaneaseLanguageIds = [14, 15, 35, 43, 64, 72, 80]
 }
