@@ -381,4 +381,13 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         label.textAlignment = .center
         scrollView.addSubview(label)
     }
+    func setLabelBlack(frame:CGRect, text:String?, size:Int) {
+        let label = UILabel(frame: frame)
+        label.text = text
+        label.font = UIFont.boldSystemFont(ofSize: CGFloat(size))
+        label.numberOfLines = 0
+        label.textColor = UIColor.black
+        label.textAlignment = .left
+        scrollView.addSubview(label)
+    }
 }
