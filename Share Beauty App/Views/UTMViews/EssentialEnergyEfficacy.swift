@@ -52,6 +52,8 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     func showEfficacyDetail(){
         let boundsWidth = self.bounds.size.width
         let boundsHeight = self.bounds.size.height
+        let beforeUseText = AppItemTable.getNameByItemId(itemId: 7953)
+        let afterUseText = AppItemTable.getNameByItemId(itemId: 7955)
         let x = CGFloat(80)
         scrollView.frame = CGRect(x: 0, y: 0, width: boundsWidth, height: boundsHeight)
         scrollView.isScrollEnabled = true
