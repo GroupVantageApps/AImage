@@ -52,6 +52,8 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     func showEfficacyDetail(){
         let boundsWidth = self.bounds.size.width
         let boundsHeight = self.bounds.size.height
+        let beforeUseText = AppItemTable.getNameByItemId(itemId: 7953)
+        let afterUseText = AppItemTable.getNameByItemId(itemId: 7955)
         let x = CGFloat(80)
         scrollView.frame = CGRect(x: 0, y: 0, width: boundsWidth, height: boundsHeight)
         scrollView.isScrollEnabled = true
@@ -98,10 +100,10 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm02.contentMode = UIViewContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
-            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 12)
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_MoisturizingCream"))
             sliderLeft.tag = 1
@@ -125,9 +127,9 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             
             for i in 1...3 {
                 setLabel(frame: CGRect(x: 100, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 140, y: 513*i+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
+                setLabel(frame: CGRect(x: 120, y: 513*i+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
                 setLabel(frame: CGRect(x: 750, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 150, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*i+230, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7959), size: 13)
             }
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 180), y: 513+140, width: 350, height: 120), text: AppItemTable.getNameByItemId(itemId: 7956), size: 40)
@@ -141,9 +143,9 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             scrollView.addSubview(aimage00)
             for i in 0...2 {
                 setLabel(frame: CGRect(x: 220, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 255, y: 513*i+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 220, y: 513*i+370, width: 200, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: 600, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 600, y: 513*i+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 600, y: 513*i+370, width: 200, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*i+400, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7966), size: 13)
             }
             setLabel(frame: CGRect(x: 140, y: 35, width: 350, height: 120), text: AppItemTable.getNameByItemId(itemId: 7956), size: 15)
@@ -161,9 +163,9 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             scrollView.addSubview(aimage02)
             for i in 0...2 {
                 setLabel(frame: CGRect(x: 120, y: 513*i+320, width: 150, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 140, y: 513*i+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
+                setLabel(frame: CGRect(x: 120, y: 513*i+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
                 setLabel(frame: CGRect(x: 750, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 150, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*i+230, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7962), size: 13)
             }
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 180), y: 140, width: 350, height: 120), text: AppItemTable.getNameByItemId(itemId: 7960), size: 40)
@@ -206,10 +208,10 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm02.contentMode = UIViewContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
-            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
-            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
+            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 12)
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_Emulsion"))
             sliderLeft.tag = 1
@@ -230,11 +232,11 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             setLabel(frame: CGRect(x: 75+670, y: 513+50, width: 210, height: 50), text: AppItemTable.getNameByItemId(itemId: 7956), size: 18)
             
             setLabel(frame: CGRect(x: 90, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-            setLabel(frame: CGRect(x: 130, y: 513+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+            setLabel(frame: CGRect(x: 90, y: 513+370, width: 200, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
             setLabel(frame: CGRect(x: 420, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-            setLabel(frame: CGRect(x: 450, y: 513+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+            setLabel(frame: CGRect(x: 420, y: 513+370, width: 200, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
             setLabel(frame: CGRect(x: 740, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-            setLabel(frame: CGRect(x: 765, y: 513+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+            setLabel(frame: CGRect(x: 740, y: 513+370, width: 200, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
             
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513+390, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7965), size: 13)
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*2+390, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7966), size: 13)
@@ -379,6 +381,15 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         label.numberOfLines = 0
         label.textColor = UIColor.white
         label.textAlignment = .center
+        scrollView.addSubview(label)
+    }
+    func setLabelBlack(frame:CGRect, text:String?, size:Int) {
+        let label = UILabel(frame: frame)
+        label.text = text
+        label.font = UIFont.boldSystemFont(ofSize: CGFloat(size))
+        label.numberOfLines = 0
+        label.textColor = UIColor.black
+        label.textAlignment = .left
         scrollView.addSubview(label)
     }
 }
