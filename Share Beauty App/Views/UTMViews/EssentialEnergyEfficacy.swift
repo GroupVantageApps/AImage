@@ -98,10 +98,10 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm02.contentMode = UIViewContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
-            showUtmImage(frame: CGRect(x: 80, y: 410, width: 93/3, height: 67/3), name: "Befor_use")
-            showUtmImage(frame: CGRect(x: 446, y: 410, width: 139/3, height: 67/3), name: "After_4_weeks")
-            showUtmImage(frame: CGRect(x: 541, y: 410, width: 93/3, height: 67/3), name: "Befor_use")
-            showUtmImage(frame: CGRect(x: 897, y: 410, width: 139/3, height: 67/3), name: "After_4_weeks")
+            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_MoisturizingCream"))
             sliderLeft.tag = 1
@@ -206,10 +206,10 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm02.contentMode = UIViewContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
-            showUtmImage(frame: CGRect(x: 80, y: 410, width: 93/3, height: 67/3), name: "Befor_use")
-            showUtmImage(frame: CGRect(x: 446, y: 410, width: 139/3, height: 67/3), name: "After_4_weeks")
-            showUtmImage(frame: CGRect(x: 541, y: 410, width: 93/3, height: 67/3), name: "Befor_use")
-            showUtmImage(frame: CGRect(x: 897, y: 410, width: 139/3, height: 67/3), name: "After_4_weeks")
+            setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 426, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 541, y: 400, width: 120, height: 40), text: beforeUseText, size: 15)
+            setLabelBlack(frame: CGRect(x: 877, y: 400, width: 80, height: 40), text: afterUseText, size: 15)
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_Emulsion"))
             sliderLeft.tag = 1
@@ -231,7 +231,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             
             setLabel(frame: CGRect(x: 90, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
             setLabel(frame: CGRect(x: 130, y: 513+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
-            setLabel(frame: CGRect(x: 450, y: 513+320, width: 120, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
+            setLabel(frame: CGRect(x: 420, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
             setLabel(frame: CGRect(x: 450, y: 513+370, width: 120, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
             setLabel(frame: CGRect(x: 740, y: 513+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
             setLabel(frame: CGRect(x: 765, y: 513+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
