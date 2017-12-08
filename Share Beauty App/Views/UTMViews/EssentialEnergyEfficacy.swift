@@ -129,7 +129,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
                 setLabel(frame: CGRect(x: 100, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
                 setLabel(frame: CGRect(x: 120, y: 513*i+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
                 setLabel(frame: CGRect(x: 750, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 750, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*i+230, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7959), size: 13)
             }
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 180), y: 513+140, width: 350, height: 120), text: AppItemTable.getNameByItemId(itemId: 7956), size: 40)
@@ -165,7 +165,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
                 setLabel(frame: CGRect(x: 120, y: 513*i+320, width: 150, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
                 setLabel(frame: CGRect(x: 120, y: 513*i+370, width: 150, height: 30), text: AppItemTable.getNameByItemId(itemId: 7954), size: 15)
                 setLabel(frame: CGRect(x: 750, y: 513*i+320, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7952), size: 36)
-                setLabel(frame: CGRect(x: 770, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
+                setLabel(frame: CGRect(x: 750, y: 513*i+370, width: 200, height: 50), text: AppItemTable.getNameByItemId(itemId: 7955), size: 15)
                 setLabel(frame: CGRect(x: Int(boundsWidth/2 - 135), y: 513*i+230, width: 280, height: 150), text: AppItemTable.getNameByItemId(itemId: 7962), size: 13)
             }
             setLabel(frame: CGRect(x: Int(boundsWidth/2 - 180), y: 140, width: 350, height: 120), text: AppItemTable.getNameByItemId(itemId: 7960), size: 40)
