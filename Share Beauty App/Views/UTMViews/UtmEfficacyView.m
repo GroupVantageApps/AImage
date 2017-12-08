@@ -858,7 +858,7 @@
             [self setLabel:CGRectMake(140, 513*i+320, 120, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];
             [self setLabel:CGRectMake(140, 513*i+370, 120, 30) text:[AppItemTable getNameByItemIdWithItemId:7954] size:15];
             [self setLabel:CGRectMake(750, 513*i+320, 200, 50) text:[AppItemTable getNameByItemIdWithItemId:7952] size:36];//7953>7952
-            [self setLabel:CGRectMake(770, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
+            [self setLabel:CGRectMake(750, 513*i+370, 150, 30) text:[AppItemTable getNameByItemIdWithItemId:7955] size:15];
             [self setLabel:CGRectMake((self.bounds.size.width)/2-135, 513*i+230, 280, 150) text:[AppItemTable getNameByItemIdWithItemId:7959] size:13];
         }
         [self setLabel:CGRectMake((self.bounds.size.width)/2-180, 513+140, 350, 120) text:[AppItemTable getNameByItemIdWithItemId:7956] size:40];
