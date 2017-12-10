@@ -456,7 +456,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         if standAloneBtnTapCount < 4 {
             standAloneBtnTapCount = standAloneBtnTapCount + 1
         } else {
-            let alert = UIAlertController(title: "", message: "アプリの設定を変更しますか？", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "", message: "GSC Mode", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
                 LanguageConfigure.isSuncareStandAloneApp = !LanguageConfigure.isSuncareStandAloneApp
                 print(LanguageConfigure.isSuncareStandAloneApp)
