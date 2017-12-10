@@ -49,6 +49,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     private static let startScreenSaverSecond = 15
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
 
     @IBOutlet weak fileprivate var mVContainer: UIView!
     @IBOutlet weak fileprivate var mHeaderView: HeaderView!
@@ -138,13 +140,17 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         mNavigationView.delegate = self
         mSideBar.delegate = self
         
-        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        }
         nextVc(topVc, animated: false)
         setOutAppBtn()
     }
     
     func setOutAppBtn() {
-        mHeaderView.setOutAppEnabled(!LanguageConfigure.isOutAppBtnHiddenCountry)
+//        mHeaderView.setOutAppEnabled(!LanguageConfigure.isOutAppBtnHiddenCountry)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -491,6 +497,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     func didSelectOutApp(index: Int) {
         let outAppInfo = type(of: self).outAppInfos[index]
+        
         if UIApplication.shared.canOpenURL(outAppInfo.url) {
             UIApplication.shared.openURL(outAppInfo.url)
         } else {

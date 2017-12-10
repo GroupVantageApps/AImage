@@ -14,6 +14,8 @@ import AVKit
 
 class GscBaseViewController: UIViewController {
    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+ 
     private var mUpdateStatusClosure: ((ContentDownloadResult) -> ())?
     
     override func viewDidLoad() {

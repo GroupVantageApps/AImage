@@ -102,17 +102,18 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         self.theme = mScreen.name
     }
    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
     override func viewDidLoad() {
         super.viewDidLoad()
         mHeaderView.delegate = self
         mNavigationView.delegate = self
-        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-        
         if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mHeaderView.setOutAppEnabled(false)
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         }
         
         LogManager.tapProduct(screenCode: mScreen.code, productId: productId)

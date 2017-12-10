@@ -14,6 +14,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     var lxArr = [String : String]()
@@ -43,10 +45,6 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         super.viewDidLoad()
         mScrollV.delegate = self
         
-        if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mBtnOutApp.isHidden = true
-        }
         
         lxArr = LanguageConfigure.lxcsv
         if ((lxArr["1"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
@@ -75,8 +73,12 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             yutakaBtn.setTitle(lxArr["3"], for: .normal) 
         }
         
-        self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-        print("LuxuryViewController.viewDidLoad")
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            self.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            self.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        }
+         print("LuxuryViewController.viewDidLoad")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         
         moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView

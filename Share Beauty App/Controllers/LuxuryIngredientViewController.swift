@@ -29,18 +29,21 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     @IBOutlet var mNavigationView: LXNavigationView!
     var bgAudioPlayer: AVAudioPlayer!
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
-        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
-        
         if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mHeaderView.setOutAppEnabled(false)
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         }
+        
+        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
+      
         
         self.mBGImgV.image = FileTable.getLXFileImage("lx_ingredient.png")
         self.mAngelicaBtn.setImage(FileTable.getLXFileImage("lx_ingredient_btn_2.png"), for: .normal)

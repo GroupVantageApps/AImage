@@ -14,6 +14,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     
@@ -54,7 +56,11 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         mGroupType = LanguageConfigure.gscgroup
         
-        mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            mGscHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        }
         
         print("GscViewController.viewDidLoad")
     
@@ -456,7 +462,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         if standAloneBtnTapCount < 4 {
             standAloneBtnTapCount = standAloneBtnTapCount + 1
         } else {
-            let alert = UIAlertController(title: "", message: "アプリの設定を変更しますか？", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "", message: "GSC Mode", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
                 LanguageConfigure.isSuncareStandAloneApp = !LanguageConfigure.isSuncareStandAloneApp
                 print(LanguageConfigure.isSuncareStandAloneApp)

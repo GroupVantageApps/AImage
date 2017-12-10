@@ -14,6 +14,8 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     
@@ -38,7 +40,11 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         super.viewDidLoad()
         
         mGscHeaderView.delegate = self
-        mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            mGscHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        }
         
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height

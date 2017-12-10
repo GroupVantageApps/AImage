@@ -30,14 +30,11 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     @IBOutlet weak var mBLSBtn: UIButton!
 
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     override
     func viewDidLoad() {
         super.viewDidLoad()
-        
-        if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mHeaderView.setOutAppEnabled(false)
-        }
         
         self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
         self.mBLSBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_bls_btn.png"), for: .normal)
@@ -46,7 +43,11 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
-        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
+        }
         print("LuxuryProductViewController")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         

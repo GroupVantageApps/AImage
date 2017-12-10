@@ -31,7 +31,8 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     var productIdForDeeplink = 0
     
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    private static let mOutAppInfos = [Const.outAppInfoFoundation]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         theme = AppItemTable.getNameByItemId(itemId: 7842)
@@ -65,7 +66,7 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         }
         products = mProducts
         setupDropDown()
-        setDropDownForOutApp(dataSource: type(of: self).mOutAppInfos.map {$0.title})
+        setDropDownForOutApp(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
         
         let line: LineDetailData!
         line = LineDetailData(lineId: Const.lineIdMAKEUP)
@@ -119,7 +120,11 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     }
     
     func didSelectOutApp(index: Int) {
-        let outAppInfo = type(of: self).outAppInfos[index]
+        var outAppInfo = type(of: self).outAppInfos[index]
+        if LanguageConfigure.isOutAppBtnHiddenCountry {
+           outAppInfo = type(of: self).outAppFoundationInfos[index]
+        }
+        
         if UIApplication.shared.canOpenURL(outAppInfo.url) {
             UIApplication.shared.openURL(outAppInfo.url)
         } else {

@@ -37,7 +37,7 @@ struct Const {
     static let outAppInfoUvInfo = OutAppInfo(title: "UVinfo", url: "ssduvi://")
     static let outAppInfoSoftener = OutAppInfo(title: "Softner", url: "ssdsoftner://")
     static let outAppInfoFoundation = OutAppInfo(title: "Foundation Finder", url: "ssdfdf://")// "jp.co.shiseido.gs.fdf")
-    static let outAppInfoESSENTIAL = OutAppInfo(title: "Essential EnergyNERGY", url: "ssdeeapp://")// "jp.co.shiseido.e1.line.app")
+    static let outAppInfoESSENTIAL = OutAppInfo(title: "Essential Energy", url: "ssdeeapp://")// "jp.co.shiseido.e1.line.app")
 
 
     static let screenIdCountrySetting = 2
