@@ -22,6 +22,7 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     
@@ -45,18 +46,18 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mGscHeaderView.delegate = self
-        mGscHeaderView.mBtnFind.isHidden = true
-        mGscHeaderView.mLblTitle.text = ""
+    mGscHeaderView.delegate = self
+    mGscHeaderView.mBtnFind.isHidden = true
+    mGscHeaderView.mLblTitle.text = ""
+    if LanguageConfigure.isOutAppBtnHiddenCountry {
+        mGscHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+    } else {
         mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
-        
-        let selfWidth = self.view.bounds.width
-        let selfHeight = self.view.bounds.height
-        
-        mScrollV.delegate = self
-        
-
+    }
+    let selfWidth = self.view.bounds.width
+    let selfHeight = self.view.bounds.height
+    
+    mScrollV.delegate = self
         if (mProductId != nil) {
             let vcChild = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             vcChild.productId = mProductId

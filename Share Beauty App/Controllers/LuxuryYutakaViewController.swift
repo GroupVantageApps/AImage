@@ -19,6 +19,8 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+
     var bgAudioPlayer: AVAudioPlayer!
     var yAudioPlayer: AVAudioPlayer!
     var mConceptView: LXYutakaConceptView!
@@ -33,11 +35,10 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         mNavigationView.delegate = self
         
         if LanguageConfigure.isOutAppBtnHiddenCountry {
-            print("OutAppBtn Hidden Country")
-            mHeaderView.setOutAppEnabled(false)
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
+        } else {
+            mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         }
-        
-        mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         self.mBGImgV.image = FileTable.getLXFileImage("lx_yutaka.png")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         let lxArr = LanguageConfigure.lxcsv
