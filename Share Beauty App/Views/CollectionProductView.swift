@@ -85,6 +85,8 @@ class CollectionProductView: UICollectionViewCell {
             strCategory = product?.beautyName
             strLine = product?.lineName
             strName = product?.productName
+            self.dayImageView.image = nil
+            self.nightImageView.image = nil
             
             let icon_day = UIImage(named: "icon_day")
             let icon_night = UIImage(named: "icon_night")
