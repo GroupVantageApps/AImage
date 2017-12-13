@@ -218,6 +218,12 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         DownloadConfigure.downloadStatus = .success
         SwiftSpinner.hide()
         self.reloadUpdateStatus()
+        
+        //DownLoad完了時にTopを再読み込みする。
+        let toVc = UIViewController.GetViewControllerFromStoryboard("Main", targetClass: NavigationViewController.self) as! NavigationViewController
+        let navigationController = UINavigationController(rootViewController: toVc)
+        navigationController.isNavigationBarHidden = true
+        UIApplication.shared.keyWindow?.rootViewController = navigationController
     }
 
     private func error(message: String) {
