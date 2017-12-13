@@ -101,7 +101,7 @@ class CollectionProductView: UICollectionViewCell {
                 if self.dayImageView.image == nil {
                     self.dayImageView.image = icon_night
                 } else {
-                    self.dayImageView.image = icon_night
+                    self.nightImageView.image = icon_night
                 }
             }
             
