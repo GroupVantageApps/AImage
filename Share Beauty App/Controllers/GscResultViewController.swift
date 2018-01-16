@@ -217,7 +217,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     
                     if productId == "549" {//productId == "549"
                         let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
-                        useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
+                        useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
                         useTypeLbl.numberOfLines = 2
                         useTypeLbl.text =  AppItemTranslateTable.getEntity(7946).name
                         useTypeLbl.backgroundColor = UIColor.white
@@ -228,7 +228,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     
                     }else{
                         let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
-                        useTypeLbl.font = UIFont.init(name: "Optima-Bold", size: 12.0)
+                        useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
                         useTypeLbl.numberOfLines = 2
                         useTypeLbl.adjustsFontSizeToFitWidth = true
                         useTypeLbl.textAlignment = .center;
