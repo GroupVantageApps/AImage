@@ -37,8 +37,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     var noAddFlg: Bool = false
     var lineId = 0
     var lineStep = 0
+    var getProdut_id = 0
 
-    
     private var mProducts: [ProductData]!
     private var mProductImages: [Int:UIImage]!
     private var mAspect: CGFloat = 1.0
@@ -183,6 +183,16 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
 
         mProductImages = [:]
+        
+        //product_idごとに表示するproduct変更
+        if getProdut_id == 566{
+            let from566Products = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
+            mProducts.insert(contentsOf: from566Products, at: 0)
+        }else if getProdut_id == 567{
+            let from568Products = [ProductData(productId: 568),ProductData(productId: 569)]
+            mProducts.insert(contentsOf: from568Products, at: 0)
+        }
+        
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)
         }
@@ -283,11 +293,15 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
     // MARK: - CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
         if indexPath.row % 2 == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
+            print("line_indexPath.row:\(indexPath.row)")
             let rightViewIndex = indexPath.row / 2
             if mProducts.count > rightViewIndex {
                 let product = mProducts[rightViewIndex]
+                //Const.idealBeautyTypeLine == 2
                 if product.idealBeautyType == Const.idealBeautyTypeLine {
                     cell.backgroundColor = .black
                 } else {
@@ -298,7 +312,9 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
             cell.delegate = self
-            cell.product = mProducts[indexPath.row / 2]
+            print("product_indexPath.row:\(indexPath.row)")
+            print("indexPath.row / 2:\(indexPath.row / 2)")
+            cell.product = mProducts[indexPath.row / 2 ]
             cell.productImage = mProductImages[indexPath.row / 2]
             cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row / 2))
             cell.indexPath = indexPath

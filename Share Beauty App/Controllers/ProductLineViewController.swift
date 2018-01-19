@@ -26,6 +26,9 @@ class ProductLineViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("collectionView.frame.size.width:\(collectionView.frame.size.width)")
+        print("ProductLineViewController.horizontalMargin:\(ProductLineViewController.horizontalMargin)")
+
         return CGSize(width: (collectionView.frame.size.width - ProductLineViewController.horizontalMargin * 2) / 2.1, height: 110)
     }
 

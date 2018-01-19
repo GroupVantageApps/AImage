@@ -52,6 +52,7 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
     }
     fileprivate var mIsSelectSomeone: Bool = false {
         didSet {
+            
             if oldValue == mIsSelectSomeone {
                 //return
             }

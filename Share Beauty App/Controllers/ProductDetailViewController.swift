@@ -31,6 +31,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @IBOutlet weak private var mTroubleView: TroubleView!
     @IBOutlet weak private var mVColorBall: UIView!
 
+//    @IBOutlet weak var mVHowToUse: UIView!
     @IBOutlet weak private var mVHowToUse: UIView!
     
     @IBOutlet weak private var mCategoryButtonFeatures: CategoryButton!
@@ -84,6 +85,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var fromGscVc: Bool = false
     
     var productId: Int!
+    var isHowToUseView: Bool = false
 
     var mIsUtm: Bool = false
     var mIsUtmEye: Bool = false
@@ -215,14 +217,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 self.mIsEE = true
                 mCategoryButtonEfficacy.enabled = true
             } else if productId == 1 || productId == 2 {
+            
                 mCategoryButtonEfficacy.enabled = false
             }
      //   }
-        // HowToUseがからの時はViewを非表示
+        // HowToUseが空の時はViewを非表示
         if product.howToUse == "" {
             mVHowToUse.isHidden = true
 //            print(mConstraintTop.secondItem)
         }
+        
+//        if product.usageImage == ProductDetailData(productId: 564).usageImage{
+//            mVHowToUse.isHidden = false
+//        }
 		
 		if product.makeupLook {
 			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0
@@ -277,6 +284,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		
 		// 動画テロップデータ読み込み
 		self.movieTelop = TelopData(movieId: product.movie)
+        
+        if isHowToUseView == true{
+            mBtnCurrentSelect?.selected = false
+            let sender = self.mCategoryButtonHowToUse
+            mBtnCurrentSelect = sender
+            mBtnCurrentSelect?.selected = true
+            
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            
+            showInfo(sender!)
+        }
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -394,6 +415,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         for subview in mVCategoryImageBase.subviews {
             subview.removeFromSuperview()
         }
+
 
         for imageId in imageIds {
             let imgV: UIImageView = UIImageView()
@@ -524,6 +546,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mWasoFeatureView.image = image
     }
 
+    //画像なし悩みId
     private func checkSpecialCase() {
         mIsUtm = Const.productIdUtm.contains(self.productId)
         mIsUtmEye = Const.productIdUtmEye == self.productId
@@ -639,7 +662,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     wasoEfficacyView.setupOrange()
                 }
                 mVCurrentSelect = wasoEfficacyView
-            } else if productId == 553 {
+            } else if productId == 553 {//
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 

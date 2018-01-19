@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LifeStyleProductViewDelegate: NSObjectProtocol {
-    func didTapProduct(_ product: ProductData?, transitionItemId: String?)
+    func didTapProduct(_ product: ProductData?, transitionItemId: String?)//sender:
 }
 
 class LifeStyleProductView: BaseView {
@@ -24,16 +24,26 @@ class LifeStyleProductView: BaseView {
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
 	
     let discroptionList = [
-        553:7932,
-        554:7933, //t-hirai 参照修正
-        101:0,
-        455:0,
-        470:7938,
-        500:7939,
-        551:7940,
-        545:7945,
-        549:7946,
-        498:7947,
+//        553:7932,
+//        554:7933, //t-hirai 参照修正
+//        101:0,
+//        455:0,
+//        470:7938,
+//        500:7939,
+//        551:7940,
+//        545:7945,
+//        549:7946,
+//        498:7947,
+
+        564:0,
+        6534:0,
+        566:0,
+        567:0,
+        588:0,
+        570:7942,
+        571:7943,
+
+        
     ]
 	// カスタムスタイルの定義。従来のスタイルはnormal
 	// スタイルの変更はproductプロパティに値を設定する前に行う
@@ -161,7 +171,7 @@ class LifeStyleProductView: BaseView {
             print("tintColor: " + (self.mBtnProduct.imageView?.tintColor.description)!)
             self.beautyName = product?.beautyName
             self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
-            print(self.discriptionLabel.text)
+            print("self.discriptionLabel.text:\(self.discriptionLabel.text)")
             self.lineName = product?.lineName
             self.productName = product?.productName
             self.imgProduct = FileTable.getImage(product?.image)
