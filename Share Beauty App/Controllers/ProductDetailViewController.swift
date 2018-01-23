@@ -238,6 +238,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		}
 
         self.setSpecialMenu()
+        self.setCategoryButtonDefend()
 
         if Bool(product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "icon_day")!
@@ -580,6 +581,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonHowToUse.enabled = true
         }
     }
+    
+    private func setCategoryButtonDefend(){
+        let idArray = [28,359,588,553,554,555,556,564]
+        if idArray.contains(productId){
+         mCategoryButtonDefend.enabled = true
+        }
+    }
 
     private func setSpecialCaseConstraints(targetView: UIView, viewHeight: CGFloat) {
         targetView.translatesAutoresizingMaskIntoConstraints = false
@@ -721,7 +729,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect = utmEfficacyView
             }
 
-        } else if sender === mCategoryButtonDefend {
+        } else{
             let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
             mVContent.addSubview(utmDefendView!)
             mVCurrentSelect = utmDefendView
@@ -747,6 +755,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			if product.makeupLook {
 				makeCategoryImages(product.makeupLookImages)
 			}
+            let idArray = [28,359,588,553,554,555,556,564]
+            if idArray.contains(productId){
+                let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
+                delegate?.nextVc(nextVc)
+            }
         }
     }
 

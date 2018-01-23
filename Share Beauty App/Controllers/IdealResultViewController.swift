@@ -88,15 +88,17 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         let swipeGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         swipeGesture.maximumNumberOfTouches = 1
         mVSelectBase.addGestureRecognizer(swipeGesture)
-
         mScrollVPinch.delegate = self
+        self.setMovieIcon()
+        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setProductListData()
         mCollectionView.reloadData()
-    }
+   }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -112,6 +114,9 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         print("self.view.height:", self.view.height)
         print("mCollectionView.height:", mCollectionView.height)
         print("mVSelectBase.height:", mVSelectBase.height)
+        
+        let centerPosition =  mProducts.count * 2 - 1
+        mCollectionView.scrollToItem(at:IndexPath(item: centerPosition, section: 0), at: .right, animated: false)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -173,7 +178,20 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
         mDropDown.direction = .bottom
     }
-
+    
+    func setMovieIcon(){
+        let movieStartButton = UIButton()
+        let image:UIImage = UIImage(named: "moviStartBtn.png")!
+        movieStartButton.setImage(image, for: .normal)
+        movieStartButton.frame = CGRect(x: 80, y: 20, width: 40, height: 40)
+        movieStartButton.addTarget(self, action: #selector(startMovie), for: .touchUpInside)
+        mVMain.addSubview(movieStartButton)
+    }
+    
+    func startMovie(){
+        print("start")
+    }
+    
     func setProductListData() {
         if products == nil {
             let productListData = ProductListData(lineIdsOrigin: selectedLineIds, stepLowerIdsOrigin: selectedStepLowerIds, noAddFlg: noAddFlg)
@@ -191,14 +209,22 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }else if getProdut_id == 567{
             let from568Products = [ProductData(productId: 568),ProductData(productId: 569)]
             mProducts.insert(contentsOf: from568Products, at: 0)
+        //}
+        }else if getProdut_id == 0009{
+            let UTMproductList = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567),ProductData(productId: 568),ProductData(productId: 569)]
+            mProducts.insert(contentsOf: UTMproductList, at: 0)
         }
+    
         
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)
         }
         mShowTrobleIndexes = []
     }
+    
+    
 
+    
     @IBAction func onTap(_ sender: Any) {
         self.toggleLineSelect(duration: 0.4)
     }
@@ -238,6 +264,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
     }
 
+    
     // MARK: - IdealProductListViewDelegate
     func didTap(_ sender: IdealProductView) {
         let productId: Int? = sender.product?.productId
@@ -294,17 +321,18 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     // MARK: - CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-
+        print(indexPath.row)
         if indexPath.row % 2 == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
-            print("line_indexPath.row:\(indexPath.row)")
             let rightViewIndex = indexPath.row / 2
             if mProducts.count > rightViewIndex {
                 let product = mProducts[rightViewIndex]
                 //Const.idealBeautyTypeLine == 2
                 if product.idealBeautyType == Const.idealBeautyTypeLine {
+                    print("center_indexPath.row")
                     cell.backgroundColor = .black
                 } else {
+                    print("blue_indexPath.row")
                     cell.backgroundColor = .clear
                 }
             }
@@ -312,8 +340,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
             cell.delegate = self
-            print("product_indexPath.row:\(indexPath.row)")
-            print("indexPath.row / 2:\(indexPath.row / 2)")
+            print("product_indexPath.row")
+//            print("indexPath.row / 2:\(indexPath.row / 2)")
             cell.product = mProducts[indexPath.row / 2 ]
             cell.productImage = mProductImages[indexPath.row / 2]
             cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row / 2))

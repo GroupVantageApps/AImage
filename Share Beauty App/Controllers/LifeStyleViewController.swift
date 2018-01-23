@@ -116,7 +116,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
     
-//    private let productIds:[Int] = [564,566,568,588, 570, 571]
+//    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
     private let productIds:[Int] = [564,6534,566,567,588, 570, 571]
 
     private let essentialEnagyProducts = [553,554]
