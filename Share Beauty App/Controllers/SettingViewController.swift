@@ -16,6 +16,10 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
     var theme: String?
     var isEnterWithNavigationView: Bool = true
 
+    @IBOutlet weak var changeUTMBtn: BaseButton!
+    @IBOutlet weak var switchBtn: UISwitch!
+    @IBOutlet weak var switchLabel: UILabel!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.theme = mScreen.name
@@ -25,6 +29,9 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        changeUTMBtn.isEnabled = false
+        switchLabel.text = switchBtn.isOn ? "ON":"OFF"
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +58,14 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
         delegate?.nextVc(nextVc)
     }
 
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        if sender.isOn{
+            switchLabel.text = "ON"
+        }else{
+            switchLabel.text = "OFF"
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

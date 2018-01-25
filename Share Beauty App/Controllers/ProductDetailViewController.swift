@@ -764,6 +764,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
 	private var mAvPlayerObserver: Any? = nil
+
     private func showMovie(movieId: Int) {
         let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movieId))
         let avPlayerVc = AVPlayerViewController()

@@ -143,12 +143,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         ]
 
     private let labelItems = [
-        (discription: 7928, x: CGFloat(180), y: CGFloat(180), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
-        (discription: 7930, x: CGFloat(745), y: CGFloat(125), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
+        (discription: 7928, x: CGFloat(180), y: CGFloat(160), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
+        (discription: 7930, x: CGFloat(745), y: CGFloat(102), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
         //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7935, x: CGFloat(565
         ), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
-        (discription: 7937, x: CGFloat(1470), y: CGFloat(130), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//右吹き出しテキストx:1280y:105
+        (discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//右吹き出しテキストx:1280y:105
         // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
         (discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         (discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),

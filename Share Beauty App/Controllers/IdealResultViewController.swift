@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class IdealResultViewController: UIViewController, NavigationControllerAnnotation, IdealProductViewDelegate, IdealResultCollectionViewDelegate, TroubleViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
     @IBOutlet weak private var mIdealResultCollectionVFirst: IdealResultCollectionView!
@@ -51,6 +53,11 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     private var mlastLocation: CGFloat!
     private var mIsShowLineView: Bool = false
     private var mCanAnimateLineView: Bool = false
+    
+    private var movieTelop: TelopData!
+    private var currentMovieTelop: TelopData.DataStructTerop? = nil
+    var mAvPlayerObserver: Any? = nil
+
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -89,8 +96,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         swipeGesture.maximumNumberOfTouches = 1
         mVSelectBase.addGestureRecognizer(swipeGesture)
         mScrollVPinch.delegate = self
-        self.setMovieIcon()
         
+        self.movieTelop = TelopData(movieId: 6542)
 
     }
 
@@ -179,17 +186,98 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         mDropDown.direction = .bottom
     }
     
-    func setMovieIcon(){
-        let movieStartButton = UIButton()
-        let image:UIImage = UIImage(named: "moviStartBtn.png")!
-        movieStartButton.setImage(image, for: .normal)
-        movieStartButton.frame = CGRect(x: 80, y: 20, width: 40, height: 40)
-        movieStartButton.addTarget(self, action: #selector(startMovie), for: .touchUpInside)
-        mVMain.addSubview(movieStartButton)
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let avPlayerVc = object as? AVPlayerViewController {
+            // AVPlayerViewControllerのdismiss間際にframeが1度変化する。このタイミングでオブザーバを削除する
+            if keyPath == #keyPath(UIViewController.view.frame) {
+                avPlayerVc.removeObserver(self, forKeyPath: #keyPath(UIViewController.view.frame))
+                if let player = avPlayerVc.player, let observer = self.mAvPlayerObserver {
+                    player.removeTimeObserver(observer)
+                    self.mAvPlayerObserver = nil
+                }
+            }
+        }
     }
     
-    func startMovie(){
-        print("start")
+    func setMovieIcon(){
+        let movieStartButton = UIButton()
+        let image:UIImage = UIImage(named: "button_play")!
+        movieStartButton.setImage(image, for: .normal)
+        movieStartButton.frame = CGRect(x: 80, y: 20, width: 100, height: 100)
+        
+        movieStartButton.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
+        mVMain.addSubview(movieStartButton)
+
+    }
+    
+//    func startMovie(){
+//        print("start")
+//    }
+    
+    func showMovie() {
+        
+        let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(6542))
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        self.present(avPlayerVc, animated: true, completion: {
+            // dismissを監視するため、オブザーバ登録する
+            avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
+        })
+        avPlayer.play()
+        
+        // テロップ表示用ラベル
+        let telopLabel = UILabel()
+        telopLabel.numberOfLines = 0
+        telopLabel.lineBreakMode = .byWordWrapping
+        telopLabel.backgroundColor = .clear
+        telopLabel.font = UIFont.systemFont(ofSize: 24.0)
+        telopLabel.adjustsFontSizeToFitWidth = true
+        telopLabel.minimumScaleFactor = 0.6
+        telopLabel.textColor = .white
+        telopLabel.textAlignment = .center
+        let labelWidth = self.view.width * 0.9
+        telopLabel.frame = CGRect(x: (self.view.width - labelWidth) / 2.0, y: self.view.height - 60.0, width: labelWidth, height: 130.0)
+        avPlayerVc.contentOverlayView?.addSubview(telopLabel)
+        
+        // 再生位置を監視し、テロップを表示する
+        let detectionInterval = CMTime(seconds: 1.0, preferredTimescale: 10)
+        self.mAvPlayerObserver = avPlayer.addPeriodicTimeObserver(forInterval: detectionInterval, queue: nil, using: { time in
+            // 内部関数: 該当のテロップデータを検索する
+            func searchTelop(playbackPosition: Float64) -> TelopData.DataStructTerop? {
+                var result: TelopData.DataStructTerop? = nil
+                for data in self.movieTelop.datas {
+                    if data.startTime <= playbackPosition && data.endTime >= playbackPosition {
+                        result = data
+                        break
+                    }
+                }
+                
+                return result
+            }
+            
+            // 内部関数: テロップラベルの更新
+            func updateTelopLabel() {
+                if let current = self.currentMovieTelop {
+                    telopLabel.text = current.content
+                } else {
+                    telopLabel.text = nil
+                }
+            }
+            
+            let playbackPosition = CMTimeGetSeconds(time)
+            if let current = self.currentMovieTelop {
+                if current.startTime > playbackPosition || current.endTime < playbackPosition {
+                    self.currentMovieTelop = searchTelop(playbackPosition: playbackPosition)
+                    updateTelopLabel()
+                }
+            } else {
+                self.currentMovieTelop = searchTelop(playbackPosition: playbackPosition)
+                updateTelopLabel()
+            }
+        })
     }
     
     func setProductListData() {
@@ -213,6 +301,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }else if getProdut_id == 0009{
             let UTMproductList = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567),ProductData(productId: 568),ProductData(productId: 569)]
             mProducts.insert(contentsOf: UTMproductList, at: 0)
+            
+            self.setMovieIcon()
         }
     
         
