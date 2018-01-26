@@ -115,10 +115,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         2:LifeStyleThirdDetailViewController.self,
         3:LifeStyleFourthDetailViewController.self,
         ]
-    
-//    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
-    private let productIds:[Int] = [564,6534,566,567,588, 570, 571]
 
+//    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
+//    private let productIds:[Int] = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
+    private var productIds:[Int] = []
     private let essentialEnagyProducts = [553,554]
     private let whiteLucentProducts = [101,455]
     private let makeUpProducts = [470,500,551]
@@ -185,6 +185,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if !isShowVideo {
             mAVPlayerV.removeFromSuperview()
         }
+
+        productIds = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
     }
     
     override func viewDidLayoutSubviews() {

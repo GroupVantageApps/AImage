@@ -344,7 +344,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 case 3:
                     csvId = 358
                 case 4:
-                    csvId = 359
+                    csvId = LanguageConfigure.languageId
                 case 5:
                     csvId = 361
                 case 6:

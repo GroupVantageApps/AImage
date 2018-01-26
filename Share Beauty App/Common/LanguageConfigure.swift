@@ -19,6 +19,7 @@ class LanguageConfigure: NSObject {
     private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
     private static let suncareStandAlone = "suncareStandAlone"
+    private static let UTMitem = "UTMitem"
     
     private enum UserDefaultKey: String {
         case region = "RegionId"
@@ -87,6 +88,32 @@ class LanguageConfigure: NSObject {
             print("languageId: \(self.languageId)")
         }
     }
+    
+    static var UTMId: Int {
+        get {
+            if LanguageConfigure.isNewUTM {
+                return 588
+            } else {
+                return 359
+            }
+        }
+    }
+
+    static var isNewUTM: Bool {
+        get {
+            if let value = UserDefaults.standard.object(forKey: UTMitem) {
+                return value as! Bool
+            } else {
+                return false
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: UTMitem)
+            userDefault.synchronize()
+        }
+    }
+    
 
     private static var tempRegionId: Int?
     private static var tempCountryId: Int?

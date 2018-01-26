@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260E34AC2019CCFE0006109B /* moviStartBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 260E34AB2019CCFD0006109B /* moviStartBtn.png */; };
+		260E34AE2019CF7B0006109B /* UTM-play-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 260E34AD2019CF7A0006109B /* UTM-play-button.png */; };
 		2B336B249D71D6246E23B7EF /* Pods_Share_Beauty_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */; };
 		338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */; };
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
@@ -578,6 +580,8 @@
 
 /* Begin PBXFileReference section */
 		24AFBABB1CB1A80F7D07FA74 /* Pods-Share Beauty AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		260E34AB2019CCFD0006109B /* moviStartBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moviStartBtn.png; sourceTree = "<group>"; };
+		260E34AD2019CF7A0006109B /* UTM-play-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UTM-play-button.png"; sourceTree = "<group>"; };
 		338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoImageViewController.swift; sourceTree = "<group>"; };
 		338DE5711FBC4D2700E353CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoImageViewController.storyboard; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1454,6 +1458,8 @@
 			isa = PBXGroup;
 			children = (
 				EBF938001D8078AD00DF9D1B /* libsqlite3.tbd */,
+				260E34AB2019CCFD0006109B /* moviStartBtn.png */,
+				260E34AD2019CF7A0006109B /* UTM-play-button.png */,
 				C046D9811D757704007F57CA /* AVFoundation.framework */,
 				C05913CA1D67235700F22214 /* Share Beauty App */,
 				C05913E21D67235700F22214 /* Share Beauty AppTests */,
@@ -2394,6 +2400,7 @@
 				C050C9831E8267450009679D /* utm01_after.png in Resources */,
 				C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */,
 				C050C99C1E8267450009679D /* t_graph_gray_eye.png in Resources */,
+				260E34AC2019CCFE0006109B /* moviStartBtn.png in Resources */,
 				DE2C909B1E9C66E600B5FC4A /* LXYutakaConceptSubView.xib in Resources */,
 				DE06F71A1F16450200EF2FE2 /* s_btn.png in Resources */,
 				C050C8FF1E82619F0009679D /* features_whitelucent_1.png in Resources */,
@@ -2417,6 +2424,7 @@
 				C050C9841E8267450009679D /* utm01_befor.png in Resources */,
 				DE06F71E1F16450200EF2FE2 /* desc_02.png in Resources */,
 				E5E0D3FA1DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard in Resources */,
+				260E34AE2019CF7B0006109B /* UTM-play-button.png in Resources */,
 				C050C97A1E8267450009679D /* efficacy_face2_01.png in Resources */,
 				C050C98C1E8267450009679D /* f_effect_3.png in Resources */,
 				C050C90C1E82619F0009679D /* ss_ibuki_hoshi.png in Resources */,

@@ -201,9 +201,11 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     func setMovieIcon(){
         let movieStartButton = UIButton()
-        let image:UIImage = UIImage(named: "button_play")!
+        //let image:UIImage = UIImage(named: "button_play")!
+        let image:UIImage = UIImage(named: "UTM-play-button.png")!
         movieStartButton.setImage(image, for: .normal)
-        movieStartButton.frame = CGRect(x: 80, y: 20, width: 100, height: 100)
+        movieStartButton.imageView?.contentMode = .scaleAspectFit
+        movieStartButton.frame = CGRect(x: 80, y: 20, width: 40, height: 40)
         
         movieStartButton.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         mVMain.addSubview(movieStartButton)
@@ -305,7 +307,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             self.setMovieIcon()
         }
     
-        
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)
         }

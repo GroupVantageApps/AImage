@@ -97,7 +97,7 @@ struct Const {
     static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [497, 115, 511] //waso追加　平井20170217　（アイテムは暫定）115, 497, 511
     static let lifeStyleBeautyListC = [372, 421]
-    static let lifeStyleBeautyListD = [533, 359, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
+    static let lifeStyleBeautyListD = [533, LanguageConfigure.UTMId, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
     static let lifeStyleBeautyListE = [313, 513] //[513, 252, 313]
     static let lifeStyleBeautyListF = [455, 101] //[101,  455]
     static let lifeStyleBeautyListG = [470, 567] //item 変更　t-hirai 0803 >>[553, 554, 556] 555,556はどちらか排他表示にしたいです。
@@ -105,7 +105,7 @@ struct Const {
     static let lifeStyleBeautyListI = [545, 549, 498]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
-    static let productIdsUTM = [359, 28]
+    static let productIdsUTM = [LanguageConfigure.UTMId, 28]
 
     static let idealBeautyTypeProduct = 1
     static let idealBeautyTypeLine = 2
@@ -131,7 +131,7 @@ struct Const {
     // 画像なし悩みID
     static let troubleIdNotImage = [15, 16, 17, 18]
 
-    static let productIdUtm = [359, 559, 560]
+    static let productIdUtm = [LanguageConfigure.UTMId, 559, 560]
     static let productIdUtmEye = 28
     static let productIdIbuki = 495
     static let productIdWhiteLucentOnMakeUp = 496

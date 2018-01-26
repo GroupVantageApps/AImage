@@ -37,6 +37,8 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     var lineIdForDeeplink: Int = 0
     var lineStepForDeepLink: Int = 0
     
+    var isUTM: Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("TopViewController.viewDidLoad")
@@ -45,6 +47,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         mImgVMainVisual.image = FileTable.getImage(fileId)
         self.mainVisualIds = AppItemTable.getMainImageByItemId(itemId: 7911)
         
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +92,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
 //                mHelpImgVs[i].image = backImage
 //            }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

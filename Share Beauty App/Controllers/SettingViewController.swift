@@ -15,10 +15,9 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
     weak var delegate: NavigationControllerDelegate?
     var theme: String?
     var isEnterWithNavigationView: Bool = true
-
+    
     @IBOutlet weak var changeUTMBtn: BaseButton!
     @IBOutlet weak var switchBtn: UISwitch!
-    @IBOutlet weak var switchLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,9 +28,9 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
+        switchBtn.isOn = LanguageConfigure.isNewUTM
         changeUTMBtn.isEnabled = false
-        switchLabel.text = switchBtn.isOn ? "ON":"OFF"
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,12 +56,22 @@ class SettingViewController: UIViewController, NavigationControllerAnnotation {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ItemsDisplayedViewController.self) as! ItemsDisplayedViewController
         delegate?.nextVc(nextVc)
     }
+    
+//    @IBAction func switchChange(){
+//        if switchBtn.isOn{
+//            switchBtn.isOn = false
+//            LanguageConfigure.isNewUTM = false
+//        }else{
+//            switchBtn.isOn = false
+//            LanguageConfigure.isNewUTM = true
+//        }
+//    }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
         if sender.isOn{
-            switchLabel.text = "ON"
+            LanguageConfigure.isNewUTM = true
         }else{
-            switchLabel.text = "OFF"
+            LanguageConfigure.isNewUTM = false
         }
     }
     

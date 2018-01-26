@@ -22,7 +22,7 @@ class LifeStyleProductView: BaseView {
     
     weak var delegate: LifeStyleProductViewDelegate?
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
-	
+    
     let discroptionList = [
 //        553:7932,
 //        554:7933, //t-hirai 参照修正
@@ -39,11 +39,11 @@ class LifeStyleProductView: BaseView {
         6534:0,
         566:0,
         567:0,
-        588:0,
+        LanguageConfigure.UTMId:0,
         570:7942,
         571:7943,
 
-        
+
     ]
 	// カスタムスタイルの定義。従来のスタイルはnormal
 	// スタイルの変更はproductプロパティに値を設定する前に行う

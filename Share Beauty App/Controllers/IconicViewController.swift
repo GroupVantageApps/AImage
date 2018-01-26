@@ -37,6 +37,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
         print("IdealFirstSelectViewController.viewWillAppear")
 //        createVideo()
         mProductList = ProductListData(screenId: Const.screenIdIconicBeauty)
+
     }
 
     override func viewDidLayoutSubviews() {
@@ -44,6 +45,7 @@ class IconicViewController: UIViewController, NavigationControllerAnnotation, Co
         viewDidLayoutSubviewsOnce {
             self.view.layoutIfNeeded()
             mPagingProductV.products = mProductList.products
+
         }
     }
 

@@ -244,6 +244,11 @@
                                                     <constraint firstAttribute="bottom" secondItem="mqW-0y-Ovb" secondAttribute="bottom" constant="5" id="Qgd-Pw-Sea"/>
                                                     <constraint firstAttribute="bottom" secondItem="m1W-bl-0ME" secondAttribute="bottom" constant="10" id="wmT-Pq-Icq"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="subviews">
+                                                        <exclude reference="m1W-bl-0ME"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,7 +303,6 @@
                     <connections>
                         <outlet property="changeUTMBtn" destination="ywm-vu-YfQ" id="Lah-cW-NTK"/>
                         <outlet property="switchBtn" destination="mqW-0y-Ovb" id="LPo-CP-3Wj"/>
-                        <outlet property="switchLabel" destination="m1W-bl-0ME" id="n1q-X8-dM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sf-Uq-Vub" userLabel="First Responder" sceneMemberID="firstResponder"/>

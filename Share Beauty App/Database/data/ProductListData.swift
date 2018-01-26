@@ -306,7 +306,10 @@ class ProductListData: NSObject {
     func addUTM() {
         if mNoAddFlg {return}
         self.appendLineByArray(Const.lineIdUTM)
-        self.appendProductByArray(Const.productIdsUTM)
+        //TODO
+        //Constで参照したいが、設定の読み込みが即時反映されないので、Configから参照
+        //self.appendProductByArray(Const.productIdsUTM)
+        self.appendProductByArray([LanguageConfigure.UTMId,28])
     }
 
     func getProductIdsByLineAndStep(_ lineId: Int, stepLowerIds: [Int]) -> [ProductData] {
