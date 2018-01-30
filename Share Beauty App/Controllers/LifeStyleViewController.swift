@@ -186,7 +186,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             mAVPlayerV.removeFromSuperview()
         }
 
-        productIds = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
+        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571]
     }
     
     override func viewDidLayoutSubviews() {
