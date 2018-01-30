@@ -124,6 +124,15 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         let stepLower = sender.stepLower!
         if sender.selected {
             mStepLowerIds.append(stepLower.stepLowerId)
+            if stepLower.stepLowerId == 3{
+                //mStepLowerIds.append(stepLower.stepLowerId+1)
+//                let addCleanser = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
+//                mStepLowerIds.insert(contentsOf: addCleanser, at: 0)
+            }else if stepLower.stepLowerId == 4{
+                //mStepLowerIds.append(stepLower.stepLowerId+1)
+//                let addSoftener = [ProductData(productId: 568),ProductData(productId: 569)]
+//                mStepLowerIds.insert(contentsOf: addSoftener, at: 0)
+            }
         } else {
             if let index = mStepLowerIds.index(where: { $0 == stepLower.stepLowerId }) {
                 mStepLowerIds.remove(at: index)

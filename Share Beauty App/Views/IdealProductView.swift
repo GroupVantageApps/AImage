@@ -16,6 +16,7 @@ protocol IdealProductViewDelegate: NSObjectProtocol {
 }
 
 class IdealProductView: UICollectionViewCell {
+    @IBOutlet weak private var mtitleView: UIView!
     @IBOutlet weak private var mBtnProduct: BaseButton!
     @IBOutlet weak private var mBtnRecommend: BaseButton!
     @IBOutlet weak private var mLblBeauty: UILabel!
@@ -106,28 +107,37 @@ class IdealProductView: UICollectionViewCell {
     }
     var product: ProductData? {
         didSet {
-            if product?.idealBeautyType == Const.idealBeautyTypeProduct {
-                self.beautyName = product?.beautyName
-                self.lineName = product?.lineName
-                self.productName = product?.productName
-                self.mTroubles = (product?.troubles)!
-                if product != nil {
-                    self.isNew = Bool(product!.newItemFlg as NSNumber)
-                    self.day = Bool(product!.day as NSNumber)
-                    self.night = Bool(product!.night as NSNumber)
-                    if product!.lineId == Const.lineIdBioPerformance {
-                        self.isBop = true
-                    } else {
-                        self.isBop = false
+            //productをnilで判定することができないのでid番号で一致させて、空白部分を作成
+            if (product?.productId)! != 10001{
+                if product?.idealBeautyType == Const.idealBeautyTypeProduct {
+                    self.beautyName = product?.beautyName
+                    self.lineName = product?.lineName
+                    self.productName = product?.productName
+                    self.mTroubles = (product?.troubles)!
+                    if product != nil {
+                        self.isNew = Bool(product!.newItemFlg as NSNumber)
+                        self.day = Bool(product!.day as NSNumber)
+                        self.night = Bool(product!.night as NSNumber)
+                        if product!.lineId == Const.lineIdBioPerformance {
+                            self.isBop = true
+                        } else {
+                            self.isBop = false
+                        }
+                        isRecommend = Bool(product!.recommend as NSNumber)
                     }
-                    isRecommend = Bool(product!.recommend as NSNumber)
+                    mVBaseProduct.isHidden = false
+                    mVBaseLine.isHidden = true
+                } else {
+                    mVBaseProduct.isHidden = true
+                    mVBaseLine.isHidden = false
+                    mLblLineTitle.text = product?.lineName
                 }
-                mVBaseProduct.isHidden = false
-                mVBaseLine.isHidden = true
-            } else {
-                mVBaseProduct.isHidden = true
-                mVBaseLine.isHidden = false
-                mLblLineTitle.text = product?.lineName
+            }else{
+                mBtnProduct.isHidden = true
+                mBtnRecommend.isHidden = true
+                mLblBeauty.isHidden = true
+                mImgVNew.isHidden = true
+                mtitleView.isHidden = true
             }
             if isUtm() {
                 let bg = getUltimuneBackgroundImage()

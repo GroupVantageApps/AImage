@@ -98,13 +98,13 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         mScrollVPinch.delegate = self
         
         self.movieTelop = TelopData(movieId: 6542)
-
-    }
+        }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setProductListData()
-        mCollectionView.reloadData()
+        //*cellに画像とテキストがうまく反映されないバグのためreloadをコメントアウト
+        //mCollectionView.reloadData()
    }
 
     override func viewDidLayoutSubviews() {
@@ -113,6 +113,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             mCollectionView.delegate = self
             mCollectionView.dataSource = self
         }
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -122,8 +123,13 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         print("mCollectionView.height:", mCollectionView.height)
         print("mVSelectBase.height:", mVSelectBase.height)
         
-        let centerPosition =  mProducts.count * 2 - 1
-        mCollectionView.scrollToItem(at:IndexPath(item: centerPosition, section: 0), at: .right, animated: false)
+        if getProdut_id == 566 || getProdut_id == 567 || getProdut_id == 10002{
+            let scrollPosition =  mProducts.count * 2 - 1
+            mCollectionView.scrollToItem(at:IndexPath(item: scrollPosition, section: 0), at: .right, animated: false)
+        }
+//        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4){
+//            mCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
+//        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -292,25 +298,54 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
         mProductImages = [:]
         
-        //product_idごとに表示するproduct変更
+        //LifestyleBeautymトップからの遷移 product_idごとに表示するproduct変更
+        if getProdut_id == (566) || getProdut_id == (567) || getProdut_id == (10002){
+            //productをnilで判定することができないのでid番号で一致させて、空白部分を作成(IdealProductView.swift)
+            mProducts.append(ProductData(productId: 10001))
+            addUTMfromLifeStyleBeauty()
+        }
+        //IdealBeautym選択画面からの遷移 CleanserとSoftner
+        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4){
+            addUTMfromIdealBeauty()
+        }
+
+        mProducts.enumerated().forEach { (i: Int, product: ProductData) in
+            mProductImages[i] = FileTable.getImage(product.image)
+        }
+        mShowTrobleIndexes = []
+        
+    }
+    
+    
+    func addUTMfromLifeStyleBeauty(){
+        let ClenserProducts = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
+        let SoftenerProducts = [ProductData(productId: 568),ProductData(productId: 569)]
+        let UTMproductList = ClenserProducts + SoftenerProducts
+
         if getProdut_id == 566{
-            let from566Products = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
-            mProducts.insert(contentsOf: from566Products, at: 0)
+            mProducts.insert(contentsOf: ClenserProducts, at: 0)
         }else if getProdut_id == 567{
-            let from568Products = [ProductData(productId: 568),ProductData(productId: 569)]
-            mProducts.insert(contentsOf: from568Products, at: 0)
-        //}
-        }else if getProdut_id == 0009{
+            mProducts.insert(contentsOf: SoftenerProducts, at: 0)
+        }else if getProdut_id == 10002{//NewApproachViewからの遷移
             let UTMproductList = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567),ProductData(productId: 568),ProductData(productId: 569)]
             mProducts.insert(contentsOf: UTMproductList, at: 0)
             
             self.setMovieIcon()
         }
+    }
     
-        mProducts.enumerated().forEach { (i: Int, product: ProductData) in
-            mProductImages[i] = FileTable.getImage(product.image)
+    func addUTMfromIdealBeauty(){
+        let ClenserProducts = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
+        let SoftenerProducts = [ProductData(productId: 568),ProductData(productId: 569)]
+        let UTMproductList = ClenserProducts + SoftenerProducts
+
+        if selectedStepLowerIds.contains(3) && selectedStepLowerIds.contains(4){
+            mProducts.insert(contentsOf: UTMproductList, at: 0)
+        }else if selectedStepLowerIds.contains(3){
+            mProducts.insert(contentsOf: ClenserProducts, at: 0)
+        }else if selectedStepLowerIds.contains(4){
+            mProducts.insert(contentsOf: ClenserProducts, at: 0)
         }
-        mShowTrobleIndexes = []
     }
     
     
@@ -441,7 +476,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mProducts.count * 2 + 1
+        return mProducts.count * 2 + 1 - 1
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
