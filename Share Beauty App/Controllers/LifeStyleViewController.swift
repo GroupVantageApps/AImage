@@ -16,7 +16,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
         
-        if (product?.productId == 566) || (product?.productId == 567){
+        if (product?.productId == 566) || (product?.productId == 568){
             let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
             nextVc.selectedLineIds = [Const.lineIdUTM]
             nextVc.getProdut_id = (product?.productId)!

@@ -89,6 +89,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
+        print("count:*\(selectedStepLowerIds.count)")
         if selectedStepLowerIds.count > 1 {
             self.setupDropDown()
         }
@@ -123,13 +124,10 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         print("mCollectionView.height:", mCollectionView.height)
         print("mVSelectBase.height:", mVSelectBase.height)
         
-        if getProdut_id == 566 || getProdut_id == 567 || getProdut_id == 10002{
+        if getProdut_id == 10002{
             let scrollPosition =  mProducts.count * 2 - 1
             mCollectionView.scrollToItem(at:IndexPath(item: scrollPosition, section: 0), at: .right, animated: false)
         }
-//        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4){
-//            mCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
-//        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -288,6 +286,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         })
     }
     
+    //:*ここでselectedStepLowerIdsをつかって商品情報を取得
     func setProductListData() {
         if products == nil {
             let productListData = ProductListData(lineIdsOrigin: selectedLineIds, stepLowerIdsOrigin: selectedStepLowerIds, noAddFlg: noAddFlg)
@@ -298,10 +297,12 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
         mProductImages = [:]
         
-        //LifestyleBeautymトップからの遷移 product_idごとに表示するproduct変更
-        if getProdut_id == (566) || getProdut_id == (567) || getProdut_id == (10002){
+        //LifestyleBeautyトップからの遷移 product_idごとに表示するproduct変更
+        if getProdut_id == (10002){
             //productをnilで判定することができないのでid番号で一致させて、空白部分を作成(IdealProductView.swift)
             mProducts.append(ProductData(productId: 10001))
+            addUTMfromLifeStyleBeauty()
+        }else if getProdut_id == (566) || getProdut_id == (568){
             addUTMfromLifeStyleBeauty()
         }
         //IdealBeautym選択画面からの遷移 CleanserとSoftner
@@ -324,7 +325,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
         if getProdut_id == 566{
             mProducts.insert(contentsOf: ClenserProducts, at: 0)
-        }else if getProdut_id == 567{
+        }else if getProdut_id == 568{
             mProducts.insert(contentsOf: SoftenerProducts, at: 0)
         }else if getProdut_id == 10002{//NewApproachViewからの遷移
             let UTMproductList = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567),ProductData(productId: 568),ProductData(productId: 569)]
@@ -344,7 +345,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }else if selectedStepLowerIds.contains(3){
             mProducts.insert(contentsOf: ClenserProducts, at: 0)
         }else if selectedStepLowerIds.contains(4){
-            mProducts.insert(contentsOf: ClenserProducts, at: 0)
+            mProducts.insert(contentsOf: SoftenerProducts, at: 0)
         }
     }
     

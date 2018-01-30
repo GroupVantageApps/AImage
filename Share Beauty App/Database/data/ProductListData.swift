@@ -260,6 +260,7 @@ class ProductListData: NSObject {
             for selectedStepLowerId in selectedStepLowerIds {
                 if selectedStepLowerId == stepLowerId {
                     sortedIds.append(selectedStepLowerId)
+                    print("selectedStepLowerIds:*\(selectedStepLowerIds)")
                 }
             }
         }
