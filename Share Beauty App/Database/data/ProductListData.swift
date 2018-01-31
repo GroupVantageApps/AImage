@@ -49,8 +49,7 @@ class ProductListData: NSObject {
 
         self.otherLineIds = self.sortLineId(self.otherLineIds)
         self.stepLowerIds = self.sortStepLowerId(stepLowerIdsOrigin)
-        self.productIdsLX = self.getLXProductIds(self.stepLowerIds)   //L, L
-
+        self.productIdsLX = self.getLXProductIds(self.stepLowerIds)//L, L
         self.pattern = self.checkPattern()
 
         if stepLowerIds.count == 1 && stepLowerIds.first == 6 {
@@ -82,18 +81,19 @@ class ProductListData: NSObject {
 
         //otherLineIdsのlineId毎に、DataStructIdealを作成し、DataStructIdeal配列を作成
         var idealsOrigin: [DataStructIdeal] = []
-        for lineId in self.otherLineIds {
-            var ideal: DataStructIdeal = DataStructIdeal()
-            ideal.line = ProductData(lineId: lineId)
 
-            let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
-            for product in targetProducts {
-                if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
-                    ideal.products.append(product)
+            for lineId in self.otherLineIds {
+                var ideal: DataStructIdeal = DataStructIdeal()
+                ideal.line = ProductData(lineId: lineId)
+
+                let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
+                for product in targetProducts {
+                    if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
+                        ideal.products.append(product)
+                    }
                 }
+                idealsOrigin.append(ideal)
             }
-            idealsOrigin.append(ideal)
-        }
         //print(idealsOrigin)
 
         //idealsOrigin配列からSHISEIDOの商品を抽出する
@@ -103,13 +103,31 @@ class ProductListData: NSObject {
         for idealOrigin in idealsOrigin {
             var productsOther: [ProductData] = []
             for product in idealOrigin.products {
-                if product.lineId == Const.lineIdSHISEIDO {
-                    productsSHISEIDO.append(product)
-                } else if product.lineId == Const.lineIdMAKEUP {
-                    productsMAKEUP.append(product)
-                } else {
-                    productsOther.append(product)
+                //CleanserとMoisturizerを選択時、重複しないように表示
+                if stepLowerIds.contains(3) || stepLowerIds.contains(4){
+                    if (product.productId >= 565 && product.productId <= 569){
+                        //skip
+                    }else{
+                        if product.lineId == Const.lineIdSHISEIDO {
+                            productsSHISEIDO.append(product)
+                        } else if product.lineId == Const.lineIdMAKEUP {
+                            productsMAKEUP.append(product)
+                        } else {
+                            productsOther.append(product)
+                        }
+                    }
+                }else{
+                    
+                    if product.lineId == Const.lineIdSHISEIDO {
+                        productsSHISEIDO.append(product)
+                    } else if product.lineId == Const.lineIdMAKEUP {
+                        productsMAKEUP.append(product)
+                    } else {
+                        productsOther.append(product)
+                    }
+                    
                 }
+
             }
             var ideal: DataStructIdeal = DataStructIdeal()
             ideal.line = idealOrigin.line
@@ -193,7 +211,6 @@ class ProductListData: NSObject {
                     self.addLX()
                     //self.addUTM()
                 }
-
             self.products.append(ideal.line)
             for product in ideal.products {
                 self.products.append(product)
@@ -260,7 +277,6 @@ class ProductListData: NSObject {
             for selectedStepLowerId in selectedStepLowerIds {
                 if selectedStepLowerId == stepLowerId {
                     sortedIds.append(selectedStepLowerId)
-                    print("selectedStepLowerIds:*\(selectedStepLowerIds)")
                 }
             }
         }
@@ -315,7 +331,6 @@ class ProductListData: NSObject {
 
     func getProductIdsByLineAndStep(_ lineId: Int, stepLowerIds: [Int]) -> [ProductData] {
         var products: [ProductData] = []
-
         let entity: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
         for stepLowerId in stepLowerIds {
             for step in entity.lineStep {

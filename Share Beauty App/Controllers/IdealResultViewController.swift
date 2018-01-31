@@ -89,7 +89,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
-        print("count:*\(selectedStepLowerIds.count)")
         if selectedStepLowerIds.count > 1 {
             self.setupDropDown()
         }

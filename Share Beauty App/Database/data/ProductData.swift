@@ -110,7 +110,6 @@ class ProductData: NSObject {
         self.idealBeautyType = Const.idealBeautyTypeLine
 
         self.lineId = lineId
-
         let lineTranslateEntity: LineTranslateEntity = LineTranslateTable.getEntity(self.lineId)
         self.lineName = lineTranslateEntity.name
         self.lineFeature = lineTranslateEntity.feature

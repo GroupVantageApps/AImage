@@ -130,7 +130,6 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
             }
         }
         
-        print("stepLowerId:*\(stepLower.stepLowerId)")
     }
     func didSelectCellSomeone(_ sender: IdealSelectCollectionView) {
         mVShowResult.isHidden = false
