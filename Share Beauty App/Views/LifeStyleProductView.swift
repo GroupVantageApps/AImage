@@ -42,6 +42,10 @@ class LifeStyleProductView: BaseView {
         LanguageConfigure.UTMId:0,
         570:7942,
         571:7943,
+        578:0,
+        6543:0,
+        572:0,
+        6544:0,
 
 
     ]

@@ -140,18 +140,22 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
         (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
 //        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
+        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
         ]
 
     private let labelItems = [
         (discription: 7928, x: CGFloat(180), y: CGFloat(160), width: CGFloat(250), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
         (discription: 7930, x: CGFloat(745), y: CGFloat(102), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
         //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7935, x: CGFloat(565
-        ), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
+        (discription: 7935, x: CGFloat(565), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
         (discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//右吹き出しテキストx:1280y:105
         // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
-        (discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
+        //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
+        //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
+        (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+        (discription: 7931, x: CGFloat(2460), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+
         ]
     private let countryFontScale = [
       //  (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
@@ -185,8 +189,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if !isShowVideo {
             mAVPlayerV.removeFromSuperview()
         }
-
-        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571]
+        let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
+        let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
+        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571, 578,  6543, 572, 6544]
     }
     
     override func viewDidLayoutSubviews() {
@@ -281,9 +286,20 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     
     @objc private func howToImageTapped(_ sender: UIGestureRecognizer) {
-        let product_564 = ProductData(productId: 564)
-        if let howtoImageV = sender.view?.viewWithTag(88){
-            didTapHowTo(product_564, transitionItemId: nil, sender: howtoImageV)
+//        let product_564 = ProductData(productId: 564)
+        let tag = sender.view?.tag
+        var product: ProductData = ProductData(productId: 564)
+        if tag == 88{
+            product = ProductData(productId: 564)
+        }else if tag == 89{
+            product = ProductData(productId: 578)
+        }else if tag == 90{
+            product = ProductData(productId: 572)
+        }else{
+            print("other")
+        }
+        if let howtoImageV = sender.view?.viewWithTag(tag!){
+            didTapHowTo(product, transitionItemId: nil, sender: howtoImageV)
         }
     }
 
@@ -459,8 +475,18 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     let imageView = UIImageView()
                     imageView.contentMode = .scaleAspectFit
                     imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: viewHeight)
-                    imageView.image = FileTable.getImage(6534)
-                    imageView.tag = 88
+                    //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
+                    print("offset:*\(enumerated.offset)")
+                    if enumerated.offset == 1{
+                        imageView.image = FileTable.getImage(6534)
+                        imageView.tag = 88
+                    }else if enumerated.offset == 8{
+                        imageView.image = FileTable.getImage(6543)
+                        imageView.tag = 89
+                    }else if enumerated.offset == 10{
+                        imageView.image = FileTable.getImage(6544)
+                        imageView.tag = 90
+                    }
                     imageView.isUserInteractionEnabled = true
                     imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
                     
@@ -568,6 +594,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
+
             if let labelFont = element.font {
                 label.font = labelFont
             }
@@ -605,6 +632,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
                 }
             }
+            print("element.discription:*\(element.discription)")
+            print("text:*\(label.text)")
             mScrollV.addSubview(label)
         }
     }
