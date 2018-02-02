@@ -130,6 +130,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     
     @objc private func toDetailView(_ sender: AnyObject){
         let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryFiveSecretsTopViewController", targetClass: LuxuryFiveSecretsTopViewController.self) as! LuxuryFiveSecretsTopViewController
+        toVc.bgAudioPlayer = bgAudioPlayer
         self.navigationController?.pushViewController(toVc, animated: false)
     }
     

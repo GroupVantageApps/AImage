@@ -36,9 +36,9 @@
                                         <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="746"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="757"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="746" id="Ox8-vW-YyF"/>
+                                                    <constraint firstAttribute="height" constant="757" id="Ox8-vW-YyF"/>
                                                     <constraint firstAttribute="width" constant="1024" id="hnU-DF-AD9"/>
                                                 </constraints>
                                             </imageView>
