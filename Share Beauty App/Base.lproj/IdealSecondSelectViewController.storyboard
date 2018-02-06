@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Ideal Second Select View Controller-->
         <scene sceneID="x1y-AP-NhU">
@@ -99,11 +107,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Av-NFJ">
-                                        <rect key="frame" x="328.5" y="10" width="367" height="60"/>
+                                        <rect key="frame" x="315.5" y="10" width="393.5" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What items are you looking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvI-N4-FdT">
-                                                <rect key="frame" x="0.0" y="15" width="367" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <rect key="frame" x="0.0" y="17.5" width="393.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -125,7 +133,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-id-1VR">
-                                        <rect key="frame" x="918" y="24.5" width="76" height="31"/>
+                                        <rect key="frame" x="917" y="24.5" width="77" height="31"/>
+                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="18"/>
                                         <state key="normal" title="All Ite" image="icon_recommend_large">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>

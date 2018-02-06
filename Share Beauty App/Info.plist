@@ -63,6 +63,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Reader-Bold.otf</string>
+		<string>Reader-Regular.otf</string>
+		<string>Reader-Medium.otf</string>
 		<string>Shiseido-Boldx.otf</string>
 		<string>Shiseido-ExtraBoldx.otf</string>
 		<string>Shiseido-ExtraLightx.otf</string>

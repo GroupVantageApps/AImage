@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleFirstProductView" customModule="Share_Beauty_App" customModuleProvider="target">
             <connections>
@@ -61,7 +69,7 @@
                                 <constraint firstAttribute="height" constant="18" id="784-hv-t6E"/>
                                 <constraint firstAttribute="width" constant="282" id="pNb-sr-0JR"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -71,7 +79,7 @@
                                 <constraint firstAttribute="height" constant="18" id="7XW-UN-O1d"/>
                                 <constraint firstAttribute="width" constant="282" id="l0g-L8-r13"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -81,7 +89,7 @@
                                 <constraint firstAttribute="width" constant="282" id="JNL-Bq-PoV"/>
                                 <constraint firstAttribute="height" constant="24" id="YWt-aG-FiX"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -91,7 +99,7 @@
                                 <constraint firstAttribute="width" constant="282" id="Ksz-Wn-hqI"/>
                                 <constraint firstAttribute="height" constant="55" id="iiX-aH-TAe"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -101,7 +109,7 @@
                                 <constraint firstAttribute="height" constant="52" id="aK3-6P-zRA"/>
                                 <constraint firstAttribute="width" constant="282" id="etF-rm-k3t"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="28"/>
                             <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>

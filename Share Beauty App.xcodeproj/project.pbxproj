@@ -61,6 +61,8 @@
 		807F43791EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */; };
 		807F437B1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */; };
 		914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */ = {isa = PBXBuildFile; fileRef = 914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */; };
+		91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0040202945E700BA61D6 /* Reader-Medium.otf */; };
+		91FF0043202945E800BA61D6 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
 		ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */; };
 		B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B11F47682700176804 /* After_4_weeks.png */; };
 		B38F63BE1F47682700176804 /* Befor_use.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B21F47682700176804 /* Befor_use.png */; };
@@ -660,6 +662,8 @@
 		807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleDefault2ProductsLayoutUnit.swift; sourceTree = "<group>"; };
 		807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleDefault1ProductsLayoutUnit.swift; sourceTree = "<group>"; };
 		914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = efficacy_slider_circle_Emulsion.png; sourceTree = "<group>"; };
+		91FF0040202945E700BA61D6 /* Reader-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reader-Medium.otf"; sourceTree = "<group>"; };
+		91FF0041202945E800BA61D6 /* Reader-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reader-Regular.otf"; sourceTree = "<group>"; };
 		9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C7A29668F906B75AEBCA0F /* Pods-Share Beauty AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EssentialEnergyEfficacy.swift; sourceTree = "<group>"; };
@@ -1522,6 +1526,8 @@
 				DE2C8F4F1E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf */,
 				C050C9B21E8276C60009679D /* Shiseido-Bold.otf */,
 				C050C9B31E8276C60009679D /* Shiseido-Boldx.otf */,
+				91FF0040202945E700BA61D6 /* Reader-Medium.otf */,
+				91FF0041202945E800BA61D6 /* Reader-Regular.otf */,
 				C050C9B41E8276C60009679D /* Shiseido-ExtraBold.otf */,
 				C050C9B51E8276C60009679D /* Shiseido-ExtraBoldx.otf */,
 				C050C9B61E8276C60009679D /* Shiseido-ExtraLight.otf */,
@@ -2650,6 +2656,8 @@
 				DE06F70D1F16450200EF2FE2 /* urban.png in Resources */,
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
+				91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */,
+				91FF0043202945E800BA61D6 /* Reader-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2745,7 +2753,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -2792,7 +2800,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -2810,7 +2818,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {
