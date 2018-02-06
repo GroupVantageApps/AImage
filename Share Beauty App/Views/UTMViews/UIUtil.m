@@ -21,7 +21,8 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
 	UILabel *lbl = [[UILabel alloc]initWithFrame:frame];
 	lbl.backgroundColor = [UIColor clearColor];
 	lbl.text = text;
-	lbl.font = [UIFont systemFontOfSize:fontSize];
+	//lbl.font = [UIFont fontWithName:@"Reader-Regular" size:[UIFont systemFontSize]];
+    lbl.font = [UIFont systemFontOfSize:fontSize];
 	if (newLineFlg) {
 		[lbl setLineBreakMode:NSLineBreakByWordWrapping];// update 20141227 t-hirai>>NSLineBreakByCharWrapping>>NSLineBreakByWordWrapping
 		[lbl setNumberOfLines:0];
@@ -75,9 +76,16 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
 + (UIFont *)getReaderBold:(CGFloat)fontSize {
 	return [UIFont fontWithName:@"Reader-Bold" size:fontSize];
 }
++ (UIFont *)getReaderRegular:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"Reader-Regular" size:fontSize];
+}
++ (UIFont *)getReaderMedium:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"Reader-Medium" size:fontSize];
+}
 
 + (UIFont *)getSystemBold:(CGFloat)fontSize {
-    return [UIFont boldSystemFontOfSize:fontSize];
+    return [UIFont fontWithName:@"Reader-Bold" size:fontSize];
+    //return [UIFont boldSystemFontOfSize:fontSize];
 }
 
 + (void)slideAnimation:(UIView *)view frame:(CGRect)frame delegate:(id)delegate {
@@ -93,6 +101,7 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
                    boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX)
                    options:NSStringDrawingUsesLineFragmentOrigin
                    attributes:@{NSFontAttributeName:[self getShiseidoLight:fontSize]}
+                   //attributes:@{NSFontAttributeName:[self getShiseidoLight:fontSize]}
                    context:nil].size;
 	return size.height;
 }

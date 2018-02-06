@@ -168,6 +168,8 @@ extern const CGFloat kButtonAlphaStateDisabled; ///< ボタン無効時のアル
 + (UIFont *)getShiseidoLightx:(CGFloat)fontSize;
 
 + (UIFont *)getReaderBold:(CGFloat)fontSize;
++ (UIFont *)getReaderRegular:(CGFloat)fontSize;
++ (UIFont *)getReaderMedium:(CGFloat)fontSize;
 
 + (UIFont *)getSystemBold:(CGFloat)fontSize;
 

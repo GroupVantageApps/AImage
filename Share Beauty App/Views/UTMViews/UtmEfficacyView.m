@@ -1037,6 +1037,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.text = text;
     [label setFont:[UIFont systemFontOfSize:point weight:UIFontWeightBold]];
+//     [label setFont:[UIFont systemFontOfSize:point weight:UIFontWeightBold]];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor whiteColor];
     label.numberOfLines = 0;
@@ -1068,9 +1069,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
 
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
 
     if (redCheck) {
@@ -1116,9 +1117,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
 
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
 
     if (redCheck) {
@@ -1207,7 +1208,7 @@
         }
     }
 
-    [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+    [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     [attrStr setTextColor:[UIUtil grayColor]];
 
     if(tracking > 0){
@@ -1241,9 +1242,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {

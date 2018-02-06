@@ -266,7 +266,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     func showUtmLabelText(text:String, frame:CGRect, fontSize:CGFloat, tracking:CGFloat, lineHeight:CGFloat, isRed:Bool, isBold:Bool) {
         let attrStr = NSMutableAttributedString(string: text)
         if (isBold) {
-            attrStr.setFont(UIUtil.getSystemBold(fontSize))
+            attrStr.setFont(UIUtil.getReaderBold(fontSize))
         }
         if (isRed) {
             attrStr.setTextColor(UIUtil.redColor())

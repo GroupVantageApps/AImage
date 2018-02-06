@@ -486,9 +486,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
    
     if (boldCheck) {
-    [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+    [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-    [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+    [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
 
     if (redCheck) {
@@ -527,9 +527,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -568,9 +568,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -601,9 +601,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -658,7 +658,7 @@
         [attrStr appendAttributedString:joint];
         }
     }
-    [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+    [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     [attrStr setTextColor:[UIUtil grayColor]];
     
     if(tracking > 0){

@@ -235,9 +235,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -278,9 +278,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -320,9 +320,9 @@
                                           initWithString:[StringUtils nullToEmpty:text]];
     
     if (boldCheck) {
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }else{
-        [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+        [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     }
     
     if (redCheck) {
@@ -378,7 +378,7 @@
         }
     }
    ;
-    [attrStr setFont:[UIUtil getSystemBold:fontSize]];
+    [attrStr setFont:[UIUtil getReaderMedium:fontSize]];
     [attrStr setTextColor:[UIUtil grayColor]];
     
     if(tracking > 0){
@@ -838,11 +838,11 @@
             NSMutableAttributedString *attrStr_right = [[NSMutableAttributedString alloc]
                                                   initWithString:[StringUtils nullToEmpty:string_right]];
 
-            [attrStr_left setFont:[UIUtil getSystemBold:17]];
+            [attrStr_left setFont:[UIUtil getReaderMedium:17]];
             [attrStr_left setTextColor:[UIUtil redColor]];
-            [attrStr setFont:[UIUtil getSystemBold:55]];
+            [attrStr setFont:[UIUtil getReaderMedium:55]];
             [attrStr setTextColor:[UIUtil redColor]];
-            [attrStr_right setFont:[UIUtil getSystemBold:17]];
+            [attrStr_right setFont:[UIUtil getReaderMedium:17]];
             [attrStr_right setTextColor:[UIUtil redColor]];
             
             CGRect viewFrame = CGRectMake(135, 145, 130, 130);
@@ -887,9 +887,9 @@
             NSMutableAttributedString *attrStr_right = [[NSMutableAttributedString alloc]
                                                         initWithString:[StringUtils nullToEmpty:string_right]];
             
-            [attrStr setFont:[UIUtil getSystemBold:55]];
+            [attrStr setFont:[UIUtil getReaderMedium:55]];
             [attrStr setTextColor:[UIUtil redColor]];
-            [attrStr_right setFont:[UIUtil getSystemBold:17]];
+            [attrStr_right setFont:[UIUtil getReaderMedium:17]];
             [attrStr_right setTextColor:[UIUtil redColor]];
             
             CGRect viewFrame = CGRectMake(135, 145, 130, 130);
@@ -943,11 +943,11 @@
             NSMutableAttributedString *attrStr_right = [[NSMutableAttributedString alloc]
                                                         initWithString:[StringUtils nullToEmpty:string_right_2]];
             
-            [attrStr_left setFont:[UIUtil getSystemBold:17]];
+            [attrStr_left setFont:[UIUtil getReaderMedium:17]];
             [attrStr_left setTextColor:[UIUtil redColor]];
-            [attrStr setFont:[UIUtil getSystemBold:55]];
+            [attrStr setFont:[UIUtil getReaderMedium:55]];
             [attrStr setTextColor:[UIUtil redColor]];
-            [attrStr_right setFont:[UIUtil getSystemBold:17]];
+            [attrStr_right setFont:[UIUtil getReaderMedium:17]];
             [attrStr_right setTextColor:[UIUtil redColor]];
             
             CGRect viewFrame = CGRectMake([self.coordinate coordinate:135] + margin_x, 145, 130, 130);
@@ -991,10 +991,10 @@
             NSMutableAttributedString *attrStr_right = [[NSMutableAttributedString alloc]
                                                         initWithString:[StringUtils nullToEmpty:string_right_2]];
             
-            [attrStr setFont:[UIUtil getSystemBold:55
+            [attrStr setFont:[UIUtil getReaderMedium:55
                               ]];
             [attrStr setTextColor:[UIUtil redColor]];
-            [attrStr_right setFont:[UIUtil getSystemBold:17]];
+            [attrStr_right setFont:[UIUtil getReaderMedium:17]];
             [attrStr_right setTextColor:[UIUtil redColor]];
             
             CGRect viewFrame = CGRectMake([self.coordinate coordinate:135] + margin_x, 145, 130, 130);
