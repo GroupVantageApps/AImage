@@ -12,6 +12,9 @@
         <array key="Reader-Bold.otf">
             <string>Reader-Bold</string>
         </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Recommended View Controller-->
@@ -37,7 +40,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O08-iG-ZVj" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="236" height="46"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                                                 <state key="normal" title="Delete all item(s)">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>

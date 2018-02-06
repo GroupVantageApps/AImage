@@ -216,7 +216,7 @@ class SunCareFeaturesView: BaseView {
 
     private func getLabelText(_ text: String, fontSize: CGFloat, tracking: CGFloat, lineHeight: CGFloat) -> NSAttributedString {
         let attrStr = NSMutableAttributedString(string: text)
-        attrStr.setFont(UIUtil.getShiseidoLight(fontSize))
+        attrStr.setFont(UIUtil.getReaderMedium(fontSize))
         attrStr.setTextColor(UIUtil.grayColor())
         if tracking > 0 {
             attrStr.setTracking(Float(tracking))
