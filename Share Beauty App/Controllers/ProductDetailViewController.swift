@@ -171,7 +171,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mImgVBackImage.image = FileTable.getImage(product.backImage)
         
         // 背景
-        if productId >= 553 && productId <= 556{
+        if productId >= 553 && productId <= 556 || productId == 564{
             mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
             var image: UIImage = FileTable.getImage(6355)!
             let resize = CGSize(width: self.view.width, height: self.view.height)
