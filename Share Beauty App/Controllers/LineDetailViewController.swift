@@ -93,6 +93,9 @@ class LineDetailViewController: UIViewController, NavigationControllerAnnotation
         if lineId == 39 {
             // 背景設定
             var image = FileTable.getImage(6355)!
+            print("image:*\(image)")
+            //image:*<UIImage: 0x6000000ac600>, {2048, 1302}
+            //image:*<UIImage: 0x6000004a8880>, {2048, 1302}
             image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height))
             image = UIGraphicsGetImageFromCurrentImageContext()!
             self.mVMain.backgroundColor = UIColor(patternImage: image)

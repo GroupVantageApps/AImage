@@ -171,7 +171,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mImgVBackImage.image = FileTable.getImage(product.backImage)
         
         // 背景
-        if productId >= 553 && productId <= 556 {
+        if productId >= 553 && productId <= 556{
             mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
             var image: UIImage = FileTable.getImage(6355)!
             let resize = CGSize(width: self.view.width, height: self.view.height)
@@ -459,6 +459,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let item: [String: String]! = AppItemTable.getItems(screenId: Const.screenIdTop)
         
         var datas = [ProductDetailTransitionData]()
+        
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
             datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
