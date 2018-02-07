@@ -17,6 +17,7 @@ class IdealBeautySecondsData: NSObject {
         Utility.log("IdealBeautySecondsData")
 
         let items = AppItemTable.getItems(screenId: Const.screenIdIdealBeauty2)
+        print("items:*\(items)")//items:*["01": "", "02": "[2, 3, 4, 6, 8, 9, 10, 11, 13]"]
         let idealBeautyStepLowers = Utility.parseArrayString(items["02"]!)
 
         for stepLowerId in idealBeautyStepLowers {
@@ -36,7 +37,7 @@ class IdealBeautySecondsData: NSObject {
             var num: Int = 0
             for lineId in lineIds {
                 if LineTranslateTable.getEntity(lineId).displayFlg == 0 { continue }
-                if lineId != Const.lineIdLX && lineId != Const.lineIdUTM {
+                if lineId != Const.lineIdLX{// && lineId != Const.lineIdUTM {
                     let line: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
                     guard let targetLineStep = line.lineStep.filter({$0.stepId == stepLowerId})[safe: 0] else {
                         continue

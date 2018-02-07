@@ -40,6 +40,7 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         Utility.log("IdealSecondSelectViewController.viewDidLoad")
         mIdealSelectCollectionV.delegate = self
         let idealBeautySecondsData = IdealBeautySecondsData(lineIds: selectedLineIds!)
+        print("idealBeautySecondsData:*\(idealBeautySecondsData)")
         mIdealSelectCollectionV.stepLowers = idealBeautySecondsData.stepLowers
 
         items = AppItemTable.getItems(screenId: Const.screenIdIdealBeauty3)

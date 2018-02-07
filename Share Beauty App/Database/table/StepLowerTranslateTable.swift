@@ -15,6 +15,7 @@ class StepLowerTranslateTable: NSObject {
 
         let database = ModelDatabase.getDatabase()
         database.open()
+        print("stepLowerId:*\(stepLowerId)")
         let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_step_lower_translate WHERE step_lower_id = ? AND language_id = ?", withArgumentsIn: [stepLowerId, languageId!])
         let entity: StepLowerTranslateEntity = StepLowerTranslateEntity()
 
