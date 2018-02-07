@@ -189,9 +189,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if !isShowVideo {
             mAVPlayerV.removeFromSuperview()
         }
-        let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
-        let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571, 578,  6543, 572, 6544]
+        //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
+        //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
+        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571, 578, 6543, 572, 6544]
     }
     
     override func viewDidLayoutSubviews() {
@@ -632,8 +632,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
                 }
             }
-            print("element.discription:*\(element.discription)")
-            print("text:*\(label.text)")
+
             mScrollV.addSubview(label)
         }
     }

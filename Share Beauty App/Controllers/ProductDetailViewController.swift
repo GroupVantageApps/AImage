@@ -652,6 +652,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(utmTechView!)
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
+            
+//            let testV = UIView()
+//            testV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+//            testV.backgroundColor = UIColor.gray
+//            
+//            for i in 1...3{
+//                let button = UIButton()
+//                button.frame = CGRect(x: 100 * ((i)*2), y: Int(testV.frame.height/2), width: 100, height: 50)
+//                button.backgroundColor = UIColor.white
+//                button.setTitle("\(i)", for: .normal)
+//                button.setTitleColor(UIColor.black, for: .normal)
+//                button.tag = i
+//                button.addTarget(self, action: #selector(self.onTapMenu(_:)), for: .touchUpInside)
+//                testV.addSubview(button)
+//            }
+//            
+//            mVContent.addSubview(testV)
+//            mVCurrentSelect = testV
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
@@ -736,6 +754,23 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVCurrentSelect = utmDefendView
         }
     }
+    
+//    @objc private func onTapMenu(_ sender: AnyObject){
+//        if sender.tag == 1{
+//            print("tag:*\(sender.tag)")
+//        }else if sender.tag == 2{
+//            print("tag:*\(sender.tag)")
+//            mVCurrentSelect?.removeFromSuperview()
+//            let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+//            mVContent.addSubview(utmTechView!)
+//            utmTechView?.showTechnologiesDetail(mIsUtm)
+//            mVCurrentSelect = utmTechView
+//                        
+//        }else if sender.tag == 3{
+//            print("tag:*\(sender.tag)")
+//        }
+//
+//    }
 
     private func showInfo(_ sender: CategoryButton) {
         mVContent.isHidden = true

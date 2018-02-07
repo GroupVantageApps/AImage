@@ -17,7 +17,6 @@ class IdealBeautySecondsData: NSObject {
         Utility.log("IdealBeautySecondsData")
 
         let items = AppItemTable.getItems(screenId: Const.screenIdIdealBeauty2)
-        print("items:*\(items)")//items:*["01": "", "02": "[2, 3, 4, 6, 8, 9, 10, 11, 13]"]
         let idealBeautyStepLowers = Utility.parseArrayString(items["02"]!)
 
         for stepLowerId in idealBeautyStepLowers {

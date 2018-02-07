@@ -314,23 +314,23 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             japanBotanicalscrollV.isPagingEnabled = true
             japanBotanicalscrollV.bounces = false
             
-            let greenTeaView: LXGreenTeaView = UINib(nibName: "LXGreenTeaView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXGreenTeaView
-            greenTeaView.setUI()
-            greenTeaView.mXbutton.isHidden = true
-            greenTeaView.frame = CGRect(x: 0, y: 0, width: 701, height: greenTeaView.frame.height)
-            japanBotanicalscrollV.addSubview(greenTeaView)
-            
             let skingraph: LXAngelicaView = UINib(nibName: "LXAngelicaView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXAngelicaView
             skingraph.setUI()
             skingraph.mXbutton.isHidden = true
-            skingraph.frame = CGRect(x: 701, y: 0, width: 701, height: skingraph.frame.height)
+            skingraph.frame = CGRect(x: 0, y: 0, width: 701, height: skingraph.frame.height)
             japanBotanicalscrollV.addSubview(skingraph)
             
             let cherryGraphView: LXCherryGraphView = UINib(nibName: "LXCherryGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXCherryGraphView
             cherryGraphView.setUI()
             cherryGraphView.mXbutton.isHidden = true
-            cherryGraphView.frame = CGRect(x: 1402, y: 0, width: 701, height: cherryGraphView.frame.height)
+            cherryGraphView.frame = CGRect(x: 701, y: 0, width: 701, height: cherryGraphView.frame.height)
             japanBotanicalscrollV.addSubview(cherryGraphView)
+            
+            let greenTeaView: LXGreenTeaView = UINib(nibName: "LXGreenTeaView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXGreenTeaView
+            greenTeaView.setUI()
+            greenTeaView.mXbutton.isHidden = true
+            greenTeaView.frame = CGRect(x: 1402, y: 0, width: 701, height: greenTeaView.frame.height)
+            japanBotanicalscrollV.addSubview(greenTeaView)
             
             if sender.tag == 100{
                 japanBotanicalscrollV.contentOffset = CGPoint(x: 0, y: 0)

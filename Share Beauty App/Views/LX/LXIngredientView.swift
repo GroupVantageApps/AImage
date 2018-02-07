@@ -73,7 +73,6 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
     }
     @IBAction func showMovie(_ sender: Any) {
         let vc = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: LuxuryIngredientViewController.self) as! LuxuryIngredientViewController
-        print("bgAudioPlayer:*\(vc.bgAudioPlayer)")
         self.removeFromSuperview()
         delegate?.movieAct()
     }
