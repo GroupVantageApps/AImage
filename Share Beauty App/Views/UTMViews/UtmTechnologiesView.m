@@ -63,6 +63,8 @@
                   fontSize:23
                   tracking:0
                 lineHeight:29 red:NO bold:NO];
+    NSLog(@"text_title %@", [NSString stringWithFormat:@"%@",utmArr[7]]);
+
     
      float x = 30 + titleLabel.width + 30;
     
@@ -76,6 +78,7 @@
                   fontSize:17
                   tracking:0
                 lineHeight:20 red:YES bold:NO];
+    NSLog(@"text_titleRed %@", [NSString stringWithFormat:@"%@",utmArr[14]]);
     
     
     [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[15]]
@@ -83,7 +86,8 @@
                   fontSize:14
                   tracking:0
                 lineHeight:18 red:NO bold:NO];
-    
+    NSLog(@"text_titledescription %@", [NSString stringWithFormat:@"%@",utmArr[15]]);
+
     
     // graph image
     self.graph_lineView = [[UIView alloc]initWithFrame:CGRectMake(185 , 160 -53 + 332, 0, 0)];
@@ -121,6 +125,7 @@
                   fontSize:17
                   tracking:0
                 lineHeight:0 red:NO bold:YES];
+
     
     //100%
     [self showUtmLabelText:[NSString stringWithFormat:@"100%%"]
@@ -136,6 +141,7 @@
                   fontSize:9
                   tracking:0
                 lineHeight:0 red:NO bold:NO];
+    NSLog(@"text_functionof~ %@", [NSString stringWithFormat:@"%@",utmArr[25]]);
 
     
     //Without ~
@@ -159,6 +165,8 @@
                   fontSize:12
                   tracking:0
                 lineHeight:0 red:YES bold:NO];
+    NSLog(@"text_circlecenter %@", [NSString stringWithFormat:@"%@",utmArr[14]]);
+
     
     [self showUtmImage:CGRectMake(self.bounds.size.width * 0.5 - 885 * 0.5, 506, 885, 12) image:@"bottom_line"];
 

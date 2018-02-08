@@ -236,6 +236,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		} else {
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
+        
+        print("LanguageConfigure.UTMId:*\(LanguageConfigure.UTMId)")
+        if LanguageConfigure.UTMId == 588{
+            mIsUtm = false
+        }else if LanguageConfigure.UTMId == 359{
+            mIsUtm = true
+        }
 
         self.setSpecialMenu()
         self.setCategoryButtonDefend()
@@ -580,7 +587,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
+        } else if productId == 588{
+            print("utm test")
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
         }
+//        } else if productId == 588{
+//            mCategoryButtonTechnologies.enabled = true
+//            mCategoryButtonEfficacy.enabled = true
+//            mCategoryButtonDefend.enabled = true
+//        }
     }
     
     private func setCategoryButtonDefend(){
@@ -652,24 +669,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(utmTechView!)
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
-            
-//            let testV = UIView()
-//            testV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
-//            testV.backgroundColor = UIColor.gray
-//            
-//            for i in 1...3{
-//                let button = UIButton()
-//                button.frame = CGRect(x: 100 * ((i)*2), y: Int(testV.frame.height/2), width: 100, height: 50)
-//                button.backgroundColor = UIColor.white
-//                button.setTitle("\(i)", for: .normal)
-//                button.setTitleColor(UIColor.black, for: .normal)
-//                button.tag = i
-//                button.addTarget(self, action: #selector(self.onTapMenu(_:)), for: .touchUpInside)
-//                testV.addSubview(button)
-//            }
-//            
-//            mVContent.addSubview(testV)
-//            mVCurrentSelect = testV
+
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
@@ -755,22 +755,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
     
-//    @objc private func onTapMenu(_ sender: AnyObject){
-//        if sender.tag == 1{
-//            print("tag:*\(sender.tag)")
-//        }else if sender.tag == 2{
-//            print("tag:*\(sender.tag)")
-//            mVCurrentSelect?.removeFromSuperview()
-//            let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-//            mVContent.addSubview(utmTechView!)
-//            utmTechView?.showTechnologiesDetail(mIsUtm)
-//            mVCurrentSelect = utmTechView
-//                        
-//        }else if sender.tag == 3{
-//            print("tag:*\(sender.tag)")
-//        }
-//
-//    }
 
     private func showInfo(_ sender: CategoryButton) {
         mVContent.isHidden = true
@@ -781,6 +765,29 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             return
         }
         mVCategoryImage.isHidden = false
+        
+        if productId == 588{
+            mVContent.isHidden = false
+            mVCurrentSelect?.removeFromSuperview()
+            
+            if sender === mCategoryButtonTechnologies {
+                print("technology")
+                //mVContent.backgroundColor = UIColor.blue
+                
+                self.didTapTechnology()
+                
+            } else if sender === mCategoryButtonEfficacy {
+                print("effect")
+                
+                self.didTapEfficacyResults()
+                
+            } else if sender === mCategoryButtonDefend {
+                let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                mVContent.addSubview(utmDefendView!)
+                mVCurrentSelect = utmDefendView
+            }
+        }
+        
         if sender === mCategoryButtonTechnologies {
             makeCategoryImages(product.technologyImage)
         } else if sender === mCategoryButtonHowToUse {
@@ -1044,5 +1051,302 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
+    }
+    
+    //*UTM2.0 add
+    func didTapTechnology(){
+        let backView = UIView()
+        backView.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        //backView.backgroundColor = UIColor.lightGray
+
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 20 , y: 60, width: 600, height: 30)
+        titleLabel.text = "ImuGeneration Technology"
+        titleLabel.font = UIFont(name: "Reader-Bold", size: 18)
+        titleLabel.textColor = red
+        
+        let titleDescription = UILabel()
+        titleDescription.frame = CGRect(x: 0, y: 420, width: 900, height: 100)
+        titleDescription.centerX = self.mVContent.centerX
+        titleDescription.text = "To continuously generate new Langerhans cells and enhance their strength,\nShiseido’s ImuGenerationTM Technology involves three distinct ingredient combinations.\nThis triple system supports skin’s inner defenses and calms damage factors."
+        titleDescription.font = UIFont(name: "Reader-Bold", size: 18)
+        titleDescription.numberOfLines = 0
+        titleDescription.textAlignment = NSTextAlignment.center
+        titleDescription.textColor = UIColor.black
+        
+        backView.addSubview(titleLabel)
+        backView.addSubview(titleDescription)
+        
+        for i in 0...2{
+
+            let circleBtn = UIButton()
+            circleBtn.setTitleColor(UIColor.black, for: .normal)
+            circleBtn.frame = CGRect(x: 80 + (i * 280), y: 110, width: 300, height: 300)
+            circleBtn.tag = i + 1
+            circleBtn.addTarget(self, action: #selector(self.onTapMenu(_:)), for: .touchUpInside)
+            circleBtn.layer.borderWidth = 2.0
+            circleBtn.layer.borderColor = red.cgColor
+            circleBtn.frame.size.height = circleBtn.frame.width
+            circleBtn.layer.cornerRadius = circleBtn.frame.width/2
+            print("center:*\(circleBtn.centerX)")
+            
+            let topicTitle = UILabel()
+            topicTitle.frame = CGRect(x: 230 - 100 + (i * 280), y: 320, width: 200, height: 30)
+            topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
+
+            let topicDesctription = UILabel()
+            topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 200, height: 80)
+            topicDesctription.font = UIFont(name: "Reader-Regular", size: 10)
+            
+            self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, backview:backView)
+
+            backView.addSubview(circleBtn)
+            backView.addSubview(topicTitle)
+            backView.addSubview(topicDesctription)
+            
+            topicDesctription.sizeToFit()
+
+
+        }
+        
+
+
+        mVContent.addSubview(backView)
+        mVCurrentSelect = backView
+    }
+    
+    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel,backview: UIView){
+        titleText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        titleText.numberOfLines = 0
+        titleText.textAlignment = NSTextAlignment.center
+        
+        descriptionText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        descriptionText.numberOfLines = 0
+        descriptionText.textAlignment = NSTextAlignment.center
+
+        if i == 0{
+            titleText.text = "1. Generating"
+            descriptionText.text = "Langerhans cells"
+  
+            let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
+            imageView.contentMode = .scaleToFill
+            backview.addSubview(imageView)
+
+            let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 232, y: 200, width: 115, height: 115)
+            imageView2.contentMode = .scaleToFill
+            backview.addSubview(imageView2)
+            
+        }else if i == 1{
+            titleText.text = "2. Enhances"
+            descriptionText.text = "the powers of\nLangerhans cells"
+            
+            let image1:UIImage = UIImage(named:"Rose-Water_image.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 465, y: 130, width: 90, height: 90)
+            imageView.contentMode = .scaleToFill
+            backview.addSubview(imageView)
+            
+            let image2:UIImage = UIImage(named:"b-Glutan.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 418, y: 225, width: 90, height: 90)
+            imageView2.contentMode = .scaleToFill
+            backview.addSubview(imageView2)
+
+            let image3:UIImage = UIImage(named:"Water_image_CMYK.png")!
+            let imageView3 = UIImageView(image:image3)
+            imageView3.frame = CGRect(x: 512, y: 225, width: 90, height: 90)
+            imageView3.contentMode = .scaleToFill
+            backview.addSubview(imageView3)
+
+        }else if i == 2{
+            titleText.text = "3. Improving"
+            descriptionText.text = "the environment for\nLangerhans cell\nfunctions"
+            
+            let image1:UIImage = UIImage(named:"Ginko.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 708, y: 150, width: 80, height: 80)
+            imageView.contentMode = .scaleToFill
+            backview.addSubview(imageView)
+            
+            let image2:UIImage = UIImage(named:"LOTUS-GERM_cmyk.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 792, y: 150, width: 80, height: 80)
+            imageView2.contentMode = .scaleToFill
+            backview.addSubview(imageView2)
+            
+            let image3:UIImage = UIImage(named:"Rerilla.png")!
+            let imageView3 = UIImageView(image:image3)
+            imageView3.frame = CGRect(x: 708, y: 234, width: 80, height: 80)
+            imageView3.contentMode = .scaleToFill
+            backview.addSubview(imageView3)
+            
+            let image4:UIImage = UIImage(named:"Tyme.png")!
+            let imageView4 = UIImageView(image:image4)
+            imageView4.frame = CGRect(x: 792, y: 234, width: 80, height: 80)
+            imageView4.contentMode = .scaleToFill
+            backview.addSubview(imageView4)
+        }
+    }
+    
+    @objc private func onTapMenu(_ sender: AnyObject){
+        if sender.tag == 1{
+            print("tag:*\(sender.tag)")
+            mVCurrentSelect?.removeFromSuperview()
+            self.setGeneratingView()
+            
+        }else if sender.tag == 2{
+            print("tag:*\(sender.tag)")
+            mVCurrentSelect?.removeFromSuperview()
+            let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+            mVContent.addSubview(utmTechView!)
+            utmTechView?.showTechnologiesDetail(mIsUtm)
+            mVCurrentSelect = utmTechView
+        }
+        
+    }
+    
+    //*GeneratiogView
+    func setGeneratingView(){
+        let backView = UIView()
+        backView.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 20 , y: 5, width: 400, height: 60)
+        titleLabel.text = "Ingredients that generate\nmore Langerhans cells"
+        titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
+        titleLabel.textColor = UIColor.black
+        titleLabel.numberOfLines = 0
+        titleLabel.textAlignment = NSTextAlignment.left
+        backView.addSubview(titleLabel)
+        
+        let descripitionLabel = UILabel()
+        descripitionLabel.frame = CGRect(x: 100 , y: 90, width: 1000, height: 50)
+        descripitionLabel.text = "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
+        descripitionLabel.font = UIFont(name: "Reader-Regular", size: 18)
+        descripitionLabel.textColor = UIColor.black
+        descripitionLabel.numberOfLines = 0
+        descripitionLabel.textAlignment = NSTextAlignment.left
+        backView.addSubview(descripitionLabel)
+        
+        let mark:UIImage = UIImage(named:"point_01")!
+        let markV = UIImageView(image:mark)
+        markV.frame = CGRect(x: 80, y: 90, width: 1, height: 50)
+        markV.contentMode = .scaleToFill
+        backView.addSubview(markV)
+        
+        let imageTitle = UILabel()
+        imageTitle.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
+        imageTitle.text = "Ingredients nurture\nLangerhans cell growth."
+        imageTitle.font = UIFont(name: "Reader-Bold", size: 18)
+        imageTitle.textColor = red
+        imageTitle.numberOfLines = 0
+        imageTitle.textAlignment = NSTextAlignment.left
+        backView.addSubview(imageTitle)
+    
+        let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
+        let imageView1 = UIImageView(image:image1)
+        imageView1.frame = CGRect(x: 100, y: 240, width: 180, height: 120)
+        imageView1.contentMode = .scaleToFill
+        backView.addSubview(imageView1)
+        
+        let imageDicription1 = UILabel()
+        imageDicription1.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
+        imageDicription1.centerX = imageView1.centerX
+        imageDicription1.text = "Reishi Extract"
+        imageDicription1.font = UIFont(name: "Reader-Regular", size: 18)
+        imageDicription1.textColor = UIColor.black
+        backView.addSubview(imageDicription1)
+        
+        let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
+        let imageView2 = UIImageView(image:image2)
+        imageView2.frame = CGRect(x: 290, y: 240, width: 180, height: 120)
+        imageView2.contentMode = .scaleToFill
+        backView.addSubview(imageView2)
+        
+        let imageDicription2 = UILabel()
+        imageDicription2.frame = CGRect(x: 0 , y:365, width: 130, height: 50)
+        imageDicription2.centerX = imageView2.centerX
+        imageDicription2.text = "Iris Root Extract"
+        imageDicription2.font = UIFont(name: "Reader-Regular", size: 18)
+        imageDicription2.textColor = UIColor.black
+        backView.addSubview(imageDicription2)
+        
+        for i in 1...7{
+            let image:UIImage = UIImage(named:"graph_0\(i).png")!
+            let graphV = UIImageView(image:image)
+            graphV.contentMode = .scaleToFill
+            
+            if i == 1{
+                graphV.frame = CGRect(x: 570, y: 180, width: 400, height: 250)//graph
+            }else if i == 2{
+                graphV.frame = CGRect(x: 610, y: 275, width: 60, height: 154)//gray
+            }else if i == 3{
+                graphV.frame = CGRect(x: 800, y: 219, width: 60, height: 210)//red
+            }else if i == 4{
+                graphV.frame = CGRect(x: 525, y: 190, width: 20, height: 26)//high
+            }else if i == 5{
+                graphV.frame = CGRect(x: 870, y: 240, width: 82, height: 200)//item
+            }else if i == 6{
+                graphV.frame = CGRect(x: 580, y: 440, width:390, height: 10)//under
+            }else if i == 7{
+                graphV.frame = CGRect(x: 675, y: 220, width:116, height: 50)//up
+            }
+            
+            backView.addSubview(graphV)
+        }
+        
+        for i in 1...5{
+            let graphLabel = UILabel()
+            graphLabel.textColor = UIColor.black
+            graphLabel.numberOfLines = 0
+            graphLabel.textAlignment = NSTextAlignment.left
+            graphLabel.font = UIFont(name: "Reader-Regular", size: 10)
+
+            
+            if i == 1{
+                graphLabel.frame = CGRect(x: 520, y:220, width: 40, height: 20)
+                graphLabel.text = "High"
+            }else if i == 2{
+                graphLabel.frame = CGRect(x: 590 , y:160, width: 200, height: 100)
+                graphLabel.text = "Growth rate of\nprecursor cells into\nLangerhans cells"
+            }else if i == 3{
+                graphLabel.frame = CGRect(x: 600 , y:450, width: 170, height: 80)
+                graphLabel.text = "Under high\nstress*"
+                graphLabel.sizeToFit()
+                graphLabel.textAlignment = NSTextAlignment.center
+
+            }else if i == 4{
+                graphLabel.frame = CGRect(x: 770 , y:450, width: 170, height: 80)
+                graphLabel.text = "Under high stress**\nwith Ultimune"
+                graphLabel.sizeToFit()
+                graphLabel.textAlignment = NSTextAlignment.center
+
+            }else if i == 5{
+                graphLabel.frame = CGRect(x: 600 , y:485, width: 400, height: 20)
+                graphLabel.text = "*in vitro **By adding a stress hormone in vitro data"
+                graphLabel.font = UIFont(name: "Reader-Regular", size: 6)
+                graphLabel.textColor = UIColor.lightGray
+
+            }
+            
+            backView.addSubview(graphLabel)
+        }
+        
+
+        mVContent.addSubview(backView)
+        mVCurrentSelect = backView
+    }
+    
+    
+    func didTapEfficacyResults(){
+        print("Efficacy")
     }
 }
