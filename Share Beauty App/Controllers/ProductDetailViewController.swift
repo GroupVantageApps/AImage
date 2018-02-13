@@ -118,6 +118,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 	
 	private var movieTelop: TelopData!
 	private var currentMovieTelop: TelopData.DataStructTerop? = nil
+    
+    let techScrollV = UIScrollView()
+    let efficacyScrollV = UIScrollView()
 	
 	// 特殊な初期表示を行う商品ID辞書
 	private enum eTransitionDestinate {
@@ -148,6 +151,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonDefend.delegate = self
         mTroubleView.delegate = self
         mTroubleSelectView.delegate = self
+        
         mBtnCurrentSelect = mCategoryButtonFeatures
 
         mItems = AppItemTable.getItems(screenId: Const.screenIdProductDetail)
@@ -1054,10 +1058,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     //*UTM2.0 add
+    //Technology top
     func didTapTechnology(){
-        let backView = UIView()
-        backView.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
-        //backView.backgroundColor = UIColor.lightGray
+        let generateV = UIView()
+        generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        //generateV.backgroundColor = UIColor.lightGray
 
         let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         
@@ -1076,8 +1081,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         titleDescription.textAlignment = NSTextAlignment.center
         titleDescription.textColor = UIColor.black
         
-        backView.addSubview(titleLabel)
-        backView.addSubview(titleDescription)
+        generateV.addSubview(titleLabel)
+        generateV.addSubview(titleDescription)
         
         for i in 0...2{
 
@@ -1097,27 +1102,33 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
 
             let topicDesctription = UILabel()
-            topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 200, height: 80)
-            topicDesctription.font = UIFont(name: "Reader-Regular", size: 10)
+            if i == 2{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 145, height: 80)
+            }else if i == 1{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 130, height: 80)
+            }else{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 125, height: 80)
+            }
+            topicDesctription.textAlignment = .center
+            topicDesctription.centerX = circleBtn.centerX
+            topicDesctription.font = UIFont(name: "Reader-Regular", size: 16)
+            topicDesctription.font = topicDesctription.font.withSize(16)
             
-            self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, backview:backView)
+            self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
 
-            backView.addSubview(circleBtn)
-            backView.addSubview(topicTitle)
-            backView.addSubview(topicDesctription)
+            generateV.addSubview(circleBtn)
+            generateV.addSubview(topicTitle)
+            generateV.addSubview(topicDesctription)
             
             topicDesctription.sizeToFit()
 
-
         }
         
-
-
-        mVContent.addSubview(backView)
-        mVCurrentSelect = backView
+        mVContent.addSubview(generateV)
+        mVCurrentSelect = generateV
     }
     
-    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel,backview: UIView){
+    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel,generateV: UIView){
         titleText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         titleText.numberOfLines = 0
         titleText.textAlignment = NSTextAlignment.center
@@ -1134,13 +1145,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
             imageView.contentMode = .scaleToFill
-            backview.addSubview(imageView)
+            generateV.addSubview(imageView)
 
             let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
             let imageView2 = UIImageView(image:image2)
             imageView2.frame = CGRect(x: 232, y: 200, width: 115, height: 115)
             imageView2.contentMode = .scaleToFill
-            backview.addSubview(imageView2)
+            generateV.addSubview(imageView2)
             
         }else if i == 1{
             titleText.text = "2. Enhances"
@@ -1150,19 +1161,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 465, y: 130, width: 90, height: 90)
             imageView.contentMode = .scaleToFill
-            backview.addSubview(imageView)
+            generateV.addSubview(imageView)
             
             let image2:UIImage = UIImage(named:"b-Glutan.png")!
             let imageView2 = UIImageView(image:image2)
             imageView2.frame = CGRect(x: 418, y: 225, width: 90, height: 90)
             imageView2.contentMode = .scaleToFill
-            backview.addSubview(imageView2)
+            generateV.addSubview(imageView2)
 
             let image3:UIImage = UIImage(named:"Water_image_CMYK.png")!
             let imageView3 = UIImageView(image:image3)
             imageView3.frame = CGRect(x: 512, y: 225, width: 90, height: 90)
             imageView3.contentMode = .scaleToFill
-            backview.addSubview(imageView3)
+            generateV.addSubview(imageView3)
 
         }else if i == 2{
             titleText.text = "3. Improving"
@@ -1172,49 +1183,70 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 708, y: 150, width: 80, height: 80)
             imageView.contentMode = .scaleToFill
-            backview.addSubview(imageView)
+            generateV.addSubview(imageView)
             
             let image2:UIImage = UIImage(named:"LOTUS-GERM_cmyk.png")!
             let imageView2 = UIImageView(image:image2)
             imageView2.frame = CGRect(x: 792, y: 150, width: 80, height: 80)
             imageView2.contentMode = .scaleToFill
-            backview.addSubview(imageView2)
+            generateV.addSubview(imageView2)
             
             let image3:UIImage = UIImage(named:"Rerilla.png")!
             let imageView3 = UIImageView(image:image3)
             imageView3.frame = CGRect(x: 708, y: 234, width: 80, height: 80)
             imageView3.contentMode = .scaleToFill
-            backview.addSubview(imageView3)
+            generateV.addSubview(imageView3)
             
             let image4:UIImage = UIImage(named:"Tyme.png")!
             let imageView4 = UIImageView(image:image4)
             imageView4.frame = CGRect(x: 792, y: 234, width: 80, height: 80)
             imageView4.contentMode = .scaleToFill
-            backview.addSubview(imageView4)
+            generateV.addSubview(imageView4)
         }
     }
     
     @objc private func onTapMenu(_ sender: AnyObject){
+        
+        
         if sender.tag == 1{
             print("tag:*\(sender.tag)")
             mVCurrentSelect?.removeFromSuperview()
-            self.setGeneratingView()
-            
+            self.setTechScrollView()
+
         }else if sender.tag == 2{
             print("tag:*\(sender.tag)")
+            print("tag:*\(sender.tag)")
             mVCurrentSelect?.removeFromSuperview()
-            let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-            mVContent.addSubview(utmTechView!)
-            utmTechView?.showTechnologiesDetail(mIsUtm)
-            mVCurrentSelect = utmTechView
+            self.setTechScrollView()
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.mVContent.height)
         }
         
     }
     
+    //*scrollview
+    func setTechScrollView(){
+        self.techScrollV.delegate = self
+        self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*3)
+        self.techScrollV.isPagingEnabled = true
+        self.techScrollV.bounces = false
+        
+        self.setGeneratingView()
+        self.setEnhanceView()
+        self.setImucalmView()
+        
+        
+        mVContent.addSubview(techScrollV)
+        mVCurrentSelect = techScrollV
+
+    }
+
+    
     //*GeneratiogView
+    //TODO image , label ごとにまとめる
     func setGeneratingView(){
-        let backView = UIView()
-        backView.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        let generateV = UIView()
+        generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
         
         let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         
@@ -1225,7 +1257,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         titleLabel.textColor = UIColor.black
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = NSTextAlignment.left
-        backView.addSubview(titleLabel)
+        generateV.addSubview(titleLabel)
         
         let descripitionLabel = UILabel()
         descripitionLabel.frame = CGRect(x: 100 , y: 90, width: 1000, height: 50)
@@ -1234,13 +1266,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         descripitionLabel.textColor = UIColor.black
         descripitionLabel.numberOfLines = 0
         descripitionLabel.textAlignment = NSTextAlignment.left
-        backView.addSubview(descripitionLabel)
+        generateV.addSubview(descripitionLabel)
         
         let mark:UIImage = UIImage(named:"point_01")!
         let markV = UIImageView(image:mark)
         markV.frame = CGRect(x: 80, y: 90, width: 1, height: 50)
         markV.contentMode = .scaleToFill
-        backView.addSubview(markV)
+        generateV.addSubview(markV)
         
         let imageTitle = UILabel()
         imageTitle.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
@@ -1249,13 +1281,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         imageTitle.textColor = red
         imageTitle.numberOfLines = 0
         imageTitle.textAlignment = NSTextAlignment.left
-        backView.addSubview(imageTitle)
+        generateV.addSubview(imageTitle)
     
         let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
         let imageView1 = UIImageView(image:image1)
         imageView1.frame = CGRect(x: 100, y: 240, width: 180, height: 120)
         imageView1.contentMode = .scaleToFill
-        backView.addSubview(imageView1)
+        generateV.addSubview(imageView1)
         
         let imageDicription1 = UILabel()
         imageDicription1.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
@@ -1263,13 +1295,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         imageDicription1.text = "Reishi Extract"
         imageDicription1.font = UIFont(name: "Reader-Regular", size: 18)
         imageDicription1.textColor = UIColor.black
-        backView.addSubview(imageDicription1)
+        generateV.addSubview(imageDicription1)
         
         let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
         let imageView2 = UIImageView(image:image2)
         imageView2.frame = CGRect(x: 290, y: 240, width: 180, height: 120)
         imageView2.contentMode = .scaleToFill
-        backView.addSubview(imageView2)
+        generateV.addSubview(imageView2)
         
         let imageDicription2 = UILabel()
         imageDicription2.frame = CGRect(x: 0 , y:365, width: 130, height: 50)
@@ -1277,7 +1309,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         imageDicription2.text = "Iris Root Extract"
         imageDicription2.font = UIFont(name: "Reader-Regular", size: 18)
         imageDicription2.textColor = UIColor.black
-        backView.addSubview(imageDicription2)
+        generateV.addSubview(imageDicription2)
         
         for i in 1...7{
             let image:UIImage = UIImage(named:"graph_0\(i).png")!
@@ -1293,14 +1325,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }else if i == 4{
                 graphV.frame = CGRect(x: 525, y: 190, width: 20, height: 26)//high
             }else if i == 5{
-                graphV.frame = CGRect(x: 870, y: 240, width: 82, height: 200)//item
+                graphV.frame = CGRect(x: 840, y: 240, width: 82, height: 200)//item
             }else if i == 6{
                 graphV.frame = CGRect(x: 580, y: 440, width:390, height: 10)//under
             }else if i == 7{
                 graphV.frame = CGRect(x: 675, y: 220, width:116, height: 50)//up
             }
             
-            backView.addSubview(graphV)
+            generateV.addSubview(graphV)
         }
         
         for i in 1...5{
@@ -1308,45 +1340,398 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             graphLabel.textColor = UIColor.black
             graphLabel.numberOfLines = 0
             graphLabel.textAlignment = NSTextAlignment.left
-            graphLabel.font = UIFont(name: "Reader-Regular", size: 10)
+            graphLabel.font = UIFont(name: "Reader-Regular", size: 18)
 
             
             if i == 1{
                 graphLabel.frame = CGRect(x: 520, y:220, width: 40, height: 20)
                 graphLabel.text = "High"
+                graphLabel.font = graphLabel.font.withSize(16)
+                
             }else if i == 2{
                 graphLabel.frame = CGRect(x: 590 , y:160, width: 200, height: 100)
                 graphLabel.text = "Growth rate of\nprecursor cells into\nLangerhans cells"
+                
             }else if i == 3{
                 graphLabel.frame = CGRect(x: 600 , y:450, width: 170, height: 80)
                 graphLabel.text = "Under high\nstress*"
+                graphLabel.font = graphLabel.font.withSize(14)
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
 
             }else if i == 4{
                 graphLabel.frame = CGRect(x: 770 , y:450, width: 170, height: 80)
                 graphLabel.text = "Under high stress**\nwith Ultimune"
+                graphLabel.font = graphLabel.font.withSize(14)
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
-
             }else if i == 5{
-                graphLabel.frame = CGRect(x: 600 , y:485, width: 400, height: 20)
+                graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
                 graphLabel.text = "*in vitro **By adding a stress hormone in vitro data"
-                graphLabel.font = UIFont(name: "Reader-Regular", size: 6)
+                graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
                 graphLabel.textColor = UIColor.lightGray
 
             }
-            
-            backView.addSubview(graphLabel)
-        }
         
 
-        mVContent.addSubview(backView)
-        mVCurrentSelect = backView
+            generateV.addSubview(graphLabel)
+        }
+
+        self.techScrollV.addSubview(generateV)
     }
     
+    //enhanceView
+    func setEnhanceView(){
+        let enhanceV = UIView()
+        enhanceV.frame = CGRect(x: 0, y: mVContent.frame.height, width: self.techScrollV.frame.width, height: mVContent.frame.height)
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+
+        
+        //text
+        for i in 1...5{
+            let pageText = UILabel()
+            pageText.textColor = UIColor.black
+            pageText.numberOfLines = 0
+            pageText.textAlignment = NSTextAlignment.left
+            
+            if i == 1{
+                pageText.frame = CGRect(x: 20, y:5, width: 400, height: 60)
+                pageText.text = "Ingredients enhance\nstress-calming power"
+                pageText.font = UIFont(name: "Reader-Bold", size: 22)
+                
+            }else if i == 2{
+                pageText.frame = CGRect(x: 100 , y: 85, width: 1000, height: 20)
+                pageText.text = "Ultimune ComplexTM"
+                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.textColor = red
+
+            }else if i == 3{
+                pageText.frame = CGRect(x: 100 , y: 95, width: 1000, height: 100)
+                pageText.text = "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
+                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+            }else if i == 4{
+                pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
+                pageText.text = "Ultimune\nComplexTM"
+                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.textColor = red
+            }else if i == 5{
+                pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
+                pageText.text = "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.font = UIFont(name: "Reader-Bold", size: 13)
+                pageText.textColor = UIColor.lightGray
+            }
+            
+            enhanceV.addSubview(pageText)
+            
+        }
+        
+        for i in 1...2{
+            let image:UIImage = UIImage(named:"page_0\(i).png")!
+            let pageImageV = UIImageView(image:image)
+            pageImageV.contentMode = .scaleToFill
+            
+            if i == 1{
+                pageImageV.frame = CGRect(x: 80, y: 83, width: 1, height: 100)//point
+            }else if i == 2{
+                pageImageV.frame = CGRect(x: 150, y: 200, width: 265, height: 248)//triangle
+            }
+            
+            enhanceV.addSubview(pageImageV)
+        }
+        
+        //graph image
+        
+        for i in 1...7{
+            let image:UIImage = UIImage(named:"enhanceGraph_0\(i).png")!
+            let graphImageV = UIImageView(image:image)
+            graphImageV.contentMode = .scaleToFill
+            
+            if i == 1{
+                graphImageV.frame = CGRect(x: 510, y: 210, width: 400, height: 250)//graph
+            }else if i == 2{
+                graphImageV.frame = CGRect(x: 600, y: 325, width: 60, height: 134)//gray
+            }else if i == 3{
+                graphImageV.frame = CGRect(x: 770, y: 240, width: 60, height: 219)//red
+            }else if i == 4{
+                graphImageV.frame = CGRect(x: 485, y: 210, width: 18, height: 24)//high
+            }else if i == 5{
+                graphImageV.frame = CGRect(x: 550, y: 200, width: 115, height: 115)//64%
+            }else if i == 6{
+                graphImageV.frame = CGRect(x: 670, y: 250, width: 90, height: 58)//up
+            }else if i == 7{
+                graphImageV.frame = CGRect(x: 825, y: 260, width: 86, height: 210)//item
+            }
+            
+           enhanceV.addSubview(graphImageV)
+
+        }
+        
+        //graph text
+
+        for i in 1...4{
+            let graphText = UILabel()
+            graphText.textColor = UIColor.black
+            graphText.numberOfLines = 0
+            graphText.textAlignment = NSTextAlignment.center
+            graphText.textColor = UIColor.black
+            graphText.font = UIFont(name: "Reader-Regular", size: 18)
+            graphText.font = graphText.font.withSize(14)
+
+            
+            if i == 1{
+                graphText.frame = CGRect(x: 475, y: 232, width: 40, height: 40)
+                graphText.text = "High"
+            }else if i == 2{
+                graphText.frame = CGRect(x: 470, y: 315, width: 40, height: 40)
+                graphText.text = "100%"
+            }else if i == 3{
+                graphText.frame = CGRect(x: 590, y: 453, width: 120, height: 60)
+                graphText.text = "without Ultimune\ncomplex"
+            }else if i == 4{
+                graphText.frame = CGRect(x: 760, y: 453, width: 120, height: 60)
+                graphText.text = "with Ultimune\ncomplex"
+            }
+            
+            enhanceV.addSubview(graphText)
+
+        }
+        
+        
+        self.techScrollV.addSubview(enhanceV)
+    }
+    
+    
+    //ImucalmView
+    func setImucalmView(){
+        let imucalmV = UIView()
+        imucalmV.frame = CGRect(x: 0, y: mVContent.frame.height*2, width: self.techScrollV.frame.width, height: mVContent.frame.height)
+
+//        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: mVContent.frame.height*2), size: mVContent.size))
+//        mVContent.addSubview(utmTechView!)
+//        utmTechView?.scrollView.isScrollEnabled = false
+//
+//
+//        self.mIsUtm = true
+//        utmTechView?.showTechnologiesDetail(mIsUtm)
+//        mVCurrentSelect = utmTechView
+
+
+//        self.techScrollV.addSubview(utmTechView!)
+        self.techScrollV.addSubview(imucalmV)
+
+    }
+
     
     func didTapEfficacyResults(){
         print("Efficacy")
+        
+        self.efficacyScrollV.delegate = self
+        self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
+        self.efficacyScrollV.isPagingEnabled = true
+        self.efficacyScrollV.bounces = false
+        
+        self.setEfficacyView()
+        
+        mVContent.addSubview(efficacyScrollV)
+        mVCurrentSelect = efficacyScrollV
     }
+    
+    func setEfficacyView(){
+        //1~3枚め
+        for i in 0...2 {
+            let title = UILabel()
+            title.textColor = UIColor.black
+            title.font = UIFont(name: "Reader-Bold", size: 22)
+            title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+            title.centerX = self.mVContent.centerX
+            title.textAlignment = .center
+            
+            if i == 0{
+                title.text = "Lorem ipsum dolor sit amet,"
+
+            }else if i == 1{
+                title.text = "Skin looks smoother, more dewy and radiant."
+
+            }else if i == 2{
+                title.text = "Lorem ipsum dolor sit amet,"
+            }
+
+            
+            let beforeBtn = UIButton()
+            beforeBtn.isSelected = true
+            beforeBtn.isEnabled = false
+            beforeBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
+            beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
+            beforeBtn.setTitle("Before", for: .normal)
+            beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            beforeBtn.tag = 10 + i
+            beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            let afterBtn = UIButton()
+            afterBtn.isSelected = false
+            afterBtn.isEnabled = true
+            afterBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
+            afterBtn.origin.x = self.mVContent.centerX + 10
+            afterBtn.setTitle("After 4 Weeks", for: .normal)
+            afterBtn.setTitleColor(UIColor.black, for: .normal)
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            afterBtn.tag = 20 + i
+            afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            var image = UIImage()
+
+            if beforeBtn.isEnabled == true{
+                image = UIImage(named:"Before-face_0\(i).png")!
+            }else{
+                image = UIImage(named:"After-face_0\(i).png")!
+            }
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFill
+            faceImageV.tag = 30 + i
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX
+            faceImageV.backgroundColor = UIColor.blue
+            
+            for j in 0...2{
+                let image:UIImage = UIImage(named:"point_01.png")!
+                let border = UIImageView(image:image)
+                border.contentMode = .scaleToFill
+                
+                if j == 0{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+                }else if j == 1{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+                    
+                }else if j == 2{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+
+                }
+                self.efficacyScrollV.addSubview(border)
+
+            }
+            
+            
+            self.efficacyScrollV.addSubview(title)
+            self.efficacyScrollV.addSubview(faceImageV)
+            self.efficacyScrollV.addSubview(beforeBtn)
+            self.efficacyScrollV.addSubview(afterBtn)
+
+        }
+        
+        //4枚め
+        
+        let title = UILabel()
+        title.textColor = UIColor.black
+        title.font = UIFont(name: "Reader-Bold", size: 22)
+        title.text = "After 4 weeks of use:"
+        title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*3), width: 700, height: 40)
+        title.centerX = self.mVContent.centerX
+        title.textAlignment = .center
+        self.efficacyScrollV.addSubview(title)
+        
+        for i in 1...3{
+            let image:UIImage = UIImage(named:"percent_0\(i).png")!
+            let percentImageV = UIImageView(image:image)
+            percentImageV.contentMode = .scaleToFill
+            percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
+
+            self.efficacyScrollV.addSubview(percentImageV)
+        }
+        
+        for i in 1...3{
+            let description = UILabel()
+            description.textColor = UIColor.black
+            description.font = UIFont(name: "Reader-Regular", size: 18)
+            description.numberOfLines = 0
+            description.textAlignment = .left
+            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 200, height: 150)
+
+            
+            if i == 1{
+                description.text = "of women felt that the product\nwas effective overall"
+            }else if i == 2{
+                description.text = "of women felt their skin was\ndefended against harsh\nenvironments"
+            }else if i == 3{
+                description.text = "of women said their skin\nquality was improved overall"
+            }
+            self.efficacyScrollV.addSubview(description)
+        }
+        
+        //右下テキスト
+        for i in 1...4{
+            let text = UILabel()
+            text.textColor = UIColor.lightGray
+            text.font = UIFont(name: "Reader-Regular", size: 18)
+            text.font = text.font.withSize(13)
+            text.textAlignment = .center
+            text.numberOfLines = 0
+            text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 200, height: 40)
+            
+            if i == 1{
+                text.text = "*28-year-old"
+
+            } else if i == 2{
+                text.text = "*39-year-old"
+
+            } else if i == 3{
+                text.text = "*40-year-old"
+
+            } else if i == 4{
+                text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 300, height: 60)
+                text.text = "*100 women of age 25-39 after 4 weeks of use.\n2017/1/10-2/7 in Singapore"
+            }
+            
+            self.efficacyScrollV.addSubview(text)
+        }
+
+    }
+    
+    @objc private func onTapBeforeAfterBtn(_ sender: UIButton){
+        print("tag:*\(sender.tag)")
+        
+        if sender.tag < 20{//Before
+            
+            sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.isSelected = true
+            sender.isEnabled = false
+            if let afterBtn = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIButton {
+                afterBtn.backgroundColor = UIColor.clear
+                afterBtn.setTitleColor(UIColor.black, for: .normal)
+                afterBtn.isSelected = false
+                afterBtn.isEnabled = true
+            }
+            let imageNum = sender.tag - 9
+            if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
+                imageView.image = UIImage(named: "After-face_0\(imageNum).png")
+            }
+            
+        }else{//After
+        
+            sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.isSelected = true
+            sender.isEnabled = false
+            if let beforeBtn = self.efficacyScrollV.viewWithTag(sender.tag - 10) as? UIButton {
+                beforeBtn.backgroundColor = UIColor.clear
+                beforeBtn.setTitleColor(UIColor.black, for: .normal)
+                beforeBtn.isSelected = false
+                beforeBtn.isEnabled = true
+            }
+            let imageNum = sender.tag - 19
+            if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
+                imageView.image = UIImage(named: "Before-face_0\(imageNum).png")
+            }
+            
+        }
+        
+        
+    }
+    
+
 }
