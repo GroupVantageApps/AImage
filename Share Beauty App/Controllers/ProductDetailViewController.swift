@@ -1548,16 +1548,28 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             title.centerX = self.mVContent.centerX
             title.textAlignment = .center
             
+            var image = UIImage()
+            
             if i == 0{
                 title.text = "Lorem ipsum dolor sit amet,"
+                image = UIImage(named:"Before-face_01.png")!
 
             }else if i == 1{
                 title.text = "Skin looks smoother, more dewy and radiant."
+                image = UIImage(named:"Before-face_01.png")!
 
             }else if i == 2{
                 title.text = "Lorem ipsum dolor sit amet,"
+                image = UIImage(named:"Before-face_01.png")!
             }
-
+            
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFill
+            faceImageV.tag = 30 + i
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX
+            faceImageV.backgroundColor = UIColor.blue
             
             let beforeBtn = UIButton()
             beforeBtn.isSelected = true
@@ -1582,20 +1594,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             afterBtn.tag = 20 + i
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
-            var image = UIImage()
-
             if beforeBtn.isEnabled == true{
-                image = UIImage(named:"Before-face_0\(i).png")!
-            }else{
-                image = UIImage(named:"After-face_0\(i).png")!
+                
             }
-            let faceImageV = UIImageView(image:image)
-            faceImageV.contentMode = .scaleAspectFill
-            faceImageV.tag = 30 + i
-            faceImageV.clipsToBounds = true
-            faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
-            faceImageV.centerX = self.mVContent.centerX
-            faceImageV.backgroundColor = UIColor.blue
             
             for j in 0...2{
                 let image:UIImage = UIImage(named:"point_01.png")!
