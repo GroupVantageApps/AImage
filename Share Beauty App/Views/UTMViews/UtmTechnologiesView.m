@@ -18,6 +18,8 @@
 @implementation UtmTechnologiesView
 
 @synthesize scrollView;
+@synthesize contentView;
+
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -29,6 +31,169 @@
     }
     return self;
 }
+
+//UTM2.0用に追加
+- (void)showImucalmCompound:(BOOL)isUtm{
+    firstAnimation = YES;
+    NSLog(@"showImucalmCompound");
+    firstAnimation = YES;
+    NSArray *utmArr = [UIUtil getUtmArray];
+    
+    
+    [self setBackgroundColor:[UIColor whiteColor]];
+    
+    contentView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width,self.bounds.size.height)];
+    [self addSubview:contentView];
+    
+    isSerum = YES;
+    
+    //gb02
+    [self showUtmImage:CGRectMake(0,83, self.bounds.size.width, 383) image:@"utm_bg_02"];
+    
+    //Technologies
+    CGSize titleLabel =  [self getUtmLabelSize:[NSString stringWithFormat:@"%@",utmArr[7]]
+                                         frame:CGRectMake(30, 29, 200, 30)
+                                      fontSize:23
+                                      tracking:0
+                                    lineHeight:29 red:NO bold:NO];
+    
+    float x = 30 + titleLabel.width + 30;
+    
+    //utm line
+    [self showUtmImage:CGRectMake(x, 25, 1, 26) image:@"utm_line"];
+    
+    
+    //ImuCalm Compound™
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[31]]
+                     frame:CGRectMake( x + 31, 29, 400, 25)
+                  fontSize:17
+                  tracking:0
+                lineHeight:0 red:YES bold:NO];
+    
+    
+    //RELAXED
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[33]]
+                     frame:CGRectMake( 275, 98, 98, 29)
+                  fontSize:23
+                  tracking:0
+                lineHeight:0 red:YES bold:YES];
+    
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[35]]
+                     frame:CGRectMake( 273, 124, 102, 16)
+                  fontSize:15
+                  tracking:0
+                lineHeight:0 red:NO bold:NO];
+    
+    //line:ENERGIZED
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[34]]
+                     frame:CGRectMake( 656, 98, 123, 29)
+                  fontSize:23
+                  tracking:0
+                lineHeight:0 red:YES bold:YES];
+    
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[36]]
+                     frame:CGRectMake(645, 124, 143, 16)
+                  fontSize:15
+                  tracking:0
+                lineHeight:0 red:NO bold:NO];
+    
+    
+    //Happy
+    [self showUtmLabelTextCenter:[NSString stringWithFormat:@"%@",utmArr[39]]
+                           frame:CGRectMake(487, 108, 54, 18)
+                        fontSize:17
+                        tracking:0
+                      lineHeight:0 red:NO bold:NO];
+    
+    //Energized
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[40]]
+                     frame:CGRectMake(674, 260, 63, 19)
+                  fontSize:17
+                  tracking:0
+                lineHeight:0 red:NO bold:NO];
+    
+    
+    
+    //UnHappy
+    [self showUtmLabelTextCenter:[NSString stringWithFormat:@"%@",utmArr[41]]
+                           frame:CGRectMake(475, 405, 75, 19)
+                        fontSize:17
+                        tracking:0
+                      lineHeight:0 red:NO bold:NO];
+    
+    //Relaxed
+    [self showUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[42]]
+                     frame:CGRectMake(280, 260, 63, 19)
+                  fontSize:17
+                  tracking:0
+                lineHeight:0 red:NO bold:NO];
+    
+    
+    //white bg
+    [self showUtmImage:CGRectMake(192, 372, 251, 31) image:@"t_btn_white"];
+    
+    
+    UIImageView * leftBtnBg = [[UIImageView alloc]initWithFrame:CGRectMake(192, 372, 251, 31)];
+    UIImage * btnBgImg = [UIImage imageNamed:@"t_btn_bg"];
+    leftBtnBg.image = btnBgImg;
+    [contentView addSubview:leftBtnBg];
+    [self addRepeatAlphaAnimation:leftBtnBg];
+    
+    UIButton *leftEffectBtn = [[UIButton alloc]initWithFrame:CGRectMake(222, 380, 190, 19)];
+    NSMutableAttributedString * leftEffectBtnStr =  [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[37]]
+                                                                    frame:CGRectMake(222, 380, 190, 19)
+                                                                 fontSize:17
+                                                                 tracking:0
+                                                               lineHeight:0 red:YES bold:YES];
+    [leftEffectBtn setAttributedTitle:leftEffectBtnStr forState:UIControlStateNormal];
+    [leftEffectBtn addTarget:self
+                      action:@selector(onClickLeftArrowAnimation)
+            forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:leftEffectBtn];
+    
+    
+    //white bg
+    [self showUtmImage:CGRectMake(588, 372, 251, 31) image:@"t_btn_white"];
+    
+    
+    UIImageView * rightBtnBg = [[UIImageView alloc]initWithFrame:CGRectMake(588, 372, 251, 31)];
+    rightBtnBg.image = btnBgImg;
+    [contentView addSubview:rightBtnBg];
+    [self addRepeatAlphaAnimation:rightBtnBg];
+    
+    UIButton *rightEffectBtn = [[UIButton alloc]initWithFrame:CGRectMake(641, 380, 150, 19)];
+    NSMutableAttributedString * rightEffectBtnStr =  [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[38]]
+                                                                     frame:CGRectMake(222, 380, 190, 19)
+                                                                  fontSize:17
+                                                                  tracking:0
+                                                                lineHeight:0 red:YES bold:YES];
+    [rightEffectBtn setAttributedTitle:rightEffectBtnStr forState:UIControlStateNormal];
+    [rightEffectBtn addTarget:self
+                       action:@selector(onClickRightArrowAnimation)
+             forControlEvents:UIControlEventTouchUpInside];
+    [contentView addSubview:rightEffectBtn];
+    
+    
+    
+    
+    
+    [self showJoitUtmLabelText:43
+                           end:45
+                         frame:CGRectMake(161, 440, 652, 50)
+                      fontSize:12
+                      tracking:0
+                    lineHeight:0
+                         enter:YES];
+    
+    
+    //        [self showUtmImage:CGRectMake(self.bounds.size.width * 0.5 - 885 * 0.5,506, 885, 12) image:@"bottom_line"];
+    
+    
+    
+    
+
+}
+
 
 - (void)showTechnologiesDetail:(BOOL)isUtm{
     firstAnimation = YES;
@@ -479,6 +644,8 @@
     UIImage *image = [UIImage imageNamed:name];
     imageUtmView.image = image;
     [scrollView addSubview:imageUtmView];
+    [contentView addSubview:imageUtmView];
+
     
     
 }
@@ -521,6 +688,7 @@
 //    [lbl sizeToFit];
     lbl.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:lbl];
+    [contentView addSubview:lbl];
     
 //    return lbl.frame.size;
 }
@@ -562,6 +730,8 @@
     [lbl sizeToFit];
     lbl.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:lbl];
+    [contentView addSubview:lbl];
+
     
     return lbl.frame.size;
 }
@@ -636,6 +806,8 @@
     //    [lbl sizeToFit];
     lbl.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:lbl];
+    [contentView addSubview:lbl];
+
     
     //    return lbl.frame.size;
 }
@@ -683,6 +855,7 @@
     [lbl setNumberOfLines:0];
     lbl.adjustsFontSizeToFitWidth = YES;
     [scrollView addSubview:lbl];
+    [contentView addSubview:lbl];
     
 }
 - (void)didMoveToSuperview{
@@ -861,6 +1034,8 @@
     UIView * baseView = [[UIView alloc]initWithFrame:CGRectMake(x , y , w, 0)];
     baseView.clipsToBounds = YES;
     [scrollView addSubview:baseView];
+    [contentView addSubview:baseView];
+    
     UIImageView *baseImgView= [[UIImageView alloc]initWithFrame:CGRectMake(0, -h , w, h)];
     UIImage *  baseImg = [UIImage imageNamed:imgName];
     baseImgView.image = baseImg;
@@ -909,7 +1084,8 @@
     baseImgView.image = baseImg;
     baseImgView.alpha = 0;
     [scrollView addSubview:baseImgView];
-    
+    [contentView addSubview:baseImgView];
+
     
     [UIView animateWithDuration:duration
                           delay:delay
@@ -935,6 +1111,7 @@
     UIImageView * crossImgView = [[UIImageView alloc]initWithFrame:CGRectMake(506, 260 + margin_y, 10, 10)];
     crossImgView.image = crossImg;
     [scrollView addSubview:crossImgView];
+    [contentView addSubview:crossImgView];
     
     [UIView animateWithDuration:0.5f
                          delay:0.5f
@@ -1044,7 +1221,8 @@
     leftArrowImgView.image = [UIImage imageNamed:@"t_arrow_left"];
     [leftArrowView addSubview:leftArrowImgView];
     [scrollView addSubview:leftArrowView];
-    
+    [contentView addSubview:leftArrowView];
+
     [UIView animateWithDuration:1.0f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
@@ -1069,6 +1247,8 @@
     rightArrowImgView.image = [UIImage imageNamed:@"t_arrow_right"];
     [rightArrowView addSubview:rightArrowImgView];
     [scrollView addSubview:rightArrowView];
+    [contentView addSubview:rightArrowView];
+
     
     [UIView animateWithDuration:1.0f
                           delay:0.0f

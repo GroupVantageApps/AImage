@@ -15,8 +15,10 @@
 
 }
 - (void)showTechnologiesDetail:(BOOL)isUtm;
+- (void)showImucalmCompound:(BOOL)isUtm;
 - (id)initWithFrame:(CGRect)frame;
 @property(nonatomic)UIScrollView *scrollView;
+@property(nonatomic)UIView *contentView;
 @property(nonatomic)UIButton * utmCloseBtn;
 @property(nonatomic)UIImageView *graph_line;
 @property(nonatomic)UIView *graph_lineView;
