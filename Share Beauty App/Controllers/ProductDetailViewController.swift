@@ -243,7 +243,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         print("LanguageConfigure.UTMId:*\(LanguageConfigure.UTMId)")
         if LanguageConfigure.UTMId == 588{
-            mIsUtm = false
+            mIsUtm = true
         }else if LanguageConfigure.UTMId == 359{
             mIsUtm = true
         }
@@ -514,8 +514,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self
             mUtmFeaturesView.bottomPadding = 30
-
-            self.setSpecialCaseConstraints(targetView: mUtmFeaturesView, viewHeight: 300)
+            var viewHeight = 300
+            if product.productId == 588 {
+                mUtmFeaturesView.isNewUtm = true
+                viewHeight = 240
+            }
+            
+            self.setSpecialCaseConstraints(targetView: mUtmFeaturesView, viewHeight: CGFloat(viewHeight))
         } else if mIsIbuki {
             mIbukiFeaturesView = IbukiFeaturesView()
             mIbukiFeaturesView.delegate = self

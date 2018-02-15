@@ -1451,10 +1451,8 @@
             
             if (isSerum) {
                 [self addArrowEffect];
-//                [LogManager setValue:@"utm_tech_2"];
             }else{
                 [self addAnimationEyeGraph];
-//                [LogManager setValue:@"utmEye_tech_2"];
             }
            
             

@@ -21,7 +21,8 @@ class UtmFeaturesView: BaseView {
     @IBOutlet private var mBtnEfficacies: [BaseButton]!
 
     weak var delegate: UtmFeaturesViewDelegate?
-
+    var isNewUtm: Bool = false
+    
     @IBInspectable var topPadding: CGFloat = 0 {
         didSet {
             mConstraintTop.constant = topPadding
@@ -38,17 +39,35 @@ class UtmFeaturesView: BaseView {
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         let arrUtm = UIUtil.getUtmArray() as AnyObject as! [String]
-        let arrIndexBalloon = [5, 6, 9]
+        var arrIndexBalloon = [5, 6, 9]
+        if isNewUtm {
+            arrIndexBalloon = [5, 6]
+        }
         var i = 0
         mLblBalloons.forEach { mLblBalloon in
-            mLblBalloon.text = arrUtm[arrIndexBalloon[i]]
-            i += 1
+            if isNewUtm && i == 1 {
+                //TODO csv参照
+                mLblBalloon.text = "Archived by 25 years of research"
+                i += 1
+            } else if !(isNewUtm && i == 2) {
+                mLblBalloon.text = arrUtm[arrIndexBalloon[i]]
+                i += 1
+            }
         }
-        mBtnTechs.forEach { btnTech in
-            btnTech.setTitle(arrUtm[7], for: .normal)
-        }
-        mBtnEfficacies.forEach { btnTech in
-            btnTech.setTitle(arrUtm[8], for: .normal)
+        if isNewUtm {
+            mBtnTechs.forEach { btnTech in
+                btnTech.superview?.isHidden = true
+            }
+            mBtnEfficacies.forEach { btnTech in
+                btnTech.superview?.isHidden = true
+            }
+        } else {
+            mBtnTechs.forEach { btnTech in
+                btnTech.setTitle(arrUtm[7], for: .normal)
+            }
+            mBtnEfficacies.forEach { btnTech in
+                btnTech.setTitle(arrUtm[8], for: .normal)
+            }
         }
     }
 
@@ -86,7 +105,9 @@ class UtmFeaturesView: BaseView {
     func showAnimation() {
         animateBalloon(0) { (_) in
             self.animateBalloon(1, completion: { (_) in
-                self.animateBalloon(2, completion:nil)
+                if !self.isNewUtm {
+                    self.animateBalloon(2, completion:nil)
+                }
             })
         }
     }
