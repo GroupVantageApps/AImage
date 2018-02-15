@@ -1130,11 +1130,10 @@
 -(void)addArrowEffectContentV{
     
     UIImage *crossImg = [UIImage imageNamed:@"t_cross"];
-    UIImageView * crossImgView = [[UIImageView alloc]initWithFrame:CGRectMake(506, 260, 10, 10)];
+    UIImageView * crossImgView = [[UIImageView alloc]initWithFrame:CGRectMake(370, 135, 283, 263)];
     crossImgView.image = crossImg;
-    crossImgView.backgroundColor = [UIColor redColor];
+    crossImgView.backgroundColor = [UIColor clearColor];
     [contentView addSubview:crossImgView];
-    
     [UIView animateWithDuration:0.5f
                           delay:0.5f
                         options:UIViewAnimationOptionCurveLinear

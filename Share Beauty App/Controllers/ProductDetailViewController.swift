@@ -97,7 +97,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSunCarePerfectUv: Bool = false
     var mIsMakeUp: Bool = false
     var mIsWaso: Bool = false
-    
+    var mUtmTechV: UtmTechnologiesView? = nil
     var mIsEE: Bool = false
 
     var product: ProductDetailData!
@@ -1232,7 +1232,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             print("tag:*\(sender.tag)")
             mVCurrentSelect?.removeFromSuperview()
             self.setTechScrollView()
-            self.techScrollV.contentOffset = CGPoint(x: 0, y: 0)
+
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
 
         }else if sender.tag == 2{
             print("tag:*\(sender.tag)")
@@ -1507,19 +1508,18 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     //ImucalmView
     func setImucalmView(){
 
-        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
+        mUtmTechV = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
         //mVContent.addSubview(utmTechView!)
         //mVCurrentSelect = utmTechView
         
-        utmTechView?.showImucalmCompound(mIsUtm)
-        self.techScrollV.addSubview(utmTechView!)
+        mUtmTechV?.showImucalmCompound(mIsUtm)
+        self.techScrollV.addSubview(mUtmTechV!)
 
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
         if self.techScrollV.contentOffset.y >= self.techScrollV.frame.height*2{
-            utmTechView?.showImucalmArrowEffect(mIsUtm)
+            mUtmTechV?.showImucalmArrowEffect(mIsUtm)
         }
     }
 
