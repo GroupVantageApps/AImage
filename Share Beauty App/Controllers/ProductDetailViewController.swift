@@ -310,6 +310,28 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             showInfo(sender!)
         }
         
+        
+        if self.product.productId == 588 {
+            self.efficacyScrollV.delegate = self
+            self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
+            self.efficacyScrollV.isPagingEnabled = true
+            self.efficacyScrollV.bounces = false
+            
+            self.setEfficacyView()
+            
+            
+            self.techScrollV.delegate = self
+            self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*3)
+            self.techScrollV.isPagingEnabled = true
+            self.techScrollV.bounces = false
+
+            self.setGeneratingView()
+            self.setEnhanceView()
+            self.setImucalmView()
+        }
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -776,7 +798,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             if sender === mCategoryButtonTechnologies {
                 print("technology")
-                //mVContent.backgroundColor = UIColor.blue
                 
                 self.didTapTechnology()
                 
@@ -1211,30 +1232,21 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             print("tag:*\(sender.tag)")
             mVCurrentSelect?.removeFromSuperview()
             self.setTechScrollView()
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: 0)
 
         }else if sender.tag == 2{
             print("tag:*\(sender.tag)")
             print("tag:*\(sender.tag)")
             mVCurrentSelect?.removeFromSuperview()
             self.setTechScrollView()
-            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.mVContent.height)
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
         }
         
     }
     
     //*scrollview
     func setTechScrollView(){
-        self.techScrollV.delegate = self
-        self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-        self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*3)
-        self.techScrollV.isPagingEnabled = true
-        self.techScrollV.bounces = false
-        
-        self.setGeneratingView()
-        self.setEnhanceView()
-        self.setImucalmView()
-        
-        
+
         mVContent.addSubview(techScrollV)
         mVCurrentSelect = techScrollV
 
@@ -1495,29 +1507,44 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     //ImucalmView
     func setImucalmView(){
 
-        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: mVContent.frame.height*2), size: mVContent.size))
-        mVContent.addSubview(utmTechView!)
-        //self.mIsUtm = true
-//        utmTechView?.showTechnologiesDetail(mIsUtm)
-        utmTechView?.showImucalmCompound(mIsUtm)//追加メソッド
-        mVCurrentSelect = utmTechView
-
-
+        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
+        //mVContent.addSubview(utmTechView!)
+        //mVCurrentSelect = utmTechView
+        
+        utmTechView?.showImucalmCompound(mIsUtm)
         self.techScrollV.addSubview(utmTechView!)
 
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let utmTechView = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
+        if self.techScrollV.contentOffset.y >= self.techScrollV.frame.height*2{
+            utmTechView?.showImucalmArrowEffect(mIsUtm)
+        }
     }
 
     
     func didTapEfficacyResults(){
         print("Efficacy")
-        
-        self.efficacyScrollV.delegate = self
-        self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-        self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
-        self.efficacyScrollV.isPagingEnabled = true
-        self.efficacyScrollV.bounces = false
-        
-        self.setEfficacyView()
+    
+        //初期位置
+        for i in 0...2{
+            if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
+                beforeBtn.isEnabled = false
+                beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            }
+            if let afterBtn = self.efficacyScrollV.viewWithTag(20 + i) as? UIButton {
+                afterBtn.isEnabled = true
+                afterBtn.backgroundColor = UIColor.clear
+                afterBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let imageNum = i + 1
+            if let imageView = self.efficacyScrollV.viewWithTag(30 + i) as? UIImageView{
+                imageView.image = UIImage(named: "before_0\(imageNum).png")
+            }
+        }
+        self.efficacyScrollV.contentOffset = CGPoint(x: 0, y: 0)
         
         mVContent.addSubview(efficacyScrollV)
         mVCurrentSelect = efficacyScrollV
@@ -1547,34 +1574,37 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let image = UIImage(named: "before_0\(imageNum).png")
             let faceImageV = UIImageView(image:image)
             faceImageV.contentMode = .scaleAspectFit
-            faceImageV.tag = 30 + i
+            faceImageV.tag = 30 + i//300
             faceImageV.clipsToBounds = true
             faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
             faceImageV.centerX = self.mVContent.centerX
             faceImageV.backgroundColor = UIColor.clear
             
             let beforeBtn = UIButton()
-            //beforeBtn.isSelected = true
             beforeBtn.isEnabled = false
             beforeBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
             beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
             beforeBtn.setTitle("Before", for: .normal)
+            beforeBtn.isEnabled = false
             beforeBtn.setTitleColor(UIColor.white, for: .normal)
             beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             beforeBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
-            beforeBtn.tag = 10 + i
+            beforeBtn.tag = 10 + i//100
             beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
             let afterBtn = UIButton()
-            //afterBtn.isSelected = false
             afterBtn.isEnabled = true
             afterBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
             afterBtn.origin.x = self.mVContent.centerX + 10
             afterBtn.setTitle("After 4 Weeks", for: .normal)
+            afterBtn.isEnabled = true
+            afterBtn.setTitleColor(UIColor.white, for: .normal)
+            afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            
             afterBtn.setTitleColor(UIColor.black, for: .normal)
             afterBtn.backgroundColor = UIColor.white
             afterBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
-            afterBtn.tag = 20 + i
+            afterBtn.tag = 20 + i//200
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
             
@@ -1679,7 +1709,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             sender.setTitleColor(UIColor.white, for: .normal)
-            //sender.isSelected = true
             sender.isEnabled = false
             if let afterBtn = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIButton {
                 afterBtn.isEnabled = true
@@ -1695,7 +1724,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
             sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             sender.setTitleColor(UIColor.white, for: .normal)
-            //sender.isSelected = true
             sender.isEnabled = false
             if let beforeBtn = self.efficacyScrollV.viewWithTag(sender.tag - 10) as? UIButton {
                 beforeBtn.isEnabled = true
@@ -1708,7 +1736,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             
         }
-        
         
     }
     

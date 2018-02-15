@@ -16,6 +16,7 @@
 }
 - (void)showTechnologiesDetail:(BOOL)isUtm;
 - (void)showImucalmCompound:(BOOL)isUtm;
+- (void)showImucalmArrowEffect:(BOOL)isUtm;
 - (id)initWithFrame:(CGRect)frame;
 @property(nonatomic)UIScrollView *scrollView;
 @property(nonatomic)UIView *contentView;

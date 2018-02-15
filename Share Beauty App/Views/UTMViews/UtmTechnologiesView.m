@@ -34,7 +34,6 @@
 
 //UTM2.0用に追加
 - (void)showImucalmCompound:(BOOL)isUtm{
-    firstAnimation = YES;
     NSLog(@"showImucalmCompound");
     firstAnimation = YES;
     NSArray *utmArr = [UIUtil getUtmArray];
@@ -147,7 +146,7 @@
                                                                lineHeight:0 red:YES bold:YES];
     [leftEffectBtn setAttributedTitle:leftEffectBtnStr forState:UIControlStateNormal];
     [leftEffectBtn addTarget:self
-                      action:@selector(onClickLeftArrowAnimation)
+                      action:@selector(onClickLeftArrowAnimationContentV)
             forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:leftEffectBtn];
     
@@ -169,7 +168,7 @@
                                                                 lineHeight:0 red:YES bold:YES];
     [rightEffectBtn setAttributedTitle:rightEffectBtnStr forState:UIControlStateNormal];
     [rightEffectBtn addTarget:self
-                       action:@selector(onClickRightArrowAnimation)
+                       action:@selector(onClickRightArrowAnimationContentV)
              forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:rightEffectBtn];
     
@@ -1111,7 +1110,6 @@
     UIImageView * crossImgView = [[UIImageView alloc]initWithFrame:CGRectMake(506, 260 + margin_y, 10, 10)];
     crossImgView.image = crossImg;
     [scrollView addSubview:crossImgView];
-    [contentView addSubview:crossImgView];
     
     [UIView animateWithDuration:0.5f
                          delay:0.5f
@@ -1126,6 +1124,31 @@
 
                      }];
     
+    
+}
+
+-(void)addArrowEffectContentV{
+    
+    UIImage *crossImg = [UIImage imageNamed:@"t_cross"];
+    UIImageView * crossImgView = [[UIImageView alloc]initWithFrame:CGRectMake(506, 260, 10, 10)];
+    crossImgView.image = crossImg;
+    crossImgView.backgroundColor = [UIColor redColor];
+    [contentView addSubview:crossImgView];
+    
+    [UIView animateWithDuration:0.5f
+                          delay:0.5f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         
+                         crossImgView.frame = CGRectMake(370, 135, 283, 263);
+                     }
+                     completion:^(BOOL finished){
+                         
+                         
+                     }];
+    
+//    UIView * leftArrowView = [[UIView alloc]initWithFrame:CGRectMake(345, 366, 345, 0)];
+//    leftArrowView.frame = CGRectMake(345 , 366 - 218 , 345, 218);
     
 }
 
@@ -1221,7 +1244,6 @@
     leftArrowImgView.image = [UIImage imageNamed:@"t_arrow_left"];
     [leftArrowView addSubview:leftArrowImgView];
     [scrollView addSubview:leftArrowView];
-    [contentView addSubview:leftArrowView];
 
     [UIView animateWithDuration:1.0f
                           delay:0.0f
@@ -1247,15 +1269,64 @@
     rightArrowImgView.image = [UIImage imageNamed:@"t_arrow_right"];
     [rightArrowView addSubview:rightArrowImgView];
     [scrollView addSubview:rightArrowView];
-    [contentView addSubview:rightArrowView];
 
     
     [UIView animateWithDuration:1.0f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         
                          rightArrowView.frame = CGRectMake(335 , 366 + margin - 218 , 345, 218);
+                         rightArrowImgView.frame = CGRectMake(0 , 0 , 345, 218);
+                         
+                         
+                     }
+                     completion:^(BOOL finished){
+                     }];
+    
+    
+    
+    
+}
+
+-(void)onClickLeftArrowAnimationContentV{
+    
+    UIView * leftArrowView = [[UIView alloc]initWithFrame:CGRectMake(345, 366, 345, 0)];
+    leftArrowView.clipsToBounds = YES;
+    UIImageView * leftArrowImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -218 , 345, 218)];
+    leftArrowImgView.image = [UIImage imageNamed:@"t_arrow_left"];
+    [leftArrowView addSubview:leftArrowImgView];
+    [contentView addSubview:leftArrowView];
+    
+    [UIView animateWithDuration:1.0f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         
+                         leftArrowView.frame = CGRectMake(345 , 366 - 218 , 345, 218);
+                         leftArrowImgView.frame = CGRectMake(0 , 0 , 345, 218);
+                         
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
+                     }];
+    
+}
+-(void)onClickRightArrowAnimationContentV{
+    
+    UIView * rightArrowView = [[UIView alloc]initWithFrame:CGRectMake(335, 366, 345, 0)];
+    rightArrowView.clipsToBounds = YES;
+    UIImageView * rightArrowImgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, -218 , 345, 218)];
+    rightArrowImgView.image = [UIImage imageNamed:@"t_arrow_right"];
+    [rightArrowView addSubview:rightArrowImgView];
+    [contentView addSubview:rightArrowView];
+    
+    
+    [UIView animateWithDuration:1.0f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         rightArrowView.frame = CGRectMake(335 , 366  - 218 , 345, 218);
                          rightArrowImgView.frame = CGRectMake(0 , 0 , 345, 218);
                          
                          
@@ -1385,7 +1456,6 @@
             }else{
                 [self addAnimationEyeGraph];
 //                [LogManager setValue:@"utmEye_tech_2"];
-            
             }
            
             
@@ -1394,6 +1464,14 @@
         
     }
     
+}
+
+- (void)showImucalmArrowEffect:(BOOL)isUtm{
+    firstAnimation = YES;
+    if (firstAnimation) {
+        [self addArrowEffectContentV];
+        firstAnimation = NO;
+    }
 }
 
 @end
