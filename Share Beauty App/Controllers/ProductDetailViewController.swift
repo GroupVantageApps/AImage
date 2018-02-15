@@ -88,6 +88,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var isHowToUseView: Bool = false
 
     var mIsUtm: Bool = false
+    var mIsNewUtm: Bool = false
     var mIsUtmEye: Bool = false
     var mIsIbuki: Bool = false
     var mIsWhiteLucentOnMakeUp: Bool = false
@@ -241,11 +242,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
         
-        print("LanguageConfigure.UTMId:*\(LanguageConfigure.UTMId)")
-        if LanguageConfigure.UTMId == 588{
-            mIsUtm = true
-        }else if LanguageConfigure.UTMId == 359{
-            mIsUtm = true
+        if productId == 588{
+            self.mIsNewUtm = true
+            self.mIsUtm = false
         }
 
         self.setSpecialMenu()
@@ -312,6 +311,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         
         if self.product.productId == 588 {
+            
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
             self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
@@ -359,7 +359,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if mIsUtm || mIsUtmEye {
+        if mIsUtm || mIsUtmEye || mIsNewUtm{
             mUtmFeaturesView.showAnimation()
         }
             mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
@@ -510,7 +510,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     private func initSpecialView() {
-        if mIsUtm || mIsUtmEye {
+        if mIsUtm || mIsUtmEye || mIsNewUtm {
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self
             mUtmFeaturesView.bottomPadding = 30
