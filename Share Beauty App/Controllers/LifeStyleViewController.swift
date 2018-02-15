@@ -594,7 +594,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
-
+1
             if let labelFont = element.font {
                 label.font = labelFont
             }

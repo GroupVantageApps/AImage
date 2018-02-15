@@ -74,6 +74,9 @@ class UtmFeaturesView: BaseView {
     fileprivate func animateBalloon(_ index: Int, completion: ((Bool) -> ())?) {
         let mountView = mImgVBalloons[index].superview!
         let imgVBalloon = mImgVBalloons[index]
+        if isNewUtm && index == 1{
+            self.mImgVTexts[index].image = UIImage.init(named: "f_effect_2_new")
+        }
         for constraint in mountView.constraints {
             let firstItem = constraint.firstItem as! UIView
             if constraint.secondItem != nil {
