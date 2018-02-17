@@ -144,7 +144,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
 //        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
         (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-        (discription: "lifestyle15", x: CGFloat(3100), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
         ]
 
     private let labelItems = [
@@ -157,7 +157,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
         (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
-        (discription: 7931, x: CGFloat(3200), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+        (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
 
         ]
     private let countryFontScale = [
@@ -482,10 +482,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
                     let imageView = UIImageView()
                     imageView.contentMode = .scaleAspectFit
-                    imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: viewHeight)
                     
-                    let labe = UILabel.init(frame: CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: 30))
-                    labe.font = UIFont(name: "Reader-Bold", size: 17)
+                    let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
+                    labe.font = UIFont(name: "Reader", size: 10)
                     labe.textAlignment = .center
                     
                     //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
@@ -493,12 +492,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     if i == 1{
                         imageView.image = FileTable.getImage(6534)
                         imageView.tag = 88
+                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: viewHeight)
                     }else if 8 <=  i && i <= 11  {
                         imageView.image = UIImage.init(named: "makeup_\(i - 7)")
                         imageView.tag = 89 + i - 8
                         
                         labe.text = tmpMakeupStrings[i - 8]
                         mScrollV.addSubview(labe)
+                        let product_offset_width = 8 * viewWidth
+                        imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
                         
                     }else if 13 <= i && i <= 16 {
                         imageView.image =  UIImage.init(named: "makeup_\(i - 8)")
@@ -506,8 +508,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         
                         labe.text = tmpMakeupStrings[i - 9]
                         mScrollV.addSubview(labe)
+                        imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
                     }
-                    contentWidth += viewWidth
+                    contentWidth += imageView.frame.size.width
                     imageView.isUserInteractionEnabled = true
                     imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
                     
@@ -527,7 +530,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.logScreenId = mScreen.code
             lifeStyleProductView.logItemId = "0" + String(i+1)
             
-            lifeStyleProductView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+            lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
