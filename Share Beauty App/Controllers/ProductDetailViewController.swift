@@ -86,6 +86,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     var productId: Int!
     var isHowToUseView: Bool = false
+    var indexHowToUse: Int = 0
 
     var mIsUtm: Bool = false
     var mIsNewUtm: Bool = false
@@ -367,6 +368,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		if let wasoFeatureView = self.mWasoFeatureView {
 			wasoFeatureView.beginGuideFrameAnimation()
 		}
+        
+        if self.isHowToUseView {
+            if let scrollV =  mVCategoryImageBase.superview! as? UIScrollView {
+                let offset = CGPoint(x: 0, y: scrollV.size.height * CGFloat(self.indexHowToUse))
+                scrollV.setContentOffset(offset, animated: false)
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

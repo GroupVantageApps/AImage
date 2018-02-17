@@ -52,6 +52,14 @@
 		2680EC12203404D0005257B1 /* before_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC0C203404CF005257B1 /* before_01.png */; };
 		2680EC13203404D0005257B1 /* before_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC0D203404CF005257B1 /* before_02.png */; };
 		2680EC14203404D0005257B1 /* after_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC0E203404CF005257B1 /* after_03.png */; };
+		2680EC1E2037E4FA005257B1 /* makeup_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC162037E4F8005257B1 /* makeup_6.png */; };
+		2680EC1F2037E4FA005257B1 /* makeup_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC172037E4F8005257B1 /* makeup_7.png */; };
+		2680EC202037E4FA005257B1 /* makeup_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC182037E4F9005257B1 /* makeup_1.png */; };
+		2680EC212037E4FA005257B1 /* makeup_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC192037E4F9005257B1 /* makeup_8.png */; };
+		2680EC222037E4FA005257B1 /* makeup_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC1A2037E4F9005257B1 /* makeup_2.png */; };
+		2680EC232037E4FA005257B1 /* makeup_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC1B2037E4F9005257B1 /* makeup_3.png */; };
+		2680EC242037E4FA005257B1 /* makeup_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC1C2037E4F9005257B1 /* makeup_5.png */; };
+		2680EC252037E4FA005257B1 /* makeup_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2680EC1D2037E4F9005257B1 /* makeup_4.png */; };
 		2687F5F92032EA9F005F8D80 /* percent_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2687F5F62032EA9F005F8D80 /* percent_02.png */; };
 		2687F5FA2032EA9F005F8D80 /* percent_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 2687F5F72032EA9F005F8D80 /* percent_01.png */; };
 		2687F5FB2032EA9F005F8D80 /* percent_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 2687F5F82032EA9F005F8D80 /* percent_03.png */; };
@@ -693,6 +701,14 @@
 		2680EC0C203404CF005257B1 /* before_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = before_01.png; sourceTree = "<group>"; };
 		2680EC0D203404CF005257B1 /* before_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = before_02.png; sourceTree = "<group>"; };
 		2680EC0E203404CF005257B1 /* after_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = after_03.png; sourceTree = "<group>"; };
+		2680EC162037E4F8005257B1 /* makeup_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_6.png; sourceTree = "<group>"; };
+		2680EC172037E4F8005257B1 /* makeup_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_7.png; sourceTree = "<group>"; };
+		2680EC182037E4F9005257B1 /* makeup_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_1.png; sourceTree = "<group>"; };
+		2680EC192037E4F9005257B1 /* makeup_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_8.png; sourceTree = "<group>"; };
+		2680EC1A2037E4F9005257B1 /* makeup_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_2.png; sourceTree = "<group>"; };
+		2680EC1B2037E4F9005257B1 /* makeup_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_3.png; sourceTree = "<group>"; };
+		2680EC1C2037E4F9005257B1 /* makeup_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_5.png; sourceTree = "<group>"; };
+		2680EC1D2037E4F9005257B1 /* makeup_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_4.png; sourceTree = "<group>"; };
 		2687F5F62032EA9F005F8D80 /* percent_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = percent_02.png; sourceTree = "<group>"; };
 		2687F5F72032EA9F005F8D80 /* percent_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = percent_01.png; sourceTree = "<group>"; };
 		2687F5F82032EA9F005F8D80 /* percent_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = percent_03.png; sourceTree = "<group>"; };
@@ -1347,6 +1363,7 @@
 		26768D6F202BFFE7005BE606 /* UTM2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				2680EC152037E4CB005257B1 /* tmp */,
 				2680EC09203404CE005257B1 /* after_01.png */,
 				2680EC0B203404CE005257B1 /* after_02.png */,
 				2680EC0E203404CF005257B1 /* after_03.png */,
@@ -1410,6 +1427,21 @@
 				2642A25D20329ADE009E72F9 /* enhanceGraph_07.png */,
 			);
 			path = enhances;
+			sourceTree = "<group>";
+		};
+		2680EC152037E4CB005257B1 /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+				2680EC182037E4F9005257B1 /* makeup_1.png */,
+				2680EC1A2037E4F9005257B1 /* makeup_2.png */,
+				2680EC1B2037E4F9005257B1 /* makeup_3.png */,
+				2680EC1D2037E4F9005257B1 /* makeup_4.png */,
+				2680EC1C2037E4F9005257B1 /* makeup_5.png */,
+				2680EC162037E4F8005257B1 /* makeup_6.png */,
+				2680EC172037E4F8005257B1 /* makeup_7.png */,
+				2680EC192037E4F9005257B1 /* makeup_8.png */,
+			);
+			path = tmp;
 			sourceTree = "<group>";
 		};
 		2687F5FC2032EAA9005F8D80 /* efficacy */ = {
@@ -2543,6 +2575,7 @@
 				B38F63C01F47682700176804 /* DayCream01_before.png in Resources */,
 				C0B263E61E6E98FB00452C12 /* WasoGraphEfficacyView.xib in Resources */,
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
+				2680EC202037E4FA005257B1 /* makeup_1.png in Resources */,
 				C98EBF791F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard in Resources */,
 				C050C9721E8267450009679D /* d_block_3_5m.png in Resources */,
 				C03520D61D9E8825005129B5 /* IdealResultCollectionView.xib in Resources */,
@@ -2674,6 +2707,7 @@
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
 				DE06F70F1F16450200EF2FE2 /* children.png in Resources */,
+				2680EC242037E4FA005257B1 /* makeup_5.png in Resources */,
 				B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */,
 				2680EC11203404D0005257B1 /* after_02.png in Resources */,
 				C050C9021E82619F0009679D /* sib02_after.jpg in Resources */,
@@ -2701,6 +2735,7 @@
 				DE06F70E1F16450200EF2FE2 /* sensitive.png in Resources */,
 				C050C9701E8267450009679D /* d_block_2m.png in Resources */,
 				DE2C919E1E9C682500B5FC4A /* lx_top_menu.png in Resources */,
+				2680EC1F2037E4FA005257B1 /* makeup_7.png in Resources */,
 				26AD5D9720232D6F002A2076 /* ns_page_top.png in Resources */,
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
 				DE2C8F511E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf in Resources */,
@@ -2710,6 +2745,7 @@
 				C050C9831E8267450009679D /* utm01_after.png in Resources */,
 				C00D555A1DC611A0008795D4 /* ColorballView.xib in Resources */,
 				C050C99C1E8267450009679D /* t_graph_gray_eye.png in Resources */,
+				2680EC222037E4FA005257B1 /* makeup_2.png in Resources */,
 				260E34AC2019CCFE0006109B /* moviStartBtn.png in Resources */,
 				DE2C909B1E9C66E600B5FC4A /* LXYutakaConceptSubView.xib in Resources */,
 				26F378342023F9E300123F4D /* SFSLX_180129_8.png in Resources */,
@@ -2738,6 +2774,7 @@
 				C050C9841E8267450009679D /* utm01_befor.png in Resources */,
 				DE06F71E1F16450200EF2FE2 /* desc_02.png in Resources */,
 				E5E0D3FA1DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard in Resources */,
+				2680EC212037E4FA005257B1 /* makeup_8.png in Resources */,
 				260E34AE2019CF7B0006109B /* UTM-play-button.png in Resources */,
 				C050C97A1E8267450009679D /* efficacy_face2_01.png in Resources */,
 				C050C98C1E8267450009679D /* f_effect_3.png in Resources */,
@@ -2768,6 +2805,7 @@
 				26768D7F202C1C3B005BE606 /* Reishi_2_cmyk_1.png in Resources */,
 				DE2C907B1E9C66E600B5FC4A /* IngredientSkinGraphView.xib in Resources */,
 				26AD5D7520230A1F002A2076 /* Arial Bold.ttf in Resources */,
+				2680EC1E2037E4FA005257B1 /* makeup_6.png in Resources */,
 				B38F63C41F47682700176804 /* efficacy_slider_circle_MoisturizingCream.png in Resources */,
 				DE2C91831E9C682500B5FC4A /* icon_recommend_large.png in Resources */,
 				C050C9A91E8267450009679D /* sizle_highlight.png in Resources */,
@@ -2778,6 +2816,7 @@
 				26AD5D8F20232545002A2076 /* nsbutton_0.png in Resources */,
 				2687F5FB2032EA9F005F8D80 /* percent_03.png in Resources */,
 				E5E0D3F71DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard in Resources */,
+				2680EC232037E4FA005257B1 /* makeup_3.png in Resources */,
 				2608BF95202985C600E7F900 /* ns_page_01.png in Resources */,
 				DE06F7101F16450200EF2FE2 /* urban_daily.png in Resources */,
 				C050C9061E82619F0009679D /* sib_slider_1_40.png in Resources */,
@@ -2818,6 +2857,7 @@
 				26768DB7202C5FE1005BE606 /* enhanceGraph_02.png in Resources */,
 				C050C9921E8267450009679D /* t_arrow_eye.png in Resources */,
 				26768DB9202C5FE1005BE606 /* enhanceGraph_04.png in Resources */,
+				2680EC252037E4FA005257B1 /* makeup_4.png in Resources */,
 				C050C9AA1E8267450009679D /* triangle_image.png in Resources */,
 				C9906DC81F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard in Resources */,
 				26AD5D9020232545002A2076 /* nsbutton_2.png in Resources */,

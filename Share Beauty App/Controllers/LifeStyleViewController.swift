@@ -42,11 +42,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
     }
     
-    func didTapHowTo(_ product: ProductData?, transitionItemId: String?,sender: AnyObject){
+    func didTapHowTo(_ product: ProductData?, transitionItemId: String?,sender: AnyObject, index: Int){
         
         let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         productDetailVc.productId = product!.productId
         productDetailVc.isHowToUseView = true
+        productDetailVc.indexHowToUse = index
         
         var i = 0
         for product in productList.products {
@@ -129,6 +130,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private var suncareProductsCount        = 0
     private let productList = ProductListData()
     
+    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
+    
     private let imageItemIds = [
         (discription: "lifestyle10", x: CGFloat(600), y: CGFloat(170), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し//x:100 y:205
        //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
@@ -141,7 +144,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
 //        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
         (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle15", x: CGFloat(3100), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
         ]
 
     private let labelItems = [
@@ -154,7 +157,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
         (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
-        (discription: 7931, x: CGFloat(2460), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+        (discription: 7931, x: CGFloat(3200), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
 
         ]
     private let countryFontScale = [
@@ -191,7 +194,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
         //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        productIds = [564,6534,566,568,LanguageConfigure.UTMId, 570, 571, 578, 6543, 572, 6544]
+        productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
     }
     
     override func viewDidLayoutSubviews() {
@@ -287,19 +290,22 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     @objc private func howToImageTapped(_ sender: UIGestureRecognizer) {
 //        let product_564 = ProductData(productId: 564)
-        let tag = sender.view?.tag
+        let tag = sender.view?.tag as! Int
         var product: ProductData = ProductData(productId: 564)
+        var index = 0
         if tag == 88{
             product = ProductData(productId: 564)
-        }else if tag == 89{
+        }else if 88 < tag && tag < 93 {
             product = ProductData(productId: 578)
-        }else if tag == 90{
+            index = tag - 89
+        }else if 93 < tag && tag < 98 {
             product = ProductData(productId: 572)
+            index = tag - 94
         }else{
             print("other")
         }
-        if let howtoImageV = sender.view?.viewWithTag(tag!){
-            didTapHowTo(product, transitionItemId: nil, sender: howtoImageV)
+        if let howtoImageV = sender.view?.viewWithTag(tag){
+            self.didTapHowTo(product, transitionItemId: nil, sender: howtoImageV, index: index)
         }
     }
 
@@ -425,6 +431,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 let data: ProductData = ProductData(productId: productId)
                 secondsProducts[i] = [data]
             } else {
+                //HowToなど画像を置くようにproductを追加
                 let data: ProductData = ProductData(productId: 0)
                 secondsProducts[i] = [data]
             }
@@ -472,26 +479,38 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 //                    let view = UIView()
 //                    view.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
 //                    view.backgroundColor = UIColor.white
+
                     let imageView = UIImageView()
                     imageView.contentMode = .scaleAspectFit
                     imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: viewHeight)
+                    
+                    let labe = UILabel.init(frame: CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: 30))
+                    labe.font = UIFont(name: "Reader-Bold", size: 17)
+                    labe.textAlignment = .center
+                    
                     //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
                     print("offset:*\(enumerated.offset)")
-                    if enumerated.offset == 1{
+                    if i == 1{
                         imageView.image = FileTable.getImage(6534)
                         imageView.tag = 88
-                    }else if enumerated.offset == 8{
-                        imageView.image = FileTable.getImage(6543)
-                        imageView.tag = 89
-                    }else if enumerated.offset == 10{
-                        imageView.image = FileTable.getImage(6544)
-                        imageView.tag = 90
+                    }else if 8 <=  i && i <= 11  {
+                        imageView.image = UIImage.init(named: "makeup_\(i - 7)")
+                        imageView.tag = 89 + i - 8
+                        
+                        labe.text = tmpMakeupStrings[i - 8]
+                        mScrollV.addSubview(labe)
+                        
+                    }else if 13 <= i && i <= 16 {
+                        imageView.image =  UIImage.init(named: "makeup_\(i - 8)")
+                        imageView.tag = 93 + i - 12
+                        
+                        labe.text = tmpMakeupStrings[i - 9]
+                        mScrollV.addSubview(labe)
                     }
+                    contentWidth += viewWidth
                     imageView.isUserInteractionEnabled = true
                     imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
                     
-                    contentWidth += viewWidth
-//                    mScrollV.addSubview(view)
                     mScrollV.addSubview(imageView)
                 }
                 continue;
@@ -594,7 +613,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
-1
+
             if let labelFont = element.font {
                 label.font = labelFont
             }
