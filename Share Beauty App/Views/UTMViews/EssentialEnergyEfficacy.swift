@@ -377,7 +377,8 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
     func setLabel(frame:CGRect, text:String?, size:Int) {
         let label = UILabel(frame: frame)
         label.text = text
-        label.font = UIFont.boldSystemFont(ofSize: CGFloat(size))
+        label.font = UIFont(name:"Reader-Bold" ,size: CGFloat(size))
+         //label.font = UIFont.boldSystemFont(ofSize: CGFloat(size))
         label.numberOfLines = 0
         label.textColor = UIColor.white
         label.textAlignment = .center

@@ -27,17 +27,17 @@ class EfficacyResultView: UIView {
     // スタイル設定
     private func setStyles() {
         titleLabel.textColor = UIUtil.grayColor()
-        titleLabel.font = UIUtil.getSystemBold(23)
+        titleLabel.font = UIUtil.getReaderBold(23)
 
         effectLabel.textColor = UIUtil.redColor()
-        effectLabel.font = UIUtil.getSystemBold(17)
+        effectLabel.font = UIUtil.getReaderBold(17)
 
         exampleLabel.textColor = UIUtil.grayColor()
-        exampleLabel.font = UIUtil.getSystemBold(15)
+        exampleLabel.font = UIUtil.getReaderBold(15)
 
         for label in [beforeLabel, afterLabel] {
             label?.textColor = UIUtil.grayColor()
-            label?.font = UIUtil.getSystemBold(15)
+            label?.font = UIUtil.getReaderBold(15)
         }
 
         slider.setThumbImage(UIImage(named: "slider_waso"), for: .normal)
