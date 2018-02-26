@@ -25,6 +25,8 @@ class ProductDetailTransitionView: BaseView {
     @IBOutlet private weak var mBtnLikeIt: BaseButton!
     @IBOutlet private weak var mLblLikeIt: UILabel!
     @IBOutlet private var mBtnTemplate: BaseButton!
+    
+    var product: ProductDetailData!
 
     var cellHeight: CGFloat! {
         didSet {
@@ -80,11 +82,14 @@ class ProductDetailTransitionView: BaseView {
 		
 		// 現在の仕様では、最初の項目に必ず「ライン名」ボタンが来る
 		// ライン名ボタンは必ず幅広ボタンで表示する
-		let view = views.first!
-		views.removeFirst()
-		centerMount(view)
-		
-		// ボタンリストから左右それぞれのリストを作成
+        let view = views.first!
+        views.removeFirst()
+        
+        if datas.first?.title != ""{
+            centerMount(view)
+        }
+
+        // ボタンリストから左右それぞれのリストを作成
         views.reverse()
         let chunkedViews = views.chunk(2)
 

@@ -89,7 +89,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         self.view.addSubview(moviePlay)
         
         //self.mTopBGImgV.image = FileTable.getLXFileImage("lx_top_bg.png")
-        let image:UIImage = UIImage(named: "ns_page_01.png")!
+        let image:UIImage = UIImage(named: "ns_page_top.png")!
         self.mTopBGImgV.image = image
         self.mLogoImgV.image = FileTable.getLXFileImage("lx_top_logo.png")
         self.mBottomLogoImgV.image = FileTable.getLXFileImage("lx_logo.png")

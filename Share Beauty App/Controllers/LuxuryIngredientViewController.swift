@@ -134,7 +134,6 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         avPlayer.play()
     }
     func movieAct(){
-        print("bgAudioPlayer:*\(bgAudioPlayer)")
         bgAudioPlayer.pause()
         
         let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))

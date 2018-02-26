@@ -118,15 +118,15 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
     }
 
     @IBAction func onTapNext(_ sender: AnyObject) {
-        if mSelectedLineIds.count == 1 && mSelectedLineIds.first == 2 {
-            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
-            nextVc.selectedLineIds = mSelectedLineIds
-            delegate?.nextVc(nextVc)
-        } else {
+//        if mSelectedLineIds.count == 1 && mSelectedLineIds.first == 2 {
+//            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
+//            nextVc.selectedLineIds = mSelectedLineIds
+//            delegate?.nextVc(nextVc)
+//        } else {
             let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealSecondSelectViewController.self) as! IdealSecondSelectViewController
             nextVc.selectedLineIds = mSelectedLineIds
             delegate?.nextVc(nextVc)
-        }
+//        }
     }
     @IBAction func onTapNewApproach(_ sender: Any) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController

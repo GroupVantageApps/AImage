@@ -86,8 +86,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     var productId: Int!
     var isHowToUseView: Bool = false
+    var indexHowToUse: Int = 0
 
     var mIsUtm: Bool = false
+    var mIsNewUtm: Bool = false
     var mIsUtmEye: Bool = false
     var mIsIbuki: Bool = false
     var mIsWhiteLucentOnMakeUp: Bool = false
@@ -97,7 +99,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSunCarePerfectUv: Bool = false
     var mIsMakeUp: Bool = false
     var mIsWaso: Bool = false
-    
+    var mUtmTechV: UtmTechnologiesView? = nil
     var mIsEE: Bool = false
 
     var product: ProductDetailData!
@@ -118,6 +120,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 	
 	private var movieTelop: TelopData!
 	private var currentMovieTelop: TelopData.DataStructTerop? = nil
+    
+    let techScrollV = UIScrollView()
+    let efficacyScrollV = UIScrollView()
 	
 	// 特殊な初期表示を行う商品ID辞書
 	private enum eTransitionDestinate {
@@ -148,6 +153,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonDefend.delegate = self
         mTroubleView.delegate = self
         mTroubleSelectView.delegate = self
+        
         mBtnCurrentSelect = mCategoryButtonFeatures
 
         mItems = AppItemTable.getItems(screenId: Const.screenIdProductDetail)
@@ -171,7 +177,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mImgVBackImage.image = FileTable.getImage(product.backImage)
         
         // 背景
-        if productId >= 553 && productId <= 556 {
+        if productId >= 553 && productId <= 556 || productId == 564{
             mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
             var image: UIImage = FileTable.getImage(6355)!
             let resize = CGSize(width: self.view.width, height: self.view.height)
@@ -236,6 +242,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		} else {
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
+        
+        if productId == 588{
+            self.mIsNewUtm = true
+            self.mIsUtm = false
+        }
 
         self.setSpecialMenu()
         self.setCategoryButtonDefend()
@@ -299,6 +310,29 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             showInfo(sender!)
         }
         
+        
+        if self.product.productId == 588 {
+            
+            self.efficacyScrollV.delegate = self
+            self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
+            self.efficacyScrollV.isPagingEnabled = true
+            self.efficacyScrollV.bounces = false
+            
+            self.setEfficacyView()
+            
+            
+            self.techScrollV.delegate = self
+            self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*3)
+            self.techScrollV.isPagingEnabled = true
+            self.techScrollV.bounces = false
+
+            self.setGeneratingView()
+            self.setEnhanceView()
+            self.setImucalmView()
+        }
+        
     }
 
     override func viewDidLayoutSubviews() {
@@ -326,7 +360,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if mIsUtm || mIsUtmEye {
+        if mIsUtm || mIsUtmEye || mIsNewUtm{
             mUtmFeaturesView.showAnimation()
         }
             mConstraintColorballHeight.constant = mColorballCollectionView.contentSize.height
@@ -334,6 +368,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		if let wasoFeatureView = self.mWasoFeatureView {
 			wasoFeatureView.beginGuideFrameAnimation()
 		}
+        
+        if self.isHowToUseView {
+            if let scrollV =  mVCategoryImageBase.superview! as? UIScrollView {
+                let offset = CGPoint(x: 0, y: scrollV.size.height * CGFloat(self.indexHowToUse))
+                scrollV.setContentOffset(offset, animated: false)
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -459,6 +500,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let item: [String: String]! = AppItemTable.getItems(screenId: Const.screenIdTop)
         
         var datas = [ProductDetailTransitionData]()
+        
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
             datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
@@ -476,12 +518,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
 
     private func initSpecialView() {
-        if mIsUtm || mIsUtmEye {
+        if mIsUtm || mIsUtmEye || mIsNewUtm {
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self
             mUtmFeaturesView.bottomPadding = 30
-
-            self.setSpecialCaseConstraints(targetView: mUtmFeaturesView, viewHeight: 300)
+            var viewHeight = 300
+            if product.productId == 588 {
+                mUtmFeaturesView.isNewUtm = true
+                viewHeight = 240
+            }
+            
+            self.setSpecialCaseConstraints(targetView: mUtmFeaturesView, viewHeight: CGFloat(viewHeight))
         } else if mIsIbuki {
             mIbukiFeaturesView = IbukiFeaturesView()
             mIbukiFeaturesView.delegate = self
@@ -579,7 +626,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
+        } else if productId == 588{
+            print("utm test")
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
         }
+//        } else if productId == 588{
+//            mCategoryButtonTechnologies.enabled = true
+//            mCategoryButtonEfficacy.enabled = true
+//            mCategoryButtonDefend.enabled = true
+//        }
     }
     
     private func setCategoryButtonDefend(){
@@ -651,6 +708,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(utmTechView!)
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
+
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
@@ -735,6 +793,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVCurrentSelect = utmDefendView
         }
     }
+    
 
     private func showInfo(_ sender: CategoryButton) {
         mVContent.isHidden = true
@@ -745,6 +804,28 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             return
         }
         mVCategoryImage.isHidden = false
+        
+        if productId == 588{
+            mVContent.isHidden = false
+            mVCurrentSelect?.removeFromSuperview()
+            
+            if sender === mCategoryButtonTechnologies {
+                print("technology")
+                
+                self.didTapTechnology()
+                
+            } else if sender === mCategoryButtonEfficacy {
+                print("effect")
+                
+                self.didTapEfficacyResults()
+                
+            } else if sender === mCategoryButtonDefend {
+//                let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+//                mVContent.addSubview(utmDefendView!)
+//                mVCurrentSelect = utmDefendView
+            }
+        }
+        
         if sender === mCategoryButtonTechnologies {
             makeCategoryImages(product.technologyImage)
         } else if sender === mCategoryButtonHowToUse {
@@ -1010,4 +1091,667 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
     }
+    
+    //*UTM2.0 add
+    //Technology top
+    func didTapTechnology(){
+        let generateV = UIView()
+        generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        //generateV.backgroundColor = UIColor.lightGray
+
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 20 , y: 60, width: 600, height: 30)
+        titleLabel.text = "ImuGeneration Technology"
+        titleLabel.font = UIFont(name: "Reader-Bold", size: 18)
+        titleLabel.textColor = red
+        
+        let titleDescription = UILabel()
+        titleDescription.frame = CGRect(x: 0, y: 420, width: 900, height: 100)
+        titleDescription.centerX = self.mVContent.centerX
+        titleDescription.text = "To continuously generate new Langerhans cells and enhance their strength,\nShiseido’s ImuGenerationTM Technology involves three distinct ingredient combinations.\nThis triple system supports skin’s inner defenses and calms damage factors."
+        titleDescription.font = UIFont(name: "Reader-Bold", size: 18)
+        titleDescription.numberOfLines = 0
+        titleDescription.textAlignment = NSTextAlignment.center
+        titleDescription.textColor = UIColor.black
+        
+        generateV.addSubview(titleLabel)
+        generateV.addSubview(titleDescription)
+        
+        for i in 0...2{
+
+            let circleBtn = UIButton()
+            circleBtn.setTitleColor(UIColor.black, for: .normal)
+            circleBtn.frame = CGRect(x: 80 + (i * 280), y: 110, width: 300, height: 300)
+            circleBtn.tag = i + 1
+            circleBtn.addTarget(self, action: #selector(self.onTapMenu(_:)), for: .touchUpInside)
+            circleBtn.layer.borderWidth = 2.0
+            circleBtn.layer.borderColor = red.cgColor
+            circleBtn.frame.size.height = circleBtn.frame.width
+            circleBtn.layer.cornerRadius = circleBtn.frame.width/2
+            print("center:*\(circleBtn.centerX)")
+            
+            let topicTitle = UILabel()
+            topicTitle.frame = CGRect(x: 230 - 100 + (i * 280), y: 320, width: 200, height: 30)
+            topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
+
+            let topicDesctription = UILabel()
+            if i == 2{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 145, height: 80)
+            }else if i == 1{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 130, height: 80)
+            }else{
+                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 125, height: 80)
+            }
+            topicDesctription.textAlignment = .center
+            topicDesctription.centerX = circleBtn.centerX
+            topicDesctription.font = UIFont(name: "Reader-Regular", size: 16)
+            topicDesctription.font = topicDesctription.font.withSize(16)
+            
+            self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
+
+            generateV.addSubview(circleBtn)
+            generateV.addSubview(topicTitle)
+            generateV.addSubview(topicDesctription)
+            
+            topicDesctription.sizeToFit()
+
+        }
+        
+        mVContent.addSubview(generateV)
+        mVCurrentSelect = generateV
+    }
+    
+    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel,generateV: UIView){
+        titleText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        titleText.numberOfLines = 0
+        titleText.textAlignment = NSTextAlignment.center
+        
+        descriptionText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        descriptionText.numberOfLines = 0
+        descriptionText.textAlignment = NSTextAlignment.center
+
+        if i == 0{
+            titleText.text = "1. Generating"
+            descriptionText.text = "Langerhans cells"
+  
+            let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
+            imageView.contentMode = .scaleToFill
+            generateV.addSubview(imageView)
+
+            let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 232, y: 200, width: 115, height: 115)
+            imageView2.contentMode = .scaleToFill
+            generateV.addSubview(imageView2)
+            
+        }else if i == 1{
+            titleText.text = "2. Enhances"
+            descriptionText.text = "the powers of\nLangerhans cells"
+            
+            let image1:UIImage = UIImage(named:"Rose-Water_image.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 465, y: 130, width: 90, height: 90)
+            imageView.contentMode = .scaleToFill
+            generateV.addSubview(imageView)
+            
+            let image2:UIImage = UIImage(named:"b-Glutan.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 418, y: 225, width: 90, height: 90)
+            imageView2.contentMode = .scaleToFill
+            generateV.addSubview(imageView2)
+
+            let image3:UIImage = UIImage(named:"Water_image_CMYK.png")!
+            let imageView3 = UIImageView(image:image3)
+            imageView3.frame = CGRect(x: 512, y: 225, width: 90, height: 90)
+            imageView3.contentMode = .scaleToFill
+            generateV.addSubview(imageView3)
+
+        }else if i == 2{
+            titleText.text = "3. Improving"
+            descriptionText.text = "the environment for\nLangerhans cell\nfunctions"
+            
+            let image1:UIImage = UIImage(named:"Ginko.png")!
+            let imageView = UIImageView(image:image1)
+            imageView.frame = CGRect(x: 708, y: 150, width: 80, height: 80)
+            imageView.contentMode = .scaleToFill
+            generateV.addSubview(imageView)
+            
+            let image2:UIImage = UIImage(named:"LOTUS-GERM_cmyk.png")!
+            let imageView2 = UIImageView(image:image2)
+            imageView2.frame = CGRect(x: 792, y: 150, width: 80, height: 80)
+            imageView2.contentMode = .scaleToFill
+            generateV.addSubview(imageView2)
+            
+            let image3:UIImage = UIImage(named:"Rerilla.png")!
+            let imageView3 = UIImageView(image:image3)
+            imageView3.frame = CGRect(x: 708, y: 234, width: 80, height: 80)
+            imageView3.contentMode = .scaleToFill
+            generateV.addSubview(imageView3)
+            
+            let image4:UIImage = UIImage(named:"Tyme.png")!
+            let imageView4 = UIImageView(image:image4)
+            imageView4.frame = CGRect(x: 792, y: 234, width: 80, height: 80)
+            imageView4.contentMode = .scaleToFill
+            generateV.addSubview(imageView4)
+        }
+    }
+    
+    @objc private func onTapMenu(_ sender: AnyObject){
+        
+        if sender.tag == 1{
+            print("tag:*\(sender.tag)")
+            mVCurrentSelect?.removeFromSuperview()
+            self.setTechScrollView()
+
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
+
+        }else if sender.tag == 2{
+            print("tag:*\(sender.tag)")
+            print("tag:*\(sender.tag)")
+            mVCurrentSelect?.removeFromSuperview()
+            self.setTechScrollView()
+            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
+        }
+        
+    }
+    
+    //*scrollview
+    func setTechScrollView(){
+
+        mVContent.addSubview(techScrollV)
+        mVCurrentSelect = techScrollV
+
+    }
+
+    
+    //*GeneratiogView
+    func setGeneratingView(){
+        let generateV = UIView()
+        generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
+        let mark:UIImage = UIImage(named:"point_01")!
+        let markV = UIImageView(image:mark)
+        markV.frame = CGRect(x: 80, y: 90, width: 1, height: 50)
+        markV.contentMode = .scaleToFill
+        generateV.addSubview(markV)
+        
+        let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
+        let imageView1 = UIImageView(image:image1)
+        imageView1.frame = CGRect(x: 100, y: 240, width: 180, height: 120)
+        imageView1.contentMode = .scaleToFill
+        generateV.addSubview(imageView1)
+        
+        let image2:UIImage = UIImage(named:"Iris_1_cmyk.png")!
+        let imageView2 = UIImageView(image:image2)
+        imageView2.frame = CGRect(x: 290, y: 240, width: 180, height: 120)
+        imageView2.contentMode = .scaleToFill
+        generateV.addSubview(imageView2)
+        
+        for i in 1...5{
+            let text = UILabel()
+            text.textColor = UIColor.black
+            text.numberOfLines = 0
+            text.textAlignment = NSTextAlignment.left
+            
+            if i == 1{
+                text.frame = CGRect(x: 20 , y: 5, width: 400, height: 60)
+                text.text = "Ingredients that generate\nmore Langerhans cells"
+                text.font = UIFont(name: "Reader-Bold", size: 22)
+            }else if i == 2{
+                text.frame = CGRect(x: 100 , y: 90, width: 1000, height: 50)
+                text.text = "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
+                text.font = UIFont(name: "Reader-Regular", size: 18)
+            }else if i == 3{
+                text.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
+                text.text = "Ingredients nurture\nLangerhans cell growth."
+                text.font = UIFont(name: "Reader-Bold", size: 18)
+                text.textColor = red
+            }else if i == 4{
+                text.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
+                text.centerX = imageView1.centerX
+                text.text = "Reishi Extract"
+                text.font = UIFont(name: "Reader-Regular", size: 18)
+            }else if i == 5{
+                text.frame = CGRect(x: 0 , y:365, width: 130, height: 50)
+                text.centerX = imageView2.centerX
+                text.text = "Iris Root Extract"
+                text.font = UIFont(name: "Reader-Regular", size: 18)
+            }
+
+            generateV.addSubview(text)
+        }
+        
+        //graphImage
+        for i in 1...7{
+            let image:UIImage = UIImage(named:"graph_0\(i).png")!
+            let graphV = UIImageView(image:image)
+            graphV.contentMode = .scaleToFill
+            
+            if i == 1{
+                graphV.frame = CGRect(x: 570, y: 180, width: 400, height: 250)//graph
+            }else if i == 2{
+                graphV.frame = CGRect(x: 610, y: 275, width: 60, height: 154)//gray
+            }else if i == 3{
+                graphV.frame = CGRect(x: 800, y: 219, width: 60, height: 210)//red
+            }else if i == 4{
+                graphV.frame = CGRect(x: 525, y: 190, width: 20, height: 26)//high
+            }else if i == 5{
+                graphV.frame = CGRect(x: 840, y: 240, width: 82, height: 200)//item
+            }else if i == 6{
+                graphV.frame = CGRect(x: 580, y: 440, width:390, height: 10)//under
+            }else if i == 7{
+                graphV.frame = CGRect(x: 675, y: 220, width:116, height: 50)//up
+            }
+            
+            generateV.addSubview(graphV)
+        }
+        
+        //graphText
+        for i in 1...5{
+            let graphLabel = UILabel()
+            graphLabel.textColor = UIColor.black
+            graphLabel.numberOfLines = 0
+            graphLabel.textAlignment = NSTextAlignment.left
+            graphLabel.font = UIFont(name: "Reader-Regular", size: 18)
+
+            
+            if i == 1{
+                graphLabel.frame = CGRect(x: 520, y:220, width: 40, height: 20)
+                graphLabel.text = "High"
+                graphLabel.font = graphLabel.font.withSize(16)
+                
+            }else if i == 2{
+                graphLabel.frame = CGRect(x: 590 , y:160, width: 200, height: 100)
+                graphLabel.text = "Growth rate of\nprecursor cells into\nLangerhans cells"
+                
+            }else if i == 3{
+                graphLabel.frame = CGRect(x: 600 , y:450, width: 170, height: 80)
+                graphLabel.text = "Under high\nstress*"
+                graphLabel.font = graphLabel.font.withSize(14)
+                graphLabel.sizeToFit()
+                graphLabel.textAlignment = NSTextAlignment.center
+
+            }else if i == 4{
+                graphLabel.frame = CGRect(x: 770 , y:450, width: 170, height: 80)
+                graphLabel.text = "Under high stress**\nwith Ultimune"
+                graphLabel.font = graphLabel.font.withSize(14)
+                graphLabel.sizeToFit()
+                graphLabel.textAlignment = NSTextAlignment.center
+            }else if i == 5{
+                graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
+                graphLabel.text = "*in vitro **By adding a stress hormone in vitro data"
+                graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
+                graphLabel.textColor = UIColor.lightGray
+
+            }
+        
+
+            generateV.addSubview(graphLabel)
+        }
+
+        self.techScrollV.addSubview(generateV)
+    }
+    
+    //enhanceView
+    func setEnhanceView(){
+        let enhanceV = UIView()
+        enhanceV.frame = CGRect(x: 0, y: mVContent.frame.height, width: self.techScrollV.frame.width, height: mVContent.frame.height)
+        let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+
+        
+        //text
+        for i in 1...5{
+            let pageText = UILabel()
+            pageText.textColor = UIColor.black
+            pageText.numberOfLines = 0
+            pageText.textAlignment = NSTextAlignment.left
+            
+            if i == 1{
+                pageText.frame = CGRect(x: 20, y:5, width: 400, height: 60)
+                pageText.text = "Ingredients enhance\nstress-calming power"
+                pageText.font = UIFont(name: "Reader-Bold", size: 22)
+                
+            }else if i == 2{
+                pageText.frame = CGRect(x: 100 , y: 85, width: 1000, height: 20)
+                pageText.text = "Ultimune ComplexTM"
+                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.textColor = red
+
+            }else if i == 3{
+                pageText.frame = CGRect(x: 100 , y: 95, width: 1000, height: 100)
+                pageText.text = "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
+                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+            }else if i == 4{
+                pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
+                pageText.text = "Ultimune\nComplexTM"
+                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.textColor = red
+            }else if i == 5{
+                pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
+                pageText.text = "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.font = UIFont(name: "Reader-Bold", size: 13)
+                pageText.textColor = UIColor.lightGray
+            }
+            
+            enhanceV.addSubview(pageText)
+            
+        }
+        
+        for i in 1...2{
+            let image:UIImage = UIImage(named:"page_0\(i).png")!
+            let pageImageV = UIImageView(image:image)
+            pageImageV.contentMode = .scaleToFill
+            
+            if i == 1{
+                pageImageV.frame = CGRect(x: 80, y: 83, width: 1, height: 100)//point
+            }else if i == 2{
+                pageImageV.frame = CGRect(x: 150, y: 200, width: 265, height: 248)//triangle
+            }
+            
+            enhanceV.addSubview(pageImageV)
+        }
+        
+        //graph image
+        
+        for i in 1...7{
+            let image:UIImage = UIImage(named:"enhanceGraph_0\(i).png")!
+            let graphImageV = UIImageView(image:image)
+            graphImageV.contentMode = .scaleToFill
+            
+            if i == 1{
+                graphImageV.frame = CGRect(x: 510, y: 210, width: 400, height: 250)//graph
+            }else if i == 2{
+                graphImageV.frame = CGRect(x: 600, y: 325, width: 60, height: 134)//gray
+            }else if i == 3{
+                graphImageV.frame = CGRect(x: 770, y: 240, width: 60, height: 219)//red
+            }else if i == 4{
+                graphImageV.frame = CGRect(x: 485, y: 210, width: 18, height: 24)//high
+            }else if i == 5{
+                graphImageV.frame = CGRect(x: 550, y: 200, width: 115, height: 115)//64%
+            }else if i == 6{
+                graphImageV.frame = CGRect(x: 670, y: 250, width: 90, height: 58)//up
+            }else if i == 7{
+                graphImageV.frame = CGRect(x: 825, y: 260, width: 86, height: 210)//item
+            }
+            
+           enhanceV.addSubview(graphImageV)
+
+        }
+        
+        //graph text
+        for i in 1...4{
+            let graphText = UILabel()
+            graphText.textColor = UIColor.black
+            graphText.numberOfLines = 0
+            graphText.textAlignment = NSTextAlignment.center
+            graphText.textColor = UIColor.black
+            graphText.font = UIFont(name: "Reader-Regular", size: 18)
+            graphText.font = graphText.font.withSize(14)
+
+            
+            if i == 1{
+                graphText.frame = CGRect(x: 475, y: 232, width: 40, height: 40)
+                graphText.text = "High"
+            }else if i == 2{
+                graphText.frame = CGRect(x: 470, y: 315, width: 40, height: 40)
+                graphText.text = "100%"
+            }else if i == 3{
+                graphText.frame = CGRect(x: 590, y: 453, width: 120, height: 60)
+                graphText.text = "without Ultimune\ncomplex"
+            }else if i == 4{
+                graphText.frame = CGRect(x: 760, y: 453, width: 120, height: 60)
+                graphText.text = "with Ultimune\ncomplex"
+            }
+            
+            enhanceV.addSubview(graphText)
+
+        }
+        
+        
+        self.techScrollV.addSubview(enhanceV)
+    }
+    
+    
+    //ImucalmView
+    func setImucalmView(){
+
+        mUtmTechV = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
+        //mVContent.addSubview(utmTechView!)
+        //mVCurrentSelect = utmTechView
+        
+        mUtmTechV?.showImucalmCompound(mIsUtm)
+        self.techScrollV.addSubview(mUtmTechV!)
+
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.techScrollV.contentOffset.y >= self.techScrollV.frame.height*2{
+            mUtmTechV?.showImucalmArrowEffect(mIsUtm)
+        }
+    }
+
+    
+    func didTapEfficacyResults(){
+        print("Efficacy")
+    
+        //初期位置
+        for i in 0...2{
+            if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
+                beforeBtn.isEnabled = false
+                beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            }
+            if let afterBtn = self.efficacyScrollV.viewWithTag(20 + i) as? UIButton {
+                afterBtn.isEnabled = true
+                afterBtn.backgroundColor = UIColor.clear
+                afterBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let imageNum = i + 1
+            if let imageView = self.efficacyScrollV.viewWithTag(30 + i) as? UIImageView{
+                imageView.image = UIImage(named: "before_0\(imageNum).png")
+            }
+        }
+        self.efficacyScrollV.contentOffset = CGPoint(x: 0, y: 0)
+        
+        mVContent.addSubview(efficacyScrollV)
+        mVCurrentSelect = efficacyScrollV
+    }
+    
+    func setEfficacyView(){
+        //1~3枚め
+        for i in 0...2 {
+            let title = UILabel()
+            title.textColor = UIColor.black
+            title.font = UIFont(name: "Reader-Bold", size: 22)
+            title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+            title.centerX = self.mVContent.centerX
+            title.textAlignment = .center
+            
+            if i == 0{
+                title.text = "Lorem ipsum dolor sit amet,"
+
+            }else if i == 1{
+                title.text = "Skin looks smoother, more dewy and radiant."
+
+            }else if i == 2{
+                title.text = "Lorem ipsum dolor sit amet,"
+            }
+            
+            let imageNum = i + 1
+            let image = UIImage(named: "before_0\(imageNum).png")
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFit
+            faceImageV.tag = 30 + i//300
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX
+            faceImageV.backgroundColor = UIColor.clear
+            
+            let beforeBtn = UIButton()
+            beforeBtn.isEnabled = false
+            beforeBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
+            beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
+            beforeBtn.setTitle("Before", for: .normal)
+            beforeBtn.isEnabled = false
+            beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            beforeBtn.tag = 10 + i//100
+            beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            let afterBtn = UIButton()
+            afterBtn.isEnabled = true
+            afterBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
+            afterBtn.origin.x = self.mVContent.centerX + 10
+            afterBtn.setTitle("After 4 Weeks", for: .normal)
+            afterBtn.isEnabled = true
+            afterBtn.setTitleColor(UIColor.white, for: .normal)
+            afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            
+            afterBtn.setTitleColor(UIColor.black, for: .normal)
+            afterBtn.backgroundColor = UIColor.white
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            afterBtn.tag = 20 + i//200
+            afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            
+            for j in 0...2{
+                let image:UIImage = UIImage(named:"point_01.png")!
+                let border = UIImageView(image:image)
+                border.contentMode = .scaleToFill
+                
+                if j == 0{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+                }else if j == 1{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+                    
+                }else if j == 2{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398+(Int(self.efficacyScrollV.frame.height)*i), width: 1, height: 34)
+
+                }
+                self.efficacyScrollV.addSubview(border)
+
+            }
+            
+            
+            self.efficacyScrollV.addSubview(title)
+            self.efficacyScrollV.addSubview(faceImageV)
+            self.efficacyScrollV.addSubview(beforeBtn)
+            self.efficacyScrollV.addSubview(afterBtn)
+
+        }
+        
+        //4枚め
+        
+        let title = UILabel()
+        title.textColor = UIColor.black
+        title.font = UIFont(name: "Reader-Bold", size: 22)
+        title.text = "After 4 weeks of use:"
+        title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*3), width: 700, height: 40)
+        title.centerX = self.mVContent.centerX
+        title.textAlignment = .center
+        self.efficacyScrollV.addSubview(title)
+        
+        for i in 1...3{
+            let image:UIImage = UIImage(named:"percent_0\(i).png")!
+            let percentImageV = UIImageView(image:image)
+            percentImageV.contentMode = .scaleToFill
+            percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
+
+            self.efficacyScrollV.addSubview(percentImageV)
+        }
+        
+        for i in 1...3{
+            let description = UILabel()
+            description.textColor = UIColor.black
+            description.font = UIFont(name: "Reader-Regular", size: 18)
+            description.numberOfLines = 0
+            description.textAlignment = .left
+            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 200, height: 150)
+
+            
+            if i == 1{
+                description.text = "of women felt that the product\nwas effective overall"
+            }else if i == 2{
+                description.text = "of women felt their skin was\ndefended against harsh\nenvironments"
+            }else if i == 3{
+                description.text = "of women said their skin\nquality was improved overall"
+            }
+            self.efficacyScrollV.addSubview(description)
+        }
+        
+        //右下テキスト
+        for i in 1...4{
+            let text = UILabel()
+            text.textColor = UIColor.lightGray
+            text.font = UIFont(name: "Reader-Regular", size: 18)
+            text.font = text.font.withSize(13)
+            text.textAlignment = .center
+            text.numberOfLines = 0
+            text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 200, height: 40)
+            
+            if i == 1{
+                text.text = "*28-year-old"
+
+            } else if i == 2{
+                text.text = "*39-year-old"
+
+            } else if i == 3{
+                text.text = "*40-year-old"
+
+            } else if i == 4{
+                text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 300, height: 60)
+                text.text = "*100 women of age 25-39 after 4 weeks of use.\n2017/1/10-2/7 in Singapore"
+            }
+            
+            self.efficacyScrollV.addSubview(text)
+        }
+
+    }
+    
+    @objc private func onTapBeforeAfterBtn(_ sender: UIButton){
+        print("tag:*\(sender.tag)")
+        
+        if sender.tag < 20{//Before
+            
+            sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.isEnabled = false
+            if let afterBtn = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIButton {
+                afterBtn.isEnabled = true
+                afterBtn.backgroundColor = UIColor.clear
+                afterBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let imageNum = sender.tag - 9
+            if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
+                imageView.image = UIImage(named: "before_0\(imageNum).png")
+            }
+            
+        }else{//After
+        
+            sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            sender.setTitleColor(UIColor.white, for: .normal)
+            sender.isEnabled = false
+            if let beforeBtn = self.efficacyScrollV.viewWithTag(sender.tag - 10) as? UIButton {
+                beforeBtn.isEnabled = true
+                beforeBtn.backgroundColor = UIColor.clear
+                beforeBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let imageNum = sender.tag - 19
+            if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
+                imageView.image = UIImage(named: "after_0\(imageNum).png")
+            }
+            
+        }
+        
+    }
+    
+
 }

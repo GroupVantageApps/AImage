@@ -36,7 +36,7 @@ class IdealBeautySecondsData: NSObject {
             var num: Int = 0
             for lineId in lineIds {
                 if LineTranslateTable.getEntity(lineId).displayFlg == 0 { continue }
-                if lineId != Const.lineIdLX && lineId != Const.lineIdUTM {
+                if lineId != Const.lineIdLX{// && lineId != Const.lineIdUTM {
                     let line: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
                     guard let targetLineStep = line.lineStep.filter({$0.stepId == stepLowerId})[safe: 0] else {
                         continue
