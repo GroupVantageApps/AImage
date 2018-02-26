@@ -238,7 +238,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         telopLabel.numberOfLines = 0
         telopLabel.lineBreakMode = .byWordWrapping
         telopLabel.backgroundColor = .clear
-        telopLabel.font = UIFont.systemFont(ofSize: 24.0)
+        telopLabel.font = UIFont(name:"Reader-Regure" ,size: 24)//UIFont.systemFont(ofSize: 24.0)
         telopLabel.adjustsFontSizeToFitWidth = true
         telopLabel.minimumScaleFactor = 0.6
         telopLabel.textColor = .white
