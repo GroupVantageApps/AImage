@@ -16,6 +16,9 @@
         <array key="Reader-Medium.otf">
             <string>Reader-Medium</string>
         </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleProductView" customModule="Share_Beauty_App" customModuleProvider="target">
@@ -41,6 +44,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kht-Ow-khM" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="295" height="279"/>
+                                    <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                                     <connections>
                                         <action selector="onTapProduct:" destination="-1" eventType="touchUpInside" id="kEa-Jl-GdO"/>
                                     </connections>
