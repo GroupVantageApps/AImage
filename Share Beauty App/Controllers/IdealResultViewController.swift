@@ -510,6 +510,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         return mVMain
     }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 1.0)
+        mVMain.isUserInteractionEnabled = (scrollView.zoomScale == 0.8) //(scrollView.zoomScale == 1.0)
     }
 }
