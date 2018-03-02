@@ -208,8 +208,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-Nf-pIZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="603"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fyx-6Y-B1b">
-                                                                <rect key="frame" x="20" y="0.0" width="328" height="102"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyx-6Y-B1b">
+                                                                <rect key="frame" x="20" y="0.0" width="328" height="62"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyt-T5-OWT">
                                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="15"/>
@@ -217,15 +217,15 @@
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Line Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-N3-HhH">
-                                                                        <rect key="frame" x="0.0" y="15" width="328" height="20"/>
-                                                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Line Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiK-N3-HhH">
+                                                                        <rect key="frame" x="0.0" y="15" width="328" height="30"/>
+                                                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="30"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Product Name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qw-ed-MOa">
-                                                                        <rect key="frame" x="0.0" y="35" width="328" height="19"/>
-                                                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="15"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qw-ed-MOa">
+                                                                        <rect key="frame" x="0.0" y="45" width="328" height="17"/>
+                                                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="17"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -235,19 +235,16 @@
                                                                     <constraint firstItem="4qw-ed-MOa" firstAttribute="leading" secondItem="Fyx-6Y-B1b" secondAttribute="leading" id="2yC-Q9-drY"/>
                                                                     <constraint firstAttribute="trailing" secondItem="kiK-N3-HhH" secondAttribute="trailing" id="ChB-qN-6GY"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Iyt-T5-OWT" secondAttribute="trailing" id="Han-4O-JEz"/>
-                                                                    <constraint firstItem="4qw-ed-MOa" firstAttribute="leading" secondItem="Iyt-T5-OWT" secondAttribute="leading" id="INi-MN-SSW"/>
                                                                     <constraint firstItem="kiK-N3-HhH" firstAttribute="top" secondItem="Iyt-T5-OWT" secondAttribute="bottom" id="PSA-6h-1OC"/>
-                                                                    <constraint firstItem="kiK-N3-HhH" firstAttribute="leading" secondItem="Iyt-T5-OWT" secondAttribute="leading" id="aeU-QP-V9b"/>
                                                                     <constraint firstItem="4qw-ed-MOa" firstAttribute="top" secondItem="kiK-N3-HhH" secondAttribute="bottom" id="akW-9o-7Ot"/>
                                                                     <constraint firstItem="Iyt-T5-OWT" firstAttribute="leading" secondItem="Fyx-6Y-B1b" secondAttribute="leading" id="f4e-Ql-dca"/>
-                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="hbU-Qu-4Xq"/>
                                                                     <constraint firstItem="Iyt-T5-OWT" firstAttribute="top" secondItem="Fyx-6Y-B1b" secondAttribute="top" id="lgo-lS-dc6"/>
                                                                     <constraint firstAttribute="trailing" secondItem="4qw-ed-MOa" secondAttribute="trailing" id="rBy-Cp-pCX"/>
                                                                     <constraint firstAttribute="bottom" secondItem="4qw-ed-MOa" secondAttribute="bottom" id="urx-wt-0fQ"/>
                                                                 </constraints>
                                                             </view>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4D-Kx-hbY">
-                                                                <rect key="frame" x="0.0" y="100" width="348" height="403"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="H4D-Kx-hbY">
+                                                                <rect key="frame" x="0.0" y="62" width="348" height="441"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="328" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="qP3-J2-RYj" customClass="ProductDetailTransitionView" customModule="Share_Beauty_App" customModuleProvider="target">
@@ -255,7 +252,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wx1-mu-ifn">
-                                                                <rect key="frame" x="0.0" y="227" width="60" height="129"/>
+                                                                <rect key="frame" x="0.0" y="218" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
@@ -671,16 +668,8 @@
                                                     </view>
                                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-cW-fKQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="613"/>
-                                                        <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="-55" width="1024" height="748"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            </view>
-                                                        </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="leading" secondItem="eQA-cW-fKQ" secondAttribute="leading" id="EkH-KK-yX1"/>
-                                                            <constraint firstAttribute="trailing" secondItem="RQE-Q2-05k" secondAttribute="trailing" id="dJd-YT-SEJ"/>
                                                             <constraint firstAttribute="height" constant="535" id="ioa-FJ-CKv"/>
                                                         </constraints>
                                                         <variation key="default">
@@ -778,13 +767,21 @@
                                     <constraint firstAttribute="trailing" secondItem="fmO-Po-Pdd" secondAttribute="trailing" id="oL0-TP-g4n"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9N3-Wu-tfx" firstAttribute="top" secondItem="wAl-8s-SCs" secondAttribute="bottom" id="Ehh-dr-VJm"/>
                             <constraint firstAttribute="trailing" secondItem="wAl-8s-SCs" secondAttribute="trailing" id="Sue-99-llb"/>
+                            <constraint firstAttribute="trailing" secondItem="RQE-Q2-05k" secondAttribute="trailing" id="Xz0-mc-qXX"/>
+                            <constraint firstItem="9N3-Wu-tfx" firstAttribute="top" secondItem="RQE-Q2-05k" secondAttribute="bottom" id="dLo-s6-VpI"/>
                             <constraint firstItem="wAl-8s-SCs" firstAttribute="top" secondItem="HuQ-HK-mSb" secondAttribute="bottom" constant="10" id="r4t-eq-hSN"/>
+                            <constraint firstItem="RQE-Q2-05k" firstAttribute="leading" secondItem="IDZ-SK-Nnd" secondAttribute="leading" id="rBq-zE-2aP"/>
                             <constraint firstItem="wAl-8s-SCs" firstAttribute="leading" secondItem="IDZ-SK-Nnd" secondAttribute="leading" id="weT-If-gKh"/>
+                            <constraint firstItem="RQE-Q2-05k" firstAttribute="top" secondItem="HuQ-HK-mSb" secondAttribute="bottom" id="xaW-yF-Ez9"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
