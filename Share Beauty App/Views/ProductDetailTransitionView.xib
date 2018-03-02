@@ -61,12 +61,12 @@
                             <state key="selected" image="icon_recommend_selected_large"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSl-6a-rlk">
-                            <rect key="frame" x="59" y="0.0" width="0.0" height="49"/>
+                            <rect key="frame" x="59" y="5" width="0.0" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="31" id="PqN-d2-w2L"/>
                                 <constraint firstAttribute="width" constant="101" id="aWI-PJ-fcs"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="14"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
@@ -83,10 +83,10 @@
                         <constraint firstItem="WSl-6a-rlk" firstAttribute="leading" secondItem="ScF-Y9-DxI" secondAttribute="trailing" constant="5" id="1rM-2N-i6E"/>
                         <constraint firstAttribute="bottom" secondItem="WSl-6a-rlk" secondAttribute="bottom" id="D2m-Uh-WSy"/>
                         <constraint firstAttribute="trailing" secondItem="WSl-6a-rlk" secondAttribute="trailing" constant="5" id="IsR-W4-21Z"/>
+                        <constraint firstItem="WSl-6a-rlk" firstAttribute="top" secondItem="vTJ-Bq-0z8" secondAttribute="top" constant="5" id="OHq-zf-Uuq"/>
                         <constraint firstItem="ScF-Y9-DxI" firstAttribute="leading" secondItem="vTJ-Bq-0z8" secondAttribute="leading" constant="5" id="X1M-3z-nzl"/>
                         <constraint firstAttribute="bottom" secondItem="ScF-Y9-DxI" secondAttribute="bottom" id="mhN-6m-hud"/>
                         <constraint firstItem="WSl-6a-rlk" firstAttribute="centerY" secondItem="vTJ-Bq-0z8" secondAttribute="centerY" id="mqM-an-jRd"/>
-                        <constraint firstItem="WSl-6a-rlk" firstAttribute="top" secondItem="vTJ-Bq-0z8" secondAttribute="top" id="yhP-n9-WPh"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -104,7 +104,7 @@
                 <constraint firstAttribute="bottom" secondItem="vTJ-Bq-0z8" secondAttribute="bottom" id="vlq-K4-Dha"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-313" y="399"/>
+            <point key="canvasLocation" x="-313" y="398.5"/>
         </view>
         <view contentMode="scaleToFill" id="lMm-e9-V7Q">
             <rect key="frame" x="0.0" y="0.0" width="687" height="171"/>
@@ -164,23 +164,24 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-N4-Hm4">
-                    <rect key="frame" x="131" y="0.0" width="114" height="51"/>
+                    <rect key="frame" x="133" y="0.0" width="111.5" height="51"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of7-ju-1Oc" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                             <rect key="frame" x="5" y="0.0" width="51" height="51"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Of7-ju-1Oc" secondAttribute="height" multiplier="1:1" id="bx8-Hx-k5w"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
                             <state key="normal" image="icon_recommend_large"/>
                             <state key="selected" image="icon_recommend_selected_large"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like It" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQt-EF-SSg">
-                            <rect key="frame" x="61" y="0.0" width="48" height="51"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like It" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQt-EF-SSg">
+                            <rect key="frame" x="61" y="5" width="45.5" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="101" id="1pj-Kg-BuH"/>
                                 <constraint firstAttribute="height" constant="31" id="MTa-mI-cTh"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
@@ -193,7 +194,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="DQt-EF-SSg" firstAttribute="top" secondItem="6J7-N4-Hm4" secondAttribute="top" id="0j5-r9-HC5"/>
                         <constraint firstItem="DQt-EF-SSg" firstAttribute="leading" secondItem="Of7-ju-1Oc" secondAttribute="trailing" constant="5" id="JKD-fp-0ES"/>
                         <constraint firstAttribute="bottom" secondItem="Of7-ju-1Oc" secondAttribute="bottom" id="Lat-6L-bBf"/>
                         <constraint firstItem="Of7-ju-1Oc" firstAttribute="leading" secondItem="6J7-N4-Hm4" secondAttribute="leading" constant="5" id="Nax-hf-Jes"/>
@@ -201,6 +201,7 @@
                         <constraint firstAttribute="bottom" secondItem="DQt-EF-SSg" secondAttribute="bottom" id="cxb-EE-Eb8"/>
                         <constraint firstAttribute="trailing" secondItem="DQt-EF-SSg" secondAttribute="trailing" constant="5" id="iDk-yd-f8w"/>
                         <constraint firstItem="DQt-EF-SSg" firstAttribute="centerY" secondItem="6J7-N4-Hm4" secondAttribute="centerY" id="qnH-cw-tac"/>
+                        <constraint firstItem="DQt-EF-SSg" firstAttribute="top" secondItem="6J7-N4-Hm4" secondAttribute="top" constant="5" id="x3h-nb-uMF"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -218,7 +219,7 @@
                 <constraint firstItem="6J7-N4-Hm4" firstAttribute="top" secondItem="rGu-IW-88G" secondAttribute="top" id="MJ9-Dd-Vcr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1188" y="58"/>
+            <point key="canvasLocation" x="-313" y="115"/>
         </view>
     </objects>
     <resources>
