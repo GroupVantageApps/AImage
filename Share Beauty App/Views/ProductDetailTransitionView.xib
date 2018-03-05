@@ -164,7 +164,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6J7-N4-Hm4">
-                    <rect key="frame" x="133" y="0.0" width="111.5" height="51"/>
+                    <rect key="frame" x="135" y="0.0" width="107.5" height="51"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of7-ju-1Oc" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                             <rect key="frame" x="5" y="0.0" width="51" height="51"/>
@@ -176,7 +176,7 @@
                             <state key="selected" image="icon_recommend_selected_large"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like It" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQt-EF-SSg">
-                            <rect key="frame" x="61" y="5" width="45.5" height="46"/>
+                            <rect key="frame" x="61" y="5" width="41.5" height="46"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="101" id="1pj-Kg-BuH"/>
                                 <constraint firstAttribute="height" constant="31" id="MTa-mI-cTh"/>
