@@ -217,8 +217,6 @@
 		C050C91D1E82619F0009679D /* orange_C.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C8F71E82619E0009679D /* orange_C.png */; };
 		C050C91E1E82619F0009679D /* orange_L.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C8F81E82619E0009679D /* orange_L.png */; };
 		C050C91F1E82619F0009679D /* orange_R.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C8F91E82619E0009679D /* orange_R.png */; };
-		C050C9201E82619F0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C050C8FA1E82619E0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg */; };
-		C050C9211E82619F0009679D /* SHI-Web-F16-39_W27_HP_Ultimune_opt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C050C8FB1E82619E0009679D /* SHI-Web-F16-39_W27_HP_Ultimune_opt.jpg */; };
 		C050C96B1E8267450009679D /* bottom_line.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C9231E8267450009679D /* bottom_line.png */; };
 		C050C96C1E8267450009679D /* d_2.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C9251E8267450009679D /* d_2.png */; };
 		C050C96D1E8267450009679D /* d_3_5.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C9261E8267450009679D /* d_3_5.png */; };
@@ -2572,7 +2570,6 @@
 				DE2C907D1E9C66E600B5FC4A /* LXCategoryButton.xib in Resources */,
 				2680EC14203404D0005257B1 /* after_03.png in Resources */,
 				C0D1954B1DE7130400C8B88E /* SunCareFeaturesView.xib in Resources */,
-				C050C9201E82619F0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg in Resources */,
 				C050C8FC1E82619E0009679D /* features_smk_1.png in Resources */,
 				DE06F7231F16450200EF2FE2 /* suncare_bg.png in Resources */,
 				DE7D08221ED6E412006513FD /* LXProductViewController.storyboard in Resources */,
@@ -2803,7 +2800,6 @@
 				C02818A21E6BCE7C00D4DADA /* WasoFeatureView.xib in Resources */,
 				2687F5FA2032EA9F005F8D80 /* percent_01.png in Resources */,
 				C050C9941E8267450009679D /* t_arrow_right.png in Resources */,
-				C050C9211E82619F0009679D /* SHI-Web-F16-39_W27_HP_Ultimune_opt.jpg in Resources */,
 				C050C91A1E82619F0009679D /* green_C.png in Resources */,
 				DE2C90831E9C66E600B5FC4A /* LXGraphView.xib in Resources */,
 				C050C96F1E8267450009679D /* d_arrow_3_5.png in Resources */,
