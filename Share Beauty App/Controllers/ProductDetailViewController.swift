@@ -324,7 +324,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             self.techScrollV.delegate = self
             self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*3)
+            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*4)
             self.techScrollV.isPagingEnabled = true
             self.techScrollV.bounces = false
 
@@ -1158,12 +1158,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             topicDesctription.sizeToFit()
 
         }
-        
-        mVContent.addSubview(generateV)
-        mVCurrentSelect = generateV
+        // TechnologiesのTopをスクロールビューに追加
+        techScrollV.addSubview(generateV)
+        mVContent.addSubview(techScrollV)
+        mVCurrentSelect = techScrollV
     }
     
-    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel,generateV: UIView){
+    func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel, generateV: UIView){
         titleText.textColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         titleText.numberOfLines = 0
         titleText.textAlignment = NSTextAlignment.center
@@ -1240,38 +1241,33 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
     
+    // Technologiesのスクロールボタン
     @objc private func onTapMenu(_ sender: AnyObject){
         
+        var offset = CGPoint()
         if sender.tag == 1{
             print("tag:*\(sender.tag)")
-            mVCurrentSelect?.removeFromSuperview()
-            self.setTechScrollView()
-
-            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
-
-        }else if sender.tag == 2{
+            offset = CGPoint(x: 0, y: self.techScrollV.frame.height)
+        } else if sender.tag == 2{
             print("tag:*\(sender.tag)")
+            offset = CGPoint(x: 0, y: self.techScrollV.frame.height*2)
+        } else if sender.tag == 3{
             print("tag:*\(sender.tag)")
-            mVCurrentSelect?.removeFromSuperview()
-            self.setTechScrollView()
-            self.techScrollV.contentOffset = CGPoint(x: 0, y: self.techScrollV.height)
+            offset = CGPoint(x: 0, y: self.techScrollV.frame.height*3)
         }
-        
+        self.techScrollV.setContentOffset(offset, animated: true)
     }
     
-    //*scrollview
-    func setTechScrollView(){
-
-        mVContent.addSubview(techScrollV)
-        mVCurrentSelect = techScrollV
-
-    }
-
+      //*scrollview
+//    func setTechScrollView(){
+//        mVContent.addSubview(techScrollV)
+//        mVCurrentSelect = techScrollV
+//    }
     
     //*GeneratiogView
     func setGeneratingView(){
         let generateV = UIView()
-        generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+        generateV.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
         
         let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         
@@ -1391,7 +1387,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
             }
         
-
             generateV.addSubview(graphLabel)
         }
 
@@ -1401,7 +1396,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     //enhanceView
     func setEnhanceView(){
         let enhanceV = UIView()
-        enhanceV.frame = CGRect(x: 0, y: mVContent.frame.height, width: self.techScrollV.frame.width, height: mVContent.frame.height)
+        enhanceV.frame = CGRect(x: 0, y: mVContent.frame.height*2, width: self.techScrollV.frame.width, height: mVContent.frame.height)
         let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
 
         
@@ -1522,7 +1517,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     //ImucalmView
     func setImucalmView(){
 
-        mUtmTechV = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: self.techScrollV.frame.height*2), size: self.techScrollV.size))
+        mUtmTechV = UtmTechnologiesView(frame: CGRect(origin: CGPoint(x: 0, y: mVContent.frame.height*3), size: self.techScrollV.size))
         //mVContent.addSubview(utmTechView!)
         //mVCurrentSelect = utmTechView
         

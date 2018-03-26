@@ -104,7 +104,7 @@ class LanguageConfigure: NSObject {
             if let value = UserDefaults.standard.object(forKey: UTMitem) {
                 return value as! Bool
             } else {
-                return false
+                return true
             }
         }
         set (value) {
