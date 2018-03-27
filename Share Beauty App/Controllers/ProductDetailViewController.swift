@@ -502,6 +502,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         var datas = [ProductDetailTransitionData]()
         
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
+        //　LifeStyleBuautyの表示がされない
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
             datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }

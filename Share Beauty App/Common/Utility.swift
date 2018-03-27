@@ -208,6 +208,7 @@ class Utility: NSObject {
         }
 
         if results.count != 0 {
+            print(results)
             return results
         } else {
             return nil
