@@ -15,6 +15,7 @@ class LanguageConfigure: NSObject {
     private static let defaultLanguageId = 21
     private static let lxCsv = "LxCsv"
     private static let gscCsv = "GscCsv"
+    private static let utmCsv = "UtmCsv"
     private static let gscPlist = "GscPlist"
     private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
@@ -151,8 +152,6 @@ class LanguageConfigure: NSObject {
             userDefault.synchronize()
         }
     }
-    
-    
     static var gsccsv: [ String : String ] {
         get {
             if let value = UserDefaults.standard.object(forKey: gscCsv) {
@@ -164,6 +163,20 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: gscCsv)
+            userDefault.synchronize()
+        }
+    }
+    static var utmcsv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: utmCsv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ]
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: utmCsv)
             userDefault.synchronize()
         }
     }
