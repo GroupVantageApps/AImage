@@ -591,6 +591,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 512 {
             image = #imageLiteral(resourceName: "fresh jelly")
             itemId = 7892
+        } else if productId == 570 {
+            image = #imageLiteral(resourceName: "red_shiso")
+            itemId = 7948
+        } else if productId == 571 {
+            image = #imageLiteral(resourceName: "yuzu")
+            itemId = 7949
         }
         if itemId != nil {
             mWasoFeatureView.hukidashiText = AppItemTable.getJsonByItemId(itemId: itemId!)?.dictionary?["name"]?.string
@@ -675,9 +681,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			509: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
 			510: #colorLiteral(red: 0.9725490196, green: 0.968627451, blue: 0.9215686275, alpha: 1),
 			511: #colorLiteral(red: 0.9921568627, green: 0.8980392157, blue: 0.737254902, alpha: 1),
-			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1)
+			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1),
+            570: #colorLiteral(red: 0.9691396356, green: 0.8943914771, blue: 0.9179174304, alpha: 1),
+            571: #colorLiteral(red: 0.8692010045, green: 0.918646872, blue: 0.8133074045, alpha: 1),
 		]
-		
 		if let color = colorDic[self.productId] {
 			self.mWasoFeatureView.showGuideView(frameColor: color)
 		}
