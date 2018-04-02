@@ -1248,7 +1248,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         titleDescription.frame = CGRect(x: 0, y: 420, width: 900, height: 100)
         titleDescription.centerX = self.mVContent.centerX
         titleDescription.text = mUtmArr["8"] // "To continuously generate new Langerhans cells and enhance their strength,\nShiseido’s ImuGenerationTM Technology involves three distinct ingredient combinations.\nThis triple system supports skin’s inner defenses and calms damage factors."
-        titleDescription.font = UIFont(name: "Reader-Bold", size: 18)
+        titleDescription.font = UIFont(name: "Reader-Bold", size: 16)
         titleDescription.numberOfLines = 0
         titleDescription.textAlignment = NSTextAlignment.center
         titleDescription.textColor = UIColor.black
@@ -1283,8 +1283,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             topicDesctription.textAlignment = .center
             topicDesctription.centerX = circleBtn.centerX
-            topicDesctription.font = UIFont(name: "Reader-Regular", size: 16)
-            topicDesctription.font = topicDesctription.font.withSize(16)
+            topicDesctription.font = UIFont(name: "Reader-Medium", size: 13)
+            topicDesctription.font = topicDesctription.font.withSize(13)
             
             self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
 
@@ -1432,9 +1432,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 text.text = mUtmArr["9"] // "Ingredients that generate\nmore Langerhans cells"
                 text.font = UIFont(name: "Reader-Bold", size: 22)
             }else if i == 2{
-                text.frame = CGRect(x: 100 , y: 90, width: 1000, height: 50)
+                text.frame = CGRect(x: 100 , y: 90, width: 500, height: 50)
                 text.text = mUtmArr["10"] // "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 3{
                 text.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
                 text.text = mUtmArr["11"] // "Ingredients nurture\nLangerhans cell growth."
@@ -1444,12 +1444,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 text.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
                 text.centerX = imageView1.centerX
                 text.text = mUtmArr["12"] // "Reishi Extract"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 5{
                 text.frame = CGRect(x: 0 , y:365, width: 130, height: 50)
                 text.centerX = imageView2.centerX
                 text.text = mUtmArr["13"] // "Iris Root Extract"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }
 
             generateV.addSubview(text)
@@ -1486,7 +1486,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             graphLabel.textColor = UIColor.black
             graphLabel.numberOfLines = 0
             graphLabel.textAlignment = NSTextAlignment.left
-            graphLabel.font = UIFont(name: "Reader-Regular", size: 18)
+            graphLabel.font = UIFont(name: "Reader-Medium", size: 12)
 
             
             if i == 1{
@@ -1545,15 +1545,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 pageText.font = UIFont(name: "Reader-Bold", size: 22)
                 
             }else if i == 2{
-                pageText.frame = CGRect(x: 100 , y: 85, width: 1000, height: 20)
+                pageText.frame = CGRect(x: 100 , y: 85, width: 500, height: 20)
                 pageText.text = mUtmArr["20"] // "Ultimune ComplexTM"
                 pageText.font = UIFont(name: "Reader-Bold", size: 18)
                 pageText.textColor = red
 
             }else if i == 3{
-                pageText.frame = CGRect(x: 100 , y: 95, width: 1000, height: 100)
+                pageText.frame = CGRect(x: 100 , y: 95, width: 500, height: 100)
                 pageText.text = mUtmArr["21"] // "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
-                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 4{
                 pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
                 pageText.text = mUtmArr["20"] // "Ultimune\nComplexTM"
@@ -1562,7 +1562,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
                 pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
-                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.font = UIFont(name: "Reader-Medium", size: 11)
                 pageText.font = UIFont(name: "Reader-Bold", size: 13)
                 pageText.textColor = UIColor.lightGray
             }
@@ -1619,7 +1619,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             graphText.numberOfLines = 0
             graphText.textAlignment = NSTextAlignment.center
             graphText.textColor = UIColor.black
-            graphText.font = UIFont(name: "Reader-Regular", size: 18)
+            graphText.font = UIFont(name: "Reader-Medium", size: 12)
             graphText.font = graphText.font.withSize(14)
 
             
@@ -1702,13 +1702,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             title.textAlignment = .center
             
             if i == 0{
-                title.text = "Lorem ipsum dolor sit amet," // mUtmArr["26"] 未定
+                title.text =  mUtmArr["26"] 
 
             }else if i == 1{
                 title.text = mUtmArr["30"] // "Skin looks smoother, more dewy and radiant."
 
             }else if i == 2{
-                title.text = "Lorem ipsum dolor sit amet," // mUtmArr["32"] 未定
+                title.text = mUtmArr["32"]
             }
             
             let imageNum = i + 1
@@ -1729,7 +1729,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             beforeBtn.isEnabled = false
             beforeBtn.setTitleColor(UIColor.white, for: .normal)
             beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
             beforeBtn.tag = 10 + i//100
             beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -1744,7 +1744,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             afterBtn.setTitleColor(UIColor.black, for: .normal)
             afterBtn.backgroundColor = UIColor.white
-            afterBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
             afterBtn.tag = 20 + i//200
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -1814,7 +1814,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         for i in 1...3{
             let description = UILabel()
             description.textColor = UIColor.black
-            description.font = UIFont(name: "Reader-Regular", size: 18)
+            description.font = UIFont(name: "Reader-Medium", size: 12)
             description.numberOfLines = 0
             description.textAlignment = .left
             description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 200, height: 150)
@@ -1834,7 +1834,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         for i in 1...4{
             let text = UILabel()
             text.textColor = UIColor.lightGray
-            text.font = UIFont(name: "Reader-Regular", size: 18)
+            text.font = UIFont(name: "Reader-Medium", size: 12)
             text.font = text.font.withSize(13)
             text.textAlignment = .center
             text.numberOfLines = 0

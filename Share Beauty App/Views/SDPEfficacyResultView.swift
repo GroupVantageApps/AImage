@@ -28,12 +28,10 @@ class SDPEfficacyResultView: UIView {
 //        titleLabel.textColor = UIUtil.b()
         titleLabel.font = UIFont(name: "Reader-Bold", size: 23)
 
-        FirstCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
-        SecondCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
-        ThirdCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
-        
-        copyLabel.textColor = UIUtil.grayColor()
-        copyLabel.font = UIFont(name: "Reader-Regular", size: 5)
+        FirstCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
+        SecondCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
+        ThirdCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
+
     }
     // 文字セット
     func setTexts(start_index: Int) {
