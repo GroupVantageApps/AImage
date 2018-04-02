@@ -101,6 +101,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsWaso: Bool = false
     var mUtmTechV: UtmTechnologiesView? = nil
     var mIsEE: Bool = false
+    var mIsSDP: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -224,6 +225,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
        // if LanguageConfigure.languageId == 19 {
             if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
                 self.mIsEE = true
+                mCategoryButtonEfficacy.enabled = true
+            } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+                self.mIsSDP = true
                 mCategoryButtonEfficacy.enabled = true
             } else if productId == 1 || productId == 2 {
             
@@ -719,7 +723,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(utmTechView!)
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
-
+            
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
@@ -732,7 +736,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 mVContent.addSubview(wasoEfficacyView)
                 wasoEfficacyView.backImage = mImgVBackImage.image
-
+                
                 if productId == 506 {
                     wasoEfficacyView.setupGreen()
                 } else {
@@ -761,7 +765,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.addSubview(utmEfficacyView)
                 utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
-            
+                
             } else if productId == 555 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
@@ -798,6 +802,91 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect = utmEfficacyView
             }
 
+        } else{
+            let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+            mVContent.addSubview(utmDefendView!)
+            mVCurrentSelect = utmDefendView
+        }
+    }
+
+    private func showSDPInfo(_ sender: CategoryButton) {
+        if sender === mCategoryButtonFeatures {
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            
+//            if productId >= 565 && productId <= 569 {
+//                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
+//                var image: UIImage = FileTable.getImage(6613)!
+//                let resize = CGSize(width: self.view.width, height: self.view.height + 200)
+//                UIGraphicsBeginImageContext(resize)
+//                image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 200))
+//                image = UIGraphicsGetImageFromCurrentImageContext()!
+//                self.view.backgroundColor = UIColor(patternImage: image)
+//                mRelationScrollV.backgroundColor = UIColor.clear
+//                mRelationPearentView.backgroundColor = UIColor.clear
+//                productDetailFeaturesView.isHidden = false
+//                productNamesView.isHidden = false
+//            }
+            
+            return
+        }
+        mVContent.isHidden = false
+        mVCurrentSelect?.removeFromSuperview()
+
+        if sender === mCategoryButtonEfficacy {
+            if productId == 565 {
+                let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? EfficacyResultView else { return }
+                efficacyView.frame = mVContent.frame
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
+            } else if productId == 566 {
+                let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                mVContent.addSubview(wasoEfficacyView)
+                wasoEfficacyView.backImage = mImgVBackImage.image
+                
+                if productId == 567 {
+                    wasoEfficacyView.setupGreen()
+                } else {
+                    wasoEfficacyView.setupOrange()
+                }
+                mVCurrentSelect = wasoEfficacyView
+            } else if productId == 568 {//
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyMoisturizingCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            } else if productId == 569 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyMoisturizingGelCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            } else {
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isUtm = mIsUtm
+                utmEfficacyView?.isUtmEye = mIsUtmEye
+                utmEfficacyView?.isWhiteLucent = mIsWhiteLucentOnMakeUp
+                utmEfficacyView?.isAllDayBright = mIsWhiteLucentWhiteLucentAllDay
+                utmEfficacyView?.isIBUKI = mIsIbuki
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            }
+            
         } else{
             let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
             mVContent.addSubview(utmDefendView!)
@@ -1062,6 +1151,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else {
             if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
                 showUtmInfo(sender)
+            } else if mIsSDP {
+                showSDPInfo(sender)
             } else {
                 showInfo(sender)
             }

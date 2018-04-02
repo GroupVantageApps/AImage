@@ -540,6 +540,8 @@
 		DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */; };
 		DEFF2D211F1F48CA006C576B /* GscResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */; };
 		DEFF2D231F1F48D3006C576B /* GscResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */; };
+		E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */; };
+		E2EB07E320720B180016B094 /* SDPEfficacyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
 		E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */; };
 		E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */; };
@@ -1206,6 +1208,8 @@
 		DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductEfficacyView.swift; sourceTree = "<group>"; };
 		DEFF2D201F1F48C9006C576B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscResultViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscResultViewController.swift; sourceTree = "<group>"; };
+		E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPEfficacyResultView.xib; sourceTree = "<group>"; };
+		E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPEfficacyResultView.swift; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
 		E52891CA1DF2F911007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IdealFirstSelectViewController.storyboard; sourceTree = "<group>"; };
 		E52891CD1DF2FA05007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IconicViewController.storyboard; sourceTree = "<group>"; };
@@ -1850,7 +1854,9 @@
 				C00D55581DC611A0008795D4 /* ColorballView.xib */,
 				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
 				E5CCCE911E6A605A008A4481 /* EfficacyResultView.swift */,
+				E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */,
 				E5CCCE8F1E6A6032008A4481 /* EfficacyResultView.xib */,
+				E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */,
 				C091BA751D69809F0073FEDB /* HeaderView.swift */,
 				C091BA7C1D6982B00073FEDB /* HeaderView.xib */,
 				C05C779C1D9E5ECA00E38B7B /* IdealProductView.swift */,
@@ -2648,6 +2654,7 @@
 				C050C97E1E8267450009679D /* efficacy_slider_empty.png in Resources */,
 				C050C9051E82619F0009679D /* sib03_before.png in Resources */,
 				DE2C909D1E9C66E600B5FC4A /* LXYutakaConceptView.xib in Resources */,
+				E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */,
 				C01D716F1D951A1E0044851C /* CategoryButton.xib in Resources */,
 				E52891D41DF2FD9E007B92B2 /* AboutBrandViewController.storyboard in Resources */,
 				C050C98F1E8267450009679D /* graph_line.png in Resources */,
@@ -3205,6 +3212,7 @@
 				EBC014881D99DA710006827C /* IdealBeautySecondsData.swift in Sources */,
 				EB7365AE1D83156F00D223BA /* StepUpperEntity.swift in Sources */,
 				EBBF4E1B1D95596A001CD8B3 /* UnitEntity.swift in Sources */,
+				E2EB07E320720B180016B094 /* SDPEfficacyResultView.swift in Sources */,
 				C0E4DCBD1D71807500931B66 /* ProductListView.swift in Sources */,
 				C03520D91D9E88D7005129B5 /* IdealResultCell.swift in Sources */,
 				C05818381D6DB51A00C8FB55 /* Array+safe.swift in Sources */,
