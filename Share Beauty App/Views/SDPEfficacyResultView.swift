@@ -14,38 +14,51 @@ class SDPEfficacyResultView: UIView {
     @IBOutlet weak var ThirdCircleLabel: UILabel!
     @IBOutlet weak var FirstImageView: UIImageView!
     @IBOutlet weak var SecondImageView: UIImageView!
+    @IBOutlet weak var SubTitleLabel: UILabel!
     @IBOutlet weak var ThirdImageView: UIImageView!
 
+    @IBOutlet weak var copyLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         setStyles()
-        setTexts()
     }
 
     // スタイル設定
     private func setStyles() {
-        titleLabel.textColor = UIUtil.grayColor()
-        titleLabel.font = UIUtil.getSystemBold(23)
+//        titleLabel.textColor = UIUtil.b()
+        titleLabel.font = UIFont(name: "Reader-Bold", size: 23)
 
-        FirstCircleLabel.textColor = UIUtil.redColor()
-        FirstCircleLabel.font = UIUtil.getSystemBold(17)
-
-        SecondCircleLabel.textColor = UIUtil.grayColor()
-        SecondCircleLabel.font = UIUtil.getSystemBold(15)
-
-        ThirdCircleLabel.textColor = UIUtil.grayColor()
-        ThirdCircleLabel.font = UIUtil.getSystemBold(15)
-
-//        FirstImageView.image = FileTable.getImage(images?[1])
-//        SecondImageView.image = FileTable.getImage(images?[0])
-//        ThirtImageView.image = FileTable.getImage(images?[0])
+        FirstCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
+        SecondCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
+        ThirdCircleLabel.font = UIFont(name: "Reader-Regular", size: 10)
+        
+        copyLabel.textColor = UIUtil.grayColor()
+        copyLabel.font = UIFont(name: "Reader-Regular", size: 5)
     }
     // 文字セット
-    private func setTexts() {
-        let items = AppItemTable.getItemsByScreenCode("17AWWASO")
-        titleLabel.text = (UIUtil.getUtmArray() as NSArray as? [String])?[47]
-        FirstCircleLabel.text = items["01"]
-        SecondCircleLabel.text = items["02"]
-        ThirdCircleLabel.text = items["04"]
+    func setTexts(start_index: Int) {
+        let csvArr = LanguageConfigure.sdp_eee_csv
+        titleLabel.text = csvArr["\(start_index)"]
+        
+        if start_index == 34 {
+            SubTitleLabel.isHidden = false
+            SubTitleLabel.font = UIFont(name: "Reader-Bold", size: 23)
+            SubTitleLabel.text = csvArr["\(start_index - 1)"]
+            titleLabel.frame.origin.x = titleLabel.frame.origin.x - 200
+        }
+        
+        if start_index == 17 {
+            titleLabel.text = csvArr["\(1)"]
+        }
+        
+        
+        FirstImageView.image = UIImage.init(named: ("18aw_" + (csvArr["\(start_index + 1)"]?.replacingOccurrences(of:"%", with:""))!))
+        SecondImageView.image = UIImage.init(named: ("18aw_" + (csvArr["\(start_index + 2)"]?.replacingOccurrences(of:"%", with:""))!))
+        ThirdImageView.image = UIImage.init(named: ("18aw_" + (csvArr["\(start_index + 3)"]?.replacingOccurrences(of:"%", with:""))!))
+        FirstCircleLabel.text = csvArr["\(start_index + 4)"]
+        SecondCircleLabel.text = csvArr["\(start_index + 5)"]
+        ThirdCircleLabel.text = csvArr["\(start_index + 6)"]
+        copyLabel.text = csvArr["\(start_index + 7)"]
+        
     }
 }

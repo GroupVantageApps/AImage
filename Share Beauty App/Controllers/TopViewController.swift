@@ -42,7 +42,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     override func viewDidLoad() {
         super.viewDidLoad()
         // UTM多言語化のunzipテスト
-        // ContentDownloader.default.unzipTest()
+         ContentDownloader.default.unzipTest()
         print("TopViewController.viewDidLoad")
         
         let fileId = AppItemTable.getMainImageByItemId(itemId: 7911).first

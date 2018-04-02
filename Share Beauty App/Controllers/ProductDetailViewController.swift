@@ -124,6 +124,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     let techScrollV = UIScrollView()
     let efficacyScrollV = UIScrollView()
+    let efficacySDPScrollV = UIScrollView()
     
     // UTM2.0多言語化CSV
     let mUtmArr = LanguageConfigure.utmcsv
@@ -229,6 +230,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
                 self.mIsSDP = true
                 mCategoryButtonEfficacy.enabled = true
+                self.setSDPEfficacySCV()
             } else if productId == 1 || productId == 2 {
             
                 mCategoryButtonEfficacy.enabled = false
@@ -365,7 +367,45 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		// 初期特殊遷移
 		self.initialTransition()
     }
-
+    
+    func setSDPEfficacySCV(){
+        self.efficacySDPScrollV.delegate = self
+        self.efficacySDPScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.efficacySDPScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*3)
+        self.efficacySDPScrollV.isPagingEnabled = true
+        self.efficacySDPScrollV.bounces = false
+        
+        if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+            for i in 0...1{
+                let nib = UINib(nibName: "SDPEfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? SDPEfficacyResultView else { return }
+                efficacyView.frame = CGRect(x: 0, y: self.mVContent.height * CGFloat(i), width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                var start = 0
+                switch productId {
+                case 565:
+                    start = 1
+                case 566:
+                    start = 17
+                case 567:
+                    start = 34
+                case 568:
+                    start = 50
+                case 569:
+                    start = 66
+                default:
+                    break // do nothing
+                }
+                let index = i == 0 ? start : start + i * 8
+                efficacyView.setTexts(start_index: index)
+                
+                self.efficacySDPScrollV.addSubview(efficacyView)
+            }
+        } 
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         if mIsUtm || mIsUtmEye || mIsNewUtm{
             mUtmFeaturesView.showAnimation()
@@ -835,13 +875,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVCurrentSelect?.removeFromSuperview()
 
         if sender === mCategoryButtonEfficacy {
-            if productId == 565 {
-                let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
-                let views = nib.instantiate(withOwner: self, options: nil)
-                guard let efficacyView = views[0] as? EfficacyResultView else { return }
-                efficacyView.frame = mVContent.frame
-                mVContent.addSubview(efficacyView)
-                mVCurrentSelect = efficacyView
+            if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569{
+                mVContent.addSubview(self.efficacySDPScrollV)
+                mVCurrentSelect = self.efficacySDPScrollV
             } else if productId == 566 {
                 let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 mVContent.addSubview(wasoEfficacyView)
@@ -1359,12 +1395,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         self.techScrollV.setContentOffset(offset, animated: true)
     }
     
-      //*scrollview
-//    func setTechScrollView(){
-//        mVContent.addSubview(techScrollV)
-//        mVCurrentSelect = techScrollV
-//    }
-    
+
     //*GeneratiogView
     func setGeneratingView(){
         let generateV = UIView()

@@ -501,5 +501,18 @@ class ContentDownloader: NSObject {
         } catch let e {
             print(e)
         }
+        
+        let csvSDPFileUrl: URL = FileTable.getPath(6613)
+        print(csvSDPFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvSDPFileUrl)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.sdp_eee_csv = csv
+            
+        } catch let e {
+            print(e)
+        }
     }
 }
