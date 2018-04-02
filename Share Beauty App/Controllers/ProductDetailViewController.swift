@@ -87,7 +87,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var productId: Int!
     var isHowToUseView: Bool = false
     var indexHowToUse: Int = 0
-
+    var showEfficacy: Bool = false
     var mIsUtm: Bool = false
     var mIsNewUtm: Bool = false
     var mIsUtmEye: Bool = false
@@ -306,7 +306,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		// 動画テロップデータ読み込み
 		self.movieTelop = TelopData(movieId: product.movie)
         
-        if isHowToUseView == true{
+        if isHowToUseView == true {
             mBtnCurrentSelect?.selected = false
             let sender = self.mCategoryButtonHowToUse
             mBtnCurrentSelect = sender
@@ -340,6 +340,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setGeneratingView()
             self.setEnhanceView()
             self.setImucalmView()
+            
+            if showEfficacy == true{
+                mBtnCurrentSelect?.selected = false
+                let sender = self.mCategoryButtonEfficacy
+                mBtnCurrentSelect = sender
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
+                
+                showUtmInfo(sender!)
+            }
         }
         
     }

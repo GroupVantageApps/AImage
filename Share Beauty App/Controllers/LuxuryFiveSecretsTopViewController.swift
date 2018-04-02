@@ -25,7 +25,10 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     let gold = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0 )
     var bgAudioPlayer: AVAudioPlayer!
     
+    @IBOutlet weak var topTitleLabel: UILabel!
     
+    
+    let lx2Arr = LanguageConfigure.lx2csv
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
     private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]
     
@@ -37,6 +40,8 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
+        
+        topTitleLabel.text = lx2Arr["2"]
         
         if LanguageConfigure.isOutAppBtnHiddenCountry {
             mHeaderView.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
@@ -75,7 +80,8 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             self.mVContent.addSubview(button)
             
             let titleLabel = UILabel()
-            titleLabel.text = self.btnTitleText[i]
+
+            titleLabel.text = lx2Arr[String(i + 3)]
             titleLabel.textAlignment = .center
             titleLabel.numberOfLines = 0
             titleLabel.font = UIFont(name: "ACaslonPro-Regular", size: 18)
@@ -95,8 +101,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
  
     
     @objc private func onTapSecret(_ sender: AnyObject){
-        print("tag:*\(sender.tag)")
-        
+
         scrollContentBaseV.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width - 70, height: self.view.frame.height - 80)
         scrollContentBaseV.center = self.view.center
         scrollContentBaseV.origin.y += 25
@@ -134,6 +139,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             
             var titleText = UILabel()
             titleText.textColor  = gold
+
 //            titleText.font = UIFont.boldSystemFontOfSize(CGFloat(UIFont(name: "ACaslonPro-Regular", size: 30))!)
             titleText.font = (UIFont(name: "ACaslonPro-Regular", size: 30))
             titleText.numberOfLines = 0
@@ -160,8 +166,8 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             self.scrollContentV.addSubview(toDetailBtn)
             
             if i == 0{
-                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 130, width: 500, height: 60)
-                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 240, width: 500, height: 300)
+                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 130, width: 400, height: 60)
+                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 240, width: 400, height: 300)
                 toDetailBtn.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 580, width: 180, height: 30)
                 
                 self.setText(i: i, titleText: titleText, descriptionText: descriptionText, toDetailBtn: toDetailBtn)
@@ -183,14 +189,14 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                 for j in 0...2{
                     
                     let efficacyTitle = UILabel()
-                    efficacyTitle.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 410, width: 450, height: 120)
+                    efficacyTitle.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 410, width: 300, height: 120)
                     efficacyTitle.textColor  = gold
                     efficacyTitle.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyTitle.numberOfLines = 0
                     efficacyTitle.textAlignment = NSTextAlignment.left
                     
                     let efficacyDescription = UILabel()
-                    efficacyDescription.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 395, width: 400, height: 300)
+                    efficacyDescription.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 395, width: 280, height: 300)
                     efficacyDescription.textColor  = gold
                     efficacyDescription.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyDescription.numberOfLines = 0
@@ -217,16 +223,16 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                 
                 
             }else if i == 3{
-                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 500, height: 60)
-                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 110, width: 500, height: 300)
+                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 400, height: 60)
+                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 110, width: 400, height: 300)
                 toDetailBtn.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 390, width: 180, height: 30)
                 
                 self.setText(i: i, titleText: titleText, descriptionText: descriptionText, toDetailBtn: toDetailBtn)
 
                 
             }else if i == 4{
-                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 500, height: 60)
-                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 140, width: 500, height: 300)
+                titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 400, height: 60)
+                descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 140, width: 400, height: 300)
                 
                 self.setText(i: i, titleText: titleText, descriptionText: descriptionText, toDetailBtn: toDetailBtn)
 
@@ -249,7 +255,6 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     }
     
     @objc private func onTapDetailBtn(_ sender: AnyObject){
-        print("tag:*\(sender.tag)")
         
         if sender.tag < 100{
             
@@ -373,7 +378,6 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     
     //*LXIngredientViewDelegate
     func movieAct() {
-        print("bgAudioPlayer:*\(bgAudioPlayer)")
         bgAudioPlayer.pause()
         
         let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_ingredient.mp4"))
@@ -424,52 +428,52 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     //* text
     func setText(i:Int, titleText:UILabel, descriptionText:UILabel, toDetailBtn:UIButton){
         if i == 0{
-            titleText.text = "Beauty inspired by the past,\nengineered for the future."
-            descriptionText.text = "Treasured for its substantial healing properties in\nancient times, the Enmei herb’s roots run deep in\nJapanese folklore.\n\nInspired by legend, Shiseido’s researchers traveled\nto Mt. Koya in search of the plant. It was there\nthat the master herb was handpicked. Following\ncareful cultivation under laboratory conditions, a\nstable supply of its highest quality extract assured.\n\nOnce combined with Skingenecell 1P and\nVitamin C Ethyl II, the Enmei extract comes to\nlife as a more advanced, highly effective\ningredient: SkingenecellEnmei."
-            toDetailBtn.setTitle("Efficacy Results", for: .normal)
+            titleText.text = lx2Arr["8"] 
+            descriptionText.text = "\(lx2Arr["9"] as! String)\n\(lx2Arr["10"] as! String)\n\(lx2Arr["11"] as! String)"
+            toDetailBtn.setTitle(lx2Arr["12"], for: .normal)
             
         }else if i == 1{
-            titleText.text = "The Nighttime Defense Factor."
-            descriptionText.text = "Following extensive research, Shiseido discovered that\nskin is closely related to the body’s biological clock\nsystem. One particular  nding detailed the role of the\nNighttime Defense Factor, which works to repair\ndamage at night for healthy looking skin with superior\nrestorative powers."
-            toDetailBtn.setTitle("Technology", for: .normal)
+            titleText.text = lx2Arr["13"]
+            descriptionText.text = lx2Arr["14"]
+            toDetailBtn.setTitle(lx2Arr["15"], for: .normal)
             
         }else if i == 2{
-            titleText.text = "Japanese botanicals."
-            descriptionText.text = "Three precious Japanese botanical ingredients support and\nnurture skin’s inherent powers of regeneration."
-            toDetailBtn.setTitle("Technology", for: .normal)
+            titleText.text = lx2Arr["16"]
+            descriptionText.text = lx2Arr["17"]
+            toDetailBtn.setTitle(lx2Arr["15"], for: .normal)
             
         }else if i == 20{
-            titleText.text = "Japanese botanicals."
-            descriptionText.text = "Three precious Japanese botanical ingredients support and\nnurture skin’s inherent powers of regeneration."
-            toDetailBtn.setTitle("Technology", for: .normal)
+            titleText.text = lx2Arr["16"]
+            descriptionText.text = lx2Arr["17"]
+            toDetailBtn.setTitle(lx2Arr["15"], for: .normal)
             
         }
         else if i == 3{
-            titleText.text = "The ultimate texture."
-            descriptionText.text = "A rich, intensive cream with a dense, luxurious\ntexture. Formulated with the highest\nconcentration of Shiseido’s SkingenecellEnmei\ncomplex. Applies smoothly and absorbs quickly,\nenveloping skin in luxury to create the optimal\nnighttime environment. Awakening its natural\npowers and helping them thrive throughout the\nnight."
-            toDetailBtn.setTitle("Technology", for: .normal)
+            titleText.text = lx2Arr["25"]
+            descriptionText.text = lx2Arr["26"]
+            toDetailBtn.setTitle(lx2Arr["15"], for: .normal)
         }else if i == 4{
-            titleText.text = "Natural form.\nBeautifully cra ed."
-            descriptionText.text = "A modern interpretation of exquisite Japanese\naesthetics. Packaging that enhances the skincare\nritual at the very  rst step – the  rst touch.\nPerfectly weighted, ideally shaped. Inspired by\nnature’s beauty and its warm, seasonal tones.\nEncased in an outer carton that expresses\ntsutsumu, the delicate art of Japanese gift\nwrapping."
+            titleText.text = lx2Arr["28"]
+            descriptionText.text = lx2Arr["29"]
             toDetailBtn.setTitle("", for: .normal)
         }
     }
     
     func setEfficacyText(j:Int, titleText:UILabel, descriptionText:UILabel, toDetailBtn:UIButton){
         if j == 0{
-            titleText.text = "Hokkaido Angelica Root\nExtract Hokkaido, Japan"
-            descriptionText.text = "Derived from roots matured in\nthe cold climate of Hokkaido.\nKnown to bolster the skin’s\nepidermis.*"
-            toDetailBtn.setTitle("Efficacy Results", for: .normal)
+            titleText.text = lx2Arr["18"]
+            descriptionText.text = lx2Arr["19"]
+            toDetailBtn.setTitle(lx2Arr["12"], for: .normal)
             
         }else if j == 1{
-            titleText.text = "Oshima Sakura Leaf\nExtract Shizuoka, Japan"
-            descriptionText.text = "Found only on the Cherry\nBlossom trees of Izushichi\nIsland. Revered for its\nskin-reinforcing potential."
-            toDetailBtn.setTitle("Efficacy Results", for: .normal)
+            titleText.text = lx2Arr["20"]
+            descriptionText.text = lx2Arr["21"]
+            toDetailBtn.setTitle(lx2Arr["12"], for: .normal)
             
         }else if j == 2{
-            titleText.text = "Premium Uji Green Tea\nExtract Kyoto, Japan"
-            descriptionText.text = "Renowned for its natural health\nbene ts. Promotes a potent\nanti-oxidizing effect to help\nprevent skin damage caused by\nUV rays.*"
-            toDetailBtn.setTitle("Efficacy Results", for: .normal)
+            titleText.text = lx2Arr["22"]
+            descriptionText.text = lx2Arr["23"]
+            toDetailBtn.setTitle(lx2Arr["12"], for: .normal)
             
         }
     }

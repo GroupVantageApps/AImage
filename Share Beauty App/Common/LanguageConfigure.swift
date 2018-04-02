@@ -14,6 +14,7 @@ class LanguageConfigure: NSObject {
     private static let defaultCountryId = 6
     private static let defaultLanguageId = 21
     private static let lxCsv = "LxCsv"
+    private static let lx2Csv = "Lx2Csv"
     private static let gscCsv = "GscCsv"
     private static let utmCsv = "UtmCsv"
     private static let sdp_eeeCsv = "SdpEeeCsv"
@@ -150,6 +151,21 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: lxCsv)
+            userDefault.synchronize()
+        }
+    }
+    
+    static var lx2csv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: lx2Csv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ] 
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: lx2Csv)
             userDefault.synchronize()
         }
     }

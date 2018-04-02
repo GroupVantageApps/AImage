@@ -36,7 +36,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     var productIdForDeeplink: Int = 0
     var lineIdForDeeplink: Int = 0
     var lineStepForDeepLink: Int = 0
-    
+    var showEfficacy: Bool = false
     var isUTM: Bool!
     
     override func viewDidLoad() {
@@ -130,6 +130,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
                 }
             }
             nextVc.productId = productIdForDeeplink
+            nextVc.showEfficacy = showEfficacy
             productIdForDeeplink = 0
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
