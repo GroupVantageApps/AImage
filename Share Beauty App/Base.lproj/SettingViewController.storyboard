@@ -85,7 +85,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="10" minY="8" maxX="0.0" maxY="8"/>
-                                                        <state key="normal" title="Country">
+                                                        <state key="normal" title="Region">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
