@@ -131,6 +131,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     // UTM2.0多言語化CSV
     let mUtmArr = LanguageConfigure.utmcsv
+    let mEeeArr = LanguageConfigure.sdp_eee_csv
 	
 	// 特殊な初期表示を行う商品ID辞書
 	private enum eTransitionDestinate {
@@ -394,22 +395,115 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     func setEEESCV(){
         self.efficacyEEEScrollV.delegate = self
         self.efficacyEEEScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-        self.efficacyEEEScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*2)
+        self.efficacyEEEScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*3)
         self.efficacyEEEScrollV.isPagingEnabled = true
         self.efficacyEEEScrollV.bounces = false
         self.efficacyEEEScrollV.backgroundColor = UIColor.clear
         
+        for i in 0...1{
+            
+            let margin =  i == 0 ? -250 : 250
+            let title = UILabel()
+            title.textColor = UIColor.black
+            title.font = UIFont(name: "Reader-Bold", size: 25)
+            title.frame = CGRect(x: 500 * i, y: 10 , width: 400, height: 40)
+            title.centerX = self.mVContent.centerX + CGFloat(margin)
+            title.textAlignment = .center
+            
+            if i == 0{
+                title.text =  mEeeArr["101"] 
+            }else if i == 1{
+                title.text = mEeeArr["102"]
+            }
+            let imageNum = i + 1
+            let image_after = UIImage(named: "eee_item0\(imageNum)_after.png")
+            let faceImageV_after = UIImageView(image:image_after)
+            faceImageV_after.contentMode = .scaleAspectFit
+            faceImageV_after.clipsToBounds = true
+            faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV_after.centerX = self.mVContent.centerX + CGFloat(margin)
+            faceImageV_after.backgroundColor = UIColor.clear
+            
+            let image = UIImage(named: "eee_item0\(imageNum)_before.png")
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFit
+            faceImageV.tag = 30 + i//300
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX + CGFloat(margin)
+            faceImageV.backgroundColor = UIColor.clear
+            
+            let beforeBtn = UIButton()
+            beforeBtn.isEnabled = false
+            beforeBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10 + CGFloat(margin)
+            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+            beforeBtn.isEnabled = false
+            beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            beforeBtn.tag = 10 + i//100
+            beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            let afterBtn = UIButton()
+            afterBtn.isEnabled = true
+            afterBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            afterBtn.origin.x = self.mVContent.centerX + 10 + CGFloat(margin)
+            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+            afterBtn.isEnabled = true
+            afterBtn.setTitleColor(UIColor.white, for: .normal)
+            afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            
+            afterBtn.setTitleColor(UIColor.black, for: .normal)
+            afterBtn.backgroundColor = UIColor.white
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            afterBtn.tag = 20 + i//200
+            afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            
+            for j in 0...2{
+                let image:UIImage = UIImage(named:"point_01.png")!
+                let border = UIImageView(image:image)
+                border.contentMode = .scaleToFill
+                if j == 0{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 398, width: 1, height: 34)
+                }else if j == 1{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 398, width: 1, height: 34)
+                    
+                }else if j == 2{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 398 , width: 1, height: 34)
+                }
+                self.efficacyEEEScrollV.addSubview(border)
+                
+            }
+            
+            let copy = UILabel()
+            copy.textColor = UIColor.gray
+            copy.font = UIFont(name: "Reader-Medium", size: 14)
+            copy.frame = CGRect(x: 10 , y: self.mVContent.size.height - 150 , width: 400, height: 100)
+            copy.numberOfLines = 0
+            copy.textAlignment = .left
+            copy.text = mEeeArr["103"]
+            
+            self.efficacyEEEScrollV.addSubview(copy)
+            self.efficacyEEEScrollV.addSubview(title)
+            self.efficacyEEEScrollV.addSubview(faceImageV_after)
+            self.efficacyEEEScrollV.addSubview(faceImageV)
+            self.efficacyEEEScrollV.addSubview(beforeBtn)
+            self.efficacyEEEScrollV.addSubview(afterBtn)
+        }
+        
         let nib = UINib(nibName: "EEEFirstEfficacyResultView", bundle: nil)
         let views = nib.instantiate(withOwner: self, options: nil)
         guard let efficacyView1 = views[0] as? EEEFirstEfficacyResultView else { return }
-        efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+        efficacyView1.frame = CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.frame.width, height: self.mVContent.height)
         
         self.efficacyEEEScrollV.addSubview(efficacyView1)
         
         let nib2 = UINib(nibName: "EEESecondEfficacyResultView", bundle: nil)
         let views2 = nib2.instantiate(withOwner: self, options: nil)
         guard let efficacyView2 = views2[0] as? EEESecondEfficacyResultView else { return }
-        efficacyView2.frame = CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.frame.width, height: self.mVContent.height)
+        efficacyView2.frame = CGRect(x: 0, y: self.mVContent.height * 2, width: self.mVContent.frame.width, height: self.mVContent.height)
         
         self.efficacyEEEScrollV.addSubview(efficacyView2)
         
@@ -1762,6 +1856,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             
             let imageNum = i + 1
+            let image_after = UIImage(named: "after_0\(imageNum).png")
+            let faceImageV_after = UIImageView(image:image_after)
+            faceImageV_after.contentMode = .scaleAspectFit
+            faceImageV_after.clipsToBounds = true
+            faceImageV_after.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
+            faceImageV_after.centerX = self.mVContent.centerX
+            faceImageV_after.backgroundColor = UIColor.clear
+            
             let image = UIImage(named: "before_0\(imageNum).png")
             let faceImageV = UIImageView(image:image)
             faceImageV.contentMode = .scaleAspectFit
@@ -1818,6 +1920,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             
             self.efficacyScrollV.addSubview(title)
+            self.efficacyScrollV.addSubview(faceImageV_after)
             self.efficacyScrollV.addSubview(faceImageV)
             self.efficacyScrollV.addSubview(beforeBtn)
             self.efficacyScrollV.addSubview(afterBtn)
@@ -1911,6 +2014,42 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @objc private func onTapBeforeAfterBtn(_ sender: UIButton){
         print("tag:*\(sender.tag)")
         
+        if mIsEEE {
+            if sender.tag < 20{//Before
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let afterBtn = self.efficacyEEEScrollV.viewWithTag(sender.tag + 10) as? UIButton {
+                    afterBtn.isEnabled = true
+                    afterBtn.backgroundColor = UIColor.clear
+                    afterBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyEEEScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 1
+                    }
+                }
+                
+            }else{//After
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let beforeBtn = self.efficacyEEEScrollV.viewWithTag(sender.tag - 10) as? UIButton {
+                    beforeBtn.isEnabled = true
+                    beforeBtn.backgroundColor = UIColor.clear
+                    beforeBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyEEEScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 0
+                    }
+                }
+                
+            }
+        }
+        else{
         if sender.tag < 20{//Before
             
             sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
@@ -1921,9 +2060,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 afterBtn.backgroundColor = UIColor.clear
                 afterBtn.setTitleColor(UIColor.black, for: .normal)
             }
-            let imageNum = sender.tag - 9
             if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
-                imageView.image = UIImage(named: "before_0\(imageNum).png")
+                UIView.animate(withDuration: 1.0) {
+                    imageView.alpha = 1
+                }
             }
             
         }else{//After
@@ -1936,13 +2076,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 beforeBtn.backgroundColor = UIColor.clear
                 beforeBtn.setTitleColor(UIColor.black, for: .normal)
             }
-            let imageNum = sender.tag - 19
             if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
-                imageView.image = UIImage(named: "after_0\(imageNum).png")
+                UIView.animate(withDuration: 1.0) {
+                    imageView.alpha = 0
+                }
             }
             
         }
-        
+        }   
     }
     
 
