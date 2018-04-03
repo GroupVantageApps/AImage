@@ -67,6 +67,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     private var mUpdateStatusClosure: ((ContentDownloadResult) -> ())?
     
     var productIdForDeeplink: Int = 0
+    var showEfficacy: Bool = false
     var lineIdForDeeplink: Int = 0
     var lineStepForDeepLink: Int = 0
 
@@ -127,6 +128,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         if productIdForDeeplink != 0 {
             LoadingView.show(vc: self)
             topVc.productIdForDeeplink = productIdForDeeplink
+            topVc.showEfficacy = showEfficacy
         }
         if lineIdForDeeplink != 0 {
             if lineStepForDeepLink != 0 {
@@ -236,7 +238,6 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     private func updateData() {
         //Update Tap時に無理やりdevelopを向かせる
         DownloadConfigure.target = DownloadConfigure.Target.develop
-        
         
         ContentDownloader.default.download(completion: { result in
             switch result {

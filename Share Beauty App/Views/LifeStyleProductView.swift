@@ -1,5 +1,5 @@
 //
-//  ProductStepView.swift
+//  LifeStyleProductView.swift
 //  Share Beauty App
 //
 //  Created by tuntun34 on 2016/08/31.
@@ -42,8 +42,10 @@ class LifeStyleProductView: BaseView {
         LanguageConfigure.UTMId:0,
         570:7942,
         571:7943,
+        // makeUp ID
         578:0,
         6543:0,
+        // makeUp ID
         572:0,
         6544:0,
         //6543,6544

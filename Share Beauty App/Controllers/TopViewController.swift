@@ -36,11 +36,13 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
     var productIdForDeeplink: Int = 0
     var lineIdForDeeplink: Int = 0
     var lineStepForDeepLink: Int = 0
-    
+    var showEfficacy: Bool = false
     var isUTM: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // UTM多言語化のunzipテスト
+         ContentDownloader.default.unzipTest()
         print("TopViewController.viewDidLoad")
         
         let fileId = AppItemTable.getMainImageByItemId(itemId: 7911).first
@@ -128,6 +130,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
                 }
             }
             nextVc.productId = productIdForDeeplink
+            nextVc.showEfficacy = showEfficacy
             productIdForDeeplink = 0
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)

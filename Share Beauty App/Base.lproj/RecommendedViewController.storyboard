@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<<<<<<< HEAD
     <device id="retina4_7" orientation="portrait">
+=======
+    <device id="ipad9_7" orientation="landscape">
+>>>>>>> vit-dev-sdp-eee
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,7 +30,7 @@
                         <viewControllerLayoutGuide type="bottom" id="97s-fc-cZ3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tmN-mn-oCF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gqm-TU-8xB">
@@ -153,10 +157,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2LI-eI-vYg">
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="130" width="375" height="497"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaD-P5-tPi">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="497"/>
+=======
+                                <rect key="frame" x="0.0" y="130" width="1024" height="598"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaD-P5-tPi">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="598"/>
+>>>>>>> vit-dev-sdp-eee
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vjT-oN-0mb">
                                             <size key="itemSize" width="321" height="368"/>

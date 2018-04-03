@@ -528,6 +528,23 @@
 		DE7D08221ED6E412006513FD /* LXProductViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7D08201ED6E412006513FD /* LXProductViewController.storyboard */; };
 		DE8041591F0F69F100F7DED6 /* GscBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8041581F0F69F100F7DED6 /* GscBaseViewController.swift */; };
 		DE80415B1F0F6ED800F7DED6 /* GscTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80415A1F0F6ED800F7DED6 /* GscTopViewController.swift */; };
+		DE80C66520726D3600CD326A /* 18aw_91.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66220726D3500CD326A /* 18aw_91.png */; };
+		DE80C66620726D3600CD326A /* 18aw_92.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66320726D3500CD326A /* 18aw_92.png */; };
+		DE80C66720726D3600CD326A /* 18aw_81.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66420726D3500CD326A /* 18aw_81.png */; };
+		DE80C66B20726D4E00CD326A /* 18aw_87.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66820726D4D00CD326A /* 18aw_87.png */; };
+		DE80C66C20726D4E00CD326A /* 18aw_85.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66920726D4E00CD326A /* 18aw_85.png */; };
+		DE80C66D20726D4E00CD326A /* 18aw_86.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66A20726D4E00CD326A /* 18aw_86.png */; };
+		DE80C67020726D6200CD326A /* 18aw_90.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66E20726D6200CD326A /* 18aw_90.png */; };
+		DE80C67120726D6200CD326A /* 18aw_94.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C66F20726D6200CD326A /* 18aw_94.png */; };
+		DE80C67320726D8500CD326A /* 18aw_95.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67220726D8500CD326A /* 18aw_95.png */; };
+		DE80C67520726D9C00CD326A /* 18aw_96.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67420726D9C00CD326A /* 18aw_96.png */; };
+		DE80C67720726DB000CD326A /* 18aw_82.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67620726DAF00CD326A /* 18aw_82.png */; };
+		DE80C67B20726DCC00CD326A /* 18aw_98.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67820726DCC00CD326A /* 18aw_98.png */; };
+		DE80C67C20726DCC00CD326A /* 18aw_97.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67920726DCC00CD326A /* 18aw_97.png */; };
+		DE80C67D20726DCC00CD326A /* 18aw_92.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67A20726DCC00CD326A /* 18aw_92.png */; };
+		DE80C67F2072937C00CD326A /* 18aw_77.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67E2072937C00CD326A /* 18aw_77.png */; };
+		DE80C6822072939D00CD326A /* 18aw_93.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C6802072939C00CD326A /* 18aw_93.png */; };
+		DE80C6832072939D00CD326A /* 18aw_88.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C6812072939C00CD326A /* 18aw_88.png */; };
 		DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */; };
 		DEE83E5A1EB75C04000C7D8D /* LXProductTechnologyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */; };
 		DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */; };
@@ -540,6 +557,8 @@
 		DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */; };
 		DEFF2D211F1F48CA006C576B /* GscResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */; };
 		DEFF2D231F1F48D3006C576B /* GscResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */; };
+		E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */; };
+		E2EB07E320720B180016B094 /* SDPEfficacyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
 		E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C91DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard */; };
 		E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891CC1DF2FA05007B92B2 /* IconicViewController.storyboard */; };
@@ -1196,6 +1215,23 @@
 		DE7D08211ED6E412006513FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LXProductViewController.storyboard; sourceTree = "<group>"; };
 		DE8041581F0F69F100F7DED6 /* GscBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscBaseViewController.swift; sourceTree = "<group>"; };
 		DE80415A1F0F6ED800F7DED6 /* GscTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscTopViewController.swift; sourceTree = "<group>"; };
+		DE80C66220726D3500CD326A /* 18aw_91.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_91.png; sourceTree = "<group>"; };
+		DE80C66320726D3500CD326A /* 18aw_92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_92.png; sourceTree = "<group>"; };
+		DE80C66420726D3500CD326A /* 18aw_81.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_81.png; sourceTree = "<group>"; };
+		DE80C66820726D4D00CD326A /* 18aw_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_87.png; sourceTree = "<group>"; };
+		DE80C66920726D4E00CD326A /* 18aw_85.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_85.png; sourceTree = "<group>"; };
+		DE80C66A20726D4E00CD326A /* 18aw_86.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_86.png; sourceTree = "<group>"; };
+		DE80C66E20726D6200CD326A /* 18aw_90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_90.png; sourceTree = "<group>"; };
+		DE80C66F20726D6200CD326A /* 18aw_94.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_94.png; sourceTree = "<group>"; };
+		DE80C67220726D8500CD326A /* 18aw_95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_95.png; sourceTree = "<group>"; };
+		DE80C67420726D9C00CD326A /* 18aw_96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_96.png; sourceTree = "<group>"; };
+		DE80C67620726DAF00CD326A /* 18aw_82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_82.png; sourceTree = "<group>"; };
+		DE80C67820726DCC00CD326A /* 18aw_98.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_98.png; sourceTree = "<group>"; };
+		DE80C67920726DCC00CD326A /* 18aw_97.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_97.png; sourceTree = "<group>"; };
+		DE80C67A20726DCC00CD326A /* 18aw_92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 18aw_92.png; path = ../../../../Downloads/SBA/08/1x/18aw_92.png; sourceTree = "<group>"; };
+		DE80C67E2072937C00CD326A /* 18aw_77.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_77.png; sourceTree = "<group>"; };
+		DE80C6802072939C00CD326A /* 18aw_93.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_93.png; sourceTree = "<group>"; };
+		DE80C6812072939C00CD326A /* 18aw_88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 18aw_88.png; sourceTree = "<group>"; };
 		DEE83E571EB75C04000C7D8D /* LXProductTechnologyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductTechnologyView.xib; sourceTree = "<group>"; };
 		DEE83E581EB75C04000C7D8D /* LXProductTechnologyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductTechnologyView.swift; sourceTree = "<group>"; };
 		DEE83E5B1EB761F5000C7D8D /* LXTechBiologicalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechBiologicalView.xib; sourceTree = "<group>"; };
@@ -1208,6 +1244,8 @@
 		DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductEfficacyView.swift; sourceTree = "<group>"; };
 		DEFF2D201F1F48C9006C576B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscResultViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscResultViewController.swift; sourceTree = "<group>"; };
+		E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPEfficacyResultView.xib; sourceTree = "<group>"; };
+		E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPEfficacyResultView.swift; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
 		E52891CA1DF2F911007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IdealFirstSelectViewController.storyboard; sourceTree = "<group>"; };
 		E52891CD1DF2FA05007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IconicViewController.storyboard; sourceTree = "<group>"; };
@@ -1855,6 +1893,8 @@
 				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
 				E5CCCE911E6A605A008A4481 /* EfficacyResultView.swift */,
 				E5CCCE8F1E6A6032008A4481 /* EfficacyResultView.xib */,
+				E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */,
+				E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */,
 				C091BA751D69809F0073FEDB /* HeaderView.swift */,
 				C091BA7C1D6982B00073FEDB /* HeaderView.xib */,
 				C05C779C1D9E5ECA00E38B7B /* IdealProductView.swift */,
@@ -2171,6 +2211,30 @@
 			path = Resources/lx_app;
 			sourceTree = "<group>";
 		};
+		DE80C66120726CF000CD326A /* 18AW */ = {
+			isa = PBXGroup;
+			children = (
+				DE80C67A20726DCC00CD326A /* 18aw_92.png */,
+				DE80C67920726DCC00CD326A /* 18aw_97.png */,
+				DE80C67820726DCC00CD326A /* 18aw_98.png */,
+				DE80C66E20726D6200CD326A /* 18aw_90.png */,
+				DE80C66F20726D6200CD326A /* 18aw_94.png */,
+				DE80C67420726D9C00CD326A /* 18aw_96.png */,
+				DE80C67220726D8500CD326A /* 18aw_95.png */,
+				DE80C6812072939C00CD326A /* 18aw_88.png */,
+				DE80C6802072939C00CD326A /* 18aw_93.png */,
+				DE80C66920726D4E00CD326A /* 18aw_85.png */,
+				DE80C66A20726D4E00CD326A /* 18aw_86.png */,
+				DE80C67E2072937C00CD326A /* 18aw_77.png */,
+				DE80C66820726D4D00CD326A /* 18aw_87.png */,
+				DE80C67620726DAF00CD326A /* 18aw_82.png */,
+				DE80C66420726D3500CD326A /* 18aw_81.png */,
+				DE80C66220726D3500CD326A /* 18aw_91.png */,
+				DE80C66320726D3500CD326A /* 18aw_92.png */,
+			);
+			path = 18AW;
+			sourceTree = "<group>";
+		};
 		E569567A1DF2F56000BE9308 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -2340,6 +2404,7 @@
 		EBF938131D812DC900DF9D1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE80C66120726CF000CD326A /* 18AW */,
 				26768D6F202BFFE7005BE606 /* UTM2.0 */,
 				C94638D01F18CC1D009D1480 /* bundles.bundle */,
 				DE006A171F0E309D00960D75 /* gsc */,
@@ -2546,6 +2611,7 @@
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
 				338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */,
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
+				DE80C66620726D3600CD326A /* 18aw_92.png in Resources */,
 				C050C9171E82619F0009679D /* whl_slider_1.png in Resources */,
 				C05913D91D67235700F22214 /* LaunchScreen.storyboard in Resources */,
 				26F378362023F9E300123F4D /* SFSLX_180129_12.png in Resources */,
@@ -2557,6 +2623,7 @@
 				DE2C907F1E9C66E600B5FC4A /* LXCherryGraphView.xib in Resources */,
 				C0BC62E61DB0BFE8005E73CE /* TroubleSelectView.xib in Resources */,
 				C050C9031E82619F0009679D /* sib02_before.png in Resources */,
+				DE80C67120726D6200CD326A /* 18aw_94.png in Resources */,
 				26768D87202C1C4E005BE606 /* Water_image_CMYK.png in Resources */,
 				C0880D051E4B2579006A3713 /* CountrySettingViewController.storyboard in Resources */,
 				C0665ACA1D6ACA3D00B3D8E5 /* NavigationView.xib in Resources */,
@@ -2565,6 +2632,7 @@
 				DE06F72A1F16457800EF2FE2 /* GscHeaderView.xib in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
 				80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */,
+				DE80C66B20726D4E00CD326A /* 18aw_87.png in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
 				914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */,
 				DE2C907D1E9C66E600B5FC4A /* LXCategoryButton.xib in Resources */,
@@ -2603,6 +2671,8 @@
 				C050C9971E8267450009679D /* t_btn_white.png in Resources */,
 				C050C9961E8267450009679D /* t_btn_bg.png in Resources */,
 				C050C98E1E8267450009679D /* effect_redlight.png in Resources */,
+				DE80C67C20726DCC00CD326A /* 18aw_97.png in Resources */,
+				DE80C66720726D3600CD326A /* 18aw_81.png in Resources */,
 				E5E0D3F11DF3D1DB0053373F /* RecommendedViewController.storyboard in Resources */,
 				C050C9A01E8267450009679D /* t_red_graph.png in Resources */,
 				DE2C91791E9C682500B5FC4A /* ba_up.png in Resources */,
@@ -2613,12 +2683,14 @@
 				DE0AF0D81F29AB6600CF0202 /* GscNavigationViewController.storyboard in Resources */,
 				C0998BF21DA63DE500220321 /* PagingProductView.xib in Resources */,
 				C05913D61D67235700F22214 /* Assets.xcassets in Resources */,
+				DE80C67520726D9C00CD326A /* 18aw_96.png in Resources */,
 				26768DB3202C5FE1005BE606 /* page_01.png in Resources */,
 				E5E0D4031DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard in Resources */,
 				DEFF2D211F1F48CA006C576B /* GscResultViewController.storyboard in Resources */,
 				C050C9111E82619F0009679D /* wab01_after.jpg in Resources */,
 				2608BF8F2029846E00E7F900 /* ns_page_03.png in Resources */,
 				C00D555E1DC6146A008795D4 /* ColorballCollectionView.xib in Resources */,
+				DE80C67D20726DCC00CD326A /* 18aw_92.png in Resources */,
 				C050C9811E8267450009679D /* eye_after.png in Resources */,
 				DE2C91361E9C681100B5FC4A /* LuxuryViewController.storyboard in Resources */,
 				C037CBB21D88112A00DEFE14 /* IdealSelectCollectionView.xib in Resources */,
@@ -2651,6 +2723,7 @@
 				C050C97E1E8267450009679D /* efficacy_slider_empty.png in Resources */,
 				C050C9051E82619F0009679D /* sib03_before.png in Resources */,
 				DE2C909D1E9C66E600B5FC4A /* LXYutakaConceptView.xib in Resources */,
+				E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */,
 				C01D716F1D951A1E0044851C /* CategoryButton.xib in Resources */,
 				E52891D41DF2FD9E007B92B2 /* AboutBrandViewController.storyboard in Resources */,
 				C050C98F1E8267450009679D /* graph_line.png in Resources */,
@@ -2672,11 +2745,13 @@
 				C050C96C1E8267450009679D /* d_2.png in Resources */,
 				E5E0D4091DF3DFD00053373F /* IdealResultViewController.storyboard in Resources */,
 				26AD5D7C2023115C002A2076 /* button_w.png in Resources */,
+				DE80C66D20726D4E00CD326A /* 18aw_86.png in Resources */,
 				C94638D11F18CC1E009D1480 /* bundles.bundle in Resources */,
 				DE06F7161F16450200EF2FE2 /* s_title.png in Resources */,
 				DE06F71B1F16450200EF2FE2 /* desc3.png in Resources */,
 				E5CCCE901E6A6032008A4481 /* EfficacyResultView.xib in Resources */,
 				DE2C918B1E9C682500B5FC4A /* lx_icon_recommend_large@2x.png in Resources */,
+				DE80C67020726D6200CD326A /* 18aw_90.png in Resources */,
 				DE06F7181F16450200EF2FE2 /* header.png in Resources */,
 				26768D7E202C1C3B005BE606 /* Iris_1_cmyk.png in Resources */,
 				C02818AE1E6D44CA00D4DADA /* MakeupUsageView.xib in Resources */,
@@ -2700,6 +2775,8 @@
 				DE2C908F1E9C66E600B5FC4A /* LXProductDetailTransitionView.xib in Resources */,
 				26AD5D7420230A1F002A2076 /* KozGoPr6N-Regular.otf in Resources */,
 				C050C91E1E82619F0009679D /* orange_L.png in Resources */,
+				DE80C66C20726D4E00CD326A /* 18aw_85.png in Resources */,
+				DE80C67B20726DCC00CD326A /* 18aw_98.png in Resources */,
 				C98EBF7F1F29680E00BEEC1F /* LifeStyleFifthProductView.xib in Resources */,
 				C050C90D1E82619F0009679D /* ss_mizu_bg.png in Resources */,
 				C050C9151E82619F0009679D /* whl01_after.jpg in Resources */,
@@ -2766,6 +2843,7 @@
 				C050C9041E82619F0009679D /* sib03_after.jpg in Resources */,
 				DE2C91341E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard in Resources */,
 				DE06F7141F16450200EF2FE2 /* active_sports.png in Resources */,
+				DE80C67F2072937C00CD326A /* 18aw_77.png in Resources */,
 				C050C9BC1E8276C60009679D /* Shiseido-Boldx.otf in Resources */,
 				C050C9A21E8267450009679D /* utm_bg_01.png in Resources */,
 				26768DA4202C5FD6005BE606 /* graph_01.png in Resources */,
@@ -2775,6 +2853,7 @@
 				DE06F7151F16450200EF2FE2 /* face.png in Resources */,
 				DE2C908B1E9C66E600B5FC4A /* LXNavigationView.xib in Resources */,
 				C050C9841E8267450009679D /* utm01_befor.png in Resources */,
+				DE80C67720726DB000CD326A /* 18aw_82.png in Resources */,
 				DE06F71E1F16450200EF2FE2 /* desc_02.png in Resources */,
 				E5E0D3FA1DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard in Resources */,
 				2680EC212037E4FA005257B1 /* makeup_8.png in Resources */,
@@ -2820,6 +2899,7 @@
 				E5E0D3F71DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard in Resources */,
 				2680EC232037E4FA005257B1 /* makeup_3.png in Resources */,
 				2608BF95202985C600E7F900 /* ns_page_01.png in Resources */,
+				DE80C67320726D8500CD326A /* 18aw_95.png in Resources */,
 				DE06F7101F16450200EF2FE2 /* urban_daily.png in Resources */,
 				C050C9061E82619F0009679D /* sib_slider_1_40.png in Resources */,
 				26AD5D85202319A4002A2076 /* LuxuryFiveSecretsTopViewController.storyboard in Resources */,
@@ -2835,10 +2915,12 @@
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
 				DE2C918D1E9C682500B5FC4A /* lx_icon_recommend_selected@2x.png in Resources */,
+				DE80C66520726D3600CD326A /* 18aw_91.png in Resources */,
 				2680EC13203404D0005257B1 /* before_02.png in Resources */,
 				DE06F7191F16450200EF2FE2 /* s_back.png in Resources */,
 				C050C9801E8267450009679D /* efficacy_triangle.png in Resources */,
 				26AD5D9120232545002A2076 /* nsbutton_3.png in Resources */,
+				DE80C6832072939D00CD326A /* 18aw_88.png in Resources */,
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
 				DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */,
 				C050C9081E82619F0009679D /* ss_hukidashi_1.png in Resources */,
@@ -2865,6 +2947,7 @@
 				26AD5D9020232545002A2076 /* nsbutton_2.png in Resources */,
 				26768D80202C1C3B005BE606 /* Reishi_2_cmyk.png in Resources */,
 				C050C90F1E82619F0009679D /* ss_purple.png in Resources */,
+				DE80C6822072939D00CD326A /* 18aw_93.png in Resources */,
 				C050C98D1E8267450009679D /* f_effect_bg.png in Resources */,
 				C050C98A1E8267450009679D /* f_effect_1_.png in Resources */,
 				26AD5D8E20232545002A2076 /* ns_page_03_back.png in Resources */,
@@ -3009,7 +3092,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+<<<<<<< HEAD
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+=======
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+>>>>>>> vit-dev-sdp-eee
 			showEnvVarsInLog = 0;
 		};
 		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
@@ -3056,7 +3143,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+<<<<<<< HEAD
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+=======
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+>>>>>>> vit-dev-sdp-eee
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
@@ -3074,7 +3165,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+<<<<<<< HEAD
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+=======
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+>>>>>>> vit-dev-sdp-eee
 			showEnvVarsInLog = 0;
 		};
 		EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */ = {
@@ -3209,6 +3304,7 @@
 				EBC014881D99DA710006827C /* IdealBeautySecondsData.swift in Sources */,
 				EB7365AE1D83156F00D223BA /* StepUpperEntity.swift in Sources */,
 				EBBF4E1B1D95596A001CD8B3 /* UnitEntity.swift in Sources */,
+				E2EB07E320720B180016B094 /* SDPEfficacyResultView.swift in Sources */,
 				C0E4DCBD1D71807500931B66 /* ProductListView.swift in Sources */,
 				C03520D91D9E88D7005129B5 /* IdealResultCell.swift in Sources */,
 				C05818381D6DB51A00C8FB55 /* Array+safe.swift in Sources */,

@@ -87,7 +87,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var productId: Int!
     var isHowToUseView: Bool = false
     var indexHowToUse: Int = 0
-
+    var showEfficacy: Bool = false
     var mIsUtm: Bool = false
     var mIsNewUtm: Bool = false
     var mIsUtmEye: Bool = false
@@ -101,6 +101,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsWaso: Bool = false
     var mUtmTechV: UtmTechnologiesView? = nil
     var mIsEE: Bool = false
+    var mIsSDP: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -123,6 +124,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     let techScrollV = UIScrollView()
     let efficacyScrollV = UIScrollView()
+    let efficacySDPScrollV = UIScrollView()
+    
+    // UTM2.0多言語化CSV
+    let mUtmArr = LanguageConfigure.utmcsv
 	
 	// 特殊な初期表示を行う商品ID辞書
 	private enum eTransitionDestinate {
@@ -222,6 +227,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
                 self.mIsEE = true
                 mCategoryButtonEfficacy.enabled = true
+            } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+                self.mIsSDP = true
+                mCategoryButtonEfficacy.enabled = true
+                self.setSDPEfficacySCV()
             } else if productId == 1 || productId == 2 {
             
                 mCategoryButtonEfficacy.enabled = false
@@ -297,7 +306,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		// 動画テロップデータ読み込み
 		self.movieTelop = TelopData(movieId: product.movie)
         
-        if isHowToUseView == true{
+        if isHowToUseView == true {
             mBtnCurrentSelect?.selected = false
             let sender = self.mCategoryButtonHowToUse
             mBtnCurrentSelect = sender
@@ -310,7 +319,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             showInfo(sender!)
         }
         
-        
+
         if self.product.productId == 588 {
             
             self.efficacyScrollV.delegate = self
@@ -331,6 +340,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setGeneratingView()
             self.setEnhanceView()
             self.setImucalmView()
+            
+            if showEfficacy == true{
+                mBtnCurrentSelect?.selected = false
+                let sender = self.mCategoryButtonEfficacy
+                mBtnCurrentSelect = sender
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
+                
+                showUtmInfo(sender!)
+            }
         }
         
     }
@@ -358,7 +380,45 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		// 初期特殊遷移
 		self.initialTransition()
     }
-
+    
+    func setSDPEfficacySCV(){
+        self.efficacySDPScrollV.delegate = self
+        self.efficacySDPScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.efficacySDPScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*3)
+        self.efficacySDPScrollV.isPagingEnabled = true
+        self.efficacySDPScrollV.bounces = false
+        
+        if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+            for i in 0...1{
+                let nib = UINib(nibName: "SDPEfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? SDPEfficacyResultView else { return }
+                efficacyView.frame = CGRect(x: 0, y: self.mVContent.height * CGFloat(i), width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                var start = 0
+                switch productId {
+                case 565:
+                    start = 1
+                case 566:
+                    start = 17
+                case 567:
+                    start = 34
+                case 568:
+                    start = 50
+                case 569:
+                    start = 66
+                default:
+                    break // do nothing
+                }
+                let index = i == 0 ? start : start + i * 8
+                efficacyView.setTexts(start_index: index)
+                
+                self.efficacySDPScrollV.addSubview(efficacyView)
+            }
+        } 
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         if mIsUtm || mIsUtmEye || mIsNewUtm{
             mUtmFeaturesView.showAnimation()
@@ -502,6 +562,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         var datas = [ProductDetailTransitionData]()
         
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
+        //　LifeStyleBuautyの表示がされない
         if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
             datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
@@ -564,7 +625,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 505 {
             itemId = 7894
         } else if productId == 506 {
-            image = #imageLiteral(resourceName: "moisturizer oil free")
+            image = #imageLiteral(resourceName: "lifestyle6")
             itemId = 7896
         } else if productId == 507 {
             image =  #imageLiteral(resourceName: "day moisturizer")
@@ -587,6 +648,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 512 {
             image = #imageLiteral(resourceName: "fresh jelly")
             itemId = 7892
+        } else if productId == 570 {
+            image = #imageLiteral(resourceName: "red_shiso")
+            itemId = 7948
+        } else if productId == 571 {
+            image = #imageLiteral(resourceName: "yuzu")
+            itemId = 7949
         }
         if itemId != nil {
             mWasoFeatureView.hukidashiText = AppItemTable.getJsonByItemId(itemId: itemId!)?.dictionary?["name"]?.string
@@ -671,9 +738,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			509: #colorLiteral(red: 1, green: 0.8823529412, blue: 0.7647058824, alpha: 1),
 			510: #colorLiteral(red: 0.9725490196, green: 0.968627451, blue: 0.9215686275, alpha: 1),
 			511: #colorLiteral(red: 0.9921568627, green: 0.8980392157, blue: 0.737254902, alpha: 1),
-			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1)
+			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1),
+            570: #colorLiteral(red: 0.9691396356, green: 0.8943914771, blue: 0.9179174304, alpha: 1),
+            571: #colorLiteral(red: 0.8692010045, green: 0.918646872, blue: 0.8133074045, alpha: 1),
 		]
-		
 		if let color = colorDic[self.productId] {
 			self.mWasoFeatureView.showGuideView(frameColor: color)
 		}
@@ -708,7 +776,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(utmTechView!)
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
-
+            
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
@@ -721,7 +789,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 mVContent.addSubview(wasoEfficacyView)
                 wasoEfficacyView.backImage = mImgVBackImage.image
-
+                
                 if productId == 506 {
                     wasoEfficacyView.setupGreen()
                 } else {
@@ -750,7 +818,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.addSubview(utmEfficacyView)
                 utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
-            
+                
             } else if productId == 555 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
@@ -787,6 +855,87 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect = utmEfficacyView
             }
 
+        } else{
+            let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+            mVContent.addSubview(utmDefendView!)
+            mVCurrentSelect = utmDefendView
+        }
+    }
+
+    private func showSDPInfo(_ sender: CategoryButton) {
+        if sender === mCategoryButtonFeatures {
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            
+//            if productId >= 565 && productId <= 569 {
+//                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
+//                var image: UIImage = FileTable.getImage(6613)!
+//                let resize = CGSize(width: self.view.width, height: self.view.height + 200)
+//                UIGraphicsBeginImageContext(resize)
+//                image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 200))
+//                image = UIGraphicsGetImageFromCurrentImageContext()!
+//                self.view.backgroundColor = UIColor(patternImage: image)
+//                mRelationScrollV.backgroundColor = UIColor.clear
+//                mRelationPearentView.backgroundColor = UIColor.clear
+//                productDetailFeaturesView.isHidden = false
+//                productNamesView.isHidden = false
+//            }
+            
+            return
+        }
+        mVContent.isHidden = false
+        mVCurrentSelect?.removeFromSuperview()
+
+        if sender === mCategoryButtonEfficacy {
+            if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569{
+                mVContent.addSubview(self.efficacySDPScrollV)
+                mVCurrentSelect = self.efficacySDPScrollV
+            } else if productId == 566 {
+                let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                mVContent.addSubview(wasoEfficacyView)
+                wasoEfficacyView.backImage = mImgVBackImage.image
+                
+                if productId == 567 {
+                    wasoEfficacyView.setupGreen()
+                } else {
+                    wasoEfficacyView.setupOrange()
+                }
+                mVCurrentSelect = wasoEfficacyView
+            } else if productId == 568 {//
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyMoisturizingCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            } else if productId == 569 {
+                productDetailFeaturesView.isHidden = true
+                productNamesView.isHidden = true
+                
+                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView.isEssentialEnergyMoisturizingGelCream = true
+                utmEfficacyView.backgroundColor = UIColor.clear
+                mVContent.backgroundColor = UIColor.clear
+                mVContent.addSubview(utmEfficacyView)
+                utmEfficacyView.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            } else {
+                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                utmEfficacyView?.isUtm = mIsUtm
+                utmEfficacyView?.isUtmEye = mIsUtmEye
+                utmEfficacyView?.isWhiteLucent = mIsWhiteLucentOnMakeUp
+                utmEfficacyView?.isAllDayBright = mIsWhiteLucentWhiteLucentAllDay
+                utmEfficacyView?.isIBUKI = mIsIbuki
+                mVContent.addSubview(utmEfficacyView!)
+                utmEfficacyView?.showEfficacyDetail()
+                mVCurrentSelect = utmEfficacyView
+            }
+            
         } else{
             let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
             mVContent.addSubview(utmDefendView!)
@@ -1052,6 +1201,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else {
             if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
                 showUtmInfo(sender)
+            } else if mIsSDP {
+                showSDPInfo(sender)
             } else {
                 showInfo(sender)
             }
@@ -1103,15 +1254,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         let titleLabel = UILabel()
         titleLabel.frame = CGRect(x: 20 , y: 60, width: 600, height: 30)
-        titleLabel.text = "ImuGeneration Technology"
+        titleLabel.text = mUtmArr["1"] // "ImuGeneration Technology"
         titleLabel.font = UIFont(name: "Reader-Bold", size: 18)
         titleLabel.textColor = red
         
         let titleDescription = UILabel()
         titleDescription.frame = CGRect(x: 0, y: 420, width: 900, height: 100)
         titleDescription.centerX = self.mVContent.centerX
-        titleDescription.text = "To continuously generate new Langerhans cells and enhance their strength,\nShiseido’s ImuGenerationTM Technology involves three distinct ingredient combinations.\nThis triple system supports skin’s inner defenses and calms damage factors."
-        titleDescription.font = UIFont(name: "Reader-Bold", size: 18)
+        titleDescription.text = mUtmArr["8"] // "To continuously generate new Langerhans cells and enhance their strength,\nShiseido’s ImuGenerationTM Technology involves three distinct ingredient combinations.\nThis triple system supports skin’s inner defenses and calms damage factors."
+        titleDescription.font = UIFont(name: "Reader-Bold", size: 16)
         titleDescription.numberOfLines = 0
         titleDescription.textAlignment = NSTextAlignment.center
         titleDescription.textColor = UIColor.black
@@ -1146,8 +1297,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             topicDesctription.textAlignment = .center
             topicDesctription.centerX = circleBtn.centerX
-            topicDesctription.font = UIFont(name: "Reader-Regular", size: 16)
-            topicDesctription.font = topicDesctription.font.withSize(16)
+            topicDesctription.font = UIFont(name: "Reader-Medium", size: 13)
+            topicDesctription.font = topicDesctription.font.withSize(13)
             
             self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
 
@@ -1174,8 +1325,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         descriptionText.textAlignment = NSTextAlignment.center
 
         if i == 0{
-            titleText.text = "1. Generating"
-            descriptionText.text = "Langerhans cells"
+            titleText.text = mUtmArr["2"] // "1. Generating"
+            descriptionText.text = mUtmArr["3"] // "Langerhans cells"
   
             let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
             let imageView = UIImageView(image:image1)
@@ -1190,8 +1341,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             generateV.addSubview(imageView2)
             
         }else if i == 1{
-            titleText.text = "2. Enhances"
-            descriptionText.text = "the powers of\nLangerhans cells"
+            titleText.text = mUtmArr["4"] // "2. Enhances"
+            descriptionText.text = mUtmArr["5"] // "the powers of\nLangerhans cells"
             
             let image1:UIImage = UIImage(named:"Rose-Water_image.png")!
             let imageView = UIImageView(image:image1)
@@ -1212,8 +1363,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             generateV.addSubview(imageView3)
 
         }else if i == 2{
-            titleText.text = "3. Improving"
-            descriptionText.text = "the environment for\nLangerhans cell\nfunctions"
+            titleText.text = mUtmArr["6"] // "3. Improving"
+            descriptionText.text = mUtmArr["7"] // "the environment for\nLangerhans cell\nfunctions"
             
             let image1:UIImage = UIImage(named:"Ginko.png")!
             let imageView = UIImageView(image:image1)
@@ -1258,12 +1409,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         self.techScrollV.setContentOffset(offset, animated: true)
     }
     
-      //*scrollview
-//    func setTechScrollView(){
-//        mVContent.addSubview(techScrollV)
-//        mVCurrentSelect = techScrollV
-//    }
-    
+
     //*GeneratiogView
     func setGeneratingView(){
         let generateV = UIView()
@@ -1297,27 +1443,27 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             if i == 1{
                 text.frame = CGRect(x: 20 , y: 5, width: 400, height: 60)
-                text.text = "Ingredients that generate\nmore Langerhans cells"
+                text.text = mUtmArr["9"] // "Ingredients that generate\nmore Langerhans cells"
                 text.font = UIFont(name: "Reader-Bold", size: 22)
             }else if i == 2{
-                text.frame = CGRect(x: 100 , y: 90, width: 1000, height: 50)
-                text.text = "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.frame = CGRect(x: 100 , y: 90, width: 500, height: 50)
+                text.text = mUtmArr["10"] // "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 3{
                 text.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
-                text.text = "Ingredients nurture\nLangerhans cell growth."
+                text.text = mUtmArr["11"] // "Ingredients nurture\nLangerhans cell growth."
                 text.font = UIFont(name: "Reader-Bold", size: 18)
                 text.textColor = red
             }else if i == 4{
                 text.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
                 text.centerX = imageView1.centerX
-                text.text = "Reishi Extract"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.text = mUtmArr["12"] // "Reishi Extract"
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 5{
                 text.frame = CGRect(x: 0 , y:365, width: 130, height: 50)
                 text.centerX = imageView2.centerX
-                text.text = "Iris Root Extract"
-                text.font = UIFont(name: "Reader-Regular", size: 18)
+                text.text = mUtmArr["13"] // "Iris Root Extract"
+                text.font = UIFont(name: "Reader-Medium", size: 12)
             }
 
             generateV.addSubview(text)
@@ -1354,34 +1500,34 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             graphLabel.textColor = UIColor.black
             graphLabel.numberOfLines = 0
             graphLabel.textAlignment = NSTextAlignment.left
-            graphLabel.font = UIFont(name: "Reader-Regular", size: 18)
+            graphLabel.font = UIFont(name: "Reader-Medium", size: 12)
 
             
             if i == 1{
                 graphLabel.frame = CGRect(x: 520, y:220, width: 40, height: 20)
-                graphLabel.text = "High"
+                graphLabel.text = mUtmArr["14"] // "High"
                 graphLabel.font = graphLabel.font.withSize(16)
                 
             }else if i == 2{
                 graphLabel.frame = CGRect(x: 590 , y:160, width: 200, height: 100)
-                graphLabel.text = "Growth rate of\nprecursor cells into\nLangerhans cells"
+                graphLabel.text = mUtmArr["15"] // "Growth rate of\nprecursor cells into\nLangerhans cells"
                 
             }else if i == 3{
                 graphLabel.frame = CGRect(x: 600 , y:450, width: 170, height: 80)
-                graphLabel.text = "Under high\nstress*"
+                graphLabel.text = mUtmArr["16"] // "Under high\nstress*"
                 graphLabel.font = graphLabel.font.withSize(14)
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
 
             }else if i == 4{
                 graphLabel.frame = CGRect(x: 770 , y:450, width: 170, height: 80)
-                graphLabel.text = "Under high stress**\nwith Ultimune"
+                graphLabel.text = mUtmArr["17"] // "Under high stress**\nwith Ultimune"
                 graphLabel.font = graphLabel.font.withSize(14)
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
             }else if i == 5{
                 graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
-                graphLabel.text = "*in vitro **By adding a stress hormone in vitro data"
+                graphLabel.text = mUtmArr["18"] // "*in vitro **By adding a stress hormone in vitro data"
                 graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
                 graphLabel.textColor = UIColor.lightGray
 
@@ -1409,28 +1555,28 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             if i == 1{
                 pageText.frame = CGRect(x: 20, y:5, width: 400, height: 60)
-                pageText.text = "Ingredients enhance\nstress-calming power"
+                pageText.text = mUtmArr["19"] // "Ingredients enhance\nstress-calming power"
                 pageText.font = UIFont(name: "Reader-Bold", size: 22)
                 
             }else if i == 2{
-                pageText.frame = CGRect(x: 100 , y: 85, width: 1000, height: 20)
-                pageText.text = "Ultimune ComplexTM"
+                pageText.frame = CGRect(x: 100 , y: 85, width: 500, height: 20)
+                pageText.text = mUtmArr["20"] // "Ultimune ComplexTM"
                 pageText.font = UIFont(name: "Reader-Bold", size: 18)
                 pageText.textColor = red
 
             }else if i == 3{
-                pageText.frame = CGRect(x: 100 , y: 95, width: 1000, height: 100)
-                pageText.text = "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
-                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.frame = CGRect(x: 100 , y: 95, width: 500, height: 100)
+                pageText.text = mUtmArr["21"] // "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
+                pageText.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 4{
                 pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
-                pageText.text = "Ultimune\nComplexTM"
+                pageText.text = mUtmArr["20"] // "Ultimune\nComplexTM"
                 pageText.font = UIFont(name: "Reader-Bold", size: 18)
                 pageText.textColor = red
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
-                pageText.text = "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
-                pageText.font = UIFont(name: "Reader-Regular", size: 18)
+                pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                pageText.font = UIFont(name: "Reader-Medium", size: 11)
                 pageText.font = UIFont(name: "Reader-Bold", size: 13)
                 pageText.textColor = UIColor.lightGray
             }
@@ -1487,22 +1633,22 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             graphText.numberOfLines = 0
             graphText.textAlignment = NSTextAlignment.center
             graphText.textColor = UIColor.black
-            graphText.font = UIFont(name: "Reader-Regular", size: 18)
+            graphText.font = UIFont(name: "Reader-Medium", size: 12)
             graphText.font = graphText.font.withSize(14)
 
             
             if i == 1{
                 graphText.frame = CGRect(x: 475, y: 232, width: 40, height: 40)
-                graphText.text = "High"
+                graphText.text = mUtmArr["14"] // "High"
             }else if i == 2{
                 graphText.frame = CGRect(x: 470, y: 315, width: 40, height: 40)
-                graphText.text = "100%"
+                graphText.text = mUtmArr["22"] // "100%"
             }else if i == 3{
                 graphText.frame = CGRect(x: 590, y: 453, width: 120, height: 60)
-                graphText.text = "without Ultimune\ncomplex"
+                graphText.text = mUtmArr["23"] // "without Ultimune\ncomplex"
             }else if i == 4{
                 graphText.frame = CGRect(x: 760, y: 453, width: 120, height: 60)
-                graphText.text = "with Ultimune\ncomplex"
+                graphText.text = mUtmArr["24"] // "with Ultimune\ncomplex"
             }
             
             enhanceV.addSubview(graphText)
@@ -1570,13 +1716,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             title.textAlignment = .center
             
             if i == 0{
-                title.text = "Lorem ipsum dolor sit amet,"
+                title.text =  mUtmArr["26"] 
 
             }else if i == 1{
-                title.text = "Skin looks smoother, more dewy and radiant."
+                title.text = mUtmArr["30"] // "Skin looks smoother, more dewy and radiant."
 
             }else if i == 2{
-                title.text = "Lorem ipsum dolor sit amet,"
+                title.text = mUtmArr["32"]
             }
             
             let imageNum = i + 1
@@ -1593,11 +1739,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             beforeBtn.isEnabled = false
             beforeBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
             beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
-            beforeBtn.setTitle("Before", for: .normal)
+            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
             beforeBtn.isEnabled = false
             beforeBtn.setTitleColor(UIColor.white, for: .normal)
             beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
             beforeBtn.tag = 10 + i//100
             beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -1605,14 +1751,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             afterBtn.isEnabled = true
             afterBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*i), width: 145, height: 30)
             afterBtn.origin.x = self.mVContent.centerX + 10
-            afterBtn.setTitle("After 4 Weeks", for: .normal)
+            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
             afterBtn.isEnabled = true
             afterBtn.setTitleColor(UIColor.white, for: .normal)
             afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             
             afterBtn.setTitleColor(UIColor.black, for: .normal)
             afterBtn.backgroundColor = UIColor.white
-            afterBtn.titleLabel?.font = UIFont(name: "Reader-Regular", size: 18)
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
             afterBtn.tag = 20 + i//200
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -1648,36 +1794,52 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let title = UILabel()
         title.textColor = UIColor.black
         title.font = UIFont(name: "Reader-Bold", size: 22)
-        title.text = "After 4 weeks of use:"
+        title.text = mUtmArr["34"] // "After 4 weeks of use:"
         title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*3), width: 700, height: 40)
         title.centerX = self.mVContent.centerX
         title.textAlignment = .center
         self.efficacyScrollV.addSubview(title)
         
         for i in 1...3{
-            let image:UIImage = UIImage(named:"percent_0\(i).png")!
-            let percentImageV = UIImageView(image:image)
-            percentImageV.contentMode = .scaleToFill
-            percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
-
-            self.efficacyScrollV.addSubview(percentImageV)
+            // 画像の場合
+            // let image:UIImage = UIImage(named:"percent_0\(i).png")!
+            // let percentImageV = UIImageView(image:image)
+            // percentImageV.contentMode = .scaleToFill
+            // percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
+            
+            // self.efficacyScrollV.addSubview(percentImageV)
+            
+            // テキストの場合
+            let percentLabel = UILabel()
+            percentLabel.textColor = UIColor.black
+            percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
+            if i == 1 {
+                percentLabel.text = mUtmArr["35"]
+            } else if i == 2 {
+                percentLabel.text = mUtmArr["37"]
+            } else {
+                percentLabel.text = mUtmArr["39"]
+            }
+            percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 160, height: 82)
+            percentLabel.textAlignment = .center
+            self.efficacyScrollV.addSubview(percentLabel)
         }
         
         for i in 1...3{
             let description = UILabel()
             description.textColor = UIColor.black
-            description.font = UIFont(name: "Reader-Regular", size: 18)
+            description.font = UIFont(name: "Reader-Medium", size: 12)
             description.numberOfLines = 0
             description.textAlignment = .left
             description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 200, height: 150)
 
             
             if i == 1{
-                description.text = "of women felt that the product\nwas effective overall"
+                description.text = mUtmArr["36"] // "of women felt that the product\nwas effective overall"
             }else if i == 2{
-                description.text = "of women felt their skin was\ndefended against harsh\nenvironments"
+                description.text = mUtmArr["38"] // "of women felt their skin was\ndefended against harsh\nenvironments"
             }else if i == 3{
-                description.text = "of women said their skin\nquality was improved overall"
+                description.text = mUtmArr["40"] // "of women said their skin\nquality was improved overall"
             }
             self.efficacyScrollV.addSubview(description)
         }
@@ -1686,20 +1848,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         for i in 1...4{
             let text = UILabel()
             text.textColor = UIColor.lightGray
-            text.font = UIFont(name: "Reader-Regular", size: 18)
+            text.font = UIFont(name: "Reader-Medium", size: 12)
             text.font = text.font.withSize(13)
             text.textAlignment = .center
             text.numberOfLines = 0
             text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 200, height: 40)
             
             if i == 1{
-                text.text = "*28-year-old"
+                text.text = mUtmArr["29"] // "*28-year-old"
 
             } else if i == 2{
-                text.text = "*39-year-old"
+                text.text = mUtmArr["31"] // "*39-year-old"
 
             } else if i == 3{
-                text.text = "*40-year-old"
+                text.text = mUtmArr["33"] // "*40-year-old"
 
             } else if i == 4{
                 text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 300, height: 60)

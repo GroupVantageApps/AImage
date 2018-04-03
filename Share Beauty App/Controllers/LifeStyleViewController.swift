@@ -143,14 +143,20 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
         (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
 //        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
+<<<<<<< HEAD
         (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(98), width: CGFloat(420), height: CGFloat(200)),
         (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(98), width: CGFloat(420), height: CGFloat(200)),
+=======
+//        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+//        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+>>>>>>> vit-dev-sdp-eee
         ]
 
     private let labelItems = [
         (discription: 7928, x: CGFloat(170), y: CGFloat(160), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
         (discription: 7930, x: CGFloat(680), y: CGFloat(102), width: CGFloat(400), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
         //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
+<<<<<<< HEAD
         (discription: 7935, x: CGFloat(565), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //UTMt-hirai 太陽の左の文字
         (discription: 7937, x: CGFloat(1450), y: CGFloat(112), width: CGFloat(400), font:UIFont(name: "Reader-Bold", size: 15)),//WASO 右吹き出しテキストx:1280y:105
         // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),　FDの吹き出し参考
@@ -158,6 +164,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
         (discription: 7931, x: CGFloat(1970), y: CGFloat(130), width: CGFloat(260), font:UIFont(name: "Reader-Bold", size: 15)),//追加MakeUp吹き出しテキスト
         (discription: 7931, x: CGFloat(2450), y: CGFloat(130), width: CGFloat(260), font:UIFont(name: "Reader-Bold", size: 15)),//追加MakeUp吹き出しテキスト
+=======
+        (discription: 7935, x: CGFloat(565), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
+        (discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//右吹き出しテキストx:1280y:105
+        // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)), //FDの吹き出し参考
+        //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
+        //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
+//        (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+//        (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+>>>>>>> vit-dev-sdp-eee
 
         ]
     private let countryFontScale = [
@@ -194,7 +209,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
         //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
+        // productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
+        // makeUp ID = 578, 572
+        productIds = [564,9999,566,568,LanguageConfigure.UTMId, 570, 571]
     }
     
     override func viewDidLayoutSubviews() {
@@ -426,7 +443,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         var i = 0
         for productId in productIds {
             let data: ProductData = ProductData(productId: productId)
-
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)
                 secondsProducts[i] = [data]
@@ -466,6 +482,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
         }
         var productsCount = 0
+        
+        // 各コンテンツ表示
         for enumerated in productList.products.enumerated() {
             let viewWidth = CGFloat(246)
             let viewHeight = CGFloat(480)
@@ -489,16 +507,21 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     
                     //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
                     print("offset:*\(enumerated.offset)")
+                    // 最初の商品とMakeUpのHowToUse画像とラベルの表示
                     if i == 1{
-                        imageView.image = FileTable.getImage(6534)
+                        // 最初の商品の顔イラスト
+                        // imageView.image = FileTable.getImage(6534)
                         imageView.tag = 88
-                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: viewHeight)
+                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: 
+                            viewHeight)
                     }else if 8 <=  i && i <= 11  {
                         imageView.image = UIImage.init(named: "makeup_\(i - 7)")
                         imageView.tag = 89 + i - 8
                         
                         labe.text = tmpMakeupStrings[i - 8]
                         mScrollV.addSubview(labe)
+                        print("-------------------------------------------")
+                        print(labe.text!)
                         let product_offset_width = 8 * viewWidth
                         imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
                         
@@ -508,8 +531,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         
                         labe.text = tmpMakeupStrings[i - 9]
                         mScrollV.addSubview(labe)
+                        print("-------------------------------------------")
+                        print(labe.text!)
                         imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
                     }
+                    // 商品画像の表示
                     contentWidth += imageView.frame.size.width
                     imageView.isUserInteractionEnabled = true
                     imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
@@ -536,6 +562,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             contentWidth += viewWidth
             
         }
+        // for文終わり
 
         if whiteLucentProductsCount != 0 && contentWidth < 2520 {
            contentWidth = 2520

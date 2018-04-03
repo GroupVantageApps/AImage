@@ -103,6 +103,7 @@ class ContentDownloader: NSObject {
                 if JSON(value)["result"].string == "0" {
                     completion(.success)
                     self.unzipLXFile()
+                    self.unzipUtmFile()
                 } else {
                     completion(.failure(ContentDownloadError.sendComplete))
                 }
@@ -467,5 +468,65 @@ class ContentDownloader: NSObject {
             print(e)
         }
         
+    }
+    // unzipテスト用関数 使用：ContentDownloader.default.unzipTest()
+    func unzipTest() {
+        self.unzipUtmFile()
+    }
+    // UTM2.0 多言語化
+    private func unzipUtmFile() {
+        let manager = FileManager()
+        
+        let csvFilePathStr = NSHomeDirectory() + "/Documents/utm2_csv"
+        if manager.fileExists(atPath: csvFilePathStr) {
+            do {
+                let filePath: URL = URL.init(string: csvFilePathStr)!
+                print(filePath)
+                try manager.removeItem(at: filePath)
+            } catch let e {
+                print(e)
+            }
+        }
+        
+        let csvFileUrl: URL = FileTable.getPath(6610)
+        print(csvFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvFileUrl)
+            print(destinationURL)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/utm2_csv/utm2_csv/%@_utm2.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.utmcsv = csv
+            
+        } catch let e {
+            print(e)
+        }
+        
+        let csvLS2FileUrl: URL = FileTable.getPath(6611)
+        print(csvLS2FileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvLS2FileUrl)
+            print(destinationURL)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/lx2_csv/lx2_csv/%@_lx2.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.lx2csv = csv
+            
+        } catch let e {
+            print(e)
+        }
+        
+        let csvSDPFileUrl: URL = FileTable.getPath(6613)
+        print(csvSDPFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvSDPFileUrl)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.sdp_eee_csv = csv
+            
+        } catch let e {
+            print(e)
+        }
     }
 }

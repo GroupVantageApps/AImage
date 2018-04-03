@@ -96,7 +96,8 @@ struct Const {
 
     static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [497, 115, 511] //waso追加　平井20170217　（アイテムは暫定）115, 497, 511
-    static let lifeStyleBeautyListC = [372, 421]
+    // static let lifeStyleBeautyListC = [372, 421]
+    static let lifeStyleBeautyListC = [372, 421, 564, 566, 568, 570, 571] //不足分追加
     static let lifeStyleBeautyListD = [533, LanguageConfigure.UTMId, 534] //34 ibuki　平井20170307>> LS専用アイテムとして登録
     static let lifeStyleBeautyListE = [313, 513] //[513, 252, 313]
     static let lifeStyleBeautyListF = [455, 101] //[101,  455]

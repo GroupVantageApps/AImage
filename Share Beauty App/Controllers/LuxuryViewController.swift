@@ -111,7 +111,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         
         let toDetailBtn = UIButton()
         toDetailBtn.frame = CGRect(x: 0, y: 6, width: testBlurrView.frame.width, height: testBlurrView.frame.height-4)
-        toDetailBtn.setTitle("Details", for: .normal)
+        let lx2Cstv = LanguageConfigure.lx2csv
+        toDetailBtn.setTitle(lx2Cstv["1"], for: .normal)
         toDetailBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 28)
         toDetailBtn.titleLabel?.textColor = UIColor.white
         toDetailBtn.titleLabel?.textAlignment = NSTextAlignment.center

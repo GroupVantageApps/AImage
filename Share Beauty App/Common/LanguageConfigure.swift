@@ -14,7 +14,10 @@ class LanguageConfigure: NSObject {
     private static let defaultCountryId = 6
     private static let defaultLanguageId = 21
     private static let lxCsv = "LxCsv"
+    private static let lx2Csv = "Lx2Csv"
     private static let gscCsv = "GscCsv"
+    private static let utmCsv = "UtmCsv"
+    private static let sdp_eeeCsv = "SdpEeeCsv"
     private static let gscPlist = "GscPlist"
     private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
@@ -152,7 +155,20 @@ class LanguageConfigure: NSObject {
         }
     }
     
-    
+    static var lx2csv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: lx2Csv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ] 
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: lx2Csv)
+            userDefault.synchronize()
+        }
+    }
     static var gsccsv: [ String : String ] {
         get {
             if let value = UserDefaults.standard.object(forKey: gscCsv) {
@@ -164,6 +180,35 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: gscCsv)
+            userDefault.synchronize()
+        }
+    }
+    static var utmcsv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: utmCsv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ]
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: utmCsv)
+            userDefault.synchronize()
+        }
+    }
+    
+    static var sdp_eee_csv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: sdp_eeeCsv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ]
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: sdp_eeeCsv)
             userDefault.synchronize()
         }
     }
