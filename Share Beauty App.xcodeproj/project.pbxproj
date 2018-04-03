@@ -541,7 +541,6 @@
 		DE80C67720726DB000CD326A /* 18aw_82.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67620726DAF00CD326A /* 18aw_82.png */; };
 		DE80C67B20726DCC00CD326A /* 18aw_98.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67820726DCC00CD326A /* 18aw_98.png */; };
 		DE80C67C20726DCC00CD326A /* 18aw_97.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67920726DCC00CD326A /* 18aw_97.png */; };
-		DE80C67D20726DCC00CD326A /* 18aw_92.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67A20726DCC00CD326A /* 18aw_92.png */; };
 		DE80C67F2072937C00CD326A /* 18aw_77.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C67E2072937C00CD326A /* 18aw_77.png */; };
 		DE80C6822072939D00CD326A /* 18aw_93.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C6802072939C00CD326A /* 18aw_93.png */; };
 		DE80C6832072939D00CD326A /* 18aw_88.png in Resources */ = {isa = PBXBuildFile; fileRef = DE80C6812072939C00CD326A /* 18aw_88.png */; };
@@ -2690,7 +2689,6 @@
 				C050C9111E82619F0009679D /* wab01_after.jpg in Resources */,
 				2608BF8F2029846E00E7F900 /* ns_page_03.png in Resources */,
 				C00D555E1DC6146A008795D4 /* ColorballCollectionView.xib in Resources */,
-				DE80C67D20726DCC00CD326A /* 18aw_92.png in Resources */,
 				C050C9811E8267450009679D /* eye_after.png in Resources */,
 				DE2C91361E9C681100B5FC4A /* LuxuryViewController.storyboard in Resources */,
 				C037CBB21D88112A00DEFE14 /* IdealSelectCollectionView.xib in Resources */,
