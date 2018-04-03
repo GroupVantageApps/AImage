@@ -301,6 +301,50 @@ class Utility: NSObject {
         return (isReachable && !needsConnection)
     }
     
+    
+    class func reloadCsvData(){
+        let languageCode = LanguageTable.getEntity( LanguageConfigure.languageId )
+        let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
+        let csv = Utility.csvToArray(file: filePath)
+        LanguageConfigure.lxcsv = csv
+        
+
+        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
+        let gscCsv = Utility.csvToArray(file: gscFilePath)
+        LanguageConfigure.gsccsv = gscCsv
+        
+        let lx2filePath = String(format: "file://%@/Documents/lx2_csv/lx2_csv/%@_lx2.csv", NSHomeDirectory(), languageCode.code)
+        let csv_lx2 = Utility.csvToArray(file: lx2filePath)
+        LanguageConfigure.lx2csv = csv_lx2
+        
+        let filePath_sdp_eee_csv = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
+        let sdp_eee_csv = Utility.csvToArray(file: filePath_sdp_eee_csv)
+        LanguageConfigure.sdp_eee_csv = sdp_eee_csv
+        
+        let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+        
+        let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
+        if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
+            let group = groupingDic[String(countryCode.code)] as? String ?? "A"
+            LanguageConfigure.gscgroup = group
+        }
+
+        let gscPlistFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
+        print(gscPlistFilePath)
+        
+        if let dataDic = NSDictionary(contentsOfFile: gscPlistFilePath) as? Dictionary<String, AnyObject> {
+            print(dataDic)
+            LanguageConfigure.gscplist = dataDic
+        }
+        
+        let path = FileTable.getPath(6104)
+        if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
+            let yutakaArr = dic[countryCode.code] as! [Int]
+            LanguageConfigure.lxyutaka = yutakaArr
+        }
+        
+    }
+    
     @objc class func setAImageFromObjc(view:UIScrollView, rect:CGRect, id:Int, delayTime:Double) {
         let image = FileTable.getAImage(id)
         let iv = APNGImageView(image:image)

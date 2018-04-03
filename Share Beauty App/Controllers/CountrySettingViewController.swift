@@ -196,39 +196,9 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         DownloadConfigure.downloadStatus = .success
         DownloadConfigure.releaseTarget()
         LanguageConfigure.languageId = LanguageTable.getFirstEntity().languageId!
-
-        let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-        let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
-        let csv = Utility.csvToArray(file: filePath)
-        LanguageConfigure.lxcsv = csv
-          
-        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
-        let gscCsv = Utility.csvToArray(file: gscFilePath)
-        LanguageConfigure.gsccsv = gscCsv
         
-        let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
+        Utility.reloadCsvData()
         
-        let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
-        if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
-            let group = groupingDic[String(countryCode.code)] as? String ?? "A"
-            LanguageConfigure.gscgroup = group
-        }
-
-        let gscPlistFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
-        print(gscPlistFilePath)
-        
-        if let dataDic = NSDictionary(contentsOfFile: gscPlistFilePath) as? Dictionary<String, AnyObject> {
-            print(dataDic)
-            LanguageConfigure.gscplist = dataDic
-        }
-        
-        
-        let path = FileTable.getPath(6104)
-        if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
-            let yutakaArr = dic[countryCode.code] as! [Int]
-            LanguageConfigure.lxyutaka = yutakaArr
-        }
-
         SwiftSpinner.hide()
         if delegate == nil {
             UIApplication.shared.delegate?.window??.rootViewController =
