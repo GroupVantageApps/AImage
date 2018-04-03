@@ -147,40 +147,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         } else {
             DownloadConfigure.releaseTarget()
             LanguageConfigure.languageId = LanguageTable.getFirstEntity().languageId!
-            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-            let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
-            let csv = Utility.csvToArray(file: filePath)
-            LanguageConfigure.lxcsv = csv
-
-            let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
-            let gscCsv = Utility.csvToArray(file: gscFilePath)
-            LanguageConfigure.gsccsv = gscCsv
             
-            let gscGroupingPlistPath = String(format: "%@/Documents/gsc_plist/gsc_plist/s_grouping.plist", NSHomeDirectory())
-            
-            let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
-            
-            if let groupingDic = NSDictionary(contentsOfFile: gscGroupingPlistPath) as? Dictionary<String, AnyObject> {
-                print(LanguageConfigure.countryId)
-                let group = groupingDic[String(countryCode.code)] as? String ?? "A"
-                LanguageConfigure.gscgroup = group
-            }
-
-            let gscPlistFilePath = String(format: "%@/Documents/gsc_plist/gsc_plist/suncare_%@.plist", NSHomeDirectory(), LanguageConfigure.gscgroup)
-            print(gscPlistFilePath)
-            
-            if let dataDic = NSDictionary(contentsOfFile: gscPlistFilePath) as? Dictionary<String, AnyObject> {
-                print(dataDic)
-                LanguageConfigure.gscplist = dataDic
-            }
-            
-            let path = FileTable.getPath(6104)
-            if let dic = NSDictionary(contentsOf: path) as? [String: Any] {
-                print(dic)
-                print(countryCode.code)
-                let yutakaArr = dic[countryCode.code]
-                LanguageConfigure.lxyutaka = yutakaArr as! [Int]
-            }
+            Utility.reloadCsvData()
 
             if self.delegate == nil {
                 UIApplication.shared.delegate?.window??.rootViewController =
