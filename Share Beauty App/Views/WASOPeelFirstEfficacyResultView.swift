@@ -7,7 +7,7 @@
 //
 
 
-class EEEFirstEfficacyResultView: UIView {
+class WASOPeelFirstEfficacyResultView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FirstCircleLabel: UILabel!
     @IBOutlet weak var SecondCircleLabel: UILabel!
@@ -23,11 +23,12 @@ class EEEFirstEfficacyResultView: UIView {
     // 文字セット
     func setTexts() {
         let csvArr = LanguageConfigure.sdp_eee_csv
-        titleLabel.text = csvArr["1"]
-        FirstCircleLabel.text = csvArr["109"]
-        SecondCircleLabel.text = csvArr["110"]
-        ThirdCircleLabel.text = csvArr["111"]
-        ForthCircleLabel.text = csvArr["112"]
-        copyLabel.text = csvArr["113"]
+        titleLabel.text = csvArr["132"]
+        FirstCircleLabel.text = csvArr["133"]
+        SecondCircleLabel.text = csvArr["134"]
+        ThirdCircleLabel.text = csvArr["137"]
+        ForthCircleLabel.text = csvArr["138"]
+        copyLabel.text = csvArr["141"]
     }
 }
+
