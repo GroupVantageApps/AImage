@@ -273,7 +273,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
         
-        if productId == 588{
+        if [588, 593, 594].contains(self.product.productId){
             self.mIsNewUtm = true
             self.mIsUtm = false
         }
@@ -341,7 +341,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         
 
-        if self.product.productId == 588 {
+        if [588, 593, 594].contains(self.product.productId){
             
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
@@ -864,7 +864,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView.delegate = self
             mUtmFeaturesView.bottomPadding = 30
             var viewHeight = 300
-            if product.productId == 588 {
+            if [588, 593, 594].contains(self.product.productId) {
                 mUtmFeaturesView.isNewUtm = true
                 viewHeight = 240
             }
@@ -973,7 +973,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
-        } else if productId == 588{
+        } else if [588, 593, 594].contains(self.product.productId) {
             print("utm test")
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
@@ -1263,7 +1263,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         mVCategoryImage.isHidden = false
         
-        if productId == 588{
+        if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
             mVCurrentSelect?.removeFromSuperview()
             
