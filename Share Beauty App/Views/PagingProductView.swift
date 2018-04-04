@@ -20,6 +20,7 @@ class PagingProductView: BaseView, UICollectionViewDelegate, UICollectionViewDat
     @IBInspectable var varticalCellCount: CGFloat = 1
     var productPerList: Int = 1
     var listCount: Int = 1
+    var currentPage: Int = 0
     weak var delegate: CollectionProductViewDelegate?
 
     private var mProductImages = [Int:UIImage]()
@@ -35,6 +36,7 @@ class PagingProductView: BaseView, UICollectionViewDelegate, UICollectionViewDat
 
             productPerList = Int(horizontalCellCount * varticalCellCount)
             listCount = Int(ceilf(Float(products.count) / Float(productPerList)))
+            
             mPageControl.numberOfPages = Int(listCount)
 
             mCollectionV.register(UINib(nibName: "CollectionProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -97,7 +99,7 @@ class PagingProductView: BaseView, UICollectionViewDelegate, UICollectionViewDat
         if scrollView.contentOffset.x == 0 {
             nextPage = 0
         } else {
-            nextPage = Int(scrollView.width / scrollView.contentOffset.x)
+            nextPage = Int(scrollView.contentSize.width / (scrollView.contentSize.width - scrollView.contentOffset.x) )
         }
         if mPageControl.currentPage != nextPage {
             mPageControl.currentPage = nextPage
