@@ -1184,10 +1184,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         if sender === mCategoryButtonEfficacy {
             
-            if productId == 570 || productId == 571 {
+            if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
-            } 
+            } else if productId == 571 {
+                
+                let nib = UINib(nibName: "WASOSleepingFirstEfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView1 = views[0] as? WASOSleepingFirstEfficacyResultView else { return }
+                efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                self.mVContent.addSubview(efficacyView1)
+                mVCurrentSelect = efficacyView1
+            }
         } else if sender === mCategoryButtonHowToUse{
             let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)

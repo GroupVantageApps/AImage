@@ -529,6 +529,11 @@
 		DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91701E9C682500B5FC4A /* pick.png */; };
 		DE2C91B61E9C6F6E00B5FC4A /* LXProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */; };
 		DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2C91B71E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard */; };
+		DE310E3F2074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE310E3D2074AA8C00A6A5F7 /* WASOSleepingFirstEfficacyResultView.swift */; };
+		DE310E402074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE310E3E2074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib */; };
+		DE310E442074AD3100A6A5F7 /* waso_green_83.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E412074AD2F00A6A5F7 /* waso_green_83.png */; };
+		DE310E452074AD3100A6A5F7 /* waso_green_95.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E422074AD3000A6A5F7 /* waso_green_95.png */; };
+		DE310E462074AD3100A6A5F7 /* waso_green_96.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E432074AD3100A6A5F7 /* waso_green_96.png */; };
 		DE32704F1EC85337001B58D9 /* IngredientSkinGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */; };
 		DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */; };
 		DE38CC571F25C47E001656E5 /* GscThumnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38CC561F25C47E001656E5 /* GscThumnailCollectionViewCell.swift */; };
@@ -1244,6 +1249,11 @@
 		DE2C91701E9C682500B5FC4A /* pick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pick.png; sourceTree = "<group>"; };
 		DE2C91B51E9C6F6E00B5FC4A /* LXProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductDetailViewController.swift; sourceTree = "<group>"; };
 		DE2C91B81E9C6F8000B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LXProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		DE310E3D2074AA8C00A6A5F7 /* WASOSleepingFirstEfficacyResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WASOSleepingFirstEfficacyResultView.swift; sourceTree = "<group>"; };
+		DE310E3E2074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WASOSleepingFirstEfficacyResultView.xib; sourceTree = "<group>"; };
+		DE310E412074AD2F00A6A5F7 /* waso_green_83.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_83.png; sourceTree = "<group>"; };
+		DE310E422074AD3000A6A5F7 /* waso_green_95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_95.png; sourceTree = "<group>"; };
+		DE310E432074AD3100A6A5F7 /* waso_green_96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_96.png; sourceTree = "<group>"; };
 		DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSkinGraphContentView.swift; sourceTree = "<group>"; };
 		DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSkinGraphContentView.xib; sourceTree = "<group>"; };
 		DE38CC561F25C47E001656E5 /* GscThumnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscThumnailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1934,6 +1944,8 @@
 		C091BA721D69809F0073FEDB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE310E3D2074AA8C00A6A5F7 /* WASOSleepingFirstEfficacyResultView.swift */,
+				DE310E3E2074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib */,
 				DEC751F42073BCC200A9FC1C /* WASOPeelHowToUseResultView.swift */,
 				DEC751F62073BCC800A9FC1C /* WASOPeelHowToUseResultView.xib */,
 				DEBCF6BF20746F23001762A9 /* WASOPeelFirstEfficacyResultView.swift */,
@@ -2333,6 +2345,9 @@
 		DEC751F82073BD5C00A9FC1C /* WASO */ = {
 			isa = PBXGroup;
 			children = (
+				DE310E412074AD2F00A6A5F7 /* waso_green_83.png */,
+				DE310E422074AD3000A6A5F7 /* waso_green_95.png */,
+				DE310E432074AD3100A6A5F7 /* waso_green_96.png */,
 				DEBCF6C320747560001762A9 /* waso_after.png */,
 				DEBCF6C420747561001762A9 /* waso_before.png */,
 				DEC752002073BE2C00A9FC1C /* waso_87.png */,
@@ -2752,6 +2767,7 @@
 				C050C9201E82619F0009679D /* SHI-Web-F16-37_W27_HP_RougeRouge_opt.jpg in Resources */,
 				C050C8FC1E82619E0009679D /* features_smk_1.png in Resources */,
 				DE06F7231F16450200EF2FE2 /* suncare_bg.png in Resources */,
+				DE310E442074AD3100A6A5F7 /* waso_green_83.png in Resources */,
 				DE7D08221ED6E412006513FD /* LXProductViewController.storyboard in Resources */,
 				B38F63C51F47682700176804 /* MoisturizingCream01_after.png in Resources */,
 				26AD5D7E20231193002A2076 /* button.png in Resources */,
@@ -2917,6 +2933,7 @@
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
 				DE06F70F1F16450200EF2FE2 /* children.png in Resources */,
+				DE310E462074AD3100A6A5F7 /* waso_green_96.png in Resources */,
 				2680EC242037E4FA005257B1 /* makeup_5.png in Resources */,
 				DE2C301B20738CC900548627 /* EEESecondTechnologyView.xib in Resources */,
 				B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */,
@@ -3042,6 +3059,7 @@
 				C050C99E1E8267450009679D /* t_graph_red_eye.png in Resources */,
 				E56956791DF2F52C00BE9308 /* TopViewController.storyboard in Resources */,
 				C050C8FD1E82619F0009679D /* features_smk_2.png in Resources */,
+				DE310E452074AD3100A6A5F7 /* waso_green_95.png in Resources */,
 				DE2C918C1E9C682500B5FC4A /* lx_icon_recommend_selected.png in Resources */,
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
@@ -3097,6 +3115,7 @@
 				DE2C918A1E9C682500B5FC4A /* lx_icon_night.png in Resources */,
 				26768DA7202C5FD6005BE606 /* graph_05.png in Resources */,
 				DE2A165A1F0F7BEE00D2B2A1 /* GscTopViewController.storyboard in Resources */,
+				DE310E402074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib in Resources */,
 				C050C9951E8267450009679D /* t_bg_eye.png in Resources */,
 				DE2C91321E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard in Resources */,
 				C0CDEB0C1D98076C00420667 /* UtmFeaturesView.xib in Resources */,
@@ -3471,6 +3490,7 @@
 				C0306D4E1D6EC51800D56F45 /* CollectionProductView.swift in Sources */,
 				DE2C909A1E9C66E600B5FC4A /* LXYutakaConceptSubView.swift in Sources */,
 				C0A335E41D800324006A8FD1 /* TipsViewController.swift in Sources */,
+				DE310E3F2074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.swift in Sources */,
 				C98EBF771F28F8FE00BEEC1F /* LifeStyleFifthDetailViewController.swift in Sources */,
 				DE0DB6EC1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift in Sources */,
 				DE2C908C1E9C66E600B5FC4A /* LXProductDetailTag.swift in Sources */,
