@@ -1838,11 +1838,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
             }else if i == 5{
-                graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
+                graphLabel.frame = CGRect(x: 650 , y:490, width: 500, height: 20) //t-hirai
                 graphLabel.text = mUtmArr["18"] // "*in vitro **By adding a stress hormone in vitro data"
                 graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
                 graphLabel.textColor = UIColor.lightGray
-
+                graphLabel.numberOfLines = 3
             }
         
             generateV.addSubview(graphLabel)
@@ -1886,7 +1886,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 pageText.textColor = red
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
-                pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                //pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con" //t-hirai
                 pageText.font = UIFont(name: "Reader-Medium", size: 11)
                 pageText.font = UIFont(name: "Reader-Bold", size: 13)
                 pageText.textColor = UIColor.lightGray
@@ -2022,7 +2022,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let title = UILabel()
             title.textColor = UIColor.black
             title.font = UIFont(name: "Reader-Bold", size: 22)
-            title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+            title.numberOfLines = 3 //t-hirai
+            title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 80)//t-hirai
             title.centerX = self.mVContent.centerX
             title.textAlignment = .center
             
