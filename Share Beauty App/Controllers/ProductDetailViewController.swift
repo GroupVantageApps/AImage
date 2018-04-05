@@ -241,6 +241,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 564 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonHowToUse.enabled = true
             self.mIsEEE = true
              self.setEEESCV()
         } else if productId == 570 {
@@ -1238,7 +1239,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(self.technologyEEEScrollV)
             mVCurrentSelect = self.technologyEEEScrollV
         }  else if sender === mCategoryButtonHowToUse {
-            makeCategoryImages(product.usageImage)
+            mVContent.isHidden = false
+            mVCurrentSelect?.removeFromSuperview()
+            let makeupUsageView = MakeupUsageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+            mVContent.addSubview(makeupUsageView)
+            makeupUsageView.productId = productId
+            mVCurrentSelect = makeupUsageView
         } else if sender === mCategoryButtonDefend {
             if product.makeupLook {
                 makeCategoryImages(product.makeupLookImages)
