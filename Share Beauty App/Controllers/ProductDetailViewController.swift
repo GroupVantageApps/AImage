@@ -360,18 +360,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setEnhanceView()
             self.setImucalmView()
             
-            if showEfficacy == true{
-                mBtnCurrentSelect?.selected = false
-                let sender = self.mCategoryButtonEfficacy
-                mBtnCurrentSelect = sender
-                mBtnCurrentSelect?.selected = true
-                
-                mVContent.isHidden = true
-                mVCurrentSelect?.removeFromSuperview()
-                mVCurrentSelect = nil
-                
-                showUtmInfo(sender!)
-            }
         }
         
     }
@@ -713,6 +701,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let offset = CGPoint(x: 0, y: scrollV.size.height * CGFloat(self.indexHowToUse))
                 scrollV.setContentOffset(offset, animated: false)
             }
+        }
+        
+        if [588, 593, 594].contains(self.product.productId) && showEfficacy == true{
+            mBtnCurrentSelect?.selected = false
+            let sender = self.mCategoryButtonEfficacy
+            mBtnCurrentSelect = sender
+            mBtnCurrentSelect?.selected = true
+            
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            
+            showUtmInfo(sender!)
         }
     }
 
