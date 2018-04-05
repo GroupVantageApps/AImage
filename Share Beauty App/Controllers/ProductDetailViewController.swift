@@ -1639,7 +1639,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         if i == 0{
             titleText.text = mUtmArr["2"] // "1. Generating"
             descriptionText.text = mUtmArr["3"] // "Langerhans cells"
-  
+           
             let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
@@ -1880,9 +1880,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 pageText.text = mUtmArr["21"] // "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
                 pageText.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 4{
-                pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
+                pageText.frame = CGRect(x: 210 , y: 290, width: 150, height: 100)
+                pageText.textAlignment = NSTextAlignment.center
                 pageText.text = mUtmArr["20"] // "Ultimune\nComplexTM"
-                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.font = UIFont(name: "Reader-Bold", size: 17)
                 pageText.textColor = red
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
