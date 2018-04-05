@@ -709,10 +709,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mBtnCurrentSelect = sender
             mBtnCurrentSelect?.selected = true
             
-            mVContent.isHidden = true
-            mVCurrentSelect?.removeFromSuperview()
-            mVCurrentSelect = nil
-            
             showUtmInfo(sender!)
         }
     }
