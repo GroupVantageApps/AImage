@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Medium.otf">
+            <string>Reader-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="p8n-I9-JOQ" userLabel="EEESecondEfficacyResultView" customClass="EEESecondEfficacyResultView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="550"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgm-Ms-sWA">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="550"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HpW-vn-qfe">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="550"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It reduced the dark circles." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3F-6B-IbZ">
+                                    <rect key="frame" x="58" y="313" width="267" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The fine lines are less visible." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-gq-8k3">
+                                    <rect key="frame" x="370" y="313" width="298" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RP-tI-fit">
+                                    <rect key="frame" x="710" y="313" width="298" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">It makes my eyes seem bigger with the massage.</string>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Immediately after use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNK-ew-IyM">
+                                    <rect key="frame" x="157" y="28" width="342" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="》" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBh-Ga-VTl">
+                                    <rect key="frame" x="497" y="28" width="44" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpm-rz-WJl">
+                                    <rect key="frame" x="16" y="413" width="564" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">Test Site: FranceTest Period: June – July 2017Target: Women aged 25 – 37 who use eye cream and  use digital devices  more than 10 hours a day Sample: 109 – 110</string>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="12"/>
+                                    <color key="textColor" red="0.53719413279999995" green="0.53728991749999999" blue="0.5371881127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" After 4 weeks of regular use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay1-bu-juG">
+                                    <rect key="frame" x="534" y="28" width="342" height="59"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eee_6484.png" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-LV-iBH" userLabel="Second Image View">
+                                    <rect key="frame" x="42" y="132" width="298" height="172"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eee_7089.png" translatesAutoresizingMaskIntoConstraints="NO" id="yzg-R0-mcE" userLabel="Second Image View">
+                                    <rect key="frame" x="370" y="143" width="298" height="172"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eee_6081.png" translatesAutoresizingMaskIntoConstraints="NO" id="bfM-9f-JvG" userLabel="Second Image View">
+                                    <rect key="frame" x="710" y="143" width="298" height="172"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="550" id="wfO-Rh-rzb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="HpW-vn-qfe" secondAttribute="bottom" id="03C-S5-LTb"/>
+                        <constraint firstItem="HpW-vn-qfe" firstAttribute="leading" secondItem="Cgm-Ms-sWA" secondAttribute="leading" id="PNb-GJ-AsC"/>
+                        <constraint firstItem="HpW-vn-qfe" firstAttribute="width" secondItem="Cgm-Ms-sWA" secondAttribute="width" id="cfR-xP-NEF"/>
+                        <constraint firstItem="HpW-vn-qfe" firstAttribute="top" secondItem="Cgm-Ms-sWA" secondAttribute="top" id="eCe-kO-xuD"/>
+                        <constraint firstAttribute="trailing" secondItem="HpW-vn-qfe" secondAttribute="trailing" id="j1o-fQ-QW5"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Cgm-Ms-sWA" firstAttribute="leading" secondItem="p8n-I9-JOQ" secondAttribute="leading" id="01e-nE-toR"/>
+                <constraint firstItem="Cgm-Ms-sWA" firstAttribute="top" secondItem="p8n-I9-JOQ" secondAttribute="top" id="8Xj-Q5-Lig"/>
+                <constraint firstAttribute="bottom" secondItem="Cgm-Ms-sWA" secondAttribute="bottom" id="BAK-hk-ePM"/>
+                <constraint firstAttribute="trailing" secondItem="Cgm-Ms-sWA" secondAttribute="trailing" id="Mwd-wV-9Fc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="FirstCircleLabel" destination="W3F-6B-IbZ" id="Y1c-Q9-Rcf"/>
+                <outlet property="SecondCircleLabel" destination="vwP-gq-8k3" id="Nsg-Yf-vmz"/>
+                <outlet property="ThirdCircleLabel" destination="7RP-tI-fit" id="d4k-bq-lag"/>
+                <outlet property="copyLabel" destination="Qpm-rz-WJl" id="fgb-cR-HzN"/>
+                <outlet property="title2Label" destination="DBh-Ga-VTl" id="CNd-Oy-hvV"/>
+                <outlet property="title3Label" destination="ay1-bu-juG" id="siJ-71-oxk"/>
+                <outlet property="titleLabel" destination="HNK-ew-IyM" id="kyc-Y9-1Cg"/>
+            </connections>
+            <point key="canvasLocation" x="75" y="79"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="eee_6081.png" width="535" height="349"/>
+        <image name="eee_6484.png" width="535" height="349"/>
+        <image name="eee_7089.png" width="536" height="349"/>
+    </resources>
+</document>

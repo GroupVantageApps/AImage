@@ -102,6 +102,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mUtmTechV: UtmTechnologiesView? = nil
     var mIsEE: Bool = false
     var mIsSDP: Bool = false
+    var mIsEEE: Bool = false
+    var mIsWASO: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -125,9 +127,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     let techScrollV = UIScrollView()
     let efficacyScrollV = UIScrollView()
     let efficacySDPScrollV = UIScrollView()
+    let efficacyEEEScrollV = UIScrollView()
+    let technologyEEEScrollV = UIScrollView()
+    let efficacyWASOScrollV = UIScrollView()
     
     // UTM2.0多言語化CSV
     let mUtmArr = LanguageConfigure.utmcsv
+    let mEeeArr = LanguageConfigure.sdp_eee_csv
 	
 	// 特殊な初期表示を行う商品ID辞書
 	private enum eTransitionDestinate {
@@ -194,6 +200,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mRelationPearentView.backgroundColor = UIColor.clear
         }
         
+        
         mLblBeautyName.text = product.beautyName
         mLblLineName.text = product.lineName
         mLblProductName.text = product.productName
@@ -224,17 +231,31 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
        // if LanguageConfigure.languageId == 19 {
-            if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
-                self.mIsEE = true
-                mCategoryButtonEfficacy.enabled = true
-            } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
-                self.mIsSDP = true
-                mCategoryButtonEfficacy.enabled = true
-                self.setSDPEfficacySCV()
-            } else if productId == 1 || productId == 2 {
+        if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
+            self.mIsEE = true
+            mCategoryButtonEfficacy.enabled = true
+        } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+            self.mIsSDP = true
+            mCategoryButtonEfficacy.enabled = true
+            self.setSDPEfficacySCV()
+        } else if productId == 1 || productId == 2 {
             
-                mCategoryButtonEfficacy.enabled = false
-            }
+            mCategoryButtonEfficacy.enabled = false
+        } else if productId == 564 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonTechnologies.enabled = true
+            self.mIsEEE = true
+             self.setEEESCV()
+        } else if productId == 570 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsWASO = true
+            self.setWASOSCV()
+        } else if productId == 571 {
+            mCategoryButtonEfficacy.enabled = true
+            self.mIsWASO = true
+            self.setWASOSCV()
+        }
      //   }
         // HowToUseが空の時はViewを非表示
         if product.howToUse == "" {
@@ -242,9 +263,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 //            print(mConstraintTop.secondItem)
         }
         
-//        if product.usageImage == ProductDetailData(productId: 564).usageImage{
-//            mVHowToUse.isHidden = false
-//        }
+        if product.usageImage == ProductDetailData(productId: 564).usageImage{
+            mVHowToUse.isHidden = false
+        }
 		
 		if product.makeupLook {
 			mCategoryButtonDefend.enabled = product.makeupLookImages.count > 0
@@ -252,7 +273,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			mCategoryButtonDefend.enabled = mIsUtm
 		}
         
-        if productId == 588{
+        if [588, 593, 594].contains(self.product.productId){
             self.mIsNewUtm = true
             self.mIsUtm = false
         }
@@ -320,7 +341,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         
 
-        if self.product.productId == 588 {
+        if [588, 593, 594].contains(self.product.productId){
             
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
@@ -376,46 +397,306 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		if self.mIsWaso {
 			self.showWasoHukidashiGuideView()
 		}
-		
+
 		// 初期特殊遷移
 		self.initialTransition()
+    }
+    
+    func setWASOSCV(){
+        self.efficacyWASOScrollV.delegate = self
+        self.efficacyWASOScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.efficacyWASOScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*2)
+        self.efficacyWASOScrollV.isPagingEnabled = true
+        self.efficacyWASOScrollV.bounces = false
+        self.efficacyWASOScrollV.backgroundColor = UIColor.clear
+        
+        let nib = UINib(nibName: "WASOPeelFirstEfficacyResultView", bundle: nil)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        guard let efficacyView1 = views[0] as? WASOPeelFirstEfficacyResultView else { return }
+        efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+        
+        self.efficacyWASOScrollV.addSubview(efficacyView1)
+        
+        let title = UILabel()
+        title.text = mEeeArr["145"]
+        title.textColor = UIColor.black
+        title.font = UIFont(name: "Reader-Bold", size: 18)
+        title.frame = CGRect(x: 0, y: Int(self.efficacyWASOScrollV.frame.height), width: 500, height: 100)
+        title.centerX = self.mVContent.centerX
+        title.numberOfLines = 0
+        title.textAlignment = .left
+        
+        let label_35 = UILabel()
+        label_35.text = "35%UP"
+        label_35.textColor = UIColor.black
+        label_35.font = UIFont(name: "Reader-Bold", size: 50)
+        label_35.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 100 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 60)
+        label_35.numberOfLines = 0
+        label_35.textAlignment = .left
+        
+        let label_35_description = UILabel()
+        label_35_description.text = mEeeArr["148"]
+        label_35_description.textColor = UIColor.black
+        label_35_description.font = UIFont(name: "Reader-Medium", size: 15)
+        label_35_description.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 150 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 100)
+        label_35_description.numberOfLines = 0
+        label_35_description.textAlignment = .left
+    
+        let image_after = UIImage(named: "waso_after.png")
+        let faceImageV_after = UIImageView(image:image_after)
+        faceImageV_after.contentMode = .scaleAspectFit
+        faceImageV_after.clipsToBounds = true
+        faceImageV_after.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
+        faceImageV_after.centerX = self.mVContent.centerX
+        faceImageV_after.backgroundColor = UIColor.clear
+        
+        
+        
+        let image = UIImage(named: "waso_before.png")
+        let faceImageV = UIImageView(image:image)
+        faceImageV.contentMode = .scaleAspectFit
+        faceImageV.tag = 30 
+        faceImageV.clipsToBounds = true
+        faceImageV.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
+        faceImageV.centerX = self.mVContent.centerX
+        faceImageV.backgroundColor = UIColor.clear
+        
+        let beforeBtn = UIButton()
+        beforeBtn.isEnabled = false
+        beforeBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
+        beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
+        beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+        beforeBtn.isEnabled = false
+        beforeBtn.setTitleColor(UIColor.white, for: .normal)
+        beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+        beforeBtn.tag = 10
+        beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+        
+        let afterBtn = UIButton()
+        afterBtn.isEnabled = true
+        afterBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
+        afterBtn.origin.x = self.mVContent.centerX + 10
+        afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+        afterBtn.isEnabled = true
+        afterBtn.setTitleColor(UIColor.white, for: .normal)
+        afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        
+        afterBtn.setTitleColor(UIColor.black, for: .normal)
+        afterBtn.backgroundColor = UIColor.white
+        afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+        afterBtn.tag = 20
+        afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+        
+        
+        for j in 0...2{
+            let image:UIImage = UIImage(named:"point_01.png")!
+            let border = UIImageView(image:image)
+            border.contentMode = .scaleToFill
+            
+            if j == 0{
+                border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+            }else if j == 1{
+                border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                
+            }else if j == 2{
+                border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                
+            }
+            
+            self.efficacyWASOScrollV.addSubview(border)
+            
+        }
+        
+        let copy = UILabel()
+        copy.textColor = UIColor.gray
+        copy.font = UIFont(name: "Reader-Medium", size: 14)
+        copy.frame = CGRect(x: 10 , y: self.mVContent.size.height * 2 - 250 , width: 400, height: 100)
+        copy.numberOfLines = 0
+        copy.textAlignment = .left
+        copy.text = mEeeArr["149"]
+        
+         self.efficacyWASOScrollV.addSubview(copy)
+        self.efficacyWASOScrollV.addSubview(title)
+        self.efficacyWASOScrollV.addSubview(label_35)
+        self.efficacyWASOScrollV.addSubview(label_35_description)
+
+        self.efficacyWASOScrollV.addSubview(faceImageV_after)
+        self.efficacyWASOScrollV.addSubview(faceImageV)
+        self.efficacyWASOScrollV.addSubview(beforeBtn)
+        self.efficacyWASOScrollV.addSubview(afterBtn)
+        
+    }
+    
+    func setEEESCV(){
+        self.efficacyEEEScrollV.delegate = self
+        self.efficacyEEEScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.efficacyEEEScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*3)
+        self.efficacyEEEScrollV.isPagingEnabled = true
+        self.efficacyEEEScrollV.bounces = false
+        self.efficacyEEEScrollV.backgroundColor = UIColor.clear
+        
+        for i in 0...1{
+            
+            let margin =  i == 0 ? -250 : 250
+            let title = UILabel()
+            title.textColor = UIColor.black
+            title.font = UIFont(name: "Reader-Bold", size: 25)
+            title.frame = CGRect(x: 500 * i, y: 10 , width: 400, height: 40)
+            title.centerX = self.mVContent.centerX + CGFloat(margin)
+            title.textAlignment = .center
+            
+            if i == 0{
+                title.text =  mEeeArr["101"] 
+            }else if i == 1{
+                title.text = mEeeArr["102"]
+            }
+            let imageNum = i + 1
+            let image_after = UIImage(named: "eee_item0\(imageNum)_after.png")
+            let faceImageV_after = UIImageView(image:image_after)
+            faceImageV_after.contentMode = .scaleAspectFit
+            faceImageV_after.clipsToBounds = true
+            faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV_after.centerX = self.mVContent.centerX + CGFloat(margin)
+            faceImageV_after.backgroundColor = UIColor.clear
+            
+            let image = UIImage(named: "eee_item0\(imageNum)_before.png")
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFit
+            faceImageV.tag = 30 + i//300
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX + CGFloat(margin)
+            faceImageV.backgroundColor = UIColor.clear
+            
+            let beforeBtn = UIButton()
+            beforeBtn.isEnabled = false
+            beforeBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10 + CGFloat(margin)
+            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+            beforeBtn.isEnabled = false
+            beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            beforeBtn.tag = 10 + i//100
+            beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            let afterBtn = UIButton()
+            afterBtn.isEnabled = true
+            afterBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            afterBtn.origin.x = self.mVContent.centerX + 10 + CGFloat(margin)
+            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+            afterBtn.isEnabled = true
+            afterBtn.setTitleColor(UIColor.white, for: .normal)
+            afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            
+            afterBtn.setTitleColor(UIColor.black, for: .normal)
+            afterBtn.backgroundColor = UIColor.white
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            afterBtn.tag = 20 + i//200
+            afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            for j in 0...2{
+                let image:UIImage = UIImage(named:"point_01.png")!
+                let border = UIImageView(image:image)
+                border.contentMode = .scaleToFill
+                if j == 0{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 398, width: 1, height: 34)
+                }else if j == 1{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 398, width: 1, height: 34)
+                    
+                }else if j == 2{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 398 , width: 1, height: 34)
+                }
+                self.efficacyEEEScrollV.addSubview(border)
+                
+            }
+            
+            let copy = UILabel()
+            copy.textColor = UIColor.gray
+            copy.font = UIFont(name: "Reader-Medium", size: 14)
+            copy.frame = CGRect(x: 10 , y: self.mVContent.size.height - 150 , width: 400, height: 100)
+            copy.numberOfLines = 0
+            copy.textAlignment = .left
+            copy.text = mEeeArr["103"]
+            
+            self.efficacyEEEScrollV.addSubview(copy)
+            self.efficacyEEEScrollV.addSubview(title)
+            self.efficacyEEEScrollV.addSubview(faceImageV_after)
+            self.efficacyEEEScrollV.addSubview(faceImageV)
+            self.efficacyEEEScrollV.addSubview(beforeBtn)
+            self.efficacyEEEScrollV.addSubview(afterBtn)
+        }
+        
+        let nib = UINib(nibName: "EEEFirstEfficacyResultView", bundle: nil)
+        let views = nib.instantiate(withOwner: self, options: nil)
+        guard let efficacyView1 = views[0] as? EEEFirstEfficacyResultView else { return }
+        efficacyView1.frame = CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.frame.width, height: self.mVContent.height)
+        
+        self.efficacyEEEScrollV.addSubview(efficacyView1)
+        
+        let nib2 = UINib(nibName: "EEESecondEfficacyResultView", bundle: nil)
+        let views2 = nib2.instantiate(withOwner: self, options: nil)
+        guard let efficacyView2 = views2[0] as? EEESecondEfficacyResultView else { return }
+        efficacyView2.frame = CGRect(x: 0, y: self.mVContent.height * 2, width: self.mVContent.frame.width, height: self.mVContent.height)
+        
+        self.efficacyEEEScrollV.addSubview(efficacyView2)
+        
+        self.technologyEEEScrollV.delegate = self
+        self.technologyEEEScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+        self.technologyEEEScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*2)
+        self.technologyEEEScrollV.isPagingEnabled = true
+        self.technologyEEEScrollV.bounces = false
+        self.technologyEEEScrollV.backgroundColor = UIColor.clear
+        
+        let nib_t1 = UINib(nibName: "EEEFirstTechnologyView", bundle: nil)
+        let views_t1 = nib_t1.instantiate(withOwner: self, options: nil)
+        guard let technologyView1 = views_t1[0] as? EEEFirstTechnologyView else { return }
+        technologyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+        
+        self.technologyEEEScrollV.addSubview(technologyView1)
+        
+        let nib_t2 = UINib(nibName: "EEESecondTechnologyView", bundle: nil)
+        let views_t2 = nib_t2.instantiate(withOwner: self, options: nil)
+        guard let technologyView2 = views_t2[0] as? EEESecondTechnologyView else { return }
+        technologyView2.frame = CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.frame.width, height: self.mVContent.height)
+        
+        self.technologyEEEScrollV.addSubview(technologyView2)
     }
     
     func setSDPEfficacySCV(){
         self.efficacySDPScrollV.delegate = self
         self.efficacySDPScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-        self.efficacySDPScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*3)
+        self.efficacySDPScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*2)
         self.efficacySDPScrollV.isPagingEnabled = true
         self.efficacySDPScrollV.bounces = false
         
-        if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
-            for i in 0...1{
-                let nib = UINib(nibName: "SDPEfficacyResultView", bundle: nil)
-                let views = nib.instantiate(withOwner: self, options: nil)
-                guard let efficacyView = views[0] as? SDPEfficacyResultView else { return }
-                efficacyView.frame = CGRect(x: 0, y: self.mVContent.height * CGFloat(i), width: self.mVContent.frame.width, height: self.mVContent.height)
-                
-                var start = 0
-                switch productId {
-                case 565:
-                    start = 1
-                case 566:
-                    start = 17
-                case 567:
-                    start = 34
-                case 568:
-                    start = 50
-                case 569:
-                    start = 66
-                default:
-                    break // do nothing
-                }
-                let index = i == 0 ? start : start + i * 8
-                efficacyView.setTexts(start_index: index)
-                
-                self.efficacySDPScrollV.addSubview(efficacyView)
+        for i in 0...1{
+            let nib = UINib(nibName: "SDPEfficacyResultView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let efficacyView = views[0] as? SDPEfficacyResultView else { return }
+            efficacyView.frame = CGRect(x: 0, y: self.mVContent.height * CGFloat(i), width: self.mVContent.frame.width, height: self.mVContent.height)
+            
+            var start = 0
+            switch productId {
+            case 565:
+                start = 1
+            case 566:
+                start = 17
+            case 567:
+                start = 34
+            case 568:
+                start = 50
+            case 569:
+                start = 66
+            default:
+                break // do nothing
             }
-        } 
+            let index = i == 0 ? start : start + i * 8
+            efficacyView.setTexts(start_index: index)
+            
+            self.efficacySDPScrollV.addSubview(efficacyView)
+        }
     }
     
     
@@ -518,7 +799,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             subview.removeFromSuperview()
         }
 
-
         for imageId in imageIds {
             let imgV: UIImageView = UIImageView()
             imgV.translatesAutoresizingMaskIntoConstraints = false
@@ -584,7 +864,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mUtmFeaturesView.delegate = self
             mUtmFeaturesView.bottomPadding = 30
             var viewHeight = 300
-            if product.productId == 588 {
+            if [588, 593, 594].contains(self.product.productId) {
                 mUtmFeaturesView.isNewUtm = true
                 viewHeight = 240
             }
@@ -693,7 +973,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
-        } else if productId == 588{
+        } else if [588, 593, 594].contains(self.product.productId) {
             print("utm test")
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
@@ -867,83 +1147,112 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             mVCurrentSelect = nil
-            
-//            if productId >= 565 && productId <= 569 {
-//                mImgVBackImage.image = UIImage(named: "")//FileTable.getImage(product.backImage)
-//                var image: UIImage = FileTable.getImage(6613)!
-//                let resize = CGSize(width: self.view.width, height: self.view.height + 200)
-//                UIGraphicsBeginImageContext(resize)
-//                image.draw(in: CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height + 200))
-//                image = UIGraphicsGetImageFromCurrentImageContext()!
-//                self.view.backgroundColor = UIColor(patternImage: image)
-//                mRelationScrollV.backgroundColor = UIColor.clear
-//                mRelationPearentView.backgroundColor = UIColor.clear
-//                productDetailFeaturesView.isHidden = false
-//                productNamesView.isHidden = false
-//            }
-            
             return
         }
         mVContent.isHidden = false
         mVCurrentSelect?.removeFromSuperview()
-
+        
         if sender === mCategoryButtonEfficacy {
             if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569{
                 mVContent.addSubview(self.efficacySDPScrollV)
                 mVCurrentSelect = self.efficacySDPScrollV
-            } else if productId == 566 {
-                let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                mVContent.addSubview(wasoEfficacyView)
-                wasoEfficacyView.backImage = mImgVBackImage.image
-                
-                if productId == 567 {
-                    wasoEfficacyView.setupGreen()
-                } else {
-                    wasoEfficacyView.setupOrange()
-                }
-                mVCurrentSelect = wasoEfficacyView
-            } else if productId == 568 {//
-                productDetailFeaturesView.isHidden = true
-                productNamesView.isHidden = true
-                
-                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView.isEssentialEnergyMoisturizingCream = true
-                utmEfficacyView.backgroundColor = UIColor.clear
-                mVContent.backgroundColor = UIColor.clear
-                mVContent.addSubview(utmEfficacyView)
-                utmEfficacyView.showEfficacyDetail()
-                mVCurrentSelect = utmEfficacyView
-            } else if productId == 569 {
-                productDetailFeaturesView.isHidden = true
-                productNamesView.isHidden = true
-                
-                let utmEfficacyView = EssentialEnagyEfficacy(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView.isEssentialEnergyMoisturizingGelCream = true
-                utmEfficacyView.backgroundColor = UIColor.clear
-                mVContent.backgroundColor = UIColor.clear
-                mVContent.addSubview(utmEfficacyView)
-                utmEfficacyView.showEfficacyDetail()
-                mVCurrentSelect = utmEfficacyView
-            } else {
-                let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                utmEfficacyView?.isUtm = mIsUtm
-                utmEfficacyView?.isUtmEye = mIsUtmEye
-                utmEfficacyView?.isWhiteLucent = mIsWhiteLucentOnMakeUp
-                utmEfficacyView?.isAllDayBright = mIsWhiteLucentWhiteLucentAllDay
-                utmEfficacyView?.isIBUKI = mIsIbuki
-                mVContent.addSubview(utmEfficacyView!)
-                utmEfficacyView?.showEfficacyDetail()
-                mVCurrentSelect = utmEfficacyView
-            }
-            
-        } else{
-            let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-            mVContent.addSubview(utmDefendView!)
-            mVCurrentSelect = utmDefendView
+            } 
         }
     }
     
+    private func showWASOInfo(_ sender: CategoryButton) {
+        if sender === mCategoryButtonFeatures {
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            return
+        }
 
+        
+        if let bcV = mVContent.viewWithTag(9999){
+            bcV.removeFromSuperview()
+        }
+        
+        mVContent.isHidden = false
+        mVCurrentSelect?.removeFromSuperview()
+        
+        let bcV = mImgVBackImage!
+        let backgroundImage = bcV
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.tag = 9999
+        self.mVContent.insertSubview(backgroundImage, at: 0)
+        
+        if sender === mCategoryButtonEfficacy {
+            
+            if productId == 570 {
+                mVContent.addSubview(self.efficacyWASOScrollV)
+                mVCurrentSelect = self.efficacyWASOScrollV
+            } else if productId == 571 {
+                
+                let nib = UINib(nibName: "WASOSleepingFirstEfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView1 = views[0] as? WASOSleepingFirstEfficacyResultView else { return }
+                efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                self.mVContent.addSubview(efficacyView1)
+                mVCurrentSelect = efficacyView1
+            }
+        } else if sender === mCategoryButtonHowToUse{
+            let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let howToUseView = views[0] as? WASOPeelHowToUseResultView else { return }
+            howToUseView.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+            
+            mVContent.addSubview(howToUseView)
+            mVCurrentSelect = howToUseView
+        }
+    }
+
+    private func showEEEInfo(_ sender: CategoryButton) {
+        if sender === mCategoryButtonFeatures {
+            mVContent.isHidden = true
+            mVCurrentSelect?.removeFromSuperview()
+            mVCurrentSelect = nil
+            return
+        }
+        mVContent.isHidden = false
+        mVCurrentSelect?.removeFromSuperview()
+        
+        if let bcV = mVContent.viewWithTag(9999){
+            bcV.removeFromSuperview()
+        }
+
+        if sender === mCategoryButtonEfficacy {
+            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = FileTable.getImage(6355)!
+            backgroundImage.contentMode = .scaleAspectFill
+            backgroundImage.tag = 9999
+            self.mVContent.insertSubview(backgroundImage, at: 0)
+            
+            mVContent.addSubview(self.efficacyEEEScrollV)
+            mVCurrentSelect = self.efficacyEEEScrollV
+        } else if sender === mCategoryButtonTechnologies {
+            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = FileTable.getImage(6355)!
+            backgroundImage.contentMode = .scaleAspectFill
+            backgroundImage.tag = 9999
+            self.mVContent.insertSubview(backgroundImage, at: 0)
+            
+            mVContent.addSubview(self.technologyEEEScrollV)
+            mVCurrentSelect = self.technologyEEEScrollV
+        }  else if sender === mCategoryButtonHowToUse {
+            makeCategoryImages(product.usageImage)
+        } else if sender === mCategoryButtonDefend {
+            if product.makeupLook {
+                makeCategoryImages(product.makeupLookImages)
+            }
+            let idArray = [28,359,588,553,554,555,556,564]
+            if idArray.contains(productId){
+                let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
+                delegate?.nextVc(nextVc)
+            }
+        }
+    }
     private func showInfo(_ sender: CategoryButton) {
         mVContent.isHidden = true
         mVCurrentSelect?.removeFromSuperview()
@@ -954,7 +1263,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         mVCategoryImage.isHidden = false
         
-        if productId == 588{
+        if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
             mVCurrentSelect?.removeFromSuperview()
             
@@ -1199,11 +1508,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             makeupUsageView.productId = productId
             mVCurrentSelect = makeupUsageView
         } else {
-            if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
+            if mIsWASO {
+                showWASOInfo(sender)
+            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
                 showUtmInfo(sender)
             } else if mIsSDP {
                 showSDPInfo(sender)
-            } else {
+            } else if mIsEEE {
+                showEEEInfo(sender)
+            }  else {
                 showInfo(sender)
             }
         }
@@ -1544,7 +1857,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let enhanceV = UIView()
         enhanceV.frame = CGRect(x: 0, y: mVContent.frame.height*2, width: self.techScrollV.frame.width, height: mVContent.frame.height)
         let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-
         
         //text
         for i in 1...5{
@@ -1726,6 +2038,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             
             let imageNum = i + 1
+            let image_after = UIImage(named: "after_0\(imageNum).png")
+            let faceImageV_after = UIImageView(image:image_after)
+            faceImageV_after.contentMode = .scaleAspectFit
+            faceImageV_after.clipsToBounds = true
+            faceImageV_after.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 300)
+            faceImageV_after.centerX = self.mVContent.centerX
+            faceImageV_after.backgroundColor = UIColor.clear
+            
             let image = UIImage(named: "before_0\(imageNum).png")
             let faceImageV = UIImageView(image:image)
             faceImageV.contentMode = .scaleAspectFit
@@ -1781,8 +2101,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
             }
             
-            
             self.efficacyScrollV.addSubview(title)
+            self.efficacyScrollV.addSubview(faceImageV_after)
             self.efficacyScrollV.addSubview(faceImageV)
             self.efficacyScrollV.addSubview(beforeBtn)
             self.efficacyScrollV.addSubview(afterBtn)
@@ -1876,6 +2196,76 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     @objc private func onTapBeforeAfterBtn(_ sender: UIButton){
         print("tag:*\(sender.tag)")
         
+        if mIsEEE {
+            if sender.tag < 20{//Before
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let afterBtn = self.efficacyEEEScrollV.viewWithTag(sender.tag + 10) as? UIButton {
+                    afterBtn.isEnabled = true
+                    afterBtn.backgroundColor = UIColor.clear
+                    afterBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyEEEScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 1
+                    }
+                }
+                
+            }else{//After
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let beforeBtn = self.efficacyEEEScrollV.viewWithTag(sender.tag - 10) as? UIButton {
+                    beforeBtn.isEnabled = true
+                    beforeBtn.backgroundColor = UIColor.clear
+                    beforeBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyEEEScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 0
+                    }
+                }
+                
+            }
+        }  else if self.mIsWASO{
+            if sender.tag < 20{//Before
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let afterBtn = self.efficacyWASOScrollV.viewWithTag(sender.tag + 10) as? UIButton {
+                    afterBtn.isEnabled = true
+                    afterBtn.backgroundColor = UIColor.clear
+                    afterBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyWASOScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 1
+                    }
+                }
+                
+            }else{//After
+                
+                sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                sender.setTitleColor(UIColor.white, for: .normal)
+                sender.isEnabled = false
+                if let beforeBtn = self.efficacyWASOScrollV.viewWithTag(sender.tag - 10) as? UIButton {
+                    beforeBtn.isEnabled = true
+                    beforeBtn.backgroundColor = UIColor.clear
+                    beforeBtn.setTitleColor(UIColor.black, for: .normal)
+                }
+                if let imageView = self.efficacyWASOScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
+                    UIView.animate(withDuration: 1.0) {
+                        imageView.alpha = 0
+                    }
+                }
+                
+            }
+        }   
+        else{
         if sender.tag < 20{//Before
             
             sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
@@ -1886,9 +2276,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 afterBtn.backgroundColor = UIColor.clear
                 afterBtn.setTitleColor(UIColor.black, for: .normal)
             }
-            let imageNum = sender.tag - 9
             if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 20) as? UIImageView{
-                imageView.image = UIImage(named: "before_0\(imageNum).png")
+                UIView.animate(withDuration: 1.0) {
+                    imageView.alpha = 1
+                }
             }
             
         }else{//After
@@ -1901,13 +2292,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 beforeBtn.backgroundColor = UIColor.clear
                 beforeBtn.setTitleColor(UIColor.black, for: .normal)
             }
-            let imageNum = sender.tag - 19
             if let imageView = self.efficacyScrollV.viewWithTag(sender.tag + 10) as? UIImageView{
-                imageView.image = UIImage(named: "after_0\(imageNum).png")
+                UIView.animate(withDuration: 1.0) {
+                    imageView.alpha = 0
+                }
             }
             
         }
-        
+        }   
     }
     
 

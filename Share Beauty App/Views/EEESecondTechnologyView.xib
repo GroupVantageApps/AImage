@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Medium.otf">
+            <string>Reader-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="EEESecondTechnologyView" customClass="EEESecondTechnologyView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="534"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mg-IO-27X">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="534"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XS-DI-EjM">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="601"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makeup effect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-f1-GA3">
+                                    <rect key="frame" x="76" y="46" width="342" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Close fit over the skin" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIZ-op-Jr0">
+                                    <rect key="frame" x="76" y="81" width="342" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eee_technology2_item01.png" translatesAutoresizingMaskIntoConstraints="NO" id="j56-Qx-2B9" userLabel="Second Image View">
+                                    <rect key="frame" x="76" y="300" width="395" height="186"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eee_technology2_item02.png" translatesAutoresizingMaskIntoConstraints="NO" id="2KC-Uh-mXY" userLabel="Third Image View">
+                                    <rect key="frame" x="553" y="335" width="391" height="151"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin (stratum corneum)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-S3-lrF" userLabel="First Circle Label">
+                                    <rect key="frame" x="556" y="454" width="387" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="11"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin (stratum corneum)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-06-XRS" userLabel="First Circle Label">
+                                    <rect key="frame" x="83" y="452" width="387" height="28"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="11"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Specular" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48I-UG-yYb" userLabel="First Circle Label">
+                                    <rect key="frame" x="692" y="297" width="117" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="15"/>
+                                    <color key="textColor" red="0.79663628339767456" green="0.23178744316101074" blue="0.30402284860610962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diffused" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFs-aR-9Ok" userLabel="First Circle Label">
+                                    <rect key="frame" x="831" y="314" width="117" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="15"/>
+                                    <color key="textColor" red="0.13079115748405457" green="0.30854615569114685" blue="0.53271704912185669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The resilient network spreads throughout the skin, giving it a firm feel." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRP-Ld-7Q7" userLabel="First Circle Label">
+                                    <rect key="frame" x="76" y="133" width="395" height="61"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makeup effect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-9q-Rc7">
+                                    <rect key="frame" x="553" y="46" width="342" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Diffused reflection" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bif-8b-XLL">
+                                    <rect key="frame" x="553" y="81" width="342" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z2-hd-9Fb" userLabel="First Circle Label">
+                                    <rect key="frame" x="553" y="133" width="395" height="61"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">The specular and diffused reflections give
+your eyes a vibrant, softly bright look.</string>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE7-Zi-QQM" userLabel="First Circle Label">
+                                    <rect key="frame" x="552" y="195" width="395" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">■Brightening Powder
+■Shining Powder</string>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="601" id="CyF-Fy-Gfc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7XS-DI-EjM" firstAttribute="width" secondItem="8Mg-IO-27X" secondAttribute="width" id="7Gw-m4-xNr"/>
+                        <constraint firstAttribute="trailing" secondItem="7XS-DI-EjM" secondAttribute="trailing" id="RkY-gO-xYN"/>
+                        <constraint firstAttribute="bottom" secondItem="7XS-DI-EjM" secondAttribute="bottom" id="WAF-H3-Gko"/>
+                        <constraint firstItem="7XS-DI-EjM" firstAttribute="leading" secondItem="8Mg-IO-27X" secondAttribute="leading" id="XI8-ED-0C3"/>
+                        <constraint firstItem="7XS-DI-EjM" firstAttribute="top" secondItem="8Mg-IO-27X" secondAttribute="top" id="Z9Q-cw-cvr"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8Mg-IO-27X" secondAttribute="bottom" id="hHL-2X-Dl6"/>
+                <constraint firstAttribute="trailing" secondItem="8Mg-IO-27X" secondAttribute="trailing" id="hZk-He-ldc"/>
+                <constraint firstItem="8Mg-IO-27X" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kGW-G4-WHt"/>
+                <constraint firstItem="8Mg-IO-27X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qtD-qj-q4H"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="copy1Lable" destination="Nie-06-XRS" id="uQc-Xv-VKx"/>
+                <outlet property="copy2Lable" destination="t9c-S3-lrF" id="Bts-BS-nhB"/>
+                <outlet property="descliption1Label" destination="IRP-Ld-7Q7" id="Esx-Vh-d1D"/>
+                <outlet property="descliption2_1Label" destination="6Z2-hd-9Fb" id="oZn-4N-xcJ"/>
+                <outlet property="descliption2_2Label" destination="dE7-Zi-QQM" id="dpR-BE-lr2"/>
+                <outlet property="diffusedLable" destination="gFs-aR-9Ok" id="brJ-H8-ayc"/>
+                <outlet property="specularLable" destination="48I-UG-yYb" id="9QC-uU-Fcc"/>
+                <outlet property="subTitle1Label" destination="uQf-f1-GA3" id="9uh-e5-eOM"/>
+                <outlet property="subTitle2Label" destination="wPh-9q-Rc7" id="zSc-bE-8s2"/>
+                <outlet property="title1Label" destination="vIZ-op-Jr0" id="GJd-Rj-p6H"/>
+                <outlet property="title2Label" destination="Bif-8b-XLL" id="m9r-ax-ekS"/>
+            </connections>
+            <point key="canvasLocation" x="75" y="71"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="eee_technology2_item01.png" width="739" height="329"/>
+        <image name="eee_technology2_item02.png" width="838" height="310"/>
+    </resources>
+</document>
