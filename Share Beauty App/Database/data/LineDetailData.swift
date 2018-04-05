@@ -48,9 +48,22 @@ class LineDetailData: NSObject {
             lineStep.stepName = stepLowerTranslate.name
 
             for productId in lineStep.product {
-                let data: ProductData = ProductData(productId: productId)
-                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
-                    lineStep.productData.append(data)
+                // UTM2.0 切り替え対応
+                if lineStep.stepName == "ULTIMUNE"
+                {
+                    if productId != LanguageConfigure.notUTMId {
+                        let data: ProductData = ProductData(productId: productId)
+                        if data.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
+                            lineStep.productData.append(data)
+                        }    
+                    }
+                }
+                else
+                {
+                    let data: ProductData = ProductData(productId: productId)
+                    if data.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
+                        lineStep.productData.append(data)
+                    } 
                 }
             }
 

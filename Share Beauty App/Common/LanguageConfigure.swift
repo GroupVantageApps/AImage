@@ -101,6 +101,16 @@ class LanguageConfigure: NSObject {
             }
         }
     }
+    
+    static var notUTMId: Int {
+        get {
+            if LanguageConfigure.isNewUTM {
+                return 359
+            } else {
+                return 588
+            }
+        }
+    }
 
     static var isNewUTM: Bool {
         get {
