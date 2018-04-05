@@ -1623,17 +1623,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
 
             let topicDesctription = UILabel()
-            if i == 2{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 145, height: 80)
-            }else if i == 1{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 130, height: 80)
-            }else{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 125, height: 80)
-            }
+            topicDesctription.frame = CGRect(x: 230 - 100 + (i * 280), y: 347, width: 200, height: 30)
             topicDesctription.textAlignment = .center
-            topicDesctription.centerX = circleBtn.centerX
             topicDesctription.font = UIFont(name: "Reader-Medium", size: 13)
-            topicDesctription.font = topicDesctription.font.withSize(13)
             
             self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
 
@@ -1641,8 +1633,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             generateV.addSubview(topicTitle)
             generateV.addSubview(topicDesctription)
             
-            topicDesctription.sizeToFit()
-
         }
         // TechnologiesのTopをスクロールビューに追加
         techScrollV.addSubview(generateV)
