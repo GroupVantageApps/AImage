@@ -208,9 +208,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.spec
 
-        //Utility.log("=====   RegionId: " + LanguageConfigure.regionId.description)
-        //Utility.log("=====  CountryId: " + LanguageConfigure.countryId.description)
-        //Utility.log("===== LanguageId: " + LanguageConfigure.languageId.description)
         if LanguageConfigure.isMyanmar {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
@@ -987,7 +984,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func setCategoryButtonDefend(){
-        let idArray = [28,359,588,553,554,555,556,564]
+        let idArray = [28,359,588,553,554,555,556,564,593,594]
         if idArray.contains(productId){
          mCategoryButtonDefend.enabled = true
         }
@@ -1246,10 +1243,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             if product.makeupLook {
                 makeCategoryImages(product.makeupLookImages)
             }
-            let idArray = [28,359,588,553,554,555,556,564]
+            let idArray = [28,359,588,553,554,555,556,564,593,594]
+            
             if idArray.contains(productId){
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
                 delegate?.nextVc(nextVc)
+                
+                //Feature画面再描画
+                mBtnCurrentSelect?.selected = false
+                mBtnCurrentSelect = mCategoryButtonFeatures
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
             }
         }
     }
@@ -1294,10 +1301,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			if product.makeupLook {
 				makeCategoryImages(product.makeupLookImages)
 			}
-            let idArray = [28,359,588,553,554,555,556,564]
+            let idArray = [28,359,588,553,554,555,556,564,593,594]
             if idArray.contains(productId){
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
                 delegate?.nextVc(nextVc)
+                
+                //Feature画面再描画
+                mVCategoryImage.isHidden = true
+                mBtnCurrentSelect?.selected = false
+                mBtnCurrentSelect = mCategoryButtonFeatures
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
             }
         }
     }
