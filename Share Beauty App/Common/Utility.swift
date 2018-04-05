@@ -316,6 +316,10 @@ class Utility: NSObject {
         let lx2filePath = String(format: "file://%@/Documents/lx2_csv/lx2_csv/%@_lx2.csv", NSHomeDirectory(), languageCode.code)
         let csv_lx2 = Utility.csvToArray(file: lx2filePath)
         LanguageConfigure.lx2csv = csv_lx2
+        //t-hirai
+        let utm2filePath = String(format: "file://%@/Documents/utm2_csv/utm2_csv/%@_utm2.csv", NSHomeDirectory(), languageCode.code)
+        let csv_utm2 = Utility.csvToArray(file: utm2filePath)
+        LanguageConfigure.utmcsv = csv_utm2
         
         let filePath_sdp_eee_csv = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
         let sdp_eee_csv = Utility.csvToArray(file: filePath_sdp_eee_csv)
