@@ -1656,7 +1656,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         if i == 0{
             titleText.text = mUtmArr["2"] // "1. Generating"
             descriptionText.text = mUtmArr["3"] // "Langerhans cells"
-  
+           
             let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
@@ -1855,11 +1855,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
             }else if i == 5{
-                graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
+                graphLabel.frame = CGRect(x: 650 , y:490, width: 500, height: 20) //t-hirai
                 graphLabel.text = mUtmArr["18"] // "*in vitro **By adding a stress hormone in vitro data"
                 graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
                 graphLabel.textColor = UIColor.lightGray
-
+                graphLabel.numberOfLines = 3
             }
         
             generateV.addSubview(graphLabel)
@@ -1897,13 +1897,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 pageText.text = mUtmArr["21"] // "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
                 pageText.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 4{
-                pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
+                pageText.frame = CGRect(x: 210 , y: 290, width: 150, height: 100)
+                pageText.textAlignment = NSTextAlignment.center
                 pageText.text = mUtmArr["20"] // "Ultimune\nComplexTM"
-                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.font = UIFont(name: "Reader-Bold", size: 17)
                 pageText.textColor = red
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
-                pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                //pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con" //t-hirai
                 pageText.font = UIFont(name: "Reader-Medium", size: 11)
                 pageText.font = UIFont(name: "Reader-Bold", size: 13)
                 pageText.textColor = UIColor.lightGray
@@ -2039,7 +2040,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let title = UILabel()
             title.textColor = UIColor.black
             title.font = UIFont(name: "Reader-Bold", size: 22)
-            title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+            title.numberOfLines = 3 //t-hirai
+            title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 80)//t-hirai
             title.centerX = self.mVContent.centerX
             title.textAlignment = .center
             
