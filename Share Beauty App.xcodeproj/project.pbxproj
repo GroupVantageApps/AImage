@@ -88,6 +88,8 @@
 		2B336B249D71D6246E23B7EF /* Pods_Share_Beauty_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */; };
 		338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */; };
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
+		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
+		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
 		5C233F93CC49A1135544BD45 /* Pods_Share_Beauty_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */; };
 		611D84057A55077F8526921F /* Pods_Share_Beauty_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */; };
 		800892171EA0DA24007C592A /* TelopTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892151EA0DA24007C592A /* TelopTable.swift */; };
@@ -797,6 +799,8 @@
 		338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoImageViewController.swift; sourceTree = "<group>"; };
 		338DE5711FBC4D2700E353CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoImageViewController.storyboard; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
+		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
 		76C9321C537E378B56541512 /* Pods-Share Beauty AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		800892151EA0DA24007C592A /* TelopTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTable.swift; path = Database/table/TelopTable.swift; sourceTree = "<group>"; };
 		800892161EA0DA24007C592A /* TelopTranslateTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateTable.swift; path = Database/table/TelopTranslateTable.swift; sourceTree = "<group>"; };
@@ -2205,6 +2209,8 @@
 		DE2C2FFB20737A5B00548627 /* EEE */ = {
 			isa = PBXGroup;
 			children = (
+				414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */,
+				4172958C207765DF00F83D5A /* 13_yazirushi_02.png */,
 				DE2C301220737B6100548627 /* eee_technology1_item01.png */,
 				DE2C301120737B5E00548627 /* eee_technology1_item02.png */,
 				DE2C300520737ADD00548627 /* eee_item01_after.png */,
@@ -3013,6 +3019,7 @@
 				26768DA5202C5FD6005BE606 /* graph_06.png in Resources */,
 				C03C884C1D76AB1E009F526E /* LifeStyleProductView.xib in Resources */,
 				C050C8FE1E82619F0009679D /* features_smk_3.png in Resources */,
+				414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */,
 				C050C91F1E82619F0009679D /* orange_R.png in Resources */,
 				2608BF902029846E00E7F900 /* ns_page_04.png in Resources */,
 				C050C9BD1E8276C60009679D /* Shiseido-ExtraBold.otf in Resources */,
@@ -3116,6 +3123,7 @@
 				DE2C301C20738CC900548627 /* EEEFirstEfficacyResultView.xib in Resources */,
 				80429B8A1EF5C2550022C99D /* LifeStyleSecondProductView.xib in Resources */,
 				C050C9C01E8276C60009679D /* Shiseido-ExtraLightx.otf in Resources */,
+				4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */,
 				DE2C90951E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.xib in Resources */,
 				DEC752042073BE2D00A9FC1C /* waso_92.png in Resources */,
 				26AD5D7620230A1F002A2076 /* ACaslonPro-Regular.otf in Resources */,
