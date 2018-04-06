@@ -29,32 +29,48 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XS-DI-EjM">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="550"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_91.png" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-hT-S9g" userLabel="Second Image View">
-                                    <rect key="frame" x="325" y="203" width="150" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_87.png" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-AI-1vT" userLabel="Third Image View">
-                                    <rect key="frame" x="766" y="204" width="150" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_92.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkX-A1-qtL" userLabel="Second Image View">
-                                    <rect key="frame" x="109" y="204" width="150" height="150"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_570.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWh-jr-vgq" userLabel="Second Image View">
                                     <rect key="frame" x="226" y="28" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_92.png" translatesAutoresizingMaskIntoConstraints="NO" id="5nH-zm-L8n" userLabel="Third Image View">
-                                    <rect key="frame" x="544" y="203" width="150" height="150"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shiso.png" translatesAutoresizingMaskIntoConstraints="NO" id="R6A-iJ-Sdb" customClass="APNGImageView" customModule="APNGKit">
+                                    <rect key="frame" x="25" y="-145" width="973" height="687"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhE-k6-j2k">
-                                    <rect key="frame" x="92" y="362" width="184" height="81"/>
+                                    <rect key="frame" x="59" y="361" width="184" height="81"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <string key="text">It penetrated 
 immediately.</string>
                                     <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMe-hr-OJ6">
+                                    <rect key="frame" x="542" y="362" width="184" height="81"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">The eye area became 
+more moisturized.</string>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-n2-ghg">
+                                    <rect key="frame" x="8" y="430" width="586" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">※Tested country: Singapore
+    Subject:100Asian(Singaporean)females,agefrom20 y.o.trough30y.o
+    Tested term:From 24/10/2017 to 27/10/2017</string>
+                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="12"/>
+                                    <color key="textColor" red="0.53719413279999995" green="0.53728991749999999" blue="0.5371881127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-3H-tog">
+                                    <rect key="frame" x="369" y="69" width="591" height="68"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">Users were very satisfied with the change
+in their skin and how fun it was to use</string>
+                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -67,37 +83,12 @@ smoother.</string>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMe-hr-OJ6">
-                                    <rect key="frame" x="527" y="362" width="184" height="81"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <string key="text">The eye area became 
-more moisturized.</string>
-                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhd-M6-mGQ">
-                                    <rect key="frame" x="749" y="362" width="184" height="81"/>
+                                    <rect key="frame" x="777" y="362" width="184" height="81"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <string key="text">I feel my eye area 
 became more vibrant.</string>
                                     <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoE-n2-ghg">
-                                    <rect key="frame" x="8" y="430" width="586" height="83"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <string key="text">※Tested country: Singapore    Subject:100Asian(Singaporean)females,agefrom20 y.o.trough30y.o    Tested term:From 24/10/2017 to 27/10/2017</string>
-                                    <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="12"/>
-                                    <color key="textColor" red="0.53719413279999995" green="0.53728991749999999" blue="0.5371881127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-3H-tog">
-                                    <rect key="frame" x="369" y="69" width="591" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <string key="text">Users were very satisfied with the changein their skin and how fun it was to use</string>
-                                    <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -128,6 +119,7 @@ became more vibrant.</string>
                 <outlet property="ForthCircleLabel" destination="qhd-M6-mGQ" id="i81-U4-STd"/>
                 <outlet property="SecondCircleLabel" destination="8N0-Z4-KTe" id="Duu-Cr-bE8"/>
                 <outlet property="ThirdCircleLabel" destination="UMe-hr-OJ6" id="E9R-hZ-jVF"/>
+                <outlet property="apngImageV" destination="R6A-iJ-Sdb" id="DPt-Rw-urL"/>
                 <outlet property="copyLabel" destination="FoE-n2-ghg" id="l58-5n-Ry1"/>
                 <outlet property="titleLabel" destination="t4G-3H-tog" id="vrO-Kk-pZt"/>
             </connections>
@@ -135,9 +127,7 @@ became more vibrant.</string>
         </view>
     </objects>
     <resources>
+        <image name="shiso.png" width="2048" height="1536"/>
         <image name="waso_570.png" width="178" height="359"/>
-        <image name="waso_87.png" width="321" height="320"/>
-        <image name="waso_91.png" width="321" height="320"/>
-        <image name="waso_92.png" width="321" height="320"/>
     </resources>
 </document>

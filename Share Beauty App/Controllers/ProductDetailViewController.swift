@@ -400,7 +400,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let views = nib.instantiate(withOwner: self, options: nil)
         guard let efficacyView1 = views[0] as? WASOPeelFirstEfficacyResultView else { return }
         efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
-        
+        efficacyView1.tag = 65
         self.efficacyWASOScrollV.addSubview(efficacyView1)
         
         let title = UILabel()
@@ -1182,6 +1182,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
+                
+                let efficacyV =  self.efficacyWASOScrollV.viewWithTag(65) as! WASOPeelFirstEfficacyResultView
+                efficacyV.startAnimation()
+                
             } else if productId == 571 {
                 
                 let nib = UINib(nibName: "WASOSleepingFirstEfficacyResultView", bundle: nil)
@@ -1191,6 +1195,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 
                 self.mVContent.addSubview(efficacyView1)
                 mVCurrentSelect = efficacyView1
+                efficacyView1.startAnimation()
             }
         } else if sender === mCategoryButtonHowToUse{
             let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)

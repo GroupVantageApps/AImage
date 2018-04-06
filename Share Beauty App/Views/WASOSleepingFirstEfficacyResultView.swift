@@ -6,8 +6,10 @@
 //  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
 //
 
+import APNGKit
 
 class WASOSleepingFirstEfficacyResultView: UIView {
+    @IBOutlet weak private var apngImageV: APNGImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var FirstCircleLabel: UILabel!
     @IBOutlet weak var SecondCircleLabel: UILabel!
@@ -29,6 +31,11 @@ class WASOSleepingFirstEfficacyResultView: UIView {
         ThirdCircleLabel.text = csvArr["155"]
         ForthCircleLabel.text = csvArr["156"]
         copyLabel.text = csvArr["159"]
+        apngImageV.image = FileTable.getAImage(6618)
+    }
+    
+    func startAnimation() {
+        apngImageV.startAnimating()
     }
 }
 
