@@ -709,7 +709,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mBtnCurrentSelect = sender
             mBtnCurrentSelect?.selected = true
             
-            showUtmInfo(sender!)
+            showInfo(sender!)
         }
     }
 
@@ -1060,7 +1060,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 efficacyView.frame = mVContent.frame
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
-            }else if productId == 506 || productId == 509 {
+            } else if productId == 506 || productId == 509 {
                 let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 mVContent.addSubview(wasoEfficacyView)
                 wasoEfficacyView.backImage = mImgVBackImage.image
@@ -1071,7 +1071,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     wasoEfficacyView.setupOrange()
                 }
                 mVCurrentSelect = wasoEfficacyView
-            } else if productId == 553 {//
+            } else if productId == 553 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
