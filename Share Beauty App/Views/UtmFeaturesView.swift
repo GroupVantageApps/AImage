@@ -19,6 +19,8 @@ class UtmFeaturesView: BaseView {
     @IBOutlet private var mLblBalloons: [UILabel]!
     @IBOutlet private var mBtnTechs: [BaseButton]!
     @IBOutlet private var mBtnEfficacies: [BaseButton]!
+    
+    let mUtmArr = LanguageConfigure.utmcsv
 
     weak var delegate: UtmFeaturesViewDelegate?
     var isNewUtm: Bool = false
@@ -47,7 +49,7 @@ class UtmFeaturesView: BaseView {
         mLblBalloons.forEach { mLblBalloon in
             if isNewUtm && i == 1 {
                 //TODO csv参照
-                mLblBalloon.text = "Archived by 25 years of research"
+                mLblBalloon.text = mUtmArr["41"]
                 i += 1
             } else if !(isNewUtm && i == 2) {
                 mLblBalloon.text = arrUtm[arrIndexBalloon[i]]
