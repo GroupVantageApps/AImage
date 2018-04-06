@@ -25,6 +25,8 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     let gold = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0 )
     var bgAudioPlayer: AVAudioPlayer!
     
+    var finishAnimation: Bool = false
+    
     @IBOutlet weak var topTitleLabel: UILabel!
     
     
@@ -89,13 +91,13 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             titleLabel.textColor = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0)
             titleLabel.frame = CGRect(x: 0, y: 440 - 180, width: Int((self.mVContent.frame.width-4)/5), height: 85)
             button.addSubview(titleLabel)
-            
-            var movieBtn = UIButton()
-            movieBtn.frame = CGRect(x: self.mVContent.frame.width-70, y: 105, width: 40, height: 40)
-            movieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
-            movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
-            self.mVContent.addSubview(movieBtn)
         }
+        
+        var movieBtn = UIButton()
+        movieBtn.frame = CGRect(x: self.mVContent.frame.width-70, y: 105, width: 40, height: 40)
+        movieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
+        self.mVContent.addSubview(movieBtn)
         
     }
     
@@ -103,27 +105,30 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         super.viewDidAppear(animated)
         print("viewDidAppear")
         
-        
-        for i in 0...4 {
-            let btn = self.mVContent.viewWithTag(80 + i) as! UIButton 
-            let delay = 0.5 * Double(i)
-            UIView.animateKeyframes(withDuration: 2.0, delay: delay, options: [], animations: {
-                
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
-                    btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+        if !finishAnimation {
+            for i in 0...4 {
+                let btn = self.mVContent.viewWithTag(80 + i) as! UIButton 
+                let delay = 0.5 * Double(i)
+                UIView.animateKeyframes(withDuration: 2.0, delay: delay, options: [], animations: {
                     
-                })
-                
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
-                    btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
                     
-                })
-                
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1, animations: {
-                    btn.centerY -= self.mVContent.frame.height
-                })
-            }, completion: nil)
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
+                    
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1, animations: {
+                        btn.centerY -= self.mVContent.frame.height
+                    })
+                }, completion: nil)
+            }
+            finishAnimation = true
         }
+        
     }
  
     
@@ -391,6 +396,20 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     
     @objc private func playMovie(_ sender: AnyObject){
         print("moviestart")
+        bgAudioPlayer.pause()
+  
+        let videoURL: URL = FileTable.getPath(6719)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
+        
     }
     
     //*UIPageController

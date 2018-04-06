@@ -534,7 +534,6 @@
 		DE310E442074AD3100A6A5F7 /* waso_green_83.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E412074AD2F00A6A5F7 /* waso_green_83.png */; };
 		DE310E452074AD3100A6A5F7 /* waso_green_95.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E422074AD3000A6A5F7 /* waso_green_95.png */; };
 		DE310E462074AD3100A6A5F7 /* waso_green_96.png in Resources */ = {isa = PBXBuildFile; fileRef = DE310E432074AD3100A6A5F7 /* waso_green_96.png */; };
-		DE325B0F207727A700B660C9 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DE325B0E207727A700B660C9 /* green.png */; };
 		DE32704F1EC85337001B58D9 /* IngredientSkinGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */; };
 		DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */; };
 		DE38CC571F25C47E001656E5 /* GscThumnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE38CC561F25C47E001656E5 /* GscThumnailCollectionViewCell.swift */; };
@@ -1255,7 +1254,6 @@
 		DE310E412074AD2F00A6A5F7 /* waso_green_83.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_83.png; sourceTree = "<group>"; };
 		DE310E422074AD3000A6A5F7 /* waso_green_95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_95.png; sourceTree = "<group>"; };
 		DE310E432074AD3100A6A5F7 /* waso_green_96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_green_96.png; sourceTree = "<group>"; };
-		DE325B0E207727A700B660C9 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		DE32704D1EC85337001B58D9 /* IngredientSkinGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientSkinGraphContentView.swift; sourceTree = "<group>"; };
 		DE32704E1EC85337001B58D9 /* IngredientSkinGraphContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientSkinGraphContentView.xib; sourceTree = "<group>"; };
 		DE38CC561F25C47E001656E5 /* GscThumnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscThumnailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -2347,7 +2345,6 @@
 		DEC751F82073BD5C00A9FC1C /* WASO */ = {
 			isa = PBXGroup;
 			children = (
-				DE325B0E207727A700B660C9 /* green.png */,
 				DE310E412074AD2F00A6A5F7 /* waso_green_83.png */,
 				DE310E422074AD3000A6A5F7 /* waso_green_95.png */,
 				DE310E432074AD3100A6A5F7 /* waso_green_96.png */,
@@ -3039,7 +3036,6 @@
 				DE2C907B1E9C66E600B5FC4A /* IngredientSkinGraphView.xib in Resources */,
 				26AD5D7520230A1F002A2076 /* Arial Bold.ttf in Resources */,
 				2680EC1E2037E4FA005257B1 /* makeup_6.png in Resources */,
-				DE325B0F207727A700B660C9 /* green.png in Resources */,
 				B38F63C41F47682700176804 /* efficacy_slider_circle_MoisturizingCream.png in Resources */,
 				DE2C91831E9C682500B5FC4A /* icon_recommend_large.png in Resources */,
 				C050C9A91E8267450009679D /* sizle_highlight.png in Resources */,
