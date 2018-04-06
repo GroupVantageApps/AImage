@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print("requset product_id: " + product_id.description)
                         toVc.productIdForDeeplink = product_id
                         if query.count > 1 {
-                            if query[1].name == "show", let showEfficacy = Bool((query[1].value)!) {
+                            if query[1].name == "show_efficacy", let showEfficacy = Bool((query[1].value)!) {
                                 toVc.showEfficacy = showEfficacy
                             }
                         }
