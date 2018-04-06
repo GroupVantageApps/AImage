@@ -77,9 +77,10 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         for i in 0...4{
             let button = UIButton()
             button.setImage(UIImage(named: "nsbutton_\(i).png"), for: .normal)
-            button.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: Int(180 + self.mVContent.frame.height), width: Int((self.mVContent.frame.width-4)/5), height: 510)
+            button.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: Int(180), width: Int((self.mVContent.frame.width-4)/5), height: 510)
             button.tag = 80+i
             button.addTarget(self, action: #selector(self.onTapSecret(_:)), for: .touchUpInside)
+            button.alpha = 0
             self.mVContent.addSubview(button)
             
             let titleLabel = UILabel()
@@ -91,6 +92,14 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             titleLabel.textColor = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0)
             titleLabel.frame = CGRect(x: 0, y: 440 - 180, width: Int((self.mVContent.frame.width-4)/5), height: 85)
             button.addSubview(titleLabel)
+
+            let bgImgV = UIImageView()
+            bgImgV.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: Int(180 + self.mVContent.frame.height), width: Int((self.mVContent.frame.width-4)/5), height: 510)
+            bgImgV.image = UIImage.init(named: "lx_b0\(i + 1)")
+            bgImgV.alpha = 0
+            bgImgV.tag = 90+i
+            self.mVContent.addSubview(bgImgV)
+
         }
         
         var movieBtn = UIButton()
@@ -108,9 +117,23 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         if !finishAnimation {
             for i in 0...4 {
                 let btn = self.mVContent.viewWithTag(80 + i) as! UIButton 
+                let imgV = self.mVContent.viewWithTag(90 + i) as! UIImageView 
                 let delay = 0.5 * Double(i)
-                UIView.animateKeyframes(withDuration: 2.0, delay: delay, options: [], animations: {
-                    
+                UIView.animateKeyframes(withDuration: 4.0, delay: delay, options: [], animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        imgV.alpha = 1
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        imgV.centerY -= self.mVContent.frame.height
+                    })
+                                        
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        imgV.transform = imgV.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        imgV.alpha = 0
+                    })
                     UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
                         btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
                         
@@ -120,10 +143,11 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                         btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
                         
                     })
-                    
-                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1, animations: {
-                        btn.centerY -= self.mVContent.frame.height
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        btn.alpha = 1
                     })
+                    
+                    
                 }, completion: nil)
             }
             finishAnimation = true
@@ -134,11 +158,33 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     
     @objc private func onTapSecret(_ sender: AnyObject){
         let btn = sender as! UIButton
-    
-        UIView.transition(with: btn, duration: 1.0, options: [.transitionFlipFromLeft], animations: nil, completion:  { finished in
+        let imgV = self.mVContent.viewWithTag(btn.tag + 10) as! UIImageView
         
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.0, options: [], animations: {
+           
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                btn.alpha = 0
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                imgV.alpha = 1
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                imgV.transform = imgV.transform.scaledBy(x: -1.0, y: 1.0)
+            })
+            
+        },completion:  { finished in
         
-        self.scrollContentBaseV.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width - 70, height: self.view.frame.height - 80)
+        btn.alpha = 1
+        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+        imgV.alpha = 0
+        
+            self.scrollContentBaseV.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width - 70, height: self.view.frame.height - 80)
         self.scrollContentBaseV.center = self.view.center
         self.scrollContentBaseV.origin.y += 25
         self.scrollContentBaseV.tag = 70
