@@ -311,9 +311,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }else{
             print("other")
         }
-        if let howtoImageV = sender.view?.viewWithTag(tag){
-            self.didTapHowTo(product, transitionItemId: nil, sender: howtoImageV, index: index)
-        }
+        // HowToUse画像からの画面推移
+        // if let howtoImageV = sender.view?.viewWithTag(tag){
+        //     self.didTapHowTo(product, transitionItemId: nil, sender: howtoImageV, index: index)
+        // }
     }
 
     // MARK: - CollectionViewDelegate

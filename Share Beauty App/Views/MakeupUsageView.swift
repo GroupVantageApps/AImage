@@ -145,24 +145,37 @@ class MakeupUsageView: BaseView {
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2]
             movieInfos = [movieInfo1]
 
+        }else if productId == 564 { //Brush
+            var movieInfo1 = MovieInfo()
+            movieInfo1.title = basic
+            movieInfo1.movieId = 6705
+            
+            var stepInfo1 = StepUsageInfo()
+            stepInfo1.stepNumber = 1
+            stepInfo1.text = ""
+            stepInfo1.startTime = 0
+            stepInfo1.endTime = 40 
+            var stepInfo2 = StepUsageInfo()
+            stepInfo2.stepNumber = 2
+            stepInfo2.text = ""
+            stepInfo2.startTime = 41 
+            stepInfo2.endTime = 50
+            var stepInfo3 = StepUsageInfo()
+            stepInfo3.stepNumber = 3
+            stepInfo3.text = AppItemTable.getNameByItemId(itemId: 7942)
+            stepInfo3.startTime = 51
+            stepInfo3.endTime = 62
+            var stepInfo4 = StepUsageInfo()
+            stepInfo4.stepNumber = 4
+            stepInfo4.text = AppItemTable.getNameByItemId(itemId: 7943)
+            stepInfo4.startTime = 62
+            stepInfo4.endTime = 73
+            
+            movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2, stepInfo3, stepInfo4]
+    
+            movieInfos = [movieInfo1]
         }
-//        var movieInfos = StepUsageInfo()
-//        movieInfo.movieId =
-//            movieInfo.title = "title"
-//        stepUsageInfos = []
-//        for i in 0..<3 {
-//            var info = StepUsageInfo()
-//            info.stepNumber = i + 1
-//            let str = "step\(info.stepNumber) dummy "
-//            var combined = ""
-//            (0..<20).forEach({ _ in
-//                combined += str
-//            })
-//            info.text = combined
-//            info.startTime = Float64(i * 4)
-//            info.endTime = info.startTime + Float64(4)
-//            stepUsageInfos.append(info)
-//        }
+
     }
 
     private func setupUsageView() {

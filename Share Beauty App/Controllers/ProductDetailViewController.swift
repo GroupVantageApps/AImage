@@ -208,9 +208,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mLblHowToUse.text = product.howToUse
         mLblUnit.text = product.spec
 
-        //Utility.log("=====   RegionId: " + LanguageConfigure.regionId.description)
-        //Utility.log("=====  CountryId: " + LanguageConfigure.countryId.description)
-        //Utility.log("===== LanguageId: " + LanguageConfigure.languageId.description)
         if LanguageConfigure.isMyanmar {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.minimumLineHeight = Const.lineHeightMyanmar
@@ -244,6 +241,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 564 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonHowToUse.enabled = true
             self.mIsEEE = true
              self.setEEESCV()
         } else if productId == 570 {
@@ -362,18 +360,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setEnhanceView()
             self.setImucalmView()
             
-            if showEfficacy == true{
-                mBtnCurrentSelect?.selected = false
-                let sender = self.mCategoryButtonEfficacy
-                mBtnCurrentSelect = sender
-                mBtnCurrentSelect?.selected = true
-                
-                mVContent.isHidden = true
-                mVCurrentSelect?.removeFromSuperview()
-                mVCurrentSelect = nil
-                
-                showUtmInfo(sender!)
-            }
         }
         
     }
@@ -414,7 +400,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let views = nib.instantiate(withOwner: self, options: nil)
         guard let efficacyView1 = views[0] as? WASOPeelFirstEfficacyResultView else { return }
         efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
-        
+        efficacyView1.tag = 65
         self.efficacyWASOScrollV.addSubview(efficacyView1)
         
         let title = UILabel()
@@ -538,14 +524,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         for i in 0...1{
             
-            let margin =  i == 0 ? -250 : 250
+            let margin =  i == 0 ? -200 : 200
+            let marginEffectImage = i == 0 ? -215 : 215
+            let marginEffectLabel = i == 0 ? -410 : 410
             let title = UILabel()
             title.textColor = UIColor.black
-            title.font = UIFont(name: "Reader-Bold", size: 25)
-            title.frame = CGRect(x: 500 * i, y: 10 , width: 400, height: 40)
+            title.font = UIFont(name: "Reader-Bold", size: 45)
+            title.frame = CGRect(x: 500 * i, y: 50 , width: 400, height: 50)
             title.centerX = self.mVContent.centerX + CGFloat(margin)
             title.textAlignment = .center
-            
+
             if i == 0{
                 title.text =  mEeeArr["101"] 
             }else if i == 1{
@@ -556,7 +544,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let faceImageV_after = UIImageView(image:image_after)
             faceImageV_after.contentMode = .scaleAspectFit
             faceImageV_after.clipsToBounds = true
-            faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV_after.frame = CGRect(x: 500 * i, y: 120 , width: 240, height: 230)
+            // faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
             faceImageV_after.centerX = self.mVContent.centerX + CGFloat(margin)
             faceImageV_after.backgroundColor = UIColor.clear
             
@@ -565,34 +554,52 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             faceImageV.contentMode = .scaleAspectFit
             faceImageV.tag = 30 + i//300
             faceImageV.clipsToBounds = true
-            faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV.frame = CGRect(x: 500 * i, y: 120 , width: 240, height: 230)
+            // faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
             faceImageV.centerX = self.mVContent.centerX + CGFloat(margin)
             faceImageV.backgroundColor = UIColor.clear
             
+            let effectImage = UIImage(named: "13_yazirushi_0\(imageNum).png")
+            let effectImageV = UIImageView(image:effectImage)
+            effectImageV.contentMode = .scaleAspectFit
+            effectImageV.clipsToBounds = true
+            effectImageV.frame = CGRect(x: 500 * i, y: 110 , width: 280, height: 270)
+            effectImageV.centerX = self.mVContent.centerX + CGFloat(marginEffectImage)
+            effectImageV.backgroundColor = UIColor.clear
+            
+            let effectLabel = UILabel()
+            effectLabel.textColor = UIColor.black
+            effectLabel.font = UIFont(name: "Reader-Bold", size: 15)
+            effectLabel.frame = CGRect(x: 500 * i, y: 210 , width: 80, height: 70)
+            effectLabel.centerX = self.mVContent.centerX + CGFloat(marginEffectLabel)
+            effectLabel.textAlignment = .left
+            effectLabel.numberOfLines = 0
+            effectLabel.text = mEeeArr["100"]
+
             let beforeBtn = UIButton()
             beforeBtn.isEnabled = false
-            beforeBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            beforeBtn.frame = CGRect(x:  500 * i, y: 390, width: 145, height: 30)
             beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10 + CGFloat(margin)
-            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+            beforeBtn.setTitle(mEeeArr["98"], for: .normal) // "Before"
             beforeBtn.isEnabled = false
             beforeBtn.setTitleColor(UIColor.white, for: .normal)
             beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 15)
             beforeBtn.tag = 10 + i//100
             beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
             let afterBtn = UIButton()
             afterBtn.isEnabled = true
-            afterBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            afterBtn.frame = CGRect(x:  500 * i, y: 390, width: 145, height: 30)
             afterBtn.origin.x = self.mVContent.centerX + 10 + CGFloat(margin)
-            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+            afterBtn.setTitle(mEeeArr["99"], for: .normal) // "After 4 Weeks"
             afterBtn.isEnabled = true
             afterBtn.setTitleColor(UIColor.white, for: .normal)
             afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             
             afterBtn.setTitleColor(UIColor.black, for: .normal)
             afterBtn.backgroundColor = UIColor.white
-            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 15)
             afterBtn.tag = 20 + i//200
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -601,12 +608,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let border = UIImageView(image:image)
                 border.contentMode = .scaleToFill
                 if j == 0{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 398, width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 388, width: 1, height: 34)
                 }else if j == 1{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 398, width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 388, width: 1, height: 34)
                     
                 }else if j == 2{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 398 , width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 388 , width: 1, height: 34)
                 }
                 self.efficacyEEEScrollV.addSubview(border)
                 
@@ -615,7 +622,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let copy = UILabel()
             copy.textColor = UIColor.gray
             copy.font = UIFont(name: "Reader-Medium", size: 14)
-            copy.frame = CGRect(x: 10 , y: self.mVContent.size.height - 150 , width: 400, height: 100)
+            copy.frame = CGRect(x: 15 , y: self.mVContent.size.height - 170 , width: 360, height: 100)
             copy.numberOfLines = 0
             copy.textAlignment = .left
             copy.text = mEeeArr["103"]
@@ -626,6 +633,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyEEEScrollV.addSubview(faceImageV)
             self.efficacyEEEScrollV.addSubview(beforeBtn)
             self.efficacyEEEScrollV.addSubview(afterBtn)
+            self.efficacyEEEScrollV.addSubview(effectImageV)
+            self.efficacyEEEScrollV.addSubview(effectLabel)
+
         }
         
         let nib = UINib(nibName: "EEEFirstEfficacyResultView", bundle: nil)
@@ -715,6 +725,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let offset = CGPoint(x: 0, y: scrollV.size.height * CGFloat(self.indexHowToUse))
                 scrollV.setContentOffset(offset, animated: false)
             }
+        }
+        
+        if [588, 593, 594].contains(self.product.productId) && showEfficacy == true{
+            mBtnCurrentSelect?.selected = false
+            let sender = self.mCategoryButtonEfficacy
+            mBtnCurrentSelect = sender
+            mBtnCurrentSelect?.selected = true
+            
+            showInfo(sender!)
         }
     }
 
@@ -987,7 +1006,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func setCategoryButtonDefend(){
-        let idArray = [28,359,588,553,554,555,556,564]
+        let idArray = [28,359,588,553,554,555,556,564,593,594]
         if idArray.contains(productId){
          mCategoryButtonDefend.enabled = true
         }
@@ -1065,7 +1084,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 efficacyView.frame = mVContent.frame
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
-            }else if productId == 506 || productId == 509 {
+            } else if productId == 506 || productId == 509 {
                 let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
                 mVContent.addSubview(wasoEfficacyView)
                 wasoEfficacyView.backImage = mImgVBackImage.image
@@ -1076,7 +1095,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     wasoEfficacyView.setupOrange()
                 }
                 mVCurrentSelect = wasoEfficacyView
-            } else if productId == 553 {//
+            } else if productId == 553 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
@@ -1187,6 +1206,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
+                
+                let efficacyV =  self.efficacyWASOScrollV.viewWithTag(65) as! WASOPeelFirstEfficacyResultView
+                efficacyV.startAnimation()
+                
             } else if productId == 571 {
                 
                 let nib = UINib(nibName: "WASOSleepingFirstEfficacyResultView", bundle: nil)
@@ -1196,6 +1219,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 
                 self.mVContent.addSubview(efficacyView1)
                 mVCurrentSelect = efficacyView1
+                efficacyView1.startAnimation()
             }
         } else if sender === mCategoryButtonHowToUse{
             let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
@@ -1241,15 +1265,30 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVContent.addSubview(self.technologyEEEScrollV)
             mVCurrentSelect = self.technologyEEEScrollV
         }  else if sender === mCategoryButtonHowToUse {
-            makeCategoryImages(product.usageImage)
+            mVContent.isHidden = false
+            mVCurrentSelect?.removeFromSuperview()
+            let makeupUsageView = MakeupUsageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+            mVContent.addSubview(makeupUsageView)
+            makeupUsageView.productId = productId
+            mVCurrentSelect = makeupUsageView
         } else if sender === mCategoryButtonDefend {
             if product.makeupLook {
                 makeCategoryImages(product.makeupLookImages)
             }
-            let idArray = [28,359,588,553,554,555,556,564]
+            let idArray = [28,359,588,553,554,555,556,564,593,594]
+            
             if idArray.contains(productId){
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
                 delegate?.nextVc(nextVc)
+                
+                //Feature画面再描画
+                mBtnCurrentSelect?.selected = false
+                mBtnCurrentSelect = mCategoryButtonFeatures
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
             }
         }
     }
@@ -1294,10 +1333,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			if product.makeupLook {
 				makeCategoryImages(product.makeupLookImages)
 			}
-            let idArray = [28,359,588,553,554,555,556,564]
+            let idArray = [28,359,588,553,554,555,556,564,593,594]
             if idArray.contains(productId){
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
                 delegate?.nextVc(nextVc)
+                
+                //Feature画面再描画
+                mVCategoryImage.isHidden = true
+                mBtnCurrentSelect?.selected = false
+                mBtnCurrentSelect = mCategoryButtonFeatures
+                mBtnCurrentSelect?.selected = true
+                
+                mVContent.isHidden = true
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
             }
         }
     }
@@ -1601,17 +1650,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
 
             let topicDesctription = UILabel()
-            if i == 2{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 145, height: 80)
-            }else if i == 1{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 130, height: 80)
-            }else{
-                topicDesctription.frame = CGRect(x: topicTitle.origin.x + topicTitle.frame.width/6, y: 347, width: 125, height: 80)
-            }
+            topicDesctription.frame = CGRect(x: 230 - 100 + (i * 280), y: 347, width: 200, height: 30)
             topicDesctription.textAlignment = .center
-            topicDesctription.centerX = circleBtn.centerX
             topicDesctription.font = UIFont(name: "Reader-Medium", size: 13)
-            topicDesctription.font = topicDesctription.font.withSize(13)
             
             self.setInsideCircle(i: i, titleText: topicTitle, descriptionText: topicDesctription, generateV:generateV)
 
@@ -1619,8 +1660,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             generateV.addSubview(topicTitle)
             generateV.addSubview(topicDesctription)
             
-            topicDesctription.sizeToFit()
-
         }
         // TechnologiesのTopをスクロールビューに追加
         techScrollV.addSubview(generateV)
@@ -1640,7 +1679,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         if i == 0{
             titleText.text = mUtmArr["2"] // "1. Generating"
             descriptionText.text = mUtmArr["3"] // "Langerhans cells"
-  
+           
             let image1:UIImage = UIImage(named:"Reishi_2_cmyk.png")!
             let imageView = UIImageView(image:image1)
             imageView.frame = CGRect(x: 113, y: 200, width: 115, height: 115)
@@ -1839,11 +1878,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 graphLabel.sizeToFit()
                 graphLabel.textAlignment = NSTextAlignment.center
             }else if i == 5{
-                graphLabel.frame = CGRect(x: 650 , y:490, width: 400, height: 20)
+                graphLabel.frame = CGRect(x: 650 , y:490, width: 500, height: 20) //t-hirai
                 graphLabel.text = mUtmArr["18"] // "*in vitro **By adding a stress hormone in vitro data"
                 graphLabel.font = UIFont(name: "Reader-Bold", size: 13)
                 graphLabel.textColor = UIColor.lightGray
-
+                graphLabel.numberOfLines = 3
             }
         
             generateV.addSubview(graphLabel)
@@ -1881,13 +1920,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 pageText.text = mUtmArr["21"] // "Ultimune ComplexTM contains highly effective stress-reducers, such as ß-glucan, which is\nextracted from bread yeast. The most effective ingredient for active fermentation, it has an\neffect on Langerhans cells as well. It also provides a rich source of nutrients."
                 pageText.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 4{
-                pageText.frame = CGRect(x: 240 , y: 290, width: 150, height: 100)
+                pageText.frame = CGRect(x: 210 , y: 290, width: 150, height: 100)
+                pageText.textAlignment = NSTextAlignment.center
                 pageText.text = mUtmArr["20"] // "Ultimune\nComplexTM"
-                pageText.font = UIFont(name: "Reader-Bold", size: 18)
+                pageText.font = UIFont(name: "Reader-Bold", size: 17)
                 pageText.textColor = red
             }else if i == 5{
                 pageText.frame = CGRect(x: 20 , y: 470, width: 400, height: 40)
-                pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con"
+                //pageText.text = mUtmArr["25"] // "Shiseido is the first company to test a skin-care\nproduct on women experiencing con" //t-hirai
                 pageText.font = UIFont(name: "Reader-Medium", size: 11)
                 pageText.font = UIFont(name: "Reader-Bold", size: 13)
                 pageText.textColor = UIColor.lightGray
@@ -2023,7 +2063,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let title = UILabel()
             title.textColor = UIColor.black
             title.font = UIFont(name: "Reader-Bold", size: 22)
-            title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+            title.numberOfLines = 3 //t-hirai
+            title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 80)//t-hirai
             title.centerX = self.mVContent.centerX
             title.textAlignment = .center
             

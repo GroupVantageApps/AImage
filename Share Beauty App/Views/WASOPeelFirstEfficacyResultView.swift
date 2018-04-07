@@ -5,10 +5,11 @@
 //  Created by Tomoyuki Matsumoto on 2017/03/04.
 //  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
 //
-
+import APNGKit
 
 class WASOPeelFirstEfficacyResultView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak private var apngImageV: APNGImageView!
     @IBOutlet weak var FirstCircleLabel: UILabel!
     @IBOutlet weak var SecondCircleLabel: UILabel!
     @IBOutlet weak var ThirdCircleLabel: UILabel!
@@ -29,6 +30,12 @@ class WASOPeelFirstEfficacyResultView: UIView {
         ThirdCircleLabel.text = csvArr["137"]
         ForthCircleLabel.text = csvArr["138"]
         copyLabel.text = csvArr["141"]
+        apngImageV.image = FileTable.getAImage(6617)
     }
+    
+    func startAnimation() {
+        apngImageV.startAnimating()
+    }
+    
 }
 

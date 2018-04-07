@@ -40,8 +40,8 @@ class LifeStyleProductView: BaseView {
         566:0,
         568:0,
         LanguageConfigure.UTMId:0,
-        570:7942,
-        571:7943,
+        570:0, //7942
+        571:0, //7943
         // makeUp ID
         578:0,
         6543:0,

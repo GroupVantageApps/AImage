@@ -126,7 +126,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         let topVc = UIViewController.GetViewControllerFromStoryboard("TopViewController", targetClass: TopViewController.self) as! TopViewController
         // for custom url scheme
         if productIdForDeeplink != 0 {
-            LoadingView.show(vc: self)
+//            LoadingView.show(vc: self)
             topVc.productIdForDeeplink = productIdForDeeplink
             topVc.showEfficacy = showEfficacy
         }
@@ -134,7 +134,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             if lineStepForDeepLink != 0 {
                 topVc.lineStepForDeepLink = lineStepForDeepLink
             }
-            LoadingView.show(vc: self)
+//            LoadingView.show(vc: self)
             topVc.lineIdForDeeplink = lineIdForDeeplink
         }
         

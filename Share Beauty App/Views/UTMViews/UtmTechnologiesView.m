@@ -172,10 +172,6 @@
              forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:rightEffectBtn];
     
-    
-    
-    
-    
     [self showJoitUtmLabelText:43
                            end:45
                          frame:CGRectMake(161, 440, 652, 50)
@@ -184,12 +180,6 @@
                     lineHeight:0
                          enter:YES];
     
-    
-    //        [self showUtmImage:CGRectMake(self.bounds.size.width * 0.5 - 885 * 0.5,506, 885, 12) image:@"bottom_line"];
-    
-    
-    
-    
 
 }
 
@@ -197,15 +187,8 @@
 - (void)showTechnologiesDetail:(BOOL)isUtm{
     firstAnimation = YES;
     NSLog(@"showTechnologiesDetail");
-//    UIImageView *imageUtmView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 50)];
-//    UIImage *image = [UIImage imageNamed: @"top_shadow"];
-//    imageUtmView.image = image;
-//    [self addSubview:imageUtmView];
-    
-//       NSLog(@"productId:%ld",(long)productId);
-    
+ 
     NSArray *utmArr = [UIUtil getUtmArray];
-
 
     [self setBackgroundColor:[UIColor whiteColor]];
     
@@ -214,10 +197,6 @@
     scrollView.delegate = self;
     [self addSubview:scrollView];
 
-//    self.utmCloseBtn = [[UIButton alloc]initWithFrame:CGRectMake(23, self.bounds.size.height / 2 - 17, 11, 34)];
-//    [self.utmCloseBtn setBackgroundImage:[UIImage imageNamed:@"utm_close_btn"] forState:UIControlStateNormal];
-//    [self addSubview:self.utmCloseBtn];
-    
     //gb01
     [self showUtmImage:CGRectMake(self.bounds.size.width - 602, 7, 602, 507) image:@"utm_bg_01"];
 

@@ -25,6 +25,8 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     let gold = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0 )
     var bgAudioPlayer: AVAudioPlayer!
     
+    var finishAnimation: Bool = false
+    
     @IBOutlet weak var topTitleLabel: UILabel!
     
     
@@ -70,13 +72,15 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         return mVContent
     }
     
+    
     func setBtn(){
         for i in 0...4{
             let button = UIButton()
             button.setImage(UIImage(named: "nsbutton_\(i).png"), for: .normal)
-            button.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: 180, width: Int((self.mVContent.frame.width-4)/5), height: 510)
+            button.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: Int(180), width: Int((self.mVContent.frame.width-4)/5), height: 510)
             button.tag = 80+i
             button.addTarget(self, action: #selector(self.onTapSecret(_:)), for: .touchUpInside)
+            button.alpha = 0
             self.mVContent.addSubview(button)
             
             let titleLabel = UILabel()
@@ -86,30 +90,108 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             titleLabel.numberOfLines = 0
             titleLabel.font = UIFont(name: "ACaslonPro-Regular", size: 18)
             titleLabel.textColor = UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0)
-            titleLabel.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: 440, width: Int((self.mVContent.frame.width-4)/5), height: 85)
-            self.mVContent.addSubview(titleLabel)
-            
-            var movieBtn = UIButton()
-            movieBtn.frame = CGRect(x: self.mVContent.frame.width-70, y: 105, width: 40, height: 40)
-            movieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
-            movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
-            self.mVContent.addSubview(movieBtn)
+            titleLabel.frame = CGRect(x: 0, y: 440 - 180, width: Int((self.mVContent.frame.width-4)/5), height: 85)
+            button.addSubview(titleLabel)
+
+            let bgImgV = UIImageView()
+            bgImgV.frame = CGRect(x: 0 + (Int((self.mVContent.frame.width-4)/5))*i+i, y: Int(180 + self.mVContent.frame.height), width: Int((self.mVContent.frame.width-4)/5), height: 510)
+            bgImgV.image = UIImage.init(named: "lx_b0\(i + 1)")
+            bgImgV.alpha = 0
+            bgImgV.tag = 90+i
+            self.mVContent.addSubview(bgImgV)
+
         }
+        
+        var movieBtn = UIButton()
+        movieBtn.frame = CGRect(x: self.mVContent.frame.width-70, y: 105, width: 40, height: 40)
+        movieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
+        self.mVContent.addSubview(movieBtn)
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        
+        if !finishAnimation {
+            for i in 0...4 {
+                let btn = self.mVContent.viewWithTag(80 + i) as! UIButton 
+                let imgV = self.mVContent.viewWithTag(90 + i) as! UIImageView 
+                let delay = 0.5 * Double(i)
+                UIView.animateKeyframes(withDuration: 4.0, delay: delay, options: [], animations: {
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        imgV.alpha = 1
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        imgV.centerY -= self.mVContent.frame.height
+                    })
+                                        
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        imgV.transform = imgV.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        imgV.alpha = 0
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
+                    
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+                        
+                    })
+                    UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                        btn.alpha = 1
+                    })
+                    
+                    
+                }, completion: nil)
+            }
+            finishAnimation = true
+        }
+        
+    }
  
     
     @objc private func onTapSecret(_ sender: AnyObject){
-
-        scrollContentBaseV.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width - 70, height: self.view.frame.height - 80)
-        scrollContentBaseV.center = self.view.center
-        scrollContentBaseV.origin.y += 25
-        scrollContentBaseV.tag = 70
+        let btn = sender as! UIButton
+        let imgV = self.mVContent.viewWithTag(btn.tag + 10) as! UIImageView
+        
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.0, options: [], animations: {
+           
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
+                btn.alpha = 0
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                imgV.alpha = 1
+            })
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                imgV.transform = imgV.transform.scaledBy(x: -1.0, y: 1.0)
+            })
+            
+        },completion:  { finished in
+        
+        btn.alpha = 1
+        btn.transform = btn.transform.scaledBy(x: -1.0, y: 1.0)
+        imgV.alpha = 0
+        
+            self.scrollContentBaseV.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width - 70, height: self.view.frame.height - 80)
+        self.scrollContentBaseV.center = self.view.center
+        self.scrollContentBaseV.origin.y += 25
+        self.scrollContentBaseV.tag = 70
         
         //let closeBtn = UIButton()
         self.closeBtn.setImage(UIImage(named: "close_button.png"), for: .normal)
-        self.closeBtn.frame = CGRect(x: scrollContentBaseV.frame.width - 40, y: 35, width: 40, height: 40)
+        self.closeBtn.frame = CGRect(x: self.scrollContentBaseV.frame.width - 40, y: 35, width: 40, height: 40)
         self.closeBtn.addTarget(self, action: #selector(self.onTapCloseScroll(_:)), for: .touchUpInside)
         
         self.pageControll.isHidden = false
@@ -117,14 +199,14 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         self.pageControll.numberOfPages = 5
         self.pageControll.currentPage = currentPage
         self.pageControll.pageIndicatorTintColor = UIColor.lightGray
-        self.pageControll.currentPageIndicatorTintColor = gold
-        self.pageControll.frame = CGRect(x: scrollContentBaseV.frame.width/2 - 100  , y: scrollContentBaseV.frame.height-50, width: 200, height: 50)
+        self.pageControll.currentPageIndicatorTintColor = self.gold
+        self.pageControll.frame = CGRect(x: self.scrollContentBaseV.frame.width/2 - 100  , y: self.scrollContentBaseV.frame.height-50, width: 200, height: 50)
         
         self.scrollContentV.delegate = self
         self.scrollContentV.tag = 88
-        self.scrollContentV.frame.size = CGSize(width: scrollContentBaseV.frame.width, height:scrollContentBaseV.frame.height)
-        self.scrollContentV.origin.x = scrollContentBaseV.origin.x - 35
-        self.scrollContentV.contentSize = CGSize(width: (scrollContentBaseV.frame.width)*5, height: scrollContentBaseV.frame.height)
+        self.scrollContentV.frame.size = CGSize(width: self.scrollContentBaseV.frame.width, height: self.scrollContentBaseV.frame.height)
+        self.scrollContentV.origin.x = self.scrollContentBaseV.origin.x - 35
+        self.scrollContentV.contentSize = CGSize(width: (self.scrollContentBaseV.frame.width)*5, height: self.scrollContentBaseV.frame.height)
         self.scrollContentV.isPagingEnabled = true
         self.scrollContentV.bounces = false
         let scrollViewWidth = self.scrollContentV.frame.width
@@ -138,7 +220,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             page.contentMode = .scaleAspectFit
             
             var titleText = UILabel()
-            titleText.textColor  = gold
+            titleText.textColor  = self.gold
 
 //            titleText.font = UIFont.boldSystemFontOfSize(CGFloat(UIFont(name: "ACaslonPro-Regular", size: 30))!)
             titleText.font = (UIFont(name: "ACaslonPro-Regular", size: 30))
@@ -146,14 +228,14 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             titleText.textAlignment = NSTextAlignment.left
             
             var descriptionText = UILabel()
-            descriptionText.textColor  = gold
+            descriptionText.textColor  = self.gold
             descriptionText.font = UIFont(name: "ACaslonPro-Regular", size: 18)
             descriptionText.numberOfLines = 0
             descriptionText.textAlignment = NSTextAlignment.left
 
             let toDetailBtn = UIButton()
             toDetailBtn.backgroundColor = UIColor.black
-            toDetailBtn.layer.borderColor = gold.cgColor
+            toDetailBtn.layer.borderColor = self.gold.cgColor
             toDetailBtn.layer.borderWidth = 1
             toDetailBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 18)
             toDetailBtn.setTitleColor(UIColor(red: 171/255.0, green: 154/255.0, blue: 89/255.0, alpha: 1.0), for: .normal)
@@ -190,21 +272,21 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                     
                     let efficacyTitle = UILabel()
                     efficacyTitle.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 410, width: 300, height: 120)
-                    efficacyTitle.textColor  = gold
+                    efficacyTitle.textColor  = self.gold
                     efficacyTitle.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyTitle.numberOfLines = 0
                     efficacyTitle.textAlignment = NSTextAlignment.left
                     
                     let efficacyDescription = UILabel()
                     efficacyDescription.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 395, width: 280, height: 300)
-                    efficacyDescription.textColor  = gold
+                    efficacyDescription.textColor  = self.gold
                     efficacyDescription.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyDescription.numberOfLines = 0
                     efficacyDescription.textAlignment = NSTextAlignment.left
                     
                     let efficacyBtn = UIButton()
                     efficacyBtn.backgroundColor = UIColor.black
-                    efficacyBtn.layer.borderColor = gold.cgColor
+                    efficacyBtn.layer.borderColor = self.gold.cgColor
                     efficacyBtn.layer.borderWidth = 1
                     efficacyBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyBtn.tag = 100 + j
@@ -226,14 +308,11 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                 titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 400, height: 60)
                 descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 110, width: 400, height: 300)
                 toDetailBtn.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 390, width: 180, height: 30)
-                
                 self.setText(i: i, titleText: titleText, descriptionText: descriptionText, toDetailBtn: toDetailBtn)
-
                 
             }else if i == 4{
                 titleText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 100, width: 400, height: 60)
                 descriptionText.frame = CGRect(x: 550+(CGFloat(i)*scrollViewWidth), y: 140, width: 400, height: 300)
-                
                 self.setText(i: i, titleText: titleText, descriptionText: descriptionText, toDetailBtn: toDetailBtn)
 
             }
@@ -241,11 +320,11 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             
         }
         self.scrollContentV.contentOffset = CGPoint(x: self.scrollContentV.contentSize.width / 5 * CGFloat(sender.tag-80), y: 0)
-        self.view.addSubview(scrollContentBaseV)
-        scrollContentBaseV.addSubview(self.scrollContentV)
-        scrollContentBaseV.addSubview(self.pageControll)
-        scrollContentBaseV.addSubview(self.closeBtn)
-        
+        self.view.addSubview(self.scrollContentBaseV)
+        self.scrollContentBaseV.addSubview(self.scrollContentV)
+        self.scrollContentBaseV.addSubview(self.pageControll)
+        self.scrollContentBaseV.addSubview(self.closeBtn)
+        })        
     }
     
     @objc private func onTapCloseScroll(_ sender: UIButton){
@@ -254,7 +333,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         }
     }
     
-    @objc private func onTapDetailBtn(_ sender: AnyObject){
+    @objc private func onTapDetailBtn(_ sender: UIButton){
         
         if sender.tag < 100{
             
@@ -268,16 +347,15 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             }else if sender.tag == 81{
                 let popup: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
                 popup.setUI(productId: 521)
-                popup.center = CGPoint(x: (sender.superview??.centerX)!, y: (sender.superview??.centerY)!)
+                popup.center = CGPoint(x: (sender.superview?.centerX)!, y: (sender.superview?.centerY)!)
                 popup.mPageControl.isHidden = true
                 popup.mScrollV.contentSize = CGSize(width: popup.mScrollV.contentSize.width/2, height: popup.mScrollV.contentSize.height)
                 self.scrollContentBaseV.addSubview(popup)
                 
-                
             }else if sender.tag == 83{
                 let popup: LXYutakaConceptContentThirdView = UINib(nibName: "LXYutakaConceptContentThirdView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptContentThirdView
                 popup.setUI()
-                popup.center = CGPoint(x: (sender.superview??.centerX)!, y: (sender.superview??.centerY)!)
+                popup.center = CGPoint(x: (sender.superview?.centerX)!, y: (sender.superview?.centerY)!)
                 popup.tag = 90
                 
                 let closeBtn = UIButton()
@@ -287,15 +365,13 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                 popup.addSubview(closeBtn)
                 
                 self.scrollContentBaseV.addSubview(popup)
-                
-                
             }
             
         }else{
             
             let japanBotanicalBaseV = UIView()
             japanBotanicalBaseV.frame.size = CGSize(width: 701, height: self.scrollContentBaseV.height)
-            japanBotanicalBaseV.center = CGPoint(x: (sender.superview??.centerX)!, y:(sender.superview??.centerY)!)
+            japanBotanicalBaseV.center = CGPoint(x: (sender.superview?.centerX)!, y:(sender.superview?.centerY)!)
             japanBotanicalBaseV.tag = 90
             
             self.closeBtn_pop.setImage(UIImage(named: "close_button.png"), for: .normal)
@@ -303,7 +379,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             self.closeBtn_pop.addTarget(self, action: #selector(self.onTapClosePopUp(_:)), for: .touchUpInside)
             
             self.pageControll_pop.isHidden = false
-            let currentPage = sender.tag! - 80
+            let currentPage = sender.tag - 80
             self.pageControll_pop.numberOfPages = 3
             self.pageControll_pop.pageIndicatorTintColor = UIColor.lightGray
             self.pageControll_pop.currentPageIndicatorTintColor = gold
@@ -366,6 +442,20 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     
     @objc private func playMovie(_ sender: AnyObject){
         print("moviestart")
+        bgAudioPlayer.pause()
+  
+        let videoURL: URL = FileTable.getPath(6719)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
+        
     }
     
     //*UIPageController
@@ -399,6 +489,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     }
     
     func didTapshowSkinGraph() {
+        
         let skingraph: IngredientSkinGraphView = UINib(nibName: "IngredientSkinGraphView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! IngredientSkinGraphView
         skingraph.setUI()
         skingraph.delegate = self
