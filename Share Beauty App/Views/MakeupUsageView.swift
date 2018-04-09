@@ -163,7 +163,7 @@ class MakeupUsageView: BaseView {
             stepInfo2.endTime = 50
             var stepInfo3 = StepUsageInfo()
             stepInfo3.stepNumber = 3
-            stepInfo3.text = AppItemTable.getNameByItemId(itemId: 7942)
+            //stepInfo3.text = AppItemTable.getNameByItemId(itemId: 7942)
             stepInfo3.startTime = 51
             stepInfo3.endTime = 62
             var stepInfo4 = StepUsageInfo()
