@@ -410,7 +410,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         title.frame = CGRect(x: 0, y: Int(self.efficacyWASOScrollV.frame.height), width: 500, height: 100)
         title.centerX = self.mVContent.centerX
         title.numberOfLines = 0
-        title.textAlignment = .left
+        title.textAlignment = .center
         
         let label_35 = UILabel()
         label_35.text = "35%UP"
