@@ -524,14 +524,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         for i in 0...1{
             
-            let margin =  i == 0 ? -250 : 250
+            let margin =  i == 0 ? -200 : 200
+            let marginEffectImage = i == 0 ? -215 : 215
+            let marginEffectLabel = i == 0 ? -410 : 410
             let title = UILabel()
             title.textColor = UIColor.black
-            title.font = UIFont(name: "Reader-Bold", size: 25)
-            title.frame = CGRect(x: 500 * i, y: 10 , width: 400, height: 40)
+            title.font = UIFont(name: "Reader-Bold", size: 45)
+            title.frame = CGRect(x: 500 * i, y: 50 , width: 400, height: 50)
             title.centerX = self.mVContent.centerX + CGFloat(margin)
             title.textAlignment = .center
-            
+
             if i == 0{
                 title.text =  mEeeArr["101"] 
             }else if i == 1{
@@ -542,7 +544,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let faceImageV_after = UIImageView(image:image_after)
             faceImageV_after.contentMode = .scaleAspectFit
             faceImageV_after.clipsToBounds = true
-            faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV_after.frame = CGRect(x: 500 * i, y: 120 , width: 240, height: 230)
+            // faceImageV_after.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
             faceImageV_after.centerX = self.mVContent.centerX + CGFloat(margin)
             faceImageV_after.backgroundColor = UIColor.clear
             
@@ -551,34 +554,52 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             faceImageV.contentMode = .scaleAspectFit
             faceImageV.tag = 30 + i//300
             faceImageV.clipsToBounds = true
-            faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
+            faceImageV.frame = CGRect(x: 500 * i, y: 120 , width: 240, height: 230)
+            // faceImageV.frame = CGRect(x: 500 * i, y: 70 , width: 300, height: 300)
             faceImageV.centerX = self.mVContent.centerX + CGFloat(margin)
             faceImageV.backgroundColor = UIColor.clear
             
+            let effectImage = UIImage(named: "13_yazirushi_0\(imageNum).png")
+            let effectImageV = UIImageView(image:effectImage)
+            effectImageV.contentMode = .scaleAspectFit
+            effectImageV.clipsToBounds = true
+            effectImageV.frame = CGRect(x: 500 * i, y: 110 , width: 280, height: 270)
+            effectImageV.centerX = self.mVContent.centerX + CGFloat(marginEffectImage)
+            effectImageV.backgroundColor = UIColor.clear
+            
+            let effectLabel = UILabel()
+            effectLabel.textColor = UIColor.black
+            effectLabel.font = UIFont(name: "Reader-Bold", size: 15)
+            effectLabel.frame = CGRect(x: 500 * i, y: 210 , width: 80, height: 70)
+            effectLabel.centerX = self.mVContent.centerX + CGFloat(marginEffectLabel)
+            effectLabel.textAlignment = .left
+            effectLabel.numberOfLines = 0
+            effectLabel.text = mEeeArr["100"]
+
             let beforeBtn = UIButton()
             beforeBtn.isEnabled = false
-            beforeBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            beforeBtn.frame = CGRect(x:  500 * i, y: 390, width: 145, height: 30)
             beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10 + CGFloat(margin)
-            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+            beforeBtn.setTitle(mEeeArr["98"], for: .normal) // "Before"
             beforeBtn.isEnabled = false
             beforeBtn.setTitleColor(UIColor.white, for: .normal)
             beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 15)
             beforeBtn.tag = 10 + i//100
             beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
             let afterBtn = UIButton()
             afterBtn.isEnabled = true
-            afterBtn.frame = CGRect(x:  500 * i, y: 400, width: 145, height: 30)
+            afterBtn.frame = CGRect(x:  500 * i, y: 390, width: 145, height: 30)
             afterBtn.origin.x = self.mVContent.centerX + 10 + CGFloat(margin)
-            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+            afterBtn.setTitle(mEeeArr["99"], for: .normal) // "After 4 Weeks"
             afterBtn.isEnabled = true
             afterBtn.setTitleColor(UIColor.white, for: .normal)
             afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             
             afterBtn.setTitleColor(UIColor.black, for: .normal)
             afterBtn.backgroundColor = UIColor.white
-            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 15)
             afterBtn.tag = 20 + i//200
             afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
             
@@ -587,12 +608,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let border = UIImageView(image:image)
                 border.contentMode = .scaleToFill
                 if j == 0{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 398, width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20 + margin , y: 388, width: 1, height: 34)
                 }else if j == 1{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 398, width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX)  + margin, y: 388, width: 1, height: 34)
                     
                 }else if j == 2{
-                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 398 , width: 1, height: 34)
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20 + margin, y: 388 , width: 1, height: 34)
                 }
                 self.efficacyEEEScrollV.addSubview(border)
                 
@@ -601,7 +622,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let copy = UILabel()
             copy.textColor = UIColor.gray
             copy.font = UIFont(name: "Reader-Medium", size: 14)
-            copy.frame = CGRect(x: 10 , y: self.mVContent.size.height - 150 , width: 400, height: 100)
+            copy.frame = CGRect(x: 15 , y: self.mVContent.size.height - 170 , width: 360, height: 100)
             copy.numberOfLines = 0
             copy.textAlignment = .left
             copy.text = mEeeArr["103"]
@@ -612,6 +633,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyEEEScrollV.addSubview(faceImageV)
             self.efficacyEEEScrollV.addSubview(beforeBtn)
             self.efficacyEEEScrollV.addSubview(afterBtn)
+            self.efficacyEEEScrollV.addSubview(effectImageV)
+            self.efficacyEEEScrollV.addSubview(effectLabel)
+
         }
         
         let nib = UINib(nibName: "EEEFirstEfficacyResultView", bundle: nil)
