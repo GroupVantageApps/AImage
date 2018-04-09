@@ -26,7 +26,7 @@ class StepUsageView: BaseView {
 
     @IBOutlet weak private var mAVPlayerV: AVPlayerView!
     @IBOutlet weak private var mLblStep: UILabel!
-    @IBOutlet weak private var mLblTitle: UILabel!
+    @IBOutlet weak var mLblTitle: UILabel!
     @IBOutlet weak private var mLblDescription: UILabel!
     private var mStepBtns: [UIButton]!
     @IBOutlet weak private var mVBtns4: UIView!

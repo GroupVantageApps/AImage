@@ -145,7 +145,8 @@ class MakeupUsageView: BaseView {
             movieInfo1.stepUsageInfos = [stepInfo1, stepInfo2]
             movieInfos = [movieInfo1]
 
-        }else if productId == 564 { //Brush
+        }else if productId == 564 { 
+            //Brush
             var movieInfo1 = MovieInfo()
             movieInfo1.title = basic
             movieInfo1.movieId = 6705
@@ -181,6 +182,10 @@ class MakeupUsageView: BaseView {
     private func setupUsageView() {
         movieInfos.forEach { movieInfo in
             let stepUsageView = StepUsageView()
+            if productId == 564 {
+                stepUsageView.mLblTitle.isHidden = true
+                stepUsageView.mLblTitle.superview?.backgroundColor = UIColor.clear
+            }
             stepUsageView.translatesAutoresizingMaskIntoConstraints = false
             mVContent.addSubview(stepUsageView)
             stepUsageView.setup(movieInfo: movieInfo)
