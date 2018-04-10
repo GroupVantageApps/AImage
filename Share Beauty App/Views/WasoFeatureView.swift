@@ -23,7 +23,9 @@ class WasoFeatureView: BaseView {
 	fileprivate var guideFrameView: UIView? = nil
 	fileprivate var guideIconView: UIImageView? = nil
 	fileprivate var onGuideFrameImageView: UIImageView? = nil
-
+    
+    var hukidashi_tap_enable: Bool = true
+    
     deinit {
         apngImageV.startAnimating()
         apngImageV.image = nil
@@ -156,7 +158,9 @@ class WasoFeatureView: BaseView {
     }
 
     @IBAction func onTapImage(_ sender: Any) {
-        self.showHukidashi()
+        if self.hukidashi_tap_enable {
+            self.showHukidashi()
+        }
     }
 
     @IBAction func onTapClose(_ sender: Any) {
