@@ -42,7 +42,7 @@ class SDPEfficacyResultView: UIView {
             SubTitleLabel.isHidden = false
             SubTitleLabel.font = UIFont(name: "Reader-Bold", size: 23)
             SubTitleLabel.text = csvArr["\(start_index - 1)"]
-            titleLabel.frame.origin.x = titleLabel.frame.origin.x - 200
+            titleLabel.frame.origin.x = 643
         }
         
         if start_index == 17 {
