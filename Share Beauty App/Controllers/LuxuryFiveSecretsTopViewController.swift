@@ -271,14 +271,14 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
                 for j in 0...2{
                     
                     let efficacyTitle = UILabel()
-                    efficacyTitle.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 410, width: 300, height: 120)
+                    efficacyTitle.frame = CGRect(x: (20+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 410, width: 280, height: 120)
                     efficacyTitle.textColor  = self.gold
                     efficacyTitle.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyTitle.numberOfLines = 0
                     efficacyTitle.textAlignment = NSTextAlignment.left
                     
                     let efficacyDescription = UILabel()
-                    efficacyDescription.frame = CGRect(x: (45+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 395, width: 280, height: 300)
+                    efficacyDescription.frame = CGRect(x: (20+(scrollViewWidth/3*CGFloat(j)))+(CGFloat(i)*scrollViewWidth), y: 395, width: 280, height: 290)
                     efficacyDescription.textColor  = self.gold
                     efficacyDescription.font = UIFont(name: "ACaslonPro-Regular", size: 18)
                     efficacyDescription.numberOfLines = 0
