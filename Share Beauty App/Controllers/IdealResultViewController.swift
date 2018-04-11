@@ -341,6 +341,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     
     func addUTMfromLifeStyleBeauty(){
+        print(ProductData(productId: 565))
         let ClenserProducts = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
         let SoftenerProducts = [ProductData(productId: 568),ProductData(productId: 569)]
         let UTMproductList = ClenserProducts + SoftenerProducts
