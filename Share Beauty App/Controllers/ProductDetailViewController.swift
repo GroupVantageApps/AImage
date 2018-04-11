@@ -1653,7 +1653,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             topicTitle.font = UIFont(name: "Reader-Bold", size: 22)
 
             let topicDesctription = UILabel()
-            topicDesctription.frame = CGRect(x: 230 - 100 + (i * 280), y: 347, width: 200, height: 30)
+            topicDesctription.frame = CGRect(x: 230 - 100 + (i * 280), y: 347, width: 200, height: 40)
             topicDesctription.textAlignment = .center
             topicDesctription.font = UIFont(name: "Reader-Medium", size: 13)
             
