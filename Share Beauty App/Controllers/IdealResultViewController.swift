@@ -342,18 +342,36 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     func addUTMfromLifeStyleBeauty(){
         print(ProductData(productId: 565))
-        let ClenserProducts = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
-        let SoftenerProducts = [ProductData(productId: 568),ProductData(productId: 569)]
+  
+        var ClenserProducts = [ProductData()]
+        for product_id in [565, 565, 567] {
+            let product = ProductData(productId: 568)
+            if product.displayOrder == 1 {
+                ClenserProducts.append(product)
+            }
+        }
+        
+        var SoftenerProducts = [ProductData()]
+        for product_id in [568, 569] {
+            let product = ProductData(productId: 568)
+            if product.displayOrder == 1 {
+                SoftenerProducts.append(product)
+            }
+        }
         let UTMproductList = ClenserProducts + SoftenerProducts
 
         if getProdut_id == 566{
-            mProducts.insert(contentsOf: ClenserProducts, at: 0)
+            if ClenserProducts.count < 0 {
+                mProducts.insert(contentsOf: ClenserProducts, at: 0)
+            }
         }else if getProdut_id == 568{
+              if SoftenerProducts.count < 0 {
             mProducts.insert(contentsOf: SoftenerProducts, at: 0)
+            }
         }else if getProdut_id == 10002{//NewApproachViewからの遷移
-            let UTMproductList = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567),ProductData(productId: 568),ProductData(productId: 569)]
-            mProducts.insert(contentsOf: UTMproductList, at: 0)
-            
+             if UTMproductList.count < 0 {
+                mProducts.insert(contentsOf: UTMproductList, at: 0)
+            }
             self.setMovieIcon()
         }
     }
