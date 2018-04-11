@@ -220,7 +220,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             let titleText = UILabel()
             titleText.textColor  = self.gold
 
-            titleText.font = (UIFont(name: "ACaslonPro-Regular", size: 30))
+            titleText.font = (UIFont(name: "ACaslonPro-Regular", size: 28))  //size: 30
             titleText.numberOfLines = 0
             titleText.textAlignment = NSTextAlignment.left
             
