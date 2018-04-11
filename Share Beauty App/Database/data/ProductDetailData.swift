@@ -84,6 +84,7 @@ class ProductDetailData: NSObject {
         self.beautySecondEntity = BeautySecondTable.getEntity(self.productEntity.beautyId!)
         self.beautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(self.productEntity.beautyId!)
 
+        
         self.lineId = self.productEntity.lineId!
         self.beautySecondId = self.beautySecondEntity.beautySecondId!
 

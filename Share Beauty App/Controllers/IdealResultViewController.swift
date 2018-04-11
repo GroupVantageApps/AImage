@@ -113,7 +113,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             mCollectionView.delegate = self
             mCollectionView.dataSource = self
         }
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -209,24 +208,48 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         movieStartButton.setImage(image, for: .normal)
         movieStartButton.imageView?.contentMode = .scaleAspectFit
         movieStartButton.frame = CGRect(x: 80, y: 20, width: 40, height: 40)
-        
+        movieStartButton.tag = 10
         movieStartButton.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         mVMain.addSubview(movieStartButton)
-
+        
+        let label = UILabel.init(frame: CGRect(x: 50, y: 65, width: 100, height: 25))
+        let clenser =  BeautySecondTranslateTable.getEntity(4)
+        
+        label.text = clenser.name
+        label.textAlignment = .center
+        label.layer.borderWidth = 1
+        mVMain.addSubview(label)
+        
+        let movieStartButton2 = UIButton()
+        movieStartButton2.setImage(image, for: .normal)
+        movieStartButton2.imageView?.contentMode = .scaleAspectFit
+        movieStartButton2.frame = CGRect(x: 190, y: 20, width: 40, height: 40)
+        movieStartButton2.tag = 11
+        movieStartButton2.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
+        mVMain.addSubview(movieStartButton2)
+        
+        let label2 = UILabel.init(frame: CGRect(x: 160, y: 65, width: 100, height: 25))
+        let softner =  BeautySecondTranslateTable.getEntity(5)
+        label2.text = softner.name
+        label2.textAlignment = .center
+        label2.layer.borderWidth = 1
+        mVMain.addSubview(label2)
+        
     }
     
 //    func startMovie(){
 //        print("start")
 //    }
     
-    func showMovie() {
-        
-        let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(6542))
+    func showMovie(sender: UIButton) {
+        let movie_id = sender.tag == 10 ? 6713 : 6612
+        let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movie_id))
         let avPlayerVc = AVPlayerViewController()
         avPlayerVc.player = avPlayer
         if #available(iOS 9.0, *) {
             avPlayerVc.allowsPictureInPicturePlayback = false
         }
+        
         self.present(avPlayerVc, animated: true, completion: {
             // dismissを監視するため、オブザーバ登録する
             avPlayerVc.addObserver(self, forKeyPath: #keyPath(UIViewController.view.frame), options: [.old, .new], context: nil)
@@ -466,7 +489,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
             cell.delegate = self
-            print("product_indexPath.row")
 //            print("indexPath.row / 2:\(indexPath.row / 2)")
             cell.product = mProducts[indexPath.row / 2 ]
             cell.productImage = mProductImages[indexPath.row / 2]
