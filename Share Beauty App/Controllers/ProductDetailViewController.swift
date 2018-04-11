@@ -343,7 +343,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*4)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
             self.efficacyScrollV.isPagingEnabled = true
             self.efficacyScrollV.bounces = false
             
@@ -913,6 +913,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setWasoData()
             self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
             mWasoFeatureView.startAnimation()
+            if productId == 570 || productId == 571 {
+                mWasoFeatureView.hukidashi_tap_enable = false
+            }
         }
     }
 
@@ -2035,7 +2038,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         print("Efficacy")
     
         //初期位置
-        for i in 0...2{
+        for i in 0...1{
             if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
                 beforeBtn.isEnabled = false
                 beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
@@ -2059,7 +2062,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     func setEfficacyView(){
         //1~3枚め
-        for i in 0...2 {
+        for i in 0...1 {
             let title = UILabel()
             title.textColor = UIColor.black
             title.font = UIFont(name: "Reader-Bold", size: 22)
@@ -2072,10 +2075,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 title.text =  mUtmArr["26"] 
 
             }else if i == 1{
-                title.text = mUtmArr["30"] // "Skin looks smoother, more dewy and radiant."
+                title.text = mUtmArr["32"] // "Skin looks smoother, more dewy and radiant."
 
-            }else if i == 2{
-                title.text = mUtmArr["32"]
             }
             
             let imageNum = i + 1
@@ -2156,7 +2157,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         title.textColor = UIColor.black
         title.font = UIFont(name: "Reader-Bold", size: 22)
         title.text = mUtmArr["34"] // "After 4 weeks of use:"
-        title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*3), width: 700, height: 40)
+        title.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*2), width: 700, height: 40)
         title.centerX = self.mVContent.centerX
         title.textAlignment = .center
         self.efficacyScrollV.addSubview(title)
@@ -2181,7 +2182,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             } else {
                 percentLabel.text = mUtmArr["39"]
             }
-            percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 160, height: 82)
+            percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*2+(130*(i-1)), width: 160, height: 82)
             percentLabel.textAlignment = .center
             self.efficacyScrollV.addSubview(percentLabel)
         }
@@ -2192,7 +2193,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             description.font = UIFont(name: "Reader-Medium", size: 12)
             description.numberOfLines = 0
             description.textAlignment = .left
-            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 200, height: 150)
+            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70 + Int(self.efficacyScrollV.frame.height)*2+(130*(i-1)), width: 200, height: 150)
 
             
             if i == 1{
@@ -2206,7 +2207,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         
         //右下テキスト
-        for i in 1...4{
+        for i in 1...3{
             let text = UILabel()
             text.textColor = UIColor.lightGray
             text.font = UIFont(name: "Reader-Medium", size: 12)
@@ -2222,9 +2223,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 text.text = mUtmArr["31"] // "*39-year-old"
 
             } else if i == 3{
-                text.text = mUtmArr["33"] // "*40-year-old"
-
-            } else if i == 4{
                 text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 300, height: 60)
                 text.text = "*100 women of age 25-39 after 4 weeks of use.\n2017/1/10-2/7 in Singapore"
             }

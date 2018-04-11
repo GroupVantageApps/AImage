@@ -26,16 +26,39 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             productDetailVc.productId = product!.productId
 
+            var secondsProducts = [Int:[ProductData]]()
             var i = 0
-            for product in productList.products {
+            for productId in relative_productIds {
+                let data: ProductData = ProductData(productId: productId)
+                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                    let data: ProductData = ProductData(productId: productId)
+                    secondsProducts[i] = [data]
+                } else {
+                    //HowToなど画像を置くようにproductを追加
+                    let data: ProductData = ProductData(productId: 0)
+                    secondsProducts[i] = [data]
+                }
+                i += 1
+            }
+            var tempProducts = [ProductData]()
+            secondsProducts.keys.sorted().forEach({ key in
+                let secondProduct = secondsProducts[key]!
+                let new = secondProduct.filter {$0.newItemFlg == 1}
+                let old = secondProduct.filter {$0.newItemFlg == 0}
+                tempProducts += (new + old)
+            })
+            
+            i = 0
+            for product in tempProducts {
                 if product.productId == 0 {
-                    productList.products.remove(at: i)
+                    tempProducts.remove(at: i)
                 } else {
                     i += 1
                 }
             }
+            
 
-            productDetailVc.relationProducts = productList.products
+            productDetailVc.relationProducts = tempProducts
             delegate?.nextVc(productDetailVc)
 
             LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
@@ -49,16 +72,38 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         productDetailVc.isHowToUseView = true
         productDetailVc.indexHowToUse = index
         
+        var secondsProducts = [Int:[ProductData]]()
         var i = 0
-        for product in productList.products {
+        for productId in relative_productIds {
+            let data: ProductData = ProductData(productId: productId)
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                let data: ProductData = ProductData(productId: productId)
+                secondsProducts[i] = [data]
+            } else {
+                //HowToなど画像を置くようにproductを追加
+                let data: ProductData = ProductData(productId: 0)
+                secondsProducts[i] = [data]
+            }
+            i += 1
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        
+        i = 0
+        for product in tempProducts {
             if product.productId == 0 {
-                productList.products.remove(at: i)
+                tempProducts.remove(at: i)
             } else {
                 i += 1
             }
         }
         
-        productDetailVc.relationProducts = productList.products
+        productDetailVc.relationProducts = tempProducts
         delegate?.nextVc(productDetailVc)
         
         LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
@@ -120,6 +165,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 //    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
 //    private let productIds:[Int] = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
     private var productIds:[Int] = []
+    private var relative_productIds:[Int] =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     private let essentialEnagyProducts = [553,554]
     private let whiteLucentProducts = [101,455]
     private let makeUpProducts = [470,500,551]
@@ -202,6 +248,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         // productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
         // makeUp ID = 578, 572
         productIds = [564,9999,566,568,LanguageConfigure.UTMId, 570, 571]
+        relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     }
     
     override func viewDidLayoutSubviews() {

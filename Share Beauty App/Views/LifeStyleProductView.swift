@@ -179,7 +179,10 @@ class LifeStyleProductView: BaseView {
         didSet {
             print("tintColor: " + (self.mBtnProduct.imageView?.tintColor.description)!)
             self.beautyName = product?.beautyName
-            self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
+            if (discroptionList[(product?.productId)!] != nil)
+            {
+                self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
+            }
             print("self.discriptionLabel.text:\(self.discriptionLabel.text)")
             self.lineName = product?.lineName
             self.productName = product?.productName
