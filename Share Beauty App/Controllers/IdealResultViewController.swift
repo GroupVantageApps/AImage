@@ -341,7 +341,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     
     func addUTMfromLifeStyleBeauty(){
-        print(ProductData(productId: 565))
   
         var ClenserProducts: [ProductData] = []
         for product_id in [565, 566, 567] {
@@ -377,17 +376,37 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     }
     
     func addUTMfromIdealBeauty(){
-        let ClenserProducts = [ProductData(productId: 565),ProductData(productId: 566),ProductData(productId: 567)]
-        let SoftenerProducts = [ProductData(productId: 568),ProductData(productId: 569)]
-        let UTMproductList = ClenserProducts + SoftenerProducts
-
-        if selectedStepLowerIds.contains(3) && selectedStepLowerIds.contains(4){
-            mProducts.insert(contentsOf: UTMproductList, at: 0)
-        }else if selectedStepLowerIds.contains(3){
-            mProducts.insert(contentsOf: ClenserProducts, at: 0)
-        }else if selectedStepLowerIds.contains(4){
-            mProducts.insert(contentsOf: SoftenerProducts, at: 0)
+        var ClenserProducts: [ProductData] = []
+        for product_id in [565, 566, 567] {
+            let product = ProductData(productId: product_id)
+            if product.defaultDisplay == 1 {
+                ClenserProducts.append(product)
+            }
         }
+        
+        var SoftenerProducts: [ProductData] = []
+        for product_id in [568, 569] {
+            let product = ProductData(productId: product_id)
+            if product.defaultDisplay == 1 {
+                SoftenerProducts.append(product)
+            }
+        }
+        let UTMproductList = ClenserProducts + SoftenerProducts
+        
+        if selectedStepLowerIds.contains(3) && selectedStepLowerIds.contains(4){
+            if UTMproductList.count > 0 {
+                mProducts.insert(contentsOf: UTMproductList, at: 0)
+            }
+        }else if selectedStepLowerIds.contains(3){
+            if ClenserProducts.count > 0 {
+                mProducts.insert(contentsOf: ClenserProducts, at: 0)
+            }
+        }else if selectedStepLowerIds.contains(4){
+            if SoftenerProducts.count > 0 {
+                mProducts.insert(contentsOf: SoftenerProducts, at: 0)
+            }
+        }
+        
     }
     
     
