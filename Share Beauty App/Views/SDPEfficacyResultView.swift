@@ -41,14 +41,18 @@ class SDPEfficacyResultView: UIView {
         if start_index == 34 {
             SubTitleLabel.isHidden = false
             SubTitleLabel.font = UIFont(name: "Reader-Bold", size: 23)
-            SubTitleLabel.text = csvArr["\(start_index - 1)"]
+            SubTitleLabel.text = csvArr["\(1)"]
             titleLabel.frame.origin.x = 643
         }
         
-        if start_index == 17 {
+        if start_index == 17  || start_index == 50 || start_index == 66 {
             titleLabel.text = csvArr["\(1)"]
         }
         
+        
+        if start_index == 25 || start_index == 42 || start_index == 58 || start_index == 74 {
+            titleLabel.text = csvArr["\(9)"]
+        }
         
         FirstImageView.image = UIImage.init(named: ("18aw_" + (csvArr["\(start_index + 1)"]?.replacingOccurrences(of:"%", with:""))!))
         SecondImageView.image = UIImage.init(named: ("18aw_" + (csvArr["\(start_index + 2)"]?.replacingOccurrences(of:"%", with:""))!))
@@ -56,7 +60,14 @@ class SDPEfficacyResultView: UIView {
         FirstCircleLabel.text = csvArr["\(start_index + 4)"]
         SecondCircleLabel.text = csvArr["\(start_index + 5)"]
         ThirdCircleLabel.text = csvArr["\(start_index + 6)"]
-        copyLabel.text = csvArr["\(start_index + 7)"]
+        
+        var copyLabelText = csvArr["\(start_index + 7)"]
+        if start_index == 17 || start_index == 25 {
+            copyLabelText = csvArr["\(24)"]
+        } else  if start_index == 9 {
+            copyLabelText = csvArr["\(8)"]
+        }
+        copyLabel.text = copyLabelText
         
     }
 }

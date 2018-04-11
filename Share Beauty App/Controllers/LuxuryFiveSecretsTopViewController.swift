@@ -211,23 +211,20 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         self.scrollContentV.bounces = false
         let scrollViewWidth = self.scrollContentV.frame.width
         
-        
-        
         for i in 0...4{
             
             let page = UIImageView(image: UIImage(named:"ns_page_0\(i).png"))
             page.frame = CGRect(x: CGFloat(i) * scrollViewWidth, y: 0, width: scrollViewWidth, height: self.scrollContentV.frame.height)
             page.contentMode = .scaleAspectFit
             
-            var titleText = UILabel()
+            let titleText = UILabel()
             titleText.textColor  = self.gold
 
-//            titleText.font = UIFont.boldSystemFontOfSize(CGFloat(UIFont(name: "ACaslonPro-Regular", size: 30))!)
             titleText.font = (UIFont(name: "ACaslonPro-Regular", size: 30))
             titleText.numberOfLines = 0
             titleText.textAlignment = NSTextAlignment.left
             
-            var descriptionText = UILabel()
+            let descriptionText = UILabel()
             descriptionText.textColor  = self.gold
             descriptionText.font = UIFont(name: "ACaslonPro-Regular", size: 18)
             descriptionText.numberOfLines = 0
