@@ -64,7 +64,7 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
     }
     
     @IBAction func close(_ sender: Any) {
-         self.removeFromSuperview()
+        self.isHidden = true
     }
     
     @IBAction func showSkinGraph(_ sender: Any) {

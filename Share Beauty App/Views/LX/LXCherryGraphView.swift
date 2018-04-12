@@ -41,9 +41,6 @@ class LXCherryGraphView: UIView{
     
     
     @IBAction func close(_ sender: Any) {
-        if let japanBotanicalV = self.superview {
-            japanBotanicalV.removeFromSuperview()
-        }
         self.isHidden = true
     }
 }
