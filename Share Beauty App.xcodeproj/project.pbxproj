@@ -90,6 +90,8 @@
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
+		41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15704207F5010000319BB /* lx_play_sound_2.png */; };
+		41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15705207F5011000319BB /* lx_play_sound_1.png */; };
 		5C233F93CC49A1135544BD45 /* Pods_Share_Beauty_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */; };
 		611D84057A55077F8526921F /* Pods_Share_Beauty_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */; };
 		800892171EA0DA24007C592A /* TelopTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800892151EA0DA24007C592A /* TelopTable.swift */; };
@@ -795,6 +797,8 @@
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
+		41A15704207F5010000319BB /* lx_play_sound_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_2.png; sourceTree = "<group>"; };
+		41A15705207F5011000319BB /* lx_play_sound_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_1.png; sourceTree = "<group>"; };
 		76C9321C537E378B56541512 /* Pods-Share Beauty AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty AppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		800892151EA0DA24007C592A /* TelopTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTable.swift; path = Database/table/TelopTable.swift; sourceTree = "<group>"; };
 		800892161EA0DA24007C592A /* TelopTranslateTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TelopTranslateTable.swift; path = Database/table/TelopTranslateTable.swift; sourceTree = "<group>"; };
@@ -2317,6 +2321,8 @@
 		DE2C91381E9C682500B5FC4A /* lx_app */ = {
 			isa = PBXGroup;
 			children = (
+				41A15705207F5011000319BB /* lx_play_sound_1.png */,
+				41A15704207F5010000319BB /* lx_play_sound_2.png */,
 				DE2C913B1E9C682500B5FC4A /* ba_up.png */,
 				DE2C91401E9C682500B5FC4A /* efficacy_dummy.png */,
 				DE2C91431E9C682500B5FC4A /* graphPoint_down.png */,
@@ -2845,6 +2851,7 @@
 				26768DB8202C5FE1005BE606 /* enhanceGraph_03.png in Resources */,
 				B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */,
 				DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */,
+				41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */,
 				26768D8C202C1C57005BE606 /* Tyme.png in Resources */,
 				C9906DD01F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard in Resources */,
 				26768DA8202C5FD6005BE606 /* point_01.png in Resources */,
@@ -3109,6 +3116,7 @@
 				26768D80202C1C3B005BE606 /* Reishi_2_cmyk.png in Resources */,
 				C050C90F1E82619F0009679D /* ss_purple.png in Resources */,
 				DE80C6822072939D00CD326A /* 18aw_93.png in Resources */,
+				41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */,
 				C050C98D1E8267450009679D /* f_effect_bg.png in Resources */,
 				C050C98A1E8267450009679D /* f_effect_1_.png in Resources */,
 				26AD5D8E20232545002A2076 /* ns_page_03_back.png in Resources */,
