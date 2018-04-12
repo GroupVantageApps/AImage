@@ -21,12 +21,22 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
     @IBOutlet weak var mImgV: UIImageView!
 
     weak var delegate: LXYutakaTreatmentContentFirstViewDelegate?  
-    var mPlaySound: UIButton!
+    
+    var mPlaySoundVerOne: UIButton!
+    var mPlaySoundVerTwo: UIButton!
+    
     func setUI(image: String, title: String, description: String, index: Int){
-        mPlaySound = self.viewWithTag(30) as! UIButton!
-        mPlaySound.addTarget(self, action: #selector(playSound), for: .touchUpInside)
-        mPlaySound.tag = index
-        mPlaySound.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
+        mPlaySoundVerOne = self.viewWithTag(30) as! UIButton!
+        mPlaySoundVerOne.addTarget(self, action: #selector(playSound), for: .touchUpInside)
+        mPlaySoundVerOne.tag = index
+        mPlaySoundVerOne.setImage(FileTable.getLXFileImage("lx_play_sound_1.png"), for: .normal)
+        
+        // 音楽再生ボタン追加
+        mPlaySoundVerTwo = self.viewWithTag(31) as! UIButton!
+        mPlaySoundVerTwo.addTarget(self, action: #selector(playSound), for: .touchUpInside)
+        mPlaySoundVerTwo.tag = index + 10
+        mPlaySoundVerTwo.setImage(FileTable.getLXFileImage("lx_play_sound_2.png"), for: .normal)
+
         self.mImgV.image = FileTable.getLXFileImage(image)
         mTitleLabel.text = title
         mDescriptionLabel.text = description
