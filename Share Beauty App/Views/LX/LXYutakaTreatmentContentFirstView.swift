@@ -29,13 +29,14 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
         mPlaySoundVerOne = self.viewWithTag(30) as! UIButton!
         mPlaySoundVerOne.addTarget(self, action: #selector(playSound), for: .touchUpInside)
         mPlaySoundVerOne.tag = index
-        mPlaySoundVerOne.setImage(FileTable.getLXFileImage("lx_play_sound_1.png"), for: .normal)
+        let playImageOne:UIImage = UIImage(named: "lx_play_sound_1.png")!
+        mPlaySoundVerOne.setImage(playImageOne, for: .normal)
         
-        // 音楽再生ボタン追加
         mPlaySoundVerTwo = self.viewWithTag(31) as! UIButton!
         mPlaySoundVerTwo.addTarget(self, action: #selector(playSound), for: .touchUpInside)
         mPlaySoundVerTwo.tag = index + 10
-        mPlaySoundVerTwo.setImage(FileTable.getLXFileImage("lx_play_sound_2.png"), for: .normal)
+        let playImageTwo:UIImage = UIImage(named: "lx_play_sound_2.png")!
+        mPlaySoundVerTwo.setImage(playImageTwo, for: .normal)
 
         self.mImgV.image = FileTable.getLXFileImage(image)
         mTitleLabel.text = title
