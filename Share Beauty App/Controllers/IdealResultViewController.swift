@@ -232,7 +232,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         let label2 = UILabel.init(frame: CGRect(x: 160, y: 65, width: 100, height: 25))
         let softner =  BeautySecondTranslateTable.getEntity(5)
         label2.text = softner.name
-        label.adjustsFontSizeToFitWidth = true
+        label2.adjustsFontSizeToFitWidth = true
         label2.textAlignment = .center
         label2.layer.borderWidth = 1
         mVMain.addSubview(label2)
