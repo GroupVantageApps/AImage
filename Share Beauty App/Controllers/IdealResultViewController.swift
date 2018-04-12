@@ -216,6 +216,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         let clenser =  BeautySecondTranslateTable.getEntity(4)
         
         label.text = clenser.name
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.layer.borderWidth = 1
         mVMain.addSubview(label)
@@ -231,6 +232,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         let label2 = UILabel.init(frame: CGRect(x: 160, y: 65, width: 100, height: 25))
         let softner =  BeautySecondTranslateTable.getEntity(5)
         label2.text = softner.name
+        label.adjustsFontSizeToFitWidth = true
         label2.textAlignment = .center
         label2.layer.borderWidth = 1
         mVMain.addSubview(label2)
