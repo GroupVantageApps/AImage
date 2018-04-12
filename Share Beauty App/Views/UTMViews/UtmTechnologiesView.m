@@ -140,8 +140,8 @@
     
     UIButton *leftEffectBtn = [[UIButton alloc]initWithFrame:CGRectMake(222, 380, 190, 19)];
     NSMutableAttributedString * leftEffectBtnStr =  [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[37]]
-                                                                    frame:CGRectMake(222, 380, 190, 19)
-                                                                 fontSize:17
+                                                                    frame:CGRectMake(222, 380, 200, 19) //t-hirai (222, 380, 190, 19)
+                                                                 fontSize:11 //t-hirai 17
                                                                  tracking:0
                                                                lineHeight:0 red:YES bold:YES];
     [leftEffectBtn setAttributedTitle:leftEffectBtnStr forState:UIControlStateNormal];
@@ -163,7 +163,7 @@
     UIButton *rightEffectBtn = [[UIButton alloc]initWithFrame:CGRectMake(641, 380, 150, 19)];
     NSMutableAttributedString * rightEffectBtnStr =  [self getUtmLabelText:[NSString stringWithFormat:@"%@",utmArr[38]]
                                                                      frame:CGRectMake(222, 380, 190, 19)
-                                                                  fontSize:17
+                                                                  fontSize:11//t-hirai 17
                                                                   tracking:0
                                                                 lineHeight:0 red:YES bold:YES];
     [rightEffectBtn setAttributedTitle:rightEffectBtnStr forState:UIControlStateNormal];

@@ -1799,15 +1799,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             if i == 1{
                 text.frame = CGRect(x: 20 , y: 5, width: 400, height: 60)
                 text.text = mUtmArr["9"] // "Ingredients that generate\nmore Langerhans cells"
-                text.font = UIFont(name: "Reader-Bold", size: 22)
+                text.font = UIFont(name: "Reader-Bold", size: 21)
             }else if i == 2{
                 text.frame = CGRect(x: 100 , y: 90, width: 500, height: 50)
                 text.text = mUtmArr["10"] // "Even when exposed to damage-inducing factors, the combination of Reishi Extract and Iris\nRoot Extract help precursor cells grow into Langerhans cells and increase their numbers.*"
                 text.font = UIFont(name: "Reader-Medium", size: 12)
             }else if i == 3{
-                text.frame = CGRect(x: 100 , y:180, width: 300, height: 50)
+                text.frame = CGRect(x: 100 , y:180, width: 320, height: 50) // width: 300, height: 50)
                 text.text = mUtmArr["11"] // "Ingredients nurture\nLangerhans cell growth."
-                text.font = UIFont(name: "Reader-Bold", size: 18)
+                text.font = UIFont(name: "Reader-Bold", size: 16) //18
                 text.textColor = red
             }else if i == 4{
                 text.frame = CGRect(x: 0 , y:365, width: 120, height: 50)
@@ -2224,7 +2224,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
             } else if i == 3{
                 text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 300, height: 60)
-                text.text = "*100 women of age 25-39 after 4 weeks of use.\n2017/1/10-2/7 in Singapore"
+                text.text = mUtmArr["42"] //"*100 women of age 25-39 after 4 weeks of use.\n2017/1/10-2/7 in Singapore"
             }
             
             self.efficacyScrollV.addSubview(text)
