@@ -30,7 +30,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     @IBOutlet weak var mBLSBtn: UIButton!
 
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]    
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoUltimune] 
 
     override
     func viewDidLoad() {
