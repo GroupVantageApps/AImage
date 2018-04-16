@@ -81,9 +81,9 @@
                         <constraint firstAttribute="width" constant="450" id="ZOb-BM-ulW"/>
                         <constraint firstAttribute="height" constant="30" id="nw9-dh-9w9"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="14"/>
                     <inset key="titleEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" title="FIND YOUR PERFECT UV PROTECTION11111111111" backgroundImage="s_title.png"/>
+                    <state key="normal" title="FIND YOUR PERFECT UV PROTECTION            " backgroundImage="s_title.png"/>
                     <connections>
                         <action selector="onTapFind:" destination="-1" eventType="touchUpInside" id="ChT-40-dMX"/>
                     </connections>
