@@ -691,6 +691,9 @@ const CGFloat kButtonAlphaStateDisabled = 0.4f;
         case 83:
             fileId = 5914;
             break;
+        case 85:
+            fileId = 6739; //indonesia
+            break;
         default:
             fileId = 5916;
             break;
