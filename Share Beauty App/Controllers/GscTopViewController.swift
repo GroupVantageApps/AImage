@@ -110,7 +110,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             mFindLabel.textAlignment = .center
             mFindLabel.font = UIFont(name: "Optima-Bold", size: 25.0)
             mFindLabel.textColor = UIColor.white
-            mFindLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 250, y: 550, width: 500, height: 100)
+            mFindLabel.frame = CGRect(x: self.view.bounds.size.width/2 - 300, y: 550, width: 600, height: 100)
             moviePlay.addSubview(mFindLabel)
             
             
