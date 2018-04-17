@@ -203,7 +203,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     
     func setSelet1View() {
         let gscArr = LanguageConfigure.gsccsv
-        
+        print(LanguageConfigure.languageId)
         let selfWidth = self.view.bounds.width
         let selfHeight = self.view.bounds.height
         
