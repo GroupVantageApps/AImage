@@ -309,7 +309,7 @@ class Utility: NSObject {
         LanguageConfigure.lxcsv = csv
         
 
-        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), "010483")
+        let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
         let gscCsv = Utility.csvToArray(file: gscFilePath)
         LanguageConfigure.gsccsv = gscCsv
         
