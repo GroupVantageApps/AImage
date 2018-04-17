@@ -59,6 +59,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         
         let gscArr = LanguageConfigure.gsccsv
         
+        mGscHeaderView.mBtnFind.titleLabel?.text = gscArr["3"] ?? ""
         
         //TODO
         mGroupType = LanguageConfigure.gscgroup
@@ -145,12 +146,6 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                         
                     }
                 }
-                
-                //defaultDisplay が 1のproductのみ表示
-                //                let disPlayProductList = productList.filter { 
-                //                    ProductData.init(productId: Int($0)!).defaultDisplay == 1
-                //                }
-                
                 
                 //imgがあるもののみ表示
                 let disPlayProductList = productList.filter { 
@@ -267,9 +262,6 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                     
                     
                 }
-                
-                
-                
                 
                 for (i, productId) in disPlayProductList.enumerated() {
                     let product = ProductData.init(productId: Int(productId)!)
