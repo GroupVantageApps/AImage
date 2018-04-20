@@ -24,20 +24,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmi-vA-8ID">
                     <rect key="frame" x="10" y="10" width="355" height="647"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-NR-yLy">
-                            <rect key="frame" x="0.0" y="517.5" width="355" height="129.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-NR-yLy">
+                            <rect key="frame" x="0.0" y="388" width="355" height="259"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JPc-7T-Uuq">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="517.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="388"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="LDe-NR-yLy" secondAttribute="trailing" id="DID-pp-OLe"/>
-                        <constraint firstItem="JPc-7T-Uuq" firstAttribute="height" secondItem="Wmi-vA-8ID" secondAttribute="height" multiplier="8:10" id="Dry-8L-8st"/>
+                        <constraint firstItem="JPc-7T-Uuq" firstAttribute="height" secondItem="Wmi-vA-8ID" secondAttribute="height" multiplier="6:10" id="Dry-8L-8st"/>
                         <constraint firstAttribute="bottom" secondItem="LDe-NR-yLy" secondAttribute="bottom" id="MC3-IM-5JD"/>
                         <constraint firstAttribute="trailing" secondItem="JPc-7T-Uuq" secondAttribute="trailing" id="Rq5-9Q-B7u"/>
                         <constraint firstItem="LDe-NR-yLy" firstAttribute="top" secondItem="JPc-7T-Uuq" secondAttribute="bottom" id="jRT-qr-ymO"/>
