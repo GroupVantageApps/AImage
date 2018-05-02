@@ -65,7 +65,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
             let popup: LXYutakaTreatmentContentFirstView = UINib(nibName: "LXYutakaTreatmentContentFirstView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentContentFirstView
             let csvTitleId = (defaultArr[index])*2 + 92
             let csvDescriptionId = (defaultArr[index])*2 + 93
-            popup.setUI(image: thumArray[defaultArr[index]], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!, index: index)
+            popup.setUI(image: thumArray[defaultArr[index]], title: lxArr[String(csvTitleId)]!, description: lxArr[String(csvDescriptionId)]!, index: index, page_num: defaultArr)
             popup.delegate = self
             subView.addSubview(popup)
 

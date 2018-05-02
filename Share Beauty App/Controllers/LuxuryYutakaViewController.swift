@@ -141,6 +141,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     
     
     @IBAction private func tappedTreatmentBtn(_ sender: AnyObject) {
+        print(sender.tag)
         let treatmentView = UINib(nibName: "LXYutakaTreatmentView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentView
         treatmentView.delegate = self
         treatmentView.setUI(page: sender.tag - 10)
@@ -188,6 +189,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     
     func playSounds(tag: Int) {
         let url = URL.init(string: String(format:"yutakasounds://%d",tag))
+        
         if UIApplication.shared.canOpenURL(url!) {
             UIApplication.shared.openURL(url!)
         } else {
