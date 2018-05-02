@@ -27,7 +27,7 @@ class SDPEfficacyResultView: UIView {
     private func setStyles() {
 //        titleLabel.textColor = UIUtil.b()
         titleLabel.font = UIFont(name: "Reader-Bold", size: 23)
-
+        titleLabel.numberOfLines = 0
         FirstCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
         SecondCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
         ThirdCircleLabel.font = UIFont(name: "Reader-Medium", size: 18)
@@ -40,7 +40,8 @@ class SDPEfficacyResultView: UIView {
         
         if start_index == 34 {
             SubTitleLabel.isHidden = false
-            SubTitleLabel.font = UIFont(name: "Reader-Bold", size: 23)
+            SubTitleLabel.font = UIFont(name: "Reader-Bold", size: 22)
+            SubTitleLabel.numberOfLines = 0
             SubTitleLabel.text = csvArr["\(1)"]
             titleLabel.frame.origin.x = 483 //643
         }
