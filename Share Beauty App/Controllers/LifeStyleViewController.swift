@@ -56,7 +56,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     i += 1
                 }
             }
-            
 
             productDetailVc.relationProducts = tempProducts
             delegate?.nextVc(productDetailVc)
@@ -164,6 +163,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
 //    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
 //    private let productIds:[Int] = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
+    private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     private var productIds:[Int] = []
     private var relative_productIds:[Int] =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     private let essentialEnagyProducts = [553,554]
@@ -178,7 +178,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
     
-    private let imageItemIds = [
+    private var imageItemIds = [
         (discription: "lifestyle10", x: CGFloat(600), y: CGFloat(170), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し//x:100 y:205
        //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
         (discription: "lifestyle9", x: CGFloat(550), y: CGFloat(140), width: CGFloat(400), height: CGFloat(160)),
@@ -187,30 +187,21 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
         (discription: "lifestyle12", x: CGFloat(940), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),//*真ん中の吹き出し //x:1000
         // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
-        (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
-//        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
-
-        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))
+        // (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
         ]
 
-    private let labelItems = [
+    private var labelItems = [
         (discription: 7928, x: CGFloat(170), y: CGFloat(160), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
         (discription: 7930, x: CGFloat(680), y: CGFloat(102), width: CGFloat(400), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
         //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-
         (discription: 7935, x: CGFloat(565), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
-        (discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//右吹き出しテキストx:1280y:105
         // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)), //FDの吹き出し参考
         //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
-        (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
-        (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
-
         ]
     private let countryFontScale = [
-      //  (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
-      //   (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
+        // (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
+        // (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
         (country: 3, language: 18, scale: CGFloat(0.85)),   // Brazil
     ]
 
@@ -240,9 +231,31 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if !isShowVideo {
             mAVPlayerV.removeFromSuperview()
         }
+        // 商品の有無、多言語対応
+        for productId in productIdsDefault {
+            if let data: ProductData = ProductData(productId: productId) {
+                if data.defaultDisplay == 1 {
+                    productIds.append(productId)
+                    if productId == 564 {
+                        productIds.append(99999)
+                    } else if productId == 570 {
+                        imageItemIds.append((discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))) //*WASOの吹き出し //x:1900
+                        labelItems.append((discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))) // WASO吹き出しテキストx:1280y:105
+                    } else if productId == 578 || productId == 572 {
+                        productIds.append(contentsOf: [99999,99999,99999,99999])
+                        imageItemIds.append(contentsOf: [(discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+                                                         (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))]) //追加MakeUp吹き出し
+                        labelItems.append(contentsOf: [(discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+                                                       (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))]) //追加MakeUp吹き出しテキスト
+
+                    }
+                }
+            }
+        }
+        print("productsIds: \(productIds)")
         //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
         //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
+        //productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
         relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     }
     
@@ -549,26 +562,33 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         imageView.tag = 88
                         imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: 
                             viewHeight)
-                    }else if 8 <=  i && i <= 11  {
-                        imageView.image = UIImage.init(named: "makeup_\(i - 7)")
-                        imageView.tag = 89 + i - 8
-                        
-                        labe.text = tmpMakeupStrings[i - 8]
-                        mScrollV.addSubview(labe)
-                        print("-------------------------------------------")
-                        print(labe.text!)
-                        let product_offset_width = 8 * viewWidth
-                        imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
-                        
-                    }else if 13 <= i && i <= 16 {
-                        imageView.image =  UIImage.init(named: "makeup_\(i - 8)")
-                        imageView.tag = 93 + i - 12
-                        
-                        labe.text = tmpMakeupStrings[i - 9]
-                        mScrollV.addSubview(labe)
-                        print("-------------------------------------------")
-                        print(labe.text!)
-                        imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                    }
+                    if let makeupIndex = productIds.index(of: 578) {
+                        let howtoIndex = makeupIndex + 1
+                        if howtoIndex <= i && i <= howtoIndex + 4 {
+                            imageView.image = UIImage.init(named: "makeup_\(i - makeupIndex)")
+                            imageView.tag = 89 + i - howtoIndex
+                            
+                            labe.text = tmpMakeupStrings[i - howtoIndex]
+                            mScrollV.addSubview(labe)
+                            print("-------------------------------------------")
+                            print(labe.text!)
+                            let product_offset_width = 8 * viewWidth
+                            imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                        }
+                    }
+                    if let makeupIndex = productIds.index(of: 572) {
+                        let howtoIndex = makeupIndex + 1
+                        if howtoIndex <= i && i <= howtoIndex + 4 {
+                            imageView.image =  UIImage.init(named: "makeup_\(5 + i - howtoIndex)")
+                            imageView.tag = 93 + i - makeupIndex
+                            
+                            labe.text = tmpMakeupStrings[4 + i - howtoIndex]
+                            mScrollV.addSubview(labe)
+                            print("-------------------------------------------")
+                            print(labe.text!)
+                            imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                        }
                     }
                     // 商品画像の表示
                     contentWidth += imageView.frame.size.width
