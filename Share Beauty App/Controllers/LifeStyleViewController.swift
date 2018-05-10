@@ -190,11 +190,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         (discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),//*右の吹き出し //x:1900
 //        (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
 
-//        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-//        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-//        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-//        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-
+        (discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
+        (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))
         ]
 
     private let labelItems = [
@@ -207,8 +204,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)), //FDの吹き出し参考
         //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
         //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
-//        (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
-//        (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+        (discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
+        (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),//追加MakeUp吹き出しテキスト
 
         ]
     private let countryFontScale = [
@@ -245,9 +242,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
         //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        // productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
-        // makeUp ID = 578, 572
-        productIds = [564,9999,566,568,LanguageConfigure.UTMId, 570, 571]
+        productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
         relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     }
     
@@ -359,9 +354,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             print("other")
         }
         // HowToUse画像からの画面推移
-        // if let howtoImageV = sender.view?.viewWithTag(tag){
-        //     self.didTapHowTo(product, transitionItemId: nil, sender: howtoImageV, index: index)
-        // }
+         if let howtoImageV = sender.view?.viewWithTag(tag){
+            if tag != 88 {
+             self.didTapHowTo(product, transitionItemId: nil, sender: howtoImageV, index: index)
+            }
+         }
     }
 
     // MARK: - CollectionViewDelegate
