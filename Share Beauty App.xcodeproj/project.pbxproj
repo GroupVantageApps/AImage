@@ -600,6 +600,20 @@
 		DEE83E6C1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6A1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift */; };
 		DEE83E6F1EB78B2B000C7D8D /* LXProductEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */; };
 		DEE83E701EB78B2B000C7D8D /* LXProductEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */; };
+		DEED707720A54D3D001027EB /* smbk_top_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED706F20A54D3B001027EB /* smbk_top_1.png */; };
+		DEED707820A54D3D001027EB /* smbk_tool.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707020A54D3B001027EB /* smbk_tool.png */; };
+		DEED707920A54D3D001027EB /* smbk_texture_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707120A54D3B001027EB /* smbk_texture_1.png */; };
+		DEED707A20A54D3D001027EB /* smbk_texture_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707220A54D3C001027EB /* smbk_texture_3.png */; };
+		DEED707B20A54D3D001027EB /* smbk_top_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707320A54D3C001027EB /* smbk_top_2.png */; };
+		DEED707C20A54D3D001027EB /* smbk_texture_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707420A54D3C001027EB /* smbk_texture_4.png */; };
+		DEED707D20A54D3D001027EB /* smbk_texture_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707520A54D3D001027EB /* smbk_texture_5.png */; };
+		DEED707E20A54D3D001027EB /* smbk_texture_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DEED707620A54D3D001027EB /* smbk_texture_2.png */; };
+		DEED708220A54D9B001027EB /* SMBKTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEED707F20A54D9A001027EB /* SMBKTextureViewController.swift */; };
+		DEED708320A54D9B001027EB /* SMBKCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEED708020A54D9B001027EB /* SMBKCategoryViewController.swift */; };
+		DEED708420A54D9B001027EB /* SMBKTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEED708120A54D9B001027EB /* SMBKTopViewController.swift */; };
+		DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEED708520A54E84001027EB /* SMBKTextureViewController.storyboard */; };
+		DEED708C20A54E85001027EB /* SMBKCategoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEED708720A54E84001027EB /* SMBKCategoryViewController.storyboard */; };
+		DEED708D20A54E85001027EB /* SMBKTopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEED708920A54E84001027EB /* SMBKTopViewController.storyboard */; };
 		DEFF2D211F1F48CA006C576B /* GscResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */; };
 		DEFF2D231F1F48D3006C576B /* GscResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */; };
 		E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */; };
@@ -1332,6 +1346,20 @@
 		DEE83E6A1EB78AB3000C7D8D /* LXEfficacyPenetrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXEfficacyPenetrationView.swift; sourceTree = "<group>"; };
 		DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductEfficacyView.xib; sourceTree = "<group>"; };
 		DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductEfficacyView.swift; sourceTree = "<group>"; };
+		DEED706F20A54D3B001027EB /* smbk_top_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_top_1.png; sourceTree = "<group>"; };
+		DEED707020A54D3B001027EB /* smbk_tool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_tool.png; sourceTree = "<group>"; };
+		DEED707120A54D3B001027EB /* smbk_texture_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_texture_1.png; sourceTree = "<group>"; };
+		DEED707220A54D3C001027EB /* smbk_texture_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_texture_3.png; sourceTree = "<group>"; };
+		DEED707320A54D3C001027EB /* smbk_top_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_top_2.png; sourceTree = "<group>"; };
+		DEED707420A54D3C001027EB /* smbk_texture_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_texture_4.png; sourceTree = "<group>"; };
+		DEED707520A54D3D001027EB /* smbk_texture_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_texture_5.png; sourceTree = "<group>"; };
+		DEED707620A54D3D001027EB /* smbk_texture_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smbk_texture_2.png; sourceTree = "<group>"; };
+		DEED707F20A54D9A001027EB /* SMBKTextureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMBKTextureViewController.swift; sourceTree = "<group>"; };
+		DEED708020A54D9B001027EB /* SMBKCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMBKCategoryViewController.swift; sourceTree = "<group>"; };
+		DEED708120A54D9B001027EB /* SMBKTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMBKTopViewController.swift; sourceTree = "<group>"; };
+		DEED708620A54E84001027EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SMBKTextureViewController.storyboard; sourceTree = "<group>"; };
+		DEED708820A54E84001027EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SMBKCategoryViewController.storyboard; sourceTree = "<group>"; };
+		DEED708A20A54E84001027EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SMBKTopViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D201F1F48C9006C576B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscResultViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscResultViewController.swift; sourceTree = "<group>"; };
 		E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPEfficacyResultView.xib; sourceTree = "<group>"; };
@@ -2078,6 +2106,9 @@
 		C091BA791D6980DE0073FEDB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DEED708120A54D9B001027EB /* SMBKTopViewController.swift */,
+				DEED707F20A54D9A001027EB /* SMBKTextureViewController.swift */,
+				DEED708020A54D9B001027EB /* SMBKCategoryViewController.swift */,
 				338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */,
 				C091BA7A1D6980DE0073FEDB /* NavigationViewController.swift */,
 				C091BA7E1D69876F0073FEDB /* TopViewController.swift */,
@@ -2402,9 +2433,27 @@
 			path = WASO;
 			sourceTree = "<group>";
 		};
+		DEED706E20A54D29001027EB /* tmp_smbk */ = {
+			isa = PBXGroup;
+			children = (
+				DEED707120A54D3B001027EB /* smbk_texture_1.png */,
+				DEED707620A54D3D001027EB /* smbk_texture_2.png */,
+				DEED707220A54D3C001027EB /* smbk_texture_3.png */,
+				DEED707420A54D3C001027EB /* smbk_texture_4.png */,
+				DEED707520A54D3D001027EB /* smbk_texture_5.png */,
+				DEED707020A54D3B001027EB /* smbk_tool.png */,
+				DEED706F20A54D3B001027EB /* smbk_top_1.png */,
+				DEED707320A54D3C001027EB /* smbk_top_2.png */,
+			);
+			path = tmp_smbk;
+			sourceTree = "<group>";
+		};
 		E569567A1DF2F56000BE9308 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				DEED708720A54E84001027EB /* SMBKCategoryViewController.storyboard */,
+				DEED708520A54E84001027EB /* SMBKTextureViewController.storyboard */,
+				DEED708920A54E84001027EB /* SMBKTopViewController.storyboard */,
 				E52891D21DF2FD9E007B92B2 /* AboutBrandViewController.storyboard */,
 				338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */,
 				800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */,
@@ -2571,6 +2620,7 @@
 		EBF938131D812DC900DF9D1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DEED706E20A54D29001027EB /* tmp_smbk */,
 				DE80C66120726CF000CD326A /* 18AW */,
 				26768D6F202BFFE7005BE606 /* UTM2.0 */,
 				C94638D01F18CC1D009D1480 /* bundles.bundle */,
@@ -2658,7 +2708,6 @@
 				C05913C51D67235700F22214 /* Frameworks */,
 				C05913C61D67235700F22214 /* Resources */,
 				EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */,
-				0FCD48EBFAD0849F6561ED8F /* [CP] Copy Pods Resources */,
 				DE794BF41FB29C78006E1F5B /* Run Script */,
 			);
 			buildRules = (
@@ -2678,8 +2727,6 @@
 				C05913DB1D67235700F22214 /* Sources */,
 				C05913DC1D67235700F22214 /* Frameworks */,
 				C05913DD1D67235700F22214 /* Resources */,
-				35874ABF64E9C43CFFD55F7E /* [CP] Embed Pods Frameworks */,
-				BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2699,8 +2746,6 @@
 				C05913E61D67235700F22214 /* Sources */,
 				C05913E71D67235700F22214 /* Frameworks */,
 				C05913E81D67235700F22214 /* Resources */,
-				042DF85E6C915C03C9563ACA /* [CP] Embed Pods Frameworks */,
-				2BE32356D09CD2D157B2E8A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2724,7 +2769,7 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = J62CVNNG5Q;
+						DevelopmentTeam = QW5MSA6L6G;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -2826,6 +2871,7 @@
 				E52891CE1DF2FA05007B92B2 /* IconicViewController.storyboard in Resources */,
 				26768DB6202C5FE1005BE606 /* page_02.png in Resources */,
 				C050C97F1E8267450009679D /* efficacy_slider_full.png in Resources */,
+				DEED707A20A54D3D001027EB /* smbk_texture_3.png in Resources */,
 				26768D95202C28C0005BE606 /* Reader-Bold.otf in Resources */,
 				26768D86202C1C4E005BE606 /* Rose-Water_image.png in Resources */,
 				C9906DC41F2AADA200414722 /* LifeStyleSixthProductView.xib in Resources */,
@@ -2850,6 +2896,7 @@
 				DE2C91791E9C682500B5FC4A /* ba_up.png in Resources */,
 				2608BF932029846E00E7F900 /* ns_page_02.png in Resources */,
 				C050C96B1E8267450009679D /* bottom_line.png in Resources */,
+				DEED707820A54D3D001027EB /* smbk_tool.png in Resources */,
 				C050C9751E8267450009679D /* d_utm.png in Resources */,
 				DE2C301420737B6100548627 /* eee_technology1_item01.png in Resources */,
 				DE2C300A20737ADE00548627 /* eee_item02_after.png in Resources */,
@@ -2914,6 +2961,7 @@
 				DE06F7111F16450200EF2FE2 /* active.png in Resources */,
 				C050C91D1E82619F0009679D /* orange_C.png in Resources */,
 				DE06F7201F16450200EF2FE2 /* desc_4.png in Resources */,
+				DEED707C20A54D3D001027EB /* smbk_texture_4.png in Resources */,
 				DE2C300920737ADE00548627 /* eee_item01_after.png in Resources */,
 				DE325B11207741BF00B660C9 /* lx_img_tmp.png in Resources */,
 				DEE83E6B1EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib in Resources */,
@@ -2955,6 +3003,7 @@
 				DEC752032073BE2D00A9FC1C /* waso_87.png in Resources */,
 				C0306D501D6EC52C00D56F45 /* CollectionProductView.xib in Resources */,
 				2680EC12203404D0005257B1 /* before_01.png in Resources */,
+				DEED708C20A54E85001027EB /* SMBKCategoryViewController.storyboard in Resources */,
 				26AD5D8D20232545002A2076 /* nsbutton_1.png in Resources */,
 				C050C98B1E8267450009679D /* f_effect_2.png in Resources */,
 				C0880D071E4B2579006A3713 /* TargetSettingViewController.storyboard in Resources */,
@@ -2982,6 +3031,7 @@
 				2680EC242037E4FA005257B1 /* makeup_5.png in Resources */,
 				DE2C301B20738CC900548627 /* EEESecondTechnologyView.xib in Resources */,
 				B38F63BF1F47682700176804 /* DayCream01_after.png in Resources */,
+				DEED707E20A54D3D001027EB /* smbk_texture_2.png in Resources */,
 				2680EC11203404D0005257B1 /* after_02.png in Resources */,
 				C050C9021E82619F0009679D /* sib02_after.jpg in Resources */,
 				DE2C91861E9C682500B5FC4A /* lx_header_home.png in Resources */,
@@ -2999,6 +3049,7 @@
 				DE2C8F501E9B9F5800B5FC4A /* ACaslonPro-Regular.otf in Resources */,
 				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
+				DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */,
 				C02818AA1E6C26FF00D4DADA /* NewApproachViewController.storyboard in Resources */,
 				C050C9001E82619F0009679D /* sib01_after.jpg in Resources */,
 				C050C9861E8267450009679D /* utm02_befor.png in Resources */,
@@ -3011,6 +3062,7 @@
 				2680EC1F2037E4FA005257B1 /* makeup_7.png in Resources */,
 				26AD5D9720232D6F002A2076 /* ns_page_top.png in Resources */,
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
+				DEED708D20A54E85001027EB /* SMBKTopViewController.storyboard in Resources */,
 				DE2C8F511E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf in Resources */,
 				DE2C91371E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard in Resources */,
 				DE2C91891E9C682500B5FC4A /* lx_icon_day.png in Resources */,
@@ -3042,6 +3094,7 @@
 				C050C9A21E8267450009679D /* utm_bg_01.png in Resources */,
 				26768DA4202C5FD6005BE606 /* graph_01.png in Resources */,
 				C0E4DCBF1D71808F00931B66 /* ProductListView.xib in Resources */,
+				DEED707B20A54D3D001027EB /* smbk_top_2.png in Resources */,
 				C05C779F1D9E5EFA00E38B7B /* IdealProductView.xib in Resources */,
 				DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */,
 				DE06F7151F16450200EF2FE2 /* face.png in Resources */,
@@ -3107,8 +3160,10 @@
 				C050C8FD1E82619F0009679D /* features_smk_2.png in Resources */,
 				DE310E452074AD3100A6A5F7 /* waso_green_95.png in Resources */,
 				DE2C918C1E9C682500B5FC4A /* lx_icon_recommend_selected.png in Resources */,
+				DEED707D20A54D3D001027EB /* smbk_texture_5.png in Resources */,
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
+				DEED707720A54D3D001027EB /* smbk_top_1.png in Resources */,
 				DE2C300220737AB200548627 /* eee_6081.png in Resources */,
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
 				DE2C918D1E9C682500B5FC4A /* lx_icon_recommend_selected@2x.png in Resources */,
@@ -3121,6 +3176,7 @@
 				C0880D061E4B2579006A3713 /* SettingViewController.storyboard in Resources */,
 				DE3270501EC85337001B58D9 /* IngredientSkinGraphContentView.xib in Resources */,
 				C050C9081E82619F0009679D /* ss_hukidashi_1.png in Resources */,
+				DEED707920A54D3D001027EB /* smbk_texture_1.png in Resources */,
 				C050C9AD1E8267450009679D /* utm_square.png in Resources */,
 				C03520DA1D9E88D7005129B5 /* IdealResultCell.xib in Resources */,
 				DE06F7221F16450200EF2FE2 /* s_home.png in Resources */,
@@ -3222,66 +3278,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		042DF85E6C915C03C9563ACA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0FCD48EBFAD0849F6561ED8F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2BE32356D09CD2D157B2E8A7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35874ABF64E9C43CFFD55F7E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9ED64523DC35B1FBF600C8E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3298,21 +3294,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD43558D38290AE3CED779E4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE794BF41FB29C78006E1F5B /* Run Script */ = {
@@ -3443,6 +3424,7 @@
 				C03520EA1DA0F36E005129B5 /* TroubleView.swift in Sources */,
 				C03520D41D9E8520005129B5 /* IdealResultCollectionView.swift in Sources */,
 				DE2C8EF41E9B9BAF00B5FC4A /* LuxuryYutakaViewController.swift in Sources */,
+				DEED708220A54D9B001027EB /* SMBKTextureViewController.swift in Sources */,
 				C08C93211E8A56DD0096C98F /* ItemsDisplayedViewController.swift in Sources */,
 				DE2C90941E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.swift in Sources */,
 				C0998BF01DA63DCC00220321 /* PagingProductView.swift in Sources */,
@@ -3585,6 +3567,7 @@
 				C05818421D6DD99E00C8FB55 /* AboutBrandViewController.swift in Sources */,
 				C0880CEB1E4B1E6A006A3713 /* LanguageConfigure.swift in Sources */,
 				DE2C8EF31E9B9BAF00B5FC4A /* LuxuryIngredientViewController.swift in Sources */,
+				DEED708320A54D9B001027EB /* SMBKCategoryViewController.swift in Sources */,
 				DE2C90841E9C66E600B5FC4A /* LXGreenTeaView.swift in Sources */,
 				C0665B3D1D6B251500B3D8E5 /* TestView.swift in Sources */,
 				DE2C90961E9C66E600B5FC4A /* LXYutakaConceptContentSecondView.swift in Sources */,
@@ -3633,6 +3616,7 @@
 				EB7365AC1D83156F00D223BA /* StepLowerEntity.swift in Sources */,
 				C0DA9AF21DB8CC7E00692058 /* DropDown.swift in Sources */,
 				C02818AC1E6D449300D4DADA /* MakeupUsageView.swift in Sources */,
+				DEED708420A54D9B001027EB /* SMBKTopViewController.swift in Sources */,
 				ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */,
 				C0DA9AEE1DB8CC7E00692058 /* DPDUIView+Extension.swift in Sources */,
 				C94638D31F18CC45009D1480 /* LoadingView.swift in Sources */,
@@ -3856,6 +3840,30 @@
 				DE7D08211ED6E412006513FD /* Base */,
 			);
 			name = LXProductViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DEED708520A54E84001027EB /* SMBKTextureViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEED708620A54E84001027EB /* Base */,
+			);
+			name = SMBKTextureViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DEED708720A54E84001027EB /* SMBKCategoryViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEED708820A54E84001027EB /* Base */,
+			);
+			name = SMBKCategoryViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DEED708920A54E84001027EB /* SMBKTopViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEED708A20A54E84001027EB /* Base */,
+			);
+			name = SMBKTopViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */ = {
@@ -4155,7 +4163,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = J62CVNNG5Q;
+				DEVELOPMENT_TEAM = QW5MSA6L6G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4164,8 +4172,9 @@
 				INFOPLIST_FILE = "Share Beauty App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
+				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4188,7 +4197,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = J62CVNNG5Q;
+				DEVELOPMENT_TEAM = QW5MSA6L6G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4197,7 +4206,8 @@
 				INFOPLIST_FILE = "Share Beauty App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Texture View Controller-->
+        <scene sceneID="muE-ph-01b">
+            <objects>
+                <viewController storyboardIdentifier="SMBKTextureViewController" id="TYu-Ly-iev" customClass="SMBKTextureViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GxM-2e-1gf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzZ-dp-gYp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="EqY-Bj-1qo">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_texture_3.png" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-Ys-KxI">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                            </imageView>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkh-3i-Vt5">
+                                <rect key="frame" x="366" y="154" width="213" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1kj-e3-bVH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-UR-aNr">
+                                <rect key="frame" x="587" y="165" width="213" height="484"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="Ifc-ql-Nb1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfZ-6b-ukJ">
+                                <rect key="frame" x="808" y="165" width="213" height="484"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="Tqa-Cu-yhj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="o0H-Ys-KxI" firstAttribute="leading" secondItem="EqY-Bj-1qo" secondAttribute="leading" id="WIy-1D-VB2"/>
+                            <constraint firstAttribute="trailing" secondItem="o0H-Ys-KxI" secondAttribute="trailing" id="Z4f-le-eSc"/>
+                            <constraint firstItem="ZzZ-dp-gYp" firstAttribute="top" secondItem="o0H-Ys-KxI" secondAttribute="bottom" id="akR-nn-lbu"/>
+                            <constraint firstItem="o0H-Ys-KxI" firstAttribute="top" secondItem="GxM-2e-1gf" secondAttribute="bottom" id="ang-YS-3Sr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageV" destination="o0H-Ys-KxI" id="H40-HZ-BOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nP-xU-LdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5834.765625" y="-6218.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="smbk_texture_3.png" width="2048" height="1292"/>
+    </resources>
+</document>

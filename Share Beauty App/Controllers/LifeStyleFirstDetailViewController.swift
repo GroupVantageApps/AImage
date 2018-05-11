@@ -109,6 +109,7 @@ class LifeStyleFirstDetailViewController: UIViewController, NavigationController
             let json = items[transitionItemId!],
             let filterInfo = self.getTransitionFilterInfo(strJson: json) {
 
+            
             let products = ProductListData(productIds: filterInfo.productIds,
                                            beautyIds: filterInfo.beautyIds,
                                            lineIds: filterInfo.lineIds).products

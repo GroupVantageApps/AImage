@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top View Controller-->
+        <scene sceneID="muE-ph-01b">
+            <objects>
+                <viewController storyboardIdentifier="SMBKTopViewController" id="TYu-Ly-iev" customClass="SMBKTopViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GxM-2e-1gf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZzZ-dp-gYp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="EqY-Bj-1qo">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f6-bG-QqI">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_top_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Ob-Eo-W1s">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w20-bu-wi9">
+                                        <rect key="frame" x="34" y="280" width="219" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1pl-bx-NJU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-JD-CzL">
+                                        <rect key="frame" x="282" y="282" width="219" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="ITw-qN-Axi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rk5-dI-GiY">
+                                        <rect key="frame" x="529" y="280" width="219" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="d42-ym-A4o"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hb2-eG-x5u">
+                                        <rect key="frame" x="771" y="280" width="219" height="218"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="fwE-AV-9r4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-yK-m4D">
+                                        <rect key="frame" x="404" y="543" width="209" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1h1-mr-ZN4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-jy-O6P">
+                                        <rect key="frame" x="861" y="44" width="129" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onTapItemBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="9qu-av-UGk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6Ob-Eo-W1s" secondAttribute="trailing" id="Gh8-Dg-cQF"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Ob-Eo-W1s" secondAttribute="bottom" id="uId-PX-EfE"/>
+                                    <constraint firstItem="6Ob-Eo-W1s" firstAttribute="top" secondItem="0f6-bG-QqI" secondAttribute="top" id="vdS-QZ-Vvy"/>
+                                    <constraint firstItem="6Ob-Eo-W1s" firstAttribute="leading" secondItem="0f6-bG-QqI" secondAttribute="leading" id="vv3-dD-GzO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-H9-EJO">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_top_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="epi-2T-ECc">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j43-8n-t2y">
+                                        <rect key="frame" x="468.5" y="660" width="87" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="Ex6-za-4rl"/>
+                                            <constraint firstAttribute="width" constant="87" id="rY8-d7-A8h"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onTapNextBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="eCq-bd-NKD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="j43-8n-t2y" firstAttribute="centerX" secondItem="I9D-H9-EJO" secondAttribute="centerX" id="5iQ-za-rjn"/>
+                                    <constraint firstAttribute="bottom" secondItem="j43-8n-t2y" secondAttribute="bottom" constant="30" id="LlU-gd-poC"/>
+                                    <constraint firstAttribute="trailing" secondItem="epi-2T-ECc" secondAttribute="trailing" id="XuX-i4-1DR"/>
+                                    <constraint firstItem="epi-2T-ECc" firstAttribute="leading" secondItem="I9D-H9-EJO" secondAttribute="leading" id="aBJ-Nu-qdb"/>
+                                    <constraint firstItem="epi-2T-ECc" firstAttribute="top" secondItem="I9D-H9-EJO" secondAttribute="top" id="gF9-Re-ZkK"/>
+                                    <constraint firstAttribute="bottom" secondItem="epi-2T-ECc" secondAttribute="bottom" id="wZP-AO-NlA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="I9D-H9-EJO" secondAttribute="trailing" id="2hO-Ve-YVt"/>
+                            <constraint firstItem="ZzZ-dp-gYp" firstAttribute="top" secondItem="0f6-bG-QqI" secondAttribute="bottom" id="5Qz-8P-YOg"/>
+                            <constraint firstItem="ZzZ-dp-gYp" firstAttribute="top" secondItem="I9D-H9-EJO" secondAttribute="bottom" id="JIZ-AP-YuK"/>
+                            <constraint firstAttribute="trailing" secondItem="0f6-bG-QqI" secondAttribute="trailing" id="TpH-eS-tDk"/>
+                            <constraint firstItem="I9D-H9-EJO" firstAttribute="leading" secondItem="EqY-Bj-1qo" secondAttribute="leading" id="fgR-4w-LLA"/>
+                            <constraint firstItem="I9D-H9-EJO" firstAttribute="top" secondItem="GxM-2e-1gf" secondAttribute="bottom" id="mPc-zn-v2q"/>
+                            <constraint firstItem="0f6-bG-QqI" firstAttribute="leading" secondItem="EqY-Bj-1qo" secondAttribute="leading" id="pXQ-om-XaA"/>
+                            <constraint firstItem="0f6-bG-QqI" firstAttribute="top" secondItem="GxM-2e-1gf" secondAttribute="bottom" id="vQT-Rw-mqe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstV" destination="I9D-H9-EJO" id="GRS-d9-3KG"/>
+                        <outlet property="secondV" destination="0f6-bG-QqI" id="4jA-hA-WWr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nP-xU-LdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5834.765625" y="-6218.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="smbk_top_1.png" width="2048" height="1292"/>
+        <image name="smbk_top_2.png" width="2048" height="1292"/>
+    </resources>
+</document>

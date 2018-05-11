@@ -411,7 +411,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
             logItemId = "04"
             
         } else if MakeupViewController.self == arrNextVc[sender.tag] {
-            let lineListVc = UIViewController.GetViewControllerFromStoryboard(targetClass: MakeupViewController.self) as! MakeupViewController
+            let lineListVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKTopViewController.self) as! SMBKTopViewController
             delegate?.nextVc(lineListVc)
             logItemId = "05"
         }

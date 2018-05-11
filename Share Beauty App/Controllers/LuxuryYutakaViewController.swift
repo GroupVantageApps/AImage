@@ -191,7 +191,11 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         let url = URL.init(string: String(format:"yutakasounds://%d",tag))
         
         if UIApplication.shared.canOpenURL(url!) {
-            UIApplication.shared.openURL(url!)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url!)
+            }
         } else {
             let alertVc = UIAlertController(
                 title: "Warning",
