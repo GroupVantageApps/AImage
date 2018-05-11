@@ -32,7 +32,7 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         print("\(beautyIds)")
         let products = ProductListData(productIds: nil,
                                        beautyIds: beautyId!.description,
-                                       lineIds: nil).products
+                                       lineIds: "18").products
         let productListVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
         productListVc.products = products
         delegate?.nextVc(productListVc)
