@@ -534,6 +534,24 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             cell.productImage = mProductImages[indexPath.row / 2]
             cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row / 2))
             cell.indexPath = indexPath
+            
+            
+            if cell.product?.productId == 10001 {
+                cell.mTitleContentV.isHidden = true
+                cell.mBtnProduct.isHidden = true
+                cell.mBtnRecommend.isHidden = true
+                cell.mLblBeauty.isHidden = true
+                cell.mImgVNew.isHidden = true
+                cell.mtitleView.isHidden = true
+            } else {
+                cell.mTitleContentV.isHidden = false
+                cell.mBtnProduct.isHidden = false
+                cell.mBtnRecommend.isHidden = false
+                cell.mLblBeauty.isHidden = false
+                cell.mImgVNew.isHidden = false
+                cell.mtitleView.isHidden = false
+            }
+            
             return cell
         }
     }

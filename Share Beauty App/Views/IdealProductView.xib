@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,35 +31,35 @@
                     <rect key="frame" x="0.0" y="0.0" width="303" height="460"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAS-eQ-k8d">
-                            <rect key="frame" x="0.0" y="0.0" width="303" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="303" height="159"/>
                             <subviews>
                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benefiance NutriPerfect" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzW-1N-Jgx">
-                                    <rect key="frame" x="10" y="10" width="283" height="18"/>
+                                    <rect key="frame" x="10" y="10" width="283" height="21"/>
                                     <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDC-at-9aE">
-                                    <rect key="frame" x="10" y="48" width="283" height="17"/>
+                                    <rect key="frame" x="10" y="51" width="283" height="20"/>
                                     <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-6z-I5j">
-                                    <rect key="frame" x="10" y="85" width="283" height="17"/>
+                                    <rect key="frame" x="10" y="91" width="283" height="20"/>
                                     <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLp-H9-IRc">
-                                    <rect key="frame" x="144" y="122" width="15" height="18"/>
+                                    <rect key="frame" x="144" y="131" width="15" height="18"/>
                                     <state key="normal" backgroundImage="open_line_detail"/>
                                     <connections>
                                         <action selector="openLine:" destination="epM-rb-Z6n" eventType="touchUpInside" id="GcO-xk-0hP"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7G-Yb-bgF">
-                                    <rect key="frame" x="144" y="122" width="15" height="18"/>
+                                    <rect key="frame" x="144" y="131" width="15" height="18"/>
                                     <state key="normal" backgroundImage="close_line_detail"/>
                                     <connections>
                                         <action selector="closeLine:" destination="epM-rb-Z6n" eventType="touchUpInside" id="J0N-EK-Oco"/>
@@ -546,6 +546,7 @@
                 <outlet property="mLblLineTitleMarginTop" destination="acF-1O-V6G" id="E31-Tf-dee"/>
                 <outlet property="mLblLineTrouble" destination="fDC-at-9aE" id="rVd-Nk-VKb"/>
                 <outlet property="mLblProduct" destination="Vik-1L-6Jy" id="Adt-ls-fGO"/>
+                <outlet property="mTitleContentV" destination="wl3-6d-wnZ" id="f4u-Hi-xBv"/>
                 <outlet property="mVBaseLine" destination="SEJ-JG-XWr" id="Era-Nu-145"/>
                 <outlet property="mVBaseProduct" destination="bPz-b3-f4Q" id="ReR-xs-Git"/>
                 <outlet property="mtitleView" destination="8tV-bp-NNb" id="WY1-G8-1Gr"/>

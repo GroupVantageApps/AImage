@@ -16,10 +16,12 @@ protocol IdealProductViewDelegate: NSObjectProtocol {
 }
 
 class IdealProductView: UICollectionViewCell {
-    @IBOutlet weak private var mtitleView: UIView!
-    @IBOutlet weak private var mBtnProduct: BaseButton!
-    @IBOutlet weak private var mBtnRecommend: BaseButton!
-    @IBOutlet weak private var mLblBeauty: UILabel!
+            
+    @IBOutlet weak var mTitleContentV: UIView!
+    @IBOutlet weak var mtitleView: UIView!
+    @IBOutlet weak var mBtnProduct: BaseButton!
+    @IBOutlet weak var mBtnRecommend: BaseButton!
+    @IBOutlet weak var mLblBeauty: UILabel!
     @IBOutlet weak private var mLblLine: UILabel!
     @IBOutlet weak private var mLblProduct: UILabel!
     @IBOutlet weak private var mImgVDailyCareFirst: UIImageView!
@@ -37,7 +39,7 @@ class IdealProductView: UICollectionViewCell {
     @IBOutlet weak private var mLblLineDetailMarginTop: NSLayoutConstraint!
     @IBOutlet weak private var openLineButton: UIButton!
     @IBOutlet weak private var closeLineButton: UIButton!
-    @IBOutlet weak private var mImgVNew: UIImageView!
+    @IBOutlet weak var mImgVNew: UIImageView!
     weak var delegate: IdealProductViewDelegate?
     var ultimuneBackgroundImage: UIImage?
     var lxBackgroundImage: UIImage?
