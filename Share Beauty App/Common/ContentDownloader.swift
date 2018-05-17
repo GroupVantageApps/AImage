@@ -104,6 +104,7 @@ class ContentDownloader: NSObject {
                     completion(.success)
                     self.unzipLXFile()
                     self.unzipUtmFile()
+                    self.unzipSMKFile()
                 } else {
                     completion(.failure(ContentDownloadError.sendComplete))
                 }
@@ -472,6 +473,7 @@ class ContentDownloader: NSObject {
     // unzipテスト用関数 使用：ContentDownloader.default.unzipTest()
     func unzipTest() {
         self.unzipUtmFile()
+        self.unzipSMKFile()
     }
     // UTM2.0 多言語化
     private func unzipUtmFile() {
@@ -520,10 +522,41 @@ class ContentDownloader: NSObject {
         print(csvSDPFileUrl)
         do {
             let destinationURL = try Zip.quickUnzipFile(csvSDPFileUrl)
+            print(destinationURL)
             let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
             let filePath = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
             let csv = Utility.csvToArray(file: filePath)
             LanguageConfigure.sdp_eee_csv = csv
+            
+        } catch let e {
+            print(e)
+        }
+        
+        let csvSMKFileUrl: URL = FileTable.getPath(6798)
+        print(csvSMKFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvSMKFileUrl)
+            print(destinationURL)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/18awsmk/18awsmk/%@_18awsmk.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.smk_csv = csv
+            
+        } catch let e {
+            print(e)
+        }
+    }
+    
+    private func unzipSMKFile() {
+        let csvSMKFileUrl: URL = FileTable.getPath(6798)
+        print(csvSMKFileUrl)
+        do {
+            let destinationURL = try Zip.quickUnzipFile(csvSMKFileUrl)
+            print(destinationURL)
+            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
+            let filePath = String(format: "file://%@/Documents/18awsmk/18awsmk/%@_18awsmk.csv", NSHomeDirectory(), languageCode.code)
+            let csv = Utility.csvToArray(file: filePath)
+            LanguageConfigure.smk_csv = csv
             
         } catch let e {
             print(e)

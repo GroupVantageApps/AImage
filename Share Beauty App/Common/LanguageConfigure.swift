@@ -18,6 +18,7 @@ class LanguageConfigure: NSObject {
     private static let gscCsv = "GscCsv"
     private static let utmCsv = "UtmCsv"
     private static let sdp_eeeCsv = "SdpEeeCsv"
+    private static let smkCsv = "AwsmkCsv"
     private static let gscPlist = "GscPlist"
     private static let gscGroup = "GscGroup"
     private static let lxYutaka = "lxYutaka"
@@ -219,6 +220,21 @@ class LanguageConfigure: NSObject {
         set (value) {
             let userDefault = UserDefaults.standard
             userDefault.set(value, forKey: sdp_eeeCsv)
+            userDefault.synchronize()
+        }
+    }
+    
+    static var smk_csv: [ String : String ] {
+        get {
+            if let value = UserDefaults.standard.object(forKey: smkCsv) {
+                return value as! [String : String]
+            } else {
+                return [ "" : "" ]
+            }
+        }
+        set (value) {
+            let userDefault = UserDefaults.standard
+            userDefault.set(value, forKey: smkCsv)
             userDefault.synchronize()
         }
     }
