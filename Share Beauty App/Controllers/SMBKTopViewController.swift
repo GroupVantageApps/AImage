@@ -22,7 +22,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         //        TODO ScreenIdもらう
 //        self.theme = mScreen.name
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
