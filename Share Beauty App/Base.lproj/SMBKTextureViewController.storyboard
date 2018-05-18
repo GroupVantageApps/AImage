@@ -32,27 +32,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_texture_3.png" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-Ys-KxI">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                             </imageView>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkh-3i-Vt5">
-                                <rect key="frame" x="366" y="154" width="213" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1kj-e3-bVH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-UR-aNr">
-                                <rect key="frame" x="587" y="165" width="213" height="484"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="Ifc-ql-Nb1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfZ-6b-ukJ">
-                                <rect key="frame" x="808" y="165" width="213" height="484"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onTapProductDetail:" destination="TYu-Ly-iev" eventType="touchUpInside" id="Tqa-Cu-yhj"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIQ-XR-HMV">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,6 +107,18 @@ LASTING</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1ug-mX-aE7">
+                                        <rect key="frame" x="35" y="135" width="659" height="473"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pOK-u2-mFe">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -142,6 +133,7 @@ LASTING</string>
                     </view>
                     <connections>
                         <outlet property="imageV" destination="o0H-Ys-KxI" id="H40-HZ-BOc"/>
+                        <outlet property="mCollectionView" destination="1ug-mX-aE7" id="Glq-k4-H85"/>
                         <outlet property="mSideSubText" destination="Smm-pG-WU4" id="uco-Sn-ofN"/>
                         <outlet property="mSideTitle" destination="7xa-95-3Ss" id="sVH-Dl-Sam"/>
                         <outlet property="mSideView" destination="UIQ-XR-HMV" id="6Oo-rS-rax"/>

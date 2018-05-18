@@ -57,9 +57,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         mSecondTextureBtn.titleLabel?.textAlignment = .right
         mThirdTextureBtn.titleLabel?.textAlignment = .right
         mFourthTextureBtn.titleLabel?.textAlignment = .right
-
     }
-    
     
     @IBAction func onTapTextureBtn(_ sender: Any) {
         print("onTapTextureBtn")
@@ -67,7 +65,6 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         print((sender as! UIButton).tag)
         nextVc.texture_id = (sender as! UIButton).tag
         delegate?.nextVc(nextVc)
-
     }
     
     @IBAction func onTapItemBtn(_ sender: Any) {
@@ -84,5 +81,5 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-
+    
 }

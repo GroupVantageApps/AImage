@@ -57,7 +57,8 @@ RECREATED</string>
                                         <inset key="contentEdgeInsets" minX="-78" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <inset key="titleEdgeInsets" minX="88" minY="125" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" backgroundImage="02_02.png">
-                                            <string key="title">GELSREDISCOVERED</string>
+                                            <string key="title">GELS
+REDISCOVERED</string>
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -79,7 +80,7 @@ REINVENTED</string>
                                             <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="d42-ym-A4o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Hb2-eG-x5u">
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Hb2-eG-x5u">
                                         <rect key="frame" x="771" y="267" width="219" height="219"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="23"/>

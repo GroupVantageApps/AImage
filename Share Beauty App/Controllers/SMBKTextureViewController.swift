@@ -8,14 +8,22 @@
 
 import UIKit
 
-class SMBKTextureViewController: UIViewController, NavigationControllerAnnotation {
+class SMBKTextureViewController: UIViewController, NavigationControllerAnnotation, IdealProductViewDelegate, IdealResultCollectionViewDelegate, TroubleViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Makeup Beauty"
     var isEnterWithNavigationView = true
     private let mScreen = ScreenData(screenId: Const.screenIdNewApproach)
     var texture_id = 0
-    let productList = [ "1_10": 572, "2_10": 573, "2_11": 574, "2_12": 575, "3_10": 584, "3_11": 586, "3_12": 587, "4_10": 577, "4_11": 578, "4_12": 579, "5_10": 595, "5_11": 596, "5_12": 597 ]
+    
+    @IBOutlet weak var mCollectionView: UICollectionView!
+    private var mProductList: ProductListData!
+    private var mProductImages: [Int:UIImage]!
+    // let productList = [ "1_10": 572, "2_10": 573, "2_11": 574, "2_12": 575, "3_10": 584, "3_11": 586, "3_12": 587, "4_10": 577, "4_11": 578, "4_12": 579, "5_10": 595, "5_11": 596, "5_12": 597 ]
+    // let productLists = [572, 573, 574, 575, 584, 586, 587, 577, 578, 579, 595, 596, 597 ]
+    private var mTroubleView: TroubleView!
+    private var mShowTrobleIndexes: [Int] = []
+    
     @IBOutlet weak var imageV: UIImageView!
     @IBOutlet weak var mSideView: UIView!
     @IBOutlet weak var mSideTitle: UILabel!
@@ -29,18 +37,13 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         super.init(coder: aDecoder)
 //        TODO ScreenIdもらう
 //        self.theme = mScreen.name
-       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if texture_id == 1 {
-            let button = self.view.viewWithTag(11)
-            button?.isHidden = true
-            let button_2 = self.view.viewWithTag(12)
-            button_2?.isHidden = true
-        }
-        
+        // サンプル画像
+        imageV.isHidden = true
+
         let sideImage: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.mSideView.frame.size.width, height: self.mSideView.frame.size.height))
         sideImage.image = UIImage(named: "03_back_0\(texture_id)")
         sideImage.layer.zPosition = -1
@@ -57,22 +60,115 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
             mSideSubText.isHidden = true
             mToUse.isHidden = true
         }
+        
+        mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
+        mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
+        mCollectionView.allowsSelection = false
+        
+        print("----collectionViewSize-----")
+        print("width: \(mCollectionView.width)")
+        print("height: \(mCollectionView.height)")
+        print("---------------------------")
     }
-
-    @IBAction func onTapProductDetail(_ sender: Any) {
-        
-        let product_id = productList["\(texture_id)_\((sender as! UIButton).tag)"]
-        
-        let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-        productDetailVc.productId = product_id
-        delegate?.nextVc(productDetailVc)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("IdealFirstSelectViewController.viewWillAppear")
+        // リストデータ作成
+        switch texture_id {
+        case 1:
+            mProductList = ProductListData(screenId: Const.screenIdSmkDew)
+        case 2:
+            mProductList = ProductListData(screenId: Const.screenIdSmkGel)
+        case 3:
+            mProductList = ProductListData(screenId: Const.screenIdSmkPowder)
+        case 4:
+            mProductList = ProductListData(screenId: Const.screenIdSmkInk)
+        case 5:
+            mProductList = ProductListData(screenId: Const.screenIdSmkTool)
+        default:
+            print("Error: texture_id out of range")
+            exit(1)
+        }
+        // mProductList = ProductListData(productIds: productLists)
+        mProductImages = [:]
+        mProductList.products.enumerated().forEach { (i: Int, product: ProductData) in
+            mProductImages[i] = FileTable.getImage(product.image)
+        }
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         imageV.image = UIImage.init(named: "smbk_texture_\(texture_id)")
-      
-    }
 
+        viewDidLayoutSubviewsOnce {
+            mCollectionView.delegate = self
+            mCollectionView.dataSource = self
+        }
+    }
+    
+    func didTap(_ sender: IdealProductView) {
+        let productId: Int? = sender.product?.productId
+        if productId == nil {return}
+        
+        let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        productDetailVc.productId = productId!
+        productDetailVc.relationProducts = mProductList.products
+        self.delegate?.nextVc(productDetailVc)
+    }
+    
+    func didTapTrouble(_ sender: DataStructTrouble) {
+        mTroubleView.image = FileTable.getImage(sender.image)
+        mTroubleView.isHidden = false
+    }
+    
+    func didTapCell(_ sender: IdealResultCell) {
+        mCollectionView.reloadData()
+//        var targetIndex: Int?
+//
+//        if targetIndex != nil {
+//            mCollectionView.scrollToItem(at: IndexPath(row: targetIndex!, section: 0), at: .left, animated: true)
+//        }
+    }
+    func didTapClose() {
+        mTroubleView.isHidden = true
+    }
+    
+    func didTapMirror(_ show: Bool, product: ProductData) {
+        if show {
+            mShowTrobleIndexes.append(mProductList.products.index(of: product)!)
+        } else {
+            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: mProductList.products.index(of: product)!)!)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mProductList.products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        print("--------Products---------")
+        print("indexPath.row: \(indexPath.row)")
+        print("productId: \(mProductList.products[indexPath.row].productId)")
+        print("pruductName: \(mProductList.products[indexPath.row].productName)")
+        print("-------------------------")
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
+        cell.delegate = self
+        cell.product = mProductList.products[indexPath.row]
+        cell.productImage = mProductImages[indexPath.row]
+        cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row))
+        cell.indexPath = indexPath
+        cell.isNew = false
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
+        var width: CGFloat!
+        width = collectionView.width / 3.1
+        let height: CGFloat = collectionView.height
+        return CGSize(width: width, height: height)
+    }
+    
 }
