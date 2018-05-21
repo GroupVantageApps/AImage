@@ -2775,7 +2775,6 @@
 				C05913C61D67235700F22214 /* Resources */,
 				EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */,
 				DE794BF41FB29C78006E1F5B /* Run Script */,
-				7C8AF9A0F49E21349D5E2DD1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2794,8 +2793,6 @@
 				C05913DB1D67235700F22214 /* Sources */,
 				C05913DC1D67235700F22214 /* Frameworks */,
 				C05913DD1D67235700F22214 /* Resources */,
-				0C152394C1C7427A415AC0F1 /* [CP] Embed Pods Frameworks */,
-				632C64E4CD0125237C2238ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2815,8 +2812,6 @@
 				C05913E61D67235700F22214 /* Sources */,
 				C05913E71D67235700F22214 /* Frameworks */,
 				C05913E81D67235700F22214 /* Resources */,
-				440C3FDEF8DFB7887D0AFCA1 /* [CP] Embed Pods Frameworks */,
-				00B79D5C2031D35D2FE4D8E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3370,81 +3365,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00B79D5C2031D35D2FE4D8E0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0C152394C1C7427A415AC0F1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		440C3FDEF8DFB7887D0AFCA1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		632C64E4CD0125237C2238ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C8AF9A0F49E21349D5E2DD1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9ED64523DC35B1FBF600C8E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
