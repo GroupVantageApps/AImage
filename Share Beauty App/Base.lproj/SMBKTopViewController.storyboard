@@ -158,9 +158,6 @@ for face, eyes, and lips. </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I9D-H9-EJO">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                                 <subviews>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_top_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="epi-2T-ECc">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j43-8n-t2y">
                                         <rect key="frame" x="468.5" y="660" width="87" height="58"/>
                                         <constraints>
@@ -174,21 +171,21 @@ for face, eyes, and lips. </string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VISIBLE FEELS INVISIBLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-iS-pPn">
-                                        <rect key="frame" x="215" y="193" width="595" height="64"/>
+                                        <rect key="frame" x="215" y="137" width="595" height="64"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="39"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NH FENG HÌNH NH" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik6-4v-3br">
-                                        <rect key="frame" x="385" y="257" width="255" height="36"/>
+                                        <rect key="frame" x="385" y="201" width="255" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20.5"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQx-KP-hYi">
-                                        <rect key="frame" x="165" y="318" width="694" height="182"/>
+                                        <rect key="frame" x="165" y="262" width="694" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment>
@@ -215,10 +212,6 @@ VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABO-
                                 <constraints>
                                     <constraint firstItem="j43-8n-t2y" firstAttribute="centerX" secondItem="I9D-H9-EJO" secondAttribute="centerX" id="5iQ-za-rjn"/>
                                     <constraint firstAttribute="bottom" secondItem="j43-8n-t2y" secondAttribute="bottom" constant="30" id="LlU-gd-poC"/>
-                                    <constraint firstAttribute="trailing" secondItem="epi-2T-ECc" secondAttribute="trailing" id="XuX-i4-1DR"/>
-                                    <constraint firstItem="epi-2T-ECc" firstAttribute="leading" secondItem="I9D-H9-EJO" secondAttribute="leading" id="aBJ-Nu-qdb"/>
-                                    <constraint firstItem="epi-2T-ECc" firstAttribute="top" secondItem="I9D-H9-EJO" secondAttribute="top" id="gF9-Re-ZkK"/>
-                                    <constraint firstAttribute="bottom" secondItem="epi-2T-ECc" secondAttribute="bottom" id="wZP-AO-NlA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -262,6 +255,5 @@ VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABO-
         <image name="02_03.png" width="437" height="437"/>
         <image name="02_04.png" width="437" height="437"/>
         <image name="02_button.png" width="415" height="166"/>
-        <image name="smbk_top_1.png" width="2048" height="1292"/>
     </resources>
 </document>
