@@ -65,10 +65,6 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
         
-        print("----collectionViewSize-----")
-        print("width: \(mCollectionView.width)")
-        print("height: \(mCollectionView.height)")
-        print("---------------------------")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,12 +142,6 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        print("--------Products---------")
-        print("indexPath.row: \(indexPath.row)")
-        print("productId: \(mProductList.products[indexPath.row].productId)")
-        print("pruductName: \(mProductList.products[indexPath.row].productName)")
-        print("-------------------------")
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
         cell.delegate = self

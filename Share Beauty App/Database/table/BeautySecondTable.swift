@@ -32,4 +32,29 @@ class BeautySecondTable: NSObject {
         database.close()
         return entity
     }
+    
+    class func getEntitiesFromBF(_ beautyFirstId: Int) -> [BeautySecondEntity] {
+        let database = ModelDatabase.getDatabase()
+        database.open()
+        let resultSet: FMResultSet! = database.executeQuery("SELECT * FROM m_beauty_second WHERE beauty_first_id = ? ", withArgumentsIn: [beautyFirstId])
+       
+        var entities = [BeautySecondEntity]()
+        while resultSet.next() {
+             let entity: BeautySecondEntity = BeautySecondEntity()
+//            entity.beautyFirstId = beautyFirstId
+            entity.beautyFirstId = Utility.toInt(resultSet.string(forColumn: "beauty_first_id"))
+            
+            //content
+            let json = Utility.parseContent(resultSet)
+            entity.code = Utility.toStr(json["code"])
+            
+            entity.lastUpdateTs = Utility.toStr(resultSet.string(forColumn: "last_update_ts"))
+            entity.deleteFlg = Utility.toInt(resultSet.string(forColumn: "delete_flg"))
+            
+            entities.append(entity)
+        }
+        
+        database.close()
+        return entities
+    }
 }

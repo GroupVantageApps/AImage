@@ -89,6 +89,8 @@
 		338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */; };
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
+		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
+		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
 		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
 		4181A4AF20AD2F6D00680857 /* CALayer+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */; };
 		41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15704207F5010000319BB /* lx_play_sound_2.png */; };
@@ -838,6 +840,8 @@
 		338DE5711FBC4D2700E353CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoImageViewController.storyboard; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
+		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
+		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
 		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
 		4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+UIColor.swift"; sourceTree = "<group>"; };
 		41A15704207F5010000319BB /* lx_play_sound_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_2.png; sourceTree = "<group>"; };
@@ -2481,6 +2485,8 @@
 		DEED706E20A54D29001027EB /* tmp_smbk */ = {
 			isa = PBXGroup;
 			children = (
+				4153A0C620B7B0670089715A /* button_left.png */,
+				4153A0C520B7B0670089715A /* button_right.png */,
 				6E4ABB1E20AA6C9C000355D2 /* 01_button.png */,
 				6E4ABB2920AA6CA3000355D2 /* 02_01.png */,
 				6E4ABB2D20AA6CA8000355D2 /* 02_02.png */,
@@ -2775,6 +2781,7 @@
 				C05913C61D67235700F22214 /* Resources */,
 				EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */,
 				DE794BF41FB29C78006E1F5B /* Run Script */,
+				A1B109FE5E3823210122AB97 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2793,6 +2800,8 @@
 				C05913DB1D67235700F22214 /* Sources */,
 				C05913DC1D67235700F22214 /* Frameworks */,
 				C05913DD1D67235700F22214 /* Resources */,
+				722752A93CA9284BCC4EA21B /* [CP] Embed Pods Frameworks */,
+				66FC8CC34C43D41CF877CB23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2812,6 +2821,8 @@
 				C05913E61D67235700F22214 /* Sources */,
 				C05913E71D67235700F22214 /* Frameworks */,
 				C05913E81D67235700F22214 /* Resources */,
+				640C505F21E6B5BA1779C7B2 /* [CP] Embed Pods Frameworks */,
+				CA3546AB8D57E78903E2A2CE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3020,6 +3031,7 @@
 				C050C97E1E8267450009679D /* efficacy_slider_empty.png in Resources */,
 				DE2C301920738CC900548627 /* EEEFirstTechnologyView.xib in Resources */,
 				C050C9051E82619F0009679D /* sib03_before.png in Resources */,
+				4153A0C820B7B0670089715A /* button_left.png in Resources */,
 				DE2C909D1E9C66E600B5FC4A /* LXYutakaConceptView.xib in Resources */,
 				E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */,
 				DEBCF6C620747562001762A9 /* waso_before.png in Resources */,
@@ -3248,6 +3260,7 @@
 				DEED707D20A54D3D001027EB /* smbk_texture_5.png in Resources */,
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
+				4153A0C720B7B0670089715A /* button_right.png in Resources */,
 				DEED707720A54D3D001027EB /* smbk_top_1.png in Resources */,
 				DE2C300220737AB200548627 /* eee_6081.png in Resources */,
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
@@ -3365,6 +3378,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		640C505F21E6B5BA1779C7B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66FC8CC34C43D41CF877CB23 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		722752A93CA9284BCC4EA21B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9ED64523DC35B1FBF600C8E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3381,6 +3439,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B109FE5E3823210122AB97 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3546AB8D57E78903E2A2CE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE794BF41FB29C78006E1F5B /* Run Script */ = {
