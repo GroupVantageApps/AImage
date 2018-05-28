@@ -148,6 +148,12 @@ class Utility: NSObject {
 			return 0.0
 		}
 	}
+    
+    static func replaceParenthesis(_ item: String) -> String {
+        let string = item.replacingOccurrences(of: "[", with: "")
+            .replacingOccurrences(of: "]", with: "")
+        return string
+    }
 
     //オンラインチェック
     static func checkOnline() -> Bool {
@@ -220,6 +226,7 @@ class Utility: NSObject {
         strItems = strItems.filter {$0 != ""}
         return strItems.map {Int($0)!}
     }
+    
     class func csvToArray (file: String ) -> [String : String]{
         var result: [String : String] = [:]
         let filePath: URL = URL.init(string: file)!

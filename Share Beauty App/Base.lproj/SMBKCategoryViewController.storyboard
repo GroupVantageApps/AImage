@@ -17,7 +17,6 @@
         <!--Category View Controller-->
         <scene sceneID="muE-ph-01b">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9nP-xU-LdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SMBKCategoryViewController" id="TYu-Ly-iev" customClass="SMBKCategoryViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GxM-2e-1gf"/>
@@ -33,21 +32,6 @@
                                 <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="22"/>
                                 <color key="textColor" red="0.79420336790000001" green="0.037855404969999999" blue="0.089164817049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VIEW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfU-QX-iag">
-                                <rect key="frame" x="361" y="561" width="304" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="22"/>
-                                <color key="textColor" red="0.79420336790000001" green="0.037855404969999999" blue="0.089164817049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="1" green="0.036788678047322332" blue="0.14063576628180419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Complexion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQS-qQ-Mlo">
                                 <rect key="frame" x="70" y="19" width="177" height="38"/>
@@ -84,6 +68,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSn-Pl-3a5">
+                                <rect key="frame" x="366" y="534" width="290" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="24"/>
+                                <state key="normal" title="VIIEW">
+                                    <color key="titleColor" red="0.78485369682312012" green="0.06217038631439209" blue="0.18147075176239014" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.78485369682312012" green="0.06217038631439209" blue="0.18147075176239014" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onTapViewBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="Ge9-CK-BuO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -92,8 +95,10 @@
                         <outlet property="mComplexionView" destination="v3S-RL-Gck" id="PUM-Zt-jse"/>
                         <outlet property="mLeftBtn" destination="JVJ-ga-hMB" id="cca-nb-gwp"/>
                         <outlet property="mRightBtn" destination="D96-U7-3Ax" id="8ne-8V-bXA"/>
+                        <outlet property="mViewBtn" destination="xSn-Pl-3a5" id="xd8-kr-mnZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nP-xU-LdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5834.765625" y="-6218.75"/>
         </scene>

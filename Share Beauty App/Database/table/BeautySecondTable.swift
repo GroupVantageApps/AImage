@@ -40,9 +40,9 @@ class BeautySecondTable: NSObject {
        
         var entities = [BeautySecondEntity]()
         while resultSet.next() {
-             let entity: BeautySecondEntity = BeautySecondEntity()
-//            entity.beautyFirstId = beautyFirstId
+            let entity: BeautySecondEntity = BeautySecondEntity()
             entity.beautyFirstId = Utility.toInt(resultSet.string(forColumn: "beauty_first_id"))
+            entity.beautySecondId = Utility.toInt(resultSet.string(forColumn: "id"))
             
             //content
             let json = Utility.parseContent(resultSet)

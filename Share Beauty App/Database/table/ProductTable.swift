@@ -154,7 +154,6 @@ class ProductTable: NSObject {
             let separated = productIds?.components(separatedBy: ",")
             sql += self.makeFliterQuery(key: "id", valueCount: separated!.count, hasAnd: didApplyFilter)
             didApplyFilter = true
-
             arguments += separated!
         }
 
@@ -226,4 +225,5 @@ class ProductTable: NSObject {
         resultSql += ") "
         return resultSql
     }
+    
 }
