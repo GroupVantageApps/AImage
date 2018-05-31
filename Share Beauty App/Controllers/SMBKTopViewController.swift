@@ -28,9 +28,13 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet weak var mSecondTextureBtn: UIButton!
     @IBOutlet weak var mThirdTextureBtn: UIButton!
     @IBOutlet weak var mFourthTextureBtn: UIButton!
+    var textureBtns: [UIButton] = []
     @IBOutlet weak var mToolBtn: UIButton!
+    @IBOutlet weak var mNextBtn: UIButton!
     
     let mSMKArr = LanguageConfigure.smk_csv
+    // 自動画面遷移用
+    var workItem = DispatchWorkItem() {}
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,23 +44,47 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.workItem = DispatchWorkItem {
+            print("executed")
+            self.onTapNextBtn(self.mNextBtn)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem)
+
         mFirstVTitle.text = mSMKArr["1"]
         //mFirstVSubTitle.text = mSMKArr["2"]
         //mFirstVText.text = mSMKArr["3"]
         //mSecondVTitle.text = mSMKArr["4"]
         mItemBtn.setTitle(mSMKArr["5"], for: .normal)
         //mSecondVText.text = mSMKArr["6"]
-        mFirstTextureBtn.setTitle(mSMKArr["7"], for: .normal)
-        mSecondTextureBtn.setTitle(mSMKArr["8"], for: .normal)
-        mThirdTextureBtn.setTitle(mSMKArr["9"], for: .normal)
-        mFourthTextureBtn.setTitle(mSMKArr["10"], for: .normal)
-        mToolBtn.setTitle(mSMKArr["11"], for: .normal)
+
+        textureBtns.append(contentsOf: [mFirstTextureBtn, mSecondTextureBtn, mThirdTextureBtn, mFourthTextureBtn, mToolBtn])
+        for (i, btn) in textureBtns.enumerated() {
+            btn.setTitle(mSMKArr["\(7 + i)"], for: .normal)
+            btn.titleLabel?.textAlignment = .right
+        }
+    }
+    
+    private func animateFadeIn(target: UIView, delay: TimeInterval, completion: (() -> ())? = nil) {
+        target.alpha = 0
+        UIView.animate(
+            withDuration: 0.5,
+            delay: delay,
+            animations: {
+                target.alpha = 1
+        },
+            completion: { _ in
+                completion?()
+        })
+    }
+    
+    private func secondViewFadeIn() {
+        self.animateFadeIn(target: mSecondVTitle, delay: 0)
+        self.animateFadeIn(target: mSecondVText, delay: 0)
+        self.animateFadeIn(target: mItemBtn, delay: 0)
         
-        mFirstTextureBtn.titleLabel?.textAlignment = .right
-        mSecondTextureBtn.titleLabel?.textAlignment = .right
-        mThirdTextureBtn.titleLabel?.textAlignment = .right
-        mFourthTextureBtn.titleLabel?.textAlignment = .right
+        for (_, btn) in textureBtns.enumerated() {
+            self.animateFadeIn(target: btn, delay: Double(btn.tag) * 0.3)
+        }
     }
     
     @IBAction func onTapTextureBtn(_ sender: Any) {
@@ -76,6 +104,8 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     @IBAction func onTapNextBtn(_ sender: Any) {
         firstV.isHidden = true
         secondV.isHidden = false
+        self.secondViewFadeIn()
+        self.workItem.cancel()
     }
     
     override func viewDidLayoutSubviews() {
