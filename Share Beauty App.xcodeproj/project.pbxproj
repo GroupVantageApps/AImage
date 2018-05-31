@@ -88,6 +88,8 @@
 		2B336B249D71D6246E23B7EF /* Pods_Share_Beauty_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF806F6B4FE28D008B9E5EC1 /* Pods_Share_Beauty_App.framework */; };
 		338DE56F1FBC4CFA00E353CA /* AboutShiseidoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */; };
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
+		412BB87E20BF86F700FE22C9 /* complexion_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87D20BF86F600FE22C9 /* complexion_04.png */; };
+		412BB88020BF871E00FE22C9 /* complexion_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87F20BF871D00FE22C9 /* complexion_08.png */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
@@ -840,6 +842,8 @@
 		338DE56E1FBC4CF900E353CA /* AboutShiseidoImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutShiseidoImageViewController.swift; sourceTree = "<group>"; };
 		338DE5711FBC4D2700E353CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AboutShiseidoImageViewController.storyboard; sourceTree = "<group>"; };
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		412BB87D20BF86F600FE22C9 /* complexion_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complexion_04.png; sourceTree = "<group>"; };
+		412BB87F20BF871D00FE22C9 /* complexion_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complexion_08.png; sourceTree = "<group>"; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
@@ -2504,9 +2508,11 @@
 				6E4ABB1F20AA6C9D000355D2 /* complexion_01.png */,
 				6E4ABB2120AA6C9F000355D2 /* complexion_02.png */,
 				6E4ABB2E20AA6CA9000355D2 /* complexion_03.png */,
+				412BB87D20BF86F600FE22C9 /* complexion_04.png */,
 				6E4ABB2F20AA6CAA000355D2 /* complexion_05.png */,
 				6E4ABB1C20AA6C9A000355D2 /* complexion_06.png */,
 				6E4ABB2820AA6CA2000355D2 /* complexion_07.png */,
+				412BB87F20BF871D00FE22C9 /* complexion_08.png */,
 				6E4ABB2220AA6C9F000355D2 /* makeup_01.png */,
 				6E4ABB3020AA6CAC000355D2 /* makeup_02.png */,
 				6E4ABB2320AA6CA0000355D2 /* makeup_03.png */,
@@ -2944,6 +2950,7 @@
 				B38F63C01F47682700176804 /* DayCream01_before.png in Resources */,
 				C0B263E61E6E98FB00452C12 /* WasoGraphEfficacyView.xib in Resources */,
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
+				412BB87E20BF86F700FE22C9 /* complexion_04.png in Resources */,
 				2680EC202037E4FA005257B1 /* makeup_1.png in Resources */,
 				C98EBF791F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard in Resources */,
 				DEBCF6C220746F25001762A9 /* WASOPeelFirstEfficacyResultView.xib in Resources */,
@@ -3342,6 +3349,7 @@
 				C0D1953E1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.xib in Resources */,
 				C0E85A6A1E221FAB0035CCC4 /* ProductDetailTransitionView.xib in Resources */,
 				C050C97D1E8267450009679D /* efficacy_slider_circle_eye.png in Resources */,
+				412BB88020BF871E00FE22C9 /* complexion_08.png in Resources */,
 				C0DA9AEF1DB8CC7E00692058 /* Info.plist in Resources */,
 				DE48C3101EB6AA4400D29A8D /* LXProductBLSView.xib in Resources */,
 				C9906DD41F2CA70C00414722 /* LifeStyleEighthProductView.xib in Resources */,
