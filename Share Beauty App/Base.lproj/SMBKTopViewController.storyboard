@@ -107,7 +107,7 @@ REDEFINED</string>
                                             <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1h1-mr-ZN4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-jy-O6P" colorLabel="IBBuiltInLabel-Red">
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-jy-O6P" colorLabel="IBBuiltInLabel-Red">
                                         <rect key="frame" x="861" y="30" width="129" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20.5"/>
@@ -235,6 +235,7 @@ VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABO-
                         <outlet property="mFirstVTitle" destination="bOa-iS-pPn" id="4Kt-jG-ug1"/>
                         <outlet property="mFourthTextureBtn" destination="Hb2-eG-x5u" id="dHT-gl-hE6"/>
                         <outlet property="mItemBtn" destination="Ycg-jy-O6P" id="Y50-vS-BQy"/>
+                        <outlet property="mNextBtn" destination="j43-8n-t2y" id="MUc-Fp-5NB"/>
                         <outlet property="mSecondTextureBtn" destination="bHy-JD-CzL" id="DsI-tZ-Rct"/>
                         <outlet property="mSecondVText" destination="d1O-LI-PRF" id="ai7-SO-QRg"/>
                         <outlet property="mSecondVTitle" destination="lP7-ig-zDA" id="iZN-nO-fgx"/>
