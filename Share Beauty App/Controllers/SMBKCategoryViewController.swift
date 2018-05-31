@@ -9,13 +9,12 @@
 import UIKit
 
 class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotation {
-
+    
     weak var delegate: NavigationControllerDelegate?
     var theme: String? = "Makeup Beauty"
     var isEnterWithNavigationView = true
-    let productList = [ "10": 34, "11": 41, "12": 35, "13": 38, "14": 37, "15": 31, "16": 70, "17": 71, "18": 72, "19": 73]
     private let mScreen = ScreenData(screenId: Const.screenIdNewApproach)
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         //        TODO ScreenIdもらう
@@ -47,7 +46,7 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         myScrollView.bounces = true
         myScrollView.indicatorStyle = .white
         mComplexionView.addSubview(self.myScrollView)
-
+        
         let entity = AppItemTable.getEntity(7797)
         mViewBtn.setTitle(entity.itemName, for: .normal)
         self.setProductList()
@@ -66,9 +65,8 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
             let translatedEntity: BeautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(e.beautySecondId!)
             mColorMakeupList.updateValue(translatedEntity.name, forKey: translatedEntity.beautySecondId!)
         }
-        
     }
-
+    
     func setButtons() {
         let btnWidth = SMKCategoryButton().width
         let btnHeight = SMKCategoryButton().height
@@ -79,10 +77,8 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         for (index, beautySecondId) in SMBKCategoryViewController.mDefaultList.enumerated() {
             if let category = mComplexionList[beautySecondId] {
                 let i = countOfComplexionBtn
-                complexionBtns.append(SMKCategoryButton(beautySecondId))
+                complexionBtns.append(SMKCategoryButton(id: beautySecondId, text: category))
                 complexionBtns[i].setBackgroundImage(UIImage(named: "complexion_0\(index + 1).png"), for: .normal)
-                complexionBtns[i].setTitle("\(category)", for: .normal)
-                complexionBtns[i].setLayoutBtnText()
                 if i % 2 == 0 {
                     complexionBtns[i].origin.x = CGFloat(Int(btnWidth) * i/2 + marginHorizon * i/2)
                 } else {
@@ -94,10 +90,8 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
                 countOfComplexionBtn += 1
             } else if let category = mColorMakeupList[beautySecondId] {
                 let i = countOfColorMakeupBtn
-                colorMakeupBtns.append(SMKCategoryButton(beautySecondId))
+                colorMakeupBtns.append(SMKCategoryButton(id: beautySecondId, text: category))
                 colorMakeupBtns[i].setBackgroundImage(UIImage(named: "makeup_0\(i + 1).png"), for: .normal)
-                colorMakeupBtns[i].setTitle("\(category)", for: .normal)
-                colorMakeupBtns[i].setLayoutBtnText()
                 if i == 3 {
                     colorMakeupBtns[i].origin.y = btnHeight + 8
                 } else {
@@ -123,14 +117,14 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     func onTapCategoryBtn(_ sender: SMKCategoryButton) {
         if sender.isSelected {
             sender.isSelected = false
-            sender.layer.borderWidth = 2.0
+            sender.layer.borderWidth = 1.5
             sender.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0).cgColor
             if let index = selectedBeautySecondIds.index(where: { $0 == sender.beautySecondId }) {
                 selectedBeautySecondIds.remove(at: index)
             }
         } else {
             sender.isSelected = true
-            sender.layer.borderWidth = 3.0
+            sender.layer.borderWidth = 2.0
             sender.layer.borderColor = UIColor(red: 0.8, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
             selectedBeautySecondIds.append(sender.beautySecondId)
         }
@@ -146,6 +140,5 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-       
     }
 }
