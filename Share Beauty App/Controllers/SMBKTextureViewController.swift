@@ -17,14 +17,14 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     var texture_id = 0
     
     @IBOutlet weak var mCollectionView: UICollectionView!
-    private var mProductList: ProductListData!
+    var mProductList: ProductListData!
+    var selectedTextureProducts: [ProductData] = []
     private var mProductImages: [Int:UIImage]!
     // let productList = [ "1_10": 572, "2_10": 573, "2_11": 574, "2_12": 575, "3_10": 584, "3_11": 586, "3_12": 587, "4_10": 577, "4_11": 578, "4_12": 579, "5_10": 595, "5_11": 596, "5_12": 597 ]
     // let productLists = [572, 573, 574, 575, 584, 586, 587, 577, 578, 579, 595, 596, 597 ]
     private var mTroubleView: TroubleView!
     private var mShowTrobleIndexes: [Int] = []
-    
-    @IBOutlet weak var imageV: UIImageView!
+
     @IBOutlet weak var mSideView: UIView!
     @IBOutlet weak var mSideTitle: UILabel!
     @IBOutlet weak var mSideSubText: UILabel!
@@ -41,8 +41,6 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // サンプル画像
-        imageV.isHidden = true
 
         let sideImage: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.mSideView.frame.size.width, height: self.mSideView.frame.size.height))
         sideImage.image = UIImage(named: "03_back_0\(texture_id)")
@@ -65,36 +63,19 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("IdealFirstSelectViewController.viewWillAppear")
-        // リストデータ作成
-        switch texture_id {
-        case 1:
-            mProductList = ProductListData(screenId: Const.screenIdSmkDew)
-        case 2:
-            mProductList = ProductListData(screenId: Const.screenIdSmkGel)
-        case 3:
-            mProductList = ProductListData(screenId: Const.screenIdSmkPowder)
-        case 4:
-            mProductList = ProductListData(screenId: Const.screenIdSmkInk)
-        case 5:
-            mProductList = ProductListData(screenId: Const.screenIdSmkTool)
-        default:
-            print("Error: texture_id out of range")
-            exit(1)
-        }
-        // mProductList = ProductListData(productIds: productLists)
+        selectedTextureProducts = mProductList.products.filter { $0.texure == mTextureName.text }
         mProductImages = [:]
-        mProductList.products.enumerated().forEach { (i: Int, product: ProductData) in
+        selectedTextureProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("IdealFirstSelectViewController.viewWillAppear")
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        imageV.image = UIImage.init(named: "smbk_texture_\(texture_id)")
 
         viewDidLayoutSubviewsOnce {
             mCollectionView.delegate = self
@@ -108,7 +89,7 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         
         let productDetailVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
         productDetailVc.productId = productId!
-        productDetailVc.relationProducts = mProductList.products
+        productDetailVc.relationProducts = selectedTextureProducts
         self.delegate?.nextVc(productDetailVc)
     }
     
@@ -131,21 +112,21 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     
     func didTapMirror(_ show: Bool, product: ProductData) {
         if show {
-            mShowTrobleIndexes.append(mProductList.products.index(of: product)!)
+            mShowTrobleIndexes.append(selectedTextureProducts.index(of: product)!)
         } else {
-            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: mProductList.products.index(of: product)!)!)
+            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: selectedTextureProducts.index(of: product)!)!)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mProductList.products.count
+        return selectedTextureProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
         cell.delegate = self
-        cell.product = mProductList.products[indexPath.row]
+        cell.product = selectedTextureProducts[indexPath.row]
         cell.productImage = mProductImages[indexPath.row]
         cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row))
         cell.indexPath = indexPath

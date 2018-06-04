@@ -82,6 +82,8 @@ class ProductTable: NSObject {
 			if let makeupLookImages = json["makeup_look_image"] as? [Int] {
 				entity.makeupLookImages = makeupLookImages
 			}
+            
+            entity.texure = Utility.toStr(json["testure"])
         }
 
         database.close()

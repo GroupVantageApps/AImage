@@ -29,9 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smbk_texture_3.png" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-Ys-KxI">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UIQ-XR-HMV">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -111,7 +108,7 @@ LASTING</string>
                                         <rect key="frame" x="35" y="135" width="659" height="473"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pOK-u2-mFe">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pOK-u2-mFe">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -124,15 +121,8 @@ LASTING</string>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="o0H-Ys-KxI" firstAttribute="leading" secondItem="EqY-Bj-1qo" secondAttribute="leading" id="WIy-1D-VB2"/>
-                            <constraint firstAttribute="trailing" secondItem="o0H-Ys-KxI" secondAttribute="trailing" id="Z4f-le-eSc"/>
-                            <constraint firstItem="ZzZ-dp-gYp" firstAttribute="top" secondItem="o0H-Ys-KxI" secondAttribute="bottom" id="akR-nn-lbu"/>
-                            <constraint firstItem="o0H-Ys-KxI" firstAttribute="top" secondItem="GxM-2e-1gf" secondAttribute="bottom" id="ang-YS-3Sr"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageV" destination="o0H-Ys-KxI" id="H40-HZ-BOc"/>
                         <outlet property="mCollectionView" destination="1ug-mX-aE7" id="Glq-k4-H85"/>
                         <outlet property="mSideSubText" destination="Smm-pG-WU4" id="uco-Sn-ofN"/>
                         <outlet property="mSideTitle" destination="7xa-95-3Ss" id="sVH-Dl-Sam"/>
@@ -146,7 +136,4 @@ LASTING</string>
             <point key="canvasLocation" x="-5834.765625" y="-6218.75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="smbk_texture_3.png" width="2048" height="1292"/>
-    </resources>
 </document>

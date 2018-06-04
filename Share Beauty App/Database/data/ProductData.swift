@@ -46,6 +46,8 @@ class ProductData: NSObject {
     var lineOpened = false
 
     var uiImage: UIImage?
+    
+    var texure: String = String()
 
     required override init() {
     }
@@ -102,6 +104,8 @@ class ProductData: NSObject {
         self.whyNeed = ""
         self.defaultDisplay = productTranslateEntity.defaultDisplay!
         self.recommend = RecommendTable.check(self.productId)
+        
+        self.texure = productEntity.texure
     }
 
     convenience init(lineId: Int) {
