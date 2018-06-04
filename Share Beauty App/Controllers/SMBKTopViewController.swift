@@ -51,11 +51,11 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem)
 
         mFirstVTitle.text = mSMKArr["1"]
-        //mFirstVSubTitle.text = mSMKArr["2"]
-        //mFirstVText.text = mSMKArr["3"]
-        //mSecondVTitle.text = mSMKArr["4"]
+        mFirstVSubTitle.text = mSMKArr["2"]
+        mFirstVText.text = mSMKArr["3"]
+        mSecondVTitle.text = mSMKArr["4"]
         mItemBtn.setTitle(mSMKArr["5"], for: .normal)
-        //mSecondVText.text = mSMKArr["6"]
+        mSecondVText.text = mSMKArr["6"]
 
         textureBtns.append(contentsOf: [mFirstTextureBtn, mSecondTextureBtn, mThirdTextureBtn, mFourthTextureBtn, mToolBtn])
         for (i, btn) in textureBtns.enumerated() {
