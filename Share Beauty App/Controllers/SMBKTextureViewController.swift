@@ -51,21 +51,23 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
             mToUse.text = mSMKArr[String(textureLabelId + 1)]
             mSideTitle.text = mSMKArr[String(textureLabelId + 2)]
             mSideSubText.text = mSMKArr[String(textureLabelId + 3)]
+            
+            selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureName.text }
         } else {
             mSideTitle.isHidden = true
             mSideSubText.isHidden = true
             mToUse.isHidden = true
+            
+            selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 73 }
+        }
+        mProductImages = [:]
+        selectedTextureProducts.enumerated().forEach { (i: Int, product: ProductData) in
+            mProductImages[i] = FileTable.getImage(product.image)
         }
         
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
-        
-        selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureName.text }
-        mProductImages = [:]
-        selectedTextureProducts.enumerated().forEach { (i: Int, product: ProductData) in
-            mProductImages[i] = FileTable.getImage(product.image)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

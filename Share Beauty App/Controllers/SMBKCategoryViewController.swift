@@ -49,6 +49,7 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         
         let entity = AppItemTable.getEntity(7797)
         mViewBtn.setTitle(entity.itemName, for: .normal)
+        mViewBtn.isHidden = true
         self.setProductList()
         self.setButtons()
     }
@@ -127,6 +128,11 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
             sender.layer.borderWidth = 2.0
             sender.layer.borderColor = UIColor(red: 0.8, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
             selectedBeautySecondIds.append(sender.beautySecondId)
+        }
+        if selectedBeautySecondIds.count == 0 {
+            mViewBtn.isHidden = true
+        } else {
+            mViewBtn.isHidden = false
         }
     }
     
