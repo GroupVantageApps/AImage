@@ -37,7 +37,7 @@ class ProductEntity: NSObject {
 	var makeupLook: Bool = false
 	var makeupLookImages = [Int]()
     
-    var texure: String = String()
+    var texture: String = String()
 }
 
 struct DBStructFinish {

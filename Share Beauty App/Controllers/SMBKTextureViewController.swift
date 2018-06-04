@@ -20,8 +20,6 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     var mProductList: ProductListData!
     var selectedTextureProducts: [ProductData] = []
     private var mProductImages: [Int:UIImage]!
-    // let productList = [ "1_10": 572, "2_10": 573, "2_11": 574, "2_12": 575, "3_10": 584, "3_11": 586, "3_12": 587, "4_10": 577, "4_11": 578, "4_12": 579, "5_10": 595, "5_11": 596, "5_12": 597 ]
-    // let productLists = [572, 573, 574, 575, 584, 586, 587, 577, 578, 579, 595, 596, 597 ]
     private var mTroubleView: TroubleView!
     private var mShowTrobleIndexes: [Int] = []
 
@@ -63,7 +61,7 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false
         
-        selectedTextureProducts = mProductList.products.filter { $0.texure == mTextureName.text }
+        selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureName.text }
         mProductImages = [:]
         selectedTextureProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)

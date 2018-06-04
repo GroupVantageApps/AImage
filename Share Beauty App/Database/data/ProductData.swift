@@ -47,7 +47,7 @@ class ProductData: NSObject {
 
     var uiImage: UIImage?
     
-    var texure: String = String()
+    var texture: String = String()
 
     required override init() {
     }
@@ -105,7 +105,7 @@ class ProductData: NSObject {
         self.defaultDisplay = productTranslateEntity.defaultDisplay!
         self.recommend = RecommendTable.check(self.productId)
         
-        self.texure = productEntity.texure
+        self.texture = productEntity.texture
     }
 
     convenience init(lineId: Int) {
