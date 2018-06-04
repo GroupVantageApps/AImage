@@ -245,8 +245,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         productIds.append(contentsOf: [99999,99999,99999,99999])
                         imageItemIds.append(contentsOf: [(discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
                                                          (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))]) //追加MakeUp吹き出し
-                        labelItems.append(contentsOf: [(discription: 7931, x: CGFloat(1970), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
-                                                       (discription: 7931, x: CGFloat(2450), y: CGFloat(116), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))]) //追加MakeUp吹き出しテキスト
+                        labelItems.append(contentsOf: [(discription: 7931, x: CGFloat(1970), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
+                                                       (discription: 7931, x: CGFloat(2450), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))]) //追加MakeUp吹き出しテキスト
 
                     }
                 }
