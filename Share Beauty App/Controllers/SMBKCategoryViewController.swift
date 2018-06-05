@@ -58,7 +58,11 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         let colorMakeupEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(45).filter { 70 <= $0.beautySecondId! && $0.beautySecondId! <= 73}
         for e in complexionEntities {
             let translatedEntity: BeautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(e.beautySecondId!)
-            mComplexionList.append(translatedEntity)
+            
+            let products = ProductListData(productIds: nil, beautyIds: "\(e.beautySecondId!)", lineIds: "\(Const.lineIdMAKEUP)").products
+            if products.count > 0 {
+                mComplexionList.append(translatedEntity)
+            }
         }
         mComplexionList.sort(by: {$0.displayOrder! < $1.displayOrder!})
 
