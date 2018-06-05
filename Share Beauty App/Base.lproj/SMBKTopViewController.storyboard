@@ -170,38 +170,29 @@ for face, eyes, and lips. </string>
                                             <action selector="onTapNextBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="eCq-bd-NKD"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VISIBLE FEELS INVISIBLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-iS-pPn">
-                                        <rect key="frame" x="215" y="137" width="595" height="64"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VISIBLE FEELS INVISIBLE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik6-4v-3br">
+                                        <rect key="frame" x="385" y="244" width="255" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="39"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NH FENG HÌNH NH" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ik6-4v-3br">
-                                        <rect key="frame" x="385" y="201" width="255" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VISIBLE FEELS INVISIBLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOa-iS-pPn">
+                                        <rect key="frame" x="215" y="183" width="595" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20.5"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQx-KP-hYi">
-                                        <rect key="frame" x="165" y="262" width="694" height="182"/>
+                                        <rect key="frame" x="240" y="288" width="545" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISIC- ING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT 
-LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM
-VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABO-
-</string>
+                                                <string key="content">Refined Skincare-inspired Textures Lightweight and Lasting Formulas Bold Impactful Color Four Textures Reimagined for Face, Eyes, and Lips</string>
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="20.199999999999999"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="RIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT. DUIS">
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="20.199999999999999"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="6" lineHeightMultiple="0.5" tighteningFactorForTruncation="0.0"/>
+                                                    <font key="NSFont" size="20" name="Reader"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>

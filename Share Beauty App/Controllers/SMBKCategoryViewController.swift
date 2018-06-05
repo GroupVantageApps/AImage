@@ -30,11 +30,8 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     
     var complexionBtns: [SMKCategoryButton] = []
     var colorMakeupBtns: [SMKCategoryButton] = []
-    var mComplexionList: [Int:String] = [:]
-    var mColorMakeupList: [Int:String] = [:]
-    // Complexionのid [34, 41, 38, 37, 35, 39, 40, 42]
-    // Color Makeupのid [70, 71, 72, 73]
-    static let mDefaultList = [34, 35, 41, 39, 38, 40, 37, 42, 70, 71, 72, 73]
+    var mComplexionList: [BeautySecondTranslateEntity] = []
+    var mColorMakeupList: [BeautySecondTranslateEntity] = []
     var selectedBeautySecondIds: [Int] = []
     
     override func viewDidLoad() {
@@ -57,51 +54,48 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     func setProductList() {
         // DBからデータ取得
         let complexionEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(33)
-        let colorMakeupEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(45)
+        
+        let colorMakeupEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(45).filter { 70 <= $0.beautySecondId! && $0.beautySecondId! <= 73}
         for e in complexionEntities {
             let translatedEntity: BeautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(e.beautySecondId!)
-            mComplexionList.updateValue(translatedEntity.name, forKey: translatedEntity.beautySecondId!)
+            mComplexionList.append(translatedEntity)
         }
+        mComplexionList.sort(by: {$0.displayOrder! < $1.displayOrder!})
+
         for e in colorMakeupEntities {
             let translatedEntity: BeautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(e.beautySecondId!)
-            mColorMakeupList.updateValue(translatedEntity.name, forKey: translatedEntity.beautySecondId!)
+            mColorMakeupList.append(translatedEntity)
         }
+        mColorMakeupList.sort(by: {$0.displayOrder! < $1.displayOrder!})
     }
     
     func setButtons() {
         let btnWidth = SMKCategoryButton().width
         let btnHeight = SMKCategoryButton().height
         let marginHorizon = 7
-        var countOfComplexionBtn = 0
-        var countOfColorMakeupBtn = 0
         
-        for (index, beautySecondId) in SMBKCategoryViewController.mDefaultList.enumerated() {
-            if let category = mComplexionList[beautySecondId] {
-                let i = countOfComplexionBtn
-                complexionBtns.append(SMKCategoryButton(id: beautySecondId, text: category))
-                complexionBtns[i].setBackgroundImage(UIImage(named: "complexion_0\(index + 1).png"), for: .normal)
-                if i % 2 == 0 {
-                    complexionBtns[i].origin.x = CGFloat(Int(btnWidth) * i/2 + marginHorizon * i/2)
-                } else {
-                    complexionBtns[i].origin.y = btnHeight + 8
-                    complexionBtns[i].origin.x = CGFloat(Int(btnWidth) * (i - 1) / 2 + marginHorizon * (i - 1) / 2)
-                }
-                complexionBtns[i].addTarget(self, action: #selector(onTapCategoryBtn(_:)), for: .touchUpInside)
-                myScrollView.addSubview(complexionBtns[i])
-                countOfComplexionBtn += 1
-            } else if let category = mColorMakeupList[beautySecondId] {
-                let i = countOfColorMakeupBtn
-                colorMakeupBtns.append(SMKCategoryButton(id: beautySecondId, text: category))
-                colorMakeupBtns[i].setBackgroundImage(UIImage(named: "makeup_0\(i + 1).png"), for: .normal)
-                if i == 3 {
-                    colorMakeupBtns[i].origin.y = btnHeight + 8
-                } else {
-                    colorMakeupBtns[i].origin.x = CGFloat(Int(btnWidth) * i + marginHorizon * i)
-                }
-                colorMakeupBtns[i].addTarget(self, action: #selector(onTapCategoryBtn(_:)), for: .touchUpInside)
-                mColorMakeupView.addSubview(colorMakeupBtns[i])
-                countOfColorMakeupBtn += 1
+        for (i, complexion) in mComplexionList.enumerated() {
+            complexionBtns.append(SMKCategoryButton(id: complexion.beautySecondId!,text: complexion.name))
+            complexionBtns[i].setBackgroundImage(UIImage(named: "complexion_\(complexion.beautySecondId!).png"), for: .normal)
+            if i % 2 == 0 {
+                complexionBtns[i].origin.x = CGFloat(Int(btnWidth) * i/2 + marginHorizon * i/2)
+            } else {
+                complexionBtns[i].origin.y = btnHeight + 8
+                complexionBtns[i].origin.x = CGFloat(Int(btnWidth) * (i - 1) / 2 + marginHorizon * (i - 1) / 2)
             }
+            complexionBtns[i].addTarget(self, action: #selector(onTapCategoryBtn(_:)), for: .touchUpInside)
+            myScrollView.addSubview(complexionBtns[i])
+        }
+        for (i, colorMakeup) in mColorMakeupList.enumerated() {
+            colorMakeupBtns.append(SMKCategoryButton(id: colorMakeup.beautySecondId!,text: colorMakeup.name))
+            colorMakeupBtns[i].setBackgroundImage(UIImage(named: "makeup_0\(i + 1).png"), for: .normal)
+            if i == 3 {
+                colorMakeupBtns[i].origin.y = btnHeight + 8
+            } else {
+                colorMakeupBtns[i].origin.x = CGFloat(Int(btnWidth) * i + marginHorizon * i)
+            }
+            colorMakeupBtns[i].addTarget(self, action: #selector(onTapCategoryBtn(_:)), for: .touchUpInside)
+            mColorMakeupView.addSubview(colorMakeupBtns[i])
         }
     }
     
