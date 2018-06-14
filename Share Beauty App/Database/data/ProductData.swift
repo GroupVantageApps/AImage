@@ -105,6 +105,7 @@ class ProductData: NSObject {
         self.defaultDisplay = productTranslateEntity.defaultDisplay!
         self.recommend = RecommendTable.check(self.productId)
         
+        self.displayOrder = productTranslateEntity.displayOrder!
         self.texture = productEntity.texture
     }
 

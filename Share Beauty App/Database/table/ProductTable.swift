@@ -147,7 +147,7 @@ class ProductTable: NSObject {
         database.open()
 
         var didApplyFilter = false
-        var sql = "SELECT id FROM m_product "
+        var sql = "SELECT m_product.id FROM m_product INNER JOIN m_product_translate ON m_product.id = m_product_translate.product_id "
         var arguments = [String]()
 
         if !(productIds == nil && beautyIds == nil && lineIds == nil) {
@@ -156,27 +156,27 @@ class ProductTable: NSObject {
 
         if productIds != nil {
             let separated = productIds?.components(separatedBy: ",")
-            sql += self.makeFliterQuery(key: "id", valueCount: separated!.count, hasAnd: didApplyFilter)
+            sql += self.makeFliterQuery(key: "m_product.id", valueCount: separated!.count, hasAnd: didApplyFilter)
             didApplyFilter = true
             arguments += separated!
         }
 
         if beautyIds != nil {
             let separated = beautyIds?.components(separatedBy: ",")
-            sql += self.makeFliterQuery(key: "beauty_second_id", valueCount: separated!.count, hasAnd: didApplyFilter)
+            sql += self.makeFliterQuery(key: "m_product.beauty_second_id", valueCount: separated!.count, hasAnd: didApplyFilter)
             didApplyFilter = true
             arguments += separated!
         }
 
         if lineIds != nil {
             let separated = lineIds?.components(separatedBy: ",")
-            sql += self.makeFliterQuery(key: "line_id", valueCount: separated!.count, hasAnd: didApplyFilter)
+            sql += self.makeFliterQuery(key: "m_product.line_id", valueCount: separated!.count, hasAnd: didApplyFilter)
             didApplyFilter = true
             arguments += separated!
         }
 
-        sql += "ORDER BY beauty_second_id"
-
+        sql += "ORDER BY m_product.beauty_second_id, CASE WHEN m_product_translate.display_order == \"\" THEN 0 ELSE 1 END, m_product_translate.display_order"
+        
         print("======================================================================")
         print(sql)
         print("======================================================================")
