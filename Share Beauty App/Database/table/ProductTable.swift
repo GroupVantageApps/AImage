@@ -175,7 +175,7 @@ class ProductTable: NSObject {
             arguments += separated!
         }
 
-        sql += "ORDER BY beauty_second_id "
+        sql += "ORDER BY beauty_second_id"
 
         print("======================================================================")
         print(sql)

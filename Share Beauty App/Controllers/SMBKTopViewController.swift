@@ -60,7 +60,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         textureBtns.append(contentsOf: [mFirstTextureBtn, mSecondTextureBtn, mThirdTextureBtn, mFourthTextureBtn, mToolBtn])
         for (i, btn) in textureBtns.enumerated() {
             btn.setTitle(mSMKArr["\(7 + i)"], for: .normal)
-            btn.titleLabel?.textAlignment = .right
+            btn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         }
     }
     

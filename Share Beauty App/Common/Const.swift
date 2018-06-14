@@ -85,13 +85,6 @@ struct Const {
     static let screenIdAboutShiseido = 7786
     static let screenIdNewApproach = 7817
 
-    static let screenIdSmkDew = 7825
-    static let screenIdSmkGel = 7826
-    static let screenIdSmkPowder = 7827
-    static let screenIdSmkInk = 7828
-    static let screenIdSmkTool = 7829
-
-
     static let itemIdBeautyTips = "503301"
 
     static let beautySecondIdMoisturizer = 7    //MoisturizerのID（beauty_second_id）
@@ -153,13 +146,6 @@ struct Const {
     static let movieIdMakeUpEvening = 5892
     static let movieIdMakeUpNight = 5891
     
-    //SMK Texture
-    static let smkDews = [572]
-    static let smkGels = [573, 574, 575]
-    static let smkPowders = [584, 586, 587]
-    static let smkInks = [577, 578, 579]
-    static let smkTools = [595, 596, 597]
-
     static let lineHeightMyanmar: CGFloat = 30.0
     static let apiSendLog = "https://nscp-ga.heteml.jp/sab/applog.php"
     static let logActionTapItem = 1

@@ -311,10 +311,10 @@ class Utility: NSObject {
     
     class func reloadCsvData(){
         let languageCode = LanguageTable.getEntity( LanguageConfigure.languageId )
+        
         let filePath = String(format: "file://%@/Documents/lx_csv/lx_csv/%@lx.csv", NSHomeDirectory(), languageCode.code)
         let csv = Utility.csvToArray(file: filePath)
         LanguageConfigure.lxcsv = csv
-        
 
         let gscFilePath = String(format: "file://%@/Documents/gsc_csv/gsc_csv/%@gsc.csv", NSHomeDirectory(), languageCode.code)
         let gscCsv = Utility.csvToArray(file: gscFilePath)
@@ -331,6 +331,10 @@ class Utility: NSObject {
         let filePath_sdp_eee_csv = String(format: "file://%@/Documents/18aw_csv/18aw_csv/%@_18aw.csv", NSHomeDirectory(), languageCode.code)
         let sdp_eee_csv = Utility.csvToArray(file: filePath_sdp_eee_csv)
         LanguageConfigure.sdp_eee_csv = sdp_eee_csv
+        
+        let filePath_smk = String(format: "file://%@/Documents/18awsmk/18awsmk/%@_18awsmk.csv", NSHomeDirectory(), languageCode.code)
+        let csv_smk = Utility.csvToArray(file: filePath_smk)
+        LanguageConfigure.smk_csv = csv_smk
         
         let countryCode = CountryTable.getEntity(LanguageConfigure.countryId)
         

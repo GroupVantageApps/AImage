@@ -30,6 +30,7 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     @IBOutlet weak var mToUse: UILabel!
 
     let mSMKArr = LanguageConfigure.smk_csv
+    let mTextureNames = ["DEW TEXTURE", "GEL TEXTURE", "POWDER TEXTURE", "INK TEXTURE"]
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -51,8 +52,8 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
             mToUse.text = mSMKArr[String(textureLabelId + 1)]
             mSideTitle.text = mSMKArr[String(textureLabelId + 2)]
             mSideSubText.text = mSMKArr[String(textureLabelId + 3)]
-            
-            selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureName.text }
+
+            selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureNames[texture_id - 1]}
         } else {
             mSideTitle.isHidden = true
             mSideSubText.isHidden = true
@@ -60,11 +61,15 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
             
             selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 73 }
         }
+        mSideTitle.sizeToFit()
+        mSideSubText.sizeToFit()
+        mTextureName.sizeToFit()
+        mToUse.sizeToFit()
+        
         mProductImages = [:]
         selectedTextureProducts.enumerated().forEach { (i: Int, product: ProductData) in
             mProductImages[i] = FileTable.getImage(product.image)
         }
-        
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionView.allowsSelection = false

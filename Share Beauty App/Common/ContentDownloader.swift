@@ -312,8 +312,8 @@ class ContentDownloader: NSObject {
             logInfo["fileId"] = Int(fileId)
             logInfo["status"] = 1
             logInfo["length"] = 0
-            logInfo["httpStatus"] = response.response!.statusCode
-
+            logInfo["httpStatus"] = response.response?.statusCode
+            
             if response.result.isFailure {
                 closure(logInfo)
                 return
@@ -532,19 +532,6 @@ class ContentDownloader: NSObject {
             print(e)
         }
         
-        let csvSMKFileUrl: URL = FileTable.getPath(6798)
-        print(csvSMKFileUrl)
-        do {
-            let destinationURL = try Zip.quickUnzipFile(csvSMKFileUrl)
-            print(destinationURL)
-            let languageCode = LanguageTable.getEntity(LanguageConfigure.languageId)
-            let filePath = String(format: "file://%@/Documents/18awsmk/18awsmk/%@_18awsmk.csv", NSHomeDirectory(), languageCode.code)
-            let csv = Utility.csvToArray(file: filePath)
-            LanguageConfigure.smk_csv = csv
-            
-        } catch let e {
-            print(e)
-        }
     }
     
     private func unzipSMKFile() {

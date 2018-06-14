@@ -496,18 +496,6 @@ class ProductListData: NSObject {
             print(json["products"])
             print(products)
             self.appendProductByArrayForIconicBeauty(products)
-            
-        // SMK Texture
-        } else if screenId == Const.screenIdSmkDew {
-            self.appendProductByArray(Const.smkDews)
-        } else if screenId == Const.screenIdSmkGel {
-            self.appendProductByArray(Const.smkGels)
-        } else if screenId == Const.screenIdSmkPowder {
-            self.appendProductByArray(Const.smkPowders)
-        } else if screenId == Const.screenIdSmkInk {
-            self.appendProductByArray(Const.smkInks)
-        } else if screenId == Const.screenIdSmkTool {
-            self.appendProductByArray(Const.smkTools)
         }
     }
 

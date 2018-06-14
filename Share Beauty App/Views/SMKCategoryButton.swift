@@ -24,7 +24,7 @@ class SMKCategoryButton: UIButton {
         self.titleLabel!.font = UIFont(name: "Reader-Bold", size: CGFloat(18))
         self.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 110, 0, 5)
-        self.titleLabel!.numberOfLines = 3
+        self.titleLabel!.numberOfLines = 0
         // 折り返し
         self.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
         // 行間調整

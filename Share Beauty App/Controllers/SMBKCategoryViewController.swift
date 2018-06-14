@@ -54,11 +54,9 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     func setProductList() {
         // DBからデータ取得
         let complexionEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(33)
-        
         let colorMakeupEntities:[BeautySecondEntity] = BeautySecondTable.getEntitiesFromBF(45).filter { 70 <= $0.beautySecondId! && $0.beautySecondId! <= 73}
         for e in complexionEntities {
             let translatedEntity: BeautySecondTranslateEntity = BeautySecondTranslateTable.getEntity(e.beautySecondId!)
-            
             let products = ProductListData(productIds: nil, beautyIds: "\(e.beautySecondId!)", lineIds: "\(Const.lineIdMAKEUP)").products
             if products.count > 0 {
                 mComplexionList.append(translatedEntity)
