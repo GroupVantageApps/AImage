@@ -27,6 +27,8 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     @IBOutlet weak var mLeftBtn: UIButton!
     @IBOutlet weak var mRightBtn: UIButton!
     @IBOutlet weak var mViewBtn: UIButton!
+    @IBOutlet weak var mComplexionLabel: UILabel!
+    @IBOutlet weak var mColorMakeupLabel: UILabel!
     
     var complexionBtns: [SMKCategoryButton] = []
     var colorMakeupBtns: [SMKCategoryButton] = []
@@ -34,9 +36,15 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     var mColorMakeupList: [BeautySecondTranslateEntity] = []
     var selectedBeautySecondIds: [Int] = []
     
+    let mSMKArr = LanguageConfigure.smk_csv
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mComplexionLabel.text = mSMKArr["29"]
+        mComplexionLabel.sizeToFit()
+        mColorMakeupLabel.text = mSMKArr["30"]
+        mColorMakeupLabel.sizeToFit()
         myScrollView = UIScrollView()
         myScrollView.frame = CGRect(x: 50, y: 0, width: 884, height: self.mComplexionView.height)
         myScrollView.contentSize = CGSize(width: 1775, height: self.mComplexionView.height)
