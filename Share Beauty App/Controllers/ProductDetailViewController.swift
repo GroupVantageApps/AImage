@@ -813,6 +813,76 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
 
+    private func setMakeUpHowToUse(_ imageIds: [Int]) {
+        makeCategoryImages(imageIds)
+        
+        var contentText: String!
+        
+        var imageTitleItemIds: [Int] = []
+        var imageDescriptItemIds: [Int] = []
+        var imageTitleTexts: [String] = []
+        var imageDescriptTexts: [String] = []
+        
+        if productId == 578 {
+            contentText = AppItemTable.getNameByItemId(itemId: 7890)!
+            
+            imageTitleItemIds = [7898, 7969, 7971, 7973]
+            imageDescriptItemIds = [7968, 7970, 7972, 7974]
+            for i in 0..<4 {
+                imageTitleTexts.append(AppItemTable.getNameByItemId(itemId: imageTitleItemIds[i])!)
+                imageDescriptTexts.append(AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i])!)
+            }
+        } else if productId == 572 {
+            contentText = AppItemTable.getNameByItemId(itemId: 7976)!
+            
+            imageTitleItemIds = [7977, 7979, 7981, 7983]
+            imageDescriptItemIds = [7978, 7980, 7982, 7984]
+            for i in 0..<4 {
+                imageTitleTexts.append(AppItemTable.getNameByItemId(itemId: imageTitleItemIds[i])!)
+                imageDescriptTexts.append(AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i])!)
+            }
+        } else {
+            print("productId is not correct")
+            exit(1)
+        }
+        
+        for i in 0..<imageIds.count {
+            let contentLabel = UILabel(frame: CGRect(x: 30, y: CGFloat(30 + 513 * i), width: 575, height: 0))
+            //行間
+            let attributedText = NSMutableAttributedString(string: contentText)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.2
+            attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+            contentLabel.attributedText = attributedText
+
+            contentLabel.font = UIFont(name: "Reader", size: 14)
+            contentLabel.numberOfLines = 0
+            contentLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            contentLabel.centerX = mVCategoryImageBase.centerX
+            contentLabel.sizeToFit()
+
+            let imageTitleLabel: UILabel = UILabel(frame: CGRect(x: 0, y: CGFloat(135 + 513 * i), width: 30, height: 0))
+            imageTitleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            imageTitleLabel.font = UIFont(name: "Reader", size: 13)
+            imageTitleLabel.text = imageTitleTexts[i]
+            imageTitleLabel.sizeToFit()
+            imageTitleLabel.centerX = mVCategoryImageBase.centerX
+
+            let imageDescriptLabel: UILabel = UILabel(frame: CGRect(x: 0, y: CGFloat(375 + 513 * i), width: 0, height: 0))
+            imageDescriptLabel.numberOfLines = 0
+            imageDescriptLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+            imageDescriptLabel.font = UIFont(name: "Reader", size: 13)
+            imageDescriptLabel.text = imageDescriptTexts[i]
+            imageDescriptLabel.textAlignment = .center
+            imageDescriptLabel.sizeToFit()
+            imageDescriptLabel.centerX = mVCategoryImageBase.centerX
+            
+            mVCategoryImageBase.addSubview(contentLabel)
+            mVCategoryImageBase.addSubview(imageTitleLabel)
+            mVCategoryImageBase.addSubview(imageDescriptLabel)
+        }
+    }
+    
     private func makeCategoryImages(_ imageIds: [Int]) {
         for subview in mVCategoryImageBase.subviews {
             subview.removeFromSuperview()
@@ -1329,7 +1399,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         if sender === mCategoryButtonTechnologies {
             makeCategoryImages(product.technologyImage)
         } else if sender === mCategoryButtonHowToUse {
-            makeCategoryImages(product.usageImage)
+            setMakeUpHowToUse(product.usageImage)
+//            makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
             makeCategoryImages(product.effectImage)
         } else if sender === mCategoryButtonDefend {

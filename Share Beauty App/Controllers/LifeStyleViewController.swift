@@ -176,7 +176,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private var suncareProductsCount        = 0
     private let productList = ProductListData()
     
-    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
+//    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
+    private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
     
     private var imageItemIds = [
         (discription: "lifestyle10", x: CGFloat(600), y: CGFloat(170), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し//x:100 y:205
@@ -233,7 +234,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         // 商品の有無、多言語対応
         for productId in productIdsDefault {
-            if let data: ProductData = ProductData(productId: productId) {
+            if let data: ProductData = ProductData(productId: productId) as ProductData! {
                 if data.defaultDisplay == 1 {
                     productIds.append(productId)
                     if productId == 564 {
@@ -247,7 +248,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                                                          (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))]) //追加MakeUp吹き出し
                         labelItems.append(contentsOf: [(discription: 7931, x: CGFloat(1970), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
                                                        (discription: 7931, x: CGFloat(2450), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))]) //追加MakeUp吹き出しテキスト
-
                     }
                 }
             }
@@ -256,7 +256,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
         //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
         //productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
-        relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
+//        relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     }
     
     override func viewDidLayoutSubviews() {
@@ -399,7 +399,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             cell.delegate = self
 
             print("cell.image:\(cell.image)")
-
 
             return cell
         }
@@ -569,7 +568,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                             imageView.image = UIImage.init(named: "makeup_\(i - makeupIndex)")
                             imageView.tag = 89 + i - howtoIndex
                             
-                            labe.text = tmpMakeupStrings[i - howtoIndex]
+                            let itemId = tmpMakeupStrings[i - howtoIndex]
+                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
                             mScrollV.addSubview(labe)
                             print("-------------------------------------------")
                             print(labe.text!)
@@ -583,7 +583,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                             imageView.image =  UIImage.init(named: "makeup_\(5 + i - howtoIndex)")
                             imageView.tag = 93 + i - makeupIndex
                             
-                            labe.text = tmpMakeupStrings[4 + i - howtoIndex]
+                            let itemId = tmpMakeupStrings[4 + i - howtoIndex]
+                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
                             mScrollV.addSubview(labe)
                             print("-------------------------------------------")
                             print(labe.text!)
