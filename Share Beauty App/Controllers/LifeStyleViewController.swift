@@ -233,6 +233,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             mAVPlayerV.removeFromSuperview()
         }
         // 商品の有無、多言語対応
+        productIds = []
         for productId in productIdsDefault {
             if let data: ProductData = ProductData(productId: productId) as ProductData! {
                 if data.defaultDisplay == 1 {
