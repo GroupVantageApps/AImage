@@ -28,7 +28,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
             var secondsProducts = [Int:[ProductData]]()
             var i = 0
-            for productId in relative_productIds {
+            for productId in productIdsDefault { // relative_productIds
                 let data: ProductData = ProductData(productId: productId)
                 if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                     let data: ProductData = ProductData(productId: productId)
@@ -73,7 +73,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
         var secondsProducts = [Int:[ProductData]]()
         var i = 0
-        for productId in relative_productIds {
+        for productId in productIdsDefault { // relative_productIds
             let data: ProductData = ProductData(productId: productId)
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)

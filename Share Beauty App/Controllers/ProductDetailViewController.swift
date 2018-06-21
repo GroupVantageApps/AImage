@@ -825,25 +825,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         if productId == 578 {
             contentText = AppItemTable.getNameByItemId(itemId: 7890)!
-            
             imageTitleItemIds = [7898, 7969, 7971, 7973]
             imageDescriptItemIds = [7968, 7970, 7972, 7974]
-            for i in 0..<4 {
-                imageTitleTexts.append(AppItemTable.getNameByItemId(itemId: imageTitleItemIds[i])!)
-                imageDescriptTexts.append(AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i])!)
-            }
+
         } else if productId == 572 {
             contentText = AppItemTable.getNameByItemId(itemId: 7976)!
-            
             imageTitleItemIds = [7977, 7979, 7981, 7983]
             imageDescriptItemIds = [7978, 7980, 7982, 7984]
-            for i in 0..<4 {
-                imageTitleTexts.append(AppItemTable.getNameByItemId(itemId: imageTitleItemIds[i])!)
-                imageDescriptTexts.append(AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i])!)
-            }
         } else {
             print("productId is not correct")
             exit(1)
+        }
+        for i in 0..<4 {
+            if let text = AppItemTable.getNameByItemId(itemId: imageTitleItemIds[i]) {
+                imageTitleTexts.append(text)
+            }
+            if let text = AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i]) {
+                imageDescriptTexts.append(text)
+            }
         }
         
         for i in 0..<imageIds.count {
