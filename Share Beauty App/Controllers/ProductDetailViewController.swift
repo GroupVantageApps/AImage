@@ -842,6 +842,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
             if let text = AppItemTable.getNameByItemId(itemId: imageDescriptItemIds[i]) {
                 imageDescriptTexts.append(text)
+            } else {
+                imageDescriptTexts.append("")
             }
         }
         

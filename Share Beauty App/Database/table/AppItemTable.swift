@@ -146,7 +146,7 @@ class AppItemTable: NSObject {
         let resultSet: FMResultSet! = database.executeQuery(sql, withArgumentsIn: [languageId!, itemId])
 
         while resultSet.next() {
-            let json = resultSet.string(forColumn: "content2")
+            let json = resultSet.string(forColumn: "content2")            
             return Utility.parseJson(json!)?.dictionary?["name"]?.string
         }
         return nil
