@@ -134,7 +134,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss0-Sb-s05">
-                                                <rect key="frame" x="20" y="62" width="151" height="44"/>
+                                                <rect key="frame" x="20" y="25" width="151" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="151" id="F86-Zq-zU4"/>
                                                 </constraints>
@@ -150,7 +150,7 @@
                                         <constraints>
                                             <constraint firstItem="rdY-RT-hgV" firstAttribute="leading" secondItem="iNn-wk-4mK" secondAttribute="leading" constant="20" id="1Yp-hr-GTb"/>
                                             <constraint firstItem="rdY-RT-hgV" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="9" id="35S-vC-RFe"/>
-                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="top" secondItem="rdY-RT-hgV" secondAttribute="bottom" constant="9" id="MeE-Lu-Fvv"/>
+                                            <constraint firstItem="Ss0-Sb-s05" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="25" id="MeE-Lu-Fvv"/>
                                             <constraint firstItem="3HT-ep-D08" firstAttribute="top" secondItem="nDq-xP-e7Q" secondAttribute="bottom" constant="30" id="X2q-nd-WKc"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="top" secondItem="iNn-wk-4mK" secondAttribute="top" constant="30" id="Xk8-Fj-WlN"/>
                                             <constraint firstItem="nDq-xP-e7Q" firstAttribute="centerX" secondItem="iNn-wk-4mK" secondAttribute="centerX" id="hT9-UV-Qtd"/>
@@ -184,6 +184,7 @@
                         <outlet property="mBtnDropDown" destination="U9s-ag-WIT" id="ytk-N3-FdC"/>
                         <outlet property="mBtnOutApp" destination="Ss0-Sb-s05" id="tsc-J9-07W"/>
                         <outlet property="mCollectionView" destination="3HT-ep-D08" id="Nv9-ye-B2A"/>
+                        <outlet property="mDropDownBtnView" destination="rdY-RT-hgV" id="qXZ-UX-lAj"/>
                         <outlet property="mLblLineName" destination="nDq-xP-e7Q" id="q0a-c3-dGF"/>
                         <outlet property="mScrollVPinch" destination="74k-RY-O5j" id="SO7-EQ-Akf"/>
                         <outlet property="mVMain" destination="iNn-wk-4mK" id="QrO-V9-CI8"/>

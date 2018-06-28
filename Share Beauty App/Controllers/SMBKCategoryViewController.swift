@@ -141,10 +141,12 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
     }
     
     @IBAction func onTapViewBtn(_ sender: Any) {
-        let beautyIds = Utility.replaceParenthesis(selectedBeautySecondIds.description)
-        let products: [ProductData] = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)").products
-        let nextVc = UIViewController.GetViewControllerFromStoryboard("IdealResultViewController", targetClass: IdealResultViewController.self) as! IdealResultViewController
-        nextVc.products = products
+//        let beautyIds = Utility.replaceParenthesis(selectedBeautySecondIds.description)
+//        let products: [ProductData] = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)").products
+        //let nextVc = UIViewController.GetViewControllerFromStoryboard("IdealResultViewController", targetClass: IdealResultViewController.self) as! IdealResultViewController
+        let nextVc = UIViewController.GetViewControllerFromStoryboard("MakeupViewController", targetClass: MakeupViewController.self) as! MakeupViewController
+//        nextVc.products = products
+        nextVc.selectedBeautySecondIds = selectedBeautySecondIds
         delegate?.nextVc(nextVc)
     }
     

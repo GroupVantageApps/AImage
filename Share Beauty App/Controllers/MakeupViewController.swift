@@ -18,16 +18,18 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     @IBOutlet weak var mCollectionView: UICollectionView!
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
+    @IBOutlet weak var mDropDownBtnView: UIView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
     @IBOutlet weak private var mLblLineName: UILabel!
     @IBOutlet weak var mBtnOutApp: UIButton!
     
+    var selectedBeautySecondIds: [Int] = []
     private var products: [ProductData]!
     private var mProducts: [ProductData]!
     private var mDropDown = DropDown()
     private let mOutApps  = DropDown()
     private var firstAppear: Bool = false
-    private var productIds: [Int] = []
+    // private var productIds: [Int] = []
     var productIdForDeeplink = 0
     
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
@@ -40,10 +42,13 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         mCollectionView.register(UINib(nibName: "IdealProductView", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionView.allowsSelection = false
         mScrollVPinch.delegate = self
-        mProducts = ProductListData(lineId: Const.lineIdMAKEUP).products
         
-        productIds = AppItemTranslateTable.getProductList(7921)
-        print(productIds)
+        let beautyIds = Utility.replaceParenthesis(selectedBeautySecondIds.description)
+        let selectedProducts = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)").products
+        mProducts = selectedProducts.filter { $0.beautySecondId != 0 }
+        
+//        productIds = AppItemTranslateTable.getProductList(7921)
+//        print(productIds)
         /*
          Alamofire.request(Const.makeupBeautyProductIdsUrl).responseJSON { response in
          print(response)
@@ -52,25 +57,31 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
          }
          }
          */
-        var productIdCount = 0
-        for productId in productIds {
-            if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
-                mProducts.remove(at: product.offset)
-                mProducts.insert(product.element, at:productIdCount)
-                productIdCount += 1
-            }
-        }
+        
+//        var productIdCount = 0
+//        for productId in productIds {
+//            if let product = mProducts.enumerated().filter({ $0.1.productId == productId }).first {
+//                mProducts.remove(at: product.offset)
+//                mProducts.insert(product.element, at:productIdCount)
+//                productIdCount += 1
+//            }
+//        }
         
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
             product.uiImage = FileTable.getImage(product.image)
         }
         products = mProducts
-        setupDropDown()
+        
+        // DropDownボタンの非表示
+        mDropDownBtnView.isHidden = true
+        // setupDropDown()
         setDropDownForOutApp(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
         
         let line: LineDetailData!
         line = LineDetailData(lineId: Const.lineIdMAKEUP)
         mLblLineName.text = line.lineName
+        // タイトル非表示
+        mLblLineName.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -140,8 +151,8 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
     }
     
     @IBAction func onTapOutApp(_ sender: Any) {
-//        mOutApps.show()
-        var outAppInfo = Const.outAppInfoFoundation
+        // mOutApps.show()
+        let outAppInfo = Const.outAppInfoFoundation
         if UIApplication.shared.canOpenURL(outAppInfo.url) {
             UIApplication.shared.openURL(outAppInfo.url)
         } else {
