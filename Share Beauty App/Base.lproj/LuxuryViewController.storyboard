@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="22" width="1024" height="746"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-Hb-PSG">
-                                        <rect key="frame" x="0.0" y="-10" width="1024" height="736"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="736"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
                                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="757"/>
@@ -188,7 +188,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" constant="-10" id="g9g-Bb-EOv"/>
+                                    <constraint firstItem="PSx-Hb-PSG" firstAttribute="top" secondItem="cPZ-HZ-YPi" secondAttribute="top" id="g9g-Bb-EOv"/>
                                     <constraint firstItem="PSx-Hb-PSG" firstAttribute="leading" secondItem="cPZ-HZ-YPi" secondAttribute="leading" id="nre-A9-77r"/>
                                     <constraint firstAttribute="bottom" secondItem="PSx-Hb-PSG" secondAttribute="bottom" id="sub-0A-3Ti"/>
                                     <constraint firstAttribute="trailing" secondItem="PSx-Hb-PSG" secondAttribute="trailing" id="xgc-49-alw"/>
