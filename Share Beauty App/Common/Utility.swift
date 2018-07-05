@@ -110,7 +110,7 @@ class Utility: NSObject {
         let string = item.replacingOccurrences(of: "\r", with: "")
             .replacingOccurrences(of: "\n", with: "")
             .replacingOccurrences(of: "\t", with: "")
-            .replacingOccurrences(of: "&quot;", with: "\\\"")
+            .replacingOccurrences(of: "&quot;", with: "\"")
 
         if let data = string.data(using: String.Encoding.utf8) {
             return JSON(data: data)
