@@ -175,6 +175,10 @@ class ProductTable: NSObject {
             arguments += separated!
         }
 
+        sql += self.makeFliterQuery(key: "language_id", valueCount: 1, hasAnd: didApplyFilter)
+        didApplyFilter = true
+        arguments.append("\(LanguageConfigure.languageId)")
+        
         sql += "ORDER BY m_product.beauty_second_id, CASE WHEN m_product_translate.display_order == \"\" THEN 0 ELSE 1 END, m_product_translate.display_order"
         
         print("======================================================================")
