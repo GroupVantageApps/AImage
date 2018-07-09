@@ -224,17 +224,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         mCollectionV.dataSource = self
 
         mScrollV.delegate = self
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        mCollectionV.reloadData()
-        if !isShowVideo {
-            mAVPlayerV.removeFromSuperview()
-        }
+        
         // 商品の有無、多言語対応
-        productIds = []
         for productId in productIdsDefault {
+            if productIds.contains(productId) {
+                continue
+            }
             if let data: ProductData = ProductData(productId: productId) as ProductData! {
                 if data.defaultDisplay == 1 {
                     productIds.append(productId)
@@ -244,20 +239,32 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         imageItemIds.append((discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))) //*WASOの吹き出し //x:1900
                         labelItems.append((discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))) // WASO吹き出しテキストx:1280y:105
                     } else if productId == 578 || productId == 572 {
+                        let imageX: CGFloat
+                        let labelX: CGFloat
+                        if productId == 578 {
+                            let x = 246 * (productIds.count - 1) + 150
+                            imageX = CGFloat(x)
+                            labelX = CGFloat(x + 100)
+                        } else {
+                            imageX = (imageItemIds.last?.x)! + CGFloat(480)
+                            labelX = (labelItems.last?.x)! + CGFloat(480)
+                        }
                         productIds.append(contentsOf: [99999,99999,99999,99999])
-                        imageItemIds.append(contentsOf: [(discription: "lifestyle15", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)),
-                                                         (discription: "lifestyle15", x: CGFloat(2350), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))]) //追加MakeUp吹き出し
-                        labelItems.append(contentsOf: [(discription: 7931, x: CGFloat(1970), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)),
-                                                       (discription: 7931, x: CGFloat(2450), y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))]) //追加MakeUp吹き出しテキスト
+                        imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)))
+                        labelItems.append((discription: 7931, x: labelX, y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)))
                     }
                 }
             }
         }
         print("productsIds: \(productIds)")
-        //let howtoimage_578 = ProductDetailData(productId: 578).usageImage.first!//6543
-        //let howtoimage_572 = ProductDetailData(productId: 572).usageImage.first!//6544
-        //productIds = [564,99999,566,568,LanguageConfigure.UTMId, 570, 571, 578,99999,99999,99999,99999, 572,99999,99999,99999,99999]
-//        relative_productIds =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mCollectionV.reloadData()
+        if !isShowVideo {
+            mAVPlayerV.removeFromSuperview()
+        }
     }
     
     override func viewDidLayoutSubviews() {
