@@ -77,8 +77,8 @@ class DownloadConfigure {
                 UserDefaultKey.target.set(value: Target.develop.rawValue)//DB向き 本番
                 return Target.develop //DB向き 本番
                 
-                // UserDefaultKey.target.set(value: Target.develop.rawValue)//DB向き
-               // return Target.develop //DB向き
+                // UserDefaultKey.target.set(value: Target.develop.rawValue)//DB向き　dev or relese 無理やり
+               // return Target.develop //DB向き　dev or relese 無理やり
             }
         }
         set (value) {
