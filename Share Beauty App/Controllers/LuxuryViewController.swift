@@ -8,6 +8,8 @@
 
 import Foundation
 import AVFoundation
+import AVKit
+
 class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePlayerViewDelegate, AVAudioPlayerDelegate{
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet weak private var mScrollV: UIScrollView!
@@ -89,7 +91,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         self.view.addSubview(moviePlay)
         
         //self.mTopBGImgV.image = FileTable.getLXFileImage("lx_top_bg.png")
-        let image:UIImage = UIImage(named: "ns_page_top.png")!
+        let image: UIImage = UIImage(named: "page_top.png")!
         self.mTopBGImgV.image = image
         self.mLogoImgV.image = FileTable.getLXFileImage("lx_top_logo.png")
         self.mBottomLogoImgV.image = FileTable.getLXFileImage("lx_logo.png")
@@ -104,35 +106,31 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             moviePlay.isHidden = true
         }
         
-        //ブラーエフェクトをViewに追加する。
-        let testBlurrView = UIVisualEffectView(effect: UIBlurEffect(style:.light))
-        testBlurrView.frame = CGRect(x: 240, y: 600, width: 250, height: 45)
-        self.mVContent.addSubview(testBlurrView)
-        
-        let toDetailBtn = UIButton()
-        toDetailBtn.frame = CGRect(x: 0, y: 6, width: testBlurrView.frame.width, height: testBlurrView.frame.height-4)
-        let lx2Cstv = LanguageConfigure.lx2csv
-        toDetailBtn.setTitle(lx2Cstv["1"], for: .normal)
-        toDetailBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 28)
-        toDetailBtn.titleLabel?.textColor = UIColor.white
-        toDetailBtn.titleLabel?.textAlignment = NSTextAlignment.center
-        toDetailBtn.titleLabel?.baselineAdjustment = UIBaselineAdjustment.alignCenters
-        toDetailBtn.addTarget(self, action: #selector(self.toDetailView(_:)), for: .touchUpInside)
-        testBlurrView.contentView.addSubview(toDetailBtn)
-        
-        let imageV = UIImageView()
-        imageV.frame = CGRect(x: toDetailBtn.frame.width-30, y: 12, width: 13, height: 24)
-        imageV.image = UIImage(named: "button_w.png")!
-        testBlurrView.contentView.addSubview(imageV)
-        
-        self.view.bringSubview(toFront: toDetailBtn)
-        
+        // 新規動画ID別途付与
+        let movieBtn = UIButton()
+        movieBtn.frame = CGRect(x: 30, y: self.mVContent.frame.height - 80, width: 60, height: 60)
+        movieBtn.setImage(UIImage(named: "Top_btn.png"), for: .normal)
+        movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
+        self.mVContent.addSubview(movieBtn)
+        self.view.bringSubview(toFront: movieBtn)
     }
-    
-    @objc private func toDetailView(_ sender: AnyObject){
-        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryFiveSecretsTopViewController", targetClass: LuxuryFiveSecretsTopViewController.self) as! LuxuryFiveSecretsTopViewController
-        toVc.bgAudioPlayer = bgAudioPlayer
-        self.navigationController?.pushViewController(toVc, animated: false)
+
+    @objc private func playMovie(_ sender: AnyObject){
+        print("moviestart")
+        bgAudioPlayer.pause()
+        
+        let videoURL: URL = FileTable.getPath(6719)
+        let avPlayer: AVPlayer = AVPlayer(url: videoURL)
+        let avPlayerVc = AVPlayerViewController()
+        avPlayerVc.player = avPlayer
+        if #available(iOS 9.0, *) {
+            avPlayerVc.allowsPictureInPicturePlayback = false
+        }
+        NotificationCenter.default.addObserver(self, selector:#selector(self.endMovie),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: avPlayerVc.player?.currentItem)
+        self.present(avPlayerVc, animated: true, completion: {
+        })
+        avPlayer.play()
+        
     }
     
     @IBAction private func onTapLuxuryMenu(_ sender: AnyObject) {
