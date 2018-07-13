@@ -330,7 +330,7 @@ class ProductListData: NSObject {
             let selectedProducts = self.getProductIdsByLineAndStep(Const.lineIdUTM, stepLowerIds: self.stepLowerIds)
             self.products.append(contentsOf: self.distinctProducts(selectedProducts))
         } else {
-            self.appendProductByArray([LanguageConfigure.UTMId,28])
+            self.appendProductByArray([LanguageConfigure.UTMId,28, 601])
         }
     }
 
