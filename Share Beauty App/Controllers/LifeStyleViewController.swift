@@ -13,102 +13,6 @@ import AVFoundation
 //relataionProducts = 表示されている全部のproduct
 
 class LifeStyleViewController: UIViewController, NavigationControllerAnnotation, UICollectionViewDelegate, UICollectionViewDataSource, LifeStyleCollectionViewCellDelegate, UIScrollViewDelegate, LifeStyleProductViewDelegate {
-    
-    func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
-        
-        if (product?.productId == 566) || (product?.productId == 568){
-            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
-            nextVc.selectedLineIds = [Const.lineIdUTM]
-            nextVc.getProdut_id = (product?.productId)!
-            delegate?.nextVc(nextVc)
-        }else{
-
-            let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-            productDetailVc.productId = product!.productId
-
-            var secondsProducts = [Int:[ProductData]]()
-            var i = 0
-            for productId in productIdsDefault { // relative_productIds
-                let data: ProductData = ProductData(productId: productId)
-                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
-                    let data: ProductData = ProductData(productId: productId)
-                    secondsProducts[i] = [data]
-                } else {
-                    //HowToなど画像を置くようにproductを追加
-                    let data: ProductData = ProductData(productId: 0)
-                    secondsProducts[i] = [data]
-                }
-                i += 1
-            }
-            var tempProducts = [ProductData]()
-            secondsProducts.keys.sorted().forEach({ key in
-                let secondProduct = secondsProducts[key]!
-                let new = secondProduct.filter {$0.newItemFlg == 1}
-                let old = secondProduct.filter {$0.newItemFlg == 0}
-                tempProducts += (new + old)
-            })
-            
-            i = 0
-            for product in tempProducts {
-                if product.productId == 0 {
-                    tempProducts.remove(at: i)
-                } else {
-                    i += 1
-                }
-            }
-
-            productDetailVc.relationProducts = tempProducts
-            delegate?.nextVc(productDetailVc)
-
-            LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
-        }
-    }
-    
-    func didTapHowTo(_ product: ProductData?, transitionItemId: String?,sender: AnyObject, index: Int){
-        
-        let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
-        productDetailVc.productId = product!.productId
-        productDetailVc.isHowToUseView = true
-        productDetailVc.indexHowToUse = index
-        
-        var secondsProducts = [Int:[ProductData]]()
-        var i = 0
-        for productId in productIdsDefault { // relative_productIds
-            let data: ProductData = ProductData(productId: productId)
-            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
-                let data: ProductData = ProductData(productId: productId)
-                secondsProducts[i] = [data]
-            } else {
-                //HowToなど画像を置くようにproductを追加
-                let data: ProductData = ProductData(productId: 0)
-                secondsProducts[i] = [data]
-            }
-            i += 1
-        }
-        var tempProducts = [ProductData]()
-        secondsProducts.keys.sorted().forEach({ key in
-            let secondProduct = secondsProducts[key]!
-            let new = secondProduct.filter {$0.newItemFlg == 1}
-            let old = secondProduct.filter {$0.newItemFlg == 0}
-            tempProducts += (new + old)
-        })
-        
-        i = 0
-        for product in tempProducts {
-            if product.productId == 0 {
-                tempProducts.remove(at: i)
-            } else {
-                i += 1
-            }
-        }
-        
-        productDetailVc.relationProducts = tempProducts
-        delegate?.nextVc(productDetailVc)
-        
-        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
-        
-    }
-    
 
     struct LifeStyle {
         private(set) var image: UIImage
@@ -161,9 +65,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-//    private let productIds:[Int] = [553,554,101,455,470,500,551,545,549,498]
-//    private let productIds:[Int] = [564,6534,566,567,LanguageConfigure.UTMId, 570, 571]
-    private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
+    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 564, 566, 568, 613]
+    // 18AW
+    // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
+    
     private var productIds:[Int] = []
     private var relative_productIds:[Int] =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     private let essentialEnagyProducts = [553,554]
@@ -178,28 +83,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
 //    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
     private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
-    
-    private var imageItemIds = [
-        (discription: "lifestyle10", x: CGFloat(600), y: CGFloat(170), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し//x:100 y:205
-       //(discription: "lifestyle9", x: CGFloat(100), y: CGFloat(160), width: CGFloat(400), height: CGFloat(130)),//t-hirai 始めの吹き出し
-        (discription: "lifestyle9", x: CGFloat(550), y: CGFloat(140), width: CGFloat(400), height: CGFloat(160)),
-        //(discription: "lifestyle10", x: CGFloat(550), y: CGFloat(130), width: CGFloat(400), height: CGFloat(160)),//t-hirai
-        (discription: "lifestyle11", x: CGFloat(960), y: CGFloat(180), width: CGFloat(60), height: CGFloat(60)), //t-hirai 太陽の位置
-        //(discription: "lifestyle11", x: CGFloat(920), y: CGFloat(200), width: CGFloat(60), height: CGFloat(60)), t-hirai 太陽の位置
-        (discription: "lifestyle12", x: CGFloat(940), y: CGFloat(90), width: CGFloat(840), height: CGFloat(180)),//*真ん中の吹き出し //x:1000
-        // (discription: "lifestyle12", x: CGFloat(1260), y: CGFloat(90), width: CGFloat(400), height: CGFloat(180)), t-hirai FDの吹き出し
-        // (discription: "lifestyle14", x: CGFloat(2320), y: CGFloat(150), width: CGFloat(90), height: CGFloat(70)),//水しぶき
-        ]
+    private var imageItemIds: [(discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)] = []
+    private var labelItems: [(discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont)] = []
 
-    private var labelItems = [
-        (discription: 7928, x: CGFloat(170), y: CGFloat(160), width: CGFloat(300), font:UIFont(name: "Reader-Bold", size: 17)),//t-hirai 始めの文字はば//左吹き出しテキストy:200
-        (discription: 7930, x: CGFloat(680), y: CGFloat(102), width: CGFloat(400), font:UIFont(name: "Reader-Bold", size: 17)),//真ん中吹き出しテキストx:610y:150
-        //(discription: 7922, x: CGFloat(610), y: CGFloat(133), width: CGFloat(280), font:UIFont(name: "Reader-Bold", size: 17)),
-        (discription: 7935, x: CGFloat(565), y: CGFloat(515), width: CGFloat(500), font:UIFont(name: "Reader-Bold", size: 14)), //t-hirai　太陽の左の文字
-        // (discription: 7924, x: CGFloat(1340), y: CGFloat(105), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)), //FDの吹き出し参考
-        //(discription: 7928, x: CGFloat(2000), y: CGFloat(130), width: CGFloat(190), font:UIFont(name: "Reader-Bold", size: 17)),
-        //(discription: 7930, x: CGFloat(2100), y: CGFloat(530), width: CGFloat(350), font:UIFont(name: "Reader-Bold", size: 10)),
-        ]
     private let countryFontScale = [
         // (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
         // (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
@@ -230,28 +116,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             if productIds.contains(productId) {
                 continue
             }
-            if let data: ProductData = ProductData(productId: productId) as ProductData! {
+            if let data: ProductData = ProductData(productId: productId) as ProductData? {
                 if data.defaultDisplay == 1 {
                     productIds.append(productId)
-                    if productId == 564 {
+                    if productId == 601 {
                         productIds.append(99999)
-                    } else if productId == 570 {
-                        imageItemIds.append((discription: "lifestyle13", x: CGFloat(1870), y: CGFloat(85), width: CGFloat(400), height: CGFloat(170))) //*WASOの吹き出し //x:1900
-                        labelItems.append((discription: 7937, x: CGFloat(1470), y: CGFloat(112), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17))) // WASO吹き出しテキストx:1280y:105
-                    } else if productId == 578 || productId == 572 {
-                        let imageX: CGFloat
-                        let labelX: CGFloat
-                        if productId == 578 {
-                            let x = 246 * (productIds.count - 1) + 150
-                            imageX = CGFloat(x)
-                            labelX = CGFloat(x + 100)
-                        } else {
-                            imageX = (imageItemIds.last?.x)! + CGFloat(480)
-                            labelX = (labelItems.last?.x)! + CGFloat(480)
-                        }
-                        productIds.append(contentsOf: [99999,99999,99999,99999])
-                        imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(85), width: CGFloat(400), height: CGFloat(170)))
-                        labelItems.append((discription: 7931, x: labelX, y: CGFloat(110), width: CGFloat(240), font:UIFont(name: "Reader-Bold", size: 17)))
                     }
                 }
             }
@@ -546,6 +415,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let product = enumerated.element
             productsCount += 1
             guard product.productId != 0 else {
+                
                 if 1 < i && i < 4 && whiteLucentProductsCount == 0{
                     productsCount -= 1
                 } else {
@@ -562,42 +432,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     
                     //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
                     print("offset:*\(enumerated.offset)")
-                    // 最初の商品とMakeUpのHowToUse画像とラベルの表示
+                    // 最初の商品の余白表示
                     if i == 1{
                         // 最初の商品の顔イラスト
                         // imageView.image = FileTable.getImage(6534)
                         imageView.tag = 88
                         imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: 
                             viewHeight)
-                    }
-                    if let makeupIndex = productIds.index(of: 578) {
-                        let howtoIndex = makeupIndex + 1
-                        if howtoIndex <= i && i <= howtoIndex + 4 {
-                            imageView.image = UIImage.init(named: "makeup_\(i - makeupIndex)")
-                            imageView.tag = 89 + i - howtoIndex
-                            
-                            let itemId = tmpMakeupStrings[i - howtoIndex]
-                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
-                            mScrollV.addSubview(labe)
-                            print("-------------------------------------------")
-                            print(labe.text!)
-                            let product_offset_width = 8 * viewWidth
-                            imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
-                        }
-                    }
-                    if let makeupIndex = productIds.index(of: 572) {
-                        let howtoIndex = makeupIndex + 1
-                        if howtoIndex <= i && i <= howtoIndex + 4 {
-                            imageView.image =  UIImage.init(named: "makeup_\(5 + i - howtoIndex)")
-                            imageView.tag = 93 + i - makeupIndex
-                            
-                            let itemId = tmpMakeupStrings[4 + i - howtoIndex]
-                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
-                            mScrollV.addSubview(labe)
-                            print("-------------------------------------------")
-                            print(labe.text!)
-                            imageView.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
-                        }
                     }
                     // 商品画像の表示
                     contentWidth += imageView.frame.size.width
@@ -631,18 +472,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         if whiteLucentProductsCount != 0 && contentWidth < 2520 {
            contentWidth = 2520
         }
-        mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
+        mScrollV.contentSize = CGSize(width: contentWidth + 246, height: self.view.height)
         contentWidth = 0
         // 説明用画像をセット
         setInfoImage()
-        setLabels()
+
         essentialEnagyProductsCount = 0
         whiteLucentProductsCount = 0
         makeUpProductsCount = 0
         suncareProductsCount = 0
     }
-    
-
     
     private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
         let transitionData = Utility.parseJson(strJson)
@@ -658,95 +497,149 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
     }
     private func setInfoImage() {
+        imageItemIds = []
+        labelItems = []
+        for (index, productId) in productIds.enumerated() {
+
+            let x = 246 * index + 150
+            var imageX: CGFloat = CGFloat(x)
+
+            if productId == 601 {
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 420, height: 160))
+                labelItems.append((discription: 7985, x: imageX + CGFloat(60), y: CGFloat(170), width: CGFloat(320), font: UIFont(name: "Reader", size: 17)!))
+            } else if productId == 553 {
+                imageX -= CGFloat(246 * 2)
+                imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(140), width: CGFloat(420), height: CGFloat(160)))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(150), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
+            } else if productId == 610 {
+                imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
+                labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
+            } else if productId == 568 { // ダミーid
+                imageX -= CGFloat(246 * 2)
+                imageItemIds.append((discription: "lifestyle12", x: imageX + 30, y: CGFloat(85), width: CGFloat(440), height: CGFloat(165)))
+                labelItems.append((discription: 7988, x: imageX + CGFloat(70), y: CGFloat(95), width: CGFloat(360), font: UIFont(name: "Reader", size: 14)!))
+            } else if productId == 613 {
+                imageItemIds.append((discription: "lifestyle13", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
+                labelItems.append((discription: 7989, x: imageX + CGFloat(80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
+            }
+        }
+
         imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
-            let viewWidth = Int(246)
+//            let viewWidth = Int(246)
             let imageView = UIImageView()
-            imageView.contentMode = .scaleAspectFit
+//            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleToFill
             imageView.frame = CGRect(x: element.x, y: element.y, width: element.width, height: element.height)
             if let image = UIImage(named: element.discription) {
                 imageView.image = image
             }
-            if element.discription == "lifestyle10" {
-                if (makeUpProductsCount == 0) {
-                    imageView.frame.size = CGSize(width: 0, height: 0)
-                }
-                if (whiteLucentProductsCount == 0) {
-                    imageView.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: element.height)
-                }
-            }
-            if element.discription == "lifestyle9" || element.discription == "lifestyle11" {
-                if (whiteLucentProductsCount == 0) {
-                    imageView.frame.size = CGSize(width: 0, height: 0)
-                }
-            }
-            if element.discription == "lifestyle12" {
-                //makeUpProductsCount whiteLucentProductsCount == 0
-                if (makeUpProductsCount == 0) {
-                    imageView.frame.size = CGSize(width: 0, height: 0)
-                }
-                if (whiteLucentProductsCount == 0) {
-                    imageView.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: element.height)
-                }
-            }
-            if element.discription == "lifestyle13" || element.discription == "lifestyle14" {
-                if (suncareProductsCount == 0) {
-                    imageView.frame.size = CGSize(width: 0, height: 0)
-                }
-                if (whiteLucentProductsCount == 0) {
-                    imageView.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: element.height)
-                }
-            }
             mScrollV.addSubview(imageView)
         }
-    }
-    private func setLabels() {
+        
         labelItems.enumerated().forEach { (arg: (offset: Int, element: (discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont?))) in
-            let viewWidth = Int(246)
-            let (i, element) = arg
+            //            let viewWidth = Int(246)
+            let (_, element) = arg
             let label = UILabel()
-            label.contentMode = .scaleAspectFit
+//            label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
+//            label.layer.borderWidth = 2.0
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
-
+            
             if let labelFont = element.font {
                 label.font = labelFont
             }
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
             }
-            // 右詰の設定
-            if element.discription == 7926 || element.discription == 7944 {
-                label.textAlignment = NSTextAlignment.right
-            }
-            
-            if element.discription == 7923 {
-                if (essentialEnagyProductsCount == 0) {
-                    label.text = ""
-                }
-            }
-            if element.discription == 7922 || element.discription == 7926 {
-                if (whiteLucentProductsCount == 0) {
-                    label.text = ""
-                }
-            }
-            if element.discription == 7924 {
-                if (makeUpProductsCount == 0) {
-                    label.text = ""
-                }
-                if (whiteLucentProductsCount == 0) {
-                    label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
-                }
-            }
-            if element.discription == 7925 || element.discription == 7944 {
-                if (suncareProductsCount == 0) {
-                    label.text = ""
-                }
-                if (whiteLucentProductsCount == 0) {
-                    label.frame = CGRect(x: element.x - CGFloat(viewWidth*2), y: element.y, width: element.width, height: 100)
-                }
-            }
-
             mScrollV.addSubview(label)
         }
+    }
+    
+    func didTapProduct(_ product: ProductData?, transitionItemId: String?) {
+        
+        let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        productDetailVc.productId = product!.productId
+        
+        var secondsProducts = [Int:[ProductData]]()
+        var i = 0
+        for productId in productIdsDefault { // relative_productIds
+            let data: ProductData = ProductData(productId: productId)
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                let data: ProductData = ProductData(productId: productId)
+                secondsProducts[i] = [data]
+            } else {
+                //HowToなど画像を置くようにproductを追加
+                let data: ProductData = ProductData(productId: 0)
+                secondsProducts[i] = [data]
+            }
+            i += 1
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        
+        i = 0
+        for product in tempProducts {
+            if product.productId == 0 {
+                tempProducts.remove(at: i)
+            } else {
+                i += 1
+            }
+        }
+        
+        productDetailVc.relationProducts = tempProducts
+        delegate?.nextVc(productDetailVc)
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
+    }
+    
+    func didTapHowTo(_ product: ProductData?, transitionItemId: String?,sender: AnyObject, index: Int){
+        
+        let productDetailVc = UIViewController.GetViewControllerFromStoryboard(targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+        productDetailVc.productId = product!.productId
+        productDetailVc.isHowToUseView = true
+        productDetailVc.indexHowToUse = index
+        
+        var secondsProducts = [Int:[ProductData]]()
+        var i = 0
+        for productId in productIdsDefault { // relative_productIds
+            let data: ProductData = ProductData(productId: productId)
+            if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                let data: ProductData = ProductData(productId: productId)
+                secondsProducts[i] = [data]
+            } else {
+                //HowToなど画像を置くようにproductを追加
+                let data: ProductData = ProductData(productId: 0)
+                secondsProducts[i] = [data]
+            }
+            i += 1
+        }
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            let new = secondProduct.filter {$0.newItemFlg == 1}
+            let old = secondProduct.filter {$0.newItemFlg == 0}
+            tempProducts += (new + old)
+        })
+        
+        i = 0
+        for product in tempProducts {
+            if product.productId == 0 {
+                tempProducts.remove(at: i)
+            } else {
+                i += 1
+            }
+        }
+        
+        productDetailVc.relationProducts = tempProducts
+        delegate?.nextVc(productDetailVc)
+        
+        LogManager.tapProduct(screenCode: mScreen.code, productId: product!.productId)
+        
     }
 }

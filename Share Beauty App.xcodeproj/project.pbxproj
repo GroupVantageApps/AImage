@@ -90,6 +90,7 @@
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
 		412BB87E20BF86F700FE22C9 /* complexion_39.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87D20BF86F600FE22C9 /* complexion_39.png */; };
 		412BB88020BF871E00FE22C9 /* complexion_42.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87F20BF871D00FE22C9 /* complexion_42.png */; };
+		4141AF6720FDF10D00E3EC72 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
@@ -142,7 +143,6 @@
 		807F437B1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */; };
 		914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */ = {isa = PBXBuildFile; fileRef = 914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */; };
 		91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0040202945E700BA61D6 /* Reader-Medium.otf */; };
-		91FF0043202945E800BA61D6 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
 		ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */; };
 		B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B11F47682700176804 /* After_4_weeks.png */; };
 		B38F63BE1F47682700176804 /* Befor_use.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B21F47682700176804 /* Befor_use.png */; };
@@ -2895,6 +2895,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4141AF6720FDF10D00E3EC72 /* Reader-Regular.otf in Resources */,
 				C050C9761E8267450009679D /* defend_bg.png in Resources */,
 				C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */,
 				DE2C90891E9C66E600B5FC4A /* LXIngredientView.xib in Resources */,
@@ -3363,7 +3364,6 @@
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
 				91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */,
-				91FF0043202945E800BA61D6 /* Reader-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
