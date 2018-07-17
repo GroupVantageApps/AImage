@@ -90,6 +90,9 @@
 		338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 338DE5701FBC4D2700E353CA /* AboutShiseidoImageViewController.storyboard */; };
 		412BB87E20BF86F700FE22C9 /* complexion_39.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87D20BF86F600FE22C9 /* complexion_39.png */; };
 		412BB88020BF871E00FE22C9 /* complexion_42.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BB87F20BF871D00FE22C9 /* complexion_42.png */; };
+		413BE54C20F75429006F08EC /* 5secret_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54B20F75429006F08EC /* 5secret_btn.png */; };
+		413BE54E20F75436006F08EC /* page_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54D20F75435006F08EC /* page_top.png */; };
+		413BE55020F7543C006F08EC /* Top_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54F20F7543B006F08EC /* Top_btn.png */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
@@ -844,6 +847,9 @@
 		4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Share_Beauty_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		412BB87D20BF86F600FE22C9 /* complexion_39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complexion_39.png; sourceTree = "<group>"; };
 		412BB87F20BF871D00FE22C9 /* complexion_42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complexion_42.png; sourceTree = "<group>"; };
+		413BE54B20F75429006F08EC /* 5secret_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5secret_btn.png; sourceTree = "<group>"; };
+		413BE54D20F75435006F08EC /* page_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_top.png; sourceTree = "<group>"; };
+		413BE54F20F7543B006F08EC /* Top_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Top_btn.png; sourceTree = "<group>"; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
@@ -1669,6 +1675,9 @@
 		26AD5D5F202309F1002A2076 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				413BE54F20F7543B006F08EC /* Top_btn.png */,
+				413BE54D20F75435006F08EC /* page_top.png */,
+				413BE54B20F75429006F08EC /* 5secret_btn.png */,
 				2608BF8C2029846D00E7F900 /* ns_page_00.png */,
 				2608BF94202985C600E7F900 /* ns_page_01.png */,
 				2608BF8E2029846E00E7F900 /* ns_page_02.png */,
@@ -2899,6 +2908,7 @@
 				C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */,
 				DE2C90891E9C66E600B5FC4A /* LXIngredientView.xib in Resources */,
 				DE2C90911E9C66E600B5FC4A /* LXProductionBAView.xib in Resources */,
+				413BE55020F7543C006F08EC /* Top_btn.png in Resources */,
 				DE06F7121F16450200EF2FE2 /* sensitive_children.png in Resources */,
 				C0423F821E3627A500D56960 /* shiseido-finder.db in Resources */,
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
@@ -2925,6 +2935,7 @@
 				6E4ABB3C20AA6CAF000355D2 /* 03_back_02.png in Resources */,
 				DE325B1A2077469000B660C9 /* lx_b03.png in Resources */,
 				DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */,
+				413BE54C20F75429006F08EC /* 5secret_btn.png in Resources */,
 				C050C9A51E8267450009679D /* utmeye_image.png in Resources */,
 				DE06F72A1F16457800EF2FE2 /* GscHeaderView.xib in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
@@ -3117,6 +3128,7 @@
 				6E4ABB3520AA6CAF000355D2 /* 03_back_04.png in Resources */,
 				C050C9A81E8267450009679D /* sizle_base.png in Resources */,
 				C050C9771E8267450009679D /* defend_triangle.png in Resources */,
+				413BE54E20F75436006F08EC /* page_top.png in Resources */,
 				DE2C90811E9C66E600B5FC4A /* LXEfficacyResultView.xib in Resources */,
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,

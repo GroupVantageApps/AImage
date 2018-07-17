@@ -66,7 +66,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
 
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
     @IBOutlet weak private var mVMain: UIView!
-
+    @IBOutlet weak var mRightContentV: UIView!
+    
     private let mScreen = ScreenData(screenId: Const.screenIdLXProduct)
 
     weak var delegate: NavigationControllerDelegate?
@@ -332,6 +333,20 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mTransitionView.setLikeItSelector(#selector(self.onTapRecommend(_:)), target: self)
 
         mScrollVPinch.delegate = self
+        
+        // Detailボタン写し
+        let fiveSecretBtn = UIButton()
+        fiveSecretBtn.frame = CGRect(x: self.mRightContentV.frame.width - 200, y: self.mRightContentV.frame.height - 50, width: 200, height: 35)
+        // let lx2Cstv = LanguageConfigure.lx2csv
+        fiveSecretBtn.setBackgroundImage(UIImage(named: "5secret_btn.png"), for: .normal)
+        fiveSecretBtn.setTitle("5Seacrets", for: .normal)
+        fiveSecretBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 17)
+        fiveSecretBtn.setTitleColor( UIColor(red255: 132, green255: 116, blue255: 65, alpha: 1), for: .normal)
+        // fiveSecretBtn.titleLabel?.textAlignment = NSTextAlignment.center
+        // fiveSecretBtn.titleLabel?.baselineAdjustment = UIBaselineAdjustment.alignCenters
+        fiveSecretBtn.addTarget(self, action: #selector(self.toFiveSecretsView(_:)), for: .touchUpInside)
+
+        self.mRightContentV.addSubview(fiveSecretBtn)
     }
 
     override func viewDidLayoutSubviews() {
@@ -757,5 +772,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
     
     func endMovie(type: Int) {
         bgAudioPlayer.play()
+    }
+    
+    @objc private func toFiveSecretsView(_ sender: AnyObject){
+        let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryFiveSecretsTopViewController", targetClass: LuxuryFiveSecretsTopViewController.self) as! LuxuryFiveSecretsTopViewController
+        toVc.bgAudioPlayer = bgAudioPlayer
+        self.navigationController?.pushViewController(toVc, animated: false)
     }
 }
