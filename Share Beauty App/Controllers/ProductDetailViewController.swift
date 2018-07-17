@@ -984,7 +984,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setWasoData()
             self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
             mWasoFeatureView.startAnimation()
-            if productId == 570 || productId == 571 {
+            if productId == 570 || productId == 571 || productId == 612 || productId == 613 {
                 mWasoFeatureView.hukidashi_tap_enable = false
             }
         }
