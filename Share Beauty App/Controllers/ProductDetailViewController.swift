@@ -1027,6 +1027,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 571 {
             image = #imageLiteral(resourceName: "yuzu")
             itemId = 7949
+        } else if productId == 612 {
+            image = #imageLiteral(resourceName: "WASO_19SS_KV_ING_MOCHI_SQUARE")
+            //itemId = 7949
+        } else if productId == 613 {
+            image = #imageLiteral(resourceName: "WASO_19SS_kanten")
+            //itemId = 7949
         }
         if itemId != nil {
             mWasoFeatureView.hukidashiText = AppItemTable.getJsonByItemId(itemId: itemId!)?.dictionary?["name"]?.string
@@ -1114,6 +1120,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 			512: #colorLiteral(red: 0.8705882353, green: 0.9058823529, blue: 0.9411764706, alpha: 1),
             570: #colorLiteral(red: 0.9691396356, green: 0.8943914771, blue: 0.9179174304, alpha: 1),
             571: #colorLiteral(red: 0.8692010045, green: 0.918646872, blue: 0.8133074045, alpha: 1),
+            612: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
+            613: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
 		]
 		if let color = colorDic[self.productId] {
 			self.mWasoFeatureView.showGuideView(frameColor: color)
