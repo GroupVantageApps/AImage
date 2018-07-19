@@ -95,6 +95,9 @@
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
 		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
 		4181A4AF20AD2F6D00680857 /* CALayer+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */; };
+		419D8DF721006A4100106B49 /* UtmMaskEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419D8DF621006A4100106B49 /* UtmMaskEfficacyView.xib */; };
+		419D8DF921006A7C00106B49 /* UtmMaskEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */; };
+		419D8E01210075D600106B49 /* utm_mask_efficacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 419D8E00210075D600106B49 /* utm_mask_efficacy.png */; };
 		41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15704207F5010000319BB /* lx_play_sound_2.png */; };
 		41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15705207F5011000319BB /* lx_play_sound_1.png */; };
 		41DD2F3420BBCDDB0094CC0D /* SMKCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD2F3320BBCDDB0094CC0D /* SMKCategoryButton.swift */; };
@@ -849,6 +852,9 @@
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
 		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
 		4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+UIColor.swift"; sourceTree = "<group>"; };
+		419D8DF621006A4100106B49 /* UtmMaskEfficacyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtmMaskEfficacyView.xib; sourceTree = "<group>"; };
+		419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtmMaskEfficacyView.swift; sourceTree = "<group>"; };
+		419D8E00210075D600106B49 /* utm_mask_efficacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_efficacy.png; sourceTree = "<group>"; };
 		41A15704207F5010000319BB /* lx_play_sound_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_2.png; sourceTree = "<group>"; };
 		41A15705207F5011000319BB /* lx_play_sound_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_1.png; sourceTree = "<group>"; };
 		41DD2F3320BBCDDB0094CC0D /* SMKCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMKCategoryButton.swift; sourceTree = "<group>"; };
@@ -1845,6 +1851,7 @@
 		C050C9321E8267450009679D /* efficacy */ = {
 			isa = PBXGroup;
 			children = (
+				419D8E00210075D600106B49 /* utm_mask_efficacy.png */,
 				B38F63B11F47682700176804 /* After_4_weeks.png */,
 				B38F63B21F47682700176804 /* Befor_use.png */,
 				B38F63B31F47682700176804 /* DayCream01_after.png */,
@@ -2155,6 +2162,8 @@
 				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
 				C0B263E31E6E98FB00452C12 /* WasoGraphEfficacyView.swift */,
 				C0B263E41E6E98FB00452C12 /* WasoGraphEfficacyView.xib */,
+				419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */,
+				419D8DF621006A4100106B49 /* UtmMaskEfficacyView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2959,6 +2968,7 @@
 				C050C97F1E8267450009679D /* efficacy_slider_full.png in Resources */,
 				DEED707A20A54D3D001027EB /* smbk_texture_3.png in Resources */,
 				26768D95202C28C0005BE606 /* Reader-Bold.otf in Resources */,
+				419D8E01210075D600106B49 /* utm_mask_efficacy.png in Resources */,
 				26768D86202C1C4E005BE606 /* Rose-Water_image.png in Resources */,
 				C9906DC41F2AADA200414722 /* LifeStyleSixthProductView.xib in Resources */,
 				C050C99F1E8267450009679D /* t_gray_graph.png in Resources */,
@@ -3223,6 +3233,7 @@
 				C050C90E1E82619F0009679D /* ss_pink.png in Resources */,
 				2608BF912029846E00E7F900 /* ns_page_00.png in Resources */,
 				6E4ABB3F20AA6CAF000355D2 /* 02_04.png in Resources */,
+				419D8DF721006A4100106B49 /* UtmMaskEfficacyView.xib in Resources */,
 				C050C9101E82619F0009679D /* ss_purple_5.png in Resources */,
 				C02818A21E6BCE7C00D4DADA /* WasoFeatureView.xib in Resources */,
 				2687F5FA2032EA9F005F8D80 /* percent_01.png in Resources */,
@@ -3563,6 +3574,7 @@
 				EBF938331D814FF000DF9D1B /* Utility.swift in Sources */,
 				EB7365961D83125800D223BA /* StepLowerTable.swift in Sources */,
 				C03520DC1DA0D821005129B5 /* IdealSpecialItemViewController.swift in Sources */,
+				419D8DF921006A7C00106B49 /* UtmMaskEfficacyView.swift in Sources */,
 				C0D57C641DD5C0090087258B /* LifeStyleCollectionViewCell.swift in Sources */,
 				DE8041591F0F69F100F7DED6 /* GscBaseViewController.swift in Sources */,
 				EB73658C1D83114A00D223BA /* LineTable.swift in Sources */,
@@ -4280,7 +4292,7 @@
 				INFOPLIST_FILE = "Share Beauty App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4314,7 +4326,7 @@
 				INFOPLIST_FILE = "Share Beauty App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

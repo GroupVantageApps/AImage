@@ -104,6 +104,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSDP: Bool = false
     var mIsEEE: Bool = false
     var mIsWASO: Bool = false
+    var mIsUtmMask: Bool = true
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -254,10 +255,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
             self.mIsWASO = true
             self.setWASOSCV()
-        }
-        else if productId == 610 || productId == 611 {
+        } else if productId == 610 || productId == 611 {
             mCategoryButtonEfficacy.enabled = true
             self.setGSCEfficacySCV()
+        } else if productId == 601 {
+            mCategoryButtonEfficacy.enabled = true
+            self.mIsUtmMask = true
+            self.setUtmMaskEfficacy()
         }
      //   }
         // HowToUseが空の時はViewを非表示
@@ -391,6 +395,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
 		// 初期特殊遷移
 		self.initialTransition()
+    }
+    
+    func setUtmMaskEfficacy() {
+//        let nib = UINib(nibName: "UtmMaskEfficacyView", bundle: nil)
+//        let view = nib.instantiate(withOwner: self, options: nil)[0] as? UtmMaskEfficacyView
+//        self.mVContent.addSubview(view!)
+
     }
     
     func setWASOSCV(){
@@ -1293,6 +1304,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.addSubview(utmEfficacyView)
                 utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
+            } else if self.mIsUtmMask {
+                
+                let nib = UINib(nibName: "UtmMaskEfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? UtmMaskEfficacyView else { return }
+                efficacyView.frame = mVContent.frame
+                efficacyView.setView()
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
             }
             else {
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
@@ -1717,7 +1737,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else {
             if mIsWASO {
                 showWASOInfo(sender)
-            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
+            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE || mIsUtmMask {
                 showUtmInfo(sender)
             } else if mIsSDP {
                 showSDPInfo(sender)
