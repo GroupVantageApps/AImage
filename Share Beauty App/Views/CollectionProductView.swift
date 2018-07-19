@@ -55,7 +55,7 @@ class CollectionProductView: UICollectionViewCell {
                      NSUnderlineColorAttributeName: color
                     ])
                 mLblLine.attributedText = underline
-                mLblLine.sizeToFit()
+                // mLblLine.sizeToFit()
             }
         }
     }
