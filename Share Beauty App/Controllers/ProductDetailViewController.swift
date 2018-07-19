@@ -104,6 +104,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSDP: Bool = false
     var mIsEEE: Bool = false
     var mIsWASO: Bool = false
+    var mIsUtmMask: Bool = true
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -130,6 +131,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     let efficacyEEEScrollV = UIScrollView()
     let technologyEEEScrollV = UIScrollView()
     let efficacyWASOScrollV = UIScrollView()
+    let efficacyGSCScrollV = UIScrollView()
     
     // UTM2.0多言語化CSV
     let mUtmArr = LanguageConfigure.utmcsv
@@ -253,6 +255,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
             self.mIsWASO = true
             self.setWASOSCV()
+        } else if productId == 610 || productId == 611 {
+            mCategoryButtonEfficacy.enabled = true
+            self.setGSCEfficacySCV()
+        } else if productId == 601 {
+            mCategoryButtonEfficacy.enabled = true
+            self.mIsUtmMask = true
+            self.setUtmMaskEfficacy()
         }
      //   }
         // HowToUseが空の時はViewを非表示
@@ -386,6 +395,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
 		// 初期特殊遷移
 		self.initialTransition()
+    }
+    
+    func setUtmMaskEfficacy() {
+//        let nib = UINib(nibName: "UtmMaskEfficacyView", bundle: nil)
+//        let view = nib.instantiate(withOwner: self, options: nil)[0] as? UtmMaskEfficacyView
+//        self.mVContent.addSubview(view!)
+
     }
     
     func setWASOSCV(){
@@ -707,6 +723,71 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             self.efficacySDPScrollV.addSubview(efficacyView)
         }
+    }
+    
+    func setGSCEfficacySCV() {
+        self.efficacyGSCScrollV.delegate = self
+        self.efficacyGSCScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.frame.height)
+        self.efficacyGSCScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: self.mVContent.frame.height)
+        self.efficacyGSCScrollV.isPagingEnabled = true
+        self.efficacyGSCScrollV.bounces = false
+        
+        let itemId: Int
+
+        switch productId {
+        case 610:
+            itemId = 7990
+        case 611:
+            itemId = 7995
+        default:
+            print("error: productId is not correct")
+            return
+        }
+        
+        let title = UILabel()
+        title.textColor = UIColor.black
+        title.font = UIFont(name: "Reader-Bold", size: 22)
+        title.text = AppItemTable.getNameByItemId(itemId: itemId)
+        title.frame = CGRect(x: 0, y: 30, width: 700, height: 40)
+        title.centerX = self.mVContent.centerX
+        title.textAlignment = .center
+        self.efficacyGSCScrollV.addSubview(title)
+        
+        for i in 0...2 {
+            let percentLabel = UILabel()
+            percentLabel.textColor = UIColor.black
+            percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
+            percentLabel.textAlignment = .center
+            percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + (130 * i), width: 160, height: 82)
+            let perY = Int(percentLabel.frame.origin.y)
+
+            let perTexts: [Int: [String]] = [
+                610: ["90%", "97%", "97%"],
+                611: ["85%", "90%", "86%"]
+            ]
+            percentLabel.text = perTexts[productId]?[i]
+            
+            let description = UILabel()
+            description.textColor = UIColor.black
+            description.font = UIFont(name: "Reader", size: 20)
+            description.numberOfLines = 0
+            description.textAlignment = .left
+            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: perY - 20, width: 350, height: 100)
+            description.text = AppItemTable.getNameByItemId(itemId: itemId + i+1)
+
+            self.efficacyGSCScrollV.addSubview(percentLabel)
+            self.efficacyGSCScrollV.addSubview(description)
+        }
+        
+        let text = UILabel()
+        text.textColor = UIColor.lightGray
+        text.font = UIFont(name: "Reader-Medium", size: 12)
+        text.font = text.font.withSize(13)
+        text.textAlignment = .center
+        text.numberOfLines = 0
+        text.frame = CGRect(x: 600, y: 500, width: 400, height: 60)
+        text.text = AppItemTable.getNameByItemId(itemId: itemId + 4)
+        self.efficacyGSCScrollV.addSubview(text)
     }
     
     
@@ -1223,6 +1304,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.addSubview(utmEfficacyView)
                 utmEfficacyView.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
+            } else if self.mIsUtmMask {
+                
+                let nib = UINib(nibName: "UtmMaskEfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? UtmMaskEfficacyView else { return }
+                efficacyView.frame = mVContent.frame
+                efficacyView.setView()
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
             }
             else {
                 let utmEfficacyView = UtmEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
@@ -1412,6 +1502,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 //            makeCategoryImages(product.usageImage)
         } else if sender === mCategoryButtonEfficacy {
             makeCategoryImages(product.effectImage)
+            if productId == 610 || productId == 611 {
+                mVContent.isHidden = false
+                mVContent.addSubview(self.efficacyGSCScrollV)
+                mVCurrentSelect = self.efficacyGSCScrollV
+            }
         } else if sender === mCategoryButtonDefend {
 			if product.makeupLook {
 				makeCategoryImages(product.makeupLookImages)
@@ -1642,7 +1737,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else {
             if mIsWASO {
                 showWASOInfo(sender)
-            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE {
+            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE || mIsUtmMask {
                 showUtmInfo(sender)
             } else if mIsSDP {
                 showSDPInfo(sender)
