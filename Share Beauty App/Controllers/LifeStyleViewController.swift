@@ -65,7 +65,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 564, 566, 568, 613]
+    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 111, 148, 419, 613] //111, 148, 419,仮です
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     

@@ -2868,7 +2868,7 @@
 				TargetAttributes = {
 					C05913C71D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = QW5MSA6L6G;
+						DevelopmentTeam = J62CVNNG5Q;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -4295,7 +4295,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = QW5MSA6L6G;
+				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4306,7 +4306,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4329,7 +4329,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = QW5MSA6L6G;
+				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4339,7 +4339,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.vit;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
