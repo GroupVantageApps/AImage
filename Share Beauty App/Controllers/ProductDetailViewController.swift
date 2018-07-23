@@ -104,7 +104,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSDP: Bool = false
     var mIsEEE: Bool = false
     var mIsWASO: Bool = false
-    var mIsUtmMask: Bool = true
+    var mIsUtmMask: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -1311,6 +1311,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 guard let efficacyView = views[0] as? UtmMaskEfficacyView else { return }
                 efficacyView.frame = mVContent.frame
                 efficacyView.setView()
+                efficacyView.mScrollV.delegate = self
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
             }
