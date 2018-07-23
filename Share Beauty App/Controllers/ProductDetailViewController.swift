@@ -260,8 +260,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setGSCEfficacySCV()
         } else if productId == 601 {
             mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
             self.mIsUtmMask = true
-            self.setUtmMaskEfficacy()
         }
      //   }
         // HowToUseが空の時はViewを非表示
@@ -395,13 +395,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
 		// 初期特殊遷移
 		self.initialTransition()
-    }
-    
-    func setUtmMaskEfficacy() {
-//        let nib = UINib(nibName: "UtmMaskEfficacyView", bundle: nil)
-//        let view = nib.instantiate(withOwner: self, options: nil)[0] as? UtmMaskEfficacyView
-//        self.mVContent.addSubview(view!)
-
     }
     
     func setWASOSCV(){
@@ -965,6 +958,25 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
     
+    private func setUtmMaskHowToUse() {
+        let usageV = UIView(frame: self.mVContent.frame)
+        let imageV = UIImageView(frame: usageV.frame)
+        imageV.image = UIImage(named: "Howto-wotxt.png")
+        usageV.addSubview(imageV)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 90, width: 800, height: 0))
+        label.text = AppItemTable.getNameByItemId(itemId: 8016)
+        label.font = UIFont(name: "Reader",size: 21)
+        label.centerX = usageV.centerX
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.sizeToFit()
+        usageV.addSubview(label)
+        
+        self.mVContent.addSubview(usageV)
+        self.mVCurrentSelect = imageV
+    }
+    
     private func makeCategoryImages(_ imageIds: [Int]) {
         for subview in mVCategoryImageBase.subviews {
             subview.removeFromSuperview()
@@ -1239,6 +1251,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             utmTechView?.showTechnologiesDetail(mIsUtm)
             mVCurrentSelect = utmTechView
             
+        } else if sender === mCategoryButtonHowToUse {
+            if self.mIsUtmMask {
+                self.setUtmMaskHowToUse()
+            }
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
                 let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
