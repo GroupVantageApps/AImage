@@ -65,7 +65,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 111, 148, 419, 613] //111, 148, 419,仮です
+    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 111, 148, 419] //111, 148, 419,仮です // 613 Waso
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     
@@ -482,12 +482,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 lifeStyleProductView.addSubview(text)
             }
 
+            // Waso 吹き出し分余白
+            if id == 613 {
+                contentWidth += viewWidth
+            }
         }
 
         if whiteLucentProductsCount != 0 && contentWidth < 2520 {
            contentWidth = 2520
         }
-        mScrollV.contentSize = CGSize(width: contentWidth + 246, height: self.view.height)
+        mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
         contentWidth = 0
         // 説明用画像をセット
         setInfoImage()
