@@ -25,7 +25,10 @@ class ColorballTranslateTable: NSObject {
 
             entity.colorballTranslateId = Utility.toInt(resultSet.string(forColumn: "id"))
 
-//            let json = Utility.parseContent(resultSet)
+            let json = Utility.parseContent(resultSet)
+            if let nameLocal = json["name_local"] {
+                entity.nameLocal = Utility.toStr(nameLocal)
+            }
 
             entity.displayOrder = Utility.toInt(resultSet.string(forColumn: "display_order"))
             entity.lastUpdateTs = Utility.toStr(resultSet.string(forColumn: "last_update_ts"))
