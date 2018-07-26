@@ -228,41 +228,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
-        // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
-       // if LanguageConfigure.languageId == 19 {
-        if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
-            self.mIsEE = true
-            mCategoryButtonEfficacy.enabled = true
-        } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
-            self.mIsSDP = true
-            mCategoryButtonEfficacy.enabled = true
-            self.setSDPEfficacySCV()
-        } else if productId == 1 || productId == 2 {
-            
-            mCategoryButtonEfficacy.enabled = false
-        } else if productId == 564 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonTechnologies.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.mIsEEE = true
-             self.setEEESCV()
-        } else if productId == 570 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.mIsWASO = true
-            self.setWASOSCV()
-        } else if productId == 571 {
-            mCategoryButtonEfficacy.enabled = true
-            self.mIsWASO = true
-            self.setWASOSCV()
-        } else if productId == 610 || productId == 611 {
-            mCategoryButtonEfficacy.enabled = true
-            self.setGSCEfficacySCV()
-        } else if productId == 601 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.mIsUtmMask = true
-        }
      //   }
         // HowToUseが空の時はViewを非表示
         if product.howToUse == "" {
@@ -369,6 +334,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setEnhanceView()
             self.setImucalmView()
             
+            print(mVContent.size)
+            
         }
         
     }
@@ -395,6 +362,49 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
 		// 初期特殊遷移
 		self.initialTransition()
+        
+        // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
+        // if LanguageConfigure.languageId == 19 {
+        if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
+            self.mIsEE = true
+            mCategoryButtonEfficacy.enabled = true
+        } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+            self.mIsSDP = true
+            mCategoryButtonEfficacy.enabled = true
+            self.setSDPEfficacySCV()
+        } else if productId == 1 || productId == 2 {
+            
+            mCategoryButtonEfficacy.enabled = false
+        } else if productId == 564 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsEEE = true
+            self.setEEESCV()
+        } else if productId == 570 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsWASO = true
+            self.setWASOSCV()
+        } else if productId == 571 {
+            mCategoryButtonEfficacy.enabled = true
+            self.mIsWASO = true
+            self.setWASOSCV()
+        } else if productId == 612 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            mCategoryButtonTechnologies.enabled = true
+            self.mIsWASO = true
+            self.setWASOSCV()
+        } else if productId == 610 || productId == 611 {
+            mCategoryButtonEfficacy.enabled = true
+            self.setGSCEfficacySCV()
+        } else if productId == 601 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsUtmMask = true
+        }
+
     }
     
     func setWASOSCV(){
@@ -404,125 +414,146 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         self.efficacyWASOScrollV.isPagingEnabled = true
         self.efficacyWASOScrollV.bounces = false
         self.efficacyWASOScrollV.backgroundColor = UIColor.clear
-        
-        let nib = UINib(nibName: "WASOPeelFirstEfficacyResultView", bundle: nil)
-        let views = nib.instantiate(withOwner: self, options: nil)
-        guard let efficacyView1 = views[0] as? WASOPeelFirstEfficacyResultView else { return }
-        efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
-        efficacyView1.tag = 65
-        self.efficacyWASOScrollV.addSubview(efficacyView1)
-        
-        let title = UILabel()
-        title.text = mEeeArr["145"]
-        title.textColor = UIColor.black
-        title.font = UIFont(name: "Reader-Bold", size: 18)
-        title.frame = CGRect(x: 0, y: Int(self.efficacyWASOScrollV.frame.height), width: 500, height: 100)
-        title.centerX = self.mVContent.centerX
-        title.numberOfLines = 0
-        title.textAlignment = .center
-        
-        let label_35 = UILabel()
-        label_35.text = "35%UP"
-        label_35.textColor = UIColor.black
-        label_35.font = UIFont(name: "Reader-Bold", size: 50)
-        label_35.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 100 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 60)
-        label_35.numberOfLines = 0
-        label_35.textAlignment = .left
-        
-        let label_35_description = UILabel()
-        label_35_description.text = mEeeArr["148"]
-        label_35_description.textColor = UIColor.black
-        label_35_description.font = UIFont(name: "Reader-Medium", size: 15)
-        label_35_description.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 150 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 100)
-        label_35_description.numberOfLines = 0
-        label_35_description.textAlignment = .left
-    
-        let image_after = UIImage(named: "waso_after.png")
-        let faceImageV_after = UIImageView(image:image_after)
-        faceImageV_after.contentMode = .scaleAspectFit
-        faceImageV_after.clipsToBounds = true
-        faceImageV_after.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
-        faceImageV_after.centerX = self.mVContent.centerX
-        faceImageV_after.backgroundColor = UIColor.clear
-        
-        
-        
-        let image = UIImage(named: "waso_before.png")
-        let faceImageV = UIImageView(image:image)
-        faceImageV.contentMode = .scaleAspectFit
-        faceImageV.tag = 30 
-        faceImageV.clipsToBounds = true
-        faceImageV.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
-        faceImageV.centerX = self.mVContent.centerX
-        faceImageV.backgroundColor = UIColor.clear
-        
-        let beforeBtn = UIButton()
-        beforeBtn.isEnabled = false
-        beforeBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
-        beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
-        beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
-        beforeBtn.isEnabled = false
-        beforeBtn.setTitleColor(UIColor.white, for: .normal)
-        beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-        beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
-        beforeBtn.tag = 10
-        beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
-        
-        let afterBtn = UIButton()
-        afterBtn.isEnabled = true
-        afterBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
-        afterBtn.origin.x = self.mVContent.centerX + 10
-        afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
-        afterBtn.isEnabled = true
-        afterBtn.setTitleColor(UIColor.white, for: .normal)
-        afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-        
-        afterBtn.setTitleColor(UIColor.black, for: .normal)
-        afterBtn.backgroundColor = UIColor.white
-        afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
-        afterBtn.tag = 20
-        afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
-        
-        
-        for j in 0...2{
-            let image:UIImage = UIImage(named:"point_01.png")!
-            let border = UIImageView(image:image)
-            border.contentMode = .scaleToFill
+
+        if productId == 570 || productId == 571 {
+            let nib = UINib(nibName: "WASOPeelFirstEfficacyResultView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let efficacyView1 = views[0] as? WASOPeelFirstEfficacyResultView else { return }
+            efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+            efficacyView1.tag = 65
+            self.efficacyWASOScrollV.addSubview(efficacyView1)
             
-            if j == 0{
-                border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
-            }else if j == 1{
-                border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+            let title = UILabel()
+            title.text = mEeeArr["145"]
+            title.textColor = UIColor.black
+            title.font = UIFont(name: "Reader-Bold", size: 18)
+            title.frame = CGRect(x: 0, y: Int(self.efficacyWASOScrollV.frame.height), width: 500, height: 100)
+            title.centerX = self.mVContent.centerX
+            title.numberOfLines = 0
+            title.textAlignment = .center
+            
+            let label_35 = UILabel()
+            label_35.text = "35%UP"
+            label_35.textColor = UIColor.black
+            label_35.font = UIFont(name: "Reader-Bold", size: 50)
+            label_35.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 100 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 60)
+            label_35.numberOfLines = 0
+            label_35.textAlignment = .left
+            
+            let label_35_description = UILabel()
+            label_35_description.text = mEeeArr["148"]
+            label_35_description.textColor = UIColor.black
+            label_35_description.font = UIFont(name: "Reader-Medium", size: 15)
+            label_35_description.frame = CGRect(x: Int(self.mVContent.centerX + 200), y: 150 + Int(self.efficacyWASOScrollV.frame.height), width: 200, height: 100)
+            label_35_description.numberOfLines = 0
+            label_35_description.textAlignment = .left
+            
+            let image_after = UIImage(named: "waso_after.png")
+            let faceImageV_after = UIImageView(image:image_after)
+            faceImageV_after.contentMode = .scaleAspectFit
+            faceImageV_after.clipsToBounds = true
+            faceImageV_after.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
+            faceImageV_after.centerX = self.mVContent.centerX
+            faceImageV_after.backgroundColor = UIColor.clear
+            
+            
+            
+            let image = UIImage(named: "waso_before.png")
+            let faceImageV = UIImageView(image:image)
+            faceImageV.contentMode = .scaleAspectFit
+            faceImageV.tag = 30
+            faceImageV.clipsToBounds = true
+            faceImageV.frame = CGRect(x: 0, y: 70 + Int(self.efficacyWASOScrollV.frame.height), width: 300, height: 300)
+            faceImageV.centerX = self.mVContent.centerX
+            faceImageV.backgroundColor = UIColor.clear
+            
+            let beforeBtn = UIButton()
+            beforeBtn.isEnabled = false
+            beforeBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
+            beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
+            beforeBtn.setTitle(mUtmArr["27"], for: .normal) // "Before"
+            beforeBtn.isEnabled = false
+            beforeBtn.setTitleColor(UIColor.white, for: .normal)
+            beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            beforeBtn.tag = 10
+            beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            let afterBtn = UIButton()
+            afterBtn.isEnabled = true
+            afterBtn.frame = CGRect(x: 0, y: 400 + Int(self.efficacyWASOScrollV.frame.height), width: 145, height: 30)
+            afterBtn.origin.x = self.mVContent.centerX + 10
+            afterBtn.setTitle(mUtmArr["28"], for: .normal) // "After 4 Weeks"
+            afterBtn.isEnabled = true
+            afterBtn.setTitleColor(UIColor.white, for: .normal)
+            afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+            
+            afterBtn.setTitleColor(UIColor.black, for: .normal)
+            afterBtn.backgroundColor = UIColor.white
+            afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
+            afterBtn.tag = 20
+            afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
+            
+            
+            for j in 0...2{
+                let image:UIImage = UIImage(named:"point_01.png")!
+                let border = UIImageView(image:image)
+                border.contentMode = .scaleToFill
                 
-            }else if j == 2{
-                border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                if j == 0{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                }else if j == 1{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                    
+                }else if j == 2{
+                    border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398 + Int(self.efficacyWASOScrollV.frame.height), width: 1, height: 34)
+                    
+                }
+                
+                self.efficacyWASOScrollV.addSubview(border)
                 
             }
             
-            self.efficacyWASOScrollV.addSubview(border)
+            let copy = UILabel()
+            copy.textColor = UIColor.gray
+            copy.font = UIFont(name: "Reader-Medium", size: 14)
+            copy.frame = CGRect(x: 10 , y: self.mVContent.size.height * 2 - 250 , width: 400, height: 100)
+            copy.numberOfLines = 0
+            copy.textAlignment = .left
+            copy.text = mEeeArr["149"]
             
-        }
-        
-        let copy = UILabel()
-        copy.textColor = UIColor.gray
-        copy.font = UIFont(name: "Reader-Medium", size: 14)
-        copy.frame = CGRect(x: 10 , y: self.mVContent.size.height * 2 - 250 , width: 400, height: 100)
-        copy.numberOfLines = 0
-        copy.textAlignment = .left
-        copy.text = mEeeArr["149"]
-        
-         self.efficacyWASOScrollV.addSubview(copy)
-        self.efficacyWASOScrollV.addSubview(title)
-        self.efficacyWASOScrollV.addSubview(label_35)
-        self.efficacyWASOScrollV.addSubview(label_35_description)
+            self.efficacyWASOScrollV.addSubview(copy)
+            self.efficacyWASOScrollV.addSubview(title)
+            self.efficacyWASOScrollV.addSubview(label_35)
+            self.efficacyWASOScrollV.addSubview(label_35_description)
+            
+            self.efficacyWASOScrollV.addSubview(faceImageV_after)
+            self.efficacyWASOScrollV.addSubview(faceImageV)
+            self.efficacyWASOScrollV.addSubview(beforeBtn)
+            self.efficacyWASOScrollV.addSubview(afterBtn)
+            
+        } else if productId == 612 {
 
-        self.efficacyWASOScrollV.addSubview(faceImageV_after)
-        self.efficacyWASOScrollV.addSubview(faceImageV)
-        self.efficacyWASOScrollV.addSubview(beforeBtn)
-        self.efficacyWASOScrollV.addSubview(afterBtn)
-        
+            let efficacyV = UIView()
+            efficacyV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            let imageVfirst = UIImageView(frame: self.mVContent.frame)
+            imageVfirst.image = UIImage(named: "waso_07e.png")
+            imageVfirst.contentMode = .scaleAspectFit
+            // imageVfirst.layer.borderWidth = 1
+            self.efficacyWASOScrollV.addSubview(imageVfirst)
+            
+            let imageVsecond = UIImageView(frame: CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.width, height: self.mVContent.height))
+            imageVsecond.image = UIImage(named: "waso_08e.png")
+            imageVsecond.contentMode = .scaleAspectFit
+            // imageVsecond.layer.borderWidth = 1
+            self.efficacyWASOScrollV.addSubview(imageVsecond)
+            
+            print(imageVfirst.frame)
+            print(imageVsecond.frame)
+        }
+
     }
-    
+        
     func setEEESCV(){
         self.efficacyEEEScrollV.delegate = self
         self.efficacyEEEScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
@@ -1341,6 +1372,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.addSubview(utmEfficacyView!)
                 utmEfficacyView?.showEfficacyDetail()
                 mVCurrentSelect = utmEfficacyView
+                
+                print(mVContent.size)
             }
 
         } else{
@@ -1375,7 +1408,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mVCurrentSelect = nil
             return
         }
-
         
         if let bcV = mVContent.viewWithTag(9999){
             bcV.removeFromSuperview()
@@ -1390,7 +1422,29 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         backgroundImage.tag = 9999
         self.mVContent.insertSubview(backgroundImage, at: 0)
         
-        if sender === mCategoryButtonEfficacy {
+        if sender === mCategoryButtonTechnologies {
+            if productId == 612 {
+                let imageV = UIImageView(frame: self.mVContent.frame)
+                imageV.image = UIImage(named: "waso_06h.png")
+                imageV.contentMode = .scaleAspectFit
+                self.mVContent.addSubview(imageV)
+            }
+        } else if sender === mCategoryButtonHowToUse {
+            if productId == 570 || productId == 571 {
+                let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let howToUseView = views[0] as? WASOPeelHowToUseResultView else { return }
+                howToUseView.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                mVContent.addSubview(howToUseView)
+                mVCurrentSelect = howToUseView
+            } else if productId == 612 {
+                let imageV = UIImageView(frame: self.mVContent.frame)
+                imageV.image = UIImage(named: "waso_06h.png")
+                imageV.contentMode = .scaleAspectFit
+                self.mVContent.addSubview(imageV)
+            }
+        } else if sender === mCategoryButtonEfficacy {
             
             if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
@@ -1409,15 +1463,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 self.mVContent.addSubview(efficacyView1)
                 mVCurrentSelect = efficacyView1
                 efficacyView1.startAnimation()
+            } else if productId == 612 {
+                mVContent.addSubview(self.efficacyWASOScrollV)
+                mVCurrentSelect = self.efficacyWASOScrollV
             }
-        } else if sender === mCategoryButtonHowToUse{
-            let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
-            let views = nib.instantiate(withOwner: self, options: nil)
-            guard let howToUseView = views[0] as? WASOPeelHowToUseResultView else { return }
-            howToUseView.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
-            
-            mVContent.addSubview(howToUseView)
-            mVCurrentSelect = howToUseView
         }
     }
 
@@ -1738,6 +1787,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     // MARK: - CategoryButtonDelegate
     func didTap(_ sender: CategoryButton) {
+        print(mVContent.size)
+        
         if sender === mBtnCurrentSelect {
             return
         }

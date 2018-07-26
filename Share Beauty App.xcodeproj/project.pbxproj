@@ -94,6 +94,9 @@
 		413BE54E20F75436006F08EC /* page_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54D20F75435006F08EC /* page_top.png */; };
 		413BE55020F7543C006F08EC /* Top_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54F20F7543B006F08EC /* Top_btn.png */; };
 		4141AF6720FDF10D00E3EC72 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
+		4142F9802109952500A40DA4 /* waso_06h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97D2109952300A40DA4 /* waso_06h.png */; };
+		4142F9812109952500A40DA4 /* waso_07e.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97E2109952300A40DA4 /* waso_07e.png */; };
+		4142F9822109952500A40DA4 /* waso_08e.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97F2109952500A40DA4 /* waso_08e.png */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
@@ -855,6 +858,9 @@
 		413BE54B20F75429006F08EC /* 5secret_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5secret_btn.png; sourceTree = "<group>"; };
 		413BE54D20F75435006F08EC /* page_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_top.png; sourceTree = "<group>"; };
 		413BE54F20F7543B006F08EC /* Top_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Top_btn.png; sourceTree = "<group>"; };
+		4142F97D2109952300A40DA4 /* waso_06h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_06h.png; sourceTree = "<group>"; };
+		4142F97E2109952300A40DA4 /* waso_07e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_07e.png; sourceTree = "<group>"; };
+		4142F97F2109952500A40DA4 /* waso_08e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waso_08e.png; sourceTree = "<group>"; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
@@ -1722,6 +1728,24 @@
 				26AD5D6F20230A1F002A2076 /* KozGoPr6N-Regular.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		4142F97B210994FE00A40DA4 /* 19SS */ = {
+			isa = PBXGroup;
+			children = (
+				4142F97C2109950C00A40DA4 /* WASO */,
+			);
+			path = 19SS;
+			sourceTree = "<group>";
+		};
+		4142F97C2109950C00A40DA4 /* WASO */ = {
+			isa = PBXGroup;
+			children = (
+				4142F97D2109952300A40DA4 /* waso_06h.png */,
+				4142F97E2109952300A40DA4 /* waso_07e.png */,
+				4142F97F2109952500A40DA4 /* waso_08e.png */,
+			);
+			path = WASO;
 			sourceTree = "<group>";
 		};
 		4182C57321058D35005E15F5 /* how_to_use */ = {
@@ -2733,6 +2757,7 @@
 		EBF938131D812DC900DF9D1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4142F97B210994FE00A40DA4 /* 19SS */,
 				DEED706E20A54D29001027EB /* tmp_smbk */,
 				DE80C66120726CF000CD326A /* 18AW */,
 				26768D6F202BFFE7005BE606 /* UTM2.0 */,
@@ -2964,6 +2989,7 @@
 				DE06F72A1F16457800EF2FE2 /* GscHeaderView.xib in Resources */,
 				C050C91B1E82619F0009679D /* green_L.png in Resources */,
 				80429B7A1EF04D990022C99D /* LifeStyleThirdProductView.xib in Resources */,
+				4142F9822109952500A40DA4 /* waso_08e.png in Resources */,
 				DE80C66B20726D4E00CD326A /* 18aw_87.png in Resources */,
 				6E4ABB3220AA6CAF000355D2 /* 03_back_05.png in Resources */,
 				C050C9911E8267450009679D /* t_arrow.png in Resources */,
@@ -3180,6 +3206,7 @@
 				B38F63C21F47682700176804 /* DayCream02_before.png in Resources */,
 				26768D8E202C1C57005BE606 /* Ginko.png in Resources */,
 				DE2C8F501E9B9F5800B5FC4A /* ACaslonPro-Regular.otf in Resources */,
+				4142F9802109952500A40DA4 /* waso_06h.png in Resources */,
 				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
 				DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */,
@@ -3238,6 +3265,7 @@
 				DE2C908B1E9C66E600B5FC4A /* LXNavigationView.xib in Resources */,
 				C050C9841E8267450009679D /* utm01_befor.png in Resources */,
 				DE80C67720726DB000CD326A /* 18aw_82.png in Resources */,
+				4142F9812109952500A40DA4 /* waso_07e.png in Resources */,
 				DE06F71E1F16450200EF2FE2 /* desc_02.png in Resources */,
 				E5E0D3FA1DF3D60A0053373F /* LifeStyleFirstDetailViewController.storyboard in Resources */,
 				2680EC212037E4FA005257B1 /* makeup_8.png in Resources */,
