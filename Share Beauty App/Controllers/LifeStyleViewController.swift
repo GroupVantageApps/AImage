@@ -100,8 +100,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mCounts = LifeStyleBeautyCount.getCounts()
-        let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
-        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)//7838
+        // let items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeauty)
+        titleLabel.text = AppItemTable.getNameByItemId(itemId: 7838)
         mCollectionV.register(UINib(nibName: "LifeStyleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         mCollectionV.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "space")
         mCollectionV.allowsSelection = false
@@ -414,60 +414,75 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let i = enumerated.offset
             let product = enumerated.element
             productsCount += 1
-            guard product.productId != 0 else {
-                
-                if 1 < i && i < 4 && whiteLucentProductsCount == 0{
-                    productsCount -= 1
-                } else {
-//                    let view = UIView()
-//                    view.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
-//                    view.backgroundColor = UIColor.white
-
-                    let imageView = UIImageView()
-                    imageView.contentMode = .scaleAspectFit
-                    
-                    let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
-                    labe.font = UIFont(name: "Reader", size: 10)
-                    labe.textAlignment = .center
-                    
-                    //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
-                    print("offset:*\(enumerated.offset)")
-                    // 最初の商品の余白表示
-                    if i == 1{
-                        // 最初の商品の顔イラスト
-                        // imageView.image = FileTable.getImage(6534)
-                        imageView.tag = 88
-                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height: 
-                            viewHeight)
-                    }
-                    // 商品画像の表示
-                    contentWidth += imageView.frame.size.width
-                    imageView.isUserInteractionEnabled = true
-                    imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
-                    
-                    mScrollV.addSubview(imageView)
-                }
-                continue;
-            }
+            // 描画の重複
+//            guard product.productId != 0 else {
+//
+//                if 1 < i && i < 4 && whiteLucentProductsCount == 0{
+//                    productsCount -= 1
+//                } else {
+////                    let view = UIView()
+////                    view.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
+////                    view.backgroundColor = UIColor.white
+//
+//                    let imageView = UIImageView()
+//                    imageView.contentMode = .scaleAspectFit
+//
+//                    let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
+//                    labe.font = UIFont(name: "Reader", size: 10)
+//                    labe.textAlignment = .center
+//
+//                    //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
+//                    print("offset:*\(enumerated.offset)")
+//                    // 最初の商品の余白表示
+//                    if i == 1{
+//                        // 最初の商品の顔イラスト
+//                        // imageView.image = FileTable.getImage(6534)
+//                        imageView.tag = 88
+//                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
+//                            viewHeight)
+//                    }
+//                    // 商品画像の表示
+//                    contentWidth += imageView.frame.size.width
+//                    imageView.isUserInteractionEnabled = true
+//                    imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
+//
+//                    mScrollV.addSubview(imageView)
+//                }
+//                continue;
+//            }
 
             guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
                 continue
             }
             
-            lifeStyleProductView.delegate = self
-            lifeStyleProductView.product = product
-            lifeStyleProductView.headerText = items["0" + String(i+1)]
-            lifeStyleProductView.explainText = items["1" + String(i+2)]
-            lifeStyleProductView.logScreenId = mScreen.code
-            lifeStyleProductView.logItemId = "0" + String(i+1)
-            
-            lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
-            lifeStyleProductView.backgroundColor = UIColor.gray
-            mScrollV.addSubview(lifeStyleProductView)
+            if i != 1 {
+                lifeStyleProductView.delegate = self
+                lifeStyleProductView.product = product
+                lifeStyleProductView.headerText = items["0" + String(i+1)]
+                lifeStyleProductView.explainText = items["1" + String(i+2)]
+                lifeStyleProductView.logScreenId = mScreen.code
+                lifeStyleProductView.logItemId = "0" + String(i+1)
+                
+                lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
+                lifeStyleProductView.backgroundColor = UIColor.gray
+
+                mScrollV.addSubview(lifeStyleProductView)
+            }
             contentWidth += viewWidth
             
+            // 画像上のテキスト
+            let id = product.productId
+            let itemIds = [602: 8021, 606: 8022, 553: 8023]
+            if itemIds[id] != nil {
+                let text = UILabel(frame: CGRect(x: 0, y: 60, width: 0, height: 0))
+                text.font = UIFont(name: "Reader", size: 17)
+                text.text = AppItemTable.getNameByItemId(itemId: itemIds[id]!)
+                text.sizeToFit()
+                text.centerX = viewWidth / 2
+                lifeStyleProductView.addSubview(text)
+            }
+
         }
-        // for文終わり
 
         if whiteLucentProductsCount != 0 && contentWidth < 2520 {
            contentWidth = 2520
