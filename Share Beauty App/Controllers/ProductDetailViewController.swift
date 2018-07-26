@@ -385,17 +385,23 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonHowToUse.enabled = true
             self.mIsWASO = true
-            self.setWASOSCV()
+            self.setWasoEfficacySCV()
         } else if productId == 571 {
             mCategoryButtonEfficacy.enabled = true
             self.mIsWASO = true
-            self.setWASOSCV()
+            self.setWasoEfficacySCV()
         } else if productId == 612 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonHowToUse.enabled = true
             mCategoryButtonTechnologies.enabled = true
             self.mIsWASO = true
-            self.setWASOSCV()
+            self.setWasoEfficacySCV()
+        } else if productId == 613 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
+            mCategoryButtonDefend.title = "Scent"
+            self.mIsWASO = true
+            self.setWasoEfficacySCV()
         } else if productId == 610 || productId == 611 {
             mCategoryButtonEfficacy.enabled = true
             self.setGSCEfficacySCV()
@@ -407,7 +413,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     }
     
-    func setWASOSCV(){
+    func setWasoEfficacySCV(){
         self.efficacyWASOScrollV.delegate = self
         self.efficacyWASOScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
         self.efficacyWASOScrollV.contentSize = CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*2)
@@ -550,6 +556,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             print(imageVfirst.frame)
             print(imageVsecond.frame)
+        } else if productId == 613 {
+            self.efficacyWASOScrollV.contentSize = self.mVContent.size
+            
+            let imageV = UIImageView(frame: self.mVContent.frame)
+            imageV.image = UIImage(named: "waso_04e.png")
+            imageV.contentMode = .scaleAspectFit
+            self.efficacyWASOScrollV.addSubview(imageV)
         }
 
     }
@@ -1108,7 +1121,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setWasoData()
             self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
             mWasoFeatureView.startAnimation()
-            if productId == 570 || productId == 571 || productId == 613 {
+            if productId == 570 || productId == 571 {
                 mWasoFeatureView.hukidashi_tap_enable = false
             }
         }
@@ -1156,7 +1169,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             itemId = 8020
         } else if productId == 613 {
             image = #imageLiteral(resourceName: "WASO_19SS_kanten")
-            //itemId = 7949
+            itemId = 8018
         }
         if itemId != nil {
             mWasoFeatureView.hukidashiText = AppItemTable.getJsonByItemId(itemId: itemId!)?.dictionary?["name"]?.string
@@ -1422,14 +1435,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         backgroundImage.tag = 9999
         self.mVContent.insertSubview(backgroundImage, at: 0)
         
-        if sender === mCategoryButtonTechnologies {
+        switch sender {
+        case mCategoryButtonTechnologies:
             if productId == 612 {
                 let imageV = UIImageView(frame: self.mVContent.frame)
-                imageV.image = UIImage(named: "waso_06h.png")
+                imageV.image = UIImage(named: "waso_05t.png")
                 imageV.contentMode = .scaleAspectFit
                 self.mVContent.addSubview(imageV)
+                self.mVCurrentSelect = imageV
             }
-        } else if sender === mCategoryButtonHowToUse {
+            
+        case mCategoryButtonHowToUse:
             if productId == 570 || productId == 571 {
                 let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
                 let views = nib.instantiate(withOwner: self, options: nil)
@@ -1444,8 +1460,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 imageV.contentMode = .scaleAspectFit
                 self.mVContent.addSubview(imageV)
             }
-        } else if sender === mCategoryButtonEfficacy {
             
+            
+        case mCategoryButtonEfficacy:
             if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
@@ -1463,10 +1480,34 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 self.mVContent.addSubview(efficacyView1)
                 mVCurrentSelect = efficacyView1
                 efficacyView1.startAnimation()
-            } else if productId == 612 {
+            } else if productId == 612 || productId == 613 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
             }
+            
+        case mCategoryButtonDefend:
+            if productId == 613 {
+                let width = self.mVContent.width
+                let height = self.mVContent.height
+                let scrollView = UIScrollView(frame: self.mVContent.frame)
+                scrollView.contentSize = CGSize(width: width, height: height * 3)
+                scrollView.bounces = false
+                scrollView.isPagingEnabled = true
+                
+                for pageNum in 0...2 {
+                    //let scrollPage = UIView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
+                    let imageV = UIImageView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
+                    imageV.image = UIImage(named: "waso_0\(pageNum + 1)s.png")
+                    imageV.contentMode = .scaleAspectFit
+                    //scrollPage.addSubview(imageV)
+                    scrollView.addSubview(imageV)
+                }
+                self.mVContent.addSubview(scrollView)
+                mVCurrentSelect = scrollView
+            }
+            
+        default:
+            exit(1)
         }
     }
 
