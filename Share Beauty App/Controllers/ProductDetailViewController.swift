@@ -1108,7 +1108,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setWasoData()
             self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
             mWasoFeatureView.startAnimation()
-            if productId == 570 || productId == 571 || productId == 612 || productId == 613 {
+            if productId == 570 || productId == 571 || productId == 613 {
                 mWasoFeatureView.hukidashi_tap_enable = false
             }
         }
@@ -1153,7 +1153,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             itemId = 7949
         } else if productId == 612 {
             image = #imageLiteral(resourceName: "WASO_19SS_KV_ING_MOCHI_SQUARE")
-            //itemId = 7949
+            itemId = 8020
         } else if productId == 613 {
             image = #imageLiteral(resourceName: "WASO_19SS_kanten")
             //itemId = 7949
