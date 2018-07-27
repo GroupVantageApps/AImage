@@ -9,11 +9,6 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Reader-Bold.otf">
-            <string>Reader-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Life Style View Controller-->
         <scene sceneID="YC8-GB-4VK">
@@ -30,13 +25,19 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-GI-f3H">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Beauty tailors solutions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
                                         <rect key="frame" x="50" y="40" width="900" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="600" id="3vc-Hu-RaS"/>
+                                            <constraint firstAttribute="width" constant="900" id="3vc-Hu-RaS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="48"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Beauty tailors solutions">
+                                                <attributes>
+                                                    <font key="NSFont" size="48" name="Reader-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacing="5" paragraphSpacingBefore="7" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wJ-QY-g1s">
