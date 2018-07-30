@@ -99,6 +99,10 @@ class IdealSelectCell: BaseView {
         didSet {
             titleText = line?.target
             subTitleText = line?.name
+            if(line?.lineId == 17) {
+                titleText = line?.name
+                subTitleText = line?.target
+            }
         }
     }
 
