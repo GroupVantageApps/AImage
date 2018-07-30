@@ -208,10 +208,11 @@ class ProductDetailData: NSObject {
 
             var data = DataStructColorball()
             data.colorballId = colorballId
-            if colorBallTranslateEntity.nameLocal != "" {
-                data.name = colorBallTranslateEntity.nameLocal
-            } else {
-                data.name = colorBallEntity.name
+            data.name = colorBallEntity.name
+            if LanguageConfigure.countryId == 5 || LanguageConfigure.countryId == 6 || LanguageConfigure.countryId == 7 {
+                if colorBallTranslateEntity.nameLocal != "" {
+                    data.name = colorBallTranslateEntity.nameLocal
+                }
             }
             data.imageId = colorBallEntity.colorballImage!
             self.colorballs.append(data)
