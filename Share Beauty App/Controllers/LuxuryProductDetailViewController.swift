@@ -339,7 +339,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         fiveSecretBtn.frame = CGRect(x: self.mRightContentV.frame.width - 200, y: self.mRightContentV.frame.height - 50, width: 200, height: 35)
         // let lx2Cstv = LanguageConfigure.lx2csv
         fiveSecretBtn.setBackgroundImage(UIImage(named: "5secret_btn.png"), for: .normal)
-        fiveSecretBtn.setTitle("5Seacrets", for: .normal)
+        fiveSecretBtn.setTitle(AppItemTable.getNameByItemId(itemId: 8024), for: .normal)
         fiveSecretBtn.titleLabel?.font = UIFont(name: "ACaslonPro-Regular", size: 17)
         fiveSecretBtn.setTitleColor( UIColor(red255: 132, green255: 116, blue255: 65, alpha: 1), for: .normal)
         // fiveSecretBtn.titleLabel?.textAlignment = NSTextAlignment.center
