@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,20 +71,20 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ciQ-Tz-Ox4">
                                     <rect key="frame" x="40" y="3" width="255" height="96"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZIB-zZ-j3t">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZIB-zZ-j3t">
                                             <rect key="frame" x="0.0" y="0.0" width="255" height="0.0"/>
                                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="6" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="bvW-oP-OQX">
-                                            <rect key="frame" x="0.0" y="0.0" width="251" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="5" width="251" height="0.0"/>
                                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="lER-fl-Fe8">
-                                            <rect key="frame" x="0.0" y="5" width="225" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="10" width="225" height="0.0"/>
                                             <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                         <constraint firstAttribute="trailing" secondItem="ZIB-zZ-j3t" secondAttribute="trailing" id="sce-Rc-nDb"/>
                                         <constraint firstAttribute="trailing" secondItem="lER-fl-Fe8" secondAttribute="trailing" constant="30" id="ufn-MP-NIa"/>
                                         <constraint firstAttribute="trailing" secondItem="bvW-oP-OQX" secondAttribute="trailing" constant="4" id="vnJ-Fo-9o3"/>
-                                        <constraint firstItem="bvW-oP-OQX" firstAttribute="top" secondItem="ZIB-zZ-j3t" secondAttribute="bottom" id="wR0-pb-L7M"/>
+                                        <constraint firstItem="bvW-oP-OQX" firstAttribute="top" secondItem="ZIB-zZ-j3t" secondAttribute="bottom" constant="5" id="wR0-pb-L7M"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kz7-If-yoC" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
