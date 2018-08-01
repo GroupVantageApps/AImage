@@ -47,6 +47,7 @@ class CollectionProductView: UICollectionViewCell {
     @IBInspectable var strLine: String? {
         didSet {
             mLblLine.text = strLine
+            mLblLine.numberOfLines = 0
             if let name = strLine {
                 mLblLine.text = name
                 let color = UIColor(hex: "C8102E", alpha: 1.0)

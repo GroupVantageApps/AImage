@@ -32,7 +32,7 @@ struct Const {
     static let tagSignatureBeauty = 5
 
     //static let urlSchemeSignatureBeauty = "sfslx2://"
-     static let outAppInfoUTMMask = OutAppInfo(title: "UTMMask", url: "https://www.google.co.jp")
+     static let outAppInfoUTMMask = OutAppInfo(title: "UTM Mask", url: "https://shiseido:ultimune@shiseido-ultimune.kayac.cc/") //UTM MASK APP
     static let outAppInfoNavigator = OutAppInfo(title: "Navigator", url: "ssdcatalog://")
     static let outAppInfoUltimune = OutAppInfo(title: "Ultimune 2", url: "sad.sg.utm2://")
     static let outAppInfoUvInfo = OutAppInfo(title: "UVinfo", url: "ssduvi://")
