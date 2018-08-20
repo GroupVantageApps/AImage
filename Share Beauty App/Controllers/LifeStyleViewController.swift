@@ -558,6 +558,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     
                     let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
                     labe.font = UIFont(name: "Reader", size: 10)
+                    labe.numberOfLines = 0
                     labe.textAlignment = .center
                     
                     //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
