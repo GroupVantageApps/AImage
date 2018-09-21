@@ -1641,7 +1641,8 @@
 				26768D99202C28C6005BE606 /* images */,
 				26768D90202C28AD005BE606 /* font */,
 			);
-			path = UTM2.0;
+			name = UTM2.0;
+			path = Resources/UTM2.0;
 			sourceTree = "<group>";
 		};
 		26768D90202C28AD005BE606 /* font */ = {
@@ -1771,7 +1772,8 @@
 				419484752153A25300680A26 /* Waso_Cleanser */,
 				4142F97C2109950C00A40DA4 /* WASO */,
 			);
-			path = 19SS;
+			name = 19SS;
+			path = Resources/19SS;
 			sourceTree = "<group>";
 		};
 		4142F97C2109950C00A40DA4 /* WASO */ = {
@@ -2647,7 +2649,8 @@
 				DE2C2FFC20737A6100548627 /* SDP */,
 				DE2C2FFB20737A5B00548627 /* EEE */,
 			);
-			path = 18AW;
+			name = 18AW;
+			path = Resources/18AW;
 			sourceTree = "<group>";
 		};
 		DEC751F82073BD5C00A9FC1C /* WASO */ = {
@@ -2705,7 +2708,8 @@
 				DEED706F20A54D3B001027EB /* smbk_top_1.png */,
 				DEED707320A54D3C001027EB /* smbk_top_2.png */,
 			);
-			path = tmp_smbk;
+			name = tmp_smbk;
+			path = Resources/tmp_smbk;
 			sourceTree = "<group>";
 		};
 		E569567A1DF2F56000BE9308 /* Storyboards */ = {

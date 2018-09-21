@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Life Style Seventh Detail View Controller-->
+        <scene sceneID="Y3b-X9-ANb">
+            <objects>
+                <viewController storyboardIdentifier="LifeStyleSeventhDetailViewController" id="MiS-Tv-Wxe" customClass="LifeStyleSeventhDetailViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L2J-sS-qcx"/>
+                        <viewControllerLayoutGuide type="bottom" id="g6A-Gd-3pM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g9e-9y-bNe">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sD-wY-y0s">
+                                <rect key="frame" x="0.0" y="228" width="1024" height="430"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="430" id="RqE-TZ-sQr"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-St-FFg">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="GOl-Tn-CLN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ezi-St-FFg" secondAttribute="trailing" id="2Xq-ug-8Od"/>
+                            <constraint firstAttribute="trailing" secondItem="4sD-wY-y0s" secondAttribute="trailing" id="FgE-rp-H6V"/>
+                            <constraint firstItem="ezi-St-FFg" firstAttribute="leading" secondItem="g9e-9y-bNe" secondAttribute="leading" id="VIJ-Nc-Yd0"/>
+                            <constraint firstItem="4sD-wY-y0s" firstAttribute="top" secondItem="ezi-St-FFg" secondAttribute="bottom" constant="40" id="jiC-cC-82q"/>
+                            <constraint firstItem="4sD-wY-y0s" firstAttribute="leading" secondItem="g9e-9y-bNe" secondAttribute="leading" id="jlY-fB-2uN"/>
+                            <constraint firstItem="ezi-St-FFg" firstAttribute="top" secondItem="L2J-sS-qcx" secondAttribute="bottom" id="s9i-j4-ztA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mTopImageView" destination="ezi-St-FFg" id="IdR-ob-6i6"/>
+                        <outlet property="mVContent" destination="4sD-wY-y0s" id="D2s-Bf-njL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9Z-Uu-2jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7436.1328124999991" y="2245.3125"/>
+        </scene>
+    </scenes>
+</document>
