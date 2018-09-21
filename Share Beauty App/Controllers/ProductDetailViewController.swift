@@ -1002,25 +1002,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
     
-    private func setUtmMaskHowToUse() {
-        let usageV = UIView(frame: self.mVContent.frame)
-        let imageV = UIImageView(frame: usageV.frame)
-        imageV.image = UIImage(named: "Howto-wotxt.png")
-        usageV.addSubview(imageV)
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 90, width: 800, height: 0))
-        label.text = AppItemTable.getNameByItemId(itemId: 8016)
-        label.font = UIFont(name: "Reader",size: 21)
-        label.centerX = usageV.centerX
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.sizeToFit()
-        usageV.addSubview(label)
-        
-        self.mVContent.addSubview(usageV)
-        self.mVCurrentSelect = imageV
-    }
-    
     private func makeCategoryImages(_ imageIds: [Int]) {
         for subview in mVCategoryImageBase.subviews {
             subview.removeFromSuperview()
@@ -1297,7 +1278,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         } else if sender === mCategoryButtonHowToUse {
             if self.mIsUtmMask {
-                self.setUtmMaskHowToUse()
+                let nib = UINib(nibName: "UtmMaskUsageView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let usageView = views[0] as? UtmMaskUsageView else { return }
+                usageView.frame = mVContent.frame
+                usageView.setView()
+                mVContent.addSubview(usageView)
+                mVCurrentSelect = usageView
             }
         } else if sender === mCategoryButtonEfficacy {
             if productId == 511 {
@@ -1480,30 +1467,46 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 self.mVContent.addSubview(efficacyView1)
                 mVCurrentSelect = efficacyView1
                 efficacyView1.startAnimation()
-            } else if productId == 612 || productId == 613 {
+            } else if productId == 612 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
+            } else if productId == 613 {
+                let nib = UINib(nibName: "WasoCleanserEfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? WasoCleanserEfficacyView else { return }
+                efficacyView.frame = mVContent.frame
+                efficacyView.setView()
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
             }
             
         case mCategoryButtonDefend:
             if productId == 613 {
-                let width = self.mVContent.width
-                let height = self.mVContent.height
-                let scrollView = UIScrollView(frame: self.mVContent.frame)
-                scrollView.contentSize = CGSize(width: width, height: height * 3)
-                scrollView.bounces = false
-                scrollView.isPagingEnabled = true
-                
-                for pageNum in 0...2 {
-                    //let scrollPage = UIView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
-                    let imageV = UIImageView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
-                    imageV.image = UIImage(named: "waso_0\(pageNum + 1)s.png")
-                    imageV.contentMode = .scaleAspectFit
-                    //scrollPage.addSubview(imageV)
-                    scrollView.addSubview(imageV)
-                }
-                self.mVContent.addSubview(scrollView)
-                mVCurrentSelect = scrollView
+                let nib = UINib(nibName: "WasoCleanserScentView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let scentView = views[0] as? WasoCleanserScentView else { return }
+                scentView.frame = mVContent.frame
+                scentView.setView()
+                mVContent.addSubview(scentView)
+                mVCurrentSelect = scentView
+
+//                let width = self.mVContent.width
+//                let height = self.mVContent.height
+//                let scrollView = UIScrollView(frame: self.mVContent.frame)
+//                scrollView.contentSize = CGSize(width: width, height: height * 3)
+//                scrollView.bounces = false
+//                scrollView.isPagingEnabled = true
+//
+//                for pageNum in 0...2 {
+//                    //let scrollPage = UIView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
+//                    let imageV = UIImageView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
+//                    imageV.image = UIImage(named: "waso_0\(pageNum + 1)s.png")
+//                    imageV.contentMode = .scaleAspectFit
+//                    //scrollPage.addSubview(imageV)
+//                    scrollView.addSubview(imageV)
+//                }
+//                self.mVContent.addSubview(scrollView)
+//                mVCurrentSelect = scrollView
             }
             
         default:

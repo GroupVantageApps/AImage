@@ -1,18 +1,79 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UtmMaskUsageView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhP-3n-VgN">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="utm_mask_usage.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Z3-rj-4Wf">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use 1-2 times a week as the last step of your nighttime skincare routine" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-SK-6LW">
+                            <rect key="frame" x="30" y="30" width="500" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detach one piece from the tray along the perforated line and peel back the top seal" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-b5-jX3">
+                            <rect key="frame" x="260" y="125" width="620" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Q0-hRM">
+                            <rect key="frame" x="260" y="275" width="610" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Place the ball onto the palm of your hand and pump ULTIMUNE Power Infusing Concentrate N five times over it. After it dissolves, mix the formula and spread evenly over the face. The gel will blend into the skin while you are sleeping. (The ball can be dissolved in the tray also.)</string>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="mhP-3n-VgN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0iM-ID-MzC"/>
+                <constraint firstAttribute="trailing" secondItem="mhP-3n-VgN" secondAttribute="trailing" id="Ivb-4f-Sav"/>
+                <constraint firstAttribute="bottom" secondItem="mhP-3n-VgN" secondAttribute="bottom" id="dep-Wn-Bdl"/>
+                <constraint firstItem="mhP-3n-VgN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w91-cX-QI2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mTextOne" destination="XMu-b5-jX3" id="Kle-3v-pfX"/>
+                <outlet property="mTextTwo" destination="gik-Q0-hRM" id="tbw-f8-kRO"/>
+                <outlet property="mTitle" destination="SiP-SK-6LW" id="zoK-ET-qXI"/>
+                <outlet property="mUsageView" destination="mhP-3n-VgN" id="5Ky-Y6-y3I"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="utm_mask_usage.png" width="1423" height="725"/>
+    </resources>
 </document>
