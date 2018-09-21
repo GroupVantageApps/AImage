@@ -15,17 +15,13 @@ class UtmMaskEfficacyView: UIView {
     @IBOutlet weak var mGraphV: UIView!
     
     @IBOutlet weak var mTitleLabel: UILabel!
+    @IBOutlet weak var mGraphImageV: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     func setView() {
-        print("size before")
-        print(mScrollV.frame)
-        print(mScrollV.contentSize)
-        print(mContentView.frame)
-        print(mGraphV.frame)
         
         mScrollV.frame.size = CGSize(width: self.width, height: self.height)
         mScrollV.contentSize = CGSize(width: mScrollV.width, height: (mScrollV.height) * 4)
@@ -33,15 +29,7 @@ class UtmMaskEfficacyView: UIView {
 
         self.setPercentageContent()
         self.setGraphContent()
-
-//        mScrollV.layer.borderWidth = 1
-//        mContentView.layer.borderWidth = 1
-//        mContentView.layer.setBorderUIColor(UIColor.red)
-        print("size af")
-        print(mScrollV.frame)
-        print(mScrollV.contentSize)
-        print(mContentView.frame)
-        print(mGraphV.frame)
+        
     }
     
     private func setGraphContent() {

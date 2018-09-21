@@ -27,10 +27,7 @@
 		26768D8D202C1C57005BE606 /* LOTUS-GERM_cmyk.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D89202C1C56005BE606 /* LOTUS-GERM_cmyk.png */; };
 		26768D8E202C1C57005BE606 /* Ginko.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D8A202C1C57005BE606 /* Ginko.png */; };
 		26768D8F202C1C57005BE606 /* Rerilla.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D8B202C1C57005BE606 /* Rerilla.png */; };
-		26768D95202C28C0005BE606 /* Reader-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26768D91202C28BF005BE606 /* Reader-Bold.otf */; };
-		26768D96202C28C0005BE606 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26768D92202C28BF005BE606 /* Reader-Regular.otf */; };
 		26768D97202C28C0005BE606 /* HelveticaNeue.dfont in Resources */ = {isa = PBXBuildFile; fileRef = 26768D93202C28BF005BE606 /* HelveticaNeue.dfont */; };
-		26768D98202C28C0005BE606 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 26768D94202C28C0005BE606 /* Reader-Medium.otf */; };
 		26768DA4202C5FD6005BE606 /* graph_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D9C202C5FD4005BE606 /* graph_01.png */; };
 		26768DA5202C5FD6005BE606 /* graph_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D9D202C5FD4005BE606 /* graph_06.png */; };
 		26768DA6202C5FD6005BE606 /* graph_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 26768D9E202C5FD4005BE606 /* graph_07.png */; };
@@ -93,7 +90,6 @@
 		413BE54C20F75429006F08EC /* 5secret_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54B20F75429006F08EC /* 5secret_btn.png */; };
 		413BE54E20F75436006F08EC /* page_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54D20F75435006F08EC /* page_top.png */; };
 		413BE55020F7543C006F08EC /* Top_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54F20F7543B006F08EC /* Top_btn.png */; };
-		4141AF6720FDF10D00E3EC72 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
 		4142F9802109952500A40DA4 /* waso_06h.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97D2109952300A40DA4 /* waso_06h.png */; };
 		4142F9812109952500A40DA4 /* waso_07e.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97E2109952300A40DA4 /* waso_07e.png */; };
 		4142F9822109952500A40DA4 /* waso_08e.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97F2109952500A40DA4 /* waso_08e.png */; };
@@ -105,6 +101,13 @@
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
+		4171311F2154924B002A67D0 /* LifeStyleFifthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417131212154924B002A67D0 /* LifeStyleFifthDetailViewController.storyboard */; };
+		417131222154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417131242154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard */; };
+		4171312521549264002A67D0 /* LifeStyleSeventhDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4171312721549264002A67D0 /* LifeStyleSeventhDetailViewController.storyboard */; };
+		417131282154926F002A67D0 /* LifeStyleEighthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4171312A2154926F002A67D0 /* LifeStyleEighthDetailViewController.storyboard */; };
+		4171312B2154AFA8002A67D0 /* Reader-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0041202945E800BA61D6 /* Reader-Regular.otf */; };
+		4171312C2154AFB4002A67D0 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0040202945E700BA61D6 /* Reader-Medium.otf */; };
+		4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B11E8276C60009679D /* Reader-Bold.otf */; };
 		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
 		4181A4AF20AD2F6D00680857 /* CALayer+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */; };
 		419484652153944E00680A26 /* utm_mask_efficacy_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484642153944D00680A26 /* utm_mask_efficacy_graph.png */; };
@@ -170,7 +173,6 @@
 		807F43791EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F43781EF9933000C055C2 /* LifeStyleDefault2ProductsLayoutUnit.swift */; };
 		807F437B1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807F437A1EF9933F00C055C2 /* LifeStyleDefault1ProductsLayoutUnit.swift */; };
 		914F3FDA1F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png in Resources */ = {isa = PBXBuildFile; fileRef = 914F3FD91F4BDEFF00888FC6 /* efficacy_slider_circle_Emulsion.png */; };
-		91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0040202945E700BA61D6 /* Reader-Medium.otf */; };
 		ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB9EAC41FCCA3E700D22F9E /* EssentialEnergyEfficacy.swift */; };
 		B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B11F47682700176804 /* After_4_weeks.png */; };
 		B38F63BE1F47682700176804 /* Befor_use.png in Resources */ = {isa = PBXBuildFile; fileRef = B38F63B21F47682700176804 /* Befor_use.png */; };
@@ -343,7 +345,6 @@
 		C050C9AB1E8267450009679D /* utm_close_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C9681E8267450009679D /* utm_close_btn.png */; };
 		C050C9AC1E8267450009679D /* utm_line.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C9691E8267450009679D /* utm_line.png */; };
 		C050C9AD1E8267450009679D /* utm_square.png in Resources */ = {isa = PBXBuildFile; fileRef = C050C96A1E8267450009679D /* utm_square.png */; };
-		C050C9BA1E8276C60009679D /* Reader-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B11E8276C60009679D /* Reader-Bold.otf */; };
 		C050C9BB1E8276C60009679D /* Shiseido-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B21E8276C60009679D /* Shiseido-Bold.otf */; };
 		C050C9BC1E8276C60009679D /* Shiseido-Boldx.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B31E8276C60009679D /* Shiseido-Boldx.otf */; };
 		C050C9BD1E8276C60009679D /* Shiseido-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B41E8276C60009679D /* Shiseido-ExtraBold.otf */; };
@@ -449,17 +450,13 @@
 		C946DF821F3A1E500061A973 /* LifeStyleSeventhProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C946DF811F3A1E500061A973 /* LifeStyleSeventhProductView.swift */; };
 		C946DF841F3A1E6E0061A973 /* LifeStyleSeventhProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C946DF831F3A1E6E0061A973 /* LifeStyleSeventhProductView.xib */; };
 		C98EBF771F28F8FE00BEEC1F /* LifeStyleFifthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EBF761F28F8FE00BEEC1F /* LifeStyleFifthDetailViewController.swift */; };
-		C98EBF791F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98EBF781F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard */; };
 		C98EBF7B1F2967AB00BEEC1F /* LifeStyleFifthProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98EBF7A1F2967AB00BEEC1F /* LifeStyleFifthProductView.swift */; };
 		C98EBF7F1F29680E00BEEC1F /* LifeStyleFifthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98EBF7E1F29680E00BEEC1F /* LifeStyleFifthProductView.xib */; };
 		C9906DC21F2AACCD00414722 /* LifeStyleSixthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906DC11F2AACCD00414722 /* LifeStyleSixthDetailViewController.swift */; };
 		C9906DC41F2AADA200414722 /* LifeStyleSixthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9906DC31F2AADA200414722 /* LifeStyleSixthProductView.xib */; };
 		C9906DC61F2AADD100414722 /* LifeStyleSixProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906DC51F2AADD100414722 /* LifeStyleSixProductView.swift */; };
-		C9906DC81F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9906DC71F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard */; };
 		C9906DCA1F2BF46200414722 /* LifeStyleSeventhDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906DC91F2BF46200414722 /* LifeStyleSeventhDetailViewController.swift */; };
 		C9906DCC1F2BF48300414722 /* LifeStyleEighthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906DCB1F2BF48300414722 /* LifeStyleEighthDetailViewController.swift */; };
-		C9906DCE1F2BF65100414722 /* LifeStyleSeventhDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9906DCD1F2BF65100414722 /* LifeStyleSeventhDetailViewController.storyboard */; };
-		C9906DD01F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9906DCF1F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard */; };
 		C9906DD21F2CA6E300414722 /* LifeStyleEighthProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9906DD11F2CA6E300414722 /* LifeStyleEighthProductView.swift */; };
 		C9906DD41F2CA70C00414722 /* LifeStyleEighthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9906DD31F2CA70C00414722 /* LifeStyleEighthProductView.xib */; };
 		DE06F70D1F16450200EF2FE2 /* urban.png in Resources */ = {isa = PBXBuildFile; fileRef = DE06F6F51F16450200EF2FE2 /* urban.png */; };
@@ -886,6 +883,10 @@
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
+		417131202154924B002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleFifthDetailViewController.storyboard; sourceTree = "<group>"; };
+		417131232154925F002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleSixthDetailViewController.storyboard; sourceTree = "<group>"; };
+		4171312621549264002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleSeventhDetailViewController.storyboard; sourceTree = "<group>"; };
+		417131292154926F002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleEighthDetailViewController.storyboard; sourceTree = "<group>"; };
 		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
 		4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+UIColor.swift"; sourceTree = "<group>"; };
 		419484642153944D00680A26 /* utm_mask_efficacy_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_efficacy_graph.png; sourceTree = "<group>"; };
@@ -1249,17 +1250,13 @@
 		C946DF811F3A1E500061A973 /* LifeStyleSeventhProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleSeventhProductView.swift; sourceTree = "<group>"; };
 		C946DF831F3A1E6E0061A973 /* LifeStyleSeventhProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleSeventhProductView.xib; sourceTree = "<group>"; };
 		C98EBF761F28F8FE00BEEC1F /* LifeStyleFifthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFifthDetailViewController.swift; sourceTree = "<group>"; };
-		C98EBF781F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LifeStyleFifthDetailViewController.storyboard; sourceTree = "<group>"; };
 		C98EBF7A1F2967AB00BEEC1F /* LifeStyleFifthProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleFifthProductView.swift; sourceTree = "<group>"; };
 		C98EBF7E1F29680E00BEEC1F /* LifeStyleFifthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleFifthProductView.xib; sourceTree = "<group>"; };
 		C9906DC11F2AACCD00414722 /* LifeStyleSixthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleSixthDetailViewController.swift; sourceTree = "<group>"; };
 		C9906DC31F2AADA200414722 /* LifeStyleSixthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleSixthProductView.xib; sourceTree = "<group>"; };
 		C9906DC51F2AADD100414722 /* LifeStyleSixProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleSixProductView.swift; sourceTree = "<group>"; };
-		C9906DC71F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LifeStyleSixthDetailViewController.storyboard; sourceTree = "<group>"; };
 		C9906DC91F2BF46200414722 /* LifeStyleSeventhDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleSeventhDetailViewController.swift; sourceTree = "<group>"; };
 		C9906DCB1F2BF48300414722 /* LifeStyleEighthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleEighthDetailViewController.swift; sourceTree = "<group>"; };
-		C9906DCD1F2BF65100414722 /* LifeStyleSeventhDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LifeStyleSeventhDetailViewController.storyboard; sourceTree = "<group>"; };
-		C9906DCF1F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LifeStyleEighthDetailViewController.storyboard; sourceTree = "<group>"; };
 		C9906DD11F2CA6E300414722 /* LifeStyleEighthProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifeStyleEighthProductView.swift; sourceTree = "<group>"; };
 		C9906DD31F2CA70C00414722 /* LifeStyleEighthProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeStyleEighthProductView.xib; sourceTree = "<group>"; };
 		D687CE3BF92F9F9B3ACA7548 /* Pods-Share Beauty App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share Beauty App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App.release.xcconfig"; sourceTree = "<group>"; };
@@ -2273,6 +2270,14 @@
 		C091BA721D69809F0073FEDB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4194846A21539E6C00680A26 /* EEE */,
+				4194846621539DA000680A26 /* Waso */,
+				41E5B0D821534F4400513232 /* UtmMask */,
+				DE06F7261F16455C00EF2FE2 /* Gsc */,
+				DE2C904F1E9C66E600B5FC4A /* LX */,
+				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
+				4194846821539E2F00680A26 /* Ideal */,
+				4194846721539DF000680A26 /* LifeStyle */,
 				E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */,
 				E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */,
 				C94638D21F18CC45009D1480 /* LoadingView.swift */,
@@ -2287,21 +2292,16 @@
 				C00D555D1DC6146A008795D4 /* ColorballCollectionView.xib */,
 				C00D55571DC611A0008795D4 /* ColorballView.swift */,
 				C00D55581DC611A0008795D4 /* ColorballView.xib */,
-				C0DA9ADF1DB8CC7E00692058 /* DropDown */,
 				E5CCCE911E6A605A008A4481 /* EfficacyResultView.swift */,
 				E5CCCE8F1E6A6032008A4481 /* EfficacyResultView.xib */,
 				C091BA751D69809F0073FEDB /* HeaderView.swift */,
 				C091BA7C1D6982B00073FEDB /* HeaderView.xib */,
 				C08C93221E8A5B590096C98F /* ItemsDisplayedTableViewCell.swift */,
 				C0AFC9821D868BA60066B988 /* LanguageSettingTableViewCell.swift */,
-				4194846821539E2F00680A26 /* Ideal */,
-				4194846721539DF000680A26 /* LifeStyle */,
 				C023C2151E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.swift */,
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
 				C023C21A1E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.xib */,
-				DE06F7261F16455C00EF2FE2 /* Gsc */,
-				DE2C904F1E9C66E600B5FC4A /* LX */,
 				C02818AB1E6D449300D4DADA /* MakeupUsageView.swift */,
 				C02818AD1E6D44CA00D4DADA /* MakeupUsageView.xib */,
 				C0665AC71D6ACA0300B3D8E5 /* NavigationView.swift */,
@@ -2333,9 +2333,6 @@
 				C0BC62E51DB0BFE8005E73CE /* TroubleSelectView.xib */,
 				C03520E91DA0F36E005129B5 /* TroubleView.swift */,
 				C03520EB1DA0F3D1005129B5 /* TroubleView.xib */,
-				4194846A21539E6C00680A26 /* EEE */,
-				4194846621539DA000680A26 /* Waso */,
-				41E5B0D821534F4400513232 /* UtmMask */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2734,10 +2731,10 @@
 				E5E0D4011DF3D9960053373F /* LifeStyleFourthDetailViewController.storyboard */,
 				E5E0D3FB1DF3D6DF0053373F /* LifeStyleSecondDetailViewController.storyboard */,
 				E5E0D3F51DF3D45C0053373F /* LifeStyleThirdDetailViewController.storyboard */,
-				C98EBF781F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard */,
-				C9906DC71F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard */,
-				C9906DCD1F2BF65100414722 /* LifeStyleSeventhDetailViewController.storyboard */,
-				C9906DCF1F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard */,
+				417131212154924B002A67D0 /* LifeStyleFifthDetailViewController.storyboard */,
+				417131242154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard */,
+				4171312721549264002A67D0 /* LifeStyleSeventhDetailViewController.storyboard */,
+				4171312A2154926F002A67D0 /* LifeStyleEighthDetailViewController.storyboard */,
 				E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */,
 				E52891D51DF2FF2D007B92B2 /* LineDetailViewController.storyboard */,
 				E5E0D3E91DF3CDEB0053373F /* LineListViewController.storyboard */,
@@ -3079,7 +3076,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4141AF6720FDF10D00E3EC72 /* Reader-Regular.otf in Resources */,
+				4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */,
+				4171312C2154AFB4002A67D0 /* Reader-Medium.otf in Resources */,
+				4171312B2154AFA8002A67D0 /* Reader-Regular.otf in Resources */,
 				C050C9761E8267450009679D /* defend_bg.png in Resources */,
 				C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */,
 				DE2C90891E9C66E600B5FC4A /* LXIngredientView.xib in Resources */,
@@ -3139,7 +3138,7 @@
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
 				412BB87E20BF86F700FE22C9 /* complexion_39.png in Resources */,
 				2680EC202037E4FA005257B1 /* makeup_1.png in Resources */,
-				C98EBF791F28F97D00BEEC1F /* LifeStyleFifthDetailViewController.storyboard in Resources */,
+				4171311F2154924B002A67D0 /* LifeStyleFifthDetailViewController.storyboard in Resources */,
 				DEBCF6C220746F25001762A9 /* WASOPeelFirstEfficacyResultView.xib in Resources */,
 				C050C9721E8267450009679D /* d_block_3_5m.png in Resources */,
 				C03520D61D9E8825005129B5 /* IdealResultCollectionView.xib in Resources */,
@@ -3150,7 +3149,6 @@
 				26768DB6202C5FE1005BE606 /* page_02.png in Resources */,
 				C050C97F1E8267450009679D /* efficacy_slider_full.png in Resources */,
 				DEED707A20A54D3D001027EB /* smbk_texture_3.png in Resources */,
-				26768D95202C28C0005BE606 /* Reader-Bold.otf in Resources */,
 				26768D86202C1C4E005BE606 /* Rose-Water_image.png in Resources */,
 				C9906DC41F2AADA200414722 /* LifeStyleSixthProductView.xib in Resources */,
 				C050C99F1E8267450009679D /* t_gray_graph.png in Resources */,
@@ -3213,7 +3211,7 @@
 				DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */,
 				41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */,
 				26768D8C202C1C57005BE606 /* Tyme.png in Resources */,
-				C9906DD01F2BF66200414722 /* LifeStyleEighthDetailViewController.storyboard in Resources */,
+				417131282154926F002A67D0 /* LifeStyleEighthDetailViewController.storyboard in Resources */,
 				26768DA8202C5FD6005BE606 /* point_01.png in Resources */,
 				DE2C91821E9C682500B5FC4A /* graphPoint_up.png in Resources */,
 				B38F63C81F47682700176804 /* MoisturizingCream02_before.png in Resources */,
@@ -3253,7 +3251,6 @@
 				DE325B11207741BF00B660C9 /* lx_img_tmp.png in Resources */,
 				DEE83E6B1EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib in Resources */,
 				DE06F71C1F16450200EF2FE2 /* active_play.png in Resources */,
-				26768D96202C28C0005BE606 /* Reader-Regular.otf in Resources */,
 				6E4ABB3720AA6CAF000355D2 /* makeup_01.png in Resources */,
 				E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */,
 				DE2C300420737AB200548627 /* eee_7089.png in Resources */,
@@ -3510,7 +3507,7 @@
 				26768DB9202C5FE1005BE606 /* enhanceGraph_04.png in Resources */,
 				2680EC252037E4FA005257B1 /* makeup_4.png in Resources */,
 				C050C9AA1E8267450009679D /* triangle_image.png in Resources */,
-				C9906DC81F2AAE2500414722 /* LifeStyleSixthDetailViewController.storyboard in Resources */,
+				417131222154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard in Resources */,
 				26AD5D9020232545002A2076 /* nsbutton_2.png in Resources */,
 				26768D80202C1C3B005BE606 /* Reishi_2_cmyk.png in Resources */,
 				C050C90F1E82619F0009679D /* ss_purple.png in Resources */,
@@ -3537,9 +3534,7 @@
 				C050C9951E8267450009679D /* t_bg_eye.png in Resources */,
 				DE2C91321E9C681100B5FC4A /* ItemsDisplayedViewController.storyboard in Resources */,
 				C0CDEB0C1D98076C00420667 /* UtmFeaturesView.xib in Resources */,
-				26768D98202C28C0005BE606 /* Reader-Medium.otf in Resources */,
-				C9906DCE1F2BF65100414722 /* LifeStyleSeventhDetailViewController.storyboard in Resources */,
-				C050C9BA1E8276C60009679D /* Reader-Bold.otf in Resources */,
+				4171312521549264002A67D0 /* LifeStyleSeventhDetailViewController.storyboard in Resources */,
 				B38F63C71F47682700176804 /* MoisturizingCream02_after.png in Resources */,
 				DE325B192077469000B660C9 /* lx_b01.png in Resources */,
 				C050C96D1E8267450009679D /* d_3_5.png in Resources */,
@@ -3571,7 +3566,6 @@
 				DE06F70D1F16450200EF2FE2 /* urban.png in Resources */,
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
-				91FF0042202945E800BA61D6 /* Reader-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4008,6 +4002,38 @@
 				338DE5711FBC4D2700E353CA /* Base */,
 			);
 			name = AboutShiseidoImageViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		417131212154924B002A67D0 /* LifeStyleFifthDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				417131202154924B002A67D0 /* Base */,
+			);
+			name = LifeStyleFifthDetailViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		417131242154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				417131232154925F002A67D0 /* Base */,
+			);
+			name = LifeStyleSixthDetailViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		4171312721549264002A67D0 /* LifeStyleSeventhDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4171312621549264002A67D0 /* Base */,
+			);
+			name = LifeStyleSeventhDetailViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		4171312A2154926F002A67D0 /* LifeStyleEighthDetailViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				417131292154926F002A67D0 /* Base */,
+			);
+			name = LifeStyleEighthDetailViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		800892211EA26E3A007C592A /* AboutShiseidoBrandViewController.storyboard */ = {

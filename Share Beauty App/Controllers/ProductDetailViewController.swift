@@ -334,8 +334,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setEnhanceView()
             self.setImucalmView()
             
-            print(mVContent.size)
-            
         }
         
     }
@@ -1489,7 +1487,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 scentView.setView()
                 mVContent.addSubview(scentView)
                 mVCurrentSelect = scentView
-
+                
 //                let width = self.mVContent.width
 //                let height = self.mVContent.height
 //                let scrollView = UIScrollView(frame: self.mVContent.frame)
@@ -1831,8 +1829,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     // MARK: - CategoryButtonDelegate
     func didTap(_ sender: CategoryButton) {
-        print(mVContent.size)
-        
+
         if sender === mBtnCurrentSelect {
             return
         }

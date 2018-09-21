@@ -30,30 +30,85 @@
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use 1-2 times a week as the last step of your nighttime skincare routine" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-SK-6LW">
-                            <rect key="frame" x="30" y="30" width="500" height="70"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use 1-2 times a week as the last step of your nighttime skincare routine" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-SK-6LW">
+                            <rect key="frame" x="30" y="30" width="500" height="46"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="500" id="G8m-D6-jbt"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detach one piece from the tray along the perforated line and peel back the top seal" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-b5-jX3">
-                            <rect key="frame" x="260" y="125" width="620" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-jg-xXD">
+                            <rect key="frame" x="135" y="121" width="90" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="pAe-xH-99J"/>
+                                <constraint firstAttribute="height" constant="75" id="uYT-vl-Tqc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="75"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlk-eg-7hv">
+                            <rect key="frame" x="135" y="276" width="90" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="SU4-6I-ucq"/>
+                                <constraint firstAttribute="height" constant="75" id="Sf0-CP-ba8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="75"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detach one piece from the tray along the perforated line and peel back the top seal" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-b5-jX3">
+                            <rect key="frame" x="260" y="121" width="613" height="16"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Q0-hRM">
-                            <rect key="frame" x="260" y="275" width="610" height="100"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Q0-hRM">
+                            <rect key="frame" x="260" y="275" width="610" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="610" id="Mdf-Yn-pgS"/>
+                            </constraints>
                             <string key="text">Place the ball onto the palm of your hand and pump ULTIMUNE Power Infusing Concentrate N five times over it. After it dissolves, mix the formula and spread evenly over the face. The gel will blend into the skin while you are sleeping. (The ball can be dissolved in the tray also.)</string>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpR-T7-h6a">
+                            <rect key="frame" x="260" y="152" width="240" height="100"/>
+                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="FxQ-5f-fhO"/>
+                                <constraint firstAttribute="height" constant="100" id="JdM-iR-OYE"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0q-od-VuU">
+                            <rect key="frame" x="260" y="354" width="470" height="140"/>
+                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="470" id="euY-Rc-F9x"/>
+                                <constraint firstAttribute="height" constant="140" id="otd-4C-4Kk"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gik-Q0-hRM" firstAttribute="top" secondItem="XMu-b5-jX3" secondAttribute="bottom" constant="138" id="5c1-bu-ayy"/>
+                        <constraint firstItem="Dhf-jg-xXD" firstAttribute="top" secondItem="SiP-SK-6LW" secondAttribute="bottom" constant="45" id="Buj-bM-eFL"/>
+                        <constraint firstItem="WpR-T7-h6a" firstAttribute="top" secondItem="XMu-b5-jX3" secondAttribute="bottom" constant="15" id="Dby-rf-qRY"/>
+                        <constraint firstItem="SiP-SK-6LW" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="30" id="IKd-vB-9cz"/>
+                        <constraint firstItem="WpR-T7-h6a" firstAttribute="leading" secondItem="Dhf-jg-xXD" secondAttribute="trailing" constant="35" id="ODY-cR-kj7"/>
+                        <constraint firstItem="gik-Q0-hRM" firstAttribute="leading" secondItem="wlk-eg-7hv" secondAttribute="trailing" constant="35" id="QGg-SH-7q1"/>
+                        <constraint firstItem="Dhf-jg-xXD" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="135" id="Rgk-Ck-a11"/>
+                        <constraint firstItem="f0q-od-VuU" firstAttribute="top" secondItem="gik-Q0-hRM" secondAttribute="bottom" constant="15" id="bOW-Od-4fO"/>
+                        <constraint firstItem="wlk-eg-7hv" firstAttribute="top" secondItem="Dhf-jg-xXD" secondAttribute="bottom" constant="80" id="bwB-eL-ijD"/>
+                        <constraint firstItem="wlk-eg-7hv" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="135" id="dg1-hM-q2I"/>
+                        <constraint firstItem="f0q-od-VuU" firstAttribute="leading" secondItem="wlk-eg-7hv" secondAttribute="trailing" constant="35" id="fAP-cI-jJh"/>
+                        <constraint firstItem="SiP-SK-6LW" firstAttribute="top" secondItem="mhP-3n-VgN" secondAttribute="top" constant="30" id="ig1-F3-yrc"/>
+                        <constraint firstItem="XMu-b5-jX3" firstAttribute="leading" secondItem="Dhf-jg-xXD" secondAttribute="trailing" constant="35" id="p3A-zg-pde"/>
+                        <constraint firstItem="XMu-b5-jX3" firstAttribute="top" secondItem="SiP-SK-6LW" secondAttribute="bottom" constant="45" id="tU7-Iy-wiL"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
