@@ -7,37 +7,38 @@
 //
 
 import Foundation
+import APNGKit
 
 class WasoCleanserEfficacyView: UIView {
     
     @IBOutlet weak var mEfficacyView: UIView!
+    @IBOutlet weak var mApngImageV: APNGImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.setView()
+        mApngImageV.image = APNGImage(named: "cleanser_efficacy.png")
+    }
+
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        mApngImageV.startAnimating()
     }
     
     func setView() {
         
-        let circleW = mEfficacyView.width / 4
-        let margin = (circleW - 160) / 2
-        
         for index in 0...3 {
-            let circleImageV: UIImageView = UIImageView(frame: CGRect(x: circleW * CGFloat(index) + margin, y: 130, width: 160, height: 160))
             
-            let image: UIImage = UIImage(named: "waso_87.png")!
-            circleImageV.image = image
-            circleImageV.contentMode = UIViewContentMode.scaleAspectFit
-            
-            let circleLabel: UILabel = UILabel(frame: CGRect(x: 0, y: circleImageV.bottom + 15, width: circleImageV.width + 30, height: 0))
+            let circleLabel: UILabel = UILabel(frame: CGRect(x: 70 + 250 * index, y: 350, width: 150, height: 0))
             circleLabel.text = "My skin became silky-smooth\(index)."
             circleLabel.font = UIFont(name: "Reader-Medium", size: 17)
             circleLabel.textAlignment = .center
             circleLabel.numberOfLines = 0
             circleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleLabel.sizeToFit()
-            circleLabel.centerX = circleImageV.centerX
             
-            mEfficacyView.addSubview(circleImageV)
             mEfficacyView.addSubview(circleLabel)
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import APNGKit
 
 class WasoMochiEfficacyView: UIView {
     
@@ -16,8 +17,8 @@ class WasoMochiEfficacyView: UIView {
     @IBOutlet weak var mViewPageOne: UIView!
     @IBOutlet weak var mViewPageTwo: UIView!
     
-    @IBOutlet weak var mPageOneContentV: UIView!
     @IBOutlet weak var mPageOneCopyLabel: UILabel!
+    @IBOutlet weak var mApngImageV: APNGImageView!
     
     @IBOutlet weak var mPageTwoContentV: UIView!
     @IBOutlet weak var mPageTwoTitle: UILabel!
@@ -25,6 +26,15 @@ class WasoMochiEfficacyView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.setView()
+        mApngImageV.image = APNGImage(named: "mochi_efficacy_01.png")
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        mApngImageV.startAnimating()
     }
     
     func setView() {
@@ -37,29 +47,16 @@ class WasoMochiEfficacyView: UIView {
     func setPageOne() {
         //mPageOneCopyLabel.text = AppItemTable.getNameByItemId(itemId: 0000)
         for index in 0...2 {
-            let circleImageV: UIImageView = UIImageView(frame: CGRect(x: 15, y: 0, width: 180, height: 180))
             
-            if index == 1 {
-                circleImageV.centerX = mPageOneContentV.width / 2
-            } else if index == 2 {
-                circleImageV.origin.x = mPageOneContentV.width - circleImageV.width - 15
-            }
-            
-            let image: UIImage = UIImage(named: "waso_87.png")!
-            circleImageV.image = image
-            circleImageV.contentMode = UIViewContentMode.scaleAspectFit
-            
-            let circleLabel: UILabel = UILabel(frame: CGRect(x: 0, y: circleImageV.bottom + 15, width: circleImageV.width + 30, height: 0))
+            let circleLabel: UILabel = UILabel(frame: CGRect(x: 195 + 250 * index, y: 350, width: 150, height: 0))
             circleLabel.text = "My skin became silky-smooth\(index)."
             circleLabel.font = UIFont(name: "Reader-Medium", size: 17)
             circleLabel.textAlignment = .center
             circleLabel.numberOfLines = 0
             circleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleLabel.sizeToFit()
-            circleLabel.centerX = circleImageV.centerX
             
-            mPageOneContentV.addSubview(circleImageV)
-            mPageOneContentV.addSubview(circleLabel)
+            mViewPageOne.addSubview(circleLabel)
         }
     }
     

@@ -1380,7 +1380,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let views = nib.instantiate(withOwner: self, options: nil)
                 guard let techView = views[0] as? WasoMochiTechView else { return }
                 techView.frame = mVContent.frame
-                techView.setView()
                 mVContent.addSubview(techView)
                 mVCurrentSelect = techView
             }
@@ -1444,7 +1443,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let views = nib.instantiate(withOwner: self, options: nil)
                 guard let efficacyView = views[0] as? WasoMochiEfficacyView else { return }
                 efficacyView.frame = mVContent.frame
-                efficacyView.setView()
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
                 
@@ -1453,7 +1451,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let views = nib.instantiate(withOwner: self, options: nil)
                 guard let efficacyView = views[0] as? WasoCleanserEfficacyView else { return }
                 efficacyView.frame = mVContent.frame
-                efficacyView.setView()
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
             }
@@ -1464,7 +1461,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let views = nib.instantiate(withOwner: self, options: nil)
                 guard let scentView = views[0] as? WasoCleanserScentView else { return }
                 scentView.frame = mVContent.frame
-                scentView.setView()
                 mVContent.addSubview(scentView)
                 mVCurrentSelect = scentView
             }

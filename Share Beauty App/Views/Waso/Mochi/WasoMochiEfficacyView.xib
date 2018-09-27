@@ -35,7 +35,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-rP-Jj0">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mochi_efficacy_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-Uu-l3h">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mochi_efficacy_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-Uu-l3h" customClass="APNGImageView" customModule="APNGKit">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -48,20 +48,9 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YL-Kg-8b6">
-                                            <rect key="frame" x="162" y="106" width="700" height="300"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="300" id="MOD-mB-bxL"/>
-                                                <constraint firstAttribute="width" constant="700" id="wSm-Eg-Ejk"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7YL-Kg-8b6" firstAttribute="leading" secondItem="7ou-rP-Jj0" secondAttribute="leading" constant="162" id="IbX-KV-6rV"/>
                                         <constraint firstAttribute="height" constant="513" id="LmR-FL-CUp"/>
-                                        <constraint firstAttribute="bottom" secondItem="7YL-Kg-8b6" secondAttribute="bottom" constant="107" id="SsL-Wj-xKc"/>
-                                        <constraint firstItem="7YL-Kg-8b6" firstAttribute="top" secondItem="7ou-rP-Jj0" secondAttribute="top" constant="106" id="YeA-Xv-6XJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="7YL-Kg-8b6" secondAttribute="trailing" constant="162" id="aVp-6A-fRG"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-q5-Fbx">
@@ -72,13 +61,13 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficacy Results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Ay-s6a">
-                                            <rect key="frame" x="30" y="30" width="164" height="27"/>
+                                            <rect key="frame" x="30" y="30" width="178" height="23"/>
                                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The mask enhances the moisturizing effect of the skincare that follow." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0M2-d9-B96">
-                                            <rect key="frame" x="30" y="92" width="550" height="19"/>
+                                            <rect key="frame" x="30" y="88" width="550" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="550" id="q8g-Fk-KbL"/>
                                             </constraints>
@@ -87,7 +76,7 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP1-OQ-C3F">
-                                            <rect key="frame" x="200" y="141" width="624" height="352"/>
+                                            <rect key="frame" x="200" y="134" width="624" height="359"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-ig-ZXW">
@@ -170,8 +159,8 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="mApngImageV" destination="u9D-Uu-l3h" id="2fq-qG-Bcc"/>
                 <outlet property="mContentView" destination="6f6-HS-9XG" id="pUh-9S-CYa"/>
-                <outlet property="mPageOneContentV" destination="7YL-Kg-8b6" id="J0M-DR-fyh"/>
                 <outlet property="mPageOneCopyLabel" destination="dSt-yB-bph" id="6LC-Yf-ZWn"/>
                 <outlet property="mPageTwoContentV" destination="NP1-OQ-C3F" id="eRU-2U-kdp"/>
                 <outlet property="mPageTwoSubTitle" destination="0M2-d9-B96" id="Yx4-rt-mjM"/>
@@ -183,7 +172,7 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
         </view>
     </objects>
     <resources>
-        <image name="mochi_efficacy_01.png" width="1423" height="725"/>
+        <image name="mochi_efficacy_01.png" width="2048" height="1536"/>
         <image name="mochi_efficacy_02.png" width="1892" height="964"/>
     </resources>
 </document>

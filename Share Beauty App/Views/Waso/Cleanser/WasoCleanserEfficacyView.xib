@@ -18,7 +18,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-VD-8yM">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cleanser_efficacy.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5z-cz-yGH">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cleanser_efficacy.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5z-cz-yGH" customClass="APNGImageView" customModule="APNGKit">
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -34,12 +34,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="mApngImageV" destination="h5z-cz-yGH" id="prc-kJ-ZWf"/>
                 <outlet property="mEfficacyView" destination="DVX-VD-8yM" id="4i1-iY-tDk"/>
             </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="cleanser_efficacy.png" width="1423" height="725"/>
+        <image name="cleanser_efficacy.png" width="2048" height="1536"/>
     </resources>
 </document>

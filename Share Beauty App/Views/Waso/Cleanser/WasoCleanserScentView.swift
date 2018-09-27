@@ -15,6 +15,8 @@ class WasoCleanserScentView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.setView()
     }
     
     func setView() {

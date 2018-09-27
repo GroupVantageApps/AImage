@@ -18,6 +18,8 @@ class WasoMochiTechView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.setView()
     }
     
     func setView() {
