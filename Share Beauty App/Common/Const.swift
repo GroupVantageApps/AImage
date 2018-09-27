@@ -111,6 +111,9 @@ struct Const {
 
     static let idealBeautyTypeProduct = 1
     static let idealBeautyTypeLine = 2
+    
+    // LatestMoisturizer
+    static let latestMoisturizerList = [602, 614, 604, 605, 606, 607, 608]
 
     //BP
     static let bpMoisturizerAmericas = [345, 340, 468, 127,

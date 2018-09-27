@@ -104,6 +104,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsSDP: Bool = false
     var mIsEEE: Bool = false
     var mIsUtmMask: Bool = false
+    var mIsLatestMoisturizer: Bool = false
 
     var product: ProductDetailData!
     var relationProducts: [ProductData] = []
@@ -359,48 +360,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
 		// 初期特殊遷移
 		self.initialTransition()
-        
-        // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
-        // if LanguageConfigure.languageId == 19 {
-        if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
-            self.mIsEE = true
-            mCategoryButtonEfficacy.enabled = true
-        } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
-            self.mIsSDP = true
-            mCategoryButtonEfficacy.enabled = true
-            self.setSDPEfficacySCV()
-        } else if productId == 1 || productId == 2 {
-            
-            mCategoryButtonEfficacy.enabled = false
-        } else if productId == 564 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonTechnologies.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.mIsEEE = true
-            self.setEEESCV()
-        } else if productId == 570 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.setWasoEfficacySCV()
-        } else if productId == 571 {
-            mCategoryButtonEfficacy.enabled = true
-            self.setWasoEfficacySCV()
-        } else if productId == 612 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            mCategoryButtonTechnologies.enabled = true
-        } else if productId == 613 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonDefend.enabled = true
-            mCategoryButtonDefend.title = "Scent"
-        } else if productId == 610 || productId == 611 {
-            mCategoryButtonEfficacy.enabled = true
-            self.setGSCEfficacySCV()
-        } else if productId == 601 {
-            mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
-            self.mIsUtmMask = true
-        }
 
     }
     
@@ -1136,6 +1095,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mIsSunCarePerfectUv = Const.productIdSunCarePerfectUv.contains(self.productId)
         mIsMakeUp = Const.productIdMakeUp == self.productId
         mIsWaso = Const.lineIdWASO == self.product.lineId
+        mIsLatestMoisturizer = Const.latestMoisturizerList.contains(self.productId)
     }
 
     private func setSpecialMenu() {
@@ -1161,6 +1121,49 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonDefend.enabled = true
+        }
+        // 言語が英語の場合、特定(553,556)のproductIdに効果画面を追加
+        // if LanguageConfigure.languageId == 19 {
+        if productId == 553 || productId == 556 || productId == 554 || productId == 555 {
+            self.mIsEE = true
+            mCategoryButtonEfficacy.enabled = true
+        } else if productId == 565 || productId == 566 || productId == 567 || productId == 568 || productId == 569 {
+            self.mIsSDP = true
+            mCategoryButtonEfficacy.enabled = true
+            self.setSDPEfficacySCV()
+        } else if productId == 1 || productId == 2 {
+            
+            mCategoryButtonEfficacy.enabled = false
+        } else if productId == 564 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsEEE = true
+            self.setEEESCV()
+        } else if productId == 570 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.setWasoEfficacySCV()
+        } else if productId == 571 {
+            mCategoryButtonEfficacy.enabled = true
+            self.setWasoEfficacySCV()
+        } else if productId == 612 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            mCategoryButtonTechnologies.enabled = true
+        } else if productId == 613 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
+            mCategoryButtonDefend.title = "Scent"
+        } else if productId == 610 || productId == 611 {
+            mCategoryButtonEfficacy.enabled = true
+            self.setGSCEfficacySCV()
+        } else if productId == 601 {
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonHowToUse.enabled = true
+            self.mIsUtmMask = true
+        } else if mIsLatestMoisturizer {
+            mCategoryButtonTechnologies.enabled = true
         }
 //        } else if productId == 588{
 //            mCategoryButtonTechnologies.enabled = true
@@ -1531,16 +1534,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
     }
+    
     private func showInfo(_ sender: CategoryButton) {
-        mVContent.isHidden = true
-        mVCurrentSelect?.removeFromSuperview()
-        mVCurrentSelect = nil
-        if sender === mCategoryButtonFeatures {
-            mVCategoryImage.isHidden = true
-            return
-        }
-        mVCategoryImage.isHidden = false
-        
+ 
         if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
             mVCurrentSelect?.removeFromSuperview()
@@ -1562,22 +1558,44 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
         
-        if sender === mCategoryButtonTechnologies {
-            makeCategoryImages(product.technologyImage)
-        } else if sender === mCategoryButtonHowToUse {
+        mVCurrentSelect?.removeFromSuperview()
+        mVContent.isHidden = false
+        
+        switch sender {
+        case mCategoryButtonFeatures:
+            mVContent.isHidden = true
+            mVCurrentSelect = nil
+            return
+            
+        case mCategoryButtonTechnologies:
+            if mIsLatestMoisturizer {
+                let nib = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                
+                guard let techView = views[0] as? LatestMoisturizerTechView else { return }
+                techView.frame = mVContent.frame
+                techView.setView(productId: self.productId)
+                mVContent.addSubview(techView)
+                mVCurrentSelect = techView
+            } else {
+                makeCategoryImages(product.technologyImage)
+            }
+        case mCategoryButtonHowToUse:
             setMakeUpHowToUse(product.usageImage)
-//            makeCategoryImages(product.usageImage)
-        } else if sender === mCategoryButtonEfficacy {
+        //            makeCategoryImages(product.usageImage)
+            
+        case mCategoryButtonEfficacy:
             makeCategoryImages(product.effectImage)
             if productId == 610 || productId == 611 {
                 mVContent.isHidden = false
                 mVContent.addSubview(self.efficacyGSCScrollV)
                 mVCurrentSelect = self.efficacyGSCScrollV
             }
-        } else if sender === mCategoryButtonDefend {
-			if product.makeupLook {
-				makeCategoryImages(product.makeupLookImages)
-			}
+            
+        case mCategoryButtonDefend:
+            if product.makeupLook {
+                makeCategoryImages(product.makeupLookImages)
+            }
             let idArray = [28,359,588,553,554,555,556,564,593,594]
             if idArray.contains(productId){
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
@@ -1593,6 +1611,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect?.removeFromSuperview()
                 mVCurrentSelect = nil
             }
+            
+        default:
+            print("error: CategoryButton in not found")
+            exit(1)
         }
     }
 
