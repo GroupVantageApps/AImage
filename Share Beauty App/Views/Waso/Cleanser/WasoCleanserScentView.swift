@@ -26,7 +26,7 @@ class WasoCleanserScentView: UIView {
 
             // 背景
             let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-            let image: UIImage = UIImage(named: "waso_scent_0\(page + 1).png")!
+            let image: UIImage = UIImage(named: "cleanser_scent_0\(page + 1).png")!
             imageView.image = image
             pageView.addSubview(imageView)
             

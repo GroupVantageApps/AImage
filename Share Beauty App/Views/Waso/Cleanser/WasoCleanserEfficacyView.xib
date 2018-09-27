@@ -8,17 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Reader-Bold.otf">
-            <string>Reader-Bold</string>
-        </array>
-        <array key="Reader-Medium.otf">
-            <string>Reader-Medium</string>
-        </array>
-        <array key="Reader-Regular.otf">
-            <string>Reader</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -26,231 +15,31 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpl-3b-46J">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-VD-8yM">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-Nw-bw7">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="2052"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0o-4n-I3N">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_efficacy_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="1yn-Ku-pTY">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOg-8I-Df9">
-                                            <rect key="frame" x="29" y="450" width="320" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Test county: France
-Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, ages 20 y.o. to 30 y.o.</string>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="13"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-Nj-POf">
-                                            <rect key="frame" x="162" y="106" width="700" height="300"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="700" id="11Q-TA-xsI"/>
-                                                <constraint firstAttribute="height" constant="300" id="Eoe-dQ-4od"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="cGM-Nj-POf" secondAttribute="bottom" constant="107" id="3k9-a7-x0N"/>
-                                        <constraint firstAttribute="trailing" secondItem="cGM-Nj-POf" secondAttribute="trailing" constant="162" id="Fxq-eo-XJ1"/>
-                                        <constraint firstItem="cGM-Nj-POf" firstAttribute="top" secondItem="B0o-4n-I3N" secondAttribute="top" constant="106" id="JeG-zZ-hN9"/>
-                                        <constraint firstItem="cGM-Nj-POf" firstAttribute="leading" secondItem="B0o-4n-I3N" secondAttribute="leading" constant="162" id="ZaU-8z-heP"/>
-                                        <constraint firstAttribute="height" constant="513" id="bYC-3v-ice"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-a2-z9y">
-                                    <rect key="frame" x="0.0" y="513" width="1024" height="513"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_efficacy_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-Jr-AZB">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficacy Results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-Os-g5O">
-                                            <rect key="frame" x="30" y="30" width="178" height="23"/>
-                                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The mask enhances the moisturizing effect of the skincare that follow." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ng-Cd-kuH">
-                                            <rect key="frame" x="30" y="88" width="550" height="16"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="550" id="lTg-pN-SYd"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNy-ov-fcP">
-                                            <rect key="frame" x="200" y="134" width="624" height="359"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEa-JD-4yt">
-                                            <rect key="frame" x="291" y="439" width="112" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizer" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-mo-TBw">
-                                            <rect key="frame" x="291" y="142" width="141" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 minutes after application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rE-YH-EMz">
-                                            <rect key="frame" x="456" y="439" width="150" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 hour after application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-YY-1XK">
-                                            <rect key="frame" x="615" y="439" width="150" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizer + Mask" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-K7-hQd">
-                                            <rect key="frame" x="291" y="166" width="141" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="aKO-Os-g5O" firstAttribute="top" secondItem="Jbo-a2-z9y" secondAttribute="top" constant="30" id="6Rk-Jo-XMd"/>
-                                        <constraint firstAttribute="height" constant="513" id="DGo-DK-l3d"/>
-                                        <constraint firstItem="mNy-ov-fcP" firstAttribute="top" secondItem="5ng-Cd-kuH" secondAttribute="bottom" constant="30" id="Kqw-ZU-4lR"/>
-                                        <constraint firstAttribute="trailing" secondItem="mNy-ov-fcP" secondAttribute="trailing" constant="200" id="Tau-Nd-Z7D"/>
-                                        <constraint firstItem="mNy-ov-fcP" firstAttribute="leading" secondItem="Jbo-a2-z9y" secondAttribute="leading" constant="200" id="Wer-Km-YMa"/>
-                                        <constraint firstItem="5ng-Cd-kuH" firstAttribute="top" secondItem="aKO-Os-g5O" secondAttribute="bottom" constant="35" id="a7A-mv-Jrm"/>
-                                        <constraint firstItem="5ng-Cd-kuH" firstAttribute="leading" secondItem="Jbo-a2-z9y" secondAttribute="leading" constant="30" id="q0p-Aj-bzv"/>
-                                        <constraint firstItem="aKO-Os-g5O" firstAttribute="leading" secondItem="Jbo-a2-z9y" secondAttribute="leading" constant="30" id="sY5-OW-VYJ"/>
-                                        <constraint firstAttribute="bottom" secondItem="mNy-ov-fcP" secondAttribute="bottom" constant="20" id="zCg-Xg-vlh"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xw-i1-X0x">
-                                    <rect key="frame" x="0.0" y="1026" width="1024" height="513"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_efficacy_03.png" translatesAutoresizingMaskIntoConstraints="NO" id="eXi-1N-3YK">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficacy Results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1T-TU-lBX">
-                                            <rect key="frame" x="30" y="30" width="178" height="23"/>
-                                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The mochi mask’s sustained warming effect relaxes the skin and mind. It gives a glowing, healthy-looking complexion" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXT-Cb-fYm">
-                                            <rect key="frame" x="30" y="88" width="550" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="550" id="um5-Gf-thU"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEn-cX-qSc">
-                                            <rect key="frame" x="200" y="130" width="624" height="363"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="513" id="16F-aj-Ro0"/>
-                                        <constraint firstItem="X1T-TU-lBX" firstAttribute="top" secondItem="0Xw-i1-X0x" secondAttribute="top" constant="30" id="5x8-sW-AW6"/>
-                                        <constraint firstItem="CXT-Cb-fYm" firstAttribute="leading" secondItem="0Xw-i1-X0x" secondAttribute="leading" constant="30" id="9Wb-JC-Rir"/>
-                                        <constraint firstItem="CXT-Cb-fYm" firstAttribute="top" secondItem="X1T-TU-lBX" secondAttribute="bottom" constant="35" id="I9K-sw-Dir"/>
-                                        <constraint firstItem="X1T-TU-lBX" firstAttribute="leading" secondItem="0Xw-i1-X0x" secondAttribute="leading" constant="30" id="Ntx-B6-1ko"/>
-                                        <constraint firstAttribute="trailing" secondItem="PEn-cX-qSc" secondAttribute="trailing" constant="200" id="RGb-oS-ioC"/>
-                                        <constraint firstAttribute="bottom" secondItem="PEn-cX-qSc" secondAttribute="bottom" constant="20" id="e6d-ha-Tc5"/>
-                                        <constraint firstItem="PEn-cX-qSc" firstAttribute="leading" secondItem="0Xw-i1-X0x" secondAttribute="leading" constant="200" id="idD-3o-zeH"/>
-                                        <constraint firstItem="PEn-cX-qSc" firstAttribute="top" secondItem="CXT-Cb-fYm" secondAttribute="bottom" constant="10" id="yjM-5r-SLL"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-VD-8yM">
-                                    <rect key="frame" x="0.0" y="1539" width="1024" height="513"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waso_efficacy_04.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5z-cz-yGH">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="513" id="MzY-2J-7NG"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="0Xw-i1-X0x" secondAttribute="trailing" id="2c4-sx-rPP"/>
-                                <constraint firstAttribute="trailing" secondItem="Jbo-a2-z9y" secondAttribute="trailing" id="39P-vf-hKZ"/>
-                                <constraint firstAttribute="trailing" secondItem="DVX-VD-8yM" secondAttribute="trailing" id="3Hj-o8-iyV"/>
-                                <constraint firstItem="DVX-VD-8yM" firstAttribute="width" secondItem="QMM-Nw-bw7" secondAttribute="width" id="3pr-wu-yXh"/>
-                                <constraint firstAttribute="height" constant="2052" id="5y6-pY-5b3"/>
-                                <constraint firstItem="0Xw-i1-X0x" firstAttribute="top" secondItem="Jbo-a2-z9y" secondAttribute="bottom" id="9wv-oz-84A"/>
-                                <constraint firstItem="B0o-4n-I3N" firstAttribute="width" secondItem="QMM-Nw-bw7" secondAttribute="width" id="B6O-LU-8Jx"/>
-                                <constraint firstAttribute="trailing" secondItem="B0o-4n-I3N" secondAttribute="trailing" id="LpH-xP-byO"/>
-                                <constraint firstItem="0Xw-i1-X0x" firstAttribute="leading" secondItem="QMM-Nw-bw7" secondAttribute="leading" id="S95-ek-ski"/>
-                                <constraint firstItem="Jbo-a2-z9y" firstAttribute="width" secondItem="QMM-Nw-bw7" secondAttribute="width" id="UHJ-E6-F2v"/>
-                                <constraint firstItem="DVX-VD-8yM" firstAttribute="top" secondItem="0Xw-i1-X0x" secondAttribute="bottom" id="Yxx-yC-zls"/>
-                                <constraint firstItem="Jbo-a2-z9y" firstAttribute="top" secondItem="B0o-4n-I3N" secondAttribute="bottom" id="cMr-Xo-da3"/>
-                                <constraint firstItem="B0o-4n-I3N" firstAttribute="leading" secondItem="QMM-Nw-bw7" secondAttribute="leading" id="hkQ-Yd-SAf"/>
-                                <constraint firstItem="B0o-4n-I3N" firstAttribute="top" secondItem="QMM-Nw-bw7" secondAttribute="top" id="jhe-FG-Fp6"/>
-                                <constraint firstItem="Jbo-a2-z9y" firstAttribute="leading" secondItem="QMM-Nw-bw7" secondAttribute="leading" id="mbf-f3-VLP"/>
-                                <constraint firstItem="DVX-VD-8yM" firstAttribute="leading" secondItem="QMM-Nw-bw7" secondAttribute="leading" id="nWP-ua-E8Q"/>
-                                <constraint firstItem="0Xw-i1-X0x" firstAttribute="width" secondItem="QMM-Nw-bw7" secondAttribute="width" id="q2b-6b-jiY"/>
-                            </constraints>
-                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cleanser_efficacy.png" translatesAutoresizingMaskIntoConstraints="NO" id="h5z-cz-yGH">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="QMM-Nw-bw7" secondAttribute="bottom" id="2j4-dT-gKG"/>
-                        <constraint firstItem="QMM-Nw-bw7" firstAttribute="top" secondItem="zpl-3b-46J" secondAttribute="top" id="AAy-e5-R1H"/>
-                        <constraint firstAttribute="trailing" secondItem="QMM-Nw-bw7" secondAttribute="trailing" id="PYR-If-5p9"/>
-                        <constraint firstItem="QMM-Nw-bw7" firstAttribute="leading" secondItem="zpl-3b-46J" secondAttribute="leading" id="St7-j5-1yr"/>
-                        <constraint firstItem="QMM-Nw-bw7" firstAttribute="width" secondItem="zpl-3b-46J" secondAttribute="width" id="ecE-p9-jSx"/>
-                    </constraints>
-                </scrollView>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="zpl-3b-46J" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8WA-gh-Qku"/>
-                <constraint firstItem="zpl-3b-46J" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="K8O-kk-q9f"/>
-                <constraint firstItem="zpl-3b-46J" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="eaK-Pe-D8t"/>
-                <constraint firstItem="zpl-3b-46J" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="j1t-X9-97a"/>
+                <constraint firstAttribute="bottom" secondItem="DVX-VD-8yM" secondAttribute="bottom" id="BzP-vx-6cQ"/>
+                <constraint firstAttribute="trailing" secondItem="DVX-VD-8yM" secondAttribute="trailing" id="E2i-og-1ya"/>
+                <constraint firstItem="DVX-VD-8yM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GPa-za-cvu"/>
+                <constraint firstItem="DVX-VD-8yM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r7B-WF-SDq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="mContentView" destination="QMM-Nw-bw7" id="scM-am-kEj"/>
-                <outlet property="mPageOneContentV" destination="cGM-Nj-POf" id="6IJ-cn-NGy"/>
-                <outlet property="mPageOneCopyLabel" destination="HOg-8I-Df9" id="ewd-Hm-DL2"/>
-                <outlet property="mPageThreeContentV" destination="PEn-cX-qSc" id="OAL-2s-tg0"/>
-                <outlet property="mPageThreeSubTitle" destination="CXT-Cb-fYm" id="xdX-YI-Sff"/>
-                <outlet property="mPageThreeTitle" destination="X1T-TU-lBX" id="Qfb-SM-i0A"/>
-                <outlet property="mPageTwoContentV" destination="mNy-ov-fcP" id="hjq-N4-a15"/>
-                <outlet property="mPageTwoSubTitle" destination="5ng-Cd-kuH" id="nHc-aI-Q2H"/>
-                <outlet property="mPageTwoTitle" destination="aKO-Os-g5O" id="HZf-eE-oA0"/>
-                <outlet property="mScrollView" destination="zpl-3b-46J" id="etU-iA-ycH"/>
-                <outlet property="mViewPageFour" destination="DVX-VD-8yM" id="fWb-Ot-sln"/>
-                <outlet property="mViewPageOne" destination="B0o-4n-I3N" id="Vis-pb-Sd3"/>
-                <outlet property="mViewPageThree" destination="0Xw-i1-X0x" id="MmP-Ou-Dn4"/>
-                <outlet property="mViewPageTwo" destination="Jbo-a2-z9y" id="Hlt-pH-oDy"/>
+                <outlet property="mEfficacyView" destination="DVX-VD-8yM" id="4i1-iY-tDk"/>
             </connections>
             <point key="canvasLocation" x="34" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="waso_efficacy_01.png" width="1423" height="725"/>
-        <image name="waso_efficacy_02.png" width="1892" height="964"/>
-        <image name="waso_efficacy_03.png" width="1891" height="963"/>
-        <image name="waso_efficacy_04.png" width="1423" height="725"/>
+        <image name="cleanser_efficacy.png" width="1423" height="725"/>
     </resources>
 </document>

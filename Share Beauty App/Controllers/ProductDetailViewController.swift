@@ -103,7 +103,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     var mIsEE: Bool = false
     var mIsSDP: Bool = false
     var mIsEEE: Bool = false
-    var mIsWASO: Bool = false
     var mIsUtmMask: Bool = false
 
     var product: ProductDetailData!
@@ -382,24 +381,18 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 570 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonHowToUse.enabled = true
-            self.mIsWASO = true
             self.setWasoEfficacySCV()
         } else if productId == 571 {
             mCategoryButtonEfficacy.enabled = true
-            self.mIsWASO = true
             self.setWasoEfficacySCV()
         } else if productId == 612 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonHowToUse.enabled = true
             mCategoryButtonTechnologies.enabled = true
-            self.mIsWASO = true
-            self.setWasoEfficacySCV()
         } else if productId == 613 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonDefend.enabled = true
             mCategoryButtonDefend.title = "Scent"
-            self.mIsWASO = true
-            self.setWasoEfficacySCV()
         } else if productId == 610 || productId == 611 {
             mCategoryButtonEfficacy.enabled = true
             self.setGSCEfficacySCV()
@@ -536,31 +529,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyWASOScrollV.addSubview(beforeBtn)
             self.efficacyWASOScrollV.addSubview(afterBtn)
             
-        } else if productId == 612 {
-
-            let efficacyV = UIView()
-            efficacyV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-            let imageVfirst = UIImageView(frame: self.mVContent.frame)
-            imageVfirst.image = UIImage(named: "waso_07e.png")
-            imageVfirst.contentMode = .scaleAspectFit
-            // imageVfirst.layer.borderWidth = 1
-            self.efficacyWASOScrollV.addSubview(imageVfirst)
-            
-            let imageVsecond = UIImageView(frame: CGRect(x: 0, y: self.mVContent.height, width: self.mVContent.width, height: self.mVContent.height))
-            imageVsecond.image = UIImage(named: "waso_08e.png")
-            imageVsecond.contentMode = .scaleAspectFit
-            // imageVsecond.layer.borderWidth = 1
-            self.efficacyWASOScrollV.addSubview(imageVsecond)
-            
-            print(imageVfirst.frame)
-            print(imageVsecond.frame)
-        } else if productId == 613 {
-            self.efficacyWASOScrollV.contentSize = self.mVContent.size
-            
-            let imageV = UIImageView(frame: self.mVContent.frame)
-            imageV.image = UIImage(named: "waso_04e.png")
-            imageV.contentMode = .scaleAspectFit
-            self.efficacyWASOScrollV.addSubview(imageV)
         }
 
     }
@@ -1285,25 +1253,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect = usageView
             }
         } else if sender === mCategoryButtonEfficacy {
-            if productId == 511 {
-                let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
-                let views = nib.instantiate(withOwner: self, options: nil)
-                guard let efficacyView = views[0] as? EfficacyResultView else { return }
-                efficacyView.frame = mVContent.frame
-                mVContent.addSubview(efficacyView)
-                mVCurrentSelect = efficacyView
-            } else if productId == 506 || productId == 509 {
-                let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                mVContent.addSubview(wasoEfficacyView)
-                wasoEfficacyView.backImage = mImgVBackImage.image
-                
-                if productId == 506 {
-                    wasoEfficacyView.setupGreen()
-                } else {
-                    wasoEfficacyView.setupOrange()
-                }
-                mVCurrentSelect = wasoEfficacyView
-            } else if productId == 553 {
+            if productId == 553 {
                 productDetailFeaturesView.isHidden = true
                 productNamesView.isHidden = true
                 
@@ -1399,7 +1349,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
     }
     
-    private func showWASOInfo(_ sender: CategoryButton) {
+    private func showWasoInfo(_ sender: CategoryButton) {
         if sender === mCategoryButtonFeatures {
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
@@ -1423,32 +1373,53 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         switch sender {
         case mCategoryButtonTechnologies:
             if productId == 612 {
-                let imageV = UIImageView(frame: self.mVContent.frame)
-                imageV.image = UIImage(named: "waso_05t.png")
-                imageV.contentMode = .scaleAspectFit
-                self.mVContent.addSubview(imageV)
-                self.mVCurrentSelect = imageV
+                let nib = UINib(nibName: "WasoMochiTechView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let techView = views[0] as? WasoMochiTechView else { return }
+                techView.frame = mVContent.frame
+                techView.setView()
+                mVContent.addSubview(techView)
+                mVCurrentSelect = techView
             }
             
         case mCategoryButtonHowToUse:
             if productId == 570 || productId == 571 {
                 let nib = UINib(nibName: "WASOPeelHowToUseResultView", bundle: nil)
                 let views = nib.instantiate(withOwner: self, options: nil)
-                guard let howToUseView = views[0] as? WASOPeelHowToUseResultView else { return }
-                howToUseView.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                guard let usageView = views[0] as? WASOPeelHowToUseResultView else { return }
+                usageView.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                mVContent.addSubview(usageView)
+                mVCurrentSelect = usageView
                 
-                mVContent.addSubview(howToUseView)
-                mVCurrentSelect = howToUseView
             } else if productId == 612 {
-                let imageV = UIImageView(frame: self.mVContent.frame)
-                imageV.image = UIImage(named: "waso_06h.png")
-                imageV.contentMode = .scaleAspectFit
-                self.mVContent.addSubview(imageV)
+                let nib = UINib(nibName: "WasoMochiUsageView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let usageView = views[0] as? WasoMochiUsageView else { return }
+                usageView.frame = mVContent.frame
+                mVContent.addSubview(usageView)
+                mVCurrentSelect = usageView
             }
             
-            
         case mCategoryButtonEfficacy:
-            if productId == 570 {
+            if productId == 511 {
+                let nib = UINib(nibName: "EfficacyResultView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? EfficacyResultView else { return }
+                efficacyView.frame = mVContent.frame
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
+            } else if productId == 506 || productId == 509 {
+                let wasoEfficacyView = WasoGraphEfficacyView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                mVContent.addSubview(wasoEfficacyView)
+                wasoEfficacyView.backImage = mImgVBackImage.image
+                
+                if productId == 506 {
+                    wasoEfficacyView.setupGreen()
+                } else {
+                    wasoEfficacyView.setupOrange()
+                }
+                mVCurrentSelect = wasoEfficacyView
+            } else if productId == 570 {
                 mVContent.addSubview(self.efficacyWASOScrollV)
                 mVCurrentSelect = self.efficacyWASOScrollV
                 
@@ -1466,8 +1437,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVCurrentSelect = efficacyView1
                 efficacyView1.startAnimation()
             } else if productId == 612 {
-                mVContent.addSubview(self.efficacyWASOScrollV)
-                mVCurrentSelect = self.efficacyWASOScrollV
+                let nib = UINib(nibName: "WasoMochiEfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView = views[0] as? WasoMochiEfficacyView else { return }
+                efficacyView.frame = mVContent.frame
+                efficacyView.setView()
+                mVContent.addSubview(efficacyView)
+                mVCurrentSelect = efficacyView
+                
             } else if productId == 613 {
                 let nib = UINib(nibName: "WasoCleanserEfficacyView", bundle: nil)
                 let views = nib.instantiate(withOwner: self, options: nil)
@@ -1487,24 +1464,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 scentView.setView()
                 mVContent.addSubview(scentView)
                 mVCurrentSelect = scentView
-                
-//                let width = self.mVContent.width
-//                let height = self.mVContent.height
-//                let scrollView = UIScrollView(frame: self.mVContent.frame)
-//                scrollView.contentSize = CGSize(width: width, height: height * 3)
-//                scrollView.bounces = false
-//                scrollView.isPagingEnabled = true
-//
-//                for pageNum in 0...2 {
-//                    //let scrollPage = UIView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
-//                    let imageV = UIImageView(frame: CGRect(x: 0, y: height * CGFloat(pageNum), width: width, height: height))
-//                    imageV.image = UIImage(named: "waso_0\(pageNum + 1)s.png")
-//                    imageV.contentMode = .scaleAspectFit
-//                    //scrollPage.addSubview(imageV)
-//                    scrollView.addSubview(imageV)
-//                }
-//                self.mVContent.addSubview(scrollView)
-//                mVCurrentSelect = scrollView
             }
             
         default:
@@ -1844,9 +1803,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             makeupUsageView.productId = productId
             mVCurrentSelect = makeupUsageView
         } else {
-            if mIsWASO {
-                showWASOInfo(sender)
-            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsWaso || mIsEE || mIsUtmMask {
+            if mIsWaso {
+                showWasoInfo(sender)
+            }else if mIsUtm || mIsUtmEye || mIsWhiteLucentOnMakeUp || mIsWhiteLucentWhiteLucentAllDay || mIsIbuki || mIsEE || mIsUtmMask {
                 showUtmInfo(sender)
             } else if mIsSDP {
                 showSDPInfo(sender)
@@ -2553,7 +2512,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 }
                 
             }
-        }  else if self.mIsWASO{
+        }  else if self.mIsWaso{
             if sender.tag < 20{//Before
                 
                 sender.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
