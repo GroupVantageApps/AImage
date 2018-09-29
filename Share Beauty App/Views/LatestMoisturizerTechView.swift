@@ -195,7 +195,7 @@ class LatestMoisturizerTechView: UIView {
         mSecondView.addSubview(mCaseTwoView)
     }
     
-    func setCaseOneView(upperObject: AnyObject) {
+    func setCaseOneView(upperObject: UIView ) {
         let caseMargin: CGFloat = 50
         let caseViewWidth: CGFloat = mScrollView.width - caseMargin * 2
         let caseViewHeight: CGFloat = mScrollView.height - upperObject.bottom - 20
@@ -374,7 +374,7 @@ class LatestMoisturizerTechView: UIView {
         mCaseOneView.addSubview(rightView)
     }
     
-    func setCaseTwoView(upperObject: AnyObject) {
+    func setCaseTwoView(upperObject: UIView) {
         let caseMargin: CGFloat = 40
         let caseViewWidth: CGFloat = mScrollView.width - caseMargin * 2
         let caseViewHeight: CGFloat = mScrollView.height - upperObject.bottom - 20
