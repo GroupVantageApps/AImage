@@ -31,13 +31,15 @@ class WasoCleanserEfficacyView: UIView {
         
         for index in 0...3 {
             
-            let circleLabel: UILabel = UILabel(frame: CGRect(x: 70 + 250 * index, y: 350, width: 150, height: 0))
-            circleLabel.text = "My skin became silky-smooth\(index)."
+            let circleLabel: UILabel = UILabel()
+            circleLabel.frame = CGRect(x: 0, y: 350, width: 150, height: 0)
+            circleLabel.text = AppItemTable.getNameByItemId(itemId: 8069 + index)
             circleLabel.font = UIFont(name: "Reader-Medium", size: 17)
             circleLabel.textAlignment = .center
             circleLabel.numberOfLines = 0
             circleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleLabel.sizeToFit()
+            circleLabel.centerX = 138 + 250 * CGFloat(index)
             
             mEfficacyView.addSubview(circleLabel)
         }

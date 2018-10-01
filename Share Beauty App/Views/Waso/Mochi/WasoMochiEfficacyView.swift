@@ -27,8 +27,9 @@ class WasoMochiEfficacyView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setView()
-        mApngImageV.image = APNGImage(named: "mochi_efficacy_01.png")
+        self.setPageOne()
+        self.setPageTwo()
+        mApngImageV.image = APNGImage(named: "mochi_effi_circlegraph.png")
     }
     
     override func didMoveToSuperview() {
@@ -37,24 +38,18 @@ class WasoMochiEfficacyView: UIView {
         mApngImageV.startAnimating()
     }
     
-    func setView() {
-//        mViewPageTwo.frame = CGRect(x: 0, y: mScrollView.height, width: mScrollView.width, height: mScrollView.height)
-
-        self.setPageOne()
-        self.setPageTwo()
-    }
-    
     func setPageOne() {
-        //mPageOneCopyLabel.text = AppItemTable.getNameByItemId(itemId: 0000)
+        mPageOneCopyLabel.text = AppItemTable.getNameByItemId(itemId: 8056)
+
         for index in 0...2 {
-            
-            let circleLabel: UILabel = UILabel(frame: CGRect(x: 195 + 250 * index, y: 350, width: 150, height: 0))
-            circleLabel.text = "My skin became silky-smooth\(index)."
+            let circleLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 350, width: 200, height: 0))
+            circleLabel.text = AppItemTable.getNameByItemId(itemId: 8053 + index)
             circleLabel.font = UIFont(name: "Reader-Medium", size: 17)
             circleLabel.textAlignment = .center
             circleLabel.numberOfLines = 0
             circleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleLabel.sizeToFit()
+            circleLabel.centerX = 12 + 250 * CGFloat(index + 1)
             
             mViewPageOne.addSubview(circleLabel)
         }
@@ -62,51 +57,44 @@ class WasoMochiEfficacyView: UIView {
     
     func setPageTwo() {
         //mPageTwoTitle.text = AppItemTable.getNameByItemId(itemId: 0000)
-        //mPageTwoSubTitle.text = AppItemTable.getNameByItemId(itemId: 0000)
+        mPageTwoSubTitle.text = AppItemTable.getNameByItemId(itemId: 8063)
         
-        let graphImageV: UIImageView = UIImageView(frame: CGRect(x: 50, y: 10, width: mPageTwoContentV.width - 100, height: mPageTwoContentV.height - 60))
-        graphImageV.backgroundColor = UIColor(red: 0, green: 0, blue: 100, alpha: 0.5)
-        
-        //let image: UIImage = UIImage(named: "waso_87.png")!
-        //graphImageV.image = image
+        let graphImageV: UIImageView = UIImageView()
+        graphImageV.frame = CGRect(x: 50, y: 10, width: mPageTwoContentV.width - 100, height: mPageTwoContentV.height - 50)
+        let image: UIImage = UIImage(named: "mochi_effi_graph.png")!
+        graphImageV.image = image
         graphImageV.contentMode = UIViewContentMode.scaleAspectFit
         mPageTwoContentV.addSubview(graphImageV)
         
         for index in 0...1 {
-            let markView: UIView = UIView(frame: CGRect(x: 80, y: 20 * index + 15, width: 10, height: 10))
-            markView.backgroundColor = index == 0 ? UIColor.gray : UIColor(hex: "AC223E", alpha: 1)
+            let markView: UIView = UIView()
+            markView.frame = CGRect(x: 80, y: 20 * index + 15, width: 12, height: 12)
+            markView.backgroundColor = index == 0 ? UIColor.gray : UIColor(hex: "C20923", alpha: 1)
             
-            let graphLabel: UILabel = UILabel(frame: CGRect(x: markView.right + 10, y: markView.top - 3, width: 0, height: 0))
-            graphLabel.text = "Moisturizer\(index)."
+            let graphLabel: UILabel = UILabel()
+            graphLabel.frame = CGRect(x: markView.right + 10, y: 0, width: 0, height: 0)
+            graphLabel.text = AppItemTable.getNameByItemId(itemId: 8058 + index)
             graphLabel.font = UIFont(name: "Reader", size: 15)
-            graphLabel.numberOfLines = 0
-            graphLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             graphLabel.sizeToFit()
-            
-            graphLabel.layer.borderWidth = 1
+            graphLabel.centerY = markView.centerY
             
             mPageTwoContentV.addSubview(markView)
             mPageTwoContentV.addSubview(graphLabel)
         }
         
-        var axisX: CGFloat = 0
+        let leftMargin: CGFloat = 150
         for index in 0...2 {
-            if index == 0 {
-                axisX = 65
-            }
-            axisX += 40
-            let graphAxis: UILabel = UILabel(frame: CGRect(x: axisX, y: mPageTwoContentV.height - 40, width: 120, height: 0))
-            graphAxis.text = "Before application\(index)."
-            graphAxis.font = UIFont(name: "Reader", size: 15)
+            let graphAxis: UILabel = UILabel()
+            graphAxis.frame = CGRect(x: 0, y: mPageTwoContentV.height - 35, width: 110, height: 0)
+            graphAxis.text = AppItemTable.getNameByItemId(itemId: 8060 + index)
+            graphAxis.font = UIFont(name: "Reader", size: 14)
             graphAxis.textAlignment = .center
             graphAxis.numberOfLines = 0
             graphAxis.lineBreakMode = NSLineBreakMode.byWordWrapping
-            
-            graphAxis.layer.borderWidth = 1
+            graphAxis.sizeToFit()
+            graphAxis.centerX = leftMargin + 160 * CGFloat(index)
             
             mPageTwoContentV.addSubview(graphAxis)
-            axisX += graphAxis.width
-            graphAxis.sizeToFit()
         }
     }
     

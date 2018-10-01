@@ -90,7 +90,6 @@
 		413BE54C20F75429006F08EC /* 5secret_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54B20F75429006F08EC /* 5secret_btn.png */; };
 		413BE54E20F75436006F08EC /* page_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54D20F75435006F08EC /* page_top.png */; };
 		413BE55020F7543C006F08EC /* Top_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 413BE54F20F7543B006F08EC /* Top_btn.png */; };
-		4142F9802109952500A40DA4 /* mochi_usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4142F97D2109952300A40DA4 /* mochi_usage.png */; };
 		414D2CEF20775C9200ED6D5D /* 13_yazirushi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */; };
 		4153A0C720B7B0670089715A /* button_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C520B7B0670089715A /* button_right.png */; };
 		4153A0C820B7B0670089715A /* button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 4153A0C620B7B0670089715A /* button_left.png */; };
@@ -102,6 +101,9 @@
 		4171312C2154AFB4002A67D0 /* Reader-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91FF0040202945E700BA61D6 /* Reader-Medium.otf */; };
 		4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C050C9B11E8276C60009679D /* Reader-Bold.otf */; };
 		4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4172958C207765DF00F83D5A /* 13_yazirushi_02.png */; };
+		417FD0172161DBBA0035966F /* mochi_thermography.png in Resources */ = {isa = PBXBuildFile; fileRef = 417FD0162161DBBA0035966F /* mochi_thermography.png */; };
+		417FD0192161E0460035966F /* mochi_usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 417FD0182161E0460035966F /* mochi_usage.png */; };
+		417FD01B2161E2840035966F /* mochi_effi_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 417FD01A2161E2840035966F /* mochi_effi_graph.png */; };
 		4181A4AF20AD2F6D00680857 /* CALayer+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */; };
 		419484652153944E00680A26 /* utm_mask_efficacy_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484642153944D00680A26 /* utm_mask_efficacy_graph.png */; };
 		4194846D21539EE300680A26 /* WasoCleanserEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4194846C21539EE300680A26 /* WasoCleanserEfficacyView.xib */; };
@@ -110,10 +112,8 @@
 		4194847321539F3200680A26 /* WasoCleanserScentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4194847221539F3200680A26 /* WasoCleanserScentView.swift */; };
 		4194847D2153A27A00680A26 /* cleanser_efficacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484762153A27600680A26 /* cleanser_efficacy.png */; };
 		4194847E2153A27A00680A26 /* cleanser_scent_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484772153A27700680A26 /* cleanser_scent_02.png */; };
-		4194847F2153A27A00680A26 /* mochi_tech.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484782153A27700680A26 /* mochi_tech.png */; };
 		419484802153A27A00680A26 /* cleanser_scent_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 419484792153A27700680A26 /* cleanser_scent_03.png */; };
-		419484812153A27A00680A26 /* mochi_efficacy_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4194847A2153A27800680A26 /* mochi_efficacy_02.png */; };
-		419484822153A27A00680A26 /* mochi_efficacy_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 4194847B2153A27800680A26 /* mochi_efficacy_01.png */; };
+		419484822153A27A00680A26 /* mochi_effi_circlegraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 4194847B2153A27800680A26 /* mochi_effi_circlegraph.png */; };
 		419484832153A27A00680A26 /* cleanser_scent_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 4194847C2153A27900680A26 /* cleanser_scent_01.png */; };
 		419D8DF721006A4100106B49 /* UtmMaskEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419D8DF621006A4100106B49 /* UtmMaskEfficacyView.xib */; };
 		419D8DF921006A7C00106B49 /* UtmMaskEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */; };
@@ -876,7 +876,6 @@
 		413BE54B20F75429006F08EC /* 5secret_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5secret_btn.png; sourceTree = "<group>"; };
 		413BE54D20F75435006F08EC /* page_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page_top.png; sourceTree = "<group>"; };
 		413BE54F20F7543B006F08EC /* Top_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Top_btn.png; sourceTree = "<group>"; };
-		4142F97D2109952300A40DA4 /* mochi_usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_usage.png; sourceTree = "<group>"; };
 		414D2CEE20775C9200ED6D5D /* 13_yazirushi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_01.png; sourceTree = "<group>"; };
 		4153A0C520B7B0670089715A /* button_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_right.png; sourceTree = "<group>"; };
 		4153A0C620B7B0670089715A /* button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_left.png; sourceTree = "<group>"; };
@@ -885,6 +884,9 @@
 		4171312621549264002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleSeventhDetailViewController.storyboard; sourceTree = "<group>"; };
 		417131292154926F002A67D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleEighthDetailViewController.storyboard; sourceTree = "<group>"; };
 		4172958C207765DF00F83D5A /* 13_yazirushi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13_yazirushi_02.png; sourceTree = "<group>"; };
+		417FD0162161DBBA0035966F /* mochi_thermography.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_thermography.png; sourceTree = "<group>"; };
+		417FD0182161E0460035966F /* mochi_usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_usage.png; sourceTree = "<group>"; };
+		417FD01A2161E2840035966F /* mochi_effi_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_effi_graph.png; sourceTree = "<group>"; };
 		4181A4AE20AD2F6D00680857 /* CALayer+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+UIColor.swift"; sourceTree = "<group>"; };
 		419484642153944D00680A26 /* utm_mask_efficacy_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_efficacy_graph.png; sourceTree = "<group>"; };
 		4194846C21539EE300680A26 /* WasoCleanserEfficacyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasoCleanserEfficacyView.xib; sourceTree = "<group>"; };
@@ -893,10 +895,8 @@
 		4194847221539F3200680A26 /* WasoCleanserScentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasoCleanserScentView.swift; sourceTree = "<group>"; };
 		419484762153A27600680A26 /* cleanser_efficacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanser_efficacy.png; sourceTree = "<group>"; };
 		419484772153A27700680A26 /* cleanser_scent_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanser_scent_02.png; sourceTree = "<group>"; };
-		419484782153A27700680A26 /* mochi_tech.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_tech.png; sourceTree = "<group>"; };
 		419484792153A27700680A26 /* cleanser_scent_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanser_scent_03.png; sourceTree = "<group>"; };
-		4194847A2153A27800680A26 /* mochi_efficacy_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_efficacy_02.png; sourceTree = "<group>"; };
-		4194847B2153A27800680A26 /* mochi_efficacy_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_efficacy_01.png; sourceTree = "<group>"; };
+		4194847B2153A27800680A26 /* mochi_effi_circlegraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mochi_effi_circlegraph.png; sourceTree = "<group>"; };
 		4194847C2153A27900680A26 /* cleanser_scent_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanser_scent_01.png; sourceTree = "<group>"; };
 		419D8DF621006A4100106B49 /* UtmMaskEfficacyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtmMaskEfficacyView.xib; sourceTree = "<group>"; };
 		419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtmMaskEfficacyView.swift; sourceTree = "<group>"; };
@@ -1784,24 +1784,16 @@
 		4142F97C2109950C00A40DA4 /* Waso */ = {
 			isa = PBXGroup;
 			children = (
-				4142F97D2109952300A40DA4 /* mochi_usage.png */,
-				4194847B2153A27800680A26 /* mochi_efficacy_01.png */,
-				4194847A2153A27800680A26 /* mochi_efficacy_02.png */,
-				419484782153A27700680A26 /* mochi_tech.png */,
+				417FD0162161DBBA0035966F /* mochi_thermography.png */,
+				417FD0182161E0460035966F /* mochi_usage.png */,
+				4194847B2153A27800680A26 /* mochi_effi_circlegraph.png */,
+				417FD01A2161E2840035966F /* mochi_effi_graph.png */,
 				419484762153A27600680A26 /* cleanser_efficacy.png */,
 				4194847C2153A27900680A26 /* cleanser_scent_01.png */,
 				419484772153A27700680A26 /* cleanser_scent_02.png */,
 				419484792153A27700680A26 /* cleanser_scent_03.png */,
 			);
 			path = Waso;
-			sourceTree = "<group>";
-		};
-		4182C57321058D35005E15F5 /* how_to_use */ = {
-			isa = PBXGroup;
-			children = (
-				41E5B0D2215348C500513232 /* utm_mask_usage.png */,
-			);
-			path = how_to_use;
 			sourceTree = "<group>";
 		};
 		4194846621539DA000680A26 /* Waso */ = {
@@ -1896,10 +1888,10 @@
 			children = (
 				41CF1499215C6A1B00BFF976 /* WasoMochiTechView.swift */,
 				41CF149B215C6A2D00BFF976 /* WasoMochiTechView.xib */,
-				41CF149E215C6E8200BFF976 /* WasoMochiEfficacyView.swift */,
-				41CF14A1215C6EF000BFF976 /* WasoMochiEfficacyView.xib */,
 				41CF14A3215C79A500BFF976 /* WasoMochiUsageView.swift */,
 				41CF14A5215C79E600BFF976 /* WasoMochiUsageView.xib */,
+				41CF149E215C6E8200BFF976 /* WasoMochiEfficacyView.swift */,
+				41CF14A1215C6EF000BFF976 /* WasoMochiEfficacyView.xib */,
 			);
 			path = Mochi;
 			sourceTree = "<group>";
@@ -2077,18 +2069,10 @@
 		41E5B0D0215347F500513232 /* UTM_Mask */ = {
 			isa = PBXGroup;
 			children = (
-				41E5B0D12153484200513232 /* efficacy */,
-				4182C57321058D35005E15F5 /* how_to_use */,
-			);
-			path = UTM_Mask;
-			sourceTree = "<group>";
-		};
-		41E5B0D12153484200513232 /* efficacy */ = {
-			isa = PBXGroup;
-			children = (
+				41E5B0D2215348C500513232 /* utm_mask_usage.png */,
 				419484642153944D00680A26 /* utm_mask_efficacy_graph.png */,
 			);
-			path = efficacy;
+			path = UTM_Mask;
 			sourceTree = "<group>";
 		};
 		41E5B0D821534F4400513232 /* UtmMask */ = {
@@ -3193,6 +3177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */,
+				417FD01B2161E2840035966F /* mochi_effi_graph.png in Resources */,
 				4171312C2154AFB4002A67D0 /* Reader-Medium.otf in Resources */,
 				4171312B2154AFA8002A67D0 /* Reader-Regular.otf in Resources */,
 				C050C9761E8267450009679D /* defend_bg.png in Resources */,
@@ -3205,7 +3190,6 @@
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
 				6E4ABB4420AA6CAF000355D2 /* complexion_38.png in Resources */,
 				338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */,
-				419484812153A27A00680A26 /* mochi_efficacy_02.png in Resources */,
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
 				DE80C66620726D3600CD326A /* 18aw_92.png in Resources */,
 				C050C9171E82619F0009679D /* whl_slider_1.png in Resources */,
@@ -3227,7 +3211,6 @@
 				C0665ACA1D6ACA3D00B3D8E5 /* NavigationView.xib in Resources */,
 				6E4ABB3C20AA6CAF000355D2 /* 03_back_02.png in Resources */,
 				DE325B1A2077469000B660C9 /* lx_b03.png in Resources */,
-				4194847F2153A27A00680A26 /* mochi_tech.png in Resources */,
 				DEE83E591EB75C04000C7D8D /* LXProductTechnologyView.xib in Resources */,
 				413BE54C20F75429006F08EC /* 5secret_btn.png in Resources */,
 				C050C9A51E8267450009679D /* utmeye_image.png in Resources */,
@@ -3350,6 +3333,7 @@
 				4153A0C820B7B0670089715A /* button_left.png in Resources */,
 				DE2C909D1E9C66E600B5FC4A /* LXYutakaConceptView.xib in Resources */,
 				E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */,
+				417FD0192161E0460035966F /* mochi_usage.png in Resources */,
 				DEBCF6C620747562001762A9 /* waso_before.png in Resources */,
 				C01D716F1D951A1E0044851C /* CategoryButton.xib in Resources */,
 				E52891D41DF2FD9E007B92B2 /* AboutBrandViewController.storyboard in Resources */,
@@ -3458,7 +3442,6 @@
 				B38F63C21F47682700176804 /* DayCream02_before.png in Resources */,
 				26768D8E202C1C57005BE606 /* Ginko.png in Resources */,
 				DE2C8F501E9B9F5800B5FC4A /* ACaslonPro-Regular.otf in Resources */,
-				4142F9802109952500A40DA4 /* mochi_usage.png in Resources */,
 				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
 				DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */,
@@ -3587,6 +3570,7 @@
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
 				4153A0C720B7B0670089715A /* button_right.png in Resources */,
+				417FD0172161DBBA0035966F /* mochi_thermography.png in Resources */,
 				DE2C300220737AB200548627 /* eee_6081.png in Resources */,
 				C050C9071E82619F0009679D /* ss_bg.png in Resources */,
 				DE2C918D1E9C682500B5FC4A /* lx_icon_recommend_selected@2x.png in Resources */,
@@ -3615,7 +3599,7 @@
 				DE2C90951E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.xib in Resources */,
 				DEC752042073BE2D00A9FC1C /* waso_92.png in Resources */,
 				26AD5D7620230A1F002A2076 /* ACaslonPro-Regular.otf in Resources */,
-				419484822153A27A00680A26 /* mochi_efficacy_01.png in Resources */,
+				419484822153A27A00680A26 /* mochi_effi_circlegraph.png in Resources */,
 				26768DAB202C5FD6005BE606 /* graph_02.png in Resources */,
 				DE2C90971E9C66E600B5FC4A /* LXYutakaConceptContentSecondView.xib in Resources */,
 				41CF14CB215C95D000BFF976 /* moisture_effi_01.png in Resources */,

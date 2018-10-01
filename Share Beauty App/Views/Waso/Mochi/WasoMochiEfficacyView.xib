@@ -12,9 +12,6 @@
         <array key="Reader-Bold.otf">
             <string>Reader-Bold</string>
         </array>
-        <array key="Reader-Medium.otf">
-            <string>Reader-Medium</string>
-        </array>
         <array key="Reader-Regular.otf">
             <string>Reader</string>
         </array>
@@ -35,13 +32,15 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-rP-Jj0">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mochi_efficacy_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-Uu-l3h" customClass="APNGImageView" customModule="APNGKit">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mochi_effi_circlegraph.png" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-Uu-l3h" customClass="APNGImageView" customModule="APNGKit">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-yB-bph">
-                                            <rect key="frame" x="29" y="450" width="320" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-yB-bph">
+                                            <rect key="frame" x="30" y="459" width="330" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="330" id="jub-5p-LGM"/>
+                                            </constraints>
                                             <string key="text">Test county: France
 Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, ages 20 y.o. to 30 y.o.</string>
                                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="13"/>
@@ -50,16 +49,14 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="dSt-yB-bph" secondAttribute="bottom" constant="15" id="4SI-qU-c0P"/>
                                         <constraint firstAttribute="height" constant="513" id="LmR-FL-CUp"/>
+                                        <constraint firstItem="dSt-yB-bph" firstAttribute="leading" secondItem="7ou-rP-Jj0" secondAttribute="leading" constant="30" id="lFs-Wc-Phb"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeC-q5-Fbx">
                                     <rect key="frame" x="0.0" y="513" width="1024" height="513"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mochi_efficacy_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-Iq-Swk">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficacy Results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6u-Ay-s6a">
                                             <rect key="frame" x="30" y="30" width="178" height="23"/>
                                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
@@ -67,53 +64,17 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The mask enhances the moisturizing effect of the skincare that follow." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0M2-d9-B96">
-                                            <rect key="frame" x="30" y="88" width="550" height="16"/>
+                                            <rect key="frame" x="30" y="88" width="550" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="550" id="q8g-Fk-KbL"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP1-OQ-C3F">
-                                            <rect key="frame" x="200" y="134" width="624" height="359"/>
-                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP1-OQ-C3F">
+                                            <rect key="frame" x="200" y="150" width="624" height="343"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-ig-ZXW">
-                                            <rect key="frame" x="291" y="439" width="112" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizer" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dho-nb-hyn">
-                                            <rect key="frame" x="291" y="142" width="141" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 minutes after application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bb-Qc-YlH">
-                                            <rect key="frame" x="456" y="439" width="150" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 hour after application" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-P2-TY2">
-                                            <rect key="frame" x="615" y="439" width="150" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizer + Mask" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vND-Hg-Wh9">
-                                            <rect key="frame" x="291" y="166" width="141" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="NP1-OQ-C3F" firstAttribute="leading" secondItem="zeC-q5-Fbx" secondAttribute="leading" constant="200" id="11c-T3-u9R"/>
@@ -172,7 +133,6 @@ Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, a
         </view>
     </objects>
     <resources>
-        <image name="mochi_efficacy_01.png" width="2048" height="1536"/>
-        <image name="mochi_efficacy_02.png" width="1892" height="964"/>
+        <image name="mochi_effi_circlegraph.png" width="2048" height="1536"/>
     </resources>
 </document>

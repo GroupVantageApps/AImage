@@ -23,16 +23,15 @@ class UtmMaskEfficacyView: UIView {
     func setView() {
         
         mScrollV.frame.size = CGSize(width: self.width, height: self.height)
-        mScrollV.contentSize = CGSize(width: mScrollV.width, height: (mScrollV.height) * 4)
+        mScrollV.contentSize = CGSize(width: mScrollV.width, height: (mScrollV.height) * 2)
         mContentView.size = self.mScrollV.contentSize
 
-        self.setPercentageContent()
         self.setGraphContent()
-        
+        self.setPercentageContent()
     }
     
     private func setGraphContent() {
-        mGraphV.frame = CGRect(x: 0, y: mScrollV.height, width: mScrollV.width, height: mScrollV.height)
+        mGraphV.frame = CGRect(x: 0, y: 0, width: mScrollV.width, height: mScrollV.height)
         
         let itemId = 8000
         mTitleLabel.text = AppItemTable.getNameByItemId(itemId: itemId)
@@ -81,53 +80,41 @@ class UtmMaskEfficacyView: UIView {
         
         let itemId = 8011
         
-        for page in 0...2 {
-            var pageY: CGFloat = 0
+        let percentView: UIView = UIView()
+        percentView.frame = CGRect(x: 0, y: mScrollV.height, width: mScrollV.width, height: mScrollV.height)
+        let title = UILabel(frame: CGRect(x: 0, y: 30, width: 700, height: 40))
+        title.font = UIFont(name: "Reader-Bold", size: 22)
+        title.text = AppItemTable.getNameByItemId(itemId: itemId)
+        title.centerX = percentView.centerX
+        title.textAlignment = .center
+        percentView.addSubview(title)
+        
+        for i in 0...2 {
+            let percentLabel = UILabel(frame: CGRect(x: Int(percentView.centerX) - 230, y: 110 + (130 * i), width: 160, height: 82))
+            percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
+            percentLabel.textAlignment = .center
+            let perY = Int(percentLabel.frame.origin.y)
+            let perTexts = ["86%", "89%", "86%"]
+            percentLabel.text = perTexts[i]
             
-            if page == 0 {
-                pageY = 0
-            } else {
-                pageY = mScrollV.height * CGFloat(page) + mScrollV.height
-            }
+            let description = UILabel(frame: CGRect(x: Int(percentView.centerX) - 50, y: perY - 20, width: 350, height: 100))
+            description.font = UIFont(name: "Reader", size: 20)
+            description.text = AppItemTable.getNameByItemId(itemId: itemId + i + 1)
+            description.numberOfLines = 0
+            description.textAlignment = .left
             
-            let percentView: UIView = UIView(frame: CGRect(x: 0, y: pageY, width: mScrollV.width, height: mScrollV.height))
-            let title = UILabel(frame: CGRect(x: 0, y: 30, width: 700, height: 40))
-            title.font = UIFont(name: "Reader-Bold", size: 22)
-            title.text = AppItemTable.getNameByItemId(itemId: itemId)
-            title.centerX = percentView.centerX
-            title.textAlignment = .center
-            percentView.addSubview(title)
-
-            for i in 0...2 {
-                let percentLabel = UILabel(frame: CGRect(x: Int(percentView.centerX) - 230, y: 110 + (130 * i), width: 160, height: 82))
-                percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
-                percentLabel.textAlignment = .center
-                let perY = Int(percentLabel.frame.origin.y)
-                let perTexts = [["90%", "83%", "86%"],
-                                ["90%", "97%", "97%"],
-                                ["86%", "90%", "97%"]
-                                ]
-                percentLabel.text = perTexts[page][i]
-                
-                let description = UILabel(frame: CGRect(x: Int(percentView.centerX) - 50, y: perY - 20, width: 350, height: 100))
-                description.font = UIFont(name: "Reader", size: 20)
-                description.text = AppItemTable.getNameByItemId(itemId: itemId + i + 1)
-                description.numberOfLines = 0
-                description.textAlignment = .left
-                
-                percentView.addSubview(percentLabel)
-                percentView.addSubview(description)
-            }
-            
-            let text = UILabel(frame: CGRect(x: percentView.width - 330, y: percentView.height - 50, width: 300, height: 40))
-            text.font = UIFont(name: "Reader-Medium", size: 13)
-            text.text = AppItemTable.getNameByItemId(itemId: itemId + 4)
-            text.textColor = UIColor.lightGray
-            text.textAlignment = .right
-            text.numberOfLines = 0
-            percentView.addSubview(text)
-            
-            mContentView.addSubview(percentView)
+            percentView.addSubview(percentLabel)
+            percentView.addSubview(description)
         }
+        
+        let text = UILabel(frame: CGRect(x: percentView.width - 330, y: percentView.height - 50, width: 300, height: 40))
+        text.font = UIFont(name: "Reader-Medium", size: 13)
+        text.text = AppItemTable.getNameByItemId(itemId: itemId + 4)
+        text.textColor = UIColor.lightGray
+        text.textAlignment = .right
+        text.numberOfLines = 0
+        percentView.addSubview(text)
+        
+        mContentView.addSubview(percentView)
     }
 }

@@ -32,43 +32,46 @@ class WasoCleanserScentView: UIView {
             imageView.image = image
             pageView.addSubview(imageView)
             
-            let productName: UILabel = UILabel(frame: CGRect(x: 80, y: 40, width: 150, height: 0))
-            productName.text = "WILD GARDEN"
-            productName.font = UIFont(name: "Reader-Bold", size: 36)
+            let productName: UILabel = UILabel(frame: CGRect(x: 80, y: 40, width: 220, height: 0))
+            productName.text = AppItemTable.getNameByItemId(itemId: 8029 + page * 8)
+            productName.font = UIFont(name: "Reader-Bold", size: 40)
             productName.numberOfLines = 0
             productName.lineBreakMode = NSLineBreakMode.byWordWrapping
             productName.sizeToFit()
-            
-            let productImageV: UIImageView = UIImageView(frame: CGRect(x: productName.left, y: productName.bottom + 30, width: 220, height: 330))
+        
+            let productImageV: UIImageView = UIImageView(frame: CGRect(x: productName.left, y: productName.bottom + 20, width: 220, height: 330))
             let productImage: UIImage = UIImage(named: "waso_570.png")!
             productImageV.image = productImage
             productImageV.contentMode = UIViewContentMode.scaleAspectFit
             
-            let wanToTitle: UILabel = UILabel(frame: CGRect(x: mContentView.centerX - 140, y: productName.top, width: 225, height: 0))
-            wanToTitle.text = "I want to boost my concentration!"
+            let left: CGFloat = mContentView.centerX - 135
+            
+            let wanToTitle: UILabel = UILabel()
+            wanToTitle.frame = CGRect(x: left, y: productName.top, width: 400, height: 0)
+            wanToTitle.text = AppItemTable.getNameByItemId(itemId: 8030 + page * 8)
             wanToTitle.font = UIFont(name: "Reader-Bold", size: 25)
             wanToTitle.numberOfLines = 0
             wanToTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
             wanToTitle.sizeToFit()
             
-            let left: CGFloat = wanToTitle.left
-            let wanToText: UILabel = UILabel(frame: CGRect(x: left, y: wanToTitle.bottom + 15, width: 430, height: 0))
-            wanToText.text = "When you want to focus all your energies on your work and studies.\nThe fresh scent of Wild Garden is perfect for times when you need to refresh and reboot."
+            let contentTextFrame: CGRect = CGRect(x: left, y: wanToTitle.bottom + 15, width: 430, height: 0)
+            let wanToText: UILabel = UILabel(frame: contentTextFrame)
+            wanToText.text = AppItemTable.getNameByItemId(itemId: 8031 + page * 8)
             wanToText.font = UIFont(name: "Reader", size: 16)
             wanToText.numberOfLines = 0
             wanToText.lineBreakMode = NSLineBreakMode.byWordWrapping
             wanToText.sizeToFit()
             
             let scentTitle: UILabel = UILabel(frame: CGRect(x: left, y: wanToText.bottom + 40, width: wanToTitle.width, height: 0))
-            scentTitle.text = "Scent"
+            scentTitle.text = AppItemTable.getNameByItemId(itemId: 8032 + page * 8)
             scentTitle.font = wanToTitle.font
             scentTitle.numberOfLines = 0
             scentTitle.lineBreakMode = NSLineBreakMode.byWordWrapping
             scentTitle.sizeToFit()
             
-            let scentText: UILabel = UILabel(frame: wanToText.frame)
+            let scentText: UILabel = UILabel(frame: contentTextFrame)
             scentText.origin.y = scentTitle.bottom + 15
-            scentText.text = "A combination of an elegant floral bouguet and fresh aquatic green for a gentle, pure scent."
+            scentText.text = AppItemTable.getNameByItemId(itemId: 8033 + page * 8)
             scentText.font = wanToText.font
             scentText.numberOfLines = 0
             scentText.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -78,9 +81,11 @@ class WasoCleanserScentView: UIView {
             let circleOneImage: UIImage = UIImage(named: "waso_green_83.png")!
             circleOneImageV.image = circleOneImage
             circleOneImageV.contentMode = UIViewContentMode.scaleAspectFit
+
+            let circleTextFrame = CGRect(x: 0, y: circleOneImageV.bottom + 10, width: 130, height: 0)
             
-            let circleOneText: UILabel = UILabel(frame: CGRect(x: 0, y: circleOneImageV.bottom + 10, width: circleOneImageV.width + 34, height: 0))
-            circleOneText.text = "Increased concentration"
+            let circleOneText: UILabel = UILabel(frame: circleTextFrame)
+            circleOneText.text = AppItemTable.getNameByItemId(itemId: 8034 + page * 8)
             circleOneText.font = UIFont(name: "Reader-Medium", size: 16)
             circleOneText.textAlignment = .center
             circleOneText.numberOfLines = 0
@@ -94,37 +99,23 @@ class WasoCleanserScentView: UIView {
             circleTwoImageV.image = circleTwoImage
             circleTwoImageV.contentMode = UIViewContentMode.scaleAspectFit
             
-            let circleTwoText: UILabel = UILabel(frame: circleOneText.frame)
-            circleTwoText.width = circleTwoImageV.width
-            circleTwoText.text = "Able to reset myself"
+            let circleTwoText: UILabel = UILabel(frame: circleTextFrame)
+            circleTwoText.text = AppItemTable.getNameByItemId(itemId: 8035 + page * 8)
             circleTwoText.font = circleOneText.font
             circleTwoText.textAlignment = NSTextAlignment.center
             circleTwoText.numberOfLines = 0
-            circleTwoText.lineBreakMode = NSLineBreakMode.byWordWrapping
+            circleTwoText.lineBreakMode = NSLineBreakMode.byCharWrapping
             circleTwoText.sizeToFit()
             circleTwoText.centerX = circleTwoImageV.centerX
             
             let copyText: UILabel = UILabel(frame: CGRect(x: width - 330, y: height - 90, width: 300, height: 0))
-            copyText.text = "Tested country : South Africa\nSubject : 103 females, age from 20 y.o. through 33 y.o. Tested term : From 5/2/2018 to 8/2/2018\nafter single use\nTested timing : Morning"
+            copyText.text = AppItemTable.getNameByItemId(itemId: 8036 + page * 8)
             copyText.font = UIFont(name: "Reader", size: 12)
             copyText.textColor = UIColor.lightGray
             copyText.numberOfLines = 0
             copyText.lineBreakMode = NSLineBreakMode.byWordWrapping
             copyText.sizeToFit()
             
-            // レイアウト確認用
-            //productName.layer.borderWidth = 1
-            //productImageV.layer.borderWidth = 1
-            //wanToTitle.layer.borderWidth = 1
-            //wanToText.layer.borderWidth = 1
-            //scentTitle.layer.borderWidth = 1
-            //scentText.layer.borderWidth = 1
-            //circleOneImageV.layer.borderWidth = 1
-            //circleOneText.layer.borderWidth = 1
-            //circleTwoImageV.layer.borderWidth = 1
-            //circleTwoText.layer.borderWidth = 1
-            //copyText.layer.borderWidth = 1
-
             pageView.addSubview(productName)
             pageView.addSubview(productImageV)
             pageView.addSubview(wanToTitle)
@@ -138,6 +129,19 @@ class WasoCleanserScentView: UIView {
             pageView.addSubview(copyText)
             
             mContentView.addSubview(pageView)
+            
+            // レイアウト確認用
+//            productName.layer.borderWidth = 1
+//            productImageV.layer.borderWidth = 1
+//            wanToTitle.layer.borderWidth = 1
+//            wanToText.layer.borderWidth = 1
+//            scentTitle.layer.borderWidth = 1
+//            scentText.layer.borderWidth = 1
+//            circleOneImageV.layer.borderWidth = 1
+//            circleOneText.layer.borderWidth = 1
+//            circleTwoImageV.layer.borderWidth = 1
+//            circleTwoText.layer.borderWidth = 1
+//            copyText.layer.borderWidth = 1
         }
     }
 }

@@ -24,10 +24,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-zq-MfD">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="2052"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1026"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjI-ky-wYo">
-                                    <rect key="frame" x="0.0" y="513" width="1024" height="513"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="utm_mask_efficacy_graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-ZV-7E2">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
@@ -54,10 +54,10 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="2052" id="Ah7-MG-E1T"/>
+                                <constraint firstAttribute="height" constant="1026" id="Ah7-MG-E1T"/>
                                 <constraint firstItem="ZjI-ky-wYo" firstAttribute="leading" secondItem="F7J-zq-MfD" secondAttribute="leading" id="Pma-xi-MhT"/>
                                 <constraint firstAttribute="trailing" secondItem="ZjI-ky-wYo" secondAttribute="trailing" id="XnF-Bm-jHr"/>
-                                <constraint firstItem="ZjI-ky-wYo" firstAttribute="top" secondItem="F7J-zq-MfD" secondAttribute="top" constant="513" id="Y7L-Tu-luy"/>
+                                <constraint firstItem="ZjI-ky-wYo" firstAttribute="top" secondItem="F7J-zq-MfD" secondAttribute="top" id="Y7L-Tu-luy"/>
                                 <constraint firstItem="ZjI-ky-wYo" firstAttribute="width" secondItem="F7J-zq-MfD" secondAttribute="width" id="zqd-aa-NE0"/>
                             </constraints>
                         </view>
