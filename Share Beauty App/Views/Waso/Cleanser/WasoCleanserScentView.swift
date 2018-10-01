@@ -77,10 +77,13 @@ class WasoCleanserScentView: UIView {
             scentText.lineBreakMode = NSLineBreakMode.byWordWrapping
             scentText.sizeToFit()
             
-            let circleOneImageV: UIImageView = UIImageView(frame: CGRect(x: left, y: scentText.bottom + 40, width: 120, height: 120))
+            let circleOneImageV: UIImageView = UIImageView()
+            circleOneImageV.frame = CGRect(x: left, y: 320, width: 120, height: 120)
             let circleOneImage: UIImage = UIImage(named: "waso_green_83.png")!
             circleOneImageV.image = circleOneImage
             circleOneImageV.contentMode = UIViewContentMode.scaleAspectFit
+            
+            print(circleOneImageV.frame)
 
             let circleTextFrame = CGRect(x: 0, y: circleOneImageV.bottom + 10, width: 130, height: 0)
             
@@ -117,14 +120,14 @@ class WasoCleanserScentView: UIView {
             copyText.sizeToFit()
             
             pageView.addSubview(productName)
-            pageView.addSubview(productImageV)
+            //pageView.addSubview(productImageV)
             pageView.addSubview(wanToTitle)
             pageView.addSubview(wanToText)
             pageView.addSubview(scentTitle)
             pageView.addSubview(scentText)
-            pageView.addSubview(circleOneImageV)
+            //pageView.addSubview(circleOneImageV)
             pageView.addSubview(circleOneText)
-            pageView.addSubview(circleTwoImageV)
+            //pageView.addSubview(circleTwoImageV)
             pageView.addSubview(circleTwoText)
             pageView.addSubview(copyText)
             
