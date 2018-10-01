@@ -15,7 +15,6 @@ class UtmMaskEfficacyView: UIView {
     @IBOutlet weak var mGraphV: UIView!
     
     @IBOutlet weak var mTitleLabel: UILabel!
-    @IBOutlet weak var mGraphImageV: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -92,8 +91,6 @@ class UtmMaskEfficacyView: UIView {
             }
             
             let percentView: UIView = UIView(frame: CGRect(x: 0, y: pageY, width: mScrollV.width, height: mScrollV.height))
-//            percentView.layer.borderWidth = 2
-//            percentView.layer.setBorderUIColor(.blue)
             let title = UILabel(frame: CGRect(x: 0, y: 30, width: 700, height: 40))
             title.font = UIFont(name: "Reader-Bold", size: 22)
             title.text = AppItemTable.getNameByItemId(itemId: itemId)

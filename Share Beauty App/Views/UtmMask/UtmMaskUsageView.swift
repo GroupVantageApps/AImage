@@ -21,9 +21,11 @@ class UtmMaskUsageView: UIView {
     
     func setView() {
         self.mUsageView.frame.size = CGSize(width: self.width, height: self.height)
-//        mTitle.layer.borderWidth = 1
-//        mTextOne.layer.borderWidth = 1
-//        mTextTwo.layer.borderWidth = 1
+        
+        //mTitle.text = AppItemTable.getNameByItemId(itemId: Int)
+        //mTextOne.text = AppItemTable.getNameByItemId(itemId: Int)
+        //mTextTwo.text = AppItemTable.getNameByItemId(itemId: <#T##Int#>)
+
         mTitle.sizeToFit()
         mTextOne.sizeToFit()
         mTextTwo.sizeToFit()

@@ -45,40 +45,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMG-bK-Rf4">
-                                            <rect key="frame" x="120" y="161" width="480" height="240"/>
-                                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="240" id="0QM-GP-K8Z"/>
-                                                <constraint firstAttribute="width" constant="480" id="Q79-q4-3wT"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9G-Xd-ZVL" userLabel="Direction ImageV">
-                                            <rect key="frame" x="85" y="361" width="30" height="30"/>
-                                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="MzY-3p-hGo"/>
-                                                <constraint firstAttribute="width" constant="30" id="Vki-md-si6"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kbx-d3-20Z" userLabel="Item ImageV">
-                                            <rect key="frame" x="699" y="100" width="240" height="200"/>
-                                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="240" id="56X-55-Z2n"/>
-                                                <constraint firstAttribute="height" constant="200" id="H77-UF-LOm"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="JMG-bK-Rf4" firstAttribute="leading" secondItem="ZjI-ky-wYo" secondAttribute="leading" constant="120" id="0kI-0u-TmK"/>
-                                        <constraint firstItem="Kbx-d3-20Z" firstAttribute="top" secondItem="ZjI-ky-wYo" secondAttribute="top" constant="100" id="1gp-Gn-Bib"/>
                                         <constraint firstAttribute="height" constant="513" id="AAh-gx-L3Q"/>
                                         <constraint firstItem="bTN-5V-tz5" firstAttribute="top" secondItem="ZjI-ky-wYo" secondAttribute="top" constant="30" id="Ci3-Pq-iSg"/>
-                                        <constraint firstItem="JMG-bK-Rf4" firstAttribute="leading" secondItem="C9G-Xd-ZVL" secondAttribute="trailing" constant="5" id="OT9-fq-924"/>
-                                        <constraint firstItem="JMG-bK-Rf4" firstAttribute="bottom" secondItem="C9G-Xd-ZVL" secondAttribute="bottom" constant="10" id="jd1-dW-OLF"/>
-                                        <constraint firstAttribute="trailing" secondItem="Kbx-d3-20Z" secondAttribute="trailing" constant="85" id="oy3-UT-bXU"/>
-                                        <constraint firstItem="JMG-bK-Rf4" firstAttribute="top" secondItem="bTN-5V-tz5" secondAttribute="bottom" constant="85" id="xTl-qH-EhT"/>
                                         <constraint firstItem="bTN-5V-tz5" firstAttribute="leading" secondItem="ZjI-ky-wYo" secondAttribute="leading" constant="30" id="yfx-dU-m4L"/>
                                     </constraints>
                                 </view>
@@ -111,7 +81,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="mContentView" destination="F7J-zq-MfD" id="Pxv-Oa-Sfr"/>
-                <outlet property="mGraphImageV" destination="JMG-bK-Rf4" id="0qL-Wj-3U5"/>
                 <outlet property="mGraphV" destination="ZjI-ky-wYo" id="fr6-NF-FZE"/>
                 <outlet property="mScrollV" destination="op4-Fg-9Bv" id="trF-Rq-S0d"/>
                 <outlet property="mTitleLabel" destination="bTN-5V-tz5" id="exk-BV-fsA"/>

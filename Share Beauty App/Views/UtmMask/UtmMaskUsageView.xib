@@ -75,36 +75,16 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpR-T7-h6a">
-                            <rect key="frame" x="260" y="152" width="240" height="100"/>
-                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="240" id="FxQ-5f-fhO"/>
-                                <constraint firstAttribute="height" constant="100" id="JdM-iR-OYE"/>
-                            </constraints>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0q-od-VuU">
-                            <rect key="frame" x="260" y="354" width="470" height="140"/>
-                            <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="470" id="euY-Rc-F9x"/>
-                                <constraint firstAttribute="height" constant="140" id="otd-4C-4Kk"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="gik-Q0-hRM" firstAttribute="top" secondItem="XMu-b5-jX3" secondAttribute="bottom" constant="138" id="5c1-bu-ayy"/>
                         <constraint firstItem="Dhf-jg-xXD" firstAttribute="top" secondItem="SiP-SK-6LW" secondAttribute="bottom" constant="45" id="Buj-bM-eFL"/>
-                        <constraint firstItem="WpR-T7-h6a" firstAttribute="top" secondItem="XMu-b5-jX3" secondAttribute="bottom" constant="15" id="Dby-rf-qRY"/>
                         <constraint firstItem="SiP-SK-6LW" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="30" id="IKd-vB-9cz"/>
-                        <constraint firstItem="WpR-T7-h6a" firstAttribute="leading" secondItem="Dhf-jg-xXD" secondAttribute="trailing" constant="35" id="ODY-cR-kj7"/>
                         <constraint firstItem="gik-Q0-hRM" firstAttribute="leading" secondItem="wlk-eg-7hv" secondAttribute="trailing" constant="35" id="QGg-SH-7q1"/>
                         <constraint firstItem="Dhf-jg-xXD" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="135" id="Rgk-Ck-a11"/>
-                        <constraint firstItem="f0q-od-VuU" firstAttribute="top" secondItem="gik-Q0-hRM" secondAttribute="bottom" constant="15" id="bOW-Od-4fO"/>
                         <constraint firstItem="wlk-eg-7hv" firstAttribute="top" secondItem="Dhf-jg-xXD" secondAttribute="bottom" constant="80" id="bwB-eL-ijD"/>
                         <constraint firstItem="wlk-eg-7hv" firstAttribute="leading" secondItem="mhP-3n-VgN" secondAttribute="leading" constant="135" id="dg1-hM-q2I"/>
-                        <constraint firstItem="f0q-od-VuU" firstAttribute="leading" secondItem="wlk-eg-7hv" secondAttribute="trailing" constant="35" id="fAP-cI-jJh"/>
                         <constraint firstItem="SiP-SK-6LW" firstAttribute="top" secondItem="mhP-3n-VgN" secondAttribute="top" constant="30" id="ig1-F3-yrc"/>
                         <constraint firstItem="XMu-b5-jX3" firstAttribute="leading" secondItem="Dhf-jg-xXD" secondAttribute="trailing" constant="35" id="p3A-zg-pde"/>
                         <constraint firstItem="XMu-b5-jX3" firstAttribute="top" secondItem="SiP-SK-6LW" secondAttribute="bottom" constant="45" id="tU7-Iy-wiL"/>
