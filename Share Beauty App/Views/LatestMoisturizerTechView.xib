@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moisture_tech_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-FD-lu4">
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moisture_tech_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-FD-lu4">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
