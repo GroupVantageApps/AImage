@@ -209,7 +209,7 @@ class ProductDetailData: NSObject {
             var data = DataStructColorball()
             data.colorballId = colorballId
             data.name = colorBallEntity.name
-            if LanguageConfigure.countryId == 5 /**|| LanguageConfigure.countryId == 6 || LanguageConfigure.countryId == 7 **/{
+            if LanguageConfigure.countryId == 5 || LanguageConfigure.countryId == 6 /**|| LanguageConfigure.countryId == 7 **/{
                 if colorBallTranslateEntity.nameLocal != "" {
                     data.name = colorBallTranslateEntity.nameLocal
                 }
