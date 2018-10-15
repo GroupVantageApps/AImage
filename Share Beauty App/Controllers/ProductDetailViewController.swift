@@ -858,7 +858,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     private func setMakeUpHowToUse(_ imageIds: [Int]) {
         makeCategoryImages(imageIds)
-        
+
         var contentText: String!
         
         var imageTitleItemIds: [Int] = []
@@ -1532,7 +1532,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func showInfo(_ sender: CategoryButton) {
- 
+        mVContent.isHidden = true
+        mVCurrentSelect?.removeFromSuperview()
+        mVCategoryImage.isHidden = false
+        
         if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
             mVCurrentSelect?.removeFromSuperview()
@@ -1554,15 +1557,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
         
-        mVCurrentSelect?.removeFromSuperview()
-        mVContent.isHidden = false
-        
         switch sender {
         case mCategoryButtonFeatures:
             mVContent.isHidden = true
+            mVCategoryImage.isHidden = true
             mVCurrentSelect = nil
             return
-            
         case mCategoryButtonTechnologies:
             if mIsLatestMoisturizer {
                 let nib = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)

@@ -65,7 +65,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 613 ,609, 148, 419] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
+    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 613 ,609, 148, 419, 578, 572] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     
@@ -121,6 +121,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     productIds.append(productId)
                     if productId == 601 {
                         productIds.append(99999)
+                    } else if productId == 578 || productId == 572 {
+                        productIds.append(contentsOf: [99999,99999,99999,99999])
                     }
                 }
             }
@@ -414,42 +416,62 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let i = enumerated.offset
             let product = enumerated.element
             productsCount += 1
-            // 描画の重複
-//            guard product.productId != 0 else {
-//
-//                if 1 < i && i < 4 && whiteLucentProductsCount == 0{
-//                    productsCount -= 1
-//                } else {
-////                    let view = UIView()
-////                    view.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 250, width: viewWidth, height: viewHeight)
-////                    view.backgroundColor = UIColor.white
-//
-//                    let imageView = UIImageView()
-//                    imageView.contentMode = .scaleAspectFit
-//
-//                    let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
-//                    labe.font = UIFont(name: "Reader", size: 10)
-//                    labe.textAlignment = .center
-//
-//                    //let howToImagePath = ProductDetailData(productId: 578).usageImage.first!
-//                    print("offset:*\(enumerated.offset)")
-//                    // 最初の商品の余白表示
-//                    if i == 1{
-//                        // 最初の商品の顔イラスト
-//                        // imageView.image = FileTable.getImage(6534)
-//                        imageView.tag = 88
-//                        imageView.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
-//                            viewHeight)
-//                    }
-//                    // 商品画像の表示
-//                    contentWidth += imageView.frame.size.width
-//                    imageView.isUserInteractionEnabled = true
-//                    imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
-//
-//                    mScrollV.addSubview(imageView)
-//                }
-//                continue;
-//            }
+            
+            print("offset:*\(enumerated.offset)")
+            guard product.productId != 0 else {
+                let howToImageV = UIImageView()
+                howToImageV.contentMode = .scaleAspectFit
+                
+                let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
+                labe.font = UIFont(name: "Reader", size: 10)
+                labe.numberOfLines = 0
+                labe.textAlignment = .center
+                
+                // 最初の商品の余白表示
+                if i == 1{
+                    // 最初の商品の顔イラスト
+                    // howToImageV.image = FileTable.getImage(6534)
+                    howToImageV.tag = 88
+                    howToImageV.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
+                        viewHeight)
+                } else {
+                    if let makeupIndex = productIds.index(of: 578) {
+                        let howtoIndex = makeupIndex + 1
+                        if howtoIndex <= i && i <= howtoIndex + 4 {
+                            howToImageV.image = UIImage.init(named: "makeup_\(i - makeupIndex)")
+                            howToImageV.tag = 89 + i - howtoIndex
+                            
+                            let itemId = tmpMakeupStrings[i - howtoIndex]
+                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
+                            mScrollV.addSubview(labe)
+                            print("-------------------------------------------")
+                            print(labe.text!)
+                            howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                        }
+                    }
+                    if let makeupIndex = productIds.index(of: 572) {
+                        let howtoIndex = makeupIndex + 1
+                        if howtoIndex <= i && i <= howtoIndex + 4 {
+                            howToImageV.image =  UIImage.init(named: "makeup_\(5 + i - howtoIndex)")
+                            howToImageV.tag = 93 + i - makeupIndex
+                            
+                            let itemId = tmpMakeupStrings[4 + i - howtoIndex]
+                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
+                            mScrollV.addSubview(labe)
+                            print("-------------------------------------------")
+                            print(labe.text!)
+                            howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                        }
+                    }
+                }
+                // 商品画像の表示
+                contentWidth += howToImageV.frame.size.width
+                howToImageV.isUserInteractionEnabled = true
+                howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
+                
+                mScrollV.addSubview(howToImageV)
+                continue
+            }
 
             guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
                 continue
@@ -484,7 +506,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
             // Waso 吹き出し分余白
             if id == 613 {
-                contentWidth += viewWidth
+                //contentWidth += viewWidth
             }
         }
 
