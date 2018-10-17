@@ -25,7 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moisture_effi_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-FD-lu4">
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moisture_tech_01.png" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-FD-lu4">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -35,6 +35,16 @@
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ord-gu-QbI">
                                     <rect key="frame" x="0.0" y="513" width="1024" height="513"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPE-Yx-Pjs">
+                                            <rect key="frame" x="50" y="136" width="924" height="367"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dA-7z-HMq">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </view>
+                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-PX-cMI">
@@ -68,6 +78,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="mCaseOneView" destination="BPE-Yx-Pjs" id="qSq-ho-Ie0"/>
+                <outlet property="mCaseTwoView" destination="3dA-7z-HMq" id="8pf-V0-wgI"/>
                 <outlet property="mFirstView" destination="Njg-um-T5E" id="cOA-xx-CbN"/>
                 <outlet property="mScrollView" destination="vYx-Hr-q5o" id="nfC-n9-b2O"/>
                 <outlet property="mSecondView" destination="ord-gu-QbI" id="Mvn-FL-rww"/>
@@ -76,6 +88,6 @@
         </view>
     </objects>
     <resources>
-        <image name="moisture_effi_01.png" width="2133" height="1086"/>
+        <image name="moisture_tech_01.png" width="2133" height="1086"/>
     </resources>
 </document>
