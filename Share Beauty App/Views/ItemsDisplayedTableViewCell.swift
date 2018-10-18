@@ -41,7 +41,7 @@ class ItemsDisplayedTableViewCell: UITableViewCell {
 
     var product: ProductData? {
         didSet {
-            title = product?.productName
+            title = product?.productName.replacingOccurrences(of: "\n", with: " ")
             isLineCell = false
             isDisplayed = product?.defaultDisplay == 1
         }
