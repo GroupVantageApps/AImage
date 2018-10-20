@@ -1041,7 +1041,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 505 {
             itemId = 7894
         } else if productId == 506 {
-            image = #imageLiteral(resourceName: "lifestyle6")
+            image = #imageLiteral(resourceName: "moisturizer oil free")
             itemId = 7896
         } else if productId == 507 {
             image =  #imageLiteral(resourceName: "day moisturizer")
