@@ -2790,7 +2790,6 @@
 				C05913C61D67235700F22214 /* Resources */,
 				EF74D67DF93DE0AA75D24CD6 /* [CP] Embed Pods Frameworks */,
 				DE794BF41FB29C78006E1F5B /* Run Script */,
-				5B626A2EB58C2706CD51E951 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2809,8 +2808,6 @@
 				C05913DB1D67235700F22214 /* Sources */,
 				C05913DC1D67235700F22214 /* Frameworks */,
 				C05913DD1D67235700F22214 /* Resources */,
-				EBA930EECAD929ED67A0F1AF /* [CP] Embed Pods Frameworks */,
-				E748E346163D9FBBCF50C1B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2830,8 +2827,6 @@
 				C05913E61D67235700F22214 /* Sources */,
 				C05913E71D67235700F22214 /* Frameworks */,
 				C05913E81D67235700F22214 /* Resources */,
-				2745E2C161691305550FC62A /* [CP] Embed Pods Frameworks */,
-				3EAEF81A702EF659FE168B2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3389,51 +3384,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2745E2C161691305550FC62A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3EAEF81A702EF659FE168B2E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppUITests/Pods-Share Beauty AppUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B626A2EB58C2706CD51E951 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9ED64523DC35B1FBF600C8E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3482,36 +3432,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E748E346163D9FBBCF50C1B6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBA930EECAD929ED67A0F1AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty AppTests/Pods-Share Beauty AppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC513493C92C3B12797ED4CC /* [CP] Check Pods Manifest.lock */ = {
