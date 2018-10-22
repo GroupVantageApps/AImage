@@ -65,7 +65,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 613 ,609, 148, 419, 578, 572] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
+    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 613 ,609, 148, 419] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     
@@ -121,9 +121,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     productIds.append(productId)
                     if productId == 601 {
                         productIds.append(99999)
-                    } else if productId == 578 || productId == 572 {
-                        productIds.append(contentsOf: [99999,99999,99999,99999])
                     }
+                    // make up
+                    // else if productId == 578 || productId == 572 {
+                    //    productIds.append(99999)
+                    // }
                 }
             }
         }
@@ -418,61 +420,60 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             productsCount += 1
             
             print("offset:*\(enumerated.offset)")
+
             guard product.productId != 0 else {
-                let howToImageV = UIImageView()
-                howToImageV.contentMode = .scaleAspectFit
-                
-                let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
-                labe.font = UIFont(name: "Reader", size: 10)
-                labe.numberOfLines = 0
-                labe.textAlignment = .center
-                
                 // 最初の商品の余白表示
-                if i == 1{
-                    // 最初の商品の顔イラスト
+                if i == 1 {
+                    let howToImageV = UIImageView()
+                    howToImageV.contentMode = .scaleAspectFit
                     // howToImageV.image = FileTable.getImage(6534)
                     howToImageV.tag = 88
                     howToImageV.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
                         viewHeight)
+                    
+                    contentWidth += howToImageV.frame.size.width
+                    howToImageV.isUserInteractionEnabled = true
+                    howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
+                    
+                    mScrollV.addSubview(howToImageV)
+                    
                 } else {
-                    if let makeupIndex = productIds.index(of: 578) {
-                        let howtoIndex = makeupIndex + 1
-                        if howtoIndex <= i && i <= howtoIndex + 4 {
-                            howToImageV.image = UIImage.init(named: "makeup_\(i - makeupIndex)")
-                            howToImageV.tag = 89 + i - howtoIndex
-                            
-                            let itemId = tmpMakeupStrings[i - howtoIndex]
-                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
-                            mScrollV.addSubview(labe)
-                            print("-------------------------------------------")
-                            print(labe.text!)
-                            howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                    // makeup HowToUse遷移
+                    for index in 0...3 {
+                        let howToImageV = UIImageView()
+                        howToImageV.contentMode = .scaleAspectFit
+                        
+                        let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
+                        labe.font = UIFont(name: "Reader", size: 10)
+                        labe.numberOfLines = 0
+                        labe.textAlignment = .center
+                        
+                        if let makeupIndex = productIds.index(of: 578) {
+                            let howtoIndex = makeupIndex + 1
+                            if howtoIndex == i {
+                                howToImageV.image = UIImage.init(named: "makeup_\(index + 1)")
+                                howToImageV.tag = 89 + index
+                                
+                                let itemId = tmpMakeupStrings[index]
+                                labe.text = AppItemTable.getNameByItemId(itemId: itemId)
+                                mScrollV.addSubview(labe)
+                                print("-------------------------------------------")
+                                print(labe.text!)
+                                howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
+                                howToImageV.layer.borderWidth = 1
+                            }
                         }
-                    }
-                    if let makeupIndex = productIds.index(of: 572) {
-                        let howtoIndex = makeupIndex + 1
-                        if howtoIndex <= i && i <= howtoIndex + 4 {
-                            howToImageV.image =  UIImage.init(named: "makeup_\(5 + i - howtoIndex)")
-                            howToImageV.tag = 93 + i - makeupIndex
-                            
-                            let itemId = tmpMakeupStrings[4 + i - howtoIndex]
-                            labe.text = AppItemTable.getNameByItemId(itemId: itemId)
-                            mScrollV.addSubview(labe)
-                            print("-------------------------------------------")
-                            print(labe.text!)
-                            howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
-                        }
+                        // 商品画像の表示
+                        contentWidth += howToImageV.frame.size.width
+                        howToImageV.isUserInteractionEnabled = true
+                        howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
+                        
+                        mScrollV.addSubview(howToImageV)
                     }
                 }
-                // 商品画像の表示
-                contentWidth += howToImageV.frame.size.width
-                howToImageV.isUserInteractionEnabled = true
-                howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
-                
-                mScrollV.addSubview(howToImageV)
                 continue
             }
-
+            
             guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
                 continue
             }
@@ -503,10 +504,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 text.centerX = viewWidth / 2
                 lifeStyleProductView.addSubview(text)
             }
-
             // Waso 吹き出し分余白
-            if id == 613 {
-                //contentWidth += viewWidth
+            if id == 613 || id == 609 {
+                contentWidth += viewWidth
             }
         }
 
@@ -562,6 +562,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             } else if productId == 613 {
                 imageItemIds.append((discription: "lifestyle13", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
                 labelItems.append((discription: 7989, x: imageX + CGFloat(80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
+            } else if productId == 609 {
+                imageItemIds.append((discription: "lifestyle13", x: imageX + CGFloat(246), y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
+                labelItems.append((discription: 7989, x: imageX + CGFloat(246 + 80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             }
         }
 
