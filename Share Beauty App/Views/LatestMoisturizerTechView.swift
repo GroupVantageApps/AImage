@@ -555,6 +555,13 @@ class LatestMoisturizerTechView: UIView {
     }
     
     private func setThirdView() {
+        let contryIdsA: [Int] = [21]                  // EU, Middle East
+        let contryIdsB: [Int] = [1, 2, 3, 13]         // US,Canada,BZ,Australia
+        let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10]   // Asia
+        let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21] // US,Brazil,Canada,India,Australia,Middle East
+        //LanguageConfigure.regionId = 1
+        //LanguageConfigure.countryId = 21
+        
         let imageV: UIImageView = UIImageView(frame: mScrollView.frame)
         let image: UIImage = UIImage(named: "moisture_tech_\(productId)")!
         
@@ -571,26 +578,43 @@ class LatestMoisturizerTechView: UIView {
         thirdTitle.centerX = mScrollView.centerX
         
         var percentY: CGFloat = thirdTitle.bottom + 40
-        let percentDic: [Int:[String]] = [602:["85%", "80%", "85%"],
+        var percentDic: [Int:[String]] = [602:["85%", "80%", "85%"],
                                           614:["89%", "80%", "86%"],
-                                          604:["94%", "89%", "89%"],//(EU, Middle East)
-                                            //91%, 93%, 92% (US,Canada,BZ,Australia)
+                                          604:["00", "00", "00"],
                                           605:["84%", "82%", "86%"],
                                           606:["90%", "96%", "89%"],
                                           607:["93%", "98%", "86%"],
-                                          608:["94%", "88%", "94%"]]//ASIA
-                                            //100, 92, 97 (US,Brazil,Canada,India,Australia,Middle East)
+                                          608:["00", "00", "00"]]
 
-        let itemIdDic: [Int:[Int]] = [602:[8110, 8114],
+        var itemIdDic: [Int:[Int]] = [602:[8110, 8114],
                                       614:[8110, 8115],
-                                      604:[8116, 8119],
-                                      //8120, 8119
+                                      604:[100, 100],
                                       605:[8124, 8117],
                                       606:[8143, 8146],
                                       607:[8147, 8150],
-                                      608:[8151, 8154]]
-                                        //8155, 58
-
+                                      608:[100, 100]]
+        
+        if contryIdsA.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["94%", "89%", "89%"], forKey: 604)
+            itemIdDic.updateValue([8116, 8119], forKey: 604)
+            print("country pattern is A")
+        }
+        if contryIdsB.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["91%", "93%", "92%"], forKey: 604)
+            itemIdDic.updateValue([8120, 8119], forKey: 604)
+            print("country pattern is B")
+        }
+        if contryIdsC.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["94%", "88%", "94%"], forKey: 608)
+            itemIdDic.updateValue([8151, 8154], forKey: 608)
+            print("country pattern is C")
+        }
+        if contryIdsD.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["100%", "92%", "97%"], forKey: 608)
+            itemIdDic.updateValue([8155, 8158], forKey: 608)
+            print("country pattern is D")
+        }
+        
         for index in 0...2 {
             let percentLabel = UILabel()
             percentLabel.frame = CGRect(x: mThirdView.centerX - 250, y: percentY, width: 0, height: 0)
