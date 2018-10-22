@@ -1532,9 +1532,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func showInfo(_ sender: CategoryButton) {
-        mVContent.isHidden = true
-        mVCurrentSelect?.removeFromSuperview()
-        mVCategoryImage.isHidden = false
         
         if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
@@ -1551,18 +1548,21 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 self.didTapEfficacyResults()
                 
             } else if sender === mCategoryButtonDefend {
-//                let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-//                mVContent.addSubview(utmDefendView!)
-//                mVCurrentSelect = utmDefendView
+                //                let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
+                //                mVContent.addSubview(utmDefendView!)
+                //                mVCurrentSelect = utmDefendView
             }
         }
+        
+        mVCurrentSelect?.removeFromSuperview()
+        mVContent.isHidden = false
         
         switch sender {
         case mCategoryButtonFeatures:
             mVContent.isHidden = true
-            mVCategoryImage.isHidden = true
             mVCurrentSelect = nil
             return
+            
         case mCategoryButtonTechnologies:
             if mIsLatestMoisturizer {
                 let nib = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
@@ -1578,7 +1578,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         case mCategoryButtonHowToUse:
             setMakeUpHowToUse(product.usageImage)
-        //            makeCategoryImages(product.usageImage)
+            //            makeCategoryImages(product.usageImage)
             
         case mCategoryButtonEfficacy:
             makeCategoryImages(product.effectImage)
@@ -1613,6 +1613,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             exit(1)
         }
     }
+
 
 	private var mAvPlayerObserver: Any? = nil
 
