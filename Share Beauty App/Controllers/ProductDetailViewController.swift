@@ -1532,7 +1532,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func showInfo(_ sender: CategoryButton) {
-        
+
         if [588, 593, 594].contains(self.product.productId){
             mVContent.isHidden = false
             mVCurrentSelect?.removeFromSuperview()
@@ -1577,9 +1577,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 makeCategoryImages(product.technologyImage)
             }
         case mCategoryButtonHowToUse:
+            mVCategoryImage.isHidden = false
+            mVContent.isHidden = true
+
             setMakeUpHowToUse(product.usageImage)
             //            makeCategoryImages(product.usageImage)
-            
         case mCategoryButtonEfficacy:
             makeCategoryImages(product.effectImage)
             if productId == 610 || productId == 611 {
