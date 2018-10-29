@@ -95,6 +95,11 @@ struct Const {
     static let troubleDisplayNormal = 2
     static let troubleDisplayHide = 1
 
+    
+    static let lifeStyleBeautyList:[Int] = [601, 602, 606, 553, 610, 611, 550, 609, 148, 419, 613] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
+    // 18AW
+    // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
+    
     static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [497, 115, 511] //waso追加　平井20170217　（アイテムは暫定）115, 497, 511
     // static let lifeStyleBeautyListC = [372, 421]

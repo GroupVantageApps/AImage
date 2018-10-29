@@ -65,10 +65,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         3:LifeStyleFourthDetailViewController.self,
         ]
 
-    private var productIdsDefault:[Int] = [601, 602, 606, 553, 610, 611, 550, 613 ,609, 148, 419] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
-    // 18AW
-    // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
-    
+    private var productIdsDefault:[Int] = Const.lifeStyleBeautyList
     private var productIds:[Int] = []
     private var relative_productIds:[Int] =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
     private let essentialEnagyProducts = [553,554]
@@ -149,12 +146,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         super.viewDidAppear(animated)
 //        if !mFinishedAppear && isShowVideo {
         self.didFinishPlaying()
-        if false {
-            self.createVideo()
-            delegate?.showVideoSkipButtonWithDuration(0.3, didTapFunction: {
-                self.didFinishPlaying()
-            })
-            mFinishedAppear = true
+        if false { // never executed
+            // self.createVideo()
+            // delegate?.showVideoSkipButtonWithDuration(0.3, didTapFunction: {
+               // self.didFinishPlaying()
+            // })
+            // mFinishedAppear = true
         }
     }
 
@@ -233,7 +230,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     @objc private func howToImageTapped(_ sender: UIGestureRecognizer) {
 //        let product_564 = ProductData(productId: 564)
-        let tag = sender.view?.tag as! Int
+        let tag = sender.view!.tag
         var product: ProductData = ProductData(productId: 564)
         var index = 0
         if tag == 88{
@@ -279,7 +276,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
             cell.delegate = self
 
-            print("cell.image:\(cell.image)")
+            print("cell.image:\(String(describing: cell.image))")
 
             return cell
         }
@@ -504,7 +501,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 text.centerX = viewWidth / 2
                 lifeStyleProductView.addSubview(text)
             }
-            // Waso 吹き出し分余白
+            // 吹き出し分余白
             if id == 613 || id == 609 {
                 contentWidth += viewWidth
             }
@@ -559,12 +556,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 imageX -= CGFloat(246 * 2)
                 imageItemIds.append((discription: "lifestyle12", x: imageX + 30, y: CGFloat(85), width: CGFloat(440), height: CGFloat(165)))
                 labelItems.append((discription: 7988, x: imageX + CGFloat(70), y: CGFloat(95), width: CGFloat(360), font: UIFont(name: "Reader", size: 14)!))
+            } else if productId == 609 {
+                imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
+                labelItems.append((discription: 7988, x: imageX + CGFloat(80), y: CGFloat(145), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 613 {
+                imageX += 246
                 imageItemIds.append((discription: "lifestyle13", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
                 labelItems.append((discription: 7989, x: imageX + CGFloat(80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
-            } else if productId == 609 {
-                imageItemIds.append((discription: "lifestyle13", x: imageX + CGFloat(246), y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
-                labelItems.append((discription: 7989, x: imageX + CGFloat(246 + 80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             }
         }
 
