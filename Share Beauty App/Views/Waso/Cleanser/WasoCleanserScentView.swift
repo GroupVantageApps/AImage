@@ -79,8 +79,8 @@ class WasoCleanserScentView: UIView {
             
             let circleOneImageV: UIImageView = UIImageView()
             circleOneImageV.frame = CGRect(x: left, y: 320, width: 120, height: 120)
-            let circleOneImage: UIImage = UIImage(named: "waso_green_83.png")!
-            circleOneImageV.image = circleOneImage
+            //let circleOneImage: UIImage = UIImage(named: "waso_green_83.png")!
+            //circleOneImageV.image = circleOneImage
             circleOneImageV.contentMode = UIViewContentMode.scaleAspectFit
             
             print(circleOneImageV.frame)
@@ -94,12 +94,12 @@ class WasoCleanserScentView: UIView {
             circleOneText.numberOfLines = 0
             circleOneText.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleOneText.sizeToFit()
-            circleOneText.centerX = circleOneImageV.centerX
+            circleOneText.centerX = circleOneImageV.centerX - 5
             
             let circleTwoImageV: UIImageView = UIImageView(frame: circleOneImageV.frame)
             circleTwoImageV.origin.x = circleOneImageV.right + 30
-            let circleTwoImage: UIImage = UIImage(named: "waso_green_83.png")!
-            circleTwoImageV.image = circleTwoImage
+            //let circleTwoImage: UIImage = UIImage(named: "waso_green_83.png")!
+            //circleTwoImageV.image = circleTwoImage
             circleTwoImageV.contentMode = UIViewContentMode.scaleAspectFit
             
             let circleTwoText: UILabel = UILabel(frame: circleTextFrame)
@@ -125,9 +125,9 @@ class WasoCleanserScentView: UIView {
             pageView.addSubview(wanToText)
             pageView.addSubview(scentTitle)
             pageView.addSubview(scentText)
-            //pageView.addSubview(circleOneImageV)
+            pageView.addSubview(circleOneImageV)
             pageView.addSubview(circleOneText)
-            //pageView.addSubview(circleTwoImageV)
+            pageView.addSubview(circleTwoImageV)
             pageView.addSubview(circleTwoText)
             pageView.addSubview(copyText)
             
