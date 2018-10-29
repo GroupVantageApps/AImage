@@ -63,6 +63,7 @@ class LatestMoisturizerTechView: UIView {
         firstSubText.centerX = mScrollView.centerX
         mFirstView.addSubview(firstSubText)
         
+        let imageNames = ["Ashitaba", "Active", "Natsume"]
         for index in -1...1 {
             
             let circleSize: CGFloat = 280
@@ -75,11 +76,10 @@ class LatestMoisturizerTechView: UIView {
             
             let imageV: UIImageView = UIImageView()
             imageV.frame = CGRect(x: 0, y: 40, width: 150, height: 110)
-            //let image: UIImage = UIImage(named: "Iris_1_cmyk.png")!
-            //imageV.image = image
-            imageV.contentMode = UIViewContentMode.scaleAspectFit
+            let image: UIImage = UIImage(named: imageNames[index + 1])!
+            imageV.image = image
+            imageV.contentMode = UIViewContentMode.scaleAspectFill
             imageV.centerX = circleSize / 2
-            imageV.layer.borderWidth = 1
             
             let markSize: CGFloat = 45
             let newMark: UIView = UIView()
@@ -139,12 +139,6 @@ class LatestMoisturizerTechView: UIView {
     }
     
     private func setSecondView() {
-        let backImageV: UIImageView = UIImageView(frame: mScrollView.frame)
-        let backImage: UIImage = UIImage(named: "moisture_tech_02_0\(isCase)")!
-        backImageV.contentMode = UIViewContentMode.scaleAspectFit
-        backImageV.image = backImage
-        //mSecondView.addSubview(backImageV)
-        
         var title: String! = String()
         var text: String! = String()
         if isCase == 1 {
@@ -193,10 +187,6 @@ class LatestMoisturizerTechView: UIView {
         mSecondView.addSubview(secondSubText)
         mSecondView.addSubview(commentLabel)
         
-        //        secondTitle.layer.borderWidth = 1
-        //        secondSubText.layer.borderWidth = 1
-        //        commentLabel.layer.borderWidth = 1
-        
         if isCase == 1 {
             setCaseOneView(upperObject: secondSubText)
             commentLabel.isHidden = true
@@ -224,22 +214,52 @@ class LatestMoisturizerTechView: UIView {
         let imageLabelFrame: CGRect = CGRect(x: 0, y: 30, width: 120, height: 0)
         let topImageLabel: UILabel = UILabel(frame: imageLabelFrame)
         topImageLabel.font = UIFont(name: "Reader", size: 11)
-        //topImageLabel.textColor = UIColor.lightGray
         topImageLabel.text = AppItemTable.getNameByItemId(itemId: 8094)
         topImageLabel.numberOfLines = 0
         topImageLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        //topImageLabel.textAlignment = NSTextAlignment.right
         topImageLabel.sizeToFit()
         topImageLabel.centerX = leftView.centerX
-        //topImageLabel.bottom = mScrollView.bottom - 30
         
-        let imageSize: CGFloat = 240
-        let imageV: UIImageView = UIImageView()
-        let image: UIImage = UIImage(named: "page_02.png")!
-        imageV.frame = CGRect(x: 0, y: topImageLabel.bottom + 20, width: imageSize, height: imageSize)
-        imageV.image = image
-        imageV.contentMode = UIViewContentMode.scaleAspectFit
-        imageV.centerX = leftView.centerX
+        let triangleV: UIView = UIView()
+        triangleV.frame = CGRect(x: 0, y: topImageLabel.bottom + 20, width: 240, height: 220)
+        triangleV.centerX = leftView.centerX
+        
+        let imageSize: CGSize = CGSize(width: 90, height: 90)
+        
+        let topImageV: UIImageView = UIImageView()
+        let tImage: UIImage = UIImage(named: "Enteromorpha_linza")!
+        topImageV.size = imageSize
+        topImageV.image = tImage
+        topImageV.layer.cornerRadius = imageSize.width / 2
+        topImageV.contentMode = UIViewContentMode.scaleAspectFill
+        topImageV.clipsToBounds = true
+        topImageV.centerX = triangleV.width / 2
+        
+        let leftImageV: UIImageView = UIImageView()
+        let lImage: UIImage = UIImage(named: "Laminaria")!
+        leftImageV.size = imageSize
+        leftImageV.image = lImage
+        leftImageV.layer.cornerRadius = imageSize.width / 2
+        leftImageV.contentMode = UIViewContentMode.scaleAspectFill
+        leftImageV.clipsToBounds = true
+        leftImageV.bottom = triangleV.height
+        
+        let rightImageV: UIImageView = UIImageView()
+        let rImage: UIImage = UIImage(named: "Crytymrnia")!
+        rightImageV.size = imageSize
+        rightImageV.image = rImage
+        rightImageV.layer.cornerRadius = imageSize.width / 2
+        rightImageV.contentMode = UIViewContentMode.scaleAspectFill
+        rightImageV.clipsToBounds = true
+        rightImageV.right = triangleV.width
+        rightImageV.bottom = triangleV.height
+        
+        let circleSize: CGFloat = 120
+        let circleView: UIView = UIView()
+        circleView.frame = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
+        circleView.layer.borderWidth = 1
+        circleView.layer.cornerRadius = circleSize / 2
+        circleView.center = CGPoint(x: triangleV.width / 2, y: triangleV.height / 2 + 20)
         
         let centerLabel: UILabel = UILabel()
         centerLabel.frame = topImageLabel.frame
@@ -249,8 +269,7 @@ class LatestMoisturizerTechView: UIView {
         centerLabel.numberOfLines = 0
         centerLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         centerLabel.sizeToFit()
-        centerLabel.centerX = imageV.centerX
-        centerLabel.centerY = imageV.centerY + 10
+        centerLabel.center = circleView.center
         
         let leftImageLabel: UILabel = UILabel(frame: imageLabelFrame)
         leftImageLabel.font = topImageLabel.font
@@ -258,8 +277,8 @@ class LatestMoisturizerTechView: UIView {
         leftImageLabel.numberOfLines = 0
         leftImageLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         leftImageLabel.sizeToFit()
-        leftImageLabel.right = imageV.left - 5
-        leftImageLabel.centerY = imageV.bottom - 50
+        leftImageLabel.right = triangleV.left - 5
+        leftImageLabel.centerY = triangleV.bottom - 40
         
         let rightImageLabel: UILabel = UILabel(frame: imageLabelFrame)
         rightImageLabel.font = topImageLabel.font
@@ -267,41 +286,30 @@ class LatestMoisturizerTechView: UIView {
         rightImageLabel.numberOfLines = 0
         rightImageLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         rightImageLabel.sizeToFit()
-        rightImageLabel.left = imageV.right + 5
+        rightImageLabel.left = triangleV.right + 5
         rightImageLabel.centerY = leftImageLabel.centerY
         
         let bottomLabel: UILabel = UILabel()
-        bottomLabel.frame = CGRect(x: 0, y: imageV.bottom + 10, width: leftView.width - 100, height: 0)
+        bottomLabel.frame = CGRect(x: 0, y: triangleV.bottom + 20, width: leftView.width - 100, height: 0)
         bottomLabel.font = UIFont(name: "Reader-Medium", size: 16)
         bottomLabel.text = AppItemTable.getNameByItemId(itemId: 8098)
         bottomLabel.numberOfLines = 0
         bottomLabel.textAlignment = NSTextAlignment.center
         bottomLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         bottomLabel.sizeToFit()
-        bottomLabel.centerX = imageV.centerX
+        bottomLabel.centerX = triangleV.centerX
         
-        leftView.addSubview(imageV)
+        triangleV.addSubview(circleView)
+        triangleV.addSubview(topImageV)
+        triangleV.addSubview(leftImageV)
+        triangleV.addSubview(rightImageV)
+        triangleV.addSubview(centerLabel)
+        
+        leftView.addSubview(triangleV)
         leftView.addSubview(topImageLabel)
-        leftView.addSubview(centerLabel)
         leftView.addSubview(leftImageLabel)
         leftView.addSubview(rightImageLabel)
         leftView.addSubview(bottomLabel)
-        
-        // レイアウト確認用
-        //        topImageLabel.textColor = .blue
-        //        leftImageLabel.textColor = .blue
-        //        rightImageLabel.textColor = .blue
-        //        bottomLabel.textColor = .blue
-        //
-        //        mCaseOneView.layer.borderWidth = 1
-        //        imageV.layer.borderWidth = 1
-        //        leftView.layer.borderWidth = 1
-        //        rightView.layer.borderWidth = 1
-        //        topImageLabel.layer.borderWidth = 1
-        //        leftImageLabel.layer.borderWidth = 1
-        //        rightImageLabel.layer.borderWidth = 1
-        //        centerLabel.layer.borderWidth = 1
-        //        bottomLabel.layer.borderWidth = 1
         
         // rightView
         let rightGraphTitle: UILabel = UILabel()
@@ -319,19 +327,18 @@ class LatestMoisturizerTechView: UIView {
         rightGraphSub.right = rightGraphTitle.right
         
         let graphV: UIImageView = UIImageView()
-        //let graphImage: UIImage = UIImage(named: "page_02.png")!
+        let graphImage: UIImage = UIImage(named: "laminin_graph")!
         graphV.frame = CGRect(x: 0, y: rightGraphTitle.bottom + 20, width: 300, height: 260)
-        //graphV.image = graphImage
+        graphV.image = graphImage
         graphV.contentMode = UIViewContentMode.scaleAspectFit
         graphV.centerX = rightGraphTitle.centerX + 25
         
         let high: UILabel = UILabel()
-        //high.frame = CGRect(x: 0, y: rightGraphTitle.bottom, width: 0, height: 0)
         high.font = UIFont(name: "Reader-Medium", size: 14)
         high.text = AppItemTable.getNameByItemId(itemId: 8101)
         high.sizeToFit()
         high.top = graphV.top + 10
-        high.right = graphV.left
+        high.right = graphV.left - 5
         
         let verticalLabel: UILabel = UILabel()
         verticalLabel.frame = CGRect(x: 0, y: 0, width: 120, height: 0)
@@ -341,20 +348,22 @@ class LatestMoisturizerTechView: UIView {
         verticalLabel.numberOfLines = 0
         verticalLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         verticalLabel.sizeToFit()
-        verticalLabel.right = graphV.left
+        verticalLabel.right = graphV.left - 5
         verticalLabel.bottom = graphV.bottom
         
         let firstParamLabel: UILabel = UILabel()
-        firstParamLabel.frame = CGRect(x: graphV.left + 60, y: graphV.bottom, width: 0, height: 0)
         firstParamLabel.font = UIFont(name: "Reader", size: 13)
         firstParamLabel.text = AppItemTable.getNameByItemId(itemId: 8103)
         firstParamLabel.sizeToFit()
+        firstParamLabel.top = graphV.bottom + 5
+        firstParamLabel.centerX = graphV.left + 85
         
         let nextParamLabel: UILabel = UILabel()
-        nextParamLabel.frame = CGRect(x: firstParamLabel.right + 70, y: graphV.bottom, width: 0, height: 0)
         nextParamLabel.font = UIFont(name: "Reader", size: 13)
         nextParamLabel.text = AppItemTable.getNameByItemId(itemId: 8104)
         nextParamLabel.sizeToFit()
+        nextParamLabel.top = graphV.bottom + 5
+        nextParamLabel.centerX = graphV.right - 75
         
         rightView.addSubview(rightGraphTitle)
         rightView.addSubview(rightGraphSub)
@@ -363,21 +372,6 @@ class LatestMoisturizerTechView: UIView {
         rightView.addSubview(verticalLabel)
         rightView.addSubview(firstParamLabel)
         rightView.addSubview(nextParamLabel)
-        
-        //        rightGraphTitle.textColor = .blue
-        //        rightGraphSub.textColor = .blue
-        //        high.textColor = .blue
-        //        verticalLabel.textColor = .blue
-        //        firstParamLabel.textColor = .blue
-        //        nextParamLabel.textColor = .blue
-        //
-        //        rightGraphTitle.layer.borderWidth = 1
-        //        rightGraphSub.layer.borderWidth = 1
-        //        graphV.layer.borderWidth = 1
-        //        high.layer.borderWidth = 1
-        //        verticalLabel.layer.borderWidth = 1
-        //        firstParamLabel.layer.borderWidth = 1
-        //        nextParamLabel.layer.borderWidth = 1
         
         mCaseOneView.addSubview(leftView)
         mCaseOneView.addSubview(rightView)
@@ -403,11 +397,12 @@ class LatestMoisturizerTechView: UIView {
         var lowerSideY: CGFloat = 0
         var rightSideX: CGFloat = 0
         
+        let imageNames = ["Tormenti", "Pyrola_Incarnata", "sakura", "Western_Hawthorn"]
         for index in 0...3 {
             let imageSize: CGFloat = 140
             let circleImageV: UIImageView = UIImageView()
             circleImageV.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
-            let image: UIImage = UIImage(named: "Iris_1_cmyk.png")!
+            let image: UIImage = UIImage(named: imageNames[index])!
             circleImageV.image = image
             circleImageV.layer.cornerRadius = imageSize / 2
             circleImageV.contentMode = UIViewContentMode.scaleAspectFill
@@ -437,9 +432,6 @@ class LatestMoisturizerTechView: UIView {
             }
             leftView.addSubview(circleImageV)
             leftView.addSubview(circleLabel)
-            
-            //            circleImageV.layer.borderWidth = 1
-            //            circleLabel.layer.borderWidth = 1
         }
         
         // center view
@@ -456,12 +448,10 @@ class LatestMoisturizerTechView: UIView {
             
             numberLabel.text = "\(num)."
             numberLabel.sizeToFit()
-            //percentY = numberLabel.bottom + 20
             
             let description = UILabel()
             description.frame = CGRect(x: numberLabel.right + 10, y: 0, width: 180, height: 0)
             description.font = UIFont(name: "Reader", size: 15)
-            //description.text = AppItemTable.getNameByItemId(itemId: itemId + i + 1)
             description.text = AppItemTable.getNameByItemId(itemId: 8133 + num)
             description.numberOfLines = 0
             description.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -470,9 +460,6 @@ class LatestMoisturizerTechView: UIView {
             
             centerView.addSubview(numberLabel)
             centerView.addSubview(description)
-            
-            //            numberLabel.layer.borderWidth = 1
-            //            description.layer.borderWidth = 1
         }
         centerView.addSubview(borderView)
         
@@ -480,18 +467,18 @@ class LatestMoisturizerTechView: UIView {
         //var graphHeight: CGFloat = 0
         for index in 0...1 {
             let graphImageV: UIImageView = UIImageView()
-            graphImageV.frame = CGRect(x: 0, y: rightView.height / 2 * CGFloat(index), width: rightView.width, height: rightView.height / 2)
-            //let image: UIImage = UIImage(named: "Iris_1_cmyk.png")!
-            //graphImageV.image = image
-            graphImageV.contentMode = UIViewContentMode.scaleAspectFill
+            graphImageV.frame = CGRect(x: rightView.width - 230, y: rightView.height / 2 * CGFloat(index), width: 230, height: 150)
+            let image: UIImage = UIImage(named: "sakura_graph_0\(index + 1)")!
+            graphImageV.image = image
+            graphImageV.contentMode = UIViewContentMode.scaleAspectFit
             rightView.addSubview(graphImageV)
             
             let high: UILabel = UILabel()
             high.font = UIFont(name: "Reader-Medium", size: 11)
             high.text = AppItemTable.getNameByItemId(itemId: 8101)
             high.sizeToFit()
-            high.top = 15
-            high.right = 80
+            high.top = graphImageV.top + 15
+            high.right = graphImageV.left + 20
             
             let verticalLabel: UILabel = UILabel()
             verticalLabel.frame = CGRect(x: 0, y: 0, width: 75, height: 0)
@@ -500,21 +487,21 @@ class LatestMoisturizerTechView: UIView {
             verticalLabel.numberOfLines = 0
             verticalLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             verticalLabel.sizeToFit()
-            verticalLabel.right = 80
-            verticalLabel.centerY = graphImageV.height / 2
+            verticalLabel.right = graphImageV.left + 20
+            verticalLabel.centerY = graphImageV.centerY + 10
             
             let firstParamLabel: UILabel = UILabel()
             firstParamLabel.font = UIFont(name: "Reader", size: 10)
             firstParamLabel.text = AppItemTable.getNameByItemId(itemId: 8138)
             firstParamLabel.sizeToFit()
-            firstParamLabel.centerX = 128
-            firstParamLabel.bottom = graphImageV.height - 20
+            firstParamLabel.centerX = graphImageV.left + 75
+            firstParamLabel.top = graphImageV.bottom + 5
             
             let nextParamLabel: UILabel = UILabel()
             nextParamLabel.font = firstParamLabel.font
             nextParamLabel.text = AppItemTable.getNameByItemId(itemId: 8139)
             nextParamLabel.sizeToFit()
-            nextParamLabel.centerX = firstParamLabel.centerX + 70
+            nextParamLabel.centerX = firstParamLabel.centerX + 75
             nextParamLabel.top = firstParamLabel.top
             
             let nextParamComment: UILabel = UILabel()
@@ -523,44 +510,25 @@ class LatestMoisturizerTechView: UIView {
             nextParamComment.text = AppItemTable.getNameByItemId(itemId: 8140)
             nextParamComment.sizeToFit()
             
-            graphImageV.addSubview(high)
-            graphImageV.addSubview(verticalLabel)
-            graphImageV.addSubview(firstParamLabel)
-            graphImageV.addSubview(nextParamLabel)
-            graphImageV.addSubview(nextParamComment)
-            
-//            high.textColor = .blue
-//            verticalLabel.textColor = .blue
-//            firstParamLabel.textColor = .blue
-//            nextParamLabel.textColor = .blue
-//            nextParamComment.textColor = .blue
-//
-//            graphImageV.layer.borderWidth = 1
-//            high.layer.borderWidth = 1
-//            verticalLabel.layer.borderWidth = 1
-//            firstParamLabel.layer.borderWidth = 1
-//            nextParamLabel.layer.borderWidth = 1
-//            nextParamComment.layer.borderWidth = 1
+            rightView.addSubview(high)
+            rightView.addSubview(verticalLabel)
+            rightView.addSubview(firstParamLabel)
+            rightView.addSubview(nextParamLabel)
+            rightView.addSubview(nextParamComment)
         }
         
         mCaseTwoView.addSubview(leftView)
         mCaseTwoView.addSubview(centerView)
         mCaseTwoView.addSubview(rightView)
-        
-        //レイアウト確認用
-//        mCaseTwoView.layer.borderWidth = 1
-//        leftView.layer.borderWidth = 1
-//        centerView.layer.borderWidth = 1
-//        rightView.layer.borderWidth = 1
     }
     
     private func setThirdView() {
-        let imageV: UIImageView = UIImageView(frame: mScrollView.frame)
-        let image: UIImage = UIImage(named: "moisture_tech_\(productId)")!
-        
-        imageV.contentMode = UIViewContentMode.scaleAspectFit
-        imageV.image = image
-//        mThirdView.addSubview(imageV)
+        let contryIdsA: [Int] = [21]                  // EU, Middle East
+        let contryIdsB: [Int] = [1, 2, 3, 13]         // US,Canada,BZ,Australia
+        let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10]   // Asia
+        let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21] // US,Brazil,Canada,India,Australia,Middle East
+        //LanguageConfigure.regionId = 1
+        //LanguageConfigure.countryId = 21
         
         let thirdTitle: UILabel = UILabel()
         thirdTitle.frame = firstTitle.frame
@@ -571,26 +539,43 @@ class LatestMoisturizerTechView: UIView {
         thirdTitle.centerX = mScrollView.centerX
         
         var percentY: CGFloat = thirdTitle.bottom + 40
-        let percentDic: [Int:[String]] = [602:["85%", "80%", "85%"],
+        var percentDic: [Int:[String]] = [602:["85%", "80%", "85%"],
                                           614:["89%", "80%", "86%"],
-                                          604:["94%", "89%", "89%"],//(EU, Middle East)
-                                            //91%, 93%, 92% (US,Canada,BZ,Australia)
+                                          604:["00", "00", "00"],
                                           605:["84%", "82%", "86%"],
                                           606:["90%", "96%", "89%"],
                                           607:["93%", "98%", "86%"],
-                                          608:["94%", "88%", "94%"]]//ASIA
-                                            //100, 92, 97 (US,Brazil,Canada,India,Australia,Middle East)
+                                          608:["00", "00", "00"]]
 
-        let itemIdDic: [Int:[Int]] = [602:[8110, 8114],
+        var itemIdDic: [Int:[Int]] = [602:[8110, 8114],
                                       614:[8110, 8115],
-                                      604:[8116, 8119],
-                                      //8120, 8119
+                                      604:[100, 100],
                                       605:[8124, 8117],
                                       606:[8143, 8146],
                                       607:[8147, 8150],
-                                      608:[8151, 8154]]
-                                        //8155, 58
-
+                                      608:[100, 100]]
+        
+        if contryIdsA.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["94%", "89%", "89%"], forKey: 604)
+            itemIdDic.updateValue([8116, 8119], forKey: 604)
+            print("country pattern is A")
+        }
+        if contryIdsB.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["91%", "93%", "92%"], forKey: 604)
+            itemIdDic.updateValue([8120, 8119], forKey: 604)
+            print("country pattern is B")
+        }
+        if contryIdsC.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["94%", "88%", "94%"], forKey: 608)
+            itemIdDic.updateValue([8151, 8154], forKey: 608)
+            print("country pattern is C")
+        }
+        if contryIdsD.contains(LanguageConfigure.countryId) {
+            percentDic.updateValue(["100%", "92%", "97%"], forKey: 608)
+            itemIdDic.updateValue([8155, 8158], forKey: 608)
+            print("country pattern is D")
+        }
+        
         for index in 0...2 {
             let percentLabel = UILabel()
             percentLabel.frame = CGRect(x: mThirdView.centerX - 250, y: percentY, width: 0, height: 0)

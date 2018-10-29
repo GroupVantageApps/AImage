@@ -119,6 +119,19 @@
 		419D8DF921006A7C00106B49 /* UtmMaskEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */; };
 		41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15704207F5010000319BB /* lx_play_sound_2.png */; };
 		41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 41A15705207F5011000319BB /* lx_play_sound_1.png */; };
+		41BE495D21869F8C004BAA57 /* Tormenti.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495321869F7D004BAA57 /* Tormenti.png */; };
+		41BE495E21869F8C004BAA57 /* Western_Hawthorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495421869F7D004BAA57 /* Western_Hawthorn.png */; };
+		41BE495F21869F8C004BAA57 /* Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495521869F80004BAA57 /* Active.png */; };
+		41BE496021869F8C004BAA57 /* Enteromorpha_linza.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495621869F81004BAA57 /* Enteromorpha_linza.png */; };
+		41BE496121869F8C004BAA57 /* Pyrola_Incarnata.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495721869F83004BAA57 /* Pyrola_Incarnata.png */; };
+		41BE496221869F8C004BAA57 /* Crytymrnia.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495821869F85004BAA57 /* Crytymrnia.png */; };
+		41BE496321869F8C004BAA57 /* sakura.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495921869F86004BAA57 /* sakura.png */; };
+		41BE496421869F8C004BAA57 /* Ashitaba.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495A21869F87004BAA57 /* Ashitaba.png */; };
+		41BE496521869F8C004BAA57 /* Natsume.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495B21869F89004BAA57 /* Natsume.png */; };
+		41BE496621869F8C004BAA57 /* Laminaria.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE495C21869F8A004BAA57 /* Laminaria.png */; };
+		41BE49692186B0EA004BAA57 /* sakura_graph_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE49672186B0E6004BAA57 /* sakura_graph_01.png */; };
+		41BE496A2186B0EA004BAA57 /* sakura_graph_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE49682186B0E7004BAA57 /* sakura_graph_02.png */; };
+		41BE496C2186B0EF004BAA57 /* laminin_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BE496B2186B0EE004BAA57 /* laminin_graph.png */; };
 		41CF149A215C6A1B00BFF976 /* WasoMochiTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CF1499215C6A1B00BFF976 /* WasoMochiTechView.swift */; };
 		41CF149C215C6A2D00BFF976 /* WasoMochiTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CF149B215C6A2D00BFF976 /* WasoMochiTechView.xib */; };
 		41CF149F215C6E8200BFF976 /* WasoMochiEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CF149E215C6E8200BFF976 /* WasoMochiEfficacyView.swift */; };
@@ -127,17 +140,6 @@
 		41CF14A6215C79E600BFF976 /* WasoMochiUsageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14A5215C79E600BFF976 /* WasoMochiUsageView.xib */; };
 		41CF14B4215C8DA400BFF976 /* LatestMoisturizerTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CF14B3215C8DA400BFF976 /* LatestMoisturizerTechView.swift */; };
 		41CF14B6215C8DD400BFF976 /* LatestMoisturizerTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14B5215C8DD400BFF976 /* LatestMoisturizerTechView.xib */; };
-		41CF14C3215C95D000BFF976 /* moisture_tech_607.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14B8215C95CA00BFF976 /* moisture_tech_607.png */; };
-		41CF14C4215C95D000BFF976 /* moisture_tech_02_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14B9215C95CB00BFF976 /* moisture_tech_02_02.png */; };
-		41CF14C5215C95D000BFF976 /* moisture_tech_606.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BA215C95CB00BFF976 /* moisture_tech_606.png */; };
-		41CF14C6215C95D000BFF976 /* moisture_tech_614.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BB215C95CC00BFF976 /* moisture_tech_614.png */; };
-		41CF14C7215C95D000BFF976 /* moisture_tech_unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BC215C95CC00BFF976 /* moisture_tech_unknown.png */; };
-		41CF14C8215C95D000BFF976 /* moisture_tech_605.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BD215C95CD00BFF976 /* moisture_tech_605.png */; };
-		41CF14C9215C95D000BFF976 /* moisture_tech_02_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BE215C95CE00BFF976 /* moisture_tech_02_01.png */; };
-		41CF14CA215C95D000BFF976 /* moisture_tech_608.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14BF215C95CF00BFF976 /* moisture_tech_608.png */; };
-		41CF14CB215C95D000BFF976 /* moisture_tech_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14C0215C95CF00BFF976 /* moisture_tech_01.png */; };
-		41CF14CC215C95D000BFF976 /* moisture_tech_604.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14C1215C95D000BFF976 /* moisture_tech_604.png */; };
-		41CF14CD215C95D000BFF976 /* moisture_tech_602.png in Resources */ = {isa = PBXBuildFile; fileRef = 41CF14C2215C95D000BFF976 /* moisture_tech_602.png */; };
 		41DD2F3420BBCDDB0094CC0D /* SMKCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DD2F3320BBCDDB0094CC0D /* SMKCategoryButton.swift */; };
 		41E5B0D3215348C500513232 /* utm_mask_usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E5B0D2215348C500513232 /* utm_mask_usage.png */; };
 		41E5B0D721534F3C00513232 /* UtmMaskUsageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5B0D621534F3C00513232 /* UtmMaskUsageView.xib */; };
@@ -902,6 +904,19 @@
 		419D8DF821006A7C00106B49 /* UtmMaskEfficacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtmMaskEfficacyView.swift; sourceTree = "<group>"; };
 		41A15704207F5010000319BB /* lx_play_sound_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_2.png; sourceTree = "<group>"; };
 		41A15705207F5011000319BB /* lx_play_sound_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lx_play_sound_1.png; sourceTree = "<group>"; };
+		41BE495321869F7D004BAA57 /* Tormenti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tormenti.png; sourceTree = "<group>"; };
+		41BE495421869F7D004BAA57 /* Western_Hawthorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Western_Hawthorn.png; sourceTree = "<group>"; };
+		41BE495521869F80004BAA57 /* Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Active.png; sourceTree = "<group>"; };
+		41BE495621869F81004BAA57 /* Enteromorpha_linza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enteromorpha_linza.png; sourceTree = "<group>"; };
+		41BE495721869F83004BAA57 /* Pyrola_Incarnata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pyrola_Incarnata.png; sourceTree = "<group>"; };
+		41BE495821869F85004BAA57 /* Crytymrnia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crytymrnia.png; sourceTree = "<group>"; };
+		41BE495921869F86004BAA57 /* sakura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakura.png; sourceTree = "<group>"; };
+		41BE495A21869F87004BAA57 /* Ashitaba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ashitaba.png; sourceTree = "<group>"; };
+		41BE495B21869F89004BAA57 /* Natsume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Natsume.png; sourceTree = "<group>"; };
+		41BE495C21869F8A004BAA57 /* Laminaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Laminaria.png; sourceTree = "<group>"; };
+		41BE49672186B0E6004BAA57 /* sakura_graph_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakura_graph_01.png; sourceTree = "<group>"; };
+		41BE49682186B0E7004BAA57 /* sakura_graph_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sakura_graph_02.png; sourceTree = "<group>"; };
+		41BE496B2186B0EE004BAA57 /* laminin_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laminin_graph.png; sourceTree = "<group>"; };
 		41CF1499215C6A1B00BFF976 /* WasoMochiTechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasoMochiTechView.swift; sourceTree = "<group>"; };
 		41CF149B215C6A2D00BFF976 /* WasoMochiTechView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasoMochiTechView.xib; sourceTree = "<group>"; };
 		41CF149E215C6E8200BFF976 /* WasoMochiEfficacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasoMochiEfficacyView.swift; sourceTree = "<group>"; };
@@ -910,17 +925,6 @@
 		41CF14A5215C79E600BFF976 /* WasoMochiUsageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasoMochiUsageView.xib; sourceTree = "<group>"; };
 		41CF14B3215C8DA400BFF976 /* LatestMoisturizerTechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoisturizerTechView.swift; sourceTree = "<group>"; };
 		41CF14B5215C8DD400BFF976 /* LatestMoisturizerTechView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestMoisturizerTechView.xib; sourceTree = "<group>"; };
-		41CF14B8215C95CA00BFF976 /* moisture_tech_607.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_607.png; sourceTree = "<group>"; };
-		41CF14B9215C95CB00BFF976 /* moisture_tech_02_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_02_02.png; sourceTree = "<group>"; };
-		41CF14BA215C95CB00BFF976 /* moisture_tech_606.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_606.png; sourceTree = "<group>"; };
-		41CF14BB215C95CC00BFF976 /* moisture_tech_614.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_614.png; sourceTree = "<group>"; };
-		41CF14BC215C95CC00BFF976 /* moisture_tech_unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_unknown.png; sourceTree = "<group>"; };
-		41CF14BD215C95CD00BFF976 /* moisture_tech_605.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_605.png; sourceTree = "<group>"; };
-		41CF14BE215C95CE00BFF976 /* moisture_tech_02_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_02_01.png; sourceTree = "<group>"; };
-		41CF14BF215C95CF00BFF976 /* moisture_tech_608.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_608.png; sourceTree = "<group>"; };
-		41CF14C0215C95CF00BFF976 /* moisture_tech_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_01.png; sourceTree = "<group>"; };
-		41CF14C1215C95D000BFF976 /* moisture_tech_604.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_604.png; sourceTree = "<group>"; };
-		41CF14C2215C95D000BFF976 /* moisture_tech_602.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moisture_tech_602.png; sourceTree = "<group>"; };
 		41DD2F3320BBCDDB0094CC0D /* SMKCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMKCategoryButton.swift; sourceTree = "<group>"; };
 		41E5B0D2215348C500513232 /* utm_mask_usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_usage.png; sourceTree = "<group>"; };
 		41E5B0D621534F3C00513232 /* UtmMaskUsageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtmMaskUsageView.xib; sourceTree = "<group>"; };
@@ -2051,17 +2055,19 @@
 		41CF14B7215C95A300BFF976 /* Moisturizer */ = {
 			isa = PBXGroup;
 			children = (
-				41CF14C0215C95CF00BFF976 /* moisture_tech_01.png */,
-				41CF14BE215C95CE00BFF976 /* moisture_tech_02_01.png */,
-				41CF14B9215C95CB00BFF976 /* moisture_tech_02_02.png */,
-				41CF14C2215C95D000BFF976 /* moisture_tech_602.png */,
-				41CF14C1215C95D000BFF976 /* moisture_tech_604.png */,
-				41CF14BD215C95CD00BFF976 /* moisture_tech_605.png */,
-				41CF14BA215C95CB00BFF976 /* moisture_tech_606.png */,
-				41CF14B8215C95CA00BFF976 /* moisture_tech_607.png */,
-				41CF14BF215C95CF00BFF976 /* moisture_tech_608.png */,
-				41CF14BB215C95CC00BFF976 /* moisture_tech_614.png */,
-				41CF14BC215C95CC00BFF976 /* moisture_tech_unknown.png */,
+				41BE496B2186B0EE004BAA57 /* laminin_graph.png */,
+				41BE49672186B0E6004BAA57 /* sakura_graph_01.png */,
+				41BE49682186B0E7004BAA57 /* sakura_graph_02.png */,
+				41BE495521869F80004BAA57 /* Active.png */,
+				41BE495A21869F87004BAA57 /* Ashitaba.png */,
+				41BE495821869F85004BAA57 /* Crytymrnia.png */,
+				41BE495621869F81004BAA57 /* Enteromorpha_linza.png */,
+				41BE495C21869F8A004BAA57 /* Laminaria.png */,
+				41BE495B21869F89004BAA57 /* Natsume.png */,
+				41BE495721869F83004BAA57 /* Pyrola_Incarnata.png */,
+				41BE495921869F86004BAA57 /* sakura.png */,
+				41BE495321869F7D004BAA57 /* Tormenti.png */,
+				41BE495421869F7D004BAA57 /* Western_Hawthorn.png */,
 			);
 			path = Moisturizer;
 			sourceTree = "<group>";
@@ -3177,6 +3183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */,
+				41BE496121869F8C004BAA57 /* Pyrola_Incarnata.png in Resources */,
 				417FD01B2161E2840035966F /* mochi_effi_graph.png in Resources */,
 				4171312C2154AFB4002A67D0 /* Reader-Medium.otf in Resources */,
 				4171312B2154AFA8002A67D0 /* Reader-Regular.otf in Resources */,
@@ -3193,11 +3200,13 @@
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
 				DE80C66620726D3600CD326A /* 18aw_92.png in Resources */,
 				C050C9171E82619F0009679D /* whl_slider_1.png in Resources */,
+				41BE495E21869F8C004BAA57 /* Western_Hawthorn.png in Resources */,
 				C05913D91D67235700F22214 /* LaunchScreen.storyboard in Resources */,
 				26F378362023F9E300123F4D /* SFSLX_180129_12.png in Resources */,
 				26768DAA202C5FD6005BE606 /* graph_03.png in Resources */,
 				DEC751F72073BCC900A9FC1C /* WASOPeelHowToUseResultView.xib in Resources */,
 				26F3782D20233BCA00123F4D /* close_button.png in Resources */,
+				41BE495D21869F8C004BAA57 /* Tormenti.png in Resources */,
 				4194847E2153A27A00680A26 /* cleanser_scent_02.png in Resources */,
 				DE48C3151EB6ABB600D29A8D /* LXProductGraphView.xib in Resources */,
 				E55194B21DF43E120064C37D /* ProductDetailViewController.storyboard in Resources */,
@@ -3227,12 +3236,10 @@
 				C0D1954B1DE7130400C8B88E /* SunCareFeaturesView.xib in Resources */,
 				C050C8FC1E82619E0009679D /* features_smk_1.png in Resources */,
 				DE06F7231F16450200EF2FE2 /* suncare_bg.png in Resources */,
-				41CF14CD215C95D000BFF976 /* moisture_tech_602.png in Resources */,
 				DE310E442074AD3100A6A5F7 /* waso_green_83.png in Resources */,
 				DE7D08221ED6E412006513FD /* LXProductViewController.storyboard in Resources */,
 				B38F63C51F47682700176804 /* MoisturizingCream01_after.png in Resources */,
 				26AD5D7E20231193002A2076 /* button.png in Resources */,
-				41CF14C5215C95D000BFF976 /* moisture_tech_606.png in Resources */,
 				B38F63C01F47682700176804 /* DayCream01_before.png in Resources */,
 				C0B263E61E6E98FB00452C12 /* WasoGraphEfficacyView.xib in Resources */,
 				C050C9161E82619F0009679D /* whl01_before.png in Resources */,
@@ -3248,7 +3255,6 @@
 				6E4ABB3320AA6CAF000355D2 /* 01_button.png in Resources */,
 				26768DB6202C5FE1005BE606 /* page_02.png in Resources */,
 				C050C97F1E8267450009679D /* efficacy_slider_full.png in Resources */,
-				41CF14CC215C95D000BFF976 /* moisture_tech_604.png in Resources */,
 				26768D86202C1C4E005BE606 /* Rose-Water_image.png in Resources */,
 				C9906DC41F2AADA200414722 /* LifeStyleSixthProductView.xib in Resources */,
 				C050C99F1E8267450009679D /* t_gray_graph.png in Resources */,
@@ -3295,7 +3301,6 @@
 				C050C9811E8267450009679D /* eye_after.png in Resources */,
 				DE2C91361E9C681100B5FC4A /* LuxuryViewController.storyboard in Resources */,
 				C037CBB21D88112A00DEFE14 /* IdealSelectCollectionView.xib in Resources */,
-				41CF14C3215C95D000BFF976 /* moisture_tech_607.png in Resources */,
 				B38F63C11F47682700176804 /* DayCream02_after.png in Resources */,
 				E52891D71DF2FF2D007B92B2 /* LineDetailViewController.storyboard in Resources */,
 				B38F63BE1F47682700176804 /* Befor_use.png in Resources */,
@@ -3308,7 +3313,6 @@
 				C050C9A11E8267450009679D /* t_star.png in Resources */,
 				C0417E721E65A4D3009519EC /* MakeupViewController.storyboard in Resources */,
 				26768DB8202C5FE1005BE606 /* enhanceGraph_03.png in Resources */,
-				41CF14C8215C95D000BFF976 /* moisture_tech_605.png in Resources */,
 				B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */,
 				DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */,
 				41A15706207F5012000319BB /* lx_play_sound_2.png in Resources */,
@@ -3354,7 +3358,6 @@
 				DEE83E6B1EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib in Resources */,
 				DE06F71C1F16450200EF2FE2 /* active_play.png in Resources */,
 				6E4ABB3720AA6CAF000355D2 /* makeup_01.png in Resources */,
-				41CF14CA215C95D000BFF976 /* moisture_tech_608.png in Resources */,
 				E52891CB1DF2F911007B92B2 /* IdealFirstSelectViewController.storyboard in Resources */,
 				DE2C300420737AB200548627 /* eee_7089.png in Resources */,
 				26AD5D7720230A1F002A2076 /* ACaslonPro-Semibold.otf in Resources */,
@@ -3371,17 +3374,17 @@
 				C94638D11F18CC1E009D1480 /* bundles.bundle in Resources */,
 				419484652153944E00680A26 /* utm_mask_efficacy_graph.png in Resources */,
 				DE06F7161F16450200EF2FE2 /* s_title.png in Resources */,
-				41CF14C4215C95D000BFF976 /* moisture_tech_02_02.png in Resources */,
 				DE06F71B1F16450200EF2FE2 /* desc3.png in Resources */,
 				E5CCCE901E6A6032008A4481 /* EfficacyResultView.xib in Resources */,
+				41BE496A2186B0EA004BAA57 /* sakura_graph_02.png in Resources */,
 				DE2C918B1E9C682500B5FC4A /* lx_icon_recommend_large@2x.png in Resources */,
 				DE80C67020726D6200CD326A /* 18aw_90.png in Resources */,
+				41BE495F21869F8C004BAA57 /* Active.png in Resources */,
 				DE06F7181F16450200EF2FE2 /* header.png in Resources */,
 				26768D7E202C1C3B005BE606 /* Iris_1_cmyk.png in Resources */,
 				C02818AE1E6D44CA00D4DADA /* MakeupUsageView.xib in Resources */,
 				C091BA7D1D6982B00073FEDB /* HeaderView.xib in Resources */,
 				DE2C301020737B3D00548627 /* eee_technology2_item02.png in Resources */,
-				41CF14C6215C95D000BFF976 /* moisture_tech_614.png in Resources */,
 				C050C9851E8267450009679D /* utm02_after.png in Resources */,
 				C037CBAA1D87F6ED00DEFE14 /* IdealSelectCell.xib in Resources */,
 				C050C96E1E8267450009679D /* d_arrow_2.png in Resources */,
@@ -3422,6 +3425,7 @@
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
+				41BE496421869F8C004BAA57 /* Ashitaba.png in Resources */,
 				DE06F70F1F16450200EF2FE2 /* children.png in Resources */,
 				DE310E462074AD3100A6A5F7 /* waso_green_96.png in Resources */,
 				2680EC242037E4FA005257B1 /* makeup_5.png in Resources */,
@@ -3455,6 +3459,7 @@
 				C050C9701E8267450009679D /* d_block_2m.png in Resources */,
 				DE2C919E1E9C682500B5FC4A /* lx_top_menu.png in Resources */,
 				2680EC1F2037E4FA005257B1 /* makeup_7.png in Resources */,
+				41BE49692186B0EA004BAA57 /* sakura_graph_01.png in Resources */,
 				6E4ABB4020AA6CAF000355D2 /* 03_back_03.png in Resources */,
 				26AD5D9720232D6F002A2076 /* ns_page_top.png in Resources */,
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
@@ -3470,7 +3475,6 @@
 				C050C99C1E8267450009679D /* t_graph_gray_eye.png in Resources */,
 				2680EC222037E4FA005257B1 /* makeup_2.png in Resources */,
 				260E34AC2019CCFE0006109B /* moviStartBtn.png in Resources */,
-				41CF14C9215C95D000BFF976 /* moisture_tech_02_01.png in Resources */,
 				6E4ABB3B20AA6CAF000355D2 /* 02_button.png in Resources */,
 				DE2C909B1E9C66E600B5FC4A /* LXYutakaConceptSubView.xib in Resources */,
 				26F378342023F9E300123F4D /* SFSLX_180129_8.png in Resources */,
@@ -3495,6 +3499,7 @@
 				26768DA4202C5FD6005BE606 /* graph_01.png in Resources */,
 				C0E4DCBF1D71808F00931B66 /* ProductListView.xib in Resources */,
 				C05C779F1D9E5EFA00E38B7B /* IdealProductView.xib in Resources */,
+				41BE496221869F8C004BAA57 /* Crytymrnia.png in Resources */,
 				DE2C91AE1E9C682500B5FC4A /* pick.png in Resources */,
 				DE06F7151F16450200EF2FE2 /* face.png in Resources */,
 				DE2C908B1E9C66E600B5FC4A /* LXNavigationView.xib in Resources */,
@@ -3529,6 +3534,7 @@
 				C02818A21E6BCE7C00D4DADA /* WasoFeatureView.xib in Resources */,
 				2687F5FA2032EA9F005F8D80 /* percent_01.png in Resources */,
 				C050C9941E8267450009679D /* t_arrow_right.png in Resources */,
+				41BE496021869F8C004BAA57 /* Enteromorpha_linza.png in Resources */,
 				C050C91A1E82619F0009679D /* green_C.png in Resources */,
 				DE2C90831E9C66E600B5FC4A /* LXGraphView.xib in Resources */,
 				C050C96F1E8267450009679D /* d_arrow_3_5.png in Resources */,
@@ -3563,6 +3569,7 @@
 				C050C99E1E8267450009679D /* t_graph_red_eye.png in Resources */,
 				6E4ABB3A20AA6CAF000355D2 /* 02_03.png in Resources */,
 				E56956791DF2F52C00BE9308 /* TopViewController.storyboard in Resources */,
+				41BE496321869F8C004BAA57 /* sakura.png in Resources */,
 				C050C8FD1E82619F0009679D /* features_smk_2.png in Resources */,
 				DE310E452074AD3100A6A5F7 /* waso_green_95.png in Resources */,
 				6E4ABB4520AA6CAF000355D2 /* makeup_02.png in Resources */,
@@ -3593,7 +3600,7 @@
 				C0665B3F1D6B252400B3D8E5 /* TestView.xib in Resources */,
 				DE2C301C20738CC900548627 /* EEEFirstEfficacyResultView.xib in Resources */,
 				80429B8A1EF5C2550022C99D /* LifeStyleSecondProductView.xib in Resources */,
-				41CF14C7215C95D000BFF976 /* moisture_tech_unknown.png in Resources */,
+				41BE496621869F8C004BAA57 /* Laminaria.png in Resources */,
 				C050C9C01E8276C60009679D /* Shiseido-ExtraLightx.otf in Resources */,
 				4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */,
 				DE2C90951E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.xib in Resources */,
@@ -3602,7 +3609,6 @@
 				419484822153A27A00680A26 /* mochi_effi_circlegraph.png in Resources */,
 				26768DAB202C5FD6005BE606 /* graph_02.png in Resources */,
 				DE2C90971E9C66E600B5FC4A /* LXYutakaConceptContentSecondView.xib in Resources */,
-				41CF14CB215C95D000BFF976 /* moisture_tech_01.png in Resources */,
 				26768DB7202C5FE1005BE606 /* enhanceGraph_02.png in Resources */,
 				C050C9921E8267450009679D /* t_arrow_eye.png in Resources */,
 				26768DB9202C5FE1005BE606 /* enhanceGraph_04.png in Resources */,
@@ -3611,6 +3617,7 @@
 				417131222154925F002A67D0 /* LifeStyleSixthDetailViewController.storyboard in Resources */,
 				26AD5D9020232545002A2076 /* nsbutton_2.png in Resources */,
 				26768D80202C1C3B005BE606 /* Reishi_2_cmyk.png in Resources */,
+				41BE496C2186B0EF004BAA57 /* laminin_graph.png in Resources */,
 				C050C90F1E82619F0009679D /* ss_purple.png in Resources */,
 				DE80C6822072939D00CD326A /* 18aw_93.png in Resources */,
 				41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */,
@@ -3664,6 +3671,7 @@
 				DE2C90871E9C66E600B5FC4A /* LXHeaderView.xib in Resources */,
 				DE325B182077469000B660C9 /* lx_b04.png in Resources */,
 				DE06F70D1F16450200EF2FE2 /* urban.png in Resources */,
+				41BE496521869F8C004BAA57 /* Natsume.png in Resources */,
 				B38F63C61F47682700176804 /* MoisturizingCream01_before.png in Resources */,
 				C050C9191E82619F0009679D /* whl_slider_1_13.png in Resources */,
 			);
