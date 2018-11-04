@@ -96,7 +96,7 @@ struct Const {
     static let troubleDisplayHide = 1
 
     
-    static let lifeStyleBeautyList:[Int] = [601, 602, 606, 553, 610, 611, 550, 609, 148, 419, 613] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
+    static let lifeStyleBeautyList:[Int] = [601, 602, 606, 553, 610, 611, 550, 609, 613] //111, 148, 419,仮です // 613のみ 612はつかわないWaso t-hirai 19ss
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
     
