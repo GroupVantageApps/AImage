@@ -524,7 +524,7 @@ class LatestMoisturizerTechView: UIView {
     
     private func setThirdView() {
         let contryIdsA: [Int] = [21]                  // EU, Middle East
-        let contryIdsB: [Int] = [1, 2, 3, 13]         // US,Canada,BZ,Australia
+        let contryIdsB: [Int] = [1, 2, 3, 4, 13]         // US,Canada,BZ,Australia
         let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10]   // Asia
         let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21] // US,Brazil,Canada,India,Australia,Middle East
         //LanguageConfigure.regionId = 1
@@ -550,9 +550,9 @@ class LatestMoisturizerTechView: UIView {
         var itemIdDic: [Int:[Int]] = [602:[8110, 8114],
                                       614:[8110, 8115],
                                       604:[100, 100],
-                                      605:[8124, 8117],
-                                      606:[8143, 8146],
-                                      607:[8147, 8150],
+                                      605:[8123, 8127],//605:[8124, 8117]
+                                      606:[8142, 8146],
+                                      607:[8146, 8150],
                                       608:[100, 100]]
         
         if contryIdsA.contains(LanguageConfigure.countryId) {
@@ -562,7 +562,7 @@ class LatestMoisturizerTechView: UIView {
         }
         if contryIdsB.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["91%", "93%", "92%"], forKey: 604)
-            itemIdDic.updateValue([8120, 8119], forKey: 604)
+            itemIdDic.updateValue([8120, 8123], forKey: 604)
             print("country pattern is B")
         }
         if contryIdsC.contains(LanguageConfigure.countryId) {
