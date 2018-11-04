@@ -550,29 +550,29 @@ class LatestMoisturizerTechView: UIView {
         var itemIdDic: [Int:[Int]] = [602:[8110, 8114],
                                       614:[8110, 8115],
                                       604:[100, 100],
-                                      605:[8123, 8127],//605:[8124, 8117]
+                                      605:[8123, 8127],//+1する
                                       606:[8142, 8146],
                                       607:[8146, 8150],
                                       608:[100, 100]]
         
         if contryIdsA.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["94%", "89%", "89%"], forKey: 604)
-            itemIdDic.updateValue([8116, 8119], forKey: 604)
+            itemIdDic.updateValue([8116, 8119], forKey: 604)//+1する
             print("country pattern is A")
         }
         if contryIdsB.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["91%", "93%", "92%"], forKey: 604)
-            itemIdDic.updateValue([8120, 8123], forKey: 604)
+            itemIdDic.updateValue([8119, 8123], forKey: 604)//+1する
             print("country pattern is B")
         }
         if contryIdsC.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["94%", "88%", "94%"], forKey: 608)
-            itemIdDic.updateValue([8151, 8154], forKey: 608)
+            itemIdDic.updateValue([8151, 8154], forKey: 608)//+1する
             print("country pattern is C")
         }
         if contryIdsD.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["100%", "92%", "97%"], forKey: 608)
-            itemIdDic.updateValue([8155, 8158], forKey: 608)
+            itemIdDic.updateValue([8154, 8158], forKey: 608)//+1する
             print("country pattern is D")
         }
         
