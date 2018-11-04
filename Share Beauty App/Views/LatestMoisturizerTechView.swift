@@ -567,7 +567,7 @@ class LatestMoisturizerTechView: UIView {
         }
         if contryIdsC.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["94%", "88%", "94%"], forKey: 608)
-            itemIdDic.updateValue([8151, 8154], forKey: 608)//+1する
+            itemIdDic.updateValue([8150, 8154], forKey: 608)//+1する
             print("country pattern is C")
         }
         if contryIdsD.contains(LanguageConfigure.countryId) {
