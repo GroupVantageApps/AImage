@@ -1637,14 +1637,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 		telopLabel.numberOfLines = 0
 		telopLabel.lineBreakMode = .byWordWrapping
 		telopLabel.backgroundColor = .clear
-        telopLabel.font = UIFont(name:"Reader-Regure", size: 24.0)
-        //telopLabel.font = UIFont.systemFont(ofSize: 24.0)
+       // telopLabel.font = UIFont(name:"Reader-Regure", size: 84.0)
+        telopLabel.shadowColor = UIColor.black
+        telopLabel.shadowOffset = CGSize(width: 2, height: 2)
+        telopLabel.font = UIFont.systemFont(ofSize: 32.0)
 		telopLabel.adjustsFontSizeToFitWidth = true
 		telopLabel.minimumScaleFactor = 0.6
 		telopLabel.textColor = .white
 		telopLabel.textAlignment = .center
 		let labelWidth = self.view.width * 0.9
-		telopLabel.frame = CGRect(x: (self.view.width - labelWidth) / 2.0, y: self.view.height - 60.0, width: labelWidth, height: 130.0)
+		telopLabel.frame = CGRect(x: (self.view.width - labelWidth) / 2.0, y: self.view.height - 100.0, width: labelWidth, height: 150.0)
 		avPlayerVc.contentOverlayView?.addSubview(telopLabel)
 		
 		// 再生位置を監視し、テロップを表示する
