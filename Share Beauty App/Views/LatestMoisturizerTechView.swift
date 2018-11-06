@@ -526,10 +526,10 @@ class LatestMoisturizerTechView: UIView {
     }
     
     private func setThirdView() {
-        let contryIdsA: [Int] = [21]                  // EU, Middle East
-        let contryIdsB: [Int] = [1, 2, 3, 4, 13]         // US,Canada,BZ,Australia
-        let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10]   // Asia
-        let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21] // US,Brazil,Canada,India,Australia,Middle East
+        let contryIdsA: [Int] = [21, 4]                  // EU, Middle East
+        let contryIdsB: [Int] = [1, 2, 3, 13]            // US,Canada,BZ,Australia
+        let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10, 4]   // Asia
+        let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21]    // US,Brazil,Canada,India,Australia,Middle East
         //LanguageConfigure.regionId = 1
         //LanguageConfigure.countryId = 21
         
@@ -550,32 +550,32 @@ class LatestMoisturizerTechView: UIView {
                                           607:["93%", "98%", "86%"],
                                           608:["00", "00", "00"]]
 
-        var itemIdDic: [Int:[Int]] = [602:[8110, 8114],
-                                      614:[8110, 8115],
-                                      604:[100, 100],
-                                      605:[8123, 8127],//+1する
-                                      606:[8142, 8146],
-                                      607:[8146, 8150],
-                                      608:[100, 100]]
+        var itemIdDic: [Int: Int] = [602: 8111,
+                                     614: 8111,
+                                     604: 100,
+                                     605: 8124,
+                                     606: 8143,
+                                     607: 8147,
+                                     608: 100]
         
         if contryIdsA.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["94%", "89%", "89%"], forKey: 604)
-            itemIdDic.updateValue([8116, 8119], forKey: 604)//+1する
+            itemIdDic.updateValue(8116, forKey: 604)
             print("country pattern is A")
         }
         if contryIdsB.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["91%", "93%", "92%"], forKey: 604)
-            itemIdDic.updateValue([8119, 8123], forKey: 604)//+1する
+            itemIdDic.updateValue(8120, forKey: 604)
             print("country pattern is B")
         }
         if contryIdsC.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["94%", "88%", "94%"], forKey: 608)
-            itemIdDic.updateValue([8150, 8154], forKey: 608)//+1する
+            itemIdDic.updateValue(8151, forKey: 608)
             print("country pattern is C")
         }
         if contryIdsD.contains(LanguageConfigure.countryId) {
             percentDic.updateValue(["100%", "92%", "97%"], forKey: 608)
-            itemIdDic.updateValue([8154, 8158], forKey: 608)//+1する
+            itemIdDic.updateValue(8155, forKey: 608)
             print("country pattern is D")
         }
         
@@ -592,7 +592,7 @@ class LatestMoisturizerTechView: UIView {
             let description = UILabel()
             description.frame = CGRect(x: percentLabel.right + 20, y: 0, width: 400, height: 0)
             description.font = UIFont(name: "Reader", size: 18)
-            description.text = AppItemTable.getNameByItemId(itemId: itemIdDic[self.productId]![0] + index + 1)
+            description.text = AppItemTable.getNameByItemId(itemId: itemIdDic[self.productId]! + index)
             description.numberOfLines = 0
             description.lineBreakMode = NSLineBreakMode.byWordWrapping
             description.sizeToFit()
@@ -606,7 +606,11 @@ class LatestMoisturizerTechView: UIView {
         copyLabel.frame = CGRect(x: 0, y: 0, width: 200, height: 0)
         copyLabel.font = UIFont(name: "Reader", size: 11)
         copyLabel.textColor = UIColor.lightGray
-        copyLabel.text = AppItemTable.getNameByItemId(itemId: itemIdDic[self.productId]![1])
+        if productId == 614 {
+            copyLabel.text = AppItemTable.getNameByItemId(itemId: itemIdDic[self.productId]! + 4)
+        } else {
+            copyLabel.text = AppItemTable.getNameByItemId(itemId: itemIdDic[self.productId]! + 3)
+        }
         copyLabel.numberOfLines = 0
         copyLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         copyLabel.textAlignment = NSTextAlignment.right
