@@ -494,11 +494,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let id = product.productId
             let itemIds = [602: 8021, 606: 8022, 553: 8023]
             if itemIds[id] != nil {
-                let text = UILabel(frame: CGRect(x: 0, y: 60, width: 0, height: 0))
+                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 230, height: 0))
                 text.font = UIFont(name: "Reader", size: 17)
                 text.text = AppItemTable.getNameByItemId(itemId: itemIds[id]!)
+                text.textAlignment = NSTextAlignment.center
+                text.numberOfLines = 0
+                text.lineBreakMode = NSLineBreakMode.byWordWrapping
                 text.sizeToFit()
                 text.centerX = viewWidth / 2
+                text.centerY = 60
                 lifeStyleProductView.addSubview(text)
             }
             // 吹き出し分余白
@@ -543,12 +547,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             var imageX: CGFloat = CGFloat(x)
 
             if productId == 601 {
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 420, height: 160))
-                labelItems.append((discription: 7985, x: imageX + CGFloat(60), y: CGFloat(170), width: CGFloat(320), font: UIFont(name: "Reader", size: 17)!))
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 500, height: 160)) //width 420
+                labelItems.append((discription: 7985, x: imageX + CGFloat(70), y: CGFloat(170), width: CGFloat(400), font: UIFont(name: "Reader", size: 17)!)) //width 320
             } else if productId == 553 {
                 imageX -= CGFloat(246 * 2)
-                imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(140), width: CGFloat(420), height: CGFloat(160)))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(150), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
+                imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 610 {
                 imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
                 labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
