@@ -506,7 +506,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 lifeStyleProductView.addSubview(text)
             }
             // 吹き出し分余白
-            if id == 613 || id == 609 {
+            if id == 613 {
                 contentWidth += viewWidth
             }
         }
