@@ -413,21 +413,24 @@ class LatestMoisturizerTechView: UIView {
                 circleImageV.left = rightSideX + 15
             }
             if index <= 1 {
-                circleImageV.top = 10
+                circleImageV.top = 0
             } else {
-                circleImageV.top = lowerSideY + 15
+                circleImageV.top = lowerSideY + 40
             }
             
             let circleLabel: UILabel = UILabel()
-            circleLabel.frame = CGRect(x: 0, y: circleImageV.bottom + 5, width: 0, height: 0)
-            circleLabel.font = UIFont(name: "Reader-Medium", size: 12)
+            circleLabel.frame = CGRect(x: 0, y: circleImageV.bottom + 5, width: 140, height: 0)
+            circleLabel.font = UIFont(name: "Reader-Medium", size: 11)
             circleLabel.text = AppItemTable.getNameByItemId(itemId: 8130 + index)
             circleLabel.textAlignment = NSTextAlignment.center
+            circleLabel.numberOfLines = 0
+            circleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             circleLabel.sizeToFit()
             circleLabel.centerX = circleImageV.centerX
+            circleLabel.centerY = circleImageV.bottom + 20
             
             if index == 0 {
-                lowerSideY = circleLabel.bottom
+                lowerSideY = circleImageV.bottom
                 rightSideX = circleImageV.right
             }
             leftView.addSubview(circleImageV)
