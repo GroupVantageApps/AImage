@@ -411,9 +411,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         
     }
     
-    
-
-    
     @IBAction func onTap(_ sender: Any) {
         self.toggleLineSelect(duration: 0.4)
     }
