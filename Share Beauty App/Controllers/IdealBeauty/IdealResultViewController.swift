@@ -315,6 +315,12 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         if products == nil {
             let productListData = ProductListData(lineIdsOrigin: selectedLineIds, stepLowerIdsOrigin: selectedStepLowerIds, noAddFlg: noAddFlg)
             mProducts = productListData.products
+            
+            Utility.log("---Products---")
+            for p in mProducts {
+                print("p_id: \(p.productId), p_name:\(p.productName), l_id: \(p.lineId), l_name: \(p.lineName)")
+            }
+            Utility.log("---        ---")
         } else {
             mProducts = products
         }

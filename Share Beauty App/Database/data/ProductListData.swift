@@ -96,6 +96,9 @@ class ProductListData: NSObject {
             }
         //print(idealsOrigin)
 
+        var fixIdealDic: [Int: DataStructIdeal] = [:]
+        var fixIdealArr: [DataStructIdeal] = []
+        
         //idealsOrigin配列からSHISEIDOの商品を抽出する
         var idealsRaw: [DataStructIdeal] = []
         var productsSHISEIDO: [ProductData] = []    //SHISEIDOライン商品
@@ -103,6 +106,38 @@ class ProductListData: NSObject {
         for idealOrigin in idealsOrigin {
             var productsOther: [ProductData] = []
             for product in idealOrigin.products {
+                
+                // array
+                let isExist = fixIdealArr.contains { $0.line.lineId == product.lineId }
+                if isExist {
+                    print("arr already contain: \(product.productId):\(product.lineId)")
+                    let arr: [DataStructIdeal] = fixIdealArr.filter { $0.line.lineId == product.lineId }
+//                    print(arr[0].products.productId)
+                    
+//                    var newIdeal: DataStructIdeal = fixIdealArr
+//                    newIdeal.line = ProductData(lineId: product.lineId)
+//                    newIdeal.products.append(product)
+
+                } else {
+                    var newIdeal: DataStructIdeal = DataStructIdeal()
+                    newIdeal.line = ProductData(lineId: product.lineId)
+                    newIdeal.products.append(product)
+
+                    fixIdealArr.append(newIdeal)
+                }
+                
+                // dic
+                if fixIdealDic[product.lineId] != nil {
+                    print("dic already contain: \(product.productId): \(product.lineId)")
+                    fixIdealDic[product.lineId]?.products.append(product)
+                } else {
+                    var ideal: DataStructIdeal = DataStructIdeal()
+                    ideal.line = ProductData(lineId: product.lineId)
+                    ideal.products.append(product)
+                    //                idealsRaw.append(ideal)
+                    fixIdealDic.updateValue(ideal, forKey: product.lineId)
+                }
+                
                 //CleanserとMoisturizerを選択時、重複しないように表示
                 if stepLowerIds.contains(3) || stepLowerIds.contains(4){
                     if (product.productId >= 565 && product.productId <= 569){
