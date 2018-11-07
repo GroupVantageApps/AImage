@@ -123,9 +123,11 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
 //            nextVc.selectedLineIds = mSelectedLineIds
 //            delegate?.nextVc(nextVc)
 //        } else {
-            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealSecondSelectViewController.self) as! IdealSecondSelectViewController
-            nextVc.selectedLineIds = mSelectedLineIds
-            delegate?.nextVc(nextVc)
+        
+        let selectedLineIds = ProductListData.sortLineId(mSelectedLineIds)
+        let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealSecondSelectViewController.self) as! IdealSecondSelectViewController
+        nextVc.selectedLineIds = selectedLineIds
+        delegate?.nextVc(nextVc)
 //        }
     }
     @IBAction func onTapNewApproach(_ sender: Any) {

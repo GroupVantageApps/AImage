@@ -47,8 +47,7 @@ class ProductListData: NSObject {
             }
         }
 
-        self.otherLineIds = self.sortLineId(self.otherLineIds)
-        self.stepLowerIds = self.sortStepLowerId(stepLowerIdsOrigin)
+        self.stepLowerIds = stepLowerIdsOrigin
         self.productIdsLX = self.getLXProductIds(self.stepLowerIds)//L, L
         self.pattern = self.checkPattern()
 
@@ -82,110 +81,81 @@ class ProductListData: NSObject {
         //otherLineIdsのlineId毎に、DataStructIdealを作成し、DataStructIdeal配列を作成
         var idealsOrigin: [DataStructIdeal] = []
 
-            for lineId in self.otherLineIds {
-                var ideal: DataStructIdeal = DataStructIdeal()
-                ideal.line = ProductData(lineId: lineId)
-
-                let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
-                for product in targetProducts {
-                    if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
-                        ideal.products.append(product)
-                    }
-                }
-                idealsOrigin.append(ideal)
-            }
-        //print(idealsOrigin)
-
-        var fixIdealDic: [Int: DataStructIdeal] = [:]
-        var fixIdealArr: [DataStructIdeal] = []
-        
-        //idealsOrigin配列からSHISEIDOの商品を抽出する
-        var idealsRaw: [DataStructIdeal] = []
-        var productsSHISEIDO: [ProductData] = []    //SHISEIDOライン商品
-        var productsMAKEUP: [ProductData] = []      //MAKEUPライン商品
-        for idealOrigin in idealsOrigin {
-            var productsOther: [ProductData] = []
-            for product in idealOrigin.products {
-                
-                // array
-                let isExist = fixIdealArr.contains { $0.line.lineId == product.lineId }
-                if isExist {
-                    print("arr already contain: \(product.productId):\(product.lineId)")
-                    let arr: [DataStructIdeal] = fixIdealArr.filter { $0.line.lineId == product.lineId }
-//                    print(arr[0].products.productId)
-                    
-//                    var newIdeal: DataStructIdeal = fixIdealArr
-//                    newIdeal.line = ProductData(lineId: product.lineId)
-//                    newIdeal.products.append(product)
-
-                } else {
-                    var newIdeal: DataStructIdeal = DataStructIdeal()
-                    newIdeal.line = ProductData(lineId: product.lineId)
-                    newIdeal.products.append(product)
-
-                    fixIdealArr.append(newIdeal)
-                }
-                
-                // dic
-                if fixIdealDic[product.lineId] != nil {
-                    print("dic already contain: \(product.productId): \(product.lineId)")
-                    fixIdealDic[product.lineId]?.products.append(product)
-                } else {
-                    var ideal: DataStructIdeal = DataStructIdeal()
-                    ideal.line = ProductData(lineId: product.lineId)
-                    ideal.products.append(product)
-                    //                idealsRaw.append(ideal)
-                    fixIdealDic.updateValue(ideal, forKey: product.lineId)
-                }
-                
-                //CleanserとMoisturizerを選択時、重複しないように表示
-                if stepLowerIds.contains(3) || stepLowerIds.contains(4){
-                    if (product.productId >= 565 && product.productId <= 569){
-                        //skip
-                    }else{
-                        if product.lineId == Const.lineIdSHISEIDO {
-                            productsSHISEIDO.append(product)
-                        } else if product.lineId == Const.lineIdMAKEUP {
-                            productsMAKEUP.append(product)
-                        } else {
-                            productsOther.append(product)
-                        }
-                    }
-                }else{
-                    
-                    if product.lineId == Const.lineIdSHISEIDO {
-                        productsSHISEIDO.append(product)
-                    } else if product.lineId == Const.lineIdMAKEUP {
-                        productsMAKEUP.append(product)
-                    } else {
-                        productsOther.append(product)
-                    }
-                    
-                }
-
-            }
+        for lineId in self.otherLineIds {
             var ideal: DataStructIdeal = DataStructIdeal()
-            ideal.line = idealOrigin.line
-            ideal.products = productsOther
-
-            idealsRaw.append(ideal)
+            ideal.line = ProductData(lineId: lineId)
+            
+            let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
+            for product in targetProducts {
+                if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
+                    ideal.products.append(product)
+                }
+            }
+            idealsOrigin.append(ideal)
         }
 
-        //productsSHISEIDO から同一商品を削除
+        var lineToIdealDic: [Int: DataStructIdeal] = [:]
+        
+        for idealOrigin in idealsOrigin {
+            for product in idealOrigin.products {
+                var isSkip: Bool = false
+                //CleanserとMoisturizerを選択時、重複しないように表示(IdealResultVCにてあとで追加するので)
+                if stepLowerIds.contains(3) || stepLowerIds.contains(4) {
+                    if (product.productId >= 565 && product.productId <= 569) {
+                        isSkip = true
+                    }
+                }
+                if !isSkip {
+                    if lineToIdealDic[product.lineId] != nil {
+                        print("dic already contain: \(product.productId): \(product.lineId)")
+                        lineToIdealDic[product.lineId]?.products.append(product)
+                    } else {
+                        var ideal: DataStructIdeal = DataStructIdeal()
+                        ideal.line = ProductData(lineId: product.lineId)
+                        ideal.products.append(product)
+                        lineToIdealDic.updateValue(ideal, forKey: product.lineId)
+                    }
+                }
+            }
+        }
+        
+        var sortedIdeals: [DataStructIdeal] = [] // 並び順 : Cleanser -> その他 -> Shiseido -> Makeup -> UTM -> LX
+        // SHISEIDOとMAKEUPラインを抽出（順番を後ろにするため）
+        var idealSHISEIDO: DataStructIdeal = DataStructIdeal()
+        var idealMAKEUP: DataStructIdeal = DataStructIdeal()
+        var haveShiseido: Bool = false
+        var haveMakeup: Bool = false
+        
+        if lineToIdealDic[Const.lineIdSHISEIDO] != nil {
+            haveShiseido = true
+            idealSHISEIDO = lineToIdealDic[Const.lineIdSHISEIDO]!
+            lineToIdealDic.removeValue(forKey: Const.lineIdSHISEIDO)
+        }
+        if lineToIdealDic[Const.lineIdMAKEUP] != nil {
+            haveMakeup = true
+            idealMAKEUP = lineToIdealDic[Const.lineIdMAKEUP]!
+            lineToIdealDic.removeValue(forKey: Const.lineIdMAKEUP)
+        }
+        // 選択したラインは最初に表示
+        for lineId in self.otherLineIds {
+            if lineToIdealDic[lineId] != nil {
+                sortedIdeals.append(lineToIdealDic[lineId]!)
+                lineToIdealDic.removeValue(forKey: lineId)
+            }
+        }
+        let lineIds = sortlineIdByDisplayOrder([Int](lineToIdealDic.keys))
+        for lineId in lineIds {
+            sortedIdeals.append(lineToIdealDic[lineId]!)
+        }
+        // SHISEIDOとMAKEUPラインの順番を後ろに表示
+        if haveShiseido {
+            sortedIdeals.append(idealSHISEIDO)
+        }
+        if haveMakeup {
+            sortedIdeals.append(idealMAKEUP)
+        }
 
-        //SHISEIDO構造体の追加
-        var ideal: DataStructIdeal = DataStructIdeal()
-        ideal.line = ProductData(lineId: Const.lineIdSHISEIDO)
-        ideal.products = distinctProducts(productsSHISEIDO)
-        idealsRaw.append(ideal)
-
-        //MAKEUP構造体の追加
-        ideal = DataStructIdeal()
-        ideal.line = ProductData(lineId: Const.lineIdMAKEUP)
-        ideal.products = distinctProducts(productsMAKEUP)
-        idealsRaw.append(ideal)
-
-        prepareDataStructIdeal(idealsRaw)
+        prepareDataStructIdeal(sortedIdeals)
     }
 
     //[ProductData]から重複を省く
@@ -284,7 +254,7 @@ class ProductListData: NSObject {
         }
     }
 
-    func sortLineId(_ selectedLineIds: [Int]) -> [Int] {
+    static func sortLineId(_ selectedLineIds: [Int]) -> [Int] {
         //Const.idealBeautyLines の並び順にソートする
         var sortedIds: [Int] = []
 
@@ -301,7 +271,7 @@ class ProductListData: NSObject {
         return sortedIds
     }
 
-    func sortStepLowerId(_ selectedStepLowerIds: [Int]) -> [Int] {
+    static func sortStepLowerId(_ selectedStepLowerIds: [Int]) -> [Int] {
         //Const.idealBeautyStepLowers の並び順にソートする
         var sortedIds: [Int] = []
 
@@ -318,6 +288,15 @@ class ProductListData: NSObject {
         return sortedIds
     }
 
+    private func sortlineIdByDisplayOrder(_ lineIds: [Int]) -> [Int] {
+        let sortedIds = lineIds.sorted {
+            let entityOne = LineTranslateTable.getEntity($0)
+            let entityTwo = LineTranslateTable.getEntity($1)
+            return entityOne.displayOrder! < entityTwo.displayOrder!
+        }
+        return sortedIds
+    }
+    
     func checkPattern() -> Int {
         var pattern: Int = 0
 

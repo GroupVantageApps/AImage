@@ -95,7 +95,8 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         if selectedLineIds != nil {
             nextVc.selectedLineIds = selectedLineIds!
         }
-        nextVc.selectedStepLowerIds = mStepLowerIds
+        let stepLowerIds = ProductListData.sortStepLowerId(mStepLowerIds)
+        nextVc.selectedStepLowerIds = stepLowerIds
         delegate?.nextVc(nextVc)
     }
     
