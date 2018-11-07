@@ -1534,24 +1534,34 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     private func showInfo(_ sender: CategoryButton) {
 
         if [588, 593, 594].contains(self.product.productId){
-            mVContent.isHidden = false
+            mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             
             if sender === mCategoryButtonTechnologies {
+                mVContent.isHidden = false
                 print("technology")
                 
                 self.didTapTechnology()
                 
             } else if sender === mCategoryButtonEfficacy {
+                mVContent.isHidden = false
                 print("effect")
                 
                 self.didTapEfficacyResults()
                 
             } else if sender === mCategoryButtonDefend {
-                //                let utmDefendView = UtmDefendView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: mVContent.size))
-                //                mVContent.addSubview(utmDefendView!)
-                //                mVCurrentSelect = utmDefendView
+                let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
+                delegate?.nextVc(nextVc)
+                
+                //Feature画面再描画
+                mBtnCurrentSelect?.selected = false
+                mBtnCurrentSelect = mCategoryButtonFeatures
+                mBtnCurrentSelect?.selected = true
+                
+                mVCurrentSelect?.removeFromSuperview()
+                mVCurrentSelect = nil
             }
+            return
         }
         
         mVCurrentSelect?.removeFromSuperview()
