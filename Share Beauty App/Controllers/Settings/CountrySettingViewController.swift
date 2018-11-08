@@ -256,8 +256,9 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         let target = DownloadConfigure.target.rawValue
         let dbFileName = String(format: Const.databaseNameFormat, arguments: [target, mCountryId])
         let filePath = "\(url.path)/\(dbFileName)"
+        let downloadStatus = String(format: "DownloadStatus-%d-%d", arguments: [target, mCountryId])
         
-        if ModelDatabase.dbExists(filePath: filePath) {
+        if ModelDatabase.dbExists(filePath: filePath) && UserDefaults.standard.integer(forKey: downloadStatus) == 1 {
             mResetBtn.isUserInteractionEnabled = true
             mResetBtn.titleLabel?.textColor = .black
             mResetBtn.superview?.superview?.backgroundColor = .black
