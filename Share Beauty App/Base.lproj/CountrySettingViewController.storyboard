@@ -299,6 +299,7 @@
                     <connections>
                         <outlet property="mCountryTableView" destination="Yjk-yS-BdL" id="feO-vz-kKD"/>
                         <outlet property="mRegionTableView" destination="PS0-4G-j82" id="U1d-rv-INe"/>
+                        <outlet property="mResetBtn" destination="QvL-3Z-9GJ" id="oiF-fX-8We"/>
                         <outlet property="mSelectedRegion" destination="ZW2-3E-b95" id="kho-eT-eRf"/>
                     </connections>
                 </viewController>

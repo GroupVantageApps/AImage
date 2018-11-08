@@ -14,7 +14,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
     @IBOutlet weak var mRegionTableView: UITableView!
     @IBOutlet weak var mCountryTableView: UITableView!
     @IBOutlet weak var mSelectedRegion: UILabel!
-
+    @IBOutlet weak var mResetBtn: BaseButton!
+    
     private let mScreen = ScreenData(screenId: Const.screenIdCountrySetting)
 
     weak var delegate: NavigationControllerDelegate?
@@ -43,6 +44,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         mCountryTableView.dataSource = self
 
         self.reflectSelectId()
+
+        checkResetBtnAvailability()
     }
 
     func willPrev() {
@@ -79,6 +82,7 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         } else {
             mCountryId = mCountries[indexPath.row].countryId
         }
+        checkResetBtnAvailability()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -246,4 +250,22 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         }
     }
     
+    // resetボタンの有効、無効チェック
+    func checkResetBtnAvailability() {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let target = DownloadConfigure.target.rawValue
+        let dbFileName = String(format: Const.databaseNameFormat, arguments: [target, mCountryId])
+        let filePath = "\(url.path)/\(dbFileName)"
+        
+        if ModelDatabase.dbExists(filePath: filePath) {
+            mResetBtn.isUserInteractionEnabled = true
+            mResetBtn.titleLabel?.textColor = .black
+            mResetBtn.superview?.superview?.backgroundColor = .black
+        } else {
+            mResetBtn.isUserInteractionEnabled = false
+            mResetBtn.titleLabel?.textColor = .gray
+            mResetBtn.superview?.superview?.backgroundColor = .gray
+        }
+    }
+
 }
