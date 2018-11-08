@@ -543,7 +543,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         labelItems = []
         for (index, productId) in productIds.enumerated() {
 
-            let x = 246 * index + 150
+            let x = 246 * index + 90//　  let x = 246 * index + 150
             var imageX: CGFloat = CGFloat(x)
 
             if productId == 601 {
@@ -551,11 +551,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 labelItems.append((discription: 7985, x: imageX + CGFloat(70), y: CGFloat(170), width: CGFloat(400), font: UIFont(name: "Reader", size: 17)!)) //width 320
             } else if productId == 553 {
                 imageX -= CGFloat(246 * 2)
-                imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
+                imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(620), height: CGFloat(160)))
+                // imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(120), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
+                // labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 610 {
-                imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
-                labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
+                imageItemIds.append((discription: "lifestyle13", x: imageX + 60, y: CGFloat(170), width: CGFloat(620), height: CGFloat(120)))
+                //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
+                labelItems.append((discription: 7987, x: imageX + CGFloat(180), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
+                //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 568 { // ダミーid
                 imageX -= CGFloat(246 * 2)
                 imageItemIds.append((discription: "lifestyle12", x: imageX + 30, y: CGFloat(85), width: CGFloat(440), height: CGFloat(165)))
@@ -564,7 +568,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
                 labelItems.append((discription: 7988, x: imageX + CGFloat(80), y: CGFloat(145), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 613 {
-                imageX += 246
+                imageX -= 10//246
                 imageItemIds.append((discription: "lifestyle13", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
                 labelItems.append((discription: 7989, x: imageX + CGFloat(80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             }
