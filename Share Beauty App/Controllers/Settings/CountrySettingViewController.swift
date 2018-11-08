@@ -216,4 +216,34 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             }
         })
     }
+    
+    @IBAction func onTapReSet(_ sender: AnyObject) {
+        LanguageConfigure.regionId = mRegionId
+        LanguageConfigure.countryId = mCountryId
+        
+        Utility.log("RegionId:" + mRegionId.description)
+        Utility.log("CountryId:" + mCountryId.description)
+        
+        DownloadConfigure.apiKey = nil
+        DownloadConfigure.isNeedUpdate = false
+        DownloadConfigure.downloadStatus = .notdoing
+        
+        ModelDatabase.deleteDB()
+        ModelDatabase.switchDatabase()
+        
+        if DownloadConfigure.downloadStatus != .success {
+            if Utility.checkReachability() == true {
+                initAppData()
+            } else {
+                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertControllerStyle.alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                    (_) -> Void in
+                    print("OK")
+                })
+                alert.addAction(defaultAction)
+                present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }
