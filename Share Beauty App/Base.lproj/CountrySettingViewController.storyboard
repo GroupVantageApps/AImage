@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -124,6 +124,44 @@
                                             <constraint firstAttribute="trailing" secondItem="tiA-Oa-lNm" secondAttribute="trailing" constant="2" id="siE-9q-dAE"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fX7-j2-wPc">
+                                        <rect key="frame" x="458" y="704" width="124" height="44"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y33-Ee-4PP">
+                                                <rect key="frame" x="2" y="2" width="120" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvL-3Z-9GJ" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="WGj-bn-FsW"/>
+                                                            <constraint firstAttribute="height" constant="40" id="g0l-19-dhL"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <state key="normal" title="Reset">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapReSet:" destination="0AJ-fL-j0w" eventType="touchUpInside" id="d3c-ZR-Wn9"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="QvL-3Z-9GJ" secondAttribute="trailing" id="CTs-Tf-sxn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="QvL-3Z-9GJ" secondAttribute="bottom" id="POR-7b-zy5"/>
+                                                    <constraint firstItem="QvL-3Z-9GJ" firstAttribute="leading" secondItem="y33-Ee-4PP" secondAttribute="leading" id="SmP-YY-mwZ"/>
+                                                    <constraint firstItem="QvL-3Z-9GJ" firstAttribute="top" secondItem="y33-Ee-4PP" secondAttribute="top" id="feB-Bg-P7L"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="y33-Ee-4PP" secondAttribute="trailing" constant="2" id="GOa-qD-1vp"/>
+                                            <constraint firstItem="y33-Ee-4PP" firstAttribute="top" secondItem="fX7-j2-wPc" secondAttribute="top" constant="2" id="Tji-iV-PFg"/>
+                                            <constraint firstAttribute="bottom" secondItem="y33-Ee-4PP" secondAttribute="bottom" constant="2" id="Umu-ZM-5aJ"/>
+                                            <constraint firstItem="y33-Ee-4PP" firstAttribute="leading" secondItem="fX7-j2-wPc" secondAttribute="leading" constant="2" id="hOF-qO-HqH"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Vd-dC-EIV">
                                         <rect key="frame" x="0.0" y="0.0" width="731" height="20"/>
                                         <subviews>
@@ -148,8 +186,10 @@
                                     <constraint firstItem="dv0-OB-hyt" firstAttribute="top" secondItem="rom-hG-rm8" secondAttribute="bottom" id="C7g-ba-Kpj"/>
                                     <constraint firstItem="Roa-Ml-iDN" firstAttribute="leading" secondItem="mSB-V8-d12" secondAttribute="leading" id="CNx-S5-7ns"/>
                                     <constraint firstItem="1Vd-dC-EIV" firstAttribute="top" secondItem="mSB-V8-d12" secondAttribute="top" id="E5a-pb-2wy"/>
+                                    <constraint firstAttribute="bottom" secondItem="fX7-j2-wPc" secondAttribute="bottom" constant="20" id="HGn-bN-xX8"/>
                                     <constraint firstAttribute="trailing" secondItem="Roa-Ml-iDN" secondAttribute="trailing" id="Lh2-zh-461"/>
                                     <constraint firstItem="rom-hG-rm8" firstAttribute="top" secondItem="Roa-Ml-iDN" secondAttribute="bottom" id="LvJ-SP-TcZ"/>
+                                    <constraint firstItem="fX7-j2-wPc" firstAttribute="leading" secondItem="dv0-OB-hyt" secondAttribute="trailing" constant="30" id="RzZ-LX-GwK"/>
                                     <constraint firstAttribute="bottom" secondItem="dv0-OB-hyt" secondAttribute="bottom" constant="20" id="W8u-pA-JUD"/>
                                     <constraint firstAttribute="trailing" secondItem="rom-hG-rm8" secondAttribute="trailing" id="YzJ-22-Wjv"/>
                                     <constraint firstItem="dv0-OB-hyt" firstAttribute="centerX" secondItem="mSB-V8-d12" secondAttribute="centerX" id="eay-uT-BWi"/>
@@ -259,6 +299,7 @@
                     <connections>
                         <outlet property="mCountryTableView" destination="Yjk-yS-BdL" id="feO-vz-kKD"/>
                         <outlet property="mRegionTableView" destination="PS0-4G-j82" id="U1d-rv-INe"/>
+                        <outlet property="mResetBtn" destination="QvL-3Z-9GJ" id="oiF-fX-8We"/>
                         <outlet property="mSelectedRegion" destination="ZW2-3E-b95" id="kho-eT-eRf"/>
                     </connections>
                 </viewController>
