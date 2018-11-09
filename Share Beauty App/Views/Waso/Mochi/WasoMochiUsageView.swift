@@ -24,7 +24,7 @@ class WasoMochiUsageView: UIView {
             
             let numLabel: UILabel = UILabel()
             numLabel.frame = CGRect(x: 220, y: numHeight * CGFloat(index) + topMargin, width: 0, height: 0)
-            numLabel.text = "0\(index + 1)"
+            numLabel.text = "\(index + 1)" // numLabel.text = "0\(index + 1)"
             numLabel.font = UIFont(name: "Reader-Bold", size: 70)
             numLabel.sizeToFit()
             
