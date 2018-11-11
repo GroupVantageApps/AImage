@@ -82,7 +82,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
     private var imageItemIds: [(discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)] = []
     private var labelItems: [(discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont)] = []
-
     private let countryFontScale = [
         // (country: 10, language: 29, scale: CGFloat(0.85)),  // Thailand
         // (country: 8, language: 24, scale: CGFloat(0.85)),   // Vietnam
@@ -494,7 +493,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let id = product.productId
             let itemIds = [602: 8021, 606: 8022, 553: 8023]
             if itemIds[id] != nil {
-                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 230, height: 0))
+                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
                 text.font = UIFont(name: "Reader", size: 17)
                 text.text = AppItemTable.getNameByItemId(itemId: itemIds[id]!)
                 text.textAlignment = NSTextAlignment.center
@@ -544,34 +543,29 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         for (index, productId) in productIds.enumerated() {
 
             let x = 246 * index + 90//　  let x = 246 * index + 150
+            
             var imageX: CGFloat = CGFloat(x)
 
             if productId == 601 {//588 601
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(180), width: 450, height: 110)) //width 420
-                labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(400), font: UIFont(name: "Reader", size: 17)!)) //width 320
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170 ), width: 450, height: 110)) //width 420
+                labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(440), font: UIFont(name: "Reader", size: 17)!)) //width 320
             } else if productId == 553 {
                 imageX = CGFloat(600) //imageX -= CGFloat(246 * 2)
                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 650, height: 110)) //width 420
                 // imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(110), y: CGFloat(170), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(640), font: UIFont(name: "Reader", size: 17)!))
                 // labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 610 {
                  imageX -= CGFloat(250) //imageX -= CGFloat(246 * 2)
                   imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
                 //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
-                labelItems.append((discription: 7987, x: imageX + CGFloat(80), y: CGFloat(170), width: CGFloat(380), font: UIFont(name: "Reader", size: 17)!))
+                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(440), font: UIFont(name: "Reader", size: 17)!))
                 //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
-            } else if productId == 568 { //19SSこんかいつかっていない
-                imageX -= CGFloat(900)//imageX -= CGFloat(246 * 2)
-                  imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
-                // imageItemIds.append((discription: "lifestyle12", x: imageX + 30, y: CGFloat(85), width: CGFloat(440), height: CGFloat(165)))
-                labelItems.append((discription: 7988, x: imageX + CGFloat(100), y: CGFloat(95), width: CGFloat(380), font: UIFont(name: "Reader", size: 14)!))
-                // labelItems.append((discription: 7988, x: imageX + CGFloat(70), y: CGFloat(95), width: CGFloat(360), font: UIFont(name: "Reader", size: 14)!))
             } else if productId == 609 {
                  imageX -= CGFloat(230) //imageX -= CGFloat(246 * 2)
                   imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
                 // imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
-                labelItems.append((discription: 7988, x: imageX + CGFloat(80), y: CGFloat(170), width: CGFloat(290), font: UIFont(name: "Reader", size: 17)!))
+                labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(440), font: UIFont(name: "Reader", size: 17)!))
                 // labelItems.append((discription: 7988, x: imageX + CGFloat(80), y: CGFloat(145), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
             } //else if productId == 613 {
               //  imageX -= 10//246
@@ -598,10 +592,11 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let label = UILabel()
 //            label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
+            label.textColor = UIColor(red: 203 / 255, green: 48 / 255, blue: 43 / 255, alpha: 1.0)
+            label.textAlignment =  NSTextAlignment.center
 //            label.layer.borderWidth = 2.0
             label.lineBreakMode = NSLineBreakMode.byWordWrapping
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
-            
             if let labelFont = element.font {
                 label.font = labelFont
             }
