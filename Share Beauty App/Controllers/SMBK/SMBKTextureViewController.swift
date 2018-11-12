@@ -135,7 +135,10 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         cell.productImage = mProductImages[indexPath.row]
         cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row))
         cell.indexPath = indexPath
-        cell.isNew = false
+        if selectedTextureProducts[indexPath.row].newItemFlg == 1 {
+            cell.isNew = true
+        }
+        
         return cell
     }
     

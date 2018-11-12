@@ -203,6 +203,9 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
         cell.product = mProducts[indexPath.row]
         cell.productImage = mProducts[indexPath.row].uiImage
         cell.indexPath = indexPath
+        if mProducts[indexPath.row].newItemFlg == 1 {
+            cell.isNew = true
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
