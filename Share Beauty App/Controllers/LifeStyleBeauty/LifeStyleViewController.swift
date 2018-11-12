@@ -35,6 +35,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     @IBOutlet weak private var mCollectionV: UICollectionView!
     @IBOutlet weak private var mScrollV: UIScrollView!
     @IBOutlet weak var titleLabel: UILabel!
+    private var mContentWidth: CGFloat = 0
     
     private let mScreen = ScreenData(screenId: Const.screenIdLifeStyleBeauty)
     private var mLifeStyleProductViews = [LifeStyleProductView]()
@@ -67,15 +68,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
     private var productIdsDefault:[Int] = Const.lifeStyleBeautyList
     private var productIds:[Int] = []
-    private var relative_productIds:[Int] =  [564,565,566,567,568,569,LanguageConfigure.UTMId, 570, 571]
-    private let essentialEnagyProducts = [553,554]
-    private let whiteLucentProducts = [101,455]
-    private let makeUpProducts = [470,500,551]
-    private let suncareProducts = [545,549,498]
-    private var essentialEnagyProductsCount = 0
-    private var whiteLucentProductsCount    = 0
-    private var makeUpProductsCount         = 0
-    private var suncareProductsCount        = 0
+
+    private let moistureProductIds = [602, 606, 553]
+    private var utmProductsCount = 0
+    private var moistureProductsCount = 0
+    private var suncareProductsCount = 0
+    private var makeUpProductsCount = 0
+    
     private let productList = ProductListData()
     
 //    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
@@ -107,25 +106,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
         mScrollV.delegate = self
         
-        // 商品の有無、多言語対応
-        for productId in productIdsDefault {
-            if productIds.contains(productId) {
-                continue
-            }
-            if let data: ProductData = ProductData(productId: productId) as ProductData? {
-                if data.defaultDisplay == 1 {
-                    productIds.append(productId)
-                    if productId == 601 {
-                        productIds.append(99999)
-                    }
-                    // make up
-                    // else if productId == 578 || productId == 572 {
-                    //    productIds.append(99999)
-                    // }
-                }
-            }
-        }
-        print("productsIds: \(productIds)")
+        checkDefaultDisplay()
+        setScrollView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -138,7 +120,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setScrollView()
+        mScrollV.contentSize.width = mContentWidth
+        mVMain.width = mContentWidth
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -154,6 +137,37 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
     }
 
+    // 商品の表示有無、カウント
+    private func checkDefaultDisplay() {
+        for productId in productIdsDefault {
+            if productIds.contains(productId) {
+                continue
+            }
+            if let product: ProductData = ProductData(productId: productId) as ProductData? {
+                if product.defaultDisplay == 1 {
+                    productIds.append(productId)
+                    if product.lineId == Const.lineIdUTM {
+                        self.utmProductsCount += 1
+                    } else if moistureProductIds.contains(product.productId) {
+                        self.moistureProductsCount += 1
+                    } else if product.lineId == Const.lineIdSUNCARE {
+                        self.suncareProductsCount += 1
+                    } else if product.lineId == Const.lineIdMAKEUP {
+                        self.makeUpProductsCount += 1
+                    }
+                    // if productId == 601 {
+                    //     productIds.append(99999)
+                    // }
+                    // make up
+                    // else if productId == 578 || productId == 572 {
+                    //    productIds.append(99999)
+                    // }
+                }
+            }
+        }
+
+    }
+    
     private func createVideo() {
         let videoPath = Bundle.main.path(forResource: "lifestyle", ofType:"mp4")
         let videoURL = URL(fileURLWithPath: videoPath!)
@@ -390,21 +404,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             self.mLifeStyleProductViews.append(LifeStyleProductView())
         }
         var contentWidth = CGFloat(60)
-        for enumerated in productList.products.enumerated() {
-            let product = enumerated.element
-            if essentialEnagyProducts.contains(product.productId) {
-                essentialEnagyProductsCount += 1
-            }
-            if whiteLucentProducts.contains(product.productId) {
-                whiteLucentProductsCount += 1
-            }
-            if makeUpProducts.contains(product.productId) {
-                makeUpProductsCount += 1
-            }
-            if suncareProducts.contains(product.productId) {
-                suncareProductsCount += 1
-            }
-        }
+        
         var productsCount = 0
         
         // 各コンテンツ表示
@@ -419,7 +419,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
 
             guard product.productId != 0 else {
                 // 最初の商品の余白表示
-                if i == 0 { //19SSは２品なので、0としている
+                if i == 1 {
                     let howToImageV = UIImageView()
                     howToImageV.contentMode = .scaleAspectFit
                     // howToImageV.image = FileTable.getImage(6534)
@@ -474,19 +474,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 continue
             }
             
-            if i != 1 {
-                lifeStyleProductView.delegate = self
-                lifeStyleProductView.product = product
-                lifeStyleProductView.headerText = items["0" + String(i+1)]
-                lifeStyleProductView.explainText = items["1" + String(i+2)]
-                lifeStyleProductView.logScreenId = mScreen.code
-                lifeStyleProductView.logItemId = "0" + String(i+1)
-                
-                lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
-                lifeStyleProductView.backgroundColor = UIColor.gray
-
-                mScrollV.addSubview(lifeStyleProductView)
-            }
+            lifeStyleProductView.delegate = self
+            lifeStyleProductView.product = product
+            lifeStyleProductView.headerText = items["0" + String(i+1)]
+            lifeStyleProductView.explainText = items["1" + String(i+2)]
+            lifeStyleProductView.logScreenId = mScreen.code
+            lifeStyleProductView.logItemId = "0" + String(i+1)
+            
+            lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
+            lifeStyleProductView.backgroundColor = UIColor.gray
+            mScrollV.addSubview(lifeStyleProductView)
             contentWidth += viewWidth
             
             // 画像上のテキスト
@@ -505,23 +502,14 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 lifeStyleProductView.addSubview(text)
             }
             // 吹き出し分余白
-            if id == 613 {
-                contentWidth += viewWidth
-            }
+            // if id == 613 {
+            //     contentWidth += viewWidth
+            // }
         }
 
-        if whiteLucentProductsCount != 0 && contentWidth < 2520 {
-           contentWidth = 2520
-        }
-        mScrollV.contentSize = CGSize(width: contentWidth, height: self.view.height)
-        contentWidth = 0
-        // 説明用画像をセット
+        mContentWidth = contentWidth
+
         setInfoImage()
-
-        essentialEnagyProductsCount = 0
-        whiteLucentProductsCount = 0
-        makeUpProductsCount = 0
-        suncareProductsCount = 0
     }
     
     private func getTransitionFilterInfo(strJson: String) -> (productIds: String?, beautyIds: String?, lineIds: String?)? {
@@ -537,55 +525,58 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             return (productIds, beautyIds, lineIds)
         }
     }
+    
+    // 吹き出しセット
     private func setInfoImage() {
         imageItemIds = []
         labelItems = []
-        for (index, productId) in productIds.enumerated() {
-
-            let x = 300 * index + 200//　  let x = 246（１アイテムの幅３００） * index + 150 90
+        
+        var hasUtmComment: Bool = false
+        var hasMoiComment: Bool = false
+        var hasSunComment: Bool = false
+        var hasMakComment: Bool = false
+        
+        for (index, product) in productList.products.enumerated() {
             
-            var imageX: CGFloat = CGFloat(x)
-
-            if productId == 601 {//588 601
-                imageX -= CGFloat(100) //imageX -= CGFloat(246 * 2)
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170 ), width: 450, height: 110)) //width 420
-                labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(430), font: UIFont(name: "Reader", size: 17)!)) //width 320
-            } else if productId == 553 {
-                imageX = CGFloat(750) //imageX -= CGFloat(246 * 2)
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 620, height: 110)) //width 420
-                // imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(600), font: UIFont(name: "Reader", size: 17)!))
-                // labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
-/*** USサイズ
-                 } else if productId == 610 {
-                 imageX -= CGFloat(340) //imageX -= CGFloat(246 * 2)  -= CGFloat(250)
-                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 500, height: 110)) //width 420
-                 //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
-                 labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(480), font: UIFont(name: "Reader", size: 17)!))
-                 //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
-***/
+            let itemWidth: CGFloat = 300
+            var imageX: CGFloat = itemWidth * CGFloat(index) + 60
+            let imageY: CGFloat = 170
+            let height: CGFloat = 110
+            var width: CGFloat = itemWidth - 80
+            
+            let font: UIFont = UIFont(name: "Reader", size: 17)!
+            
+            if product.lineId == Const.lineIdUTM && utmProductsCount >= 2 && !hasUtmComment {
+                hasUtmComment = true
+                width = width * CGFloat(utmProductsCount)
+                imageX += (itemWidth * CGFloat(utmProductsCount) - width) / 2
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
+                labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
                 
-            } else if productId == 610 { //US 以外のサイズ
-                 imageX -= CGFloat(350) //imageX -= CGFloat(246 * 2)  -= CGFloat(250)
-                  imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 650, height: 110)) //width 420
-                //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
-                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(630), font: UIFont(name: "Reader", size: 17)!))
-                //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
-            } else if productId == 609 {
-                 imageX -= CGFloat(330) //imageX -= CGFloat(246 * 2) -= CGFloat(230)
-                  imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
-                // imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
-                labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(430), font: UIFont(name: "Reader", size: 17)!))
-                // labelItems.append((discription: 7988, x: imageX + CGFloat(80), y: CGFloat(145), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
-            } //else if productId == 613 {
-              //  imageX -= 10//246
-              //  imageItemIds.append((discription: "lifestyle13", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
-              //  labelItems.append((discription: 7989, x: imageX + CGFloat(80), y: CGFloat(150), width: CGFloat(270), font: UIFont(name: "Reader", size: 17)!))
-          //  }
+            } else if moistureProductIds.contains(product.productId) && moistureProductsCount >= 2 && !hasMoiComment {
+                hasMoiComment = true
+                width = width * CGFloat(moistureProductsCount)
+                imageX += (itemWidth * CGFloat(moistureProductsCount) - width) / 2
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
+                
+            } else if product.lineId == Const.lineIdSUNCARE && suncareProductsCount >= 2 && !hasSunComment {
+                hasSunComment = true
+                width = width * CGFloat(suncareProductsCount)
+                imageX += (itemWidth * CGFloat(suncareProductsCount) - width) / 2
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
+                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
+                
+            } else if product.lineId == Const.lineIdMAKEUP && makeUpProductsCount >= 2 && !hasMakComment {
+                hasMakComment = true
+                width = width * CGFloat(makeUpProductsCount)
+                imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
+                labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
+            }
         }
 
         imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
-//            let viewWidth = Int(246)
             let imageView = UIImageView()
 //            imageView.contentMode = .scaleAspectFit
             imageView.contentMode = .scaleToFill
@@ -597,14 +588,12 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         
         labelItems.enumerated().forEach { (arg: (offset: Int, element: (discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont?))) in
-            //            let viewWidth = Int(246)
             let (_, element) = arg
             let label = UILabel()
 //            label.contentMode = .scaleAspectFit
             label.numberOfLines = 0
             label.textColor = UIColor(red: 203 / 255, green: 48 / 255, blue: 43 / 255, alpha: 1.0)
             label.textAlignment =  NSTextAlignment.center
-//            label.layer.borderWidth = 2.0
             label.lineBreakMode = NSLineBreakMode.byWordWrapping
             label.frame = CGRect(x: element.x, y: element.y, width: element.width, height: 100)
             if let labelFont = element.font {
@@ -624,7 +613,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
         var secondsProducts = [Int:[ProductData]]()
         var i = 0
-        for productId in productIdsDefault { // relative_productIds
+        for productId in productIdsDefault {
             let data: ProductData = ProductData(productId: productId)
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)
@@ -668,7 +657,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
         var secondsProducts = [Int:[ProductData]]()
         var i = 0
-        for productId in productIdsDefault { // relative_productIds
+        for productId in productIdsDefault {
             let data: ProductData = ProductData(productId: productId)
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)
