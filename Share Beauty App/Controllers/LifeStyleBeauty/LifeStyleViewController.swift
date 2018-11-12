@@ -409,7 +409,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
         // 各コンテンツ表示
         for enumerated in productList.products.enumerated() {
-            let viewWidth = CGFloat(246)
+            let viewWidth = CGFloat(300) //246 １アイテムあたり
             let viewHeight = CGFloat(500)
             let i = enumerated.offset
             let product = enumerated.element
@@ -542,27 +542,37 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         labelItems = []
         for (index, productId) in productIds.enumerated() {
 
-            let x = 246 * index + 90//　  let x = 246 * index + 150
+            let x = 300 * index + 200//　  let x = 246（１アイテムの幅３００） * index + 150 90
             
             var imageX: CGFloat = CGFloat(x)
 
             if productId == 601 {//588 601
+                imageX -= CGFloat(100) //imageX -= CGFloat(246 * 2)
                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170 ), width: 450, height: 110)) //width 420
                 labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(430), font: UIFont(name: "Reader", size: 17)!)) //width 320
             } else if productId == 553 {
-                imageX = CGFloat(600) //imageX -= CGFloat(246 * 2)
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 650, height: 110)) //width 420
+                imageX = CGFloat(750) //imageX -= CGFloat(246 * 2)
+                imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 620, height: 110)) //width 420
                 // imageItemIds.append((discription: "lifestyle12", x: imageX + 50, y: CGFloat(130), width: CGFloat(420), height: CGFloat(160)))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(630), font: UIFont(name: "Reader", size: 17)!))
+                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(600), font: UIFont(name: "Reader", size: 17)!))
                 // labelItems.append((discription: 7986, x: imageX + CGFloat(70), y: CGFloat(140), width: CGFloat(370), font: UIFont(name: "Reader", size: 17)!))
-            } else if productId == 610 {
-                 imageX -= CGFloat(250) //imageX -= CGFloat(246 * 2)
-                  imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
+/*** USサイズ
+                 } else if productId == 610 {
+                 imageX -= CGFloat(340) //imageX -= CGFloat(246 * 2)  -= CGFloat(250)
+                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 500, height: 110)) //width 420
+                 //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
+                 labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(480), font: UIFont(name: "Reader", size: 17)!))
+                 //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
+***/
+                
+            } else if productId == 610 { //US 以外のサイズ
+                 imageX -= CGFloat(350) //imageX -= CGFloat(246 * 2)  -= CGFloat(250)
+                  imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 650, height: 110)) //width 420
                 //imageItemIds.append((discription: "lifestyle13", x: imageX - 30, y: CGFloat(170), width: CGFloat(510), height: CGFloat(120)))
-                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(430), font: UIFont(name: "Reader", size: 17)!))
+                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(630), font: UIFont(name: "Reader", size: 17)!))
                 //labelItems.append((discription: 7987, x: imageX + CGFloat(60), y: CGFloat(175), width: CGFloat(330), font: UIFont(name: "Reader", size: 17)!))
             } else if productId == 609 {
-                 imageX -= CGFloat(230) //imageX -= CGFloat(246 * 2)
+                 imageX -= CGFloat(330) //imageX -= CGFloat(246 * 2) -= CGFloat(230)
                   imageItemIds.append((discription: "lifestyle10", x: imageX, y: CGFloat(170), width: 450, height: 110)) //width 420
                 // imageItemIds.append((discription: "lifestyle15", x: imageX, y: CGFloat(150), width: CGFloat(400), height: CGFloat(120)))
                 labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: CGFloat(170), width: CGFloat(430), font: UIFont(name: "Reader", size: 17)!))
