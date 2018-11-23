@@ -228,15 +228,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mCategoryButtonHowToUse.enabled = (product.usageImage.count != 0)
         mCategoryButtonEfficacy.enabled = (product.effectImage.count != 0)
         
-     //   }
         // HowToUseが空の時はViewを非表示
         if product.howToUse == "" {
             mVHowToUse.isHidden = true
-//            print(mConstraintTop.secondItem)
-        }
-        
-        if product.usageImage == ProductDetailData(productId: 564).usageImage{
-            mVHowToUse.isHidden = false
         }
 		
 		if product.makeupLook {

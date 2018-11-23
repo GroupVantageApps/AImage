@@ -319,6 +319,10 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             mProducts = products
         }
 
+        for p in mProducts {
+            print(p.lineId,p.productId)
+            
+        }
         mProductImages = [:]
         
         //LifestyleBeautyトップからの遷移 product_idごとに表示するproduct変更

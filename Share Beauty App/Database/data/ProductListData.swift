@@ -88,6 +88,9 @@ class ProductListData: NSObject {
             let targetProducts = self.getProductIdsByLineAndStep(lineId, stepLowerIds: self.stepLowerIds)
             for product in targetProducts {
                 if product.defaultDisplay == 1 && LineTranslateTable.getEntity(lineId).displayFlg == 1 {
+                    if ideal.products.contains(product) {
+                        continue
+                    }
                     ideal.products.append(product)
                 }
             }
@@ -106,9 +109,10 @@ class ProductListData: NSObject {
                     }
                 }
                 if !isSkip {
-                    if lineToIdealDic[product.lineId] != nil {
-                        print("dic already contain: \(product.productId): \(product.lineId)")
-                        lineToIdealDic[product.lineId]?.products.append(product)
+                    if let ideal = lineToIdealDic[product.lineId] {
+                        if !ideal.products.contains(where: { $0.productId == product.productId }) {
+                            lineToIdealDic[product.lineId]?.products.append(product)
+                        }
                     } else {
                         var ideal: DataStructIdeal = DataStructIdeal()
                         ideal.line = ProductData(lineId: product.lineId)
@@ -160,21 +164,12 @@ class ProductListData: NSObject {
 
     //[ProductData]から重複を省く
     func distinctProducts(_ productsOrigin: [ProductData]) -> [ProductData] {
-
         var productsResult: [ProductData] = []
-        for productTarget in productsOrigin {
-            //既に存在するか
-            var hitFlg = 0
-            for product in productsResult {
-                if productTarget.productId == product.productId {
-                    hitFlg = 1
-                }
-            }
-            if hitFlg == 0 {
-                productsResult.append(productTarget)
+        for product in productsOrigin {
+            if !productsResult.contains(product) {
+                productsResult.append(product)
             }
         }
-
         return productsResult
     }
 
@@ -205,34 +200,26 @@ class ProductListData: NSObject {
     func setProductData(_ ideals: [DataStructIdeal]) {
         //ideals から products を作成
         for ideal in ideals {
-
-                if self.pattern == 6 {
-                    self.addLX()
-
-                } else if self.pattern == 7 {
-                    self.addUTM()
-
-                } else if self.pattern == 8 {
-                    self.addLX()
-                    //self.addUTM()
-                }
             self.products.append(ideal.line)
             for product in ideal.products {
                 self.products.append(product)
             }
-
-                if self.pattern == 6 {
-                    self.addUTM()
-
-                } else if self.pattern == 7 {
-                    self.addLX()
-                    
-                }
-            }
-            if self.pattern == 2 {
-                self.addUTM()
-                self.addLX()
-            }
+        }
+        
+        if self.pattern == 6 {
+            self.addLX()
+            
+        } else if self.pattern == 7 {
+            self.addUTM()
+            
+        } else if self.pattern == 8 {
+            self.addLX()
+            //self.addUTM()
+        }
+        if self.pattern == 2 {
+            self.addUTM()
+            self.addLX()
+        }
 
         //パターン2: A,B     --> A,A,A,B,B, U,U,L,L
         //パターン6: A,B,L   --> L,L,A,A,A,U,U, L,L,B,B,U,U
@@ -252,6 +239,7 @@ class ProductListData: NSObject {
                 self.addUTM()
             }
         }
+        self.products = distinctProducts(products)
     }
 
     static func sortLineId(_ selectedLineIds: [Int]) -> [Int] {
