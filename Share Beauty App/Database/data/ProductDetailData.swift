@@ -203,10 +203,17 @@ class ProductDetailData: NSObject {
 
         for colorballId in colorballIds {
             let colorBallEntity = ColorballTable.getEntity(colorballId)
+            let colorBallTranslateEntity = ColorballTranslateTable.getEntity(colorballId)
+            print(colorBallTranslateEntity.nameLocal)
 
             var data = DataStructColorball()
             data.colorballId = colorballId
             data.name = colorBallEntity.name
+            if LanguageConfigure.countryId == 5 || LanguageConfigure.countryId == 6 /**|| LanguageConfigure.countryId == 7 **/{
+                if colorBallTranslateEntity.nameLocal != "" {
+                    data.name = colorBallTranslateEntity.nameLocal
+                }
+            }
             data.imageId = colorBallEntity.colorballImage!
             self.colorballs.append(data)
         }

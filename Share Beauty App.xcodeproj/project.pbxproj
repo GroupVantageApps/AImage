@@ -3139,7 +3139,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = J62CVNNG5Q;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					C05913DE1D67235700F22214 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -4618,8 +4618,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
@@ -4632,10 +4632,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				ONLY_ACTIVE_ARCH = NO;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f9936c0f-7cec-453d-b4b0-3c7c6f4604dc";
+				PROVISIONING_PROFILE_SPECIFIER = "18AW2 SBA";
 				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Share Beauty App/Share_Beauty_App-Bridging-Header.h";
 				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Onone";
@@ -4652,8 +4652,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: SHISEIDO COMPANY, LIMITED";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = J62CVNNG5Q;
 				ENABLE_BITCODE = NO;
@@ -4664,11 +4664,11 @@
 				INFOPLIST_FILE = "Share Beauty App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f9936c0f-7cec-453d-b4b0-3c7c6f4604dc";
+				PROVISIONING_PROFILE_SPECIFIER = "18AW2 SBA";
 				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Share Beauty App/Share_Beauty_App-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

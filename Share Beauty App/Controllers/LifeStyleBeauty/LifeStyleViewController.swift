@@ -427,9 +427,15 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     howToImageV.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
                         viewHeight)
                     
+/**<<<<<<< HEAD:Share Beauty App/Controllers/LifeStyleBeauty/LifeStyleViewController.swift **/
                     contentWidth += howToImageV.frame.size.width
                     howToImageV.isUserInteractionEnabled = true
                     howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
+                    /**   let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
+                    labe.font = UIFont(name: "Reader", size: 10)
+                    labe.numberOfLines = 0
+                    labe.textAlignment = .center
+ >>>>>>> 18AW納品進行:Share Beauty App/Controllers/LifeStyleViewController.swift **/
                     
                     mScrollV.addSubview(howToImageV)
                     

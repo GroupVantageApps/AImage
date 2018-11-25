@@ -15,6 +15,7 @@ class ColorballTranslateEntity: NSObject {
     var languageId: Int? = 0
 
     //content
+    var nameLocal: String = String()
 
     var displayOrder: Int? = 0
     var lastUpdateTs: String = String()
