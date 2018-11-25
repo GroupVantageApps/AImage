@@ -205,7 +205,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     private func reloadUpdateStatus() {
         //Update Tap時に無理やりdevelopを向かせる　本番時は DownloadConfigure.target = DownloadConfigure.Target.release develop or relese
-        DownloadConfigure.target = DownloadConfigure.Target.release
+        DownloadConfigure.target = DownloadConfigure.develop.release
         
         if DownloadConfigure.downloadStatus != .success{return}
         if mUpdateStatusClosure != nil {return}
@@ -237,7 +237,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     private func updateData() {
         //Update Tap時に無理やりdevelopを向かせる 無理やり　develop or relese
-        DownloadConfigure.target = DownloadConfigure.Target.release
+        DownloadConfigure.target = DownloadConfigure.Target.develop
         
         ContentDownloader.default.download(completion: { result in
             switch result {
