@@ -262,10 +262,11 @@ class LatestMoisturizerTechView: UIView {
         circleView.center = CGPoint(x: triangleV.width / 2, y: triangleV.height / 2 + 20)
         
         let centerLabel: UILabel = UILabel()
-        centerLabel.frame = topImageLabel.frame
+        centerLabel.frame =  CGRect(x: 0, y: 0, width: circleSize, height: circleSize) //topImageLabel.frame
         centerLabel.font = UIFont(name: "Reader-Medium", size: 15)
         centerLabel.text = AppItemTable.getNameByItemId(itemId: 8095)
         centerLabel.textColor = UIColor(hex: "d62631", alpha: 1)
+        centerLabel.textAlignment = NSTextAlignment.center
         centerLabel.numberOfLines = 0
         centerLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         centerLabel.sizeToFit()
