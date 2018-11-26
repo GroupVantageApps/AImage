@@ -143,7 +143,6 @@
 		41E5B0D3215348C500513232 /* utm_mask_usage.png in Resources */ = {isa = PBXBuildFile; fileRef = 41E5B0D2215348C500513232 /* utm_mask_usage.png */; };
 		41E5B0D721534F3C00513232 /* UtmMaskUsageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E5B0D621534F3C00513232 /* UtmMaskUsageView.xib */; };
 		41E5B0DA215350AF00513232 /* UtmMaskUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E5B0D9215350AF00513232 /* UtmMaskUsageView.swift */; };
-		41F1740721ABF30600B2EDF8 /* utm_mask_efficacy_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 41F1740621ABF30600B2EDF8 /* utm_mask_efficacy_graph.png */; };
 		5C233F93CC49A1135544BD45 /* Pods_Share_Beauty_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70CADAA638872A5CF8E27E /* Pods_Share_Beauty_AppUITests.framework */; };
 		611D84057A55077F8526921F /* Pods_Share_Beauty_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4074A3E02F9C45B1CB4D8300 /* Pods_Share_Beauty_AppTests.framework */; };
 		6E4ABB3120AA6CAF000355D2 /* complexion_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4ABB1C20AA6C9A000355D2 /* complexion_40.png */; };
@@ -391,6 +390,7 @@
 		C07843B11E6169000008A031 /* lifestyle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C07843B01E6168770008A031 /* lifestyle.mp4 */; };
 		C07B48FA1D8EB1E900F5D910 /* ProductDetailTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */; };
 		C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */ = {isa = PBXBuildFile; fileRef = C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */; };
+		C07EFA2021ABFC35005D43A3 /* utm_mask_efficacy_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = C07EFA1F21ABFC34005D43A3 /* utm_mask_efficacy_graph.png */; };
 		C0880CE91E4B1E6A006A3713 /* ContentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0880CE51E4B1E6A006A3713 /* ContentDownloader.swift */; };
 		C0880CEA1E4B1E6A006A3713 /* DownloadConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0880CE61E4B1E6A006A3713 /* DownloadConfigure.swift */; };
 		C0880CEB1E4B1E6A006A3713 /* LanguageConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0880CE71E4B1E6A006A3713 /* LanguageConfigure.swift */; };
@@ -928,7 +928,6 @@
 		41E5B0D2215348C500513232 /* utm_mask_usage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_usage.png; sourceTree = "<group>"; };
 		41E5B0D621534F3C00513232 /* UtmMaskUsageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtmMaskUsageView.xib; sourceTree = "<group>"; };
 		41E5B0D9215350AF00513232 /* UtmMaskUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtmMaskUsageView.swift; sourceTree = "<group>"; };
-		41F1740621ABF30600B2EDF8 /* utm_mask_efficacy_graph.png */ = {isa = PBXFileReference; explicitFileType = image.png; name = utm_mask_efficacy_graph.png; path = ../../../../../../../Downloads/utm_mask_efficacy_graph.png; sourceTree = "<group>"; };
 		6E4ABB1C20AA6C9A000355D2 /* complexion_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = complexion_40.png; sourceTree = "<group>"; };
 		6E4ABB1D20AA6C9C000355D2 /* 03_back_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03_back_05.png; sourceTree = "<group>"; };
 		6E4ABB1E20AA6C9C000355D2 /* 01_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01_button.png; sourceTree = "<group>"; };
@@ -1197,6 +1196,7 @@
 		C07843B01E6168770008A031 /* lifestyle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lifestyle.mp4; sourceTree = "<group>"; };
 		C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailTag.swift; sourceTree = "<group>"; };
 		C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTag.xib; sourceTree = "<group>"; };
+		C07EFA1F21ABFC34005D43A3 /* utm_mask_efficacy_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = utm_mask_efficacy_graph.png; sourceTree = "<group>"; };
 		C0880CE51E4B1E6A006A3713 /* ContentDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentDownloader.swift; path = Common/ContentDownloader.swift; sourceTree = "<group>"; };
 		C0880CE61E4B1E6A006A3713 /* DownloadConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadConfigure.swift; path = Common/DownloadConfigure.swift; sourceTree = "<group>"; };
 		C0880CE71E4B1E6A006A3713 /* LanguageConfigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageConfigure.swift; path = Common/LanguageConfigure.swift; sourceTree = "<group>"; };
@@ -2076,7 +2076,7 @@
 			isa = PBXGroup;
 			children = (
 				41E5B0D2215348C500513232 /* utm_mask_usage.png */,
-				41F1740621ABF30600B2EDF8 /* utm_mask_efficacy_graph.png */,
+				C07EFA1F21ABFC34005D43A3 /* utm_mask_efficacy_graph.png */,
 			);
 			path = UTM_Mask;
 			sourceTree = "<group>";
@@ -3622,7 +3622,7 @@
 				41A15707207F5012000319BB /* lx_play_sound_1.png in Resources */,
 				C050C98D1E8267450009679D /* f_effect_bg.png in Resources */,
 				C050C98A1E8267450009679D /* f_effect_1_.png in Resources */,
-				41F1740721ABF30600B2EDF8 /* utm_mask_efficacy_graph.png in Resources */,
+				C07EFA2021ABFC35005D43A3 /* utm_mask_efficacy_graph.png in Resources */,
 				26AD5D8E20232545002A2076 /* ns_page_03_back.png in Resources */,
 				DE4727611F8F3DF400002FD5 /* gsc_top_bg.png in Resources */,
 				26768D8D202C1C57005BE606 /* LOTUS-GERM_cmyk.png in Resources */,
