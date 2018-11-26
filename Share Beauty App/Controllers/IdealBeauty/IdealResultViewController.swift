@@ -122,9 +122,14 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         print("mCollectionView.height:", mCollectionView.height)
         print("mVSelectBase.height:", mVSelectBase.height)
         
+        // Defendからの遷移時にUtmの先頭までスクロールする
         if getProdut_id == 10002{
-            let scrollPosition =  mProducts.count * 2 - 1
-            mCollectionView.scrollToItem(at:IndexPath(item: scrollPosition, section: 0), at: .right, animated: false)
+            let product = mProducts.filter { $0.productId == 0 && $0.lineId == 2 }
+            if let utmLine = product.first {
+                let utmLineIndex = mProducts.index(of: utmLine)
+                let scrollPosition =  utmLineIndex! * 2
+                mCollectionView.scrollToItem(at: IndexPath(item: scrollPosition, section: 0), at: .left, animated: true)
+            }
         }
     }
 

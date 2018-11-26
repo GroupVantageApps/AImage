@@ -46,7 +46,7 @@ class NewApproachViewController: UIViewController, NavigationControllerAnnotatio
     @IBAction func onTapDefend(_ sender: Any) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
         nextVc.selectedLineIds = [Const.lineIdUTM]
-        nextVc.getProdut_id = 10002
+        nextVc.getProdut_id = 10002 // UTMまでスクロールするために指定
         delegate?.nextVc(nextVc)
     }
     @IBAction func onTapRegenerate(_ sender: Any) {
