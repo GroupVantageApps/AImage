@@ -29,7 +29,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjI-ky-wYo">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="utm_mask_efficacy_graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-ZV-7E2">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="utm_mask_efficacy_graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="lqV-ZV-7E2" customClass="APNGImageView" customModule="APNGKit">
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             <accessibility key="accessibilityConfiguration">
@@ -80,6 +80,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="mApngImageV" destination="lqV-ZV-7E2" id="nHZ-WB-UjJ"/>
                 <outlet property="mContentView" destination="F7J-zq-MfD" id="Pxv-Oa-Sfr"/>
                 <outlet property="mGraphV" destination="ZjI-ky-wYo" id="fr6-NF-FZE"/>
                 <outlet property="mScrollV" destination="op4-Fg-9Bv" id="trF-Rq-S0d"/>

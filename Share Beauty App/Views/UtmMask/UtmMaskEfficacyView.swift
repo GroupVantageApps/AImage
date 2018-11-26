@@ -7,17 +7,26 @@
 //
 
 import Foundation
+import APNGKit
 
 class UtmMaskEfficacyView: UIView {
     
     @IBOutlet weak var mScrollV: UIScrollView!
     @IBOutlet weak var mContentView: UIView!
     @IBOutlet weak var mGraphV: UIView!
+    @IBOutlet weak var mApngImageV: APNGImageView!
     
     @IBOutlet weak var mTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        mApngImageV.image = APNGImage(named: "utm_mask_efficacy_graph.png")
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        mApngImageV.startAnimating()
     }
 
     func setView() {
