@@ -33,7 +33,7 @@ class WasoCleanserEfficacyView: UIView {
             
             let circleLabel: UILabel = UILabel()
             circleLabel.frame = CGRect(x: 0, y: 350, width: 150, height: 0)
-            circleLabel.text = AppItemTable.getNameByItemId(itemId: 8069 + index)
+            circleLabel.text = AppItemTable.getNameByItemId(itemId: 8025 + index)//"a" //AppItemTable.getNameByItemId(itemId: 8069 + index)
             circleLabel.font = UIFont(name: "Reader-Medium", size: 17)
             circleLabel.textAlignment = .center
             circleLabel.numberOfLines = 0
