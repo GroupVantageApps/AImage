@@ -1148,7 +1148,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 613 {
             mCategoryButtonEfficacy.enabled = true
             mCategoryButtonDefend.enabled = true
-            mCategoryButtonDefend.title = "Scent"
+            mCategoryButtonDefend.title = AppItemTable.getNameByItemId(itemId: 8032)//"Scent"
         } else if productId == 610 || productId == 611 {
             mCategoryButtonEfficacy.enabled = true
             self.setGSCEfficacySCV()
