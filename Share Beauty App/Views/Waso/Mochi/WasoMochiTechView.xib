@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,31 +27,31 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficacy Results" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyf-V8-hva">
-                            <rect key="frame" x="30" y="30" width="178" height="23"/>
+                            <rect key="frame" x="30" y="0.0" width="178" height="23"/>
                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The mochi mask’s sustained warming effect relaxes the skin and mind. It gives a glowing, healthy-looking complexion" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyO-ev-lJO">
-                            <rect key="frame" x="30" y="88" width="550" height="32"/>
+                            <rect key="frame" x="30" y="33" width="900" height="16"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="550" id="gqu-3o-pc5"/>
+                                <constraint firstAttribute="width" constant="900" id="gqu-3o-pc5"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzS-1n-c5q">
-                            <rect key="frame" x="200" y="130" width="624" height="363"/>
+                            <rect key="frame" x="200" y="59" width="624" height="434"/>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstItem="AzS-1n-c5q" firstAttribute="top" secondItem="tyO-ev-lJO" secondAttribute="bottom" constant="10" id="0yS-SA-czK"/>
                         <constraint firstItem="AzS-1n-c5q" firstAttribute="leading" secondItem="QCK-dp-LdP" secondAttribute="leading" constant="200" id="857-Ed-QD4"/>
-                        <constraint firstItem="cyf-V8-hva" firstAttribute="top" secondItem="QCK-dp-LdP" secondAttribute="top" constant="30" id="CJA-Ux-Y7Z"/>
+                        <constraint firstItem="cyf-V8-hva" firstAttribute="top" secondItem="QCK-dp-LdP" secondAttribute="top" id="CJA-Ux-Y7Z"/>
                         <constraint firstAttribute="bottom" secondItem="AzS-1n-c5q" secondAttribute="bottom" constant="20" id="GfG-EF-s8N"/>
                         <constraint firstItem="tyO-ev-lJO" firstAttribute="leading" secondItem="QCK-dp-LdP" secondAttribute="leading" constant="30" id="JpH-Nf-Nh1"/>
-                        <constraint firstItem="tyO-ev-lJO" firstAttribute="top" secondItem="cyf-V8-hva" secondAttribute="bottom" constant="35" id="MTJ-Fp-CN9"/>
+                        <constraint firstItem="tyO-ev-lJO" firstAttribute="top" secondItem="cyf-V8-hva" secondAttribute="bottom" constant="10" id="MTJ-Fp-CN9"/>
                         <constraint firstAttribute="trailing" secondItem="AzS-1n-c5q" secondAttribute="trailing" constant="200" id="dl8-8t-k2f"/>
                         <constraint firstItem="cyf-V8-hva" firstAttribute="leading" secondItem="QCK-dp-LdP" secondAttribute="leading" constant="30" id="jhT-3F-zZh"/>
                     </constraints>
