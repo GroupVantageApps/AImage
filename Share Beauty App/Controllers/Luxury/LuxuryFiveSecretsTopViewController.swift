@@ -31,9 +31,9 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     
     
     let lx2Arr = LanguageConfigure.lx2csv
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL]
-    
+    private static let outAppInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
+
     let btnTitleText = ["THE ENMEI\nHERB","BURNET\nEXTRACT","JAPANESE\nBOTANICALS","RICH TEXTURE\nDELICATE\nFRAGRANCE","ELEGANT\nDESIGN"]
     
     override func viewDidLoad() {

@@ -27,8 +27,8 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
 
     @IBOutlet weak var mBABtn: UIButton!
 
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoUltimune] 
+    private static let outAppInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
 
     override
     func viewDidLoad() {

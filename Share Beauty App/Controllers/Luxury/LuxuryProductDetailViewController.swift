@@ -102,8 +102,9 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         super.init(coder: aDecoder)
         self.theme = mScreen.name
     }
-   private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoUltimune] 
+    private static let outAppInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
+
 
     @IBOutlet var mHeaderView: LXHeaderView!
     @IBOutlet var mNavigationView: LXNavigationView!
