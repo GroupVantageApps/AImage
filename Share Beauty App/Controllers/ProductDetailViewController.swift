@@ -728,7 +728,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             description.font = UIFont(name: "Reader", size: 20)
             description.numberOfLines = 0
             description.textAlignment = .left
-            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: perY - 20, width: 350, height: 100)
+            description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: perY - 20, width: 400/*350*/, height: 100)
             description.text = AppItemTable.getNameByItemId(itemId: itemId + i+1)
 
             self.efficacyGSCScrollV.addSubview(percentLabel)
