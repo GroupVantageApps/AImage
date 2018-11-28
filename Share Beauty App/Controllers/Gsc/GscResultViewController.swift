@@ -13,9 +13,9 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
-    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
-
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoNavigator, Const.outAppInfoUltimune, Const.outAppInfoUvInfo, Const.outAppInfoSoftener]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoESSENTIAL, Const.outAppInfoUltimune]
+    
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()
     
@@ -35,7 +35,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     
     @IBOutlet weak var mProductNameV: UIView!
     @IBOutlet weak var mBGImgV: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,7 +109,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         selectLbl.adjustsFontSizeToFitWidth = true
         selectLbl.textColor = UIColor.init(red: 0.25, green: 0.57, blue: 0.77, alpha: 1.0)
         mProductNameV.addSubview(selectLbl)
-    
+        
         if mSelect1Type == "face" {
             selectLbl.text = gscArr["4"]
         }else{
@@ -117,178 +117,178 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         }
         
         
-            let dataDic = LanguageConfigure.gscplist
-            print("dataDic:\(dataDic)")
-            
-            let desDic = dataDic[String(format: "description_%@", mSelect1Type)] as? Dictionary<String, AnyObject>
-            
-            let gcodeDic = dataDic["gcode"] as? Dictionary<String, AnyObject>
+        let dataDic = LanguageConfigure.gscplist
+        print("dataDic:\(dataDic)")
         
-            let typeDic = dataDic["type"] as? Dictionary<String, AnyObject>
+        let desDic = dataDic[String(format: "description_%@", mSelect1Type)] as? Dictionary<String, AnyObject>
+        
+        let gcodeDic = dataDic["gcode"] as? Dictionary<String, AnyObject>
+        
+        let typeDic = dataDic["type"] as? Dictionary<String, AnyObject>
+        
+        print("desDic:\(String(describing: desDic))")
+        print("gcodeDic:\(String(describing: gcodeDic))")
+        print("typeDic:\(String(describing: typeDic))")
+        
+        if (gcodeDic != nil) {
+            var productList :[String] = []
             
-            print("desDic:\(String(describing: desDic))")
-            print("gcodeDic:\(String(describing: gcodeDic))")
-            print("typeDic:\(String(describing: typeDic))")
-            
-            if (gcodeDic != nil) {
-                var productList :[String] = []
-                
-                if mGroupType == "A" {
-                    if gcodeDic?[mSelect1Type] as! [String]  != nil {
-                        productList = gcodeDic?[mSelect1Type] as! [String] 
-                        
-                    }
+            if mGroupType == "A" {
+                if gcodeDic?[mSelect1Type] as! [String]  != nil {
+                    productList = gcodeDic?[mSelect1Type] as! [String]
+                    
+                }
+            } else {
+                let upperDic = gcodeDic?[mSelect1Type] as? Dictionary<String, AnyObject>
+                if upperDic?[mSelect2Type] as! [String] != nil {
+                    productList = upperDic?[mSelect2Type] as! [String]
                 } else {
-                    let upperDic = gcodeDic?[mSelect1Type] as? Dictionary<String, AnyObject>
-                    if upperDic?[mSelect2Type] as! [String] != nil {
-                        productList = upperDic?[mSelect2Type] as! [String] 
-                    } else {
-                        
-                    }
-                }
-                
-                //imgがあるもののみ表示
-                let disPlayProductList = productList.filter { 
-                    FileTable.getImage(ProductData.init(productId: Int($0)!).image) != nil
-                }
-                
-                let product = ProductData.init(productId: Int(productList[0])!)
-                
-                for (i, productId) in disPlayProductList.enumerated() {
-                    let product = ProductData.init(productId: Int(productId)!)
-                    let imgId = product.image
-                    let img = FileTable.getImage(imgId)
-                    
-                    var x = i*240
-                    var descriptionLabelWidth = 240
-                    var margin_x = 0
-                    
-                    
-                    if disPlayProductList.count < 5 {
-                        x = i*240
-                    } else if disPlayProductList.count == 5 {
-                        x = i*200
-                        descriptionLabelWidth = 200 - 20
-                        margin_x = -20
-                    } else {
-                        x = i*160
-                        descriptionLabelWidth = 160 - 20
-                        margin_x = -40
-                    }
-                    
-                    if (img != nil) {
-                        let productImgV = UIImageView.init(image: img)
-                        
-                        productImgV.frame = CGRect(x: -55.0 + Double(margin_x) + Double(x), y: 160, width: 860/2*0.9, height: 819/2*0.9)
-                        productImgV.layer.shadowColor = UIColor.black.cgColor
-                        productImgV.layer.shadowOffset = CGSize(width: 15, height: 15)
-                        productImgV.layer.shadowOpacity = 0.5
-                        productImgV.layer.shadowRadius  = 10
-                        productImgV.clipsToBounds = false
-                        
-                        if disPlayProductList.count > 5 {
-                            if mGroupType == "A"{
-                                productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 215, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
-                                productImgV.contentMode = .scaleAspectFill
-                            }else{
-                                productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 260, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
-                                productImgV.contentMode = .scaleAspectFill
-                            }
-                        }
-                        
-                        mVContent.addSubview(productImgV)
-                    }
-                    //下の白いバーの中の商品名
-                    let productNameLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 5, width: descriptionLabelWidth, height: 30))
-                    productNameLbl.font = UIFont.init(name: "Optima-Bold", size: 14.0)
-                    productNameLbl.numberOfLines = 3
-                    
-                    productNameLbl.text = product.productName
-                    
-                    productNameLbl.textColor = UIColor.black
-                    productNameLbl.adjustsFontSizeToFitWidth = true
-                    mProductNameV.addSubview(productNameLbl)
-                    
-                    
-                    if productId == "549" {//productId == "549"
-                        let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
-                        useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
-                        useTypeLbl.numberOfLines = 2
-                        useTypeLbl.text =  AppItemTranslateTable.getEntity(7946).name
-                        useTypeLbl.backgroundColor = UIColor.white
-                        useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                        useTypeLbl.adjustsFontSizeToFitWidth = true
-                        useTypeLbl.textAlignment = .center;
-                        mVContent.addSubview(useTypeLbl)
-                    
-                    }else{
-                        let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
-                        useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
-                        useTypeLbl.numberOfLines = 2
-                        useTypeLbl.adjustsFontSizeToFitWidth = true
-                        useTypeLbl.textAlignment = .center;
-                        mVContent.addSubview(useTypeLbl)
-                        
-                        if mGroupType == "A"{
-                            let productUseType = typeDic?[productId] as! String
-                            switch productUseType {
-                            case "urban" :
-                                useTypeLbl.text = gscArr["12"]
-                                useTypeLbl.backgroundColor = UIColor.white
-                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                            case "active" :
-                                useTypeLbl.text = gscArr["13"]
-                                useTypeLbl.backgroundColor = UIColor.init(red: 0.99, green: 0.69, blue: 0.24, alpha: 1.0)
-                                useTypeLbl.textColor = UIColor.init(red: 0.10, green: 0.33, blue: 0.49, alpha: 1.0)
-                            case "children" :
-                                useTypeLbl.text = gscArr["14"]
-                                useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
-                                useTypeLbl.textColor = UIColor.black
-                            case "lip" :
-                                useTypeLbl.text =  gscArr["23"] ?? "not set No.23"
-                                useTypeLbl.backgroundColor = UIColor.white
-                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                            case "anytime" :
-                                useTypeLbl.text =  gscArr["22"] ?? "not set No.22"
-                                useTypeLbl.backgroundColor = UIColor.white
-                                useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
-                            default:
-                                break
-                            }
-                        }
-                       
-                        
-                    }
-                    
                     
                 }
-                
-                for (i, productId) in disPlayProductList.enumerated() {
-                    let product = ProductData.init(productId: Int(productId)!)
-                    var x = i*240
-                    var w = 240
-                    var margin_x = 70
-                    if disPlayProductList.count < 5 {
-                        x = i*240
-                    } else if disPlayProductList.count == 5 {
-                        x = i*200
-                        w = 200 - 20
-                        margin_x = 50
-                    } else {
-                        x = i*160
-                        w = 160 - 20
-                        margin_x = 40
-                    }
-                    
-                    let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 130, width: w, height: 350))
-                    productBtn.tag = Int(productId)!
-                    productBtn.titleLabel?.text = ""
-                    productBtn.addTarget(self, action: #selector(GscResultViewController.goDetailVc), for: .touchUpInside)
-                    mVContent.addSubview(productBtn)
-                    
-                }
- 
             }
+            
+            //imgがあるもののみ表示
+            let disPlayProductList = productList.filter {
+                FileTable.getImage(ProductData.init(productId: Int($0)!).image) != nil
+            }
+            
+            let product = ProductData.init(productId: Int(productList[0])!)
+            
+            for (i, productId) in disPlayProductList.enumerated() {
+                let product = ProductData.init(productId: Int(productId)!)
+                let imgId = product.image
+                let img = FileTable.getImage(imgId)
+                
+                var x = i*240
+                var descriptionLabelWidth = 240
+                var margin_x = 0
+                
+                
+                if disPlayProductList.count < 5 {
+                    x = i*240
+                } else if disPlayProductList.count == 5 {
+                    x = i*200
+                    descriptionLabelWidth = 200 - 20
+                    margin_x = -20
+                } else {
+                    x = i*160
+                    descriptionLabelWidth = 160 - 20
+                    margin_x = -40
+                }
+                
+                if (img != nil) {
+                    let productImgV = UIImageView.init(image: img)
+                    
+                    productImgV.frame = CGRect(x: -55.0 + Double(margin_x) + Double(x), y: 160, width: 860/2*0.9, height: 819/2*0.9)
+                    productImgV.layer.shadowColor = UIColor.black.cgColor
+                    productImgV.layer.shadowOffset = CGSize(width: 15, height: 15)
+                    productImgV.layer.shadowOpacity = 0.5
+                    productImgV.layer.shadowRadius  = 10
+                    productImgV.clipsToBounds = false
+                    
+                    if disPlayProductList.count > 5 {
+                        if mGroupType == "A"{
+                            productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 215, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
+                            productImgV.contentMode = .scaleAspectFill
+                        }else{
+                            productImgV.frame = CGRect(x: -55.0 + 10 + Double(x), y: 260, width: 860/2*0.9 - 100, height: 819/2*0.9 - 100)
+                            productImgV.contentMode = .scaleAspectFill
+                        }
+                    }
+                    
+                    mVContent.addSubview(productImgV)
+                }
+                //下の白いバーの中の商品名
+                let productNameLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 5, width: descriptionLabelWidth, height: 30))
+                productNameLbl.font = UIFont.init(name: "Optima-Bold", size: 14.0)
+                productNameLbl.numberOfLines = 3
+                
+                productNameLbl.text = product.productName
+                
+                productNameLbl.textColor = UIColor.black
+                productNameLbl.adjustsFontSizeToFitWidth = true
+                mProductNameV.addSubview(productNameLbl)
+                
+                
+                if productId == "549" {//productId == "549"
+                    let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
+                    useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
+                    useTypeLbl.numberOfLines = 2
+                    useTypeLbl.text =  AppItemTranslateTable.getEntity(7946).name
+                    useTypeLbl.backgroundColor = UIColor.white
+                    useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                    useTypeLbl.adjustsFontSizeToFitWidth = true
+                    useTypeLbl.textAlignment = .center;
+                    mVContent.addSubview(useTypeLbl)
+                    
+                }else{
+                    let useTypeLbl = UILabel.init(frame: CGRect(x: 90 + margin_x + x, y: 135, width: 97, height: 30))
+                    useTypeLbl.font = UIFont.init(name: "Arial", size: 12.0)
+                    useTypeLbl.numberOfLines = 2
+                    useTypeLbl.adjustsFontSizeToFitWidth = true
+                    useTypeLbl.textAlignment = .center;
+                    mVContent.addSubview(useTypeLbl)
+                    
+                    if mGroupType == "A"{
+                        let productUseType = typeDic?[productId] as! String
+                        switch productUseType {
+                        case "urban" :
+                            useTypeLbl.text = gscArr["12"]
+                            useTypeLbl.backgroundColor = UIColor.white
+                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                        case "active" :
+                            useTypeLbl.text = gscArr["13"]
+                            useTypeLbl.backgroundColor = UIColor.init(red: 0.99, green: 0.69, blue: 0.24, alpha: 1.0)
+                            useTypeLbl.textColor = UIColor.init(red: 0.10, green: 0.33, blue: 0.49, alpha: 1.0)
+                        case "children" :
+                            useTypeLbl.text = gscArr["14"]
+                            useTypeLbl.backgroundColor = UIColor.init(red: 0.67, green: 0.84, blue: 0.93, alpha: 1.0)
+                            useTypeLbl.textColor = UIColor.black
+                        case "lip" :
+                            useTypeLbl.text =  gscArr["23"] ?? "not set No.23"
+                            useTypeLbl.backgroundColor = UIColor.white
+                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                        case "anytime" :
+                            useTypeLbl.text =  gscArr["22"] ?? "not set No.22"
+                            useTypeLbl.backgroundColor = UIColor.white
+                            useTypeLbl.textColor = UIColor.init(red: 0.03, green: 0.31, blue: 0.51, alpha: 1.0)
+                        default:
+                            break
+                        }
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            for (i, productId) in disPlayProductList.enumerated() {
+                let product = ProductData.init(productId: Int(productId)!)
+                var x = i*240
+                var w = 240
+                var margin_x = 70
+                if disPlayProductList.count < 5 {
+                    x = i*240
+                } else if disPlayProductList.count == 5 {
+                    x = i*200
+                    w = 200 - 20
+                    margin_x = 50
+                } else {
+                    x = i*160
+                    w = 160 - 20
+                    margin_x = 40
+                }
+                
+                let productBtn = UIButton.init(frame: CGRect(x: margin_x + x, y: 130, width: w, height: 350))
+                productBtn.tag = Int(productId)!
+                productBtn.titleLabel?.text = ""
+                productBtn.addTarget(self, action: #selector(GscResultViewController.goDetailVc), for: .touchUpInside)
+                mVContent.addSubview(productBtn)
+                
+            }
+            
+        }
         
         let subTitleLbl = UILabel.init(frame: CGRect(x: 20, y: 60, width: 500, height: 50))
         subTitleLbl.font = UIFont.init(name: "Optima-Bold", size: 20.0)
@@ -310,7 +310,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             mVContent.addSubview(AgroupSubTitleLbl)
         }
         
-            
+        
         
         
     }
@@ -355,7 +355,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         }
     }
     
-    // colllectionViewDelegate 
+    // colllectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return mThumnailProducts.count
@@ -390,5 +390,6 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             
         }
     }
-
+    
 }
+
