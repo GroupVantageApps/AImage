@@ -13,8 +13,8 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
     @IBOutlet weak private var mScrollV: UIScrollView!
     private let mScreen = ScreenData(screenId: Const.screenIdLXTop)
     weak var delegate: NavigationControllerDelegate?
-    private static let outAppInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
-    private static let outAppFoundationInfos = [Const.outAppInfoFoundation,Const.outAppInfoUTMMask, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
+    private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
+    private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
 
     @IBOutlet var mBtnOutApp: BaseButton!
     private let mDropDown = DropDown()

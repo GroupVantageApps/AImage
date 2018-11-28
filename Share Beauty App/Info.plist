@@ -39,7 +39,6 @@
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>ssdutma</string>
 		<string>ssdsoftner</string>
 		<string>ssduvi</string>
 		<string>ssdutm</string>
