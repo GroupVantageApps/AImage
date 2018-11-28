@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,17 +30,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use 1-2 times a week as the last step of your nighttime skincare routine" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-SK-6LW">
-                            <rect key="frame" x="30" y="30" width="500" height="46"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use 1-2 times a week as the last step of your nighttime skincare routine" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiP-SK-6LW">
+                            <rect key="frame" x="30" y="30" width="900" height="46"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="500" id="G8m-D6-jbt"/>
+                                <constraint firstAttribute="width" constant="900" id="G8m-D6-jbt"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="23"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-jg-xXD">
-                            <rect key="frame" x="135" y="121" width="90" height="75"/>
+                            <rect key="frame" x="135" y="98" width="90" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="pAe-xH-99J"/>
                                 <constraint firstAttribute="height" constant="75" id="uYT-vl-Tqc"/>
@@ -50,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlk-eg-7hv">
-                            <rect key="frame" x="135" y="276" width="90" height="75"/>
+                            <rect key="frame" x="135" y="253" width="90" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="SU4-6I-ucq"/>
                                 <constraint firstAttribute="height" constant="75" id="Sf0-CP-ba8"/>
@@ -60,13 +60,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detach one piece from the tray along the perforated line and peel back the top seal" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-b5-jX3">
-                            <rect key="frame" x="260" y="121" width="613" height="16"/>
+                            <rect key="frame" x="260" y="98" width="613" height="16"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-Q0-hRM">
-                            <rect key="frame" x="260" y="275" width="610" height="64"/>
+                            <rect key="frame" x="260" y="252" width="610" height="64"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="610" id="Mdf-Yn-pgS"/>
                             </constraints>
