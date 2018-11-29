@@ -452,8 +452,11 @@ class ProductListData: NSObject {
 
         self.init()
 
+        if screenId == Const.screenIdLifeStyleBeauty {
+            self.appendProductByArray(Const.lifeStyleBeautyList)
+
         //Life Style Beauty A
-        if screenId == Const.screenIdLifeStyleBeautyA {
+        } else if screenId == Const.screenIdLifeStyleBeautyA {
             self.appendProductByArray(Const.lifeStyleBeautyListA)
 
         //Life Style Beauty B

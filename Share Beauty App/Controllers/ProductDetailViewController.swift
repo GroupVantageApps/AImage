@@ -970,7 +970,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         datas.append(ProductDetailTransitionData(title: self.product.lineName, selector: #selector(self.onTapLineDetail(_:))))
         //　LifeStyleBuautyの表示がされない
-        if Utility.getLifeStyleScreenIds(productId: self.productId) != nil {
+        if Utility.isLifestyleProduct(productId: self.productId) {
             datas.append(ProductDetailTransitionData(title: item["02"]!, selector: #selector(self.onTapLifeStyleBeauty(_:))))
         }
         if Utility.isIconicProduct(productId: self.productId) {
@@ -1776,9 +1776,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     @IBAction private func onTapLifeStyleBeauty(_ sender: Any) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: LifeStyleViewController.self) as! LifeStyleViewController
-        nextVc.focusScreenIds = Utility.getLifeStyleScreenIds(productId: self.productId)
-        nextVc.isShowVideo = false
-        nextVc.isEnterWithNavigationView = true
+//        nextVc.focusScreenIds = Utility.getLifeStyleScreenIds(productId: self.productId)
+//        nextVc.isShowVideo = false
+//        nextVc.isEnterWithNavigationView = true
         delegate?.nextVc(nextVc)
     }
 
