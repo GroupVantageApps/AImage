@@ -339,8 +339,11 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             addUTMfromLifeStyleBeauty()
         }
         //IdealBeautym選択画面からの遷移 CleanserとSoftner
-        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4){
-            addUTMfromIdealBeauty()
+        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4) {
+            // LXとWasoを選択時は表示しない
+            if !(selectedLineIds.contains(1) || selectedLineIds.contains(37)) {
+                addUTMfromIdealBeauty()
+            }
         }
 
         mProducts.enumerated().forEach { (i: Int, product: ProductData) in
