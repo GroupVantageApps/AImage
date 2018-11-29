@@ -180,6 +180,12 @@ class Utility: NSObject {
             print("\n*** \(str)\n", terminator: "")
         #endif
     }
+    
+    class func isLifestyleProduct(productId: Int) -> Bool {
+        let lifestyleProducts = ProductListData(screenId: Const.screenIdLifeStyleBeauty).products
+        let lifestyleProductIds = lifestyleProducts.map {$0.productId}
+        return lifestyleProductIds.contains(productId)
+    }
 
     class func isIconicProduct(productId: Int) -> Bool {
         let iconicProducts = ProductListData(screenId: Const.screenIdIconicBeauty).products
