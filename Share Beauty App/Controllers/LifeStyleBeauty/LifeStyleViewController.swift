@@ -545,10 +545,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         for (index, product) in productList.products.enumerated() {
             
             let itemWidth: CGFloat = 300
-            var imageX: CGFloat = itemWidth * CGFloat(index) + 60
+            var imageX: CGFloat = itemWidth * CGFloat(index) + 49 //60
             let imageY: CGFloat = 170
             let height: CGFloat = 110
-            var width: CGFloat = itemWidth - 80
+            var width: CGFloat = itemWidth - 60  //80
             
             let font: UIFont = UIFont(name: "Reader", size: 17)!
             
