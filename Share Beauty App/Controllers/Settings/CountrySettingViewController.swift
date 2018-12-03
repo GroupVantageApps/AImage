@@ -89,10 +89,13 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         var cell: LanguageSettingTableViewCell!
 
         if tableView.tag == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "RegionCell") as! LanguageSettingTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "RegionCell") as? LanguageSettingTableViewCell
             cell.title = mRegions[indexPath.row].name
+            if mRegions[indexPath.row].regionId == 3 || mRegions[indexPath.row].regionId == 4 {
+                cell.isHidden = true
+            }
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell") as! LanguageSettingTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell") as? LanguageSettingTableViewCell
             cell.title = mCountries[indexPath.row].name
         }
 
