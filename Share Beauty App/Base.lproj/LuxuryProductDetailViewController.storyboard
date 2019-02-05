@@ -232,21 +232,21 @@
                                                                 <rect key="frame" x="0.0" y="179.5" width="60" height="129"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-jN-b85" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_1.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpMorning:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="DUD-3d-ATL"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVZ-4W-9Cd" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="43" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="44" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_2.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpEvening:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="qoE-bt-qEU"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbg-YB-PQa" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="86" width="60" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="87" width="60" height="43"/>
                                                                         <state key="normal" title="Button" image="features_smk_3.png"/>
                                                                         <connections>
                                                                             <action selector="onTapMakeUpNight:" destination="yKP-cJ-zZz" eventType="touchUpInside" id="4F2-e6-UEx"/>
@@ -401,6 +401,7 @@
                                                                                         </subviews>
                                                                                         <constraints>
                                                                                             <constraint firstItem="bVb-tm-MfS" firstAttribute="top" secondItem="chr-ub-X5a" secondAttribute="top" id="2in-Ei-bD0"/>
+                                                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bVb-tm-MfS" secondAttribute="trailing" constant="20" symbolic="YES" id="9Ma-PW-sCo"/>
                                                                                             <constraint firstItem="OFV-CL-RXk" firstAttribute="top" secondItem="bVb-tm-MfS" secondAttribute="bottom" id="Hbm-ON-aR4"/>
                                                                                             <constraint firstItem="bVb-tm-MfS" firstAttribute="leading" secondItem="chr-ub-X5a" secondAttribute="leading" id="IqP-Zl-1dQ"/>
                                                                                             <constraint firstItem="OFV-CL-RXk" firstAttribute="leading" secondItem="chr-ub-X5a" secondAttribute="leading" id="K52-CL-F2H"/>
@@ -658,7 +659,7 @@
                                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-cW-fKQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="529"/>
                                                         <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="-134" width="1024" height="768"/>
                                                             </view>
                                                         </subviews>
@@ -666,6 +667,8 @@
                                                         <constraints>
                                                             <constraint firstItem="RQE-Q2-05k" firstAttribute="leading" secondItem="eQA-cW-fKQ" secondAttribute="leading" id="Ixo-WV-aop"/>
                                                             <constraint firstAttribute="trailing" secondItem="RQE-Q2-05k" secondAttribute="trailing" id="Kyd-mk-uhj"/>
+                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="top" secondItem="eQA-cW-fKQ" secondAttribute="top" constant="-134" id="TCY-6N-Qrp"/>
+                                                            <constraint firstAttribute="bottom" secondItem="RQE-Q2-05k" secondAttribute="bottom" constant="-105" id="dwj-8B-IGd"/>
                                                             <constraint firstAttribute="height" constant="535" id="ioa-FJ-CKv"/>
                                                         </constraints>
                                                         <variation key="default">
