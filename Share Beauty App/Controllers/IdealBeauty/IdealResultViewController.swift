@@ -335,7 +335,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             //productをnilで判定することができないのでid番号で一致させて、空白部分を作成(IdealProductView.swift)
             mProducts.append(ProductData(productId: 10001))
             addUTMfromLifeStyleBeauty()
-        }else if getProdut_id == (566) || getProdut_id == (568){
+        }else if getProdut_id == (566) || getProdut_id == (568) || getProdut_id == (618){ //19AW 対応
             addUTMfromLifeStyleBeauty()
         }
         //IdealBeautym選択画面からの遷移 CleanserとSoftner
@@ -357,7 +357,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     func addUTMfromLifeStyleBeauty(){
   
         var ClenserProducts: [ProductData] = []
-        for product_id in [565, 566, 567] {
+        for product_id in [565, 566, 567, 617] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 ClenserProducts.append(product)
@@ -365,7 +365,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
         
         var SoftenerProducts: [ProductData] = []
-        for product_id in [568, 569] {
+        for product_id in [568, 569, 618] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 SoftenerProducts.append(product)
@@ -391,7 +391,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     func addUTMfromIdealBeauty(){
         var ClenserProducts: [ProductData] = []
-        for product_id in [565, 566, 567] {
+        for product_id in [565, 566, 567, 617] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 ClenserProducts.append(product)
@@ -399,7 +399,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }
         
         var SoftenerProducts: [ProductData] = []
-        for product_id in [568, 569] {
+        for product_id in [568, 569, 618] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 SoftenerProducts.append(product)
