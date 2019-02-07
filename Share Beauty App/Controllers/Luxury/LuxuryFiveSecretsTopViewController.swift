@@ -336,7 +336,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             if sender.tag == 80{
                 let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
                 popup.delegate = self
-                popup.setAction()
+                popup.setAction(productId: 521)
                 self.scrollContentBaseV.addSubview(popup)
                 
                 

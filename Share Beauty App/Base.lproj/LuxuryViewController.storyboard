@@ -33,82 +33,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="736"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="757"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="757" id="Ox8-vW-YyF"/>
-                                                    <constraint firstAttribute="width" constant="1024" id="hnU-DF-AD9"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="741" height="757"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-aN-LVW">
-                                                <rect key="frame" x="739" y="0.0" width="285" height="736"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-6I-CDt">
-                                                        <rect key="frame" x="45" y="655" width="194" height="51"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="194" id="YPm-25-1GC"/>
-                                                            <constraint firstAttribute="height" constant="51" id="rVU-UL-tmv"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-4w-CDy" userLabel="Ingredients">
-                                                        <rect key="frame" x="0.0" y="304" width="285" height="129"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="129" id="tIi-p4-VIs"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
-                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Ingredients">
-                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="rkb-nN-fLk"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-Vg-SiW">
-                                                        <rect key="frame" x="0.0" y="175" width="285" height="129"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="129" id="ho1-x8-PyI"/>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="uih-fg-vXh"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
-                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Products">
-                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Uqu-ee-DYU"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-gB-IM3">
-                                                        <rect key="frame" x="0.0" y="433" width="285" height="129"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="129" id="Xl2-tr-YnP"/>
-                                                            <constraint firstAttribute="height" constant="129" id="rrY-9H-EsN"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="27"/>
-                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="YUTAKA　　　　　　">
-                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="vet-46-uJt"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="ZAX-gB-IM3" secondAttribute="trailing" id="1G3-uw-Sa1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Ekz-4w-CDy" secondAttribute="trailing" id="AFE-nS-pii"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Csi-6I-CDt" secondAttribute="bottom" constant="30" id="Ga6-9W-YFN"/>
-                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="top" secondItem="Ekz-4w-CDy" secondAttribute="bottom" id="Lj6-JL-n7m"/>
-                                                    <constraint firstAttribute="width" constant="285" id="cK3-ck-uaX"/>
-                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="top" secondItem="yNI-Vg-SiW" secondAttribute="bottom" id="d66-Br-qPq"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yNI-Vg-SiW" secondAttribute="trailing" id="euF-oi-E4j"/>
-                                                    <constraint firstItem="yNI-Vg-SiW" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="ezZ-yq-nqx"/>
-                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="centerY" secondItem="hXB-aN-LVW" secondAttribute="centerY" id="fIt-Os-BAe"/>
-                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="fva-GU-j1o"/>
-                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="urk-Hl-8yV"/>
-                                                    <constraint firstItem="Csi-6I-CDt" firstAttribute="centerX" secondItem="hXB-aN-LVW" secondAttribute="centerX" id="vgn-Zn-fsW"/>
-                                                </constraints>
-                                            </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
                                                 <rect key="frame" x="15" y="353" width="18" height="30"/>
                                                 <constraints>
@@ -166,21 +92,103 @@
                                                     <constraint firstAttribute="height" constant="100" id="akZ-lg-7rn"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-aN-LVW">
+                                                <rect key="frame" x="739" y="0.0" width="285" height="746"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-4w-CDy" userLabel="Ingredients">
+                                                        <rect key="frame" x="0.0" y="223" width="285" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="ElV-he-tve"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="rkb-nN-fLk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-Vg-SiW">
+                                                        <rect key="frame" x="0.0" y="94" width="285" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="ezz-YP-yrt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="30"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Uqu-ee-DYU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-gB-IM3">
+                                                        <rect key="frame" x="0.0" y="352" width="285" height="129"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="upr-dy-DU8"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="27"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="YUTAKA　　　　　　">
+                                                            <color key="titleColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="vet-46-uJt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XMF-zN-2dD">
+                                                        <rect key="frame" x="0.0" y="481" width="285" height="129"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" button="YES" link="YES" image="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="129" id="ZoE-wS-Mxc"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="btn_legendary_enemi.png"/>
+                                                        <connections>
+                                                            <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="udy-1h-MzU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Csi-6I-CDt">
+                                                        <rect key="frame" x="45" y="663" width="194" height="55"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="7Ir-e6-cyZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yNI-Vg-SiW" secondAttribute="trailing" id="9XB-wb-M5v"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ZAX-gB-IM3" secondAttribute="trailing" id="A8T-8t-CZL"/>
+                                                    <constraint firstItem="yNI-Vg-SiW" firstAttribute="top" secondItem="hXB-aN-LVW" secondAttribute="top" constant="94" id="CGI-fQ-7tP"/>
+                                                    <constraint firstItem="XMF-zN-2dD" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="DPY-Y3-Nag"/>
+                                                    <constraint firstItem="yNI-Vg-SiW" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="MZp-wd-ksZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XMF-zN-2dD" secondAttribute="trailing" id="XxW-9H-HHC"/>
+                                                    <constraint firstAttribute="width" constant="285" id="cK3-ck-uaX"/>
+                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="leading" secondItem="hXB-aN-LVW" secondAttribute="leading" id="cul-dd-JQu"/>
+                                                    <constraint firstItem="Ekz-4w-CDy" firstAttribute="top" secondItem="hXB-aN-LVW" secondAttribute="top" constant="223" id="gle-db-LKK"/>
+                                                    <constraint firstItem="XMF-zN-2dD" firstAttribute="top" secondItem="Ekz-4w-CDy" secondAttribute="bottom" constant="129" id="hxP-eQ-sWv"/>
+                                                    <constraint firstItem="ZAX-gB-IM3" firstAttribute="top" secondItem="yNI-Vg-SiW" secondAttribute="bottom" constant="129" id="pNT-qt-IjG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ekz-4w-CDy" secondAttribute="trailing" id="sFR-ec-6go"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="736" id="0g5-H1-Wlp"/>
                                             <constraint firstItem="aaX-G6-A6H" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" constant="15" id="1XP-sH-apn"/>
                                             <constraint firstItem="hXB-aN-LVW" firstAttribute="leading" secondItem="L9G-oS-Tth" secondAttribute="trailing" constant="606" id="1nL-jY-T2v"/>
                                             <constraint firstItem="hXB-aN-LVW" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="4ru-6w-E0k"/>
-                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="5Lh-Ux-z4H"/>
                                             <constraint firstItem="L9G-oS-Tth" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="22" id="8y2-Kn-Lmq"/>
                                             <constraint firstAttribute="width" constant="1024" id="9Vr-7m-E66"/>
+                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="9g0-gX-OV5"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ic8-Q9-MTU" secondAttribute="bottom" constant="-21" id="IsG-62-DqM"/>
                                             <constraint firstItem="aaX-G6-A6H" firstAttribute="centerY" secondItem="PSx-Hb-PSG" secondAttribute="centerY" id="Ljb-Tx-GHZ"/>
-                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" id="NfK-3X-SDG"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ic8-Q9-MTU" secondAttribute="trailing" constant="283" id="b4g-UN-ttj"/>
                                             <constraint firstAttribute="trailing" secondItem="hXB-aN-LVW" secondAttribute="trailing" id="cHA-eK-q0j"/>
                                             <constraint firstItem="23k-mA-0zm" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="kE6-zw-Xeq"/>
+                                            <constraint firstItem="Ic8-Q9-MTU" firstAttribute="leading" secondItem="PSx-Hb-PSG" secondAttribute="leading" id="n7G-RQ-ycJ"/>
                                             <constraint firstItem="23k-mA-0zm" firstAttribute="top" secondItem="PSx-Hb-PSG" secondAttribute="top" constant="5" id="xhZ-8N-Tj8"/>
-                                            <constraint firstAttribute="bottom" secondItem="hXB-aN-LVW" secondAttribute="bottom" id="yUl-hH-y4x"/>
+                                            <constraint firstAttribute="bottom" secondItem="hXB-aN-LVW" secondAttribute="bottom" constant="-10" id="yUl-hH-y4x"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -201,6 +209,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="enmeiBtn" destination="XMF-zN-2dD" id="mfM-D9-t7U"/>
                         <outlet property="ingredientBtn" destination="Ekz-4w-CDy" id="cOz-MY-sEJ"/>
                         <outlet property="mBottomLogoImgV" destination="Csi-6I-CDt" id="KRy-So-f0I"/>
                         <outlet property="mBtnOutApp" destination="xrv-x9-SF9" id="AGW-Pg-04o"/>
@@ -214,10 +223,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aj-4H-wE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7437.3046874999991" y="2291.40625"/>
+            <point key="canvasLocation" x="-7345.8984374999991" y="2289.84375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_legendary_enemi.png" width="582" height="254"/>
         <image name="lx_header_home.png" width="49" height="49"/>
         <image name="lx_header_option.png" width="45" height="42"/>
         <image name="lx_top_menu.png" width="35" height="56"/>

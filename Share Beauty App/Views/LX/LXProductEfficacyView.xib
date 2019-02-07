@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -45,7 +45,7 @@
                 <outlet property="mIntensiveConstraintBottom" destination="Vuj-yF-Uj1" id="i8c-0F-ykx"/>
                 <outlet property="mScrollV" destination="H1J-g8-Iyx" id="JTB-oB-Whw"/>
             </connections>
-            <point key="canvasLocation" x="-52" y="508"/>
+            <point key="canvasLocation" x="-83.200000000000003" y="456.97151424287858"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="Gg3-3u-nB6" userLabel="lx_effifacy_c_graph_1">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -99,7 +99,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="After 2 weeks" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btH-SG-YUc">
-                    <rect key="frame" x="233" y="577" width="159" height="41"/>
+                    <rect key="frame" x="233.5" y="577" width="159" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="NBF-oj-dOv"/>
                         <constraint firstAttribute="width" constant="159" id="Qc9-HF-JVW"/>
@@ -125,7 +125,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lew-FP-fMs">
-                    <rect key="frame" x="167" y="401" width="291" height="2"/>
+                    <rect key="frame" x="167.5" y="401" width="291" height="2"/>
                     <color key="backgroundColor" red="0.60784313729999995" green="0.53725490200000003" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="PHh-5z-vEH"/>
@@ -180,7 +180,7 @@
                     </constraints>
                 </view>
                 <view tag="50" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRd-Gz-FXJ" userLabel="pie65" customClass="CircleGraphView" customModule="Share_Beauty_App" customModuleProvider="target">
-                    <rect key="frame" x="233" y="120" width="162" height="162"/>
+                    <rect key="frame" x="233.5" y="120" width="162" height="162"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_graph_65.png" translatesAutoresizingMaskIntoConstraints="NO" id="98H-gd-p0p">
                             <rect key="frame" x="6" y="6" width="150" height="150"/>
@@ -290,7 +290,7 @@
                     </connections>
                 </view>
                 <view tag="53" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVF-pV-E1e" userLabel="pie65" customClass="CircleGraphView" customModule="Share_Beauty_App" customModuleProvider="target">
-                    <rect key="frame" x="566" y="417" width="162" height="162"/>
+                    <rect key="frame" x="566.5" y="417" width="162" height="162"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lx_graph_65.png" translatesAutoresizingMaskIntoConstraints="NO" id="V97-yR-6Wo">
                             <rect key="frame" x="6" y="6" width="150" height="150"/>
@@ -335,7 +335,7 @@
                     </constraints>
                 </view>
                 <view tag="63" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPi-6n-Woq">
-                    <rect key="frame" x="144" y="359" width="336" height="50"/>
+                    <rect key="frame" x="145" y="359" width="336" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="336" id="En1-bT-TdZ"/>
@@ -354,7 +354,7 @@
                     </constraints>
                 </view>
                 <view tag="62" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ey5-oA-EDM">
-                    <rect key="frame" x="446" y="159" width="88" height="84"/>
+                    <rect key="frame" x="446.5" y="159" width="88" height="84"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="88" id="9jK-p2-VIx"/>
@@ -407,7 +407,7 @@
                 <constraint firstItem="8w0-kC-JMg" firstAttribute="top" secondItem="TRG-Jf-rWv" secondAttribute="bottom" constant="44" id="yHX-cz-yc5"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-86" y="-355"/>
+            <point key="canvasLocation" x="-137.59999999999999" y="-319.34032983508246"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="kdY-8p-Cpn" userLabel="lx_effifacy_c_graph_2">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -706,7 +706,7 @@ soft glow to my skin.</string>
                 <constraint firstItem="7uZ-VF-ErI" firstAttribute="top" secondItem="SRg-Pd-8GT" secondAttribute="bottom" constant="7" id="waP-E7-XV3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="972" y="-370"/>
+            <point key="canvasLocation" x="1555.2" y="-332.83358320839585"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="cpn-9e-Ewg" userLabel="lx_effifacy_c_graph_3">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -1092,7 +1092,7 @@ soft glow to my skin.</string>
                 <constraint firstAttribute="trailing" secondItem="iYf-ch-stJ" secondAttribute="trailing" constant="514" id="tga-qg-3sV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2088" y="-370"/>
+            <point key="canvasLocation" x="3340.8000000000002" y="-332.83358320839585"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="gma-Zb-qdO" userLabel="lx_effifacy_c_graph_4">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -1478,7 +1478,7 @@ soft glow to my skin.</string>
                 <constraint firstAttribute="trailing" secondItem="lDF-Oc-KBv" secondAttribute="trailing" constant="232" id="yaW-57-QGA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="3147" y="-370"/>
+            <point key="canvasLocation" x="5035.1999999999998" y="-332.83358320839585"/>
         </view>
         <view clipsSubviews="YES" tag="101" contentMode="scaleToFill" id="6OF-aN-2J4" userLabel="lx_intensive">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -1540,7 +1540,7 @@ The sagging areas are toned for a more youthful look.</string>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="849" y="507"/>
+            <point key="canvasLocation" x="1358.4000000000001" y="456.07196401799104"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="PRH-uW-rgN" userLabel="lx_intensive_graph">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -1926,7 +1926,7 @@ The sagging areas are toned for a more youthful look.</string>
                 <constraint firstAttribute="trailing" secondItem="Ljr-4H-BnD" secondAttribute="trailing" constant="152" id="zJr-tb-Y40"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2755" y="453"/>
+            <point key="canvasLocation" x="4408" y="407.49625187406298"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="jyF-qy-9K3" userLabel="lx_eye_graph">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
@@ -2312,7 +2312,7 @@ The sagging areas are toned for a more youthful look.</string>
                 <constraint firstItem="A7U-o1-Oez" firstAttribute="top" secondItem="TSu-VO-pMr" secondAttribute="bottom" constant="8" id="yfz-TZ-7oW"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2755" y="1231"/>
+            <point key="canvasLocation" x="4408" y="1107.3463268365817"/>
         </view>
         <view tag="101" contentMode="scaleToFill" id="1Ac-y1-hw0" userLabel="lx_ba">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>

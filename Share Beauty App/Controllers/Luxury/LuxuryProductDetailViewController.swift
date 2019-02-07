@@ -235,7 +235,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
         
         mImgVProduct.image = FileTable.getImage(product.image)
-        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 {
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 || productId == 621{
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonDefend.enabled = true
         } else {
@@ -499,6 +499,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mVBaseFeaturesView.addConstraints([left, right, top, bottom, height])
     }
 
+    @IBAction func pageControl(_ sender: Any) {
+    }
     private func showUtmInfo(_ sender: LXCategoryButton) {
       
 
@@ -529,7 +531,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
             mVCurrentSelect = utmDefendView
         }
     }
-
+    
     private func showInfo(_ sender: LXCategoryButton) {
         if sender === mCategoryButtonFeatures {
             mVCategoryImage.isHidden = true
@@ -568,7 +570,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         } else if sender === mCategoryButtonDefend {
             mVCategoryImage.isHidden = true
             let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
-            popup.setAction()
+            popup.setAction(productId: productId)
             popup.delegate = self
             popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
             self.view.addSubview(popup)
