@@ -74,7 +74,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             self.mScrollV.addSubview(self.mContentV)
         } else if productId == 621 {
             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 3, height: self.size.height))
-            let geneV: LXTecGeneView = UINib(nibName: "LXTecGeneView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTecGeneView
+            let geneV: LXTechGeneView = UINib(nibName: "LXTechGeneView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGeneView
             geneV.setUI()
             geneV.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
             self.mContentV.addSubview(geneV)

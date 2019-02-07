@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LXTecGeneView : UIView{
+class LXTechGeneView : UIView{
     
     @IBOutlet var mXbutton: UIButton!
     func setUI() {
@@ -19,13 +19,13 @@ class LXTecGeneView : UIView{
 //        let imageBg = self.viewWithTag(60) as! UIImageView
 //        imageBg.image = FileTable.getLXFileImage("lx_aura.png")
         
-        let lxArr = LanguageConfigure.lxcsv
-        for i in 0..<11 {
-            let label = firstView.viewWithTag(10 + i) as! UILabel
-            let csvId = 366 + i
-            label.text = lxArr[String(csvId)]
-            
-        }
+//        let lxArr = LanguageConfigure.lxcsv
+//        for i in 0..<11 {
+//            let label = firstView.viewWithTag(10 + i) as! UILabel
+//            let csvId = 366 + i
+//            label.text = lxArr[String(csvId)]
+//            
+//        }
     }
     
     @IBAction func close(_ sender: Any) {
