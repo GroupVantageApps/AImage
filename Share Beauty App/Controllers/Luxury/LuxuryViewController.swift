@@ -43,6 +43,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     @IBOutlet var productBtn: UIButton!
     @IBOutlet var ingredientBtn: UIButton!
     @IBOutlet var yutakaBtn: UIButton!
+    @IBOutlet var enmeiBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         mScrollV.delegate = self
@@ -51,28 +52,34 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         lxArr = LanguageConfigure.lxcsv
         if ((lxArr["1"]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {    
             
-            productBtn.setTitle(lxArr["1"], for: .normal) 
-            ingredientBtn.setTitle(lxArr["2"], for: .normal) 
-            yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+//            productBtn.setTitle(lxArr["1"], for: .normal)
+//            ingredientBtn.setTitle(lxArr["2"], for: .normal)
+            yutakaBtn.setTitle(lxArr["3"], for: .normal)
+//            enmeiBtn.setTitle(lxArr["4"], for: .normal)
             
         } else {   
             
         let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 30)   
-            let productBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["1"]!, attributes: [NSFontAttributeName: font!])
-            productBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["1"]?.count)!))
-            productBtn.titleLabel?.attributedText = productBtnString
-            
-            let ingredientBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["2"]!, attributes: [NSFontAttributeName: font!])
-            ingredientBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["2"]?.count)!))
-            ingredientBtn.titleLabel?.attributedText = ingredientBtnString
+//            let productBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["1"]!, attributes: [NSFontAttributeName: font!])
+//            productBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["1"]?.count)!))
+//            productBtn.titleLabel?.attributedText = productBtnString
+//
+//            let ingredientBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["2"]!, attributes: [NSFontAttributeName: font!])
+//            ingredientBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["2"]?.count)!))
+//            ingredientBtn.titleLabel?.attributedText = ingredientBtnString
             
             let yutakaBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["3"]!, attributes: [NSFontAttributeName: font!])
             yutakaBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["3"]?.count)!))
             yutakaBtn.titleLabel?.attributedText = yutakaBtnString
+//
+//            let enmeiBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["4"]!, attributes: [NSFontAttributeName: font!])
+//            enmeiBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["4"]?.count)!))
+//            enmeiBtn.titleLabel?.attributedText = enmeiBtnString
             
-            productBtn.setTitle(lxArr["1"], for: .normal) 
-            ingredientBtn.setTitle(lxArr["2"], for: .normal) 
-            yutakaBtn.setTitle(lxArr["3"], for: .normal) 
+//            productBtn.setTitle(lxArr["1"], for: .normal)
+//            ingredientBtn.setTitle(lxArr["2"], for: .normal)
+            yutakaBtn.setTitle(lxArr["3"], for: .normal)
+//            enmeiBtn.setTitle(lxArr["4"], for: .normal)
         }
         
         if LanguageConfigure.isOutAppBtnHiddenCountry {
@@ -91,13 +98,22 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         self.view.addSubview(moviePlay)
         
         //self.mTopBGImgV.image = FileTable.getLXFileImage("lx_top_bg.png")
-        let image: UIImage = UIImage(named: "page_top.png")!
+        let image: UIImage = UIImage(named: "page1_visual.png")!
+        
         self.mTopBGImgV.image = image
         self.mLogoImgV.image = FileTable.getLXFileImage("lx_top_logo.png")
         self.mBottomLogoImgV.image = FileTable.getLXFileImage("lx_logo.png")
-        self.ingredientBtn.setBackgroundImage(FileTable.getLXFileImage("lx_ingredients_btn.png"), for: .normal)
-        self.productBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_btn.png"), for: .normal)
+        
+        let ingredientImage = UIImage(named: "btn_ingredients.png")
+        self.ingredientBtn.setBackgroundImage(ingredientImage, for: .normal)
+        //        self.ingredientBtn.setBackgroundImage(FileTable.getLXFileImage("lx_ingredients_btn.png"), for: .normal)
+        let productImage = UIImage(named: "btn_products.png")
+        self.productBtn.setBackgroundImage(productImage, for: .normal)
+//        self.productBtn.setBackgroundImage(FileTable.getLXFileImage("lx_product_btn.png"), for: .normal)
+        
         self.yutakaBtn.setBackgroundImage(FileTable.getLXFileImage("lx_yutaka_btn.png"), for: .normal)
+        let enmeiImage = UIImage(named: "btn_legendary_enemi.png")
+        self.enmeiBtn.setBackgroundImage(enmeiImage, for: .normal)
         
         if ndGoProductVC {
             UIApplication.shared.keyWindow?.rootViewController = navigationController
@@ -106,10 +122,10 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             moviePlay.isHidden = true
         }
         
-        // 新規動画ID別途付与
+         //新規動画ID別途付与
         let movieBtn = UIButton()
         movieBtn.frame = CGRect(x: 30, y: self.mVContent.frame.height - 80, width: 60, height: 60)
-        movieBtn.setImage(UIImage(named: "Top_btn.png"), for: .normal)
+        movieBtn.setImage(UIImage(named: "btn_next.png"), for: .normal)
         movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
         self.mVContent.addSubview(movieBtn)
         self.view.bringSubview(toFront: movieBtn)
@@ -137,9 +153,10 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         print("onTapLuxuryMenu tag:" + sender.tag.description)
         let arrNextVc: [AnyClass] = [LuxuryProductViewController.self,
                                      LuxuryIngredientViewController.self,
-                                     LuxuryYutakaViewController.self
+                                     LuxuryYutakaViewController.self,
+                                     LuxuryLegendaryEnmeiViewController.self
         ]
-        if LuxuryProductViewController.self == arrNextVc[sender.tag] {
+        if LuxuryProductViewController.self == arrNextVc[sender.tag ] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryProductViewController
             toVc.bgAudioPlayer = bgAudioPlayer
             self.navigationController?.pushViewController(toVc, animated: false)
@@ -151,6 +168,11 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         } else if LuxuryYutakaViewController.self == arrNextVc[sender.tag] {
             let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryYutakaViewController", targetClass: arrNextVc[sender.tag]) as! LuxuryYutakaViewController
              toVc.bgAudioPlayer = bgAudioPlayer
+            self.navigationController?.pushViewController(toVc, animated: false)
+            
+        } else if LuxuryLegendaryEnmeiViewController.self == arrNextVc[sender.tag]{
+            let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryLegendaryEnmeiViewController", targetClass:arrNextVc[sender.tag]) as! LuxuryLegendaryEnmeiViewController
+            
             self.navigationController?.pushViewController(toVc, animated: false)
         }
     }

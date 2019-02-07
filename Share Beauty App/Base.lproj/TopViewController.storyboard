@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                                                     <button alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBd-Up-qFw" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="492" height="119.5"/>
                                                         <connections>
-                                                            <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="sxG-5J-655"/>
+                                                            <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="q6w-0t-Zyk"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKq-YQ-ZZ3">
@@ -157,12 +157,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFO-gk-aq7">
                                                 <rect key="frame" x="0.0" y="119" width="507" height="119"/>
                                                 <subviews>
-                                                    <button alpha="0.0" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-D2-Lg6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
-                                                        <connections>
-                                                            <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="uDb-Vq-0b5"/>
-                                                        </connections>
-                                                    </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHd-8t-c1g">
                                                         <rect key="frame" x="0.0" y="118" width="497" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -170,6 +164,12 @@
                                                             <constraint firstAttribute="height" constant="1" id="mbp-6M-Kck"/>
                                                         </constraints>
                                                     </view>
+                                                    <button alpha="0.0" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-D2-Lg6" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="492" height="119"/>
+                                                        <connections>
+                                                            <action selector="onTapMenu:" destination="XiQ-gF-w7j" eventType="touchUpInside" id="uDb-Vq-0b5"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
