@@ -486,9 +486,11 @@
 		DA22A5E3220AC40000CF5FEE /* page5_lead@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DE220AC3EF00CF5FEE /* page5_lead@4x.png */; };
 		DA22A5E4220AC40800CF5FEE /* page4_main_visual.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DD220AC3EA00CF5FEE /* page4_main_visual.png */; };
 		DA22A5E5220AC40C00CF5FEE /* page4_lead@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DC220AC3E600CF5FEE /* page4_lead@4x.png */; };
-		DA22A5E6220AC40E00CF5FEE /* page4_btn_bouble_gene@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DB220AC3E200CF5FEE /* page4_btn_bouble_gene@4x.png */; };
+		DA22A5E6220AC40E00CF5FEE /* btn_bouble_gene.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DB220AC3E200CF5FEE /* btn_bouble_gene.png */; };
 		DA22A5E7220AC41200CF5FEE /* page4_arrow_right@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DA220AC3DD00CF5FEE /* page4_arrow_right@4x.png */; };
 		DA22A5E9220AC81E00CF5FEE /* btn_legendary_enemi.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5E8220AC81D00CF5FEE /* btn_legendary_enemi.png */; };
+		DA7DC1E5220C2D2300154ABB /* LXTecGeneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DC1E4220C2D2300154ABB /* LXTecGeneView.xib */; };
+		DA7DC1E7220C2DE600154ABB /* LXTechGeneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */; };
 		DAA051B32202E69F00D1BE71 /* btn_ingredients.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0D5F17220042FA006703D5 /* btn_ingredients.png */; };
 		DAA051B52202E6A900D1BE71 /* btn_products.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0D5F19220042FA006703D5 /* btn_products.png */; };
 		DAA051B62202E6B100D1BE71 /* btn_shiseido_ginza.png in Resources */ = {isa = PBXBuildFile; fileRef = DA0D5F1A220042FA006703D5 /* btn_shiseido_ginza.png */; };
@@ -1316,13 +1318,16 @@
 		DA22A5D3220AC22A00CF5FEE /* page2_visual_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2_visual_1.png; sourceTree = "<group>"; };
 		DA22A5D4220AC23000CF5FEE /* page2_visual_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2_visual_2.png; sourceTree = "<group>"; };
 		DA22A5DA220AC3DD00CF5FEE /* page4_arrow_right@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page4_arrow_right@4x.png"; sourceTree = "<group>"; };
-		DA22A5DB220AC3E200CF5FEE /* page4_btn_bouble_gene@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page4_btn_bouble_gene@4x.png"; sourceTree = "<group>"; };
+		DA22A5DB220AC3E200CF5FEE /* btn_bouble_gene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bouble_gene.png; sourceTree = "<group>"; };
 		DA22A5DC220AC3E600CF5FEE /* page4_lead@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page4_lead@4x.png"; sourceTree = "<group>"; };
 		DA22A5DD220AC3EA00CF5FEE /* page4_main_visual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page4_main_visual.png; sourceTree = "<group>"; };
 		DA22A5DE220AC3EF00CF5FEE /* page5_lead@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "page5_lead@4x.png"; sourceTree = "<group>"; };
 		DA22A5DF220AC3F200CF5FEE /* page5_main_visual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page5_main_visual.png; sourceTree = "<group>"; };
 		DA22A5E0220AC3F600CF5FEE /* page6_main_visual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page6_main_visual.png; sourceTree = "<group>"; };
 		DA22A5E8220AC81D00CF5FEE /* btn_legendary_enemi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btn_legendary_enemi.png; path = ../../../../btn_legendary_enemi.png; sourceTree = "<group>"; };
+		DA7DC1E1220C11AE00154ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LuxuryProductDetailViewController.storyboard; sourceTree = "<group>"; };
+		DA7DC1E4220C2D2300154ABB /* LXTecGeneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXTecGeneView.xib; sourceTree = "<group>"; };
+		DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXTechGeneView.swift; sourceTree = "<group>"; };
 		DE06F6F51F16450200EF2FE2 /* urban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urban.png; sourceTree = "<group>"; };
 		DE06F6F61F16450200EF2FE2 /* sensitive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensitive.png; sourceTree = "<group>"; };
 		DE06F6F71F16450200EF2FE2 /* children.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = children.png; sourceTree = "<group>"; };
@@ -1427,7 +1432,6 @@
 		DE2C90791E9C66E600B5FC4A /* MoviePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviePlayerView.xib; sourceTree = "<group>"; };
 		DE2C91271E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ItemsDisplayedViewController.storyboard; sourceTree = "<group>"; };
 		DE2C91291E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryIngredientViewController.storyboard; sourceTree = "<group>"; };
-		DE2C912B1E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryProductDetailViewController.storyboard; sourceTree = "<group>"; };
 		DE2C912D1E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryProductViewController.storyboard; sourceTree = "<group>"; };
 		DE2C912F1E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryViewController.storyboard; sourceTree = "<group>"; };
 		DE2C91311E9C681100B5FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LuxuryYutakaViewController.storyboard; sourceTree = "<group>"; };
@@ -2633,7 +2637,7 @@
 				DA22A5DE220AC3EF00CF5FEE /* page5_lead@4x.png */,
 				DA22A5DD220AC3EA00CF5FEE /* page4_main_visual.png */,
 				DA22A5DC220AC3E600CF5FEE /* page4_lead@4x.png */,
-				DA22A5DB220AC3E200CF5FEE /* page4_btn_bouble_gene@4x.png */,
+				DA22A5DB220AC3E200CF5FEE /* btn_bouble_gene.png */,
 				DA22A5DA220AC3DD00CF5FEE /* page4_arrow_right@4x.png */,
 				DA22A5D3220AC22A00CF5FEE /* page2_visual_1.png */,
 				DA22A5D4220AC23000CF5FEE /* page2_visual_2.png */,
@@ -2744,6 +2748,8 @@
 				DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */,
 				DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */,
 				DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */,
+				DA7DC1E4220C2D2300154ABB /* LXTecGeneView.xib */,
+				DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */,
 				DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */,
 				DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */,
 				DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */,
@@ -3505,6 +3511,7 @@
 				C050C9771E8267450009679D /* defend_triangle.png in Resources */,
 				413BE54E20F75436006F08EC /* page_top.png in Resources */,
 				DE2C90811E9C66E600B5FC4A /* LXEfficacyResultView.xib in Resources */,
+				DA7DC1E5220C2D2300154ABB /* LXTecGeneView.xib in Resources */,
 				C07B48FC1D8EB20600F5D910 /* ProductDetailTag.xib in Resources */,
 				C050C9A71E8267450009679D /* high.png in Resources */,
 				C050C9C21E8276C60009679D /* Shiseido-Lightx.otf in Resources */,
@@ -3664,7 +3671,7 @@
 				DE2C918C1E9C682500B5FC4A /* lx_icon_recommend_selected.png in Resources */,
 				C050C9891E8267450009679D /* f_effect_1.png in Resources */,
 				26AD5D8C20232545002A2076 /* nsbutton_4.png in Resources */,
-				DA22A5E6220AC40E00CF5FEE /* page4_btn_bouble_gene@4x.png in Resources */,
+				DA22A5E6220AC40E00CF5FEE /* btn_bouble_gene.png in Resources */,
 				4153A0C720B7B0670089715A /* button_right.png in Resources */,
 				417FD0172161DBBA0035966F /* mochi_thermography.png in Resources */,
 				DE2C300220737AB200548627 /* eee_6081.png in Resources */,
@@ -3918,6 +3925,7 @@
 				DE2C908E1E9C66E600B5FC4A /* LXProductDetailTransitionView.swift in Sources */,
 				DE2C302420738CCD00548627 /* EEESecondTechnologyView.swift in Sources */,
 				EB8F341A1D884D5600641976 /* BeautySecondTranslateTable.swift in Sources */,
+				DA7DC1E7220C2DE600154ABB /* LXTechGeneView.swift in Sources */,
 				C0665ACC1D6AE96D00B3D8E5 /* IdealFirstSelectViewController.swift in Sources */,
 				C037CBAE1D880EE600DEFE14 /* IdealSelectCollectionView.swift in Sources */,
 				EB7365831D830D8300D223BA /* ModelDatabase.swift in Sources */,
@@ -4352,7 +4360,7 @@
 		DE2C912A1E9C681100B5FC4A /* LuxuryProductDetailViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DE2C912B1E9C681100B5FC4A /* Base */,
+				DA7DC1E1220C11AE00154ABB /* en */,
 			);
 			name = LuxuryProductDetailViewController.storyboard;
 			sourceTree = "<group>";

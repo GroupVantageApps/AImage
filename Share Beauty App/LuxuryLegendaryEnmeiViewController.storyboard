@@ -38,13 +38,13 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9T-ag-Oim">
                                                         <rect key="frame" x="0.0" y="0.0" width="512" height="537"/>
                                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
-                                                        <state key="normal">
+                                                        <state key="normal" backgroundImage="page2_visual_1.png">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tappedProduct:" destination="kdo-NC-5K0" eventType="touchUpInside" id="tdY-hR-RhK"/>
+                                                        </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page2_visual_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="k0f-Ob-6ua">
-                                                        <rect key="frame" x="0.0" y="0.0" width="512" height="537"/>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-iX-Lfv">
                                                         <rect key="frame" x="200" y="439" width="112" height="51"/>
                                                         <constraints>
@@ -59,7 +59,6 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="B29-iX-Lfv" firstAttribute="top" secondItem="d8r-Jk-qfb" secondAttribute="top" constant="439" id="8vg-PU-fhB"/>
-                                                    <constraint firstAttribute="trailing" secondItem="k0f-Ob-6ua" secondAttribute="trailing" id="9Bd-rG-uoV"/>
                                                     <constraint firstAttribute="bottom" secondItem="x9T-ag-Oim" secondAttribute="bottom" id="DJ4-4t-Lbd"/>
                                                     <constraint firstItem="x9T-ag-Oim" firstAttribute="leading" secondItem="d8r-Jk-qfb" secondAttribute="leading" id="HZ8-Km-OzJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="B29-iX-Lfv" secondAttribute="bottom" constant="47" id="Lil-ir-Nwe"/>
@@ -67,22 +66,16 @@
                                                     <constraint firstAttribute="trailing" secondItem="x9T-ag-Oim" secondAttribute="trailing" id="Oqb-s4-3Jl"/>
                                                     <constraint firstAttribute="trailing" secondItem="B29-iX-Lfv" secondAttribute="trailing" constant="200" id="Un1-NB-dd0"/>
                                                     <constraint firstItem="x9T-ag-Oim" firstAttribute="top" secondItem="d8r-Jk-qfb" secondAttribute="top" id="YTe-K5-kh9"/>
-                                                    <constraint firstItem="k0f-Ob-6ua" firstAttribute="top" secondItem="d8r-Jk-qfb" secondAttribute="top" id="knd-cc-zVa"/>
                                                     <constraint firstItem="B29-iX-Lfv" firstAttribute="leading" secondItem="d8r-Jk-qfb" secondAttribute="leading" constant="200" id="nwy-3p-mg2"/>
-                                                    <constraint firstAttribute="bottom" secondItem="k0f-Ob-6ua" secondAttribute="bottom" id="tbl-9H-qVU"/>
-                                                    <constraint firstItem="k0f-Ob-6ua" firstAttribute="leading" secondItem="d8r-Jk-qfb" secondAttribute="leading" id="vqf-eZ-OcW"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-pE-xYj" userLabel="LLEview">
                                                 <rect key="frame" x="512" y="0.0" width="512" height="537"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page2_visual_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-Mx-Y5p" userLabel="LLE Image">
-                                                        <rect key="frame" x="0.0" y="0.0" width="512" height="537"/>
-                                                    </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdZ-OM-cIZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="512" height="537"/>
                                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
-                                                        <state key="normal">
+                                                        <state key="normal" backgroundImage="page2_visual_2.png">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
@@ -99,18 +92,14 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="uhI-Mx-Y5p" firstAttribute="top" secondItem="5k5-pE-xYj" secondAttribute="top" id="1a9-Cl-6xa"/>
                                                     <constraint firstAttribute="trailing" secondItem="QAV-sw-3hz" secondAttribute="trailing" constant="108" id="3Ar-5t-DUy"/>
-                                                    <constraint firstAttribute="bottom" secondItem="uhI-Mx-Y5p" secondAttribute="bottom" id="55m-lW-eMS"/>
                                                     <constraint firstItem="gdZ-OM-cIZ" firstAttribute="leading" secondItem="5k5-pE-xYj" secondAttribute="leading" id="7NB-rl-LD9"/>
                                                     <constraint firstAttribute="bottom" secondItem="QAV-sw-3hz" secondAttribute="bottom" constant="57" id="KbQ-TU-LZg"/>
                                                     <constraint firstItem="QAV-sw-3hz" firstAttribute="leading" secondItem="5k5-pE-xYj" secondAttribute="leading" constant="110" id="MCd-gR-puj"/>
                                                     <constraint firstAttribute="width" constant="512" id="fAL-3J-MKT"/>
                                                     <constraint firstAttribute="trailing" secondItem="gdZ-OM-cIZ" secondAttribute="trailing" id="fAi-ZJ-SU2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uhI-Mx-Y5p" secondAttribute="trailing" id="glr-ic-m7f"/>
                                                     <constraint firstItem="gdZ-OM-cIZ" firstAttribute="top" secondItem="5k5-pE-xYj" secondAttribute="top" id="p7t-Nx-P6M"/>
                                                     <constraint firstItem="QAV-sw-3hz" firstAttribute="top" secondItem="5k5-pE-xYj" secondAttribute="top" constant="449" id="u9O-N1-E4M"/>
-                                                    <constraint firstItem="uhI-Mx-Y5p" firstAttribute="leading" secondItem="5k5-pE-xYj" secondAttribute="leading" id="xNe-5Q-K1F"/>
                                                     <constraint firstAttribute="bottom" secondItem="gdZ-OM-cIZ" secondAttribute="bottom" id="zCE-hV-BcS"/>
                                                 </constraints>
                                             </view>
@@ -187,9 +176,7 @@
                     <connections>
                         <outlet property="LECImage" destination="fy6-Gk-fiW" id="M2R-pc-dYo"/>
                         <outlet property="LLEBtn" destination="gdZ-OM-cIZ" id="1Y0-VF-lus"/>
-                        <outlet property="LLEImage" destination="uhI-Mx-Y5p" id="l0Y-bd-zYj"/>
                         <outlet property="ProBtn" destination="x9T-ag-Oim" id="uAJ-Ul-NQi"/>
-                        <outlet property="ProImage" destination="k0f-Ob-6ua" id="1i6-17-IEi"/>
                         <outlet property="mHeaderView" destination="Gru-nb-TYE" id="gli-hl-TQx"/>
                         <outlet property="mNavigationView" destination="RQT-jL-lLe" id="Atk-IF-8eg"/>
                         <outlet property="mScrollV" destination="6sn-Qm-q2I" id="4cY-ce-meI"/>

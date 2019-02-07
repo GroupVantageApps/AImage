@@ -35,6 +35,63 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ic8-Q9-MTU">
                                                 <rect key="frame" x="0.0" y="0.0" width="741" height="757"/>
                                             </imageView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
+                                                <rect key="frame" x="15" y="353" width="18" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="18" id="aOZ-T8-dxP"/>
+                                                    <constraint firstAttribute="height" constant="30" id="hCt-70-FoM"/>
+                                                </constraints>
+                                                <state key="normal" image="lx_top_menu.png"/>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm">
+                                                <rect key="frame" x="0.0" y="5" width="1024" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-x9-SF9" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="982" y="13" width="27" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="BFG-fA-y4m"/>
+                                                            <constraint firstAttribute="width" constant="27" id="fED-Ul-QQa"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <inset key="contentEdgeInsets" minX="3" minY="4" maxX="3" maxY="4"/>
+                                                        <state key="normal" image="lx_header_option.png">
+                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="outApp:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Npx-fg-sbh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C82-S6-a3I" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                        <rect key="frame" x="935" y="11" width="29" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="29" id="DZz-dh-bhP"/>
+                                                            <constraint firstAttribute="width" constant="29" id="GXk-WB-62x"/>
+                                                        </constraints>
+                                                        <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                                        <state key="normal" image="lx_header_home.png">
+                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="goTop:" destination="T4m-bh-eTl" eventType="touchUpInside" id="yB0-Jq-3wG"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
+                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="leading" secondItem="C82-S6-a3I" secondAttribute="trailing" constant="18" id="Mej-a0-J8d"/>
+                                                    <constraint firstItem="C82-S6-a3I" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="YZU-ob-S2V"/>
+                                                    <constraint firstAttribute="width" constant="1024" id="fxV-1e-rnv"/>
+                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="lXn-9U-kXL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xrv-x9-SF9" secondAttribute="trailing" constant="15" id="vPG-EQ-F74"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-oS-Tth">
+                                                <rect key="frame" x="33" y="22" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="0TF-UM-Kcw"/>
+                                                    <constraint firstAttribute="height" constant="100" id="akZ-lg-7rn"/>
+                                                </constraints>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXB-aN-LVW">
                                                 <rect key="frame" x="739" y="0.0" width="285" height="746"/>
                                                 <subviews>
@@ -115,63 +172,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="Ekz-4w-CDy" secondAttribute="trailing" id="sFR-ec-6go"/>
                                                 </constraints>
                                             </view>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G6-A6H">
-                                                <rect key="frame" x="15" y="353" width="18" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="18" id="aOZ-T8-dxP"/>
-                                                    <constraint firstAttribute="height" constant="30" id="hCt-70-FoM"/>
-                                                </constraints>
-                                                <state key="normal" image="lx_top_menu.png"/>
-                                            </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-mA-0zm">
-                                                <rect key="frame" x="0.0" y="5" width="1024" height="50"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-x9-SF9" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="982" y="13" width="27" height="25"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="25" id="BFG-fA-y4m"/>
-                                                            <constraint firstAttribute="width" constant="27" id="fED-Ul-QQa"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <inset key="contentEdgeInsets" minX="3" minY="4" maxX="3" maxY="4"/>
-                                                        <state key="normal" image="lx_header_option.png">
-                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="outApp:" destination="T4m-bh-eTl" eventType="touchUpInside" id="Npx-fg-sbh"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C82-S6-a3I" customClass="BaseButton" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                        <rect key="frame" x="935" y="11" width="29" height="29"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="29" id="DZz-dh-bhP"/>
-                                                            <constraint firstAttribute="width" constant="29" id="GXk-WB-62x"/>
-                                                        </constraints>
-                                                        <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                                                        <state key="normal" image="lx_header_home.png">
-                                                            <color key="titleColor" red="0.32157239310000002" green="0.5056742327" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="goTop:" destination="T4m-bh-eTl" eventType="touchUpInside" id="yB0-Jq-3wG"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="81Y-Fc-Cy0"/>
-                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="leading" secondItem="C82-S6-a3I" secondAttribute="trailing" constant="18" id="Mej-a0-J8d"/>
-                                                    <constraint firstItem="C82-S6-a3I" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="YZU-ob-S2V"/>
-                                                    <constraint firstAttribute="width" constant="1024" id="fxV-1e-rnv"/>
-                                                    <constraint firstItem="xrv-x9-SF9" firstAttribute="centerY" secondItem="23k-mA-0zm" secondAttribute="centerY" id="lXn-9U-kXL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xrv-x9-SF9" secondAttribute="trailing" constant="15" id="vPG-EQ-F74"/>
-                                                </constraints>
-                                            </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-oS-Tth">
-                                                <rect key="frame" x="33" y="22" width="100" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="0TF-UM-Kcw"/>
-                                                    <constraint firstAttribute="height" constant="100" id="akZ-lg-7rn"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="736" id="0g5-H1-Wlp"/>

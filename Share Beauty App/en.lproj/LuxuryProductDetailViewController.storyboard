@@ -658,17 +658,8 @@
                                                     </view>
                                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-cW-fKQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="529"/>
-                                                        <subviews>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="-134" width="1024" height="768"/>
-                                                            </view>
-                                                        </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="leading" secondItem="eQA-cW-fKQ" secondAttribute="leading" id="Ixo-WV-aop"/>
-                                                            <constraint firstAttribute="trailing" secondItem="RQE-Q2-05k" secondAttribute="trailing" id="Kyd-mk-uhj"/>
-                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="top" secondItem="eQA-cW-fKQ" secondAttribute="top" constant="-134" id="TCY-6N-Qrp"/>
-                                                            <constraint firstAttribute="bottom" secondItem="RQE-Q2-05k" secondAttribute="bottom" constant="-105" id="dwj-8B-IGd"/>
                                                             <constraint firstAttribute="height" constant="535" id="ioa-FJ-CKv"/>
                                                         </constraints>
                                                         <variation key="default">
@@ -705,8 +696,17 @@
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBN-OY-8nf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="79"/>
+                                                                        <subviews>
+                                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQE-Q2-05k" customClass="TroubleView" customModule="Share_Beauty_App" customModuleProvider="target">
+                                                                                <rect key="frame" x="-149" y="-580" width="1024" height="768"/>
+                                                                            </view>
+                                                                        </subviews>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="1024" placeholder="YES" id="3Sg-dh-a29"/>
+                                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="top" secondItem="hBN-OY-8nf" secondAttribute="top" constant="-580" id="4ta-2F-1qG"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="RQE-Q2-05k" secondAttribute="bottom" constant="-109" id="fQd-ry-hee"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="RQE-Q2-05k" secondAttribute="trailing" constant="149" id="gUm-jd-yNv"/>
+                                                                            <constraint firstItem="RQE-Q2-05k" firstAttribute="leading" secondItem="hBN-OY-8nf" secondAttribute="leading" constant="-149" id="wuG-OJ-8Hf"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
