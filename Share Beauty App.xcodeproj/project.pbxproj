@@ -521,6 +521,13 @@
 		DE06F72A1F16457800EF2FE2 /* GscHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE06F7281F16457800EF2FE2 /* GscHeaderView.xib */; };
 		DE078936220C7FB600D6CBAF /* btn_legendary_enemi.png in Resources */ = {isa = PBXBuildFile; fileRef = DE078935220C7FB600D6CBAF /* btn_legendary_enemi.png */; };
 		DE07893A220C838B00D6CBAF /* btn_bouble_gene.png in Resources */ = {isa = PBXBuildFile; fileRef = DE078939220C838B00D6CBAF /* btn_bouble_gene.png */; };
+		DE07893E220CA07400D6CBAF /* tmp_lec.png in Resources */ = {isa = PBXBuildFile; fileRef = DE07893B220CA07400D6CBAF /* tmp_lec.png */; };
+		DE07893F220CA07400D6CBAF /* tmp_dgt2.png in Resources */ = {isa = PBXBuildFile; fileRef = DE07893C220CA07400D6CBAF /* tmp_dgt2.png */; };
+		DE078940220CA07400D6CBAF /* tmp_dgt.png in Resources */ = {isa = PBXBuildFile; fileRef = DE07893D220CA07400D6CBAF /* tmp_dgt.png */; };
+		DE078943220CA2F600D6CBAF /* LXTechGene2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE078941220CA2F600D6CBAF /* LXTechGene2View.swift */; };
+		DE078944220CA2F600D6CBAF /* LXTechGene2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE078942220CA2F600D6CBAF /* LXTechGene2View.xib */; };
+		DE078947220CA5F600D6CBAF /* LXLegendaryEnmeiComplexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE078945220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.swift */; };
+		DE078948220CA5F600D6CBAF /* LXLegendaryEnmeiComplexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE078946220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.xib */; };
 		DE0AF0D51F29AB4F00CF0202 /* GscNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AF0D41F29AB4F00CF0202 /* GscNavigationViewController.swift */; };
 		DE0AF0D81F29AB6600CF0202 /* GscNavigationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0AF0D61F29AB6600CF0202 /* GscNavigationViewController.storyboard */; };
 		DE0CA25B1ECAAA410051D5C1 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */; };
@@ -1352,6 +1359,13 @@
 		DE06F7281F16457800EF2FE2 /* GscHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GscHeaderView.xib; sourceTree = "<group>"; };
 		DE078935220C7FB600D6CBAF /* btn_legendary_enemi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_legendary_enemi.png; sourceTree = "<group>"; };
 		DE078939220C838B00D6CBAF /* btn_bouble_gene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_bouble_gene.png; sourceTree = "<group>"; };
+		DE07893B220CA07400D6CBAF /* tmp_lec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_lec.png; sourceTree = "<group>"; };
+		DE07893C220CA07400D6CBAF /* tmp_dgt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_dgt2.png; sourceTree = "<group>"; };
+		DE07893D220CA07400D6CBAF /* tmp_dgt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmp_dgt.png; sourceTree = "<group>"; };
+		DE078941220CA2F600D6CBAF /* LXTechGene2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXTechGene2View.swift; sourceTree = "<group>"; };
+		DE078942220CA2F600D6CBAF /* LXTechGene2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXTechGene2View.xib; sourceTree = "<group>"; };
+		DE078945220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXLegendaryEnmeiComplexView.swift; sourceTree = "<group>"; };
+		DE078946220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXLegendaryEnmeiComplexView.xib; sourceTree = "<group>"; };
 		DE0AF0D41F29AB4F00CF0202 /* GscNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscNavigationViewController.swift; sourceTree = "<group>"; };
 		DE0AF0D71F29AB6600CF0202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscNavigationViewController.storyboard; sourceTree = "<group>"; };
 		DE0CA25A1ECAAA410051D5C1 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
@@ -2627,6 +2641,9 @@
 		DA0D5F16220042FA006703D5 /* 19AW */ = {
 			isa = PBXGroup;
 			children = (
+				DE07893D220CA07400D6CBAF /* tmp_dgt.png */,
+				DE07893C220CA07400D6CBAF /* tmp_dgt2.png */,
+				DE07893B220CA07400D6CBAF /* tmp_lec.png */,
 				DE078935220C7FB600D6CBAF /* btn_legendary_enemi.png */,
 				DA22A5E0220AC3F600CF5FEE /* page6_main_visual.png */,
 				DA22A5DF220AC3F200CF5FEE /* page5_main_visual.png */,
@@ -2747,6 +2764,10 @@
 				DE0DB6EB1EBCBD3400663C4A /* LXProductDetailSkinConcernView.swift */,
 				DA7DC1E4220C2D2300154ABB /* LXTechGeneView.xib */,
 				DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */,
+				DE078942220CA2F600D6CBAF /* LXTechGene2View.xib */,
+				DE078941220CA2F600D6CBAF /* LXTechGene2View.swift */,
+				DE078946220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.xib */,
+				DE078945220CA5F500D6CBAF /* LXLegendaryEnmeiComplexView.swift */,
 				DEE83E6D1EB78B2B000C7D8D /* LXProductEfficacyView.xib */,
 				DEE83E6E1EB78B2B000C7D8D /* LXProductEfficacyView.swift */,
 				DEE83E691EB78AB3000C7D8D /* LXEfficacyPenetrationView.xib */,
@@ -3295,6 +3316,7 @@
 				C0BC62E61DB0BFE8005E73CE /* TroubleSelectView.xib in Resources */,
 				C050C9031E82619F0009679D /* sib02_before.png in Resources */,
 				DE80C67120726D6200CD326A /* 18aw_94.png in Resources */,
+				DE07893E220CA07400D6CBAF /* tmp_lec.png in Resources */,
 				DA22A5D8220AC3CE00CF5FEE /* page2_lead.png in Resources */,
 				26768D87202C1C4E005BE606 /* Water_image_CMYK.png in Resources */,
 				C0880D051E4B2579006A3713 /* CountrySettingViewController.storyboard in Resources */,
@@ -3537,6 +3559,7 @@
 				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
 				DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */,
+				DE078948220CA5F600D6CBAF /* LXLegendaryEnmeiComplexView.xib in Resources */,
 				C02818AA1E6C26FF00D4DADA /* NewApproachViewController.storyboard in Resources */,
 				C050C9001E82619F0009679D /* sib01_after.jpg in Resources */,
 				C050C9861E8267450009679D /* utm02_befor.png in Resources */,
@@ -3637,6 +3660,7 @@
 				26AD5D7520230A1F002A2076 /* Arial Bold.ttf in Resources */,
 				2680EC1E2037E4FA005257B1 /* makeup_6.png in Resources */,
 				41CF14B6215C8DD400BFF976 /* LatestMoisturizerTechView.xib in Resources */,
+				DE078944220CA2F600D6CBAF /* LXTechGene2View.xib in Resources */,
 				B38F63C41F47682700176804 /* efficacy_slider_circle_MoisturizingCream.png in Resources */,
 				DE2C91831E9C682500B5FC4A /* icon_recommend_large.png in Resources */,
 				4194847D2153A27A00680A26 /* cleanser_efficacy.png in Resources */,
@@ -3730,6 +3754,7 @@
 				C050C9A41E8267450009679D /* utm_wh_back.png in Resources */,
 				6E4ABB4320AA6CAF000355D2 /* complexion_41.png in Resources */,
 				E5E0D40C1DF3E1670053373F /* IdealSpecialItemViewController.storyboard in Resources */,
+				DE078940220CA07400D6CBAF /* tmp_dgt.png in Resources */,
 				DE2C918A1E9C682500B5FC4A /* lx_icon_night.png in Resources */,
 				26768DA7202C5FD6005BE606 /* graph_05.png in Resources */,
 				DE07893A220C838B00D6CBAF /* btn_bouble_gene.png in Resources */,
@@ -3767,6 +3792,7 @@
 				C050C9BB1E8276C60009679D /* Shiseido-Bold.otf in Resources */,
 				C050C9781E8267450009679D /* defendThumnail.png in Resources */,
 				C050C9141E82619F0009679D /* wab_slider_24.png in Resources */,
+				DE07893F220CA07400D6CBAF /* tmp_dgt2.png in Resources */,
 				26768D81202C1C3B005BE606 /* Iris_1_cmyk_2.png in Resources */,
 				DE2C90871E9C66E600B5FC4A /* LXHeaderView.xib in Resources */,
 				DE325B182077469000B660C9 /* lx_b04.png in Resources */,
@@ -4125,6 +4151,7 @@
 				C037CBA81D87F6D900DEFE14 /* IdealSelectCell.swift in Sources */,
 				C05818401D6DD98B00C8FB55 /* OnTrendViewController.swift in Sources */,
 				EB7365B01D83156F00D223BA /* TroubleEntity.swift in Sources */,
+				DE078947220CA5F600D6CBAF /* LXLegendaryEnmeiComplexView.swift in Sources */,
 				C091BA7B1D6980DE0073FEDB /* NavigationViewController.swift in Sources */,
 				C091BA761D69809F0073FEDB /* BaseView.swift in Sources */,
 				EB8F34181D884D5600641976 /* AppScreenTranslateTable.swift in Sources */,
@@ -4143,6 +4170,7 @@
 				EB7365AC1D83156F00D223BA /* StepLowerEntity.swift in Sources */,
 				C0DA9AF21DB8CC7E00692058 /* DropDown.swift in Sources */,
 				4194846F21539EFC00680A26 /* WasoCleanserEfficacyView.swift in Sources */,
+				DE078943220CA2F600D6CBAF /* LXTechGene2View.swift in Sources */,
 				C02818AC1E6D449300D4DADA /* MakeupUsageView.swift in Sources */,
 				DEED708420A54D9B001027EB /* SMBKTopViewController.swift in Sources */,
 				ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */,

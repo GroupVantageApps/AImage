@@ -73,20 +73,17 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             self.mPageControl.isHidden = true
             self.mScrollV.addSubview(self.mContentV)
         } else if productId == 621 {
-            self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 3, height: self.size.height))
+            self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 2, height: self.size.height))
             let geneV: LXTechGeneView = UINib(nibName: "LXTechGeneView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGeneView
             geneV.setUI()
-            geneV.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
+            geneV.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
             self.mContentV.addSubview(geneV)
-//
-//            let popup: LXYutakaConceptContentThirdView = UINib(nibName: "LXYutakaConceptContentThirdView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptContentThirdView
-//            popup.setUI()
-//            popup.frame  = CGRect(x: 960 * 2, y: 0, width: 960, height: self.size.height)
-//            self.mContentV.addSubview(popup)
-            let auraV: LXTechAuraView = UINib(nibName: "LXTechAuraView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechAuraView
-            auraV.setUI()
-            auraV.frame  = CGRect(x:  0, y: 0, width: 960, height: self.size.height)
-            self.mContentV.addSubview(auraV)
+            
+            let gene2V: LXTechGene2View = UINib(nibName: "LXTechGene2View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGene2View
+            gene2V.setUI()
+            gene2V.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
+            self.mContentV.addSubview(gene2V)
+
             
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mPageControl.numberOfPages = 2

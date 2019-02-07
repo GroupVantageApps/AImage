@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LXTechGeneView" customModule="Share_Beauty_App" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LXLegendaryEnmeiComplexView" customModule="Share_Beauty_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="960" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -23,10 +23,20 @@
                             <rect key="frame" x="1058" y="28" width="46" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tmp_dgt.png" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-zR-Saa">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tmp_lec.png" translatesAutoresizingMaskIntoConstraints="NO" id="C2X-zR-Saa">
                             <rect key="frame" x="8" y="14" width="952" height="678"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDS-hb-cYA">
+                            <rect key="frame" x="37" y="633" width="372" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="btn_bouble_gene.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKh-Of-yHi">
+                            <rect key="frame" x="882" y="633" width="48" height="46"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button" image="btn_next.png"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -40,6 +50,8 @@
         </view>
     </objects>
     <resources>
-        <image name="tmp_dgt.png" width="2090" height="1478"/>
+        <image name="btn_bouble_gene.png" width="2220" height="289"/>
+        <image name="btn_next.png" width="81" height="79"/>
+        <image name="tmp_lec.png" width="2138" height="1396"/>
     </resources>
 </document>

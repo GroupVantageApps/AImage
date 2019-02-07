@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LXTechGeneView : UIView{
+class LXLegendaryEnmeiComplexView : UIView{
     
     @IBOutlet var mXbutton: UIButton!
     func setUI() {

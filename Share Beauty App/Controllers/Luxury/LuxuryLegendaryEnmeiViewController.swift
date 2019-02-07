@@ -47,7 +47,7 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
         self.mScrollV.sendSubview(toBack: mHeaderView)
         self.mScrollV.sendSubview(toBack: mNavigationView)
         
-        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
+//        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         
         let lxArr = LanguageConfigure.lxcsv
 
@@ -57,6 +57,14 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
         var beautyCsvId = 7
         print(mLowerSteps)
 
+    }
+    
+    @IBAction func showSubView(_ sender: Any) {
+        let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+        popup.setAction(productId: 621)
+
+        popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(popup)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -28,7 +28,29 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
 
     var mGraphBtn: UIButton!
     var mMovieBtn: UIButton!
-    func setAction(){
+    func setAction(productId: Int){
+        if productId == 621 {
+            self.mScrollV.size = self.size
+            self.mConstraintHeight.constant = self.size.height
+            self.mContentV.center = CGPoint(x: self.size.width*0.5 ,y: self.size.height*0.5)
+            self.mScrollV.minimumZoomScale = 1.0
+            self.mScrollV.maximumZoomScale = 6.0
+            self.mScrollV.delegate = self
+            self.mScrollV.contentSize = self.mContentV.size
+            
+            let geneV: LXLegendaryEnmeiComplexView = UINib(nibName: "LXLegendaryEnmeiComplexView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXLegendaryEnmeiComplexView
+            geneV.setUI()
+            geneV.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
+            self.mContentV.addSubview(geneV)
+            
+            
+            self.mScrollV.contentSize = CGSize(width: 960 , height: self.size.height)
+            self.mScrollV.addSubview(self.mContentV)
+            mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+            mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
+            self.addSubview(mXbutton)
+        } else {
+        
         self.mScrollV.size = self.size
         self.mConstraintHeight.constant = self.size.height
         self.mContentV.center = CGPoint(x: self.size.width*0.5 ,y: self.size.height*0.5)
@@ -60,7 +82,7 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
             let csvId = 17 + i
             label.text = lxArr[String(csvId)]
         }
-        
+      }
     }
     
     @IBAction func close(_ sender: Any) {
