@@ -13,6 +13,7 @@ import APNGKit
 protocol LXIngredientViewDelegate: NSObjectProtocol {
     func didTapshowSkinGraph()
     func movieAct()
+    func didTapshowGeneTech()
 } 
 class LXIngredientView: UIView, UIScrollViewDelegate { 
     private var apngImageV: APNGImageView!
@@ -41,6 +42,8 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
             let geneV: LXLegendaryEnmeiComplexView = UINib(nibName: "LXLegendaryEnmeiComplexView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXLegendaryEnmeiComplexView
             geneV.setUI()
             geneV.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
+            let geneBtn = geneV.viewWithTag(5) as! UIButton
+            geneBtn.addTarget(self, action: #selector(showGeneTech), for: .touchUpInside)
             self.mContentV.addSubview(geneV)
             
             
@@ -93,6 +96,12 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
         self.removeFromSuperview()
         delegate?.didTapshowSkinGraph()
     }
+    
+    @IBAction func showGeneTech(_ sender: Any) {
+        self.removeFromSuperview()
+        delegate?.didTapshowGeneTech()
+    }
+    
     @IBAction func showMovie(_ sender: Any) {
         let vc = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: LuxuryIngredientViewController.self) as! LuxuryIngredientViewController
         self.removeFromSuperview()

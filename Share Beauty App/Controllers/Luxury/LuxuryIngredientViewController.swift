@@ -170,4 +170,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
     func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
+    func didTapshowGeneTech(){
+        
+    }
 }

@@ -781,4 +781,6 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         toVc.bgAudioPlayer = bgAudioPlayer
         self.navigationController?.pushViewController(toVc, animated: false)
     }
+    
+    func didTapshowGeneTech(){  }
 }
