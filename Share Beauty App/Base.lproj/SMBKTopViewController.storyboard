@@ -107,7 +107,7 @@ REDEFINED</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shw-fr-WMo">
-                                        <rect key="frame" x="112" y="525" width="280" height="82"/>
+                                        <rect key="frame" x="135" y="525" width="280" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="complextion_btn.png"/>
                                         <connections>
