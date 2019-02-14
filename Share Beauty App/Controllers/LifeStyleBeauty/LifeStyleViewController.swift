@@ -78,7 +78,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let productList = ProductListData()
     
 //    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
-    private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
+//    private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
+    private let tmpMakeupStrings = [8160, 8161, 8162, 8163, 8164, 8165]
     private var imageItemIds: [(discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)] = []
     private var labelItems: [(discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont)] = []
     private let countryFontScale = [
