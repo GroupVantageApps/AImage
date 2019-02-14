@@ -60,11 +60,11 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
     }
     
     @IBAction func showSubView(_ sender: Any) {
-        let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
-        popup.setAction(productId: 621)
-        popup.delegate = self
-        popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
-        self.view.addSubview(popup)
+//        let popup: LXIngredientView = UINib(nibName: "LXIngredientView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXIngredientView
+//        popup.setAction(productId: 621)
+//        popup.delegate = self
+//        popup.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+//        self.view.addSubview(popup)
     }
     
     override func viewWillAppear(_ animated: Bool) {
