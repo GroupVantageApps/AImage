@@ -347,6 +347,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         fiveSecretBtn.addTarget(self, action: #selector(self.toFiveSecretsView(_:)), for: .touchUpInside)
 
         self.mRightContentV.addSubview(fiveSecretBtn)
+        if (self.productId == 621) {
+            mCategoryButtonTechnologies.enabled = false
+            mCategoryButtonEfficacy.enabled = false
+            mCategoryButtonDefend.enabled = false
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -781,4 +786,6 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         toVc.bgAudioPlayer = bgAudioPlayer
         self.navigationController?.pushViewController(toVc, animated: false)
     }
+    
+    func didTapshowGeneTech(){  }
 }

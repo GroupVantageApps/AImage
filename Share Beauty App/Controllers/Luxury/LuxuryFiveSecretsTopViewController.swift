@@ -565,4 +565,6 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         }
     }
     
+    func didTapshowGeneTech(){
+    }
 }
