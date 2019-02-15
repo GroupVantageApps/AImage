@@ -651,6 +651,7 @@
 		DE61C59B1EC8950A00415910 /* LXProductGraphContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */; };
 		DE61C59E1EC8C4B400415910 /* LXProductHowToUseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */; };
 		DE61C59F1EC8C4B400415910 /* LXProductHowToUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */; };
+		DE673F1F22165BF10081064E /* baloon_19AW.png in Resources */ = {isa = PBXBuildFile; fileRef = DE673F1E22165BF10081064E /* baloon_19AW.png */; };
 		DE7B7E5E1EB73D73006F8246 /* LXAngelicaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */; };
 		DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */; };
 		DE7D081F1ED6E317006513FD /* LXProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D081E1ED6E317006513FD /* LXProductViewController.swift */; };
@@ -1488,6 +1489,7 @@
 		DE61C5991EC8950A00415910 /* LXProductGraphContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductGraphContentView.swift; sourceTree = "<group>"; };
 		DE61C59C1EC8C4B400415910 /* LXProductHowToUseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXProductHowToUseView.xib; sourceTree = "<group>"; };
 		DE61C59D1EC8C4B400415910 /* LXProductHowToUseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductHowToUseView.swift; sourceTree = "<group>"; };
+		DE673F1E22165BF10081064E /* baloon_19AW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baloon_19AW.png; sourceTree = "<group>"; };
 		DE7B7E5C1EB73D73006F8246 /* LXAngelicaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXAngelicaView.xib; sourceTree = "<group>"; };
 		DE7B7E5D1EB73D73006F8246 /* LXAngelicaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXAngelicaView.swift; sourceTree = "<group>"; };
 		DE7D081E1ED6E317006513FD /* LXProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXProductViewController.swift; sourceTree = "<group>"; };
@@ -2641,6 +2643,7 @@
 		DA0D5F16220042FA006703D5 /* 19AW */ = {
 			isa = PBXGroup;
 			children = (
+				DE673F1E22165BF10081064E /* baloon_19AW.png */,
 				DE07893D220CA07400D6CBAF /* tmp_dgt.png */,
 				DE07893C220CA07400D6CBAF /* tmp_dgt2.png */,
 				DE07893B220CA07400D6CBAF /* tmp_lec.png */,
@@ -3283,6 +3286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE673F1F22165BF10081064E /* baloon_19AW.png in Resources */,
 				4171312D2154AFBE002A67D0 /* Reader-Bold.otf in Resources */,
 				41BE496121869F8C004BAA57 /* Pyrola_Incarnata.png in Resources */,
 				417FD01B2161E2840035966F /* mochi_effi_graph.png in Resources */,
