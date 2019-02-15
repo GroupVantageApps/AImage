@@ -381,7 +381,7 @@ class ProductListData: NSObject {
 
             } else if stepLowerId == 8 {
                 //Serum
-                productIds += [523, 390, 39]
+                productIds += [621, 523, 390, 39]
 
             } else if stepLowerId == 9 {
                 //Moisturizer
@@ -397,7 +397,7 @@ class ProductListData: NSObject {
 
             } else if stepLowerId == 13 {
                 //OTHERS
-                productIds += [66, 365, 292, 51, 32, 524, 525]
+                productIds += [66, 365, 292, 51, 32, 622, 524, 525]
             }
         }
         return productIds
