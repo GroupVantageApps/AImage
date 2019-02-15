@@ -492,11 +492,23 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         var hasMoiComment: Bool = false
         var hasSunComment: Bool = false
         var hasMakComment: Bool = false
-        let itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 620: 8163, 623: 8164, 626: 8165]
+        let itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 624: 8164, 626: 8165]
         for (index, product) in productList.products.enumerated() {
-            
+            print("----------start------")
+            print(itemIds[product.productId] ?? 0)
+            print(product.productId)
+            print(itemIds[product.productId] ?? 0 != 0 )
+            print(index)
+            if itemIds[product.productId] ?? 0 != 0 
+            {
+                var index_f = index;
+                if index == 6 {
+                    index_f = index - 2;
+                } else if index == 7 {
+                    index_f = index - 2;
+                } 
             let itemWidth: CGFloat = 680
-            var imageX: CGFloat = itemWidth * CGFloat(index) - 20//60
+            var imageX: CGFloat = itemWidth * CGFloat(index_f) - 20//60
             let imageY: CGFloat = 170
             let height: CGFloat = 130
             var width: CGFloat = itemWidth - 150  //80
@@ -530,13 +542,18 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
                 labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-            } else if productIdsDefault.contains(product.productId)  && index < 5 {
+            } else if productIdsDefault.contains(product.productId)  {
                     
                 hasMakComment = true
                 width = width * CGFloat(makeUpProductsCount)
                 imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
                 imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
+                print("-------------------------------")
+                print(itemIds[product.productId])
+                print(product.productId)
                 labelItems.append((discription: itemIds[product.productId] ?? 8165, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
+            }
+                
             }
         }
 
@@ -565,6 +582,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
+                print(text)
             }
             mScrollV.addSubview(label)
         }
