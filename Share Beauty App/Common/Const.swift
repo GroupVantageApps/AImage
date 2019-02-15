@@ -112,7 +112,7 @@ struct Const {
     static let lifeStyleBeautyListI = [545, 549, 498]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
-    static let productIdsUTM = [LanguageConfigure.UTMId, 28, 601]
+    static let productIdsUTM = [LanguageConfigure.UTMId, 616, 601]
 
     static let idealBeautyTypeProduct = 1
     static let idealBeautyTypeLine = 2
