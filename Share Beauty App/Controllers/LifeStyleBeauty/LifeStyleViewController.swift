@@ -78,7 +78,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private let productList = ProductListData()
     
 //    private let tmpMakeupStrings = ["Kajal","Eyeliner","Eyeshadow","Brow","Face","Eye","Lip","Body"]
-    private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
+//    private let tmpMakeupStrings = [7898, 7969, 7971, 7973, 7977, 7979, 7981, 7983]
+    private let tmpMakeupStrings = [8160, 8161, 8162, 8163, 8164, 8165]
     private var imageItemIds: [(discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)] = []
     private var labelItems: [(discription: Int, x: CGFloat, y: CGFloat, width: CGFloat, font: UIFont)] = []
     private let countryFontScale = [
@@ -313,6 +314,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             width = 222.25
         }
         let height: CGFloat = collectionView.height
+        print("------------------")
+        print(width)
         return CGSize(width: width, height: height)
     }
 
@@ -384,10 +387,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
                 let data: ProductData = ProductData(productId: productId)
                 secondsProducts[i] = [data]
-            } else {
-                //HowToなど画像を置くようにproductを追加
-                let data: ProductData = ProductData(productId: 0)
-                secondsProducts[i] = [data]
             }
             i += 1
         }
@@ -403,78 +402,19 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         for _ in 0..<productList.products.count {
             self.mLifeStyleProductViews.append(LifeStyleProductView())
         }
-        var contentWidth = CGFloat(60)
+        var contentWidth = CGFloat(150)
         
         var productsCount = 0
         
         // 各コンテンツ表示
         for enumerated in productList.products.enumerated() {
             let viewWidth = CGFloat(300) //246 １アイテムあたり
-            let viewHeight = CGFloat(500)
+            let viewHeight = CGFloat(600)
             let i = enumerated.offset
             let product = enumerated.element
             productsCount += 1
             
             print("offset:*\(enumerated.offset)")
-
-            guard product.productId != 0 else {
-                // 最初の商品の余白表示
-                if i == 1 {
-                    let howToImageV = UIImageView()
-                    howToImageV.contentMode = .scaleAspectFit
-                    // howToImageV.image = FileTable.getImage(6534)
-                    howToImageV.tag = 88
-                    howToImageV.frame = CGRect(x: CGFloat(productsCount - 1) * viewWidth + 60, y: 150, width: viewWidth, height:
-                        viewHeight)
-                    
-/**<<<<<<< HEAD:Share Beauty App/Controllers/LifeStyleBeauty/LifeStyleViewController.swift **/
-                    contentWidth += howToImageV.frame.size.width
-                    howToImageV.isUserInteractionEnabled = true
-                    howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
-                    /**   let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
-                    labe.font = UIFont(name: "Reader", size: 10)
-                    labe.numberOfLines = 0
-                    labe.textAlignment = .center
- >>>>>>> 18AW納品進行:Share Beauty App/Controllers/LifeStyleViewController.swift **/
-                    
-                    mScrollV.addSubview(howToImageV)
-                    
-                } else {
-                    // makeup HowToUse遷移
-                    for index in 0...3 {
-                        let howToImageV = UIImageView()
-                        howToImageV.contentMode = .scaleAspectFit
-                        
-                        let labe = UILabel.init(frame: CGRect(x: contentWidth, y: 300, width: viewWidth * 0.25, height: 30))
-                        labe.font = UIFont(name: "Reader", size: 10)
-                        labe.numberOfLines = 0
-                        labe.textAlignment = .center
-                        
-                        if let makeupIndex = productIds.index(of: 578) {
-                            let howtoIndex = makeupIndex + 1
-                            if howtoIndex == i {
-                                howToImageV.image = UIImage.init(named: "makeup_\(index + 1)")
-                                howToImageV.tag = 89 + index
-                                
-                                let itemId = tmpMakeupStrings[index]
-                                labe.text = AppItemTable.getNameByItemId(itemId: itemId)
-                                mScrollV.addSubview(labe)
-                                print("-------------------------------------------")
-                                print(labe.text!)
-                                howToImageV.frame = CGRect(x: contentWidth, y: 150, width: viewWidth * 0.25, height: viewHeight)
-                                howToImageV.layer.borderWidth = 1
-                            }
-                        }
-                        // 商品画像の表示
-                        contentWidth += howToImageV.frame.size.width
-                        howToImageV.isUserInteractionEnabled = true
-                        howToImageV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.howToImageTapped(_:))))
-                        
-                        mScrollV.addSubview(howToImageV)
-                    }
-                }
-                continue
-            }
             
             guard let lifeStyleProductView = mLifeStyleProductViews[safe: i] else {
                 continue
@@ -490,23 +430,34 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.frame = CGRect(x: contentWidth, y: 250, width: viewWidth, height: viewHeight)
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
-            contentWidth += viewWidth
             
+            //19AW対応
+            if productsCount == 4 || productsCount == 6 {
+                contentWidth += viewWidth
+            } else if productsCount == 3 || productsCount == 7 {
+                contentWidth += viewWidth + 200
+            } else if productsCount == 5 {
+                contentWidth += viewWidth + 100
+            }
+            else {
+                contentWidth += viewWidth + 400
+            }
             // 画像上のテキスト
             let id = product.productId
-            let itemIds = [602: 8021, 606: 8022, 553: 8023]
-            if itemIds[id] != nil {
-                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
-                text.font = UIFont(name: "Reader", size: 17)
-                text.text = AppItemTable.getNameByItemId(itemId: itemIds[id]!)
-                text.textAlignment = NSTextAlignment.center
-                text.numberOfLines = 0
-                text.lineBreakMode = NSLineBreakMode.byWordWrapping
-                text.sizeToFit()
-                text.centerX = viewWidth / 2
-                text.centerY = 60
-                lifeStyleProductView.addSubview(text)
-            }
+//            let itemIds = [616: 8160, 617: 8161, 618: 8162]
+//            if itemIds[id] != nil {
+//                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
+//                text.font = UIFont(name: "Reader", size: 17)
+//                text.text = AppItemTable.getNameByItemId(itemId: itemIds[id]!)
+//                text.textAlignment = NSTextAlignment.center
+//                text.numberOfLines = 0
+//                text.lineBreakMode = NSLineBreakMode.byWordWrapping
+//                text.sizeToFit()
+//                text.centerX = viewWidth / 2
+//                text.centerY = 60
+//                lifeStyleProductView.addSubview(text)
+//               
+//            }
             // 吹き出し分余白
             // if id == 613 {
             //     contentWidth += viewWidth
@@ -541,14 +492,14 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         var hasMoiComment: Bool = false
         var hasSunComment: Bool = false
         var hasMakComment: Bool = false
-        
+        let itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 620: 8163, 623: 8164, 626: 8165]
         for (index, product) in productList.products.enumerated() {
             
-            let itemWidth: CGFloat = 300
-            var imageX: CGFloat = itemWidth * CGFloat(index) + 49 //60
+            let itemWidth: CGFloat = 680
+            var imageX: CGFloat = itemWidth * CGFloat(index) - 20//60
             let imageY: CGFloat = 170
-            let height: CGFloat = 110
-            var width: CGFloat = itemWidth - 60  //80
+            let height: CGFloat = 130
+            var width: CGFloat = itemWidth - 150  //80
             
             let font: UIFont = UIFont(name: "Reader", size: 17)!
             
@@ -579,6 +530,13 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
                 imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
                 labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
+            } else if productIdsDefault.contains(product.productId)  && index < 5 {
+                    
+                hasMakComment = true
+                width = width * CGFloat(makeUpProductsCount)
+                imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
+                imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
+                labelItems.append((discription: itemIds[product.productId] ?? 8165, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
             }
         }
 

@@ -48,18 +48,25 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
         
         let textureLabelId = 12 + (texture_id - 1) * 4
         mTextureName.text = mSMKArr[String(textureLabelId)]
-        if texture_id != 5 {
-            mToUse.text = mSMKArr[String(textureLabelId + 1)]
-            mSideTitle.text = mSMKArr[String(textureLabelId + 2)]
-            mSideSubText.text = mSMKArr[String(textureLabelId + 3)]
-
-            selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureNames[texture_id - 1]}
+        if texture_id != 6 {
+            if texture_id != 5 {
+                mToUse.text = mSMKArr[String(textureLabelId + 1)]
+                mSideTitle.text = mSMKArr[String(textureLabelId + 2)]
+                mSideSubText.text = mSMKArr[String(textureLabelId + 3)]
+                
+                selectedTextureProducts = mProductList.products.filter { $0.texture == mTextureNames[texture_id - 1]}
+            } else {
+                mSideTitle.isHidden = true
+                mSideSubText.isHidden = true
+                mToUse.isHidden = true
+                
+                selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 73 }
+            }
         } else {
-            mSideTitle.isHidden = true
-            mSideSubText.isHidden = true
-            mToUse.isHidden = true
-            
-            selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 73 }
+            mTextureName.text = "COMPLEXTION"
+            mToUse.text = "for Face"
+
+            selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 70 }
         }
         mSideTitle.sizeToFit()
         mSideSubText.sizeToFit()
