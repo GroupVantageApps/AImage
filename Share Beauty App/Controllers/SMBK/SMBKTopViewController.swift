@@ -94,7 +94,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKTextureViewController.self) as! SMBKTextureViewController
         print((sender as! UIButton).tag)
         nextVc.texture_id = (sender as! UIButton).tag
-        let beautySecondIds = [70, 71, 72, 73]
+        let beautySecondIds = [70, 71, 72, 73, 74]
         let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
         nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
         delegate?.nextVc(nextVc)

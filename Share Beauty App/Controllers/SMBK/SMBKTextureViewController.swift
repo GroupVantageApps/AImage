@@ -66,7 +66,10 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
             mTextureName.text = "COMPLEXTION"
             mToUse.text = "for Face"
 
-            selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 70 }
+            mSideTitle.text = ""
+            mSideSubText.text = ""
+            selectedTextureProducts = mProductList.products.filter { $0.beautySecondId == 74 }
+            
         }
         mSideTitle.sizeToFit()
         mSideSubText.sizeToFit()
