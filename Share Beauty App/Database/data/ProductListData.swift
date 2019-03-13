@@ -123,6 +123,13 @@ class ProductListData: NSObject {
             }
         }
         
+        if lineToIdealDic[40] != nil && lineToIdealDic[Const.lineIdSHISEIDO] != nil {
+            for product in (lineToIdealDic[40]?.products)! {
+                lineToIdealDic[Const.lineIdSHISEIDO]?.products.append(product)
+            }
+            lineToIdealDic.removeValue(forKey: 40)
+        }
+        
         var sortedIdeals: [DataStructIdeal] = [] // 並び順 : Cleanser -> その他 -> Shiseido -> Makeup -> UTM -> LX
         // SHISEIDOとMAKEUPラインを抽出（順番を後ろにするため）
         var idealSHISEIDO: DataStructIdeal = DataStructIdeal()
