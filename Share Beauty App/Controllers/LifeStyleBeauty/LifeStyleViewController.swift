@@ -404,7 +404,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         var contentWidth = CGFloat(150)
         
-        var productsCount = 0
+        var pastProductId = 0
         
         // 各コンテンツ表示
         for enumerated in productList.products.enumerated() {
@@ -412,7 +412,48 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let viewHeight = CGFloat(600)
             let i = enumerated.offset
             let product = enumerated.element
-            productsCount += 1
+            let productId = product.productId
+            
+            //19AW対応
+            if pastProductId != 0 {
+                if productId == 617 || productId == 618 {
+                    contentWidth += viewWidth + 400
+                } else if productId == 619 {
+                    contentWidth += viewWidth + 200
+                } else if productId == 620 {
+                    if pastProductId == 619 {
+                        contentWidth += viewWidth
+                    } else {
+                        contentWidth += viewWidth * 2 + 200
+                    }
+                } else if productId == 623 {
+                    if pastProductId == 619 {
+                        contentWidth += viewWidth * 2 + 100
+                    } else if pastProductId == 620 {
+                        contentWidth += viewWidth + 100
+                    } else {
+                        contentWidth += viewWidth + 200
+                    }
+                } else if productId == 624 {
+                    if pastProductId == 619 {
+                        contentWidth += viewWidth * 3 + 100
+                    } else if pastProductId == 620 {
+                        contentWidth += viewWidth * 2 + 100
+                    } else if pastProductId == 623 {
+                        contentWidth += viewWidth
+                    } else {
+                        contentWidth += viewWidth * 2 + 200
+                    }
+                } else if productId == 626 {
+                    if pastProductId == 619 || pastProductId == 623 {
+                        contentWidth += viewWidth * 2 + 200
+                    } else if pastProductId == 620 || pastProductId == 624 {
+                        contentWidth += viewWidth + 200
+                    } else {
+                        contentWidth += viewWidth + 400
+                    }
+                }
+            }
             
             print("offset:*\(enumerated.offset)")
             
@@ -431,19 +472,9 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             lifeStyleProductView.backgroundColor = UIColor.gray
             mScrollV.addSubview(lifeStyleProductView)
             
-            //19AW対応
-            if productsCount == 4 || productsCount == 6 {
-                contentWidth += viewWidth
-            } else if productsCount == 3 || productsCount == 7 {
-                contentWidth += viewWidth + 200
-            } else if productsCount == 5 {
-                contentWidth += viewWidth + 100
-            }
-            else {
-                contentWidth += viewWidth + 400
-            }
+            pastProductId = productId
             // 画像上のテキスト
-            let id = product.productId
+//            let id = product.productId
 //            let itemIds = [616: 8160, 617: 8161, 618: 8162]
 //            if itemIds[id] != nil {
 //                let text = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
@@ -464,7 +495,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             // }
         }
 
-        mContentWidth = contentWidth
+        mContentWidth = contentWidth + 700
 
         setInfoImage()
     }
@@ -492,21 +523,34 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         var hasMoiComment: Bool = false
         var hasSunComment: Bool = false
         var hasMakComment: Bool = false
-        let itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 624: 8164, 626: 8165]
+        var pastProductId: Int = 0
+        var oChangeIndex: Bool = false
+        var tChangeIndex: Bool = false
+        var itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 623: 8164, 626: 8165]
         for (index, product) in productList.products.enumerated() {
+            let productId = product.productId
+            if productId == 620 {
+                if pastProductId != 619 {
+                    itemIds[620] = 8163
+                }
+            } else if productId == 624 {
+                if pastProductId != 623 {
+                    itemIds[624] = 8164
+                }
+            }
             print("----------start------")
             print(itemIds[product.productId] ?? 0)
             print(product.productId)
             print(itemIds[product.productId] ?? 0 != 0 )
             print(index)
-            if itemIds[product.productId] ?? 0 != 0 
+            if itemIds[product.productId] ?? 0 != 0
             {
                 var index_f = index;
-                if index == 6 {
-                    index_f = index - 2;
-                } else if index == 7 {
-                    index_f = index - 2;
-                } 
+                if tChangeIndex {
+                    index_f = index - 2
+                } else if oChangeIndex {
+                    index_f = index - 1
+                }
             let itemWidth: CGFloat = 680
             var imageX: CGFloat = itemWidth * CGFloat(index_f) - 20//60
             let imageY: CGFloat = 170
@@ -555,6 +599,16 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
                 
             }
+            if pastProductId == 619 && productId == 620 {
+                oChangeIndex = true
+            } else if pastProductId == 623 && productId == 624 {
+                if oChangeIndex {
+                    tChangeIndex = true
+                } else {
+                    oChangeIndex = true
+                }
+            }
+            pastProductId = productId
         }
 
         imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
