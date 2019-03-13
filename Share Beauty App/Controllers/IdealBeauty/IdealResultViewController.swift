@@ -357,7 +357,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     func addUTMfromLifeStyleBeauty(){
   
         var ClenserProducts: [ProductData] = []
-        for product_id in [565, 566, 567, 617] { //19AW 対応
+        for product_id in [617, 565, 566, 567] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 ClenserProducts.append(product)
@@ -391,7 +391,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     
     func addUTMfromIdealBeauty(){
         var ClenserProducts: [ProductData] = []
-        for product_id in [565, 566, 567, 617] { //19AW 対応
+        for product_id in [617, 565, 566, 567] { //19AW 対応
             let product = ProductData(productId: product_id)
             if product.defaultDisplay == 1 {
                 ClenserProducts.append(product)
