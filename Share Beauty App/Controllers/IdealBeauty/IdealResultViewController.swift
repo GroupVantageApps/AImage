@@ -338,8 +338,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }else if getProdut_id == (566) || getProdut_id == (568) || getProdut_id == (618){ //19AW 対応
             addUTMfromLifeStyleBeauty()
         }
-        //IdealBeautym選択画面からの遷移 CleanserとSoftner
-        if selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4) {
+        //IdealBeautym選択画面からの遷移 Remove off makeupとCleanserとSoftner
+        if  selectedStepLowerIds.contains(2) || selectedStepLowerIds.contains(3) || selectedStepLowerIds.contains(4) {
             // LXとWasoを選択時は表示しない
             if !(selectedLineIds.contains(1) || selectedLineIds.contains(37)) {
                 addUTMfromIdealBeauty()
@@ -398,6 +398,14 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             }
         }
         
+        var Removeoffmakeup: [ProductData] = []
+        for product_id in [617] { //19AW対応
+            let product = ProductData(productId: product_id)
+            if product.defaultDisplay == 1 {
+                Removeoffmakeup.append(product)
+            }
+        }
+        
         var SoftenerProducts: [ProductData] = []
         for product_id in [568, 569, 618] { //19AW 対応
             let product = ProductData(productId: product_id)
@@ -406,10 +414,19 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             }
         }
         let UTMproductList = ClenserProducts + SoftenerProducts
+        let sUTMproductList = Removeoffmakeup + SoftenerProducts
         
         if selectedStepLowerIds.contains(3) && selectedStepLowerIds.contains(4){
             if UTMproductList.count > 0 {
                 mProducts.insert(contentsOf: UTMproductList, at: 0)
+            }
+        }else if selectedStepLowerIds.contains(2) && selectedStepLowerIds.contains(3){
+            if ClenserProducts.count > 0 {
+                mProducts.insert(contentsOf: ClenserProducts, at: 0)
+            }
+        }else if selectedStepLowerIds.contains(2) && selectedStepLowerIds.contains(4){
+            if ClenserProducts.count > 0 {
+                mProducts.insert(contentsOf: sUTMproductList, at: 0)
             }
         }else if selectedStepLowerIds.contains(3){
             if ClenserProducts.count > 0 {
@@ -418,6 +435,10 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         }else if selectedStepLowerIds.contains(4){
             if SoftenerProducts.count > 0 {
                 mProducts.insert(contentsOf: SoftenerProducts, at: 0)
+            }
+        }else if selectedStepLowerIds.contains(2){
+            if Removeoffmakeup.count > 0 {
+                mProducts.insert(contentsOf: Removeoffmakeup, at: 0)
             }
         }
         

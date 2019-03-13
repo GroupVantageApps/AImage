@@ -123,10 +123,7 @@ class ProductListData: NSObject {
             }
         }
         
-        if lineToIdealDic[40] != nil && lineToIdealDic[Const.lineIdSHISEIDO] != nil {
-            for product in (lineToIdealDic[40]?.products)! {
-                lineToIdealDic[Const.lineIdSHISEIDO]?.products.append(product)
-            }
+        if lineToIdealDic[40] != nil {
             lineToIdealDic.removeValue(forKey: 40)
         }
         
