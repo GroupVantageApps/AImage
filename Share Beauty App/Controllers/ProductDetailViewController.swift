@@ -1158,6 +1158,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.mIsUtmMask = true
         } else if mIsLatestMoisturizer {
             mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
         }
 //        } else if productId == 588{
 //            mCategoryButtonTechnologies.enabled = true
@@ -1592,6 +1593,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.isHidden = false
                 mVContent.addSubview(self.efficacyGSCScrollV)
                 mVCurrentSelect = self.efficacyGSCScrollV
+            }else if mIsLatestMoisturizer{
+                let nib = UINib(nibName: "LatestMoisturizerEfficiencyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                
+                guard let techView = views[0] as? LatestMoisturizerEfficiencyView else { return }
+                techView.frame = mVContent.frame
+                techView.setView(productId: self.productId)
+                mVContent.addSubview(techView)
+                mVCurrentSelect = techView
             }
             
         case mCategoryButtonDefend:

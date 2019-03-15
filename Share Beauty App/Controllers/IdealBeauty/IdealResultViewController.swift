@@ -473,6 +473,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             nextVc.productId = productId!
             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
             self.delegate?.nextVc(nextVc)
+            
         } else {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
             nextVc.productId = productId!
