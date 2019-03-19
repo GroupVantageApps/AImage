@@ -419,10 +419,20 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 if productId == 617 || productId == 618 {
                     contentWidth += viewWidth + 400
                 } else if productId == 619 {
-                    contentWidth += viewWidth + 200
+                    if pastProductId == 616 {
+                        contentWidth += viewWidth + 235
+                    } else if pastProductId == 617 {
+                        contentWidth += viewWidth + 220
+                    } else {
+                        contentWidth += viewWidth + 200
+                    }
                 } else if productId == 620 {
                     if pastProductId == 619 {
                         contentWidth += viewWidth
+                    } else if pastProductId == 616 {
+                        contentWidth += viewWidth * 2 + 235
+                    } else if pastProductId == 617 {
+                        contentWidth += viewWidth * 2 + 220
                     } else {
                         contentWidth += viewWidth * 2 + 200
                     }
@@ -431,6 +441,10 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         contentWidth += viewWidth * 2 + 100
                     } else if pastProductId == 620 {
                         contentWidth += viewWidth + 100
+                    } else if pastProductId == 616 {
+                        contentWidth += viewWidth + 235
+                    } else if pastProductId == 617 {
+                        contentWidth += viewWidth + 220
                     } else {
                         contentWidth += viewWidth + 200
                     }
@@ -441,17 +455,27 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                         contentWidth += viewWidth * 2 + 100
                     } else if pastProductId == 623 {
                         contentWidth += viewWidth
+                    } else if pastProductId == 616 {
+                        contentWidth += viewWidth * 2 + 235
+                    } else if pastProductId == 617 {
+                        contentWidth += viewWidth * 2 + 220
                     } else {
                         contentWidth += viewWidth * 2 + 200
                     }
                 } else if productId == 626 {
                     if pastProductId == 619 || pastProductId == 623 {
-                        contentWidth += viewWidth * 2 + 200
+                        contentWidth += viewWidth * 2 + 225
                     } else if pastProductId == 620 || pastProductId == 624 {
-                        contentWidth += viewWidth + 200
+                        contentWidth += viewWidth + 225
                     } else {
                         contentWidth += viewWidth + 400
                     }
+                }
+            } else {
+                if productId == 619 || productId == 623 {
+                    contentWidth = CGFloat(10)
+                } else if productId == 620 || productId == 624 {
+                    contentWidth = CGFloat(10) + viewWidth
                 }
             }
             
