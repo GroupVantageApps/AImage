@@ -330,6 +330,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
         
+        if [617, 618].contains(self.product.productId) {
+            self.efficacyScrollV.delegate = self
+            self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*2)
+            self.efficacyScrollV.isPagingEnabled = true
+            self.efficacyScrollV.bounces = false
+            
+            self.setEffency19AW()
+        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -764,7 +773,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
         
-        if [588, 593, 594].contains(self.product.productId) && showEfficacy == true{
+        if [588, 593, 594, 617, 618].contains(self.product.productId) && showEfficacy == true{
             mBtnCurrentSelect?.selected = false
             let sender = self.mCategoryButtonEfficacy
             mBtnCurrentSelect = sender
@@ -1106,7 +1115,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if mIsWhiteLucentWhiteLucentAllDay {
             mCategoryButtonEfficacy.enabled = true
-        } else if productId == 511 || productId == 506 || productId == 509 {
+        } else if productId == 511 || productId == 506 || productId == 509 || productId == 617 || productId == 618 {
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
@@ -1527,7 +1536,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     private func showInfo(_ sender: CategoryButton) {
 
-        if [588, 593, 594].contains(self.product.productId){
+        if [588, 593, 594, 617, 618].contains(self.product.productId){
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             
@@ -2328,6 +2337,258 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         mVContent.addSubview(efficacyScrollV)
         mVCurrentSelect = efficacyScrollV
+    }
+    
+    func setEffency19AW(){
+        if productId == 618 {
+            for i in 0...1 {
+                let title = UILabel()
+                title.textColor = UIColor.black
+                title.font = UIFont(name: "Reader-Bold", size: 22)
+                if i == 0 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8166) // "Right after"
+                } else if i == 1 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8174) // "After 4 weeks"
+                }
+                title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
+                title.centerX = self.mVContent.centerX
+                title.textAlignment = .center
+                self.efficacyScrollV.addSubview(title)
+            }
+            
+            for i in 1...7{
+                // テキストの場合
+                let percentLabel = UILabel()
+                percentLabel.textColor = UIColor.black
+                percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
+
+                if i == 1 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8167)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
+                } else if i == 2 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8169)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
+                } else if i == 3{
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8171)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
+                } else if i == 4{
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8175)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
+                } else if i == 5 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8177)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
+                } else if i == 6 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8179)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
+                } else {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8181)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
+                }
+                
+                percentLabel.textAlignment = .center
+                self.efficacyScrollV.addSubview(percentLabel)
+            }
+            
+            for i in 1...7{
+                let description = UILabel()
+                description.textColor = UIColor.black
+                description.font = UIFont(name: "Reader-Medium", size: 12)
+                description.numberOfLines = 0
+                description.textAlignment = .left
+
+                if i == 1 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8168) // "of women felt it was deeply \n hydrating"
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                } else if i == 2 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8170) // "of women felt their skin \n absorbed it quickly"
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                } else if i == 3 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8172) // "of women felt it maintained their skin's moisture."
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                } else if i == 4 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8176) // "of women felt their skin became \n more resilient."
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                } else if i == 5 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8178) // "of women felt their skin became \n brighter and the clarity improved."
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                } else if i == 6 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8180) // "of women felt it increased their skin's moisture after application."
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                } else {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8182) // "of women felt their skin became more resistant to troubles like dryness and roughness."
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                }
+                
+                self.efficacyScrollV.addSubview(description)
+            }
+            
+            //右下テキスト
+            for i in 0...1{
+                let text = UILabel()
+                text.textColor = UIColor.lightGray
+                text.font = UIFont(name: "Reader-Medium", size: 12)
+                text.font = text.font.withSize(13)
+                text.textAlignment = .center
+                text.numberOfLines = 0
+                if i == 0 {
+                    text.text = AppItemTable.getNameByItemId(itemId: 8173)
+                    text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 200, height: 40)
+                } else if i == 1 {
+                    let decode = convertSpecialCharacters(string: AppItemTable.getNameByItemId(itemId: 8183)!)
+                    text.text = decode
+                    text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 60)
+                }
+                
+                self.efficacyScrollV.addSubview(text)
+            }
+            
+        } else if productId == 617 {
+            for i in 1...2{
+                // テキスト
+                let percentLabel = UILabel()
+                percentLabel.textColor = UIColor.black
+                percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
+                
+                if i == 1 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8193)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(30*i), width: 160, height: 82)
+                } else if i == 2 {
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8197)
+                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+250, width: 160, height: 82)
+                }
+                percentLabel.textAlignment = .center
+
+                self.efficacyScrollV.addSubview(percentLabel)
+            }
+            for i in 1...2{
+                let description = UILabel()
+                description.textColor = UIColor.black
+                description.font = UIFont(name: "Reader-Medium", size: 12)
+                description.numberOfLines = 0
+                description.textAlignment = .left
+                
+                if i == 1 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8194) // "of women felt it created \n a rich lather that lasted on their skin"
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70+(Int(self.efficacyScrollV.frame.height)), width: 200, height: 150)
+                } else if i == 2 {
+                    description.text = AppItemTable.getNameByItemId(itemId: 8198) // "of women felt it \n softed their skin"
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 290+(Int(self.efficacyScrollV.frame.height)), width: 200, height: 150)
+                }
+                
+                self.efficacyScrollV.addSubview(description)
+            }
+            
+            //右下テキスト
+            for i in 0...1{
+                let text = UILabel()
+                text.textColor = UIColor.lightGray
+                text.font = UIFont(name: "Reader-Medium", size: 12)
+                text.font = text.font.withSize(13)
+                text.textAlignment = .center
+                text.numberOfLines = 0
+                text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 200, height: 40)
+                if i == 0 {
+                    text.text = AppItemTable.getNameByItemId(itemId: 8191)
+                } else if i == 1 {
+                    text.text = AppItemTable.getNameByItemId(itemId: 8199)
+                }
+                
+                self.efficacyScrollV.addSubview(text)
+            }
+
+            let generateV = UIView()
+            
+            for i in 1...2{
+                var image:UIImage = UIImage(named:"graph_04.png")!
+                if i == 1 {
+                    image = UIImage(named:"graph19AW.png")!
+                }
+                let graphV = UIImageView(image:image)
+                graphV.contentMode = .scaleToFill
+                if i == 1{
+                    graphV.frame = CGRect(x: 350, y: 100, width: 350, height: 300)//graph
+                }else if i == 2{
+                    graphV.frame = CGRect(x: 310, y: 100, width: 20, height: 26)//better
+                }
+                
+                generateV.addSubview(graphV)
+            }
+            
+            //graphText
+            for i in 1...3{
+                let graphLabel = UILabel()
+                graphLabel.textColor = UIColor.black
+                graphLabel.numberOfLines = 0
+                graphLabel.textAlignment = NSTextAlignment.left
+                graphLabel.font = UIFont(name: "Reader-Medium", size: 12)
+                
+                
+                if i == 1{
+                    graphLabel.frame = CGRect(x: 297, y:130, width: 60, height: 20)
+                    graphLabel.text = AppItemTable.getNameByItemId(itemId: 8185) // "better"
+                    graphLabel.font = graphLabel.font.withSize(16)
+                    
+                }else if i == 2{
+                    graphLabel.frame = CGRect(x: 420 , y:405, width: 170, height: 80)
+                    graphLabel.text = AppItemTable.getNameByItemId(itemId: 8188) // "Before"
+                    graphLabel.font = graphLabel.font.withSize(14)
+                    graphLabel.sizeToFit()
+                    graphLabel.textAlignment = NSTextAlignment.center
+                    
+                }else if i == 3{
+                    graphLabel.frame = CGRect(x: 598 , y:405, width: 170, height: 80)
+                    graphLabel.text = AppItemTable.getNameByItemId(itemId: 8189) // "7days"
+                    graphLabel.font = graphLabel.font.withSize(14)
+                    graphLabel.sizeToFit()
+                    graphLabel.textAlignment = NSTextAlignment.center
+                }
+                
+                generateV.addSubview(graphLabel)
+            }
+            self.efficacyScrollV.addSubview(generateV)
+            
+            for i in 0...3 {
+                // タイトル
+                let title = UILabel()
+                title.textColor = UIColor.black
+                title.font = UIFont(name: "Reader-Bold", size: 22)
+                let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                
+                if i == 0 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8190) // "Moisturizing effect: \n Improvement in skin's moisture in 1 week"
+                    title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 950, height: 50)
+                    title.numberOfLines = 2
+                    title.textAlignment = .left
+                } else if i == 1 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8186) // "Moisturizing effect"
+                    title.frame = CGRect(x: 0, y: 90, width: 700, height: 40)
+                    title.textColor = red
+                    title.textAlignment = .center
+                } else if i == 2 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8192) // "Immidiately after"
+                    title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)), width: 700, height: 40)
+                    title.textAlignment = .center
+                } else if i == 3 {
+                    title.text = AppItemTable.getNameByItemId(itemId: 8196) // "1 week"
+                    title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)+250), width: 700, height: 40)
+                    title.textAlignment = .center
+                }
+                title.centerX = self.mVContent.centerX
+                self.efficacyScrollV.addSubview(title)
+            }
+        }
+    }
+    
+    func convertSpecialCharacters(string: String) -> String {
+        var newString = string
+        let char_dictionary = [
+            "&lt;" : "<",
+            "&gt;" : ">",
+        ];
+        for (escaped_char, unescaped_char) in char_dictionary {
+            newString = newString.replacingOccurrences(of: escaped_char, with: unescaped_char, options: NSString.CompareOptions.literal, range: nil)
+        }
+        return newString
     }
     
     func setEfficacyView(){
