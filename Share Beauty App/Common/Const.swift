@@ -95,11 +95,11 @@ struct Const {
     static let troubleDisplayNormal = 2
     static let troubleDisplayHide = 1
 
-    
-    static let lifeStyleBeautyList:[Int] = [601, 999, 602, 606, 553, 610, 611, 550, 609, 582, 583] // 613のみ 612はつかわないWaso t-hirai 19ss　LanguageConfigure.UTMId
+    static let lifeStyleBeautyList:[Int] =  [616, 617, 618, 619, 620, 623, 624, 626]
+    // 613のみ 612はつかわないWaso t-hirai 19ss　LanguageConfigure.UTMId
     // 18AW
     // private var productIdsDefault:[Int] = [564,566,568,LanguageConfigure.UTMId, 570, 571, 578, 572]
-    
+
     static let lifeStyleBeautyListA = [513, 252, 313]//[101, 359, 497]<<うっかりひやけ>>SMK追加コンテンツ　平井20170217（項目だけ書いています、アイテムはほぼ確定）
     static let lifeStyleBeautyListB = [497, 115, 511] //waso追加　平井20170217　（アイテムは暫定）115, 497, 511
     // static let lifeStyleBeautyListC = [372, 421]
@@ -112,7 +112,7 @@ struct Const {
     static let lifeStyleBeautyListI = [545, 549, 498]
     
     static let idealBeautyModalTrouble = [12, 14, 15, 7]
-    static let productIdsUTM = [LanguageConfigure.UTMId, 28, 601]
+    static let productIdsUTM = [LanguageConfigure.UTMId, 616, 601]
 
     static let idealBeautyTypeProduct = 1
     static let idealBeautyTypeLine = 2

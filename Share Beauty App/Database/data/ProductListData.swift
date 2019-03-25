@@ -123,6 +123,10 @@ class ProductListData: NSObject {
             }
         }
         
+        if lineToIdealDic[40] != nil {
+            lineToIdealDic.removeValue(forKey: 40)
+        }
+        
         var sortedIdeals: [DataStructIdeal] = [] // 並び順 : Cleanser -> その他 -> Shiseido -> Makeup -> UTM -> LX
         // SHISEIDOとMAKEUPラインを抽出（順番を後ろにするため）
         var idealSHISEIDO: DataStructIdeal = DataStructIdeal()
@@ -332,7 +336,7 @@ class ProductListData: NSObject {
             let selectedProducts = self.getProductIdsByLineAndStep(Const.lineIdUTM, stepLowerIds: self.stepLowerIds)
             self.products.append(contentsOf: self.distinctProducts(selectedProducts))
         } else {
-            self.appendProductByArray([LanguageConfigure.UTMId,28, 601])
+            self.appendProductByArray([LanguageConfigure.UTMId,616, 601])
         }
     }
 
@@ -381,7 +385,7 @@ class ProductListData: NSObject {
 
             } else if stepLowerId == 8 {
                 //Serum
-                productIds += [523, 390, 39]
+                productIds += [621, 523, 390, 39]
 
             } else if stepLowerId == 9 {
                 //Moisturizer
@@ -397,7 +401,7 @@ class ProductListData: NSObject {
 
             } else if stepLowerId == 13 {
                 //OTHERS
-                productIds += [66, 365, 292, 51, 32, 524, 525]
+                productIds += [66, 365, 292, 51, 32, 622, 524, 525]
             }
         }
         return productIds

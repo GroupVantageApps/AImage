@@ -347,11 +347,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         fiveSecretBtn.addTarget(self, action: #selector(self.toFiveSecretsView(_:)), for: .touchUpInside)
 
         self.mRightContentV.addSubview(fiveSecretBtn)
-        if (self.productId == 621) {
-            mCategoryButtonTechnologies.enabled = false
-            mCategoryButtonEfficacy.enabled = false
-            mCategoryButtonDefend.enabled = false
-        }
+//        if (self.productId == 621) {
+//            mCategoryButtonTechnologies.enabled = false
+//            mCategoryButtonEfficacy.enabled = false
+//            mCategoryButtonDefend.enabled = false
+//        }
     }
 
     override func viewDidLayoutSubviews() {
@@ -787,5 +787,12 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         self.navigationController?.pushViewController(toVc, animated: false)
     }
     
-    func didTapshowGeneTech(){  }
+    func didTapshowGeneTech(){
+        let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+        technologyV.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
+        technologyV.setUI(productId: 621)
+        technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(technologyV)
+        
+    }
 }

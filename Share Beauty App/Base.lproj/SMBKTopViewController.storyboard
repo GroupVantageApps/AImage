@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -95,7 +95,7 @@ REDEFINED</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-yK-m4D">
-                                        <rect key="frame" x="408" y="525" width="209" height="82"/>
+                                        <rect key="frame" x="671" y="525" width="209" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="23.5"/>
                                         <inset key="titleEdgeInsets" minX="103" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -104,6 +104,14 @@ REDEFINED</string>
                                         </state>
                                         <connections>
                                             <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="1h1-mr-ZN4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shw-fr-WMo">
+                                        <rect key="frame" x="135" y="525" width="280" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="complextion_btn.png"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="e46-Vf-kdY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ycg-jy-O6P" colorLabel="IBBuiltInLabel-Red">
@@ -219,6 +227,7 @@ for face, eyes, and lips. </string>
                     </view>
                     <connections>
                         <outlet property="firstV" destination="I9D-H9-EJO" id="GRS-d9-3KG"/>
+                        <outlet property="mComplextionBtn" destination="shw-fr-WMo" id="s96-t6-oA0"/>
                         <outlet property="mFirstTextureBtn" destination="w20-bu-wi9" id="sCO-X8-DfI"/>
                         <outlet property="mFirstVSubTitle" destination="ik6-4v-3br" id="0iR-2m-SOL"/>
                         <outlet property="mFirstVText" destination="AQx-KP-hYi" id="WkG-f9-5j8"/>
@@ -246,5 +255,6 @@ for face, eyes, and lips. </string>
         <image name="02_03.png" width="437" height="437"/>
         <image name="02_04.png" width="437" height="437"/>
         <image name="02_button.png" width="415" height="166"/>
+        <image name="complextion_btn.png" width="16" height="16"/>
     </resources>
 </document>

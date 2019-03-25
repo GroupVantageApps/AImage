@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -64,7 +65,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -102,7 +103,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -237,7 +238,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411759999999" green="0.56470588239999997" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -312,7 +313,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -322,6 +323,7 @@
                                                     <button opaque="NO" tag="50" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAV-G6-Diu">
                                                         <rect key="frame" x="70" y="80" width="100" height="198"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="17"/>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yie-2h-q6z">
                                                         <rect key="frame" x="175" y="93" width="100" height="100"/>
@@ -334,7 +336,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -372,7 +374,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -410,7 +412,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -448,7 +450,7 @@
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -506,13 +508,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="40" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYV-tp-gei">
-                                                        <rect key="frame" x="32" y="203" width="100" height="83"/>
+                                                        <rect key="frame" x="32" y="203" width="100" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -538,13 +540,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="42" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39E-fP-kEM">
-                                                        <rect key="frame" x="248" y="203" width="100" height="83"/>
+                                                        <rect key="frame" x="248" y="203" width="100" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="16" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
@@ -581,24 +583,24 @@
                                                         <state key="normal" image="lx_icon_recommend_large.png"/>
                                                         <state key="selected" image="lx_icon_recommend_selected.png"/>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-ak-Ire">
-                                                        <rect key="frame" x="140" y="93" width="100" height="100"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="41" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrv-bw-Xl2">
-                                                        <rect key="frame" x="140" y="203" width="100" height="83"/>
+                                                        <rect key="frame" x="140" y="203" width="100" height="107"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.63529411764705879" green="0.56470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <font key="NSFont" size="12" name="ACaslonPro-Regular"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1000000000000001" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-ak-Ire">
+                                                        <rect key="frame" x="140" y="110" width="100" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.29916487068965519" colorSpace="calibratedRGB"/>
                                             </view>

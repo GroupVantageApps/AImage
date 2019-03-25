@@ -30,6 +30,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet weak var mFourthTextureBtn: UIButton!
     var textureBtns: [UIButton] = []
     @IBOutlet weak var mToolBtn: UIButton!
+    @IBOutlet weak var mComplextionBtn: UIButton!
     @IBOutlet weak var mNextBtn: UIButton!
     
     let mSMKArr = LanguageConfigure.smk_csv
@@ -57,7 +58,8 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         mItemBtn.setTitle(mSMKArr["5"], for: .normal)
         mSecondVText.text = mSMKArr["6"]
 
-        textureBtns.append(contentsOf: [mFirstTextureBtn, mSecondTextureBtn, mThirdTextureBtn, mFourthTextureBtn, mToolBtn])
+        textureBtns.append(contentsOf: [mFirstTextureBtn, mSecondTextureBtn, mThirdTextureBtn, mFourthTextureBtn, mToolBtn, mComplextionBtn])
+        print("msmkarr:\(mSMKArr)")
         for (i, btn) in textureBtns.enumerated() {
             btn.setTitle(mSMKArr["\(7 + i)"], for: .normal)
             btn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -92,7 +94,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKTextureViewController.self) as! SMBKTextureViewController
         print((sender as! UIButton).tag)
         nextVc.texture_id = (sender as! UIButton).tag
-        let beautySecondIds = [70, 71, 72, 73]
+        let beautySecondIds = [70, 71, 72, 73, 74]
         let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
         nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
         delegate?.nextVc(nextVc)
