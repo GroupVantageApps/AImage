@@ -176,6 +176,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                             
                         } else {      
                             beautyLbl.text = product.beautyName
+                            beautyLbl.isHidden = true
                             print("\(product.beautyName)")
                         }
                         
