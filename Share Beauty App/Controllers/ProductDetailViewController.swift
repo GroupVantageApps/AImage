@@ -338,14 +338,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
                             self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
                             self.efficacyScrollV.isPagingEnabled = true
-                            self.efficacyScrollV.bounces = false
-//
-//                        self.technologyEEEScrollV.delegate = self
-//                        self.technologyEEEScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-//                        self.technologyEEEScrollV.contentSize = CGSize(width: technologyEEEScrollV.frame.width, height: (technologyEEEScrollV.frame.height)*3)
-//                        self.technologyEEEScrollV.isPagingEnabled = true
-//                        self.technologyEEEScrollV.bounces = false
+
                             self.setEffency19AW()
+                    
+                    self.techScrollV.delegate = self
+                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
+                    self.techScrollV.isPagingEnabled = true
+                    self.techScrollV.bounces = false
+                    self.setTechnology19AW()
+//                    self.setGeneratingView()
+//                    self.setEnhanceView()
+//                    self.setImucalmView()
+                    
                     }
         
     }
@@ -797,8 +802,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 //            let sender = self.mCategoryButtonTechnologies
 //            mBtnCurrentSelect = sender
 //            mBtnCurrentSelect?.selected = true
-//            
-//            
+//
+//
 //            showInfo(sender!)
 //        }
     
@@ -1569,7 +1574,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.isHidden = false
                 print("technology")
                 
-                self.didTapTechnology()
+                 if [588, 593, 594].contains(self.product.productId){
+                    self.didTapTechnology()
+                }else if [616].contains(self.product.productId){
+                    self.setTechnology19AW()
+                }
                 
             } else if sender === mCategoryButtonEfficacy {
                 mVContent.isHidden = false
@@ -1973,6 +1982,136 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         techScrollV.addSubview(generateV)
         mVContent.addSubview(techScrollV)
         mVCurrentSelect = techScrollV
+    }
+    
+    func setTechnology19AW(){
+    print("didsetTechnology19AW")
+    let generateV = UIView()
+    generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+    //generateV.backgroundColor = UIColor.lightGray
+    
+    let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+    
+        
+    for i in 0...1{
+        if i == 0{
+            let titleLabel = UILabel()
+            titleLabel.frame = CGRect(x: 20 , y: 20+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
+            titleLabel.text = AppItemTable.getNameByItemId(itemId: 8200)// "Smoothing Defense Complex"
+            titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
+            titleLabel.textColor = UIColor.black
+            
+            let titleDescription = UILabel()
+            titleDescription.frame = CGRect(x: 150, y: 60+(Int(self.techScrollV.frame.height)*i), width: 500, height: 100)
+            //    titleDescription.centerX = self.mVContentLeft.centerX
+            titleDescription.text = AppItemTable.getNameByItemId(itemId: 8201) // "The SHISEIDO original technology provides a shield-like effect to reduce damage caused by friction.  It also protects the  stratum corneum, and maintains moisture of the eye area"
+            titleDescription.font = UIFont(name: "Reader-Medium", size: 16)
+            titleDescription.numberOfLines = 0
+            titleDescription.textAlignment = NSTextAlignment.left
+            titleDescription.textColor = UIColor.black
+            
+            let line:UIImage = UIImage(named:"utm_line.png")!
+            let utmLine = UIImageView(image:line)
+            utmLine.frame = CGRect(x: 135, y: 85+(Int(self.techScrollV.frame.height)*i), width: 1, height: 50)
+            utmLine.contentMode = .scaleToFill
+            generateV.addSubview(utmLine)
+            
+            
+            generateV.addSubview(titleLabel)
+            generateV.addSubview(titleDescription)
+            
+            let title = UILabel()
+            title.frame = CGRect(x:  Int(self.mVContentRight.centerX) - 120, y: 145+(Int(self.techScrollV.frame.height)*i), width: 200, height: 27)
+            title.text = AppItemTable.getNameByItemId(itemId: 8203)
+            title.font = UIFont(name: "Reader-Bold", size: 16)
+            title.textAlignment = NSTextAlignment.center
+            title.textColor = UIColor.white
+            title.backgroundColor =  red
+            generateV.addSubview(title)
+            
+            
+            for i in 1...3{
+                let title = UILabel()
+                let description = UILabel()
+                title.textColor = UIColor.black
+                title.font = UIFont(name: "Reader-Bold", size: 20)
+                title.textAlignment = .left
+                title.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 150+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 400, height: 100)
+                description.textColor = UIColor.black
+                description.font = UIFont(name: "Reader-Medium", size: 16)
+                description.numberOfLines = 0
+                description.textAlignment = .left
+                description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 185+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 340, height: 100)
+                
+                
+                if i == 1{
+                    title.text = AppItemTable.getNameByItemId(itemId: 8204)//"Skin Shield (Smoothing Oil"
+                    description.text = AppItemTable.getNameByItemId(itemId: 8205) // "oReduces friction from the skin surface."
+                }else if i == 2{
+                    title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
+                    description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
+                }else if i == 3{
+                    title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
+                    description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
+                }
+                generateV.addSubview(title)
+                generateV.addSubview(description)
+            }
+            
+            
+            let path = Bundle.main.path(forResource: "UTM_Edited33", ofType: "mp4")!
+            let player = AVPlayer(url: URL(fileURLWithPath: path))
+            player.play()
+            
+            // AVPlayer用のLayerを生成
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame =  CGRect(x: Int(self.mVContentLeft.centerX) - 250, y: (Int(self.techScrollV.frame.height)*i)-300, width: 950, height: 1000)
+            //        playerLayer.videoGravity = .resizeAspectFill
+            
+            generateV.layer.insertSublayer(playerLayer, at: 0)
+            
+            
+        }else if i == 1{
+            let titleLabel = UILabel()
+            titleLabel.frame = CGRect(x: 20 , y: 20+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
+            titleLabel.text = AppItemTable.getNameByItemId(itemId: 8210)// "ImuMoisture Complex"
+            titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
+            titleLabel.textColor = UIColor.black
+            
+            let description = UILabel()
+            description.frame = CGRect(x: 20 , y: 40+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
+            description.text = AppItemTable.getNameByItemId(itemId: 8211)// "(Marjoram Extract, Dynamite Glycerin)"
+            description.font = UIFont(name: "Reader-Medium", size: 16)
+            description.textColor = UIColor.black
+            
+            let titleDescription = UILabel()
+            titleDescription.frame = CGRect(x: 150, y: 80+(Int(self.techScrollV.frame.height)*i), width: 500, height: 100)
+            //    titleDescription.centerX = self.mVContentLeft.centerX
+            titleDescription.text = AppItemTable.getNameByItemId(itemId: 8212) // "It sustains a strong moisturizing effect, helps prevent oxidation of cells which adversely affects Langerhans Cells, and promotes the production of hyaluronic acid.  The result is a radiant and firm eye area."
+            titleDescription.font = UIFont(name: "Reader-Medium", size: 16)
+            titleDescription.numberOfLines = 0
+            titleDescription.textAlignment = NSTextAlignment.left
+            titleDescription.textColor = UIColor.black
+            
+            let line:UIImage = UIImage(named:"utm_line.png")!
+            let utmLine = UIImageView(image:line)
+            utmLine.frame = CGRect(x: 135, y: 100+(Int(self.techScrollV.frame.height)*i), width: 1, height: 60)
+            utmLine.contentMode = .scaleToFill
+            generateV.addSubview(utmLine)
+            
+            
+            generateV.addSubview(titleLabel)
+            generateV.addSubview(description)
+            generateV.addSubview(titleDescription)
+        }
+            
+        }
+    
+    
+    // TechnologiesのTopをスクロールビューに追加
+    techScrollV.addSubview(generateV)
+    mVContent.addSubview(techScrollV)
+    mVCurrentSelect = techScrollV
     }
     
     func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel, generateV: UIView){
