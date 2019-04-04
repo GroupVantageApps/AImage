@@ -346,10 +346,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
                     self.techScrollV.isPagingEnabled = true
                     self.techScrollV.bounces = false
-                    self.setTechnology19AW()
-//                    self.setGeneratingView()
-//                    self.setEnhanceView()
-//                    self.setImucalmView()
+
                     
                     }
         
@@ -2071,13 +2068,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // AVPlayer用のLayerを生成
             let playerLayer = AVPlayerLayer(player: player)
             playerLayer.frame =  CGRect(x: Int(self.mVContentLeft.centerX) - 250, y: (Int(self.techScrollV.frame.height)*i)-300, width: 950, height: 1000)
-            playerLayer.isHidden = true
             generateV.layer.insertSublayer(playerLayer, at: 0)
             player.play()
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                playerLayer.isHidden = false
-            }
             
             
             
@@ -2793,19 +2786,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
                     description.text = AppItemTable.getNameByItemId(itemId: 8272)
                 } else if i == 2 {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8268)
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8258)
                     percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8255)
                     description.text = AppItemTable.getNameByItemId(itemId: 8269)
                 } else if i == 3{
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8265)
-                    percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8261)
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8261)
+                    percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8262)
                     description.text = AppItemTable.getNameByItemId(itemId: 8266)
                 } else if i == 4{
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8262)
-                    percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8261)
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8264)
+                    percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8265)
                     description.text = AppItemTable.getNameByItemId(itemId: 8263)
                 } else if i == 5{
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8259)
+                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8267)
                     percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
                     description.text = AppItemTable.getNameByItemId(itemId: 8260)
                 } else if i == 6{
