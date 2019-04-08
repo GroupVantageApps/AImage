@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UR-64-Ts5">
-                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1539"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="1026"/>
                             <subviews>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Njg-um-T5E">
                                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
@@ -41,16 +41,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-PX-cMI">
-                                    <rect key="frame" x="0.0" y="1026" width="1024" height="513"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="1024" id="50q-V1-Y8V"/>
-                                <constraint firstAttribute="height" constant="1539" id="dgb-Mr-ONX"/>
+                                <constraint firstAttribute="height" constant="1026" id="dgb-Mr-ONX" userLabel="height = 770"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -77,7 +72,6 @@
                 <outlet property="mFirstView" destination="Njg-um-T5E" id="cOA-xx-CbN"/>
                 <outlet property="mScrollView" destination="vYx-Hr-q5o" id="nfC-n9-b2O"/>
                 <outlet property="mSecondView" destination="ord-gu-QbI" id="Mvn-FL-rww"/>
-                <outlet property="mThirdView" destination="mqc-PX-cMI" id="bwp-Te-oug"/>
             </connections>
         </view>
     </objects>
