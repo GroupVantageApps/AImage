@@ -21,6 +21,15 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dKo-sU-pzw">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvP-p6-b8g">
+                            <rect key="frame" x="26" y="497" width="361" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="600" placeholder="YES" id="RF7-X8-IiL"/>
                     </constraints>
@@ -37,6 +46,7 @@
                 <constraint firstAttribute="bottom" secondItem="dKo-sU-pzw" secondAttribute="bottom" id="rcS-hI-DJr"/>
                 <constraint firstAttribute="trailing" secondItem="dKo-sU-pzw" secondAttribute="trailing" id="t1W-3v-wrR"/>
             </constraints>
+            <point key="canvasLocation" x="37.5" y="53.5"/>
         </view>
     </objects>
 </document>

@@ -48,7 +48,7 @@ class TargetSettingViewController: UIViewController, NavigationControllerAnnotat
 
     override func viewDidAppear(_ animated: Bool) {
 //        設定時に無理やりdevelopを向かせる設定 release develop 無理やり　develop or release
-        DownloadConfigure.target = DownloadConfigure.Target.release
+        DownloadConfigure.target = DownloadConfigure.Target.develop
          DownloadConfigure.keepTarget() //＜＜設定を保存する
     }
 

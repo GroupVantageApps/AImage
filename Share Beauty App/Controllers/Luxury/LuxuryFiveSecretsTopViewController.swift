@@ -566,5 +566,11 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     }
     
     func didTapshowGeneTech(){
+        let technologyV: LXProductTechnologyView = UINib(nibName: "LXProductTechnologyView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXProductTechnologyView
+        technologyV.frame = CGRect(x: 0,y: 0,width: 960,height: 630)
+        technologyV.setUI(productId: 621)
+        technologyV.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
+        self.view.addSubview(technologyV)
+        
     }
 }
