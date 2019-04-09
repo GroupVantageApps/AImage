@@ -96,7 +96,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         nextVc.texture_id = (sender as! UIButton).tag
         let beautySecondIds = [70, 71, 72, 73, 74]
         let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
-        nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
+        nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)", smk: "smk")
         delegate?.nextVc(nextVc)
     }
     
