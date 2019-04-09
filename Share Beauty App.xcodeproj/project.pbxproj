@@ -475,6 +475,8 @@
 		C9906DD41F2CA70C00414722 /* LifeStyleEighthProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9906DD31F2CA70C00414722 /* LifeStyleEighthProductView.xib */; };
 		DA0D5F1F22004470006703D5 /* LuxuryLegendaryEnmeiViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0D5F1E22004470006703D5 /* LuxuryLegendaryEnmeiViewController.storyboard */; };
 		DA0D5F23220046BF006703D5 /* LuxuryLegendaryEnmeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D5F22220046BE006703D5 /* LuxuryLegendaryEnmeiViewController.swift */; };
+		DA208431223BB73400F26773 /* LatestMoisturizerEfficiencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA208430223BB73400F26773 /* LatestMoisturizerEfficiencyView.swift */; };
+		DA208435223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA208434223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib */; };
 		DA22A5D5220AC3C300CF5FEE /* page2_visual_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5D3220AC22A00CF5FEE /* page2_visual_1.png */; };
 		DA22A5D6220AC3C800CF5FEE /* page2_visual_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5D4220AC23000CF5FEE /* page2_visual_2.png */; };
 		DA22A5D7220AC3CB00CF5FEE /* btn_close@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5C1220ABFC500CF5FEE /* btn_close@4x.png */; };
@@ -1332,6 +1334,8 @@
 		DA0D5F1D220042FA006703D5 /* page1_visual.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1_visual.png; sourceTree = "<group>"; };
 		DA0D5F1E22004470006703D5 /* LuxuryLegendaryEnmeiViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LuxuryLegendaryEnmeiViewController.storyboard; sourceTree = "<group>"; };
 		DA0D5F22220046BE006703D5 /* LuxuryLegendaryEnmeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxuryLegendaryEnmeiViewController.swift; sourceTree = "<group>"; };
+		DA208430223BB73400F26773 /* LatestMoisturizerEfficiencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoisturizerEfficiencyView.swift; sourceTree = "<group>"; };
+		DA208434223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestMoisturizerEfficiencyView.xib; sourceTree = "<group>"; };
 		DA22A5C1220ABFC500CF5FEE /* btn_close@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close@4x.png"; sourceTree = "<group>"; };
 		DA22A5C4220ABFE900CF5FEE /* btn_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_next.png; sourceTree = "<group>"; };
 		DA22A5C7220AC03500CF5FEE /* page2_lead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page2_lead.png; sourceTree = "<group>"; };
@@ -2583,6 +2587,7 @@
 				C0998BF11DA63DE500220321 /* PagingProductView.xib */,
 				EBB3BCD81E9F685B0071FE0F /* ProductDetailSkinConcernView.swift */,
 				C07B48F91D8EB1E900F5D910 /* ProductDetailTag.swift */,
+				DA208430223BB73400F26773 /* LatestMoisturizerEfficiencyView.swift */,
 				C07B48FB1D8EB20600F5D910 /* ProductDetailTag.xib */,
 				C0E85A671E221F710035CCC4 /* ProductDetailTransitionView.swift */,
 				C0E85A691E221FAB0035CCC4 /* ProductDetailTransitionView.xib */,
@@ -2590,6 +2595,7 @@
 				C0E4DCBC1D71807500931B66 /* ProductListView.swift */,
 				C0E4DCBE1D71808F00931B66 /* ProductListView.xib */,
 				C0A335F11D8035DF006A8FD1 /* ProductView.swift */,
+				DA208434223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib */,
 				C0A335F21D8035DF006A8FD1 /* ProductView.xib */,
 				C0BC71791DCB41920038AE1A /* RecommendProductView.swift */,
 				C0BC717A1DCB41920038AE1A /* RecommendProductView.xib */,
@@ -3833,6 +3839,7 @@
 				DA80CB39225458F50017694A /* p6_graph.png in Resources */,
 				DA22A5E3220AC40000CF5FEE /* page5_lead@4x.png in Resources */,
 				DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */,
+				DA208435223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib in Resources */,
 				E57BB3211E597BE000D4F5FB /* ProductLineViewController.storyboard in Resources */,
 				DE2C91811E9C682500B5FC4A /* graphPoint_down.png in Resources */,
 				C0D1953E1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.xib in Resources */,
@@ -4236,6 +4243,7 @@
 				ABB9EAC51FCCA3E800D22F9E /* EssentialEnergyEfficacy.swift in Sources */,
 				C0DA9AEE1DB8CC7E00692058 /* DPDUIView+Extension.swift in Sources */,
 				C94638D31F18CC45009D1480 /* LoadingView.swift in Sources */,
+				DA208431223BB73400F26773 /* LatestMoisturizerEfficiencyView.swift in Sources */,
 				DEBCF6C120746F25001762A9 /* WASOPeelFirstEfficacyResultView.swift in Sources */,
 				C0880CEC1E4B1E6A006A3713 /* Router.swift in Sources */,
 				C00D55501DC5D5C0008795D4 /* ScreenSaveViewController.swift in Sources */,

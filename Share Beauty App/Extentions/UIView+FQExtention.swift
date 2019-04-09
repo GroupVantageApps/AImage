@@ -79,8 +79,12 @@ extension UIView {
 extension UIView: HasAssociatedObjects {
     var stringTag: String {
         get {
-            let stt = self.associatedObjects["stringTag"] as! String
-            return stt
+            if self.associatedObjects["stringTag"] != nil {
+                let stt = self.associatedObjects["stringTag"] as! String
+                return stt
+            } else {
+                return ""
+            }
         }
         set {self.associatedObjects["stringTag"] = newValue}
     }
