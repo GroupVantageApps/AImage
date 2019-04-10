@@ -340,11 +340,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
                             self.setEffency19AW()
                     
-                    self.techScrollV.delegate = self
-                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
-                    self.techScrollV.isPagingEnabled = true
-                    self.techScrollV.bounces = false
+//                    self.techScrollV.delegate = self
+//                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+//                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
+//                    self.techScrollV.isPagingEnabled = true
+//                    self.techScrollV.bounces = false
 
                     
                     }
@@ -1578,7 +1578,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                  if [588, 593, 594].contains(self.product.productId){
                     self.didTapTechnology()
                 }else if [616].contains(self.product.productId){
-                    self.setTechnology19AW()
+                    self.techScrollV.delegate = self
+                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
+                    self.techScrollV.isPagingEnabled = true
+                    self.techScrollV.bounces = false
+                      self.setTechnology19AW()
+
                 }
                 
             } else if sender === mCategoryButtonEfficacy {
@@ -2171,7 +2177,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             with.textColor = UIColor.black
             generateV.addSubview(with)
         }
-            
+        
         }
     
     
@@ -2839,7 +2845,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                                 title.textAlignment = .center
                                 title.text = AppItemTable.getNameByItemId(itemId: 8237)
                 
-                                let image_after = UIImage(named: "after_0\(1).png")
+                                let image_after = UIImage(named: "after_face")
                                 let faceImageV_after = UIImageView(image:image_after)
                                 faceImageV_after.contentMode = .scaleAspectFit
                                 faceImageV_after.clipsToBounds = true
@@ -2847,7 +2853,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                                 faceImageV_after.centerX = self.mVContent.centerX
                                 faceImageV_after.backgroundColor = UIColor.clear
                 
-                                let image = UIImage(named: "before_0\(1).png")
+                                let image = UIImage(named: "before_face")
                                 let faceImageV = UIImageView(image:image)
                                 faceImageV.contentMode = .scaleAspectFit
                                 faceImageV.tag = 30 //300
@@ -3017,6 +3023,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                                     self.efficacyScrollV.addSubview(description)
                                 }
                                           //三枚目
+            
+            
+                   let graph : UIImage = UIImage(named: "p6_graph.png")!
+                        let graphImage = UIImageView(image: graph)
+                            graphImage.contentMode = .scaleToFill
+                            graphImage.frame = CGRect(x: 170,y: 17+Int(self.efficacyScrollV.frame.height)*2,width: 318,height: 450)
+                            self.efficacyScrollV.addSubview(graphImage)
                             for i in 1...6{
                     
                                     let percentLabel = UILabel()
@@ -3040,19 +3053,19 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                                                 percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
                                                 description.text = AppItemTable.getNameByItemId(itemId: 8272)
                                         } else if i == 2 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8268)
+                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8258)
                                                 percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8255)
                                                 description.text = AppItemTable.getNameByItemId(itemId: 8269)
                                         } else if i == 3{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8265)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8261)
+                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8261)
+                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8262)
                                                 description.text = AppItemTable.getNameByItemId(itemId: 8266)
                                         } else if i == 4{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8262)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8261)
+                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8264)
+                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8265)
                                                 description.text = AppItemTable.getNameByItemId(itemId: 8263)
                                         } else if i == 5{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8259)
+                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8267)
                                                 percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
                                                 description.text = AppItemTable.getNameByItemId(itemId: 8260)
                                         } else if i == 6{
