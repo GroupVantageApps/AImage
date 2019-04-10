@@ -2402,31 +2402,31 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             for i in 1...7{
                 let description = UILabel()
                 description.textColor = UIColor.black
-                description.font = UIFont(name: "Reader-Medium", size: 12)
+                description.font = UIFont(name: "Reader-Medium", size: 22)
                 description.numberOfLines = 0
                 description.textAlignment = .left
 
                 if i == 1 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8168) // "of women felt it was deeply \n hydrating"
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
                 } else if i == 2 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8170) // "of women felt their skin \n absorbed it quickly"
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
                 } else if i == 3 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8172) // "of women felt it maintained their skin's moisture."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
                 } else if i == 4 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8176) // "of women felt their skin became \n more resilient."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 300, height: 150)
                 } else if i == 5 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8178) // "of women felt their skin became \n brighter and the clarity improved."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
                 } else if i == 6 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8180) // "of women felt it increased their skin's moisture after application."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
                 } else {
                     description.text = AppItemTable.getNameByItemId(itemId: 8182) // "of women felt their skin became more resistant to troubles like dryness and roughness."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
                 }
                 
                 self.efficacyScrollV.addSubview(description)
@@ -2473,13 +2473,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             for i in 1...2{
                 let description = UILabel()
                 description.textColor = UIColor.black
-                description.font = UIFont(name: "Reader-Medium", size: 12)
+                description.font = UIFont(name: "Reader-Medium", size: 22)
                 description.numberOfLines = 0
                 description.textAlignment = .left
                 
                 if i == 1 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8194) // "of women felt it created \n a rich lather that lasted on their skin"
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70+(Int(self.efficacyScrollV.frame.height)), width: 200, height: 150)
+                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 70+(Int(self.efficacyScrollV.frame.height)), width: 250, height: 150)
                 } else if i == 2 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8198) // "of women felt it \n softed their skin"
                     description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 290+(Int(self.efficacyScrollV.frame.height)), width: 200, height: 150)
