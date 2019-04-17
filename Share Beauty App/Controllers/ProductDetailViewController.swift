@@ -11,15 +11,12 @@ import AVFoundation
 import AVKit
 import SwiftyJSON
 
-
 class ProductDetailViewController: UIViewController, NavigationControllerAnnotation, GscNavigationControllerAnnotation,CategoryButtonDelegate, UtmFeaturesViewDelegate, TroubleViewDelegate, TroubleSelectViewDelegate, UIScrollViewDelegate {
     @IBOutlet weak private var mImgVProduct: UIImageView!
     @IBOutlet weak private var mImgVFirstDailyCare: UIImageView!
     @IBOutlet weak private var mImgVSecondDailyCare: UIImageView!
 
     @IBOutlet weak private var mVContent: UIView!
-    @IBOutlet weak var mVContentLeft: UIView!
-    @IBOutlet weak var mVContentRight: UIView!
     @IBOutlet weak private var mVBaseIbukiBtn: UIView!
     @IBOutlet weak private var mVBaseFeaturesView: UIView!
     @IBOutlet weak private var mRelationScrollV: UIScrollView!
@@ -332,22 +329,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setImucalmView()
             
         }
-                if [616].contains(self.product.productId) {
-                        self.efficacyScrollV.delegate = self
-                            self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-                            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
-                            self.efficacyScrollV.isPagingEnabled = true
-
-                            self.setEffency19AW()
-                    
-//                    self.techScrollV.delegate = self
-//                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-//                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
-//                    self.techScrollV.isPagingEnabled = true
-//                    self.techScrollV.bounces = false
-
-                    
-                    }
         
         if [617, 618].contains(self.product.productId) {
             self.efficacyScrollV.delegate = self
@@ -363,7 +344,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         makeRelationProducts()
-        
         viewDidLayoutSubviewsOnce {
             if self.product.colorballs.count == 0 {
                 mVColorBall.removeFromSuperview()
@@ -777,7 +757,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
         if mIsUtm || mIsUtmEye || mIsNewUtm{
             mUtmFeaturesView.showAnimation()
         }
@@ -802,21 +781,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             showInfo(sender!)
         }
-//        if [616].contains(self.product.productId) == true{
-//            mBtnCurrentSelect?.selected = false
-//            let sender = self.mCategoryButtonTechnologies
-//            mBtnCurrentSelect = sender
-//            mBtnCurrentSelect?.selected = true
-//
-//
-//            showInfo(sender!)
-//        }
-    
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         product = ProductDetailData(productId: productId)
         mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
     }
@@ -1147,7 +1115,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mCategoryButtonEfficacy.enabled = true
         } else if mIsWhiteLucentWhiteLucentAllDay {
             mCategoryButtonEfficacy.enabled = true
-            } else if productId == 511 || productId == 506 || productId == 509 || productId == 616 || productId == 617 || productId == 618 {
+        } else if productId == 511 || productId == 506 || productId == 509 || productId == 617 || productId == 618 {
             mCategoryButtonEfficacy.enabled = true
         } else if self.product.spMovies.count != 0 {
             mCategoryButtonHowToUse.enabled = true
@@ -1200,11 +1168,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if mIsLatestMoisturizer {
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
-        }else if productId == 616 {
-            mCategoryButtonDefend.enabled = true
-            mCategoryButtonTechnologies.enabled = true
-
         }
+//        } else if productId == 588{
+//            mCategoryButtonTechnologies.enabled = true
+//            mCategoryButtonEfficacy.enabled = true
+//            mCategoryButtonDefend.enabled = true
+//        }
     }
     
     private func setCategoryButtonDefend(){
@@ -1410,7 +1379,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         switch sender {
         case mCategoryButtonTechnologies:
-            if productId == 612  {
+            if productId == 612 {
                 let nib = UINib(nibName: "WasoMochiTechView", bundle: nil)
                 let views = nib.instantiate(withOwner: self, options: nil)
                 guard let techView = views[0] as? WasoMochiTechView else { return }
@@ -1567,7 +1536,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     }
     
     private func showInfo(_ sender: CategoryButton) {
-        if [588, 593, 594, 616, 617, 618].contains(self.product.productId){
+
+        if [588, 593, 594, 617, 618].contains(self.product.productId){
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             
@@ -1575,17 +1545,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.isHidden = false
                 print("technology")
                 
-                 if [588, 593, 594].contains(self.product.productId){
-                    self.didTapTechnology()
-                }else if [616].contains(self.product.productId){
-                    self.techScrollV.delegate = self
-                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
-                    self.techScrollV.isPagingEnabled = true
-                    self.techScrollV.bounces = false
-                      self.setTechnology19AW()
-
-                }
+                self.didTapTechnology()
                 
             } else if sender === mCategoryButtonEfficacy {
                 mVContent.isHidden = false
@@ -1940,7 +1900,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     //*UTM2.0 add
     //Technology top
     func didTapTechnology(){
-
         let generateV = UIView()
         generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
         //generateV.backgroundColor = UIColor.lightGray
@@ -1998,193 +1957,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         techScrollV.addSubview(generateV)
         mVContent.addSubview(techScrollV)
         mVCurrentSelect = techScrollV
-    }
-    
-    func setTechnology19AW(){
-    let generateV = UIView()
-    generateV.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
-    //generateV.backgroundColor = UIColor.lightGray
-    
-    let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-    
-        
-    for i in 0...1{
-        if i == 0{
-            let titleLabel = UILabel()
-            titleLabel.frame = CGRect(x: 20 , y: 20+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
-            titleLabel.text = AppItemTable.getNameByItemId(itemId: 8200)// "Smoothing Defense Complex"
-            titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
-            titleLabel.textColor = UIColor.black
-            
-            let titleDescription = UILabel()
-            titleDescription.frame = CGRect(x: 150, y: 60+(Int(self.techScrollV.frame.height)*i), width: 500, height: 100)
-            //    titleDescription.centerX = self.mVContentLeft.centerX
-            titleDescription.text = AppItemTable.getNameByItemId(itemId: 8201) // "The SHISEIDO original technology provides a shield-like effect to reduce damage caused by friction.  It also protects the  stratum corneum, and maintains moisture of the eye area"
-            titleDescription.font = UIFont(name: "Reader-regular", size: 16)
-            titleDescription.numberOfLines = 0
-            titleDescription.textAlignment = NSTextAlignment.left
-            titleDescription.textColor = UIColor.black
-            
-            let line:UIImage = UIImage(named:"utm_line.png")!
-            let utmLine = UIImageView(image:line)
-            utmLine.frame = CGRect(x: 135, y: 85+(Int(self.techScrollV.frame.height)*i), width: 1, height: 50)
-            utmLine.contentMode = .scaleToFill
-            generateV.addSubview(utmLine)
-            
-            
-            generateV.addSubview(titleLabel)
-            generateV.addSubview(titleDescription)
-            
-            let title = UILabel()
-            title.frame = CGRect(x:  Int(self.mVContentRight.centerX) - 120, y: 165+(Int(self.techScrollV.frame.height)*i), width: 200, height: 27)
-            title.text = AppItemTable.getNameByItemId(itemId: 8203)//"Shiseido-Original"
-            title.font = UIFont(name: "Reader-Bold", size: 16)
-            title.textAlignment = NSTextAlignment.center
-            title.textColor = UIColor.white
-            title.backgroundColor =  red
-            generateV.addSubview(title)
-            
-            
-            for i in 1...3{
-                let title = UILabel()
-                let description = UILabel()
-                title.textColor = UIColor.black
-                title.font = UIFont(name: "Reader-Bold", size: 20)
-                title.textAlignment = .left
-                title.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 150+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 400, height: 100)
-                description.textColor = UIColor.black
-                description.font = UIFont(name: "Reader-regular", size: 16)
-                description.numberOfLines = 0
-                description.sizeToFit()
-                description.textAlignment = .left
-                description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 185+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 340, height: 100)
-                
-                
-                if i == 1{
-                    title.text = AppItemTable.getNameByItemId(itemId: 8204)//"Skin Shield (Smoothing Oil"
-                    title.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 165+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 400, height: 100)
-                    description.text = AppItemTable.getNameByItemId(itemId: 8205) // "oReduces friction from the skin surface."
-                    description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 185+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 340, height: 100)
-                }else if i == 2{
-                    title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
-                    description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
-                    description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 120, y: 175+(Int(self.techScrollV.frame.height)*0)+(70*(i-1)), width: 340, height: 100)
-                }else if i == 3{
-                    title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
-                    description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
-                }
-                
-                generateV.addSubview(title)
-                generateV.addSubview(description)
-            }
-            
-            
-            let path = Bundle.main.path(forResource: "UTM_Edited33", ofType: "mp4")!
-            let player = AVPlayer(url: URL(fileURLWithPath: path))
-            
-            
-            // AVPlayer用のLayerを生成
-            let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame =  CGRect(x: Int(self.mVContentLeft.centerX) - 250, y: (Int(self.techScrollV.frame.height)*i)-300, width: 950, height: 1000)
-            generateV.layer.insertSublayer(playerLayer, at: 0)
-            player.play()
-
-            
-            
-            
-        }else if i == 1{
-            let titleLabel = UILabel()
-            titleLabel.frame = CGRect(x: 20 , y: 20+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
-            titleLabel.text = AppItemTable.getNameByItemId(itemId: 8210)// "ImuMoisture Complex"
-            titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
-            titleLabel.textColor = UIColor.black
-            
-            let description = UILabel()
-            description.frame = CGRect(x: 20 , y: 40+(Int(self.techScrollV.frame.height)*i), width: 600, height: 30)
-            description.text = AppItemTable.getNameByItemId(itemId: 8211)// "(Marjoram Extract, Dynamite Glycerin)"
-            description.font = UIFont(name: "Reader-regular", size: 16)
-            description.textColor = UIColor.black
-            
-            let titleDescription = UILabel()
-            titleDescription.frame = CGRect(x: 150, y: 80+(Int(self.techScrollV.frame.height)*i), width: 630, height: 100)
-            //    titleDescription.centerX = self.mVContentLeft.centerX
-            titleDescription.text = AppItemTable.getNameByItemId(itemId: 8212) // "It sustains a strong moisturizing effect, helps prevent oxidation of cells which adversely affects Langerhans Cells, and promotes the production of hyaluronic acid.  The result is a radiant and firm eye area."
-            titleDescription.font = UIFont(name: "Reader-regular", size: 16)
-            titleDescription.numberOfLines = 0
-            titleDescription.textAlignment = NSTextAlignment.left
-            titleDescription.textColor = UIColor.black
-            
-            let line:UIImage = UIImage(named:"utm_line.png")!
-            let utmLine = UIImageView(image:line)
-            utmLine.frame = CGRect(x: 135, y: 100+(Int(self.techScrollV.frame.height)*i), width: 1, height: 60)
-            utmLine.contentMode = .scaleToFill
-            generateV.addSubview(utmLine)
-            
-            
-            generateV.addSubview(titleLabel)
-            generateV.addSubview(description)
-            generateV.addSubview(titleDescription)
-            
-            let graph:UIImage = UIImage(named:"p2_graph.png")!
-            let graphImage = UIImageView(image:graph)
-            graphImage.frame = CGRect(x: 0, y: 200+(Int(self.techScrollV.frame.height)*i), width: 450, height: 270)
-            graphImage.centerX = self.mVContent.centerX
-            graphImage.contentMode = .scaleToFill
-            generateV.addSubview(graphImage)
-
-
-            let arrow:UIImage = UIImage(named:"p2_high_arrow.png")!
-            let arrowImage = UIImageView(image:arrow)
-            arrowImage.frame = CGRect(x: 250, y: 220+(Int(self.techScrollV.frame.height)*i), width: 25, height: 30)
-            arrowImage.contentMode = .scaleToFill
-            generateV.addSubview(arrowImage)
-            
-            let high = UILabel()
-            high.frame = CGRect(x: 245 , y: 250+(Int(self.techScrollV.frame.height)*i), width: 40, height: 30)
-            high.text = AppItemTable.getNameByItemId(itemId: 8213)// "high"
-            high.font = UIFont(name: "Reader-regular", size: 16)
-            high.textColor = UIColor.black
-            generateV.addSubview(high)
-
-            
-            let graphDescription = UILabel()
-            graphDescription.frame = CGRect(x: 300, y: 220+(Int(self.techScrollV.frame.height)*i), width: 170, height: 50)
-            //    titleDescription.centerX = self.mVContentLeft.centerX
-            graphDescription.text = AppItemTable.getNameByItemId(itemId: 8214) // "Amount of hyaluronic acid produced"
-            graphDescription.font = UIFont(name: "Reader-regular", size: 16)
-            graphDescription.numberOfLines = 0
-            graphDescription.textAlignment = NSTextAlignment.left
-            graphDescription.textColor = UIColor.black
-            generateV.addSubview(graphDescription)
-            
-            let control = UILabel()
-            control.frame = CGRect(x: 380, y: 460+(Int(self.techScrollV.frame.height)*i), width: 170, height: 50)
-            //    titleDescription.centerX = self.mVContentLeft.centerX
-            control.text = AppItemTable.getNameByItemId(itemId: 8215) // "control"
-            control.font = UIFont(name: "Reader-regular", size: 16)
-            control.numberOfLines = 0
-            control.textAlignment = NSTextAlignment.left
-            control.textColor = UIColor.black
-            generateV.addSubview(control)
-
-            let with = UILabel()
-            with.frame = CGRect(x: 500, y: 465+(Int(self.techScrollV.frame.height)*i), width: 150, height: 50)
-            //    titleDescription.centerX = self.mVContentLeft.centerX
-            with.text = AppItemTable.getNameByItemId(itemId: 8216) // "With MarjoramExtract"
-            with.font = UIFont(name: "Reader-regular", size: 16)
-            with.numberOfLines = 0
-            with.textAlignment = NSTextAlignment.center
-            with.textColor = UIColor.black
-            generateV.addSubview(with)
-        }
-        
-        }
-    
-    
-    // TechnologiesのTopをスクロールビューに追加
-    techScrollV.addSubview(generateV)
-    mVContent.addSubview(techScrollV)
-    mVCurrentSelect = techScrollV
     }
     
     func setInsideCircle(i:Int, titleText:UILabel, descriptionText:UILabel, generateV: UIView){
@@ -2553,45 +2325,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     func didTapEfficacyResults(){
         print("Efficacy")
-        
+    
         //初期位置
-        if productId == 616 {
-            for i in 0...1{
-                if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
-                    beforeBtn.isEnabled = false
-                    beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-                    beforeBtn.setTitleColor(UIColor.white, for: .normal)
-                }
-                if let afterBtn = self.efficacyScrollV.viewWithTag(20 + i) as? UIButton {
-                    afterBtn.isEnabled = true
-                    afterBtn.backgroundColor = UIColor.clear
-                    afterBtn.setTitleColor(UIColor.black, for: .normal)
-                }
-                
-                if let imageView = self.efficacyScrollV.viewWithTag(30 + i) as? UIImageView{
-                    imageView.image = UIImage(named: "before_face.png")
-                }
+        for i in 0...1{
+            if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
+                beforeBtn.isEnabled = false
+                beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+                beforeBtn.setTitleColor(UIColor.white, for: .normal)
             }
-            
-        }else{
-            for i in 0...1{
-                if let beforeBtn = self.efficacyScrollV.viewWithTag(10 + i) as? UIButton {
-                    beforeBtn.isEnabled = false
-                    beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-                    beforeBtn.setTitleColor(UIColor.white, for: .normal)
-                }
-                if let afterBtn = self.efficacyScrollV.viewWithTag(20 + i) as? UIButton {
-                    afterBtn.isEnabled = true
-                    afterBtn.backgroundColor = UIColor.clear
-                    afterBtn.setTitleColor(UIColor.black, for: .normal)
-                }
-                let imageNum = i + 1
-                if let imageView = self.efficacyScrollV.viewWithTag(30 + i) as? UIImageView{
-                    imageView.image = UIImage(named: "before_0\(imageNum).png")
-                }
+            if let afterBtn = self.efficacyScrollV.viewWithTag(20 + i) as? UIButton {
+                afterBtn.isEnabled = true
+                afterBtn.backgroundColor = UIColor.clear
+                afterBtn.setTitleColor(UIColor.black, for: .normal)
+            }
+            let imageNum = i + 1
+            if let imageView = self.efficacyScrollV.viewWithTag(30 + i) as? UIImageView{
+                imageView.image = UIImage(named: "before_0\(imageNum).png")
             }
         }
-   
         self.efficacyScrollV.contentOffset = CGPoint(x: 0, y: 0)
         
         mVContent.addSubview(efficacyScrollV)
@@ -2620,7 +2371,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 let percentLabel = UILabel()
                 percentLabel.textColor = UIColor.black
                 percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
-                
+
                 if i == 1 {
                     percentLabel.text = AppItemTable.getNameByItemId(itemId: 8167)
                     percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
@@ -2654,7 +2405,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 description.font = UIFont(name: "Reader-Medium", size: 22)
                 description.numberOfLines = 0
                 description.textAlignment = .left
-                
+
                 if i == 1 {
                     description.text = AppItemTable.getNameByItemId(itemId: 8168) // "of women felt it was deeply \n hydrating"
                     description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
@@ -2716,7 +2467,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+250, width: 160, height: 82)
                 }
                 percentLabel.textAlignment = .center
-                
+
                 self.efficacyScrollV.addSubview(percentLabel)
             }
             for i in 1...2{
@@ -2754,7 +2505,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 
                 self.efficacyScrollV.addSubview(text)
             }
-            
+
             let generateV = UIView()
             
             for i in 1...2{
@@ -2835,282 +2586,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 title.centerX = self.mVContent.centerX
                 self.efficacyScrollV.addSubview(title)
             }
-        }else if productId == 616{
-                                let title = UILabel()
-                                title.textColor = UIColor.black
-                                title.font = UIFont(name: "Reader-Bold", size: 22)
-                                title.numberOfLines = 3 //t-hirai
-                                title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*0), width: 700, height: 80)//t-hirai
-                                title.centerX = self.mVContent.centerX
-                                title.textAlignment = .center
-                                title.text = AppItemTable.getNameByItemId(itemId: 8237)
-                
-                                let image_after = UIImage(named: "after_face")
-                                let faceImageV_after = UIImageView(image:image_after)
-                                faceImageV_after.contentMode = .scaleAspectFit
-                                faceImageV_after.clipsToBounds = true
-                                faceImageV_after.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*0), width: 300, height: 300)
-                                faceImageV_after.centerX = self.mVContent.centerX
-                                faceImageV_after.backgroundColor = UIColor.clear
-                
-                                let image = UIImage(named: "before_face")
-                                let faceImageV = UIImageView(image:image)
-                                faceImageV.contentMode = .scaleAspectFit
-                                faceImageV.tag = 30 //300
-                                faceImageV.clipsToBounds = true
-                                faceImageV.frame = CGRect(x: 0, y: 70+(Int(self.efficacyScrollV.frame.height)*0), width: 300, height: 300)
-                                faceImageV.centerX = self.mVContent.centerX
-                                faceImageV.backgroundColor = UIColor.clear
-                
-                                let beforeBtn = UIButton()
-                                beforeBtn.isEnabled = false
-                                beforeBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*0), width: 145, height: 30)
-                                beforeBtn.origin.x = self.mVContent.centerX - beforeBtn.frame.width - 10
-                                beforeBtn.setTitle(AppItemTable.getNameByItemId(itemId: 8238), for: .normal) // "Before"
-                                beforeBtn.isEnabled = false
-                                beforeBtn.setTitleColor(UIColor.white, for: .normal)
-                                beforeBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-                                beforeBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
-                                beforeBtn.tag = 10//100
-                                beforeBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
-                
-                                let afterBtn = UIButton()
-                                afterBtn.isEnabled = true
-                                afterBtn.frame = CGRect(x: 0, y: 400+(Int(self.efficacyScrollV.frame.height)*0), width: 145, height: 30)
-                                afterBtn.origin.x = self.mVContent.centerX + 10
-                                afterBtn.setTitle(AppItemTable.getNameByItemId(itemId: 8239), for: .normal) // "After 4 Weeks"
-                                afterBtn.isEnabled = true
-                                afterBtn.setTitleColor(UIColor.white, for: .normal)
-                                afterBtn.backgroundColor = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-                
-                                afterBtn.setTitleColor(UIColor.black, for: .normal)
-                                afterBtn.backgroundColor = UIColor.white
-                                afterBtn.titleLabel?.font = UIFont(name: "Reader-Medium", size: 12)
-                                afterBtn.tag = 20 //200
-                                afterBtn.addTarget(self, action: #selector(self.onTapBeforeAfterBtn(_:)), for: .touchUpInside)
-                
-                
-                                for j in 0...2{
-                                    let image:UIImage = UIImage(named:"point_01.png")!
-                                        let border = UIImageView(image:image)
-                                        border.contentMode = .scaleToFill
-                    
-                                        if j == 0{
-                                                border.frame = CGRect(x: Int(self.mVContent.centerX) - Int(beforeBtn.frame.width) - 20, y: 398+(Int(self.efficacyScrollV.frame.height)*0), width: 1, height: 34)
-                                            }else if j == 1{
-                                                border.frame = CGRect(x: Int(self.mVContent.centerX), y: 398+(Int(self.efficacyScrollV.frame.height)*0), width: 1, height: 34)
-                            
-                                         }else if j == 2{
-                                                border.frame = CGRect(x: Int(self.mVContent.centerX) + Int(afterBtn.frame.width) + 20, y: 398+(Int(self.efficacyScrollV.frame.height)*0), width: 1, height: 34)
-                            
-                                            }
-                                        self.efficacyScrollV.addSubview(border)
-                    
-                                    }
-                
-                                self.efficacyScrollV.addSubview(title)
-                                self.efficacyScrollV.addSubview(faceImageV_after)
-                                self.efficacyScrollV.addSubview(faceImageV)
-                                self.efficacyScrollV.addSubview(beforeBtn)
-                                self.efficacyScrollV.addSubview(afterBtn)
-                
-                            //左側
-                            let title2 = UILabel()
-                            title2.textColor = UIColor.black
-                            title2.font = UIFont(name: "Reader-Bold", size: 22)
-                            title2.text = AppItemTable.getNameByItemId(itemId: 8240) // "Immediately"
-                            title2.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*1), width: 700, height: 40)
-                            title2.centerX = self.mVContentLeft.centerX
-                            title2.textAlignment = .center
-                            self.efficacyScrollV.addSubview(title2)
-                
-                            for i in 1...3{
-                                    // 画像の場合
-                                        // let image:UIImage = UIImage(named:"percent_0\(i).png")!
-                                        // let percentImageV = UIImageView(image:image)
-                                        // percentImageV.contentMode = .scaleToFill
-                                        // percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
-                        
-                                        // self.efficacyScrollV.addSubview(percentImageV)
-                        
-                                        // テキストの場合
-                                    let percentLabel = UILabel()
-                                    percentLabel.textColor = UIColor.black
-                                    percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
-                                    if i == 1 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8241)
-                                        } else if i == 2 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8243)
-                                        } else {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8245)
-                                        }
-                                    percentLabel.frame = CGRect(x: Int(self.mVContentLeft.centerX) - 200, y: 110 + Int(self.efficacyScrollV.frame.height)*1+(130*(i-1)), width: 160, height: 82)
-                                    percentLabel.textAlignment = .center
-                                    self.efficacyScrollV.addSubview(percentLabel)
-                                }
-            
-                            for i in 1...3{
-                                    let description = UILabel()
-                                    description.textColor = UIColor.black
-                                    description.font = UIFont(name: "Reader-Medium", size: 20)
-                                    description.numberOfLines = 0
-                                    description.textAlignment = .left
-                                    description.frame = CGRect(x: Int(self.mVContentLeft.centerX) - 20, y: 70 + Int(self.efficacyScrollV.frame.height)*1+(130*(i-1)), width: 235, height: 150)
-                    
-                    
-                                    if i == 1{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8242) // "of women felt it moisturized the skin around the eyes."
-                                        }else if i == 2{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8244)// "of women felt it made the skin around the eyes smoother"
-                                        }else if i == 3{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8246) // "of women felt it was quick-absorbing."
-                                        }
-                                    self.efficacyScrollV.addSubview(description)
-                                }
-                
-                
-                            //右側
-                            let title3 = UILabel()
-                            title3.textColor = UIColor.black
-                            title3.font = UIFont(name: "Reader-Bold", size: 22)
-                            title3.text = AppItemTable.getNameByItemId(itemId: 8247) // "Next Morning"
-                            title3.frame = CGRect(x: 0, y: 10+(Int(self.efficacyScrollV.frame.height)*1), width: 700, height: 40)
-                            title3.centerX = self.mVContentRight.centerX
-                            title3.textAlignment = .center
-                            self.efficacyScrollV.addSubview(title3)
-                
-                            for i in 1...3{
-                                    // 画像の場合
-                                        // let image:UIImage = UIImage(named:"percent_0\(i).png")!
-                                        // let percentImageV = UIImageView(image:image)
-                                        // percentImageV.contentMode = .scaleToFill
-                                        // percentImageV.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 110 + Int(self.efficacyScrollV.frame.height)*3+(130*(i-1)), width: 150, height: 59)
-                        
-                                        // self.efficacyScrollV.addSubview(percentImageV)
-                        
-                                    // テキストの場合
-                                    let percentLabel = UILabel()
-                                    percentLabel.textColor = UIColor.black
-                                    percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
-                                    if i == 1 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8248)
-                                        } else if i == 2 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8250)
-                                        } else {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8252)
-                                        }
-                                    percentLabel.frame = CGRect(x: Int(self.mVContentRight.centerX) - 200, y: 110 + Int(self.efficacyScrollV.frame.height)*1+(130*(i-1)), width: 160, height: 82)
-                                    percentLabel.textAlignment = .center
-                                    self.efficacyScrollV.addSubview(percentLabel)
-                                }
-                
-                            for i in 1...3{
-                                    let description = UILabel()
-                                    description.textColor = UIColor.black
-                                    description.font = UIFont(name: "Reader-Medium", size: 20)
-                                    description.numberOfLines = 0
-                                    description.textAlignment = .left
-                                    description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 20, y: 70 + Int(self.efficacyScrollV.frame.height)*1+(130*(i-1)), width: 235, height: 150)
-                    
-                    
-                                    if i == 1{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8249) // "of women felt it prevented eye area concernsfrom within."
-                                        }else if i == 2{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8251)// "of women felt it made the skin around the eyes smoother"
-                                        }else if i == 3{
-                                            description.text = AppItemTable.getNameByItemId(itemId: 8253) // "of women felt it was quick-absorbing."
-                                        }
-                                    self.efficacyScrollV.addSubview(description)
-                                }
-                                          //三枚目
-            
-            
-                   let graph : UIImage = UIImage(named: "p6_graph.png")!
-                        let graphImage = UIImageView(image: graph)
-                            graphImage.contentMode = .scaleToFill
-                            graphImage.frame = CGRect(x: 170,y: 17+Int(self.efficacyScrollV.frame.height)*2,width: 318,height: 450)
-                            self.efficacyScrollV.addSubview(graphImage)
-                            for i in 1...6{
-                    
-                                    let percentLabel = UILabel()
-                                    let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-                                    percentLabel.textColor = UIColor.gray
-                                    percentLabel.font = UIFont(name: "Reader-Bold", size: 20 )
-                    
-                                    let percentLabel2 = UILabel()
-                                    percentLabel2.textColor = red
-                                    percentLabel2.font = UIFont(name: "Reader-Bold", size: 30 )
-                    
-                                    let description = UILabel()
-                                    description.textColor = UIColor.black
-                                    description.font = UIFont(name: "Reader-Medium", size: 17)
-                                    description.numberOfLines = 0
-                                    description.textAlignment = .left
-                    
-                    
-                                    if i == 1 {
-                                        percentLabel.text = AppItemTable.getNameByItemId(itemId: 8255)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8272)
-                                        } else if i == 2 {
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8258)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8255)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8269)
-                                        } else if i == 3{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8261)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8262)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8266)
-                                        } else if i == 4{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8264)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8265)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8263)
-                                        } else if i == 5{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8267)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8260)
-                                        } else if i == 6{
-                                            percentLabel.text = AppItemTable.getNameByItemId(itemId: 8270)
-                                                percentLabel2.text = AppItemTable.getNameByItemId(itemId: 8256)
-                                                description.text = AppItemTable.getNameByItemId(itemId: 8257)
-                                        }
-                                    percentLabel.frame = CGRect(x: Int(self.mVContentLeft.centerX) - 200, y: 20 + Int(self.efficacyScrollV.frame.height)*2+(75*(i-1)), width: 160, height: 42)
-                                    percentLabel.textAlignment = .center
-                                    self.efficacyScrollV.addSubview(percentLabel)
-                    
-                                    percentLabel2.frame = CGRect(x: Int(self.mVContentLeft.centerX) - 205, y: 50 + Int(self.efficacyScrollV.frame.height)*2+(75*(i-1)), width: 160, height: 42)
-                                    percentLabel2.textAlignment = .center
-                                    self.efficacyScrollV.addSubview(percentLabel2)
-                    
-                                description.frame = CGRect(x: Int(self.mVContentRight.centerX) - 256, y: 30 + Int(self.efficacyScrollV.frame.height)*2+(75*(i-1)), width: 500, height: 42)
-                                    self.efficacyScrollV.addSubview(description)
-                                }
-                
-                        //右下テキスト
-                            for i in 1...3{
-                                    let text = UILabel()
-                                    text.textColor = UIColor.lightGray
-                                    text.font = UIFont(name: "Reader-Medium", size: 12)
-                                    text.font = text.font.withSize(13)
-                                    text.textAlignment = .right
-                                    text.numberOfLines = 0
-                                    text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 200, height: 40)
-                    
-                                    if i == 2 || i == 3{
-                                            text.frame = CGRect(x: 500, y: 450+(Int(self.efficacyScrollV.frame.height)*(i - 1)), width: 500, height: 50)
-                                            text.text = AppItemTable.getNameByItemId(itemId: 8273) // "*39-year-old"
-                            
-                                        }
-                    
-                                    self.efficacyScrollV.addSubview(text)
-                                }
-                
-                
-                
-                
-                
-                        }
-
-        
+        }
     }
     
     func convertSpecialCharacters(string: String) -> String {
@@ -3118,12 +2594,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         let char_dictionary = [
             "&lt;" : "<",
             "&gt;" : ">",
-            ];
+        ];
         for (escaped_char, unescaped_char) in char_dictionary {
             newString = newString.replacingOccurrences(of: escaped_char, with: unescaped_char, options: NSString.CompareOptions.literal, range: nil)
         }
         return newString
     }
+    
     func setEfficacyView(){
         //1~3枚め
         for i in 0...1 {
