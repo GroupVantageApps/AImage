@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class LatestMoisturizerTechView: UIView {
     
     @IBOutlet weak var mScrollView: UIScrollView!
