@@ -7,28 +7,30 @@
 //
 
 import Foundation
+import AVKit
+import AVFoundation
 
 class LXTechGeneView : UIView{
     
-    @IBOutlet var mXbutton: UIButton!
-    func setUI() {
-//        let firstView = self.viewWithTag(100)! as UIView
-//        firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
-//        self.addSubview(firstView)
+    
+    func setUI(){
         
-//        let imageBg = self.viewWithTag(60) as! UIImageView
-//        imageBg.image = FileTable.getLXFileImage("lx_aura.png")
+        let path = Bundle.main.path(forResource: "obi19aw", ofType: "mp4")!
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame =  CGRect(x:0, y: 0, width: 960, height: 700)
+        playerLayer.zPosition = -1
+        self.layer.insertSublayer(playerLayer, at: 0)
+        player.play()
         
-//        let lxArr = LanguageConfigure.lxcsv
-//        for i in 0..<11 {
-//            let label = firstView.viewWithTag(10 + i) as! UILabel
-//            let csvId = 366 + i
-//            label.text = lxArr[String(csvId)]
-//            
-//        }
+        let path2 = Bundle.main.path(forResource: "LXEffectImage", ofType: "mp4")!
+        let player2 = AVPlayer(url: URL(fileURLWithPath: path2))
+        let playerLayer2 = AVPlayerLayer(player: player2)
+        playerLayer2.frame =  CGRect(x:330, y: 210, width: 300, height: 300)
+        playerLayer2.zPosition = 1
+        self.layer.insertSublayer(playerLayer2, at: 1)
+        player2.play()
     }
     
-    @IBAction func close(_ sender: Any) {
-        self.isHidden = true
-    }
+
 }

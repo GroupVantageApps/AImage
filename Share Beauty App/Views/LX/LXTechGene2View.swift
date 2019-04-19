@@ -7,28 +7,22 @@
 //
 
 import Foundation
+import AVKit
+import AVFoundation
 
 class LXTechGene2View : UIView{
     
-    @IBOutlet var mXbutton: UIButton!
-    func setUI() {
-//        let firstView = self.viewWithTag(100)! as UIView
-//        firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
-//        self.addSubview(firstView)
-        
-//        let imageBg = self.viewWithTag(60) as! UIImageView
-//        imageBg.image = FileTable.getLXFileImage("lx_aura.png")
-        
-//        let lxArr = LanguageConfigure.lxcsv
-//        for i in 0..<11 {
-//            let label = firstView.viewWithTag(10 + i) as! UILabel
-//            let csvId = 366 + i
-//            label.text = lxArr[String(csvId)]
-//            
-//        }
-    }
     
-    @IBAction func close(_ sender: Any) {
-        self.isHidden = true
+    func setUI() {
+        let path = Bundle.main.path(forResource: "LxEffectImage2", ofType: "mp4")!
+        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame =  CGRect(x:0, y: 0, width: 960, height: 700)
+        playerLayer.zPosition = 0
+        self.layer.insertSublayer(playerLayer, at: 0)
+        player.play()
+
     }
+
+
 }

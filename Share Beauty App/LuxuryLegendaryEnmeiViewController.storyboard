@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="ACaslonPro-Regular.otf">
+            <string>ACaslonPro-Regular</string>
+        </array>
         <array key="Reader-Regular.otf">
             <string>Reader</string>
         </array>
@@ -45,28 +48,21 @@
                                                             <action selector="tappedProduct:" destination="kdo-NC-5K0" eventType="touchUpInside" id="tdY-hR-RhK"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-iX-Lfv">
-                                                        <rect key="frame" x="200" y="439" width="112" height="51"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="51" id="CLi-Wa-nSV"/>
-                                                            <constraint firstAttribute="width" constant="112" id="q6J-XT-hvf"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-iX-Lfv">
+                                                        <rect key="frame" x="225" y="452" width="63.5" height="51"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="B29-iX-Lfv" firstAttribute="top" secondItem="d8r-Jk-qfb" secondAttribute="top" constant="439" id="8vg-PU-fhB"/>
                                                     <constraint firstAttribute="bottom" secondItem="x9T-ag-Oim" secondAttribute="bottom" id="DJ4-4t-Lbd"/>
                                                     <constraint firstItem="x9T-ag-Oim" firstAttribute="leading" secondItem="d8r-Jk-qfb" secondAttribute="leading" id="HZ8-Km-OzJ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="B29-iX-Lfv" secondAttribute="bottom" constant="47" id="Lil-ir-Nwe"/>
                                                     <constraint firstAttribute="width" constant="512" id="Nqe-Ea-q8r"/>
                                                     <constraint firstAttribute="trailing" secondItem="x9T-ag-Oim" secondAttribute="trailing" id="Oqb-s4-3Jl"/>
-                                                    <constraint firstAttribute="trailing" secondItem="B29-iX-Lfv" secondAttribute="trailing" constant="200" id="Un1-NB-dd0"/>
                                                     <constraint firstItem="x9T-ag-Oim" firstAttribute="top" secondItem="d8r-Jk-qfb" secondAttribute="top" id="YTe-K5-kh9"/>
-                                                    <constraint firstItem="B29-iX-Lfv" firstAttribute="leading" secondItem="d8r-Jk-qfb" secondAttribute="leading" constant="200" id="nwy-3p-mg2"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5k5-pE-xYj" userLabel="LLEview">
@@ -75,34 +71,26 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdZ-OM-cIZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="512" height="537"/>
                                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
-                                                        <state key="normal" backgroundImage="page2_visual_2.png">
+                                                        <state key="normal" backgroundImage="p2_plant.png">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="showSubView:" destination="kdo-NC-5K0" eventType="touchUpInside" id="nGU-Mv-7RV"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGENDARY ENMEI Complex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
-                                                        <rect key="frame" x="110" y="449" width="294" height="31"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="294" id="3o2-wv-fMR"/>
-                                                            <constraint firstAttribute="height" constant="31" id="rNu-jK-ks9"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Legendary Enmei Complex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
+                                                        <rect key="frame" x="168" y="461" width="294" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="QAV-sw-3hz" secondAttribute="trailing" constant="108" id="3Ar-5t-DUy"/>
                                                     <constraint firstItem="gdZ-OM-cIZ" firstAttribute="leading" secondItem="5k5-pE-xYj" secondAttribute="leading" id="7NB-rl-LD9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="QAV-sw-3hz" secondAttribute="bottom" constant="57" id="KbQ-TU-LZg"/>
-                                                    <constraint firstItem="QAV-sw-3hz" firstAttribute="leading" secondItem="5k5-pE-xYj" secondAttribute="leading" constant="110" id="MCd-gR-puj"/>
                                                     <constraint firstAttribute="width" constant="512" id="fAL-3J-MKT"/>
                                                     <constraint firstAttribute="trailing" secondItem="gdZ-OM-cIZ" secondAttribute="trailing" id="fAi-ZJ-SU2"/>
                                                     <constraint firstItem="gdZ-OM-cIZ" firstAttribute="top" secondItem="5k5-pE-xYj" secondAttribute="top" id="p7t-Nx-P6M"/>
-                                                    <constraint firstItem="QAV-sw-3hz" firstAttribute="top" secondItem="5k5-pE-xYj" secondAttribute="top" constant="449" id="u9O-N1-E4M"/>
                                                     <constraint firstAttribute="bottom" secondItem="gdZ-OM-cIZ" secondAttribute="bottom" id="zCE-hV-BcS"/>
                                                 </constraints>
                                             </view>
@@ -192,8 +180,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="p2_plant.png" width="1024" height="1029"/>
         <image name="page2_lead.png" width="3144" height="914"/>
         <image name="page2_visual_1.png" width="1024" height="1029"/>
-        <image name="page2_visual_2.png" width="1024" height="1029"/>
     </resources>
 </document>
