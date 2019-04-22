@@ -10,13 +10,7 @@ import Foundation
 
 class LXLegendaryEnmeiComplexView : UIView{
     
-//    @IBOutlet weak var topLabel: UILabel!
-//    @IBOutlet weak var plantImage: UIImageView!
-//    @IBOutlet weak var description1: UILabel!
-//    
-//    @IBOutlet weak var description2: UILabel!
-//    @IBOutlet weak var DGTBtn: UIButton!
-//    @IBOutlet weak var movieBtn: UIButton!
+
     
     func setUI() {
 

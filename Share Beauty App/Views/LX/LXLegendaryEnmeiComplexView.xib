@@ -43,14 +43,14 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5M-Yo-Rrr">
                             <rect key="frame" x="408" y="206" width="496" height="184"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <mutableString key="text" base64-UTF8="YES">
+                            <string key="text" base64-UTF8="YES">
 RnV0dXJlIFNvbHV0aW9uIExYIGVuaGFuY2VzIHNraW7igJlzIG93biBmdW5kYW1lbnRhbCBwb3dlciB0
 byByZWdlbmVyYXRlIGJlYXV0aWZ1bCwgdml0YWwgc2tpbi4gHmUgY29yZSBvZiB0aGlzIGUdZWN0IGlz
 IFNraW5nZW5lY2VsbEVubWVpQ29tcGxleCwgd2l0aHRoZWxlZ2VuZGFyeSBFbm1laWhlcmIgYXMgdGhl
 IGtleSBpbmdyZWRpZW50LiBFbm1laWhlcmIgaXMgc2FpZCB0byBoYXZlIGJlZW4gdXNlZCBieSBLb2Jv
 IERhaXNoaSB0byByZXN0b3JlIHRoZSBoZWFsdGggb2YgYSBzaWNrIHRyYXZlbGVyIGhlIGVuY291bnRl
 cmVkLiA
-</mutableString>
+</string>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                             <color key="textColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@ cmVkLiA
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-e2-tNM">
                             <rect key="frame" x="408" y="321" width="496" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <mutableString key="text">Legendary EnmeiCollection features special Legendary EnmeiComplex that has evolved by using the most auspicious Enmeiherb picked on tenshanichi, considered the most auspicious days of the Japanese calendar. Also newly added is Green Treasured Silk, rare since Japan’s ancient times, with its elegant luster and smoothness. </mutableString>
+                            <string key="text">Legendary EnmeiCollection features special Legendary EnmeiComplex that has evolved by using the most auspicious Enmeiherb picked on tenshanichi, considered the most auspicious days of the Japanese calendar. Also newly added is Green Treasured Silk, rare since Japan’s ancient times, with its elegant luster and smoothness. </string>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                             <color key="textColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
