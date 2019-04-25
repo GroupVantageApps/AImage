@@ -79,11 +79,7 @@ class SMBK19AWTextureViewController: UIViewController, NavigationControllerAnnot
         selectedAllTextureProducts.append(selectedPoTextureProducts)
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        mCollectionV.reloadData()
-    }
-    
+        
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         mScrollV.contentSize.width = mContentWidth
