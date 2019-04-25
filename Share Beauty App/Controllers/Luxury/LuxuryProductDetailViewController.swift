@@ -231,7 +231,8 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
         mCategoryButtonTechnologies.title = techText
-        mCategoryButtonDefend.title = lxArr["17"]
+        //TODO: DB参照
+        mCategoryButtonDefend.title = "Legendary Enmei Complex"
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
         
         mImgVProduct.image = FileTable.getImage(product.image)
