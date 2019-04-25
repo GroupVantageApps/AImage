@@ -10,6 +10,9 @@ import Foundation
 import APNGKit
 
 class LXTechGene3View : UIView{
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var before: UILabel!
+    @IBOutlet weak var after: UILabel!
     
     @IBOutlet weak var mVSlider: UISlider!
     @IBOutlet weak var mVContent: UIView!
@@ -17,6 +20,9 @@ class LXTechGene3View : UIView{
     @IBOutlet weak var BeforeFace: UIImageView!
     
     func setUI() {
+        title.text = AppItemTable.getNameByItemId(itemId: 8463)
+        before.text = AppItemTable.getNameByItemId(itemId: 8464)
+        after.text = AppItemTable.getNameByItemId(itemId: 8465)
        
         mVSlider = sliderSetting(slider: mVSlider, thambImage: UIImage(named: ""))
         mVSlider.tag = 1

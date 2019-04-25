@@ -78,8 +78,8 @@
                                                             <action selector="showSubView:" destination="kdo-NC-5K0" eventType="touchUpInside" id="nGU-Mv-7RV"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Legendary Enmei Complex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
-                                                        <rect key="frame" x="168" y="461" width="294" height="31"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
+                                                        <rect key="frame" x="168" y="461" width="237" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
@@ -167,6 +167,7 @@
                     <connections>
                         <outlet property="LECImage" destination="fy6-Gk-fiW" id="M2R-pc-dYo"/>
                         <outlet property="LLEBtn" destination="gdZ-OM-cIZ" id="1Y0-VF-lus"/>
+                        <outlet property="LegendaryEnmeiBtn" destination="QAV-sw-3hz" id="c5A-TM-aZR"/>
                         <outlet property="ProBtn" destination="x9T-ag-Oim" id="uAJ-Ul-NQi"/>
                         <outlet property="mHeaderView" destination="Gru-nb-TYE" id="gli-hl-TQx"/>
                         <outlet property="mNavigationView" destination="RQT-jL-lLe" id="Atk-IF-8eg"/>

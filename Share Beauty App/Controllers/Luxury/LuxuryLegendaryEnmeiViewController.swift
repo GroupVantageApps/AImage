@@ -7,6 +7,7 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet var ProBtn: UIButton!
 
+    @IBOutlet weak var LegendaryEnmeiBtn: UILabel!
     @IBOutlet var LLEBtn: UIButton!
     
     private let mScreen = ScreenData(screenId: Const.screenIdLXProductDetail)
@@ -32,6 +33,9 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
     override
     func viewDidLoad() {
         super.viewDidLoad()
+        
+        LegendaryEnmeiBtn.text = AppItemTable.getNameByItemId(itemId: 8447)
+        
         let lecImage = UIImage(named: "page2_lead.png")
         self.LECImage.image = lecImage
 

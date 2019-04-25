@@ -11,9 +11,27 @@ import AVKit
 import AVFoundation
 
 class LXTechGeneView : UIView{
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var left1: UILabel!
+    @IBOutlet weak var left2: UILabel!
+    @IBOutlet weak var left3: UILabel!
+    @IBOutlet weak var right1: UILabel!
+    @IBOutlet weak var right2: UILabel!
+    @IBOutlet weak var right3: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
     
     
     func setUI(){
+        
+        title.text = AppItemTable.getNameByItemId(itemId: 8448)
+        left1.text = AppItemTable.getNameByItemId(itemId: 8449)
+        left2.text = AppItemTable.getNameByItemId(itemId: 8450)
+        left3.text = AppItemTable.getNameByItemId(itemId: 8451)
+        right1.text = AppItemTable.getNameByItemId(itemId: 8452)
+        right2.text = AppItemTable.getNameByItemId(itemId: 8453)
+        right3.text = AppItemTable.getNameByItemId(itemId: 8454)
+        subTitle.text = AppItemTable.getNameByItemId(itemId: 8455)
+        
         
         let path = Bundle.main.path(forResource: "obi19aw", ofType: "mp4")!
         let player = AVPlayer(url: URL(fileURLWithPath: path))
