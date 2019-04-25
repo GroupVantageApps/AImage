@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Bold.otf">
+            <string>Reader-Bold</string>
+        </array>
+        <array key="Reader-Medium.otf">
+            <string>Reader-Medium</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Top View Controller-->
+        <scene sceneID="ifN-nN-vZV">
+            <objects>
+                <viewController storyboardIdentifier="SMBKTopViewController" id="rxp-Ub-Vtf" customClass="SMBKTopViewController" customModule="Share_Beauty_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YEF-kq-plf"/>
+                        <viewControllerLayoutGuide type="bottom" id="cQl-ey-moQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="9B2-VA-fpC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKQ-bk-9OX">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iOe-Bc-cDx">
+                                        <rect key="frame" x="34" y="267" width="219" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="15"/>
+                                        <state key="normal" backgroundImage="02_01.png">
+                                            <string key="title">DEWS
+RECREATED</string>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.line" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="8mI-hA-b4f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="cLA-UP-qqp">
+                                        <rect key="frame" x="281" y="267" width="219" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="15"/>
+                                        <state key="normal" backgroundImage="02_02.png">
+                                            <string key="title">GELS
+REDISCOVERED</string>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="Z0G-Mg-YPS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fwl-Da-avb">
+                                        <rect key="frame" x="527" y="267" width="219" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="15"/>
+                                        <state key="normal" backgroundImage="02_03.png">
+                                            <string key="title">POWDERS
+REINVENTED</string>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="RHl-d8-Aef"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tLu-XJ-CJX">
+                                        <rect key="frame" x="771" y="267" width="219" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="22"/>
+                                        <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="15"/>
+                                        <state key="normal" backgroundImage="02_04.png">
+                                            <string key="title">INKS
+REDEFINED</string>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="yCF-Jz-exV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zOt-T9-258">
+                                        <rect key="frame" x="671" y="525" width="209" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="23.5"/>
+                                        <inset key="titleEdgeInsets" minX="103" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="TOOLS" backgroundImage="02_button.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="t8O-I1-1GK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jw-y3-ztz">
+                                        <rect key="frame" x="135" y="525" width="280" height="82"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="complextion_btn.png"/>
+                                        <connections>
+                                            <action selector="onTapTextureBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="Sxo-64-v3O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1fQ-GP-05E" colorLabel="IBBuiltInLabel-Red">
+                                        <rect key="frame" x="861" y="30" width="129" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="20.5"/>
+                                        <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="By item">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                <color key="value" red="0.78485369679999994" green="0.062170386309999999" blue="0.1814707518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onTapItemBtn:" destination="rxp-Ub-Vtf" eventType="touchUpInside" id="O4u-yB-VB2"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1z-54-aIx">
+                                        <rect key="frame" x="264" y="90" width="497" height="132"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">REFINED SKINCARE INSPIRED TEXTURES
+LIGHTWEIGHT AND LASTING FORMULAS
+BOLD IMPACT OF COLOR.</string>
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="21.5"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-b7-Su4">
+                                        <rect key="frame" x="281" y="44" width="465" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Four Textures reimagined &amp; redefined
+for face, eyes, and lips. </string>
+                                        <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="22"/>
+                                        <color key="textColor" red="0.79420336790000001" green="0.037855404969999999" blue="0.089164817049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJx-8q-Q86">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Makeup Beauty" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-eF-45y">
+                                        <rect key="frame" x="214.5" y="163" width="595" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="595" id="Rdo-hF-tgk"/>
+                                            <constraint firstAttribute="height" constant="53" id="eg8-4G-JpC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chL-KS-nVY">
+                                        <rect key="frame" x="163" y="224" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="CEC-sG-JuC"/>
+                                            <constraint firstAttribute="height" constant="300" id="NSo-WQ-zVZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="p2_makeup.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz8-Cd-8pa">
+                                        <rect key="frame" x="561" y="224" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="7am-1I-Y19"/>
+                                            <constraint firstAttribute="width" constant="300" id="DEN-Sn-zCk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="p2_complexion.png"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makeup" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Oh-3d-6Wy">
+                                        <rect key="frame" x="207" y="358" width="262" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="33"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Complexion" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osB-sJ-xo3">
+                                        <rect key="frame" x="572" y="358" width="262" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="33"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="top" secondItem="chL-KS-nVY" secondAttribute="top" id="O5T-4D-ZSd"/>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="baseline" secondItem="chL-KS-nVY" secondAttribute="baseline" id="Yyh-Bz-DAf"/>
+                                    <constraint firstAttribute="trailing" secondItem="qz8-Cd-8pa" secondAttribute="trailing" constant="163" id="c4h-gc-fio"/>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="centerY" secondItem="TJx-8q-Q86" secondAttribute="centerY" id="cEF-8O-A8E"/>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="firstBaseline" secondItem="chL-KS-nVY" secondAttribute="firstBaseline" id="e3v-Ru-eMM"/>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="leading" secondItem="chL-KS-nVY" secondAttribute="trailing" constant="98" id="hgq-fI-k57"/>
+                                    <constraint firstItem="qz8-Cd-8pa" firstAttribute="top" secondItem="hRJ-eF-45y" secondAttribute="bottom" constant="8" symbolic="YES" id="jRr-1i-jFD"/>
+                                    <constraint firstItem="hRJ-eF-45y" firstAttribute="centerX" secondItem="TJx-8q-Q86" secondAttribute="centerX" id="pB7-C5-aq3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TJx-8q-Q86" firstAttribute="leading" secondItem="9B2-VA-fpC" secondAttribute="leading" id="JWG-sU-GoL"/>
+                            <constraint firstAttribute="trailing" secondItem="CKQ-bk-9OX" secondAttribute="trailing" id="RsL-W4-FrM"/>
+                            <constraint firstAttribute="trailing" secondItem="TJx-8q-Q86" secondAttribute="trailing" id="bMh-6H-2Bv"/>
+                            <constraint firstItem="CKQ-bk-9OX" firstAttribute="leading" secondItem="9B2-VA-fpC" secondAttribute="leading" id="it4-GN-XPl"/>
+                            <constraint firstItem="TJx-8q-Q86" firstAttribute="top" secondItem="YEF-kq-plf" secondAttribute="bottom" id="o1a-sd-4j5"/>
+                            <constraint firstItem="CKQ-bk-9OX" firstAttribute="top" secondItem="YEF-kq-plf" secondAttribute="bottom" id="qTp-yy-sSV"/>
+                            <constraint firstItem="cQl-ey-moQ" firstAttribute="top" secondItem="CKQ-bk-9OX" secondAttribute="bottom" id="ud0-fZ-yfI"/>
+                            <constraint firstItem="cQl-ey-moQ" firstAttribute="top" secondItem="TJx-8q-Q86" secondAttribute="bottom" id="x2U-KL-KrX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstV" destination="TJx-8q-Q86" id="k59-9E-9rJ"/>
+                        <outlet property="mComplextionBtn" destination="8Jw-y3-ztz" id="IB6-zE-h7L"/>
+                        <outlet property="mFirstTextureBtn" destination="iOe-Bc-cDx" id="8ke-yf-tUL"/>
+                        <outlet property="mFirstVTitle" destination="hRJ-eF-45y" id="c6W-HL-bnA"/>
+                        <outlet property="mFourthTextureBtn" destination="tLu-XJ-CJX" id="6Cf-65-L2U"/>
+                        <outlet property="mItemBtn" destination="1fQ-GP-05E" id="heJ-Qn-xew"/>
+                        <outlet property="mSecondTextureBtn" destination="cLA-UP-qqp" id="pbP-9G-D2N"/>
+                        <outlet property="mSecondVText" destination="u1z-54-aIx" id="iUV-3v-mlJ"/>
+                        <outlet property="mSecondVTitle" destination="WfG-b7-Su4" id="rMI-ec-gfy"/>
+                        <outlet property="mThirdTextureBtn" destination="fwl-Da-avb" id="DBw-vu-WKn"/>
+                        <outlet property="mToolBtn" destination="zOt-T9-258" id="KgA-4Q-0S1"/>
+                        <outlet property="secondV" destination="CKQ-bk-9OX" id="Hxm-Bl-3g0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlG-8a-Xs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5834.765625" y="-6218.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="02_01.png" width="437" height="437"/>
+        <image name="02_02.png" width="437" height="437"/>
+        <image name="02_03.png" width="437" height="437"/>
+        <image name="02_04.png" width="437" height="437"/>
+        <image name="02_button.png" width="415" height="166"/>
+        <image name="complextion_btn.png" width="16" height="16"/>
+        <image name="p2_complexion.png" width="746" height="648"/>
+        <image name="p2_makeup.png" width="646" height="646"/>
+    </resources>
+</document>
