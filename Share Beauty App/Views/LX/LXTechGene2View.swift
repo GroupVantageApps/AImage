@@ -14,11 +14,11 @@ class LXTechGene2View : UIView{
     
     
     func setUI() {
-        let path = Bundle.main.path(forResource: "LxEffectImage2", ofType: "mp4")!
+        let path = Bundle.main.path(forResource: "LxEffectImageP2", ofType: "mp4")!
         let player = AVPlayer(url: URL(fileURLWithPath: path))
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame =  CGRect(x:0, y: 0, width: 960, height: 700)
-        playerLayer.zPosition = 0
+        playerLayer.zPosition = -1
         self.layer.insertSublayer(playerLayer, at: 0)
         player.play()
 

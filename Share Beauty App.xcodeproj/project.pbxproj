@@ -490,6 +490,7 @@
 		DA22A5E7220AC41200CF5FEE /* page4_arrow_right@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA22A5DA220AC3DD00CF5FEE /* page4_arrow_right@4x.png */; };
 		DA7DC1E5220C2D2300154ABB /* LXTechGeneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA7DC1E4220C2D2300154ABB /* LXTechGeneView.xib */; };
 		DA7DC1E7220C2DE600154ABB /* LXTechGeneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */; };
+		DA88CF7F227182F300AD3EFF /* LxEffectImageP2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DA88CF7E227182F100AD3EFF /* LxEffectImageP2.mp4 */; };
 		DA9ACF6322684F6E00AE83EF /* p2_plant.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9ACF6222684F6D00AE83EF /* p2_plant.png */; };
 		DA9ACF6522684F7E00AE83EF /* p4_image.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9ACF6422684F7D00AE83EF /* p4_image.png */; };
 		DA9ACF6722684FB900AE83EF /* p8_face.png in Resources */ = {isa = PBXBuildFile; fileRef = DA9ACF6622684FB900AE83EF /* p8_face.png */; };
@@ -1348,6 +1349,7 @@
 		DA7DC1E1220C11AE00154ABB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LuxuryProductDetailViewController.storyboard; sourceTree = "<group>"; };
 		DA7DC1E4220C2D2300154ABB /* LXTechGeneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LXTechGeneView.xib; sourceTree = "<group>"; };
 		DA7DC1E6220C2DE600154ABB /* LXTechGeneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LXTechGeneView.swift; sourceTree = "<group>"; };
+		DA88CF7E227182F100AD3EFF /* LxEffectImageP2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LxEffectImageP2.mp4; sourceTree = "<group>"; };
 		DA9ACF6222684F6D00AE83EF /* p2_plant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2_plant.png; sourceTree = "<group>"; };
 		DA9ACF6422684F7D00AE83EF /* p4_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p4_image.png; sourceTree = "<group>"; };
 		DA9ACF6622684FB900AE83EF /* p8_face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p8_face.png; sourceTree = "<group>"; };
@@ -2687,6 +2689,7 @@
 				DA9ACF6A2268503200AE83EF /* LxEffectImage2.mp4 */,
 				DA9ACF6C2268509200AE83EF /* LXEffectImage.mp4 */,
 				DE078939220C838B00D6CBAF /* btn_bouble_gene.png */,
+				DA88CF7E227182F100AD3EFF /* LxEffectImageP2.mp4 */,
 				DA22A5DE220AC3EF00CF5FEE /* page5_lead@4x.png */,
 				DA22A5DD220AC3EA00CF5FEE /* page4_main_visual.png */,
 				DA22A5DC220AC3E600CF5FEE /* page4_lead@4x.png */,
@@ -3827,6 +3830,7 @@
 				DA22A5E3220AC40000CF5FEE /* page5_lead@4x.png in Resources */,
 				DEE83E661EB766EF000C7D8D /* LXTechAuraView.xib in Resources */,
 				DA208435223BB94B00F26773 /* LatestMoisturizerEfficiencyView.xib in Resources */,
+				DA88CF7F227182F300AD3EFF /* LxEffectImageP2.mp4 in Resources */,
 				E57BB3211E597BE000D4F5FB /* ProductLineViewController.storyboard in Resources */,
 				DE2C91811E9C682500B5FC4A /* graphPoint_down.png in Resources */,
 				C0D1953E1DE6E0FF00C8B88E /* WhiteLucentFeaturesView.xib in Resources */,
