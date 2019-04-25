@@ -26,6 +26,15 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djI-zn-tYc">
                     <rect key="frame" x="0.0" y="0.0" width="314" height="768"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-Ht-XPF">
+                            <rect key="frame" x="33" y="570" width="273" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kLX-0Y-yff">
@@ -66,6 +75,7 @@
             <connections>
                 <outlet property="mCollectionView" destination="6lK-ef-ZHg" id="2j1-IE-1kW"/>
                 <outlet property="mSideView" destination="djI-zn-tYc" id="MYv-f9-T7V"/>
+                <outlet property="mSubTitleLbl" destination="hnE-Ht-XPF" id="pts-gk-N0H"/>
                 <outlet property="mTextureName" destination="86J-LL-uZM" id="XBu-e6-Cw9"/>
                 <outlet property="mToUse" destination="hgY-D6-hIc" id="rSs-bZ-42K"/>
             </connections>

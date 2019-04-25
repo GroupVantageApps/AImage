@@ -21,6 +21,7 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
     
     @IBOutlet weak var mTextureName: UILabel!
     @IBOutlet weak var mToUse: UILabel!
+    @IBOutlet weak var mSubTitleLbl: UILabel!
     
     var indexPath: Int = 0
     var item = 0
@@ -41,7 +42,8 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
         self.mProductImages = images
         self.mSideView.addSubview(sideImage)
         
-        mTextureName.text = "Foundations"
+        mTextureName.text = AppItemTable.getNameByItemId(itemId: 8545)
+        mSubTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8546)
         mTextureName.sizeToFit()
         mToUse.text = ""
         mToUse.sizeToFit()
@@ -61,7 +63,8 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
         self.mProductImages = images
         self.mSideView.addSubview(sideImage)
         
-        mTextureName.text = "Concealers"
+        mTextureName.text = AppItemTable.getNameByItemId(itemId: 8547)
+        mSubTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8548)
         mTextureName.sizeToFit()
         mToUse.text = ""
         mToUse.sizeToFit()
@@ -82,7 +85,8 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
         self.mProductImages = images
         self.mSideView.addSubview(sideImage)
         
-        mTextureName.text = "Powders"
+        mTextureName.text = AppItemTable.getNameByItemId(itemId: 8549)
+        mSubTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8550)
         mTextureName.sizeToFit()
         mToUse.text = ""
         mToUse.sizeToFit()

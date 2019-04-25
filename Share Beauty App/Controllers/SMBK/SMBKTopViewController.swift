@@ -76,16 +76,23 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
             btn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         }
         
-        MakeupBtn.setTitle("Makeup", for: .normal)
+        let makeupTitle = AppItemTable.getNameByItemId(itemId: 8541)
+        let complexionTitle = AppItemTable.getNameByItemId(itemId: 8543)
+        MakeupBtn.setTitle(makeupTitle, for: .normal)
         MakeupBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
         MakeupBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 50, 0, 0)
         MakeupBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)
-        ComplexionBtn.setTitle("Complexion", for: .normal)
+        ComplexionBtn.setTitle(complexionTitle, for: .normal)
         ComplexionBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
         ComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -10, 0, 0)
         ComplexionBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)        
         mComplextionBtn.isHidden = true
+        let compButton = "> " + mSMKArr["29"]!
+        mForthComplexionBtn.setTitle(compButton, for: .normal)
         mForthComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -110, 0, 0)
+        mForthTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8539)
+        mForthVText.text = AppItemTable.getNameByItemId(itemId: 8540)
+        print("test:\(mForthVText.text!)")
         
     }
     

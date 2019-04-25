@@ -81,7 +81,7 @@ class SMBK19AWTextureViewController: UIViewController, NavigationControllerAnnot
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        mCollectionV.reloadData()
+//        mCollectionV.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -100,10 +100,11 @@ class SMBK19AWTextureViewController: UIViewController, NavigationControllerAnnot
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SMBK19AWTexture        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SMBK19AWTexture
         cell.productList = selectedAllTextureProducts[indexPath.row]
         cell.indexPath = indexPath.row
         cell.texture_id = texture_id
+        cell.delegate = self.delegate
         mProductImages = [:]
 
         if indexPath.row == 0 {
