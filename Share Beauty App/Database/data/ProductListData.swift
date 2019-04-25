@@ -593,7 +593,7 @@ class ProductListData: NSObject {
                 }
             }
         }
-
+        
         var tempProducts = [ProductData]()
         secondsProducts.keys.sorted().forEach({ key in
             let secondProduct = secondsProducts[key]!
@@ -649,6 +649,62 @@ class ProductListData: NSObject {
             let new = secondProduct.filter {$0.newItemFlg == 1}
             let old = secondProduct.filter {$0.newItemFlg == 0}
             tempProducts += (new + old)
+        })
+        self.products += tempProducts
+    }
+    
+    // Makeupのリストヴューに対してnewItemFlgがあるとdisplay orderを無視して先頭に並べる機能を殺す用
+    convenience init(productIds: String?, beautyIds: String?, lineIds: String?, smk: String?) {
+        self.init()
+        let productIds = ProductTable.getProductIdsBy(productIds: productIds, beautyIds: beautyIds, lineIds: lineIds)
+        
+        let products = productIds.map {ProductData(productId: $0)}
+        var dicProducts = [Int:[ProductData]]()
+        for product in products {
+            if product.defaultDisplay == 0 || LineTranslateTable.getEntity(product.lineId).displayFlg == 0 {continue}
+            if dicProducts[product.lineId] == nil {
+                dicProducts[product.lineId] = [product]
+            } else {
+                dicProducts[product.lineId]?.append(product)
+            }
+        }
+        
+        dicProducts.keys.sorted {$0 < $1}.forEach { lineId in
+            if(lineId != 38){
+                self.appendLineByArray(lineId)
+                self.appendProductByArrayForSMK(dicProducts[lineId]!.map {$0.productId})
+            }
+        }
+    }
+    
+    //productIdの配列から、ProductData配列を作成する
+    // Makeupのリストヴューに対してnewItemFlgがあるとdisplay orderを無視して先頭に並べる機能を殺す
+    func appendProductByArrayForSMK(_ productIds: [Int], isIgnoreDisplayFlg: Bool = false) {
+        var secondsProducts = [Int:[ProductData]]()
+        for productId in productIds {
+            let data: ProductData = ProductData(productId: productId)
+            
+            if isIgnoreDisplayFlg {
+                if secondsProducts[data.beautySecondId] == nil {
+                    secondsProducts[data.beautySecondId] = [data]
+                } else {
+                    secondsProducts[data.beautySecondId]?.append(data)
+                }
+            } else {
+                if data.defaultDisplay == 1 && LineTranslateTable.getEntity(data.lineId).displayFlg == 1 {
+                    if secondsProducts[data.beautySecondId] == nil {
+                        secondsProducts[data.beautySecondId] = [data]
+                    } else {
+                        secondsProducts[data.beautySecondId]?.append(data)
+                    }
+                }
+            }
+        }
+        // Makeupのリストヴューに対してnewItemFlgがあるとdisplay orderを無視して先頭に並べる機能を殺す
+        var tempProducts = [ProductData]()
+        secondsProducts.keys.sorted().forEach({ key in
+            let secondProduct = secondsProducts[key]!
+            tempProducts += secondProduct
         })
         self.products += tempProducts
     }

@@ -1168,7 +1168,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if mIsLatestMoisturizer {
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
+        } else if productId == 623 || productId == 624 {
+            // 19AW Waso
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
         }
+        
 //        } else if productId == 588{
 //            mCategoryButtonTechnologies.enabled = true
 //            mCategoryButtonEfficacy.enabled = true
@@ -1386,6 +1391,20 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 techView.frame = mVContent.frame
                 mVContent.addSubview(techView)
                 mVCurrentSelect = techView
+            } else if productId == 623 {
+                let nib = UINib(nibName: "Waso623TechView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let techView = views[0] as? Waso623TechView else { return }
+                techView.frame = mVContent.frame
+                mVContent.addSubview(techView)
+                mVCurrentSelect = techView
+            } else if productId == 624 {
+                let nib = UINib(nibName: "Waso624TechView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let techView = views[0] as? Waso624TechView else { return }
+                techView.frame = mVContent.frame
+                mVContent.addSubview(techView)
+                mVCurrentSelect = techView
             }
             
         case mCategoryButtonHowToUse:
@@ -1457,6 +1476,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 efficacyView.frame = mVContent.frame
                 mVContent.addSubview(efficacyView)
                 mVCurrentSelect = efficacyView
+            } else if productId == 623 {
+                let nib = UINib(nibName: "Waso623EfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView1 = views[0] as? Waso623EfficacyView else { return }
+                efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                self.mVContent.addSubview(efficacyView1)
+                mVCurrentSelect = efficacyView1
+                efficacyView1.startAnimation()
+            } else if productId == 624 {
+                let nib = UINib(nibName: "Waso624EfficacyView", bundle: nil)
+                let views = nib.instantiate(withOwner: self, options: nil)
+                guard let efficacyView1 = views[0] as? Waso624EfficacyView else { return }
+                efficacyView1.frame = CGRect(x: 0, y: 0, width: self.mVContent.frame.width, height: self.mVContent.height)
+                
+                self.mVContent.addSubview(efficacyView1)
+                mVCurrentSelect = efficacyView1
+                efficacyView1.startAnimation()
             }
             
         case mCategoryButtonDefend:
