@@ -1578,6 +1578,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                  if [588, 593, 594].contains(self.product.productId){
                     self.didTapTechnology()
                 }else if [616].contains(self.product.productId){
+                    
                     self.techScrollV.delegate = self
                     self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
                     self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
@@ -1585,7 +1586,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     self.techScrollV.bounces = false
                       self.setTechnology19AW()
 
-                }
+                    }
                 
             } else if sender === mCategoryButtonEfficacy {
                 mVContent.isHidden = false
@@ -2596,6 +2597,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         mVContent.addSubview(efficacyScrollV)
         mVCurrentSelect = efficacyScrollV
+        
     }
     
     func setEffency19AW(){

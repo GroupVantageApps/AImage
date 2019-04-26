@@ -720,6 +720,8 @@
 		DEED708D20A54E85001027EB /* SMBKTopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEED708920A54E84001027EB /* SMBKTopViewController.storyboard */; };
 		DEFF2D211F1F48CA006C576B /* GscResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF2D1F1F1F48C9006C576B /* GscResultViewController.storyboard */; };
 		DEFF2D231F1F48D3006C576B /* GscResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */; };
+		E02787D42272A3DB00C5EBA3 /* EyeTreatTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02787D32272A3DB00C5EBA3 /* EyeTreatTechView.xib */; };
+		E02787D62272A43A00C5EBA3 /* EyeTreatTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02787D52272A43A00C5EBA3 /* EyeTreatTechView.swift */; };
 		E2EB07E120720AF00016B094 /* SDPEfficacyResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */; };
 		E2EB07E320720B180016B094 /* SDPEfficacyResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */; };
 		E52891C81DF2F7C2007B92B2 /* LifeStyleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52891C61DF2F7C2007B92B2 /* LifeStyleViewController.storyboard */; };
@@ -1574,6 +1576,8 @@
 		DEED708A20A54E84001027EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SMBKTopViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D201F1F48C9006C576B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GscResultViewController.storyboard; sourceTree = "<group>"; };
 		DEFF2D221F1F48D3006C576B /* GscResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GscResultViewController.swift; sourceTree = "<group>"; };
+		E02787D32272A3DB00C5EBA3 /* EyeTreatTechView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EyeTreatTechView.xib; sourceTree = "<group>"; };
+		E02787D52272A43A00C5EBA3 /* EyeTreatTechView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTreatTechView.swift; sourceTree = "<group>"; };
 		E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SDPEfficacyResultView.xib; sourceTree = "<group>"; };
 		E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDPEfficacyResultView.swift; sourceTree = "<group>"; };
 		E52891C71DF2F7C2007B92B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LifeStyleViewController.storyboard; sourceTree = "<group>"; };
@@ -2559,6 +2563,8 @@
 				C94638D21F18CC45009D1480 /* LoadingView.swift */,
 				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
 				C0AFC9861D86AF1B0066B988 /* BaseButton.swift */,
+				E02787D32272A3DB00C5EBA3 /* EyeTreatTechView.xib */,
+				E02787D52272A43A00C5EBA3 /* EyeTreatTechView.swift */,
 				C091BA731D69809F0073FEDB /* BaseView.swift */,
 				C01D71701D951A790044851C /* CategoryButton.swift */,
 				C01D716E1D951A1E0044851C /* CategoryButton.xib */,
@@ -3821,6 +3827,7 @@
 				DE2C918A1E9C682500B5FC4A /* lx_icon_night.png in Resources */,
 				26768DA7202C5FD6005BE606 /* graph_05.png in Resources */,
 				DE07893A220C838B00D6CBAF /* btn_bouble_gene.png in Resources */,
+				E02787D42272A3DB00C5EBA3 /* EyeTreatTechView.xib in Resources */,
 				DA22A5E5220AC40C00CF5FEE /* page4_lead@4x.png in Resources */,
 				DE2A165A1F0F7BEE00D2B2A1 /* GscTopViewController.storyboard in Resources */,
 				DE310E402074AA8D00A6A5F7 /* WASOSleepingFirstEfficacyResultView.xib in Resources */,
@@ -3961,7 +3968,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AImage/AImage.framework",
 				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -3984,7 +3991,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4115,6 +4122,7 @@
 				E57BB3271E598C0100D4F5FB /* ProductLineCollectionViewCell.swift in Sources */,
 				C0423F7F1E35EE7000D56960 /* ProductListViewController.swift in Sources */,
 				DE7B7E5F1EB73D73006F8246 /* LXAngelicaView.swift in Sources */,
+				E02787D62272A43A00C5EBA3 /* EyeTreatTechView.swift in Sources */,
 				C03B08E41D7C2F7C00935CBE /* LifeStyleFirstDetailViewController.swift in Sources */,
 				C0880CF21E4B2048006A3713 /* TargetSettingViewController.swift in Sources */,
 				C9906DCC1F2BF48300414722 /* LifeStyleEighthDetailViewController.swift in Sources */,
