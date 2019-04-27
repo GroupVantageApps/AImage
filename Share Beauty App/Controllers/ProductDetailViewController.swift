@@ -333,13 +333,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
                 if [616].contains(self.product.productId) {
-                        self.efficacyScrollV.delegate = self
-                            self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-                            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
-                            self.efficacyScrollV.isPagingEnabled = true
+                    self.efficacyScrollV.delegate = self
+                    self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+                    self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
+                    self.efficacyScrollV.isPagingEnabled = true
 
-                            self.setEffency19AW()
-                    
+                    let efficacyV: EyeTreatEffView = UINib(nibName: "EyeTreatEffView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatEffView
+                    efficacyV.setEffency19AW(productId: productId)
+                    self.mVContent.addSubview(efficacyV)
+
 //                    self.techScrollV.delegate = self
 //                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
 //                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
@@ -356,7 +358,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyScrollV.isPagingEnabled = true
             self.efficacyScrollV.bounces = false
             
-            self.setEffency19AW()
+            let efficacyV: EyeTreatEffView = UINib(nibName: "EyeTreatEffView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatEffView
+            efficacyV.setEffency19AW(productId: productId)
+            self.mVContent.addSubview(efficacyV)
         }
     }
 
@@ -1584,9 +1588,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
                     self.techScrollV.isPagingEnabled = true
                     self.techScrollV.bounces = false
-                      self.setTechnology19AW()
-
-                    }
+                    
+                    let technologyV: EyeTreatTechView = UINib(nibName: "EyeTreatTechView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatTechView
+                    technologyV.setTechnology19AW()
+                    self.mVContent.addSubview(technologyV)
+                }
                 
             } else if sender === mCategoryButtonEfficacy {
                 mVContent.isHidden = false
