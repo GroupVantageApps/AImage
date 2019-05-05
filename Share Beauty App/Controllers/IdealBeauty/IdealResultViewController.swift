@@ -117,10 +117,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("+++++++++++++++++++++++ IdealResult +++++++++++++++++++++++++")
-        print("self.view.height:", self.view.height)
-        print("mCollectionView.height:", mCollectionView.height)
-        print("mVSelectBase.height:", mVSelectBase.height)
         
         // Defendからの遷移時にUtmの先頭までスクロールする
         if getProdut_id == 10002{
@@ -324,10 +320,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
             mProducts = products
         }
 
-        for p in mProducts {
-            print(p.lineId,p.productId)
-            
-        }
         mProductImages = [:]
         
         //LifestyleBeautyトップからの遷移 product_idごとに表示するproduct変更
@@ -541,7 +533,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     // MARK: - CollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        print(indexPath.row)
         if indexPath.row % 2 == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "space", for: indexPath)
             let rightViewIndex = indexPath.row / 2
@@ -549,10 +540,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
                 let product = mProducts[rightViewIndex]
                 //Const.idealBeautyTypeLine == 2
                 if product.idealBeautyType == Const.idealBeautyTypeLine {
-                    print("center_indexPath.row")
                     cell.backgroundColor = .black
                 } else {
-                    print("blue_indexPath.row")
                     cell.backgroundColor = .clear
                 }
             }
@@ -560,7 +549,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! IdealProductView
             cell.delegate = self
-//            print("indexPath.row / 2:\(indexPath.row / 2)")
             cell.product = mProducts[indexPath.row / 2 ]
             cell.productImage = mProductImages[indexPath.row / 2]
             cell.troubleViewState(mShowTrobleIndexes.contains(indexPath.row / 2))
