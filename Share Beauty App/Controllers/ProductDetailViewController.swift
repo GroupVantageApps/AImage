@@ -338,6 +338,16 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyScrollV.bounces = false
             
             self.setEffency19AW()
+            
+            print(self.efficacyScrollV.frame)
+            print(self.efficacyScrollV.contentSize)
+            
+            self.techScrollV.delegate = self
+            self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (self.mVContent.height)*3)
+            self.techScrollV.isPagingEnabled = true
+            self.techScrollV.bounces = false
+            self.setTech19AW()
         }
     }
 
@@ -1172,13 +1182,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // 19AW Waso
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
+        } else if productId == 618 {
+            // 19AW BNF
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
         }
         
-//        } else if productId == 588{
-//            mCategoryButtonTechnologies.enabled = true
-//            mCategoryButtonEfficacy.enabled = true
-//            mCategoryButtonDefend.enabled = true
-//        }
     }
     
     private func setCategoryButtonDefend(){
@@ -1991,7 +2000,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
         // TechnologiesのTopをスクロールビューに追加
-        techScrollV.addSubview(generateV)
+        
+        if productId != 618 {
+            techScrollV.addSubview(generateV)
+        }
         mVContent.addSubview(techScrollV)
         mVCurrentSelect = techScrollV
     }
@@ -2386,6 +2398,37 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVCurrentSelect = efficacyScrollV
     }
     
+    func setTech19AW(){
+        if productId == 618 {
+            let subviews = self.techScrollV.subviews
+            for subview in subviews {
+                subview.removeFromSuperview()
+            }
+
+            let nib = UINib(nibName: "BNF618FirstTechView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let tech1 = views[0] as? BNF618FirstTechView else { return }
+            tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech1)
+            
+            let nib2 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let tech2 = views2[0] as? BNF618SecondTechView else { return }
+            tech2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech2)
+            
+            let nib3 = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let techView3 = views3[0] as? LatestMoisturizerTechView else { return }
+            techView3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            techView3.setView(productId: self.productId)
+            let ar = techView3.mScrollView.constraints
+            techView3.mScrollView.removeConstraints(ar)
+            self.techScrollV.addSubview(techView3)
+            
+        }
+    }
+    
     func setEffency19AW(){
         if productId == 618 {
             for i in 0...1 {
@@ -2637,7 +2680,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         return newString
     }
-    
+   
     func setEfficacyView(){
         //1~3枚め
         for i in 0...1 {
