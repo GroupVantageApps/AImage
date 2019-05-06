@@ -330,7 +330,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
         
-        if [617, 618].contains(self.product.productId) {
+        if [617, 618, 619].contains(self.product.productId) {
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
             self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
@@ -783,7 +783,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
         
-        if [588, 593, 594, 617, 618].contains(self.product.productId) && showEfficacy == true{
+        if [588, 593, 594, 617, 618, 619].contains(self.product.productId) && showEfficacy == true{
             mBtnCurrentSelect?.selected = false
             let sender = self.mCategoryButtonEfficacy
             mBtnCurrentSelect = sender
@@ -1182,7 +1182,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // 19AW Waso
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
-        } else if productId == 618 {
+        } else if productId == 618 ||  productId == 619 {
             // 19AW BNF
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
@@ -1583,7 +1583,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     private func showInfo(_ sender: CategoryButton) {
 
-        if [588, 593, 594, 617, 618].contains(self.product.productId){
+        if [588, 593, 594, 617, 618, 619].contains(self.product.productId){
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             
@@ -2001,7 +2001,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         // TechnologiesのTopをスクロールビューに追加
         
-        if productId != 618 {
+        if productId != 618 && productId != 619{
             techScrollV.addSubview(generateV)
         }
         mVContent.addSubview(techScrollV)
@@ -2426,6 +2426,35 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             techView3.mScrollView.removeConstraints(ar)
             self.techScrollV.addSubview(techView3)
             
+        } else if productId == 619 {
+            self.techScrollV.contentSize =  CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*4)
+            
+            let nib = UINib(nibName: "BNF619FirstTechView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let tech1 = views[0] as? BNF619FirstTechView else { return }
+            tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech1)
+            
+            let nib2 = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let view2 = views2[0] as? LatestMoisturizerTechView else { return }
+            view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height - 80)
+            view2.setView(productId: self.productId)
+            let ar = view2.mScrollView.constraints
+            view2.mScrollView.removeConstraints(ar)
+            self.techScrollV.addSubview(view2)
+            
+            let nib3 = UINib(nibName: "BNF619ThirdTechView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let view3 = views3[0] as? BNF619ThirdTechView else { return }
+            view3.frame = CGRect(x: 0, y:  mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(view3)
+            
+            let nib4 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let views4 = nib4.instantiate(withOwner: self, options: nil)
+            guard let view4 = views4[0] as? BNF618SecondTechView else { return }
+            view4.frame = CGRect(x: 0, y: mVContent.frame.height * 3, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(view4)
         }
     }
     
