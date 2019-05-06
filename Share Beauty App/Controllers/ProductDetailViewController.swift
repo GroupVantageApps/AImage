@@ -2480,6 +2480,25 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.efficacyScrollV.addSubview(view3)
             
             
+        } else if productId == 619 {
+            let nib = UINib(nibName: "BNF619FirstEfficacyView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let view1 = views[0] as? BNF619FirstEfficacyView else { return }
+            view1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view1)
+            
+            let nib2 = UINib(nibName: "BNF619SecondEfficacyView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let view2 = views2[0] as? BNF619SecondEfficacyView else { return }
+            view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view2)
+            
+            let nib3 = UINib(nibName: "BNF619ThirdEfficacyView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let view3 = views3[0] as? BNF619ThirdEfficacyView else { return }
+            view3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view3)
+            
         } else if productId == 617 {
             for i in 1...2{
                 // テキスト
