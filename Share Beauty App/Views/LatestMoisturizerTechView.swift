@@ -41,7 +41,9 @@ class LatestMoisturizerTechView: UIView {
             self.textColor = UIColor(hex: "b1457c", alpha: 1)
         }
         self.setFirstView()
-        self.setSecondView()
+        if self.productId != 618 {
+            self.setSecondView()
+        }
 //        self.setThirdView()
     }
     
