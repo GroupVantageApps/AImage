@@ -6,6 +6,7 @@
 //  Copyright © 2018年 AQUA Co., Ltd. All rights reserved.
 //
 
+// TODO: productID 619用なのでファイル名など適切に置き換え
 import Foundation
 
 class BNF618FirstEfficacyView: UIView {
