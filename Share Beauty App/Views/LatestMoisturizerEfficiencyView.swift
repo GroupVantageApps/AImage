@@ -48,9 +48,6 @@ class LatestMoisturizerEfficiencyView: UIView {
             let contryIdsB: [Int] = [1, 2, 3, 13]            // US,Canada,BZ,Australia
             let contryIdsC: [Int] = [5, 6, 7, 8, 9, 10, 4]   // Asia
             let contryIdsD: [Int] = [1, 3, 2, 17, 13, 21]    // US,Brazil,Canada,India,Australia,Middle East
-            //LanguageConfigure.regionId = 1
-            //LanguageConfigure.countryId = 21
-    
             
             let thirdTitle: UILabel = UILabel()
             thirdTitle.frame = CGRect(x: 0, y: 40, width: 0, height: 0)

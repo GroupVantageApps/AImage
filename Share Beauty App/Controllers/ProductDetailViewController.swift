@@ -330,14 +330,24 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
         
-        if [617, 618].contains(self.product.productId) {
+        if [617, 618, 619].contains(self.product.productId) {
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*2)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
             self.efficacyScrollV.isPagingEnabled = true
             self.efficacyScrollV.bounces = false
             
             self.setEffency19AW()
+            
+            print(self.efficacyScrollV.frame)
+            print(self.efficacyScrollV.contentSize)
+            
+            self.techScrollV.delegate = self
+            self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+            self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (self.mVContent.height)*3)
+            self.techScrollV.isPagingEnabled = true
+            self.techScrollV.bounces = false
+            self.setTech19AW()
         }
     }
 
@@ -773,7 +783,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             }
         }
         
-        if [588, 593, 594, 617, 618].contains(self.product.productId) && showEfficacy == true{
+        if [588, 593, 594, 617, 618, 619].contains(self.product.productId) && showEfficacy == true{
             mBtnCurrentSelect?.selected = false
             let sender = self.mCategoryButtonEfficacy
             mBtnCurrentSelect = sender
@@ -1172,13 +1182,12 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // 19AW Waso
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
+        } else if productId == 618 ||  productId == 619 {
+            // 19AW BNF
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
         }
         
-//        } else if productId == 588{
-//            mCategoryButtonTechnologies.enabled = true
-//            mCategoryButtonEfficacy.enabled = true
-//            mCategoryButtonDefend.enabled = true
-//        }
     }
     
     private func setCategoryButtonDefend(){
@@ -1574,7 +1583,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     private func showInfo(_ sender: CategoryButton) {
 
-        if [588, 593, 594, 617, 618].contains(self.product.productId){
+        if [588, 593, 594, 617, 618, 619].contains(self.product.productId){
             mVContent.isHidden = true
             mVCurrentSelect?.removeFromSuperview()
             
@@ -1991,7 +2000,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
         }
         // TechnologiesのTopをスクロールビューに追加
-        techScrollV.addSubview(generateV)
+        
+        if productId != 618 && productId != 619{
+            techScrollV.addSubview(generateV)
+        }
         mVContent.addSubview(techScrollV)
         mVCurrentSelect = techScrollV
     }
@@ -2386,108 +2398,106 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVCurrentSelect = efficacyScrollV
     }
     
+    func setTech19AW(){
+        if productId == 618 {
+            let subviews = self.techScrollV.subviews
+            for subview in subviews {
+                subview.removeFromSuperview()
+            }
+
+            let nib = UINib(nibName: "BNF618FirstTechView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let tech1 = views[0] as? BNF618FirstTechView else { return }
+            tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech1)
+            
+            let nib2 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let tech2 = views2[0] as? BNF618SecondTechView else { return }
+            tech2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech2)
+            
+            let nib3 = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let techView3 = views3[0] as? LatestMoisturizerTechView else { return }
+            techView3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            techView3.setView(productId: self.productId)
+            let ar = techView3.mScrollView.constraints
+            techView3.mScrollView.removeConstraints(ar)
+            self.techScrollV.addSubview(techView3)
+            
+        } else if productId == 619 {
+            self.techScrollV.contentSize =  CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*4)
+            
+            let nib = UINib(nibName: "BNF619FirstTechView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let tech1 = views[0] as? BNF619FirstTechView else { return }
+            tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(tech1)
+            
+            let nib2 = UINib(nibName: "LatestMoisturizerTechView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let view2 = views2[0] as? LatestMoisturizerTechView else { return }
+            view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height - 80)
+            view2.setView(productId: self.productId)
+            let ar = view2.mScrollView.constraints
+            view2.mScrollView.removeConstraints(ar)
+            self.techScrollV.addSubview(view2)
+            
+            let nib3 = UINib(nibName: "BNF619ThirdTechView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let view3 = views3[0] as? BNF619ThirdTechView else { return }
+            view3.frame = CGRect(x: 0, y:  mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(view3)
+            
+            let nib4 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let views4 = nib4.instantiate(withOwner: self, options: nil)
+            guard let view4 = views4[0] as? BNF618SecondTechView else { return }
+            view4.frame = CGRect(x: 0, y: mVContent.frame.height * 3, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.techScrollV.addSubview(view4)
+        }
+    }
+    
     func setEffency19AW(){
         if productId == 618 {
-            for i in 0...1 {
-                let title = UILabel()
-                title.textColor = UIColor.black
-                title.font = UIFont(name: "Reader-Bold", size: 22)
-                if i == 0 {
-                    title.text = AppItemTable.getNameByItemId(itemId: 8166) // "Right after"
-                } else if i == 1 {
-                    title.text = AppItemTable.getNameByItemId(itemId: 8174) // "After 4 weeks"
-                }
-                title.frame = CGRect(x: 0, y: 0+(Int(self.efficacyScrollV.frame.height)*i), width: 700, height: 40)
-                title.centerX = self.mVContent.centerX
-                title.textAlignment = .center
-                self.efficacyScrollV.addSubview(title)
-            }
+            let nib = UINib(nibName: "BNF618FirstEfficacyView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let view1 = views[0] as? BNF618FirstEfficacyView else { return }
+            view1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view1)
             
-            for i in 1...7{
-                // テキストの場合
-                let percentLabel = UILabel()
-                percentLabel.textColor = UIColor.black
-                percentLabel.font = UIFont(name: "Reader-Bold", size: 82 )
-
-                if i == 1 {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8167)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
-                } else if i == 2 {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8169)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
-                } else if i == 3{
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8171)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 100+(100*(i-1)), width: 160, height: 82)
-                } else if i == 4{
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8175)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
-                } else if i == 5 {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8177)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
-                } else if i == 6 {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8179)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
-                } else {
-                    percentLabel.text = AppItemTable.getNameByItemId(itemId: 8181)
-                    percentLabel.frame = CGRect(x: Int(self.mVContent.centerX) - 230, y: 80+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 160, height: 82)
-                }
-                
-                percentLabel.textAlignment = .center
-                self.efficacyScrollV.addSubview(percentLabel)
-            }
             
-            for i in 1...7{
-                let description = UILabel()
-                description.textColor = UIColor.black
-                description.font = UIFont(name: "Reader-Medium", size: 22)
-                description.numberOfLines = 0
-                description.textAlignment = .left
-
-                if i == 1 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8168) // "of women felt it was deeply \n hydrating"
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
-                } else if i == 2 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8170) // "of women felt their skin \n absorbed it quickly"
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
-                } else if i == 3 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8172) // "of women felt it maintained their skin's moisture."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 60+(100*(i-1)), width: 300, height: 150)
-                } else if i == 4 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8176) // "of women felt their skin became \n more resilient."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 300, height: 150)
-                } else if i == 5 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8178) // "of women felt their skin became \n brighter and the clarity improved."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
-                } else if i == 6 {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8180) // "of women felt it increased their skin's moisture after application."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
-                } else {
-                    description.text = AppItemTable.getNameByItemId(itemId: 8182) // "of women felt their skin became more resistant to troubles like dryness and roughness."
-                    description.frame = CGRect(x: Int(self.mVContent.centerX) - 50, y: 40+(Int(self.efficacyScrollV.frame.height))+(100*(i-4)), width: 350, height: 150)
-                }
-                
-                self.efficacyScrollV.addSubview(description)
-            }
+            let nib2 = UINib(nibName: "BNF618SecondEfficacyView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let view2 = views2[0] as? BNF618SecondEfficacyView else { return }
+            view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view2)
             
-            //右下テキスト
-            for i in 0...1{
-                let text = UILabel()
-                text.textColor = UIColor.lightGray
-                text.font = UIFont(name: "Reader-Medium", size: 12)
-                text.font = text.font.withSize(13)
-                text.textAlignment = .center
-                text.numberOfLines = 0
-                if i == 0 {
-                    text.text = AppItemTable.getNameByItemId(itemId: 8173)
-                    text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 200, height: 40)
-                } else if i == 1 {
-                    let decode = convertSpecialCharacters(string: AppItemTable.getNameByItemId(itemId: 8183)!)
-                    text.text = decode
-                    text.frame = CGRect(x: 700, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 300, height: 60)
-                }
-                
-                self.efficacyScrollV.addSubview(text)
-            }
+            let nib3 = UINib(nibName: "BNF618ThirdEfficacyView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let view3 = views3[0] as? BNF618ThirdEfficacyView else { return }
+            view3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view3)
+            
+            
+        } else if productId == 619 {
+            let nib = UINib(nibName: "BNF619FirstEfficacyView", bundle: nil)
+            let views = nib.instantiate(withOwner: self, options: nil)
+            guard let view1 = views[0] as? BNF619FirstEfficacyView else { return }
+            view1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view1)
+            
+            let nib2 = UINib(nibName: "BNF619SecondEfficacyView", bundle: nil)
+            let views2 = nib2.instantiate(withOwner: self, options: nil)
+            guard let view2 = views2[0] as? BNF619SecondEfficacyView else { return }
+            view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view2)
+            
+            let nib3 = UINib(nibName: "BNF619ThirdEfficacyView", bundle: nil)
+            let views3 = nib3.instantiate(withOwner: self, options: nil)
+            guard let view3 = views3[0] as? BNF619ThirdEfficacyView else { return }
+            view3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
+            self.efficacyScrollV.addSubview(view3)
             
         } else if productId == 617 {
             for i in 1...2{
@@ -2637,7 +2647,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         }
         return newString
     }
-    
+   
     func setEfficacyView(){
         //1~3枚め
         for i in 0...1 {

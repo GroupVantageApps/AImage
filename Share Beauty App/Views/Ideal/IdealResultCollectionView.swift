@@ -144,8 +144,6 @@ class IdealResultCollectionView: BaseView, IdealResultCellDelegate {
         if mVContent.subviews.count != 0 {
             return
         }
-        print("addCollectionView")
-//        let horizontalLine = Int(ceilf(Float(cellCount) / Float(horizontalCellCount)))
         for i in 0...(horizontalLine-1) {
             let mountView = UIView()
             mountView.translatesAutoresizingMaskIntoConstraints = false
