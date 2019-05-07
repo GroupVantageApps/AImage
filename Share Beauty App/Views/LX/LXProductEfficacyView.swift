@@ -36,7 +36,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
     var maxCount = 8
     var secondPageTag = 0
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
-    
+
     
     @IBOutlet weak var mG3ConstraintBottom: NSLayoutConstraint!
     
@@ -428,6 +428,15 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
             self.mPageControl.isHidden = true
             self.mScrollV.contentSize = CGSize(width: 960, height: self.size.height)
             self.mScrollV.addSubview(self.mContentV) 
+        } else if productId == 621 {
+            self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960, height: self.size.height))
+            let gene3V: LXTechGene3View = UINib(nibName: "LXTechGene3View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGene3View
+            gene3V.setUI()
+            self.mContentV.addSubview(gene3V)
+            self.mPageControl.isHidden = true
+            self.mScrollV.contentSize = CGSize(width: 960, height: self.size.height)
+            self.mScrollV.addSubview(self.mContentV)
+            
         }
         
         
