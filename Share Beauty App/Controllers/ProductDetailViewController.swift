@@ -1028,8 +1028,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if mIsWaso {
             mWasoFeatureView = WasoFeatureView()
             self.setWasoData()
-            self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
-            mWasoFeatureView.startAnimation()
+            
+            if productId != 624 && productId != 623 {
+                self.setSpecialCaseConstraints(targetView: mWasoFeatureView, viewHeight: 260)
+                mWasoFeatureView.startAnimation()
+            }
             if productId == 570 || productId == 571 {
                 mWasoFeatureView.hukidashi_tap_enable = false
             }
