@@ -113,6 +113,16 @@ class LanguageConfigure: NSObject {
         }
     }
 
+    static var newUTMId: Int {
+        get {
+            if LanguageConfigure.isNewUTM {
+                return 616
+            } else {
+                return 28
+            }
+        }
+    }
+    
     static var isNewUTM: Bool {
         get {
             if let value = UserDefaults.standard.object(forKey: UTMitem) {
