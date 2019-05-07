@@ -72,9 +72,10 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             self.mContentV.addSubview(auraV) 
             self.mPageControl.isHidden = true
             self.mScrollV.addSubview(self.mContentV)
-        } else if productId == 621 {
+        }
+        else if productId == 621 {
             self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: 960 * 3, height: self.size.height))
-            
+
             let geneV: LXTechGeneView = UINib(nibName: "LXTechGeneView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGeneView
             geneV.setUI()
             geneV.frame  = CGRect(x: 0, y: 0, width: 960, height: self.size.height)
@@ -84,16 +85,8 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             gene2V.setUI()
             gene2V.frame  = CGRect(x: 960, y: 0, width: 960, height: self.size.height)
             self.mContentV.addSubview(gene2V)
-            
-            let gene3V: LXTechGene3View = UINib(nibName: "LXTechGene3View", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXTechGene3View
-            gene3V.setUI()
-            gene3V.frame  = CGRect(x: 960*2, y: 0, width: 960, height: self.size.height)
-            self.mContentV.addSubview(gene3V)
-
-
-            
-            self.mScrollV.contentSize = CGSize(width: 960 * 3, height: self.size.height)
-            self.mPageControl.numberOfPages = 3
+            self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
+            self.mPageControl.numberOfPages = 2
             self.mScrollV.addSubview(self.mContentV)
         }
         
