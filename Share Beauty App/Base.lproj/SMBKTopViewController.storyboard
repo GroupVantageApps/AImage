@@ -68,8 +68,8 @@
                                             <action selector="onTapForthItemBtn:" destination="TYu-Ly-iev" eventType="touchUpInside" id="fHF-Kt-VP1"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p3_Complexion.png" translatesAutoresizingMaskIntoConstraints="NO" id="eM2-ac-QUj">
-                                        <rect key="frame" x="410" y="30" width="450" height="500"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p3_complexion.png" translatesAutoresizingMaskIntoConstraints="NO" id="eM2-ac-QUj">
+                                        <rect key="frame" x="460" y="30" width="380" height="500"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nB-A5-BzQ">
@@ -89,7 +89,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg4-Wm-hEA">
                                         <rect key="frame" x="100" y="115" width="290" height="350"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <mutableString key="text">A SHISEIDO first in complexion that self-refreshes  nonstop. With ActiveForce™ Technology, our formulas sense and respond to the unique needs of your skin. These long-wear formulas help resist everyday factors such as heat, oil, humidity, and even motion so you maintain a  just-applied look and flawless finish that lasts 24 hours.Skin looks and feels fresh all day.</mutableString>
+                                        <string key="text">A SHISEIDO first in complexion that self-refreshes  nonstop. With ActiveForce™ Technology, our formulas sense and respond to the unique needs of your skin. These long-wear formulas help resist everyday factors such as heat, oil, humidity, and even motion so you maintain a  just-applied look and flawless finish that lasts 24 hours.Skin looks and feels fresh all day.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -378,6 +378,6 @@ for face, eyes, and lips. </string>
         <image name="complextion_btn.png" width="16" height="16"/>
         <image name="p2_complexion.png" width="746" height="648"/>
         <image name="p2_makeup.png" width="646" height="646"/>
-        <image name="p3_Complexion.png" width="320" height="373"/>
+        <image name="p3_complexion.png" width="1322" height="1835"/>
     </resources>
 </document>
