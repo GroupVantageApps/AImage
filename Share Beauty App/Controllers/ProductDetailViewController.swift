@@ -332,24 +332,6 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setImucalmView()
             
         }
-                if [616].contains(self.product.productId) {
-                    self.efficacyScrollV.delegate = self
-                    self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-                    self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
-                    self.efficacyScrollV.isPagingEnabled = true
-
-                    let efficacyV: EyeTreatEffView = UINib(nibName: "EyeTreatEffView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatEffView
-                    efficacyV.setEffency19AW(productId: productId)
-                    self.mVContent.addSubview(efficacyV)
-
-//                    self.techScrollV.delegate = self
-//                    self.techScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-//                    self.techScrollV.contentSize = CGSize(width: techScrollV.frame.width, height: (techScrollV.frame.height)*2)
-//                    self.techScrollV.isPagingEnabled = true
-//                    self.techScrollV.bounces = false
-
-                    
-                    }
         
         if [617, 618].contains(self.product.productId) {
             self.efficacyScrollV.delegate = self
@@ -1597,8 +1579,17 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             } else if sender === mCategoryButtonEfficacy {
                 mVContent.isHidden = false
                 print("effect")
-                
-                self.didTapEfficacyResults()
+                if [616].contains(self.product.productId) {
+                    self.efficacyScrollV.delegate = self
+                    self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
+                    self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
+                    self.efficacyScrollV.isPagingEnabled = true
+                    self.efficacyScrollV.bounces = false
+                    
+                    let efficacyV: EyeTreatEffView = UINib(nibName: "EyeTreatEffView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatEffView
+                    efficacyV.setEffency19AW(productId: productId)
+                    self.mVContent.addSubview(efficacyV)
+                }
                 
             } else if sender === mCategoryButtonDefend {
                 let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
