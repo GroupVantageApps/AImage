@@ -49,8 +49,23 @@ class HowToUse19AW: UIView {
             }
             
             if productId != 632 {
-                let productid: String = productId.description
-                let image = UIImage(named: "\(productid)howto_\(i+1)")
+                var image: UIImage?
+                if productId == 625 {
+                    image = UIImage(named: "p8_0\(i+1)")
+                } else if productId == 626 {
+                    image = UIImage(named: "p9_0\(i+1)")
+                } else if productId == 627 {
+                    image = UIImage(named: "p11_0\(i+1)")
+                } else if productId == 628 {
+                    image = UIImage(named: "p12_0\(i+1)")
+                } else if productId == 629 {
+                    image = UIImage(named: "p13_0\(i+1)")
+                } else if productId == 630 {
+                    image = UIImage(named: "p14_0\(i+1)")
+                } else if productId == 631 {
+                    image = UIImage(named: "p15_0\(i+1)")
+                }
+                
                 let faceImageV = UIImageView(image:image)
                 faceImageV.contentMode = .scaleAspectFit
                 faceImageV.clipsToBounds = true
@@ -121,8 +136,7 @@ class HowToUse19AW: UIView {
                 } else if i == 1 {
                     imageDescriptLabel.frame = CGRect(x: 40, y: 10+(50*i), width: 600, height: 50)
                 } else if i == 2 {
-                    let productid: String = productId.description
-                    let image = UIImage(named: "\(productid)howto_\((i-2)+1)")
+                    let image = UIImage(named: "p16_0\((i-2)+1)")
                     let faceImageV = UIImageView(image:image)
                     faceImageV.contentMode = .scaleAspectFit
                     faceImageV.clipsToBounds = true
@@ -133,8 +147,7 @@ class HowToUse19AW: UIView {
                     
                     generateV.addSubview(faceImageV)
                 } else if i == 3 {
-                    let productid: String = productId.description
-                    let image = UIImage(named: "\(productid)howto_\((i-2)+1)")
+                    let image = UIImage(named: "p16_0\((i-2)+1)")
                     let faceImageV = UIImageView(image:image)
                     faceImageV.contentMode = .scaleAspectFit
                     faceImageV.clipsToBounds = true
