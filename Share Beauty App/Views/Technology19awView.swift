@@ -1,31 +1,36 @@
-//
-//  LatestMoisturizerTechView.swift
+        //
+//  Technology19awView.swift
 //  Share Beauty App
 //
-//  Created by ryu.ishiduka on 2018/09/27.
-//  Copyright © 2018年 AQUA Co., Ltd. All rights reserved.
+//  Created by Matsuda Hidehiko on 2019/04/09.
+//  Copyright © 2019年 AQUA Co., Ltd. All rights reserved.
 //
 
 import Foundation
-
-
-class LatestMoisturizerTechView: UIView {
+import AVFoundation
+import AVKit
+class Technology19awView : UIView{
     
     @IBOutlet weak var mScrollView: UIScrollView!
     @IBOutlet weak var mFirstView: UIView!
     @IBOutlet weak var mSecondView: UIView!
-//    @IBOutlet weak var mThirdView: UIView!
+    @IBOutlet weak var mVContentLeft: UIView!
+    @IBOutlet weak var mVContentRight: UIView!
+    @IBOutlet weak var mContentView: UIView!
     
-    @IBOutlet weak var mCaseOneView: UIView!
-    @IBOutlet weak var mCaseTwoView: UIView!
+    private var textColor: UIColor = UIColor()
+    private var titleLabel: UILabel = UILabel()
+    private var titleDescription: UILabel = UILabel()
     
+    let red = UIColor(red: 185.0/255.0, green: 0.0/255.0, blue: 35.0/255.0, alpha: 1.0)
     private var firstTitle: UILabel = UILabel()
     private var firstSubText: UILabel = UILabel()
+
     
     private var productId: Int = 0
     private var isCase: Int = 0
     private let caseOneList: [Int] = [602, 614, 605, 604]
-    private var textColor: UIColor = UIColor()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,10 +47,8 @@ class LatestMoisturizerTechView: UIView {
             self.textColor = UIColor(hex: "b1457c", alpha: 1)
         }
         self.setFirstView()
-        if self.productId != 618 {
-            self.setSecondView()
-        }
-//        self.setThirdView()
+        self.setSecondView()
+        //        self.setThirdView()
     }
     
     private func setFirstView() {
@@ -145,13 +148,11 @@ class LatestMoisturizerTechView: UIView {
         var title: String! = String()
         var text: String! = String()
         if isCase == 1 {
-            mCaseOneView.isHidden = false
-            mCaseTwoView.isHidden = true
+  
             title = AppItemTable.getNameByItemId(itemId: 8092)
             text = AppItemTable.getNameByItemId(itemId: 8093)
         } else if isCase == 2 {
-            mCaseOneView.isHidden = true
-            mCaseTwoView.isHidden = false
+  
             title = AppItemTable.getNameByItemId(itemId: 8128)
             text = AppItemTable.getNameByItemId(itemId: 8129)
         }
@@ -196,8 +197,7 @@ class LatestMoisturizerTechView: UIView {
         } else if isCase == 2 {
             setCaseTwoView(upperObject: secondSubText)
         }
-        mSecondView.addSubview(mCaseOneView)
-        mSecondView.addSubview(mCaseTwoView)
+
     }
     
     private func setCaseOneView(upperObject: UIView ) {
@@ -205,7 +205,7 @@ class LatestMoisturizerTechView: UIView {
         let caseViewWidth: CGFloat = mScrollView.width - caseMargin * 2
         let caseViewHeight: CGFloat = mScrollView.height - upperObject.bottom - 20
         
-        mCaseOneView.frame = CGRect(x: caseMargin, y: upperObject.bottom + 10, width: caseViewWidth, height: caseViewHeight)
+        
         
         let leftView: UIView = UIView()
         leftView.frame = CGRect(x: 0, y: 0, width: caseViewWidth / 2, height: caseViewHeight)
@@ -376,9 +376,7 @@ class LatestMoisturizerTechView: UIView {
         rightView.addSubview(verticalLabel)
         rightView.addSubview(firstParamLabel)
         rightView.addSubview(nextParamLabel)
-        
-        mCaseOneView.addSubview(leftView)
-        mCaseOneView.addSubview(rightView)
+ 
     }
     
     private func setCaseTwoView(upperObject: UIView) {
@@ -386,7 +384,7 @@ class LatestMoisturizerTechView: UIView {
         let caseViewWidth: CGFloat = mScrollView.width - caseMargin * 2
         let caseViewHeight: CGFloat = mScrollView.height - upperObject.bottom - 20
         
-        mCaseTwoView.frame = CGRect(x: caseMargin, y: upperObject.bottom + 10, width: caseViewWidth, height: caseViewHeight)
+        
         
         let leftView: UIView = UIView()
         leftView.frame = CGRect(x: 0, y: 0, width: caseViewWidth / 3 + 30, height: caseViewHeight)
@@ -523,9 +521,8 @@ class LatestMoisturizerTechView: UIView {
             rightView.addSubview(nextParamLabel)
             rightView.addSubview(nextParamComment)
         }
-        
-        mCaseTwoView.addSubview(leftView)
-        mCaseTwoView.addSubview(centerView)
-        mCaseTwoView.addSubview(rightView)
+
     }
 }
+
+
