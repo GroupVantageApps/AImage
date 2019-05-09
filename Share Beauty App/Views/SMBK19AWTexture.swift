@@ -122,7 +122,7 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         var width: CGFloat!
-        width = collectionView.width / 3.1
+        width = (collectionView.width + 212) / 3.1
         let height: CGFloat = collectionView.height
         return CGSize(width: width, height: height)
     }
