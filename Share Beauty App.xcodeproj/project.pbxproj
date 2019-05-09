@@ -153,6 +153,8 @@
 		44B34E27224CC2EA0097A6D1 /* SMBK19AWTexture.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B34E26224CC2EA0097A6D1 /* SMBK19AWTexture.xib */; };
 		44B34E29224CC31E0097A6D1 /* SMBK19AWTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B34E28224CC31E0097A6D1 /* SMBK19AWTexture.swift */; };
 		44B34E2B224CC3F10097A6D1 /* SMBK19AWTextureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B34E2A224CC3F10097A6D1 /* SMBK19AWTextureViewController.storyboard */; };
+		44D7BBA62283D2610073D506 /* HowToUse19AW.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D7BBA52283D2610073D506 /* HowToUse19AW.xib */; };
+		44D7BBA82283D2930073D506 /* HowToUse19AW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D7BBA72283D2930073D506 /* HowToUse19AW.swift */; };
 		4F1DB747227ED1450062F4CA /* BNF618FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */; };
 		4F1DB748227ED1450062F4CA /* BNF618FirstTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DB746227ED1450062F4CA /* BNF618FirstTechView.swift */; };
 		4F1DB74A227ED1B20062F4CA /* BNFTech1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB749227ED1B20062F4CA /* BNFTech1.png */; };
@@ -1035,6 +1037,8 @@
 		44B34E26224CC2EA0097A6D1 /* SMBK19AWTexture.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SMBK19AWTexture.xib; sourceTree = "<group>"; };
 		44B34E28224CC31E0097A6D1 /* SMBK19AWTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMBK19AWTexture.swift; sourceTree = "<group>"; };
 		44B34E2A224CC3F10097A6D1 /* SMBK19AWTextureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SMBK19AWTextureViewController.storyboard; sourceTree = "<group>"; };
+		44D7BBA52283D2610073D506 /* HowToUse19AW.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowToUse19AW.xib; sourceTree = "<group>"; };
+		44D7BBA72283D2930073D506 /* HowToUse19AW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUse19AW.swift; sourceTree = "<group>"; };
 		4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618FirstTechView.xib; sourceTree = "<group>"; };
 		4F1DB746227ED1450062F4CA /* BNF618FirstTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF618FirstTechView.swift; sourceTree = "<group>"; };
 		4F1DB749227ED1B20062F4CA /* BNFTech1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNFTech1.png; sourceTree = "<group>"; };
@@ -2688,6 +2692,8 @@
 				4194846821539E2F00680A26 /* Ideal */,
 				4194846721539DF000680A26 /* LifeStyle */,
 				E2EB07E220720B180016B094 /* SDPEfficacyResultView.swift */,
+				44D7BBA52283D2610073D506 /* HowToUse19AW.xib */,
+				44D7BBA72283D2930073D506 /* HowToUse19AW.swift */,
 				E2EB07E020720AF00016B094 /* SDPEfficacyResultView.xib */,
 				C94638D21F18CC45009D1480 /* LoadingView.swift */,
 				C046D97F1D75733E007F57CA /* AVPlayerView.swift */,
@@ -4028,6 +4034,7 @@
 				DE325B192077469000B660C9 /* lx_b01.png in Resources */,
 				C050C96D1E8267450009679D /* d_3_5.png in Resources */,
 				C050C97C1E8267450009679D /* efficacy_slider_circle_.png in Resources */,
+				44D7BBA62283D2610073D506 /* HowToUse19AW.xib in Resources */,
 				DA22A5E2220AC3FE00CF5FEE /* page5_main_visual.png in Resources */,
 				C050C9871E8267450009679D /* utm03_after.png in Resources */,
 				C050C9011E82619F0009679D /* sib01_before.png in Resources */,
@@ -4365,6 +4372,7 @@
 				C037CBA61D87DFDC00DEFE14 /* IdealSecondSelectViewController.swift in Sources */,
 				C00EFB141D7EBF1800F9EC8F /* LifeStyleThirdDetailViewController.swift in Sources */,
 				EB8F34081D884D4800641976 /* AppItemTranslateEntity.swift in Sources */,
+				44D7BBA82283D2930073D506 /* HowToUse19AW.swift in Sources */,
 				DE2C909C1E9C66E600B5FC4A /* LXYutakaConceptView.swift in Sources */,
 				C0998BDE1DA4F4F800220321 /* NSLayoutConstraint+FQExtention.swift in Sources */,
 				DE2C90821E9C66E600B5FC4A /* LXGraphView.swift in Sources */,

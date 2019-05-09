@@ -1199,6 +1199,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // 19AW BNF
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
+        } else if [625,626,627,628,629,630,631,632].contains(productId) {
+            mCategoryButtonHowToUse.enabled = true
         }
         
     }
@@ -1650,10 +1652,14 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 makeCategoryImages(product.technologyImage)
             }
         case mCategoryButtonHowToUse:
-            mVCategoryImage.isHidden = false
-            mVContent.isHidden = true
-
-            setMakeUpHowToUse(product.usageImage)
+            mVContent.isHidden = false
+            if [625,626,627,628,629,630,631,632].contains(productId) {
+                let howToUseV: HowToUse19AW = UINib(nibName: "HowToUse19AW", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! HowToUse19AW
+                howToUseV.setMakeUpHowToUse19AW(productId: productId)
+                self.mVContent.addSubview(howToUseV)
+            } else {
+                setMakeUpHowToUse(product.usageImage)
+            }
             //            makeCategoryImages(product.usageImage)
         case mCategoryButtonEfficacy:
             makeCategoryImages(product.effectImage)
