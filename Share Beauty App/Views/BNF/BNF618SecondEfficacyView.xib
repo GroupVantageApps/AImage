@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Medium.otf">
+            <string>Reader-Medium</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BNF618SecondEfficacyView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-dp-LdP" customClass="BNF618SecondEfficacyView" customModule="Share_Beauty_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8310" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rapid Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnc-cV-dQ3">
+                            <rect key="frame" x="277" y="41" width="461" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8313" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rapid Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhx-3t-9Dx">
+                            <rect key="frame" x="246" y="406" width="532" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="19AW_BNF3_after.png" translatesAutoresizingMaskIntoConstraints="NO" id="G6H-M4-12I">
+                            <rect key="frame" x="341" y="84" width="343" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="19AW_BNF3_before.png" translatesAutoresizingMaskIntoConstraints="NO" id="OzD-ZI-IhU">
+                            <rect key="frame" x="341" y="84" width="343" height="240"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQ9-dP-45c">
+                            <rect key="frame" x="341" y="338" width="1" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.38431644439697266" green="0.38430869579315186" blue="0.38431400060653687" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-1Z-YDZ">
+                            <rect key="frame" x="511" y="338" width="1" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.38431644440000001" green="0.38430869579999999" blue="0.38431400059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBw-Hf-ztq">
+                            <rect key="frame" x="682" y="338" width="1" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.38431644440000001" green="0.38430869579999999" blue="0.38431400059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
+                        <button opaque="NO" tag="8311" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csQ-yu-OCQ">
+                            <rect key="frame" x="348" y="340" width="157" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.78975230460000001" green="0.18078643080000001" blue="0.2117379308" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onTapABBtnWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="DsT-tf-REb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="8312" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idQ-dX-EB3">
+                            <rect key="frame" x="519" y="340" width="157" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onTapABBtnWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="4Km-CD-HfO"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8314" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tested by 19-35 women, ages 36-53; 3 months of regular use (2018/6/18-9/12); Tested in Germany" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGI-Db-miS">
+                            <rect key="frame" x="753" y="438" width="255" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="11"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="QCK-dp-LdP" secondAttribute="bottom" id="LTd-jT-VOE"/>
+                <constraint firstItem="QCK-dp-LdP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SEO-uU-aje"/>
+                <constraint firstAttribute="trailing" secondItem="QCK-dp-LdP" secondAttribute="trailing" id="pgY-Kr-A6e"/>
+                <constraint firstItem="QCK-dp-LdP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yzF-Rj-dqg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mAfterBtn" destination="idQ-dX-EB3" id="Zi9-OE-MOq"/>
+                <outlet property="mBeforeBtn" destination="csQ-yu-OCQ" id="pwJ-dP-a3J"/>
+                <outlet property="mBeforeImg" destination="OzD-ZI-IhU" id="QjD-bi-hGE"/>
+            </connections>
+            <point key="canvasLocation" x="19.921875" y="41.796875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="19AW_BNF3_after.png" width="693" height="448"/>
+        <image name="19AW_BNF3_before.png" width="693" height="448"/>
+    </resources>
+</document>

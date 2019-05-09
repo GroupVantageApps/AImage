@@ -10,25 +10,18 @@ import Foundation
 
 class LXLegendaryEnmeiComplexView : UIView{
     
-    @IBOutlet var mXbutton: UIButton!
-    func setUI() {
-//        let firstView = self.viewWithTag(100)! as UIView
-//        firstView.frame = CGRect(x: 0, y: 0, width: 959, height: 984)
-//        self.addSubview(firstView)
-        
-//        let imageBg = self.viewWithTag(60) as! UIImageView
-//        imageBg.image = FileTable.getLXFileImage("lx_aura.png")
-        
-//        let lxArr = LanguageConfigure.lxcsv
-//        for i in 0..<11 {
-//            let label = firstView.viewWithTag(10 + i) as! UILabel
-//            let csvId = 366 + i
-//            label.text = lxArr[String(csvId)]
-//            
-//        }
-    }
+    @IBOutlet weak var title: UILabel!
     
-    @IBAction func close(_ sender: Any) {
-        self.isHidden = true
+    @IBOutlet weak var `subscript`: UILabel!
+    @IBOutlet weak var Btn: UILabel!
+    
+    
+    func setUI() {
+        title.text = AppItemTable.getNameByItemId(itemId: 8447)
+        `subscript`.text = AppItemTable.getNameByItemId(itemId: 8466)
+        Btn.text = AppItemTable.getNameByItemId(itemId: 8467)
+        
+        
     }
+
 }

@@ -278,7 +278,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LifeStyleCollectionViewCell
             let lifeStyle = mLifeStyles[indexPath.row / 2]
             cell.contentView.viewWithTag(indexPath.row)
-            print("cell.tag:\(cell.tag)")
             cell.image = lifeStyle.image
             cell.text = lifeStyle.text
             cell.isRecommend = lifeStyle.isRecommend
@@ -289,9 +288,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 cell.focusAnimation()
             }
             cell.delegate = self
-
-            print("cell.image:\(String(describing: cell.image))")
-
             return cell
         }
     }
@@ -562,11 +558,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     itemIds[624] = 8164
                 }
             }
-            print("----------start------")
-            print(itemIds[product.productId] ?? 0)
-            print(product.productId)
-            print(itemIds[product.productId] ?? 0 != 0 )
-            print(index)
             if itemIds[product.productId] ?? 0 != 0
             {
                 var index_f = index;
@@ -616,9 +607,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 width = width * CGFloat(makeUpProductsCount)
                 imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
                 imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
-                print("-------------------------------")
-                print(itemIds[product.productId])
-                print(product.productId)
                 labelItems.append((discription: itemIds[product.productId] ?? 8165, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
             }
                 
@@ -660,7 +648,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
-                print(text)
             }
             mScrollV.addSubview(label)
         }

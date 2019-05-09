@@ -95,7 +95,6 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     generateV.addSubview(description)
                 }
                 
-                
                 let path = Bundle.main.path(forResource: "UTM_Edited33", ofType: "mp4")!
                 let player = AVPlayer(url: URL(fileURLWithPath: path))
                 

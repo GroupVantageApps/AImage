@@ -210,7 +210,6 @@ class LifeStyleProductView: BaseView {
     }
 
     override func layoutSubviews() {
-        print("layoutSubviews")
         super.layoutSubviews()
     }
 

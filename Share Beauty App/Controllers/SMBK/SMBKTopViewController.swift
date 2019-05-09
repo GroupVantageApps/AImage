@@ -17,6 +17,8 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     
     @IBOutlet weak var firstV: UIView!
     @IBOutlet weak var secondV: UIView!
+    @IBOutlet weak var thirdV: UIView!
+    @IBOutlet weak var forthV: UIView!
     
     @IBOutlet weak var mFirstVTitle: UILabel!
     @IBOutlet weak var mFirstVSubTitle: UILabel!
@@ -32,6 +34,15 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
     @IBOutlet weak var mToolBtn: UIButton!
     @IBOutlet weak var mComplextionBtn: UIButton!
     @IBOutlet weak var mNextBtn: UIButton!
+    @IBOutlet weak var mThirdVTitle: UILabel!
+    @IBOutlet weak var MakeupBtn: UIButton!
+    @IBOutlet weak var ComplexionBtn: UIButton!
+    @IBOutlet weak var mForthToolsBtn: UIButton!
+    @IBOutlet weak var mForthItemBtn: UIButton!
+    @IBOutlet weak var mForthImg: UIImageView!
+    @IBOutlet weak var mForthTitleLbl: UILabel!
+    @IBOutlet weak var mForthVText: UILabel!
+    @IBOutlet weak var mForthComplexionBtn: UIButton!
     
     let mSMKArr = LanguageConfigure.smk_csv
     // 自動画面遷移用
@@ -64,6 +75,25 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
             btn.setTitle(mSMKArr["\(7 + i)"], for: .normal)
             btn.titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         }
+        
+        let makeupTitle = AppItemTable.getNameByItemId(itemId: 8541)
+        let complexionTitle = AppItemTable.getNameByItemId(itemId: 8543)
+        MakeupBtn.setTitle(makeupTitle, for: .normal)
+        MakeupBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
+        MakeupBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 50, 0, 0)
+        MakeupBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)
+        ComplexionBtn.setTitle(complexionTitle, for: .normal)
+        ComplexionBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
+        ComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -10, 0, 0)
+        ComplexionBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)        
+        mComplextionBtn.isHidden = true
+        let compButton = "> " + mSMKArr["29"]!
+        mForthComplexionBtn.setTitle(compButton, for: .normal)
+        mForthComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -110, 0, 0)
+        mForthTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8539)
+        mForthVText.text = AppItemTable.getNameByItemId(itemId: 8540)
+        print("test:\(mForthVText.text!)")
+        
     }
     
     private func animateFadeIn(target: UIView, delay: TimeInterval, completion: (() -> ())? = nil) {
@@ -89,27 +119,71 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         }
     }
     
+    private func thirdViewFadeIn() {
+        self.animateFadeIn(target: mThirdVTitle, delay: 0)
+        self.animateFadeIn(target: MakeupBtn, delay: 0)
+        self.animateFadeIn(target: ComplexionBtn, delay: 0)
+    }
+    
+    private func FothViewFadeIn() {
+        self.animateFadeIn(target: mForthToolsBtn, delay: 0)
+        self.animateFadeIn(target: mForthImg, delay: 0)
+        self.animateFadeIn(target: mForthItemBtn, delay: 0)
+    }
+    
+    @IBAction func onTapMakeupBtn(_ sender: Any) {
+        thirdV.isHidden = true
+        secondV.isHidden = false
+        self.secondViewFadeIn()
+        self.workItem.cancel()
+    }
+    
+    @IBAction func onTapComplexionBtn(_ sender: Any) {
+        thirdV.isHidden = true
+        forthV.isHidden = false
+        self.FothViewFadeIn()
+        self.workItem.cancel()
+    }
+    
     @IBAction func onTapTextureBtn(_ sender: Any) {
         print("onTapTextureBtn")
-        let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKTextureViewController.self) as! SMBKTextureViewController
-        print((sender as! UIButton).tag)
-        nextVc.texture_id = (sender as! UIButton).tag
-        let beautySecondIds = [70, 71, 72, 73, 74]
-        let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
-        nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
-        delegate?.nextVc(nextVc)
+        if (sender as! UIButton).tag == 6 {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBK19AWTextureViewController.self) as! SMBK19AWTextureViewController
+            print((sender as! UIButton).tag)
+            nextVc.texture_id = (sender as! UIButton).tag
+            let beautySecondIds = [70, 71, 72, 73, 74]
+            let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
+            nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
+            delegate?.nextVc(nextVc)
+        } else {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKTextureViewController.self) as! SMBKTextureViewController
+            print((sender as! UIButton).tag)
+            nextVc.texture_id = (sender as! UIButton).tag
+            let beautySecondIds = [70, 71, 72, 73, 74]
+            let beautyIds = Utility.replaceParenthesis(beautySecondIds.description)
+            nextVc.mProductList = ProductListData(productIds: nil, beautyIds: beautyIds, lineIds: "\(Const.lineIdMAKEUP)")
+            delegate?.nextVc(nextVc)
+        }
     }
     
     @IBAction func onTapItemBtn(_ sender: Any) {
-        print("onTapItemBtn")
+        tapItem()
+    }
+    
+    @IBAction func onTapForthItemBtn(_ sender: Any) {
+        tapItem()
+    }
+    
+    func tapItem() {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: SMBKCategoryViewController.self) as! SMBKCategoryViewController
         delegate?.nextVc(nextVc)
     }
     
     @IBAction func onTapNextBtn(_ sender: Any) {
         firstV.isHidden = true
-        secondV.isHidden = false
-        self.secondViewFadeIn()
+        thirdV.isHidden = false
+        secondV.isHidden = true
+        self.thirdViewFadeIn()
         self.workItem.cancel()
     }
     
