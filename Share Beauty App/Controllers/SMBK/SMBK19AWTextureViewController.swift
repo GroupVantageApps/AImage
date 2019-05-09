@@ -124,7 +124,7 @@ class SMBK19AWTextureViewController: UIViewController, NavigationControllerAnnot
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.width
+        let width: CGFloat = collectionView.width-212
         let height: CGFloat = collectionView.height
         return CGSize(width: width, height: height)
     }
