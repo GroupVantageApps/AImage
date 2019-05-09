@@ -1199,6 +1199,8 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             // 19AW BNF
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonEfficacy.enabled = true
+        } else if productId == 584 {
+            mCategoryButtonDefend.enabled = true
         }
         
     }
@@ -1690,6 +1692,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 mVContent.isHidden = true
                 mVCurrentSelect?.removeFromSuperview()
                 mVCurrentSelect = nil
+            } else if productId == 584 {
+                print("country:\(LanguageConfigure.countryId)")
+                let makeUpV: MakeUp19AWView = UINib(nibName: "MakeUp19AWView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MakeUp19AWView
+                makeUpV.setMakeUp19AW(countryId: LanguageConfigure.countryId)
+                self.mVContent.addSubview(makeUpV)
             }
             
         default:
