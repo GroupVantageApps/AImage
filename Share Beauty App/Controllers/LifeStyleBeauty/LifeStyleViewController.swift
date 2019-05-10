@@ -415,6 +415,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let productId = product.productId
             
             //19AW対応
+            //新規追加625, 597, 627, 632, 626, 595, 629, 631
             if pastProductId != 0 {
                 if productId == 617 || productId == 618 {
                     contentWidth += viewWidth + 400
@@ -462,13 +463,43 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                     } else {
                         contentWidth += viewWidth * 2 + 200
                     }
-                } else if productId == 626 {
+                
+                } else if productId == 625 {
                     if pastProductId == 619 || pastProductId == 623 {
                         contentWidth += viewWidth * 2 + 225
                     } else if pastProductId == 620 || pastProductId == 624 {
                         contentWidth += viewWidth + 225
-                    } else {
+                    }
+                    else {
                         contentWidth += viewWidth + 400
+                    }
+                } else if productId == 597{
+                    if pastProductId == 625{
+                        contentWidth += viewWidth
+                    }
+                } else if productId == 627 {
+                    if pastProductId == 625 || pastProductId == 597{
+                        contentWidth += viewWidth
+                    }
+                } else if productId == 632{
+                    if pastProductId == 625 || pastProductId == 597 || pastProductId == 627{
+                        contentWidth += viewWidth
+                    }
+                } else if productId == 626 {
+                    if pastProductId == 632{
+                        contentWidth += viewWidth + 200
+                    }
+                } else if productId == 595 {
+                    if pastProductId == 626{
+                        contentWidth += viewWidth
+                    }
+                } else if productId == 629 {
+                    if pastProductId == 595 {
+                        contentWidth += viewWidth
+                    }
+                } else if productId == 631 {
+                    if pastProductId == 629 {
+                        contentWidth += viewWidth
                     }
                 }
             } else {
@@ -550,7 +581,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         var pastProductId: Int = 0
         var oChangeIndex: Bool = false
         var tChangeIndex: Bool = false
-        var itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 623: 8164, 626: 8165]
+        var itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 623: 8164, 625: 8165, 626: 8165]
         for (index, product) in productList.products.enumerated() {
             let productId = product.productId
             if productId == 620 {
