@@ -147,6 +147,7 @@
 		443E1EEA22702D6900674B3A /* page1_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 443E1EE922702D6900674B3A /* page1_logo.png */; };
 		443E1EEC22702D7C00674B3A /* p2_complexion.png in Resources */ = {isa = PBXBuildFile; fileRef = 443E1EEB22702D7C00674B3A /* p2_complexion.png */; };
 		443E1EEE22702D8E00674B3A /* p2_makeup.png in Resources */ = {isa = PBXBuildFile; fileRef = 443E1EED22702D8D00674B3A /* p2_makeup.png */; };
+		445DA9BE22840B4F00C80EC1 /* one_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 445DA9BD22840B4F00C80EC1 /* one_line.png */; };
 		44B34E1F224CA2A10097A6D1 /* 03_back_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B34E1E224CA2A10097A6D1 /* 03_back_07.png */; };
 		44B34E21224CA2A90097A6D1 /* 03_back_08.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B34E20224CA2A90097A6D1 /* 03_back_08.png */; };
 		44B34E25224CC21E0097A6D1 /* SMBK19AWTextureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B34E24224CC21E0097A6D1 /* SMBK19AWTextureViewController.swift */; };
@@ -181,7 +182,16 @@
 		44D7BC0E2283DDFC0073D506 /* p9_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D7BBF42283DDFC0073D506 /* p9_01.png */; };
 		44D7BC0F2283DDFC0073D506 /* p11_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D7BBF52283DDFC0073D506 /* p11_02.png */; };
 		44D7BC102283DDFC0073D506 /* p10_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D7BBF62283DDFC0073D506 /* p10_04.png */; };
+		44D7BC122283EBA60073D506 /* MakeUp19AWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D7BC112283EBA60073D506 /* MakeUp19AWView.swift */; };
+		44D7BC142283EBBA0073D506 /* MakeUp19AWView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D7BC132283EBBA0073D506 /* MakeUp19AWView.xib */; };
 		4F00CD4122840E890092F7B4 /* UTM_Edited33.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD4022840E890092F7B4 /* UTM_Edited33.mp4 */; };
+		4F00CD49228522D80092F7B4 /* makeup_03_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD42228522D70092F7B4 /* makeup_03_19aw.png */; };
+		4F00CD4A228522D80092F7B4 /* makeup_02_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD43228522D70092F7B4 /* makeup_02_19aw.png */; };
+		4F00CD4B228522D80092F7B4 /* makeup_01_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD44228522D70092F7B4 /* makeup_01_19aw.png */; };
+		4F00CD4C228522D80092F7B4 /* makeup_06_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD45228522D70092F7B4 /* makeup_06_19aw.png */; };
+		4F00CD4D228522D80092F7B4 /* makeup_04_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD46228522D80092F7B4 /* makeup_04_19aw.png */; };
+		4F00CD4E228522D80092F7B4 /* makeup_05_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD47228522D80092F7B4 /* makeup_05_19aw.png */; };
+		4F00CD4F228522D80092F7B4 /* makeup_07_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD48228522D80092F7B4 /* makeup_07_19aw.png */; };
 		4F1DB747227ED1450062F4CA /* BNF618FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */; };
 		4F1DB748227ED1450062F4CA /* BNF618FirstTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DB746227ED1450062F4CA /* BNF618FirstTechView.swift */; };
 		4F1DB74A227ED1B20062F4CA /* BNFTech1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB749227ED1B20062F4CA /* BNFTech1.png */; };
@@ -1074,6 +1084,7 @@
 		443E1EE922702D6900674B3A /* page1_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page1_logo.png; sourceTree = "<group>"; };
 		443E1EEB22702D7C00674B3A /* p2_complexion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2_complexion.png; sourceTree = "<group>"; };
 		443E1EED22702D8D00674B3A /* p2_makeup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2_makeup.png; sourceTree = "<group>"; };
+		445DA9BD22840B4F00C80EC1 /* one_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one_line.png; sourceTree = "<group>"; };
 		44B34E1E224CA2A10097A6D1 /* 03_back_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03_back_07.png; sourceTree = "<group>"; };
 		44B34E20224CA2A90097A6D1 /* 03_back_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03_back_08.png; sourceTree = "<group>"; };
 		44B34E24224CC21E0097A6D1 /* SMBK19AWTextureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBK19AWTextureViewController.swift; sourceTree = "<group>"; };
@@ -1108,7 +1119,16 @@
 		44D7BBF42283DDFC0073D506 /* p9_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p9_01.png; sourceTree = "<group>"; };
 		44D7BBF52283DDFC0073D506 /* p11_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p11_02.png; sourceTree = "<group>"; };
 		44D7BBF62283DDFC0073D506 /* p10_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p10_04.png; sourceTree = "<group>"; };
+		44D7BC112283EBA60073D506 /* MakeUp19AWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeUp19AWView.swift; sourceTree = "<group>"; };
+		44D7BC132283EBBA0073D506 /* MakeUp19AWView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MakeUp19AWView.xib; sourceTree = "<group>"; };
 		4F00CD4022840E890092F7B4 /* UTM_Edited33.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = UTM_Edited33.mp4; sourceTree = "<group>"; };
+		4F00CD42228522D70092F7B4 /* makeup_03_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_03_19aw.png; sourceTree = "<group>"; };
+		4F00CD43228522D70092F7B4 /* makeup_02_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_02_19aw.png; sourceTree = "<group>"; };
+		4F00CD44228522D70092F7B4 /* makeup_01_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_01_19aw.png; sourceTree = "<group>"; };
+		4F00CD45228522D70092F7B4 /* makeup_06_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_06_19aw.png; sourceTree = "<group>"; };
+		4F00CD46228522D80092F7B4 /* makeup_04_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_04_19aw.png; sourceTree = "<group>"; };
+		4F00CD47228522D80092F7B4 /* makeup_05_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_05_19aw.png; sourceTree = "<group>"; };
+		4F00CD48228522D80092F7B4 /* makeup_07_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_07_19aw.png; sourceTree = "<group>"; };
 		4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618FirstTechView.xib; sourceTree = "<group>"; };
 		4F1DB746227ED1450062F4CA /* BNF618FirstTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF618FirstTechView.swift; sourceTree = "<group>"; };
 		4F1DB749227ED1B20062F4CA /* BNFTech1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNFTech1.png; sourceTree = "<group>"; };
@@ -2819,6 +2839,8 @@
 				C023C2161E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib */,
 				C023C2191E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.swift */,
 				C023C21A1E14FC0E002FBB1B /* LineStepUpperCollectionViewCell.xib */,
+				44D7BC112283EBA60073D506 /* MakeUp19AWView.swift */,
+				44D7BC132283EBBA0073D506 /* MakeUp19AWView.xib */,
 				C02818AB1E6D449300D4DADA /* MakeupUsageView.swift */,
 				C02818AD1E6D44CA00D4DADA /* MakeupUsageView.xib */,
 				C0665AC71D6ACA0300B3D8E5 /* NavigationView.swift */,
@@ -2935,6 +2957,13 @@
 			children = (
 				4F00CD4022840E890092F7B4 /* UTM_Edited33.mp4 */,
 				4F3B4E8C22806E4D008FAB09 /* BNF619Efficacy2.png */,
+				4F00CD44228522D70092F7B4 /* makeup_01_19aw.png */,
+				4F00CD43228522D70092F7B4 /* makeup_02_19aw.png */,
+				4F00CD42228522D70092F7B4 /* makeup_03_19aw.png */,
+				4F00CD46228522D80092F7B4 /* makeup_04_19aw.png */,
+				4F00CD47228522D80092F7B4 /* makeup_05_19aw.png */,
+				4F00CD45228522D70092F7B4 /* makeup_06_19aw.png */,
+				4F00CD48228522D80092F7B4 /* makeup_07_19aw.png */,
 				4F3B4E7E22805F57008FAB09 /* BNF619Tech3.png */,
 				4F3B4E782280592C008FAB09 /* BNF619Tech1.png */,
 				4F3B4E7222805337008FAB09 /* BNFEfficacy3.png */,
@@ -2948,6 +2977,7 @@
 				4FCDAF66225C7D5300F7BBF2 /* graph_anim_623.png */,
 				4FCDAF6E225C904800F7BBF2 /* graph_anim_624.png */,
 				4FCDAF60225C703300F7BBF2 /* waso_tech_623_bg.png */,
+				445DA9BD22840B4F00C80EC1 /* one_line.png */,
 				DE673F20221698EB0081064E /* 03_back_06.png */,
 				44B34E1E224CA2A10097A6D1 /* 03_back_07.png */,
 				44B34E20224CA2A90097A6D1 /* 03_back_08.png */,
@@ -3737,6 +3767,7 @@
 				DE06F7131F16450200EF2FE2 /* body.png in Resources */,
 				DE2C90A11E9C66E600B5FC4A /* LXYutakaTreatmentView.xib in Resources */,
 				44B34E2B224CC3F10097A6D1 /* SMBK19AWTextureViewController.storyboard in Resources */,
+				44D7BC142283EBBA0073D506 /* MakeUp19AWView.xib in Resources */,
 				C050C90B1E82619F0009679D /* ss_ibuki_bg.png in Resources */,
 				C050C9971E8267450009679D /* t_btn_white.png in Resources */,
 				6E4ABB3120AA6CAF000355D2 /* complexion_40.png in Resources */,
@@ -3832,6 +3863,7 @@
 				C050C91D1E82619F0009679D /* orange_C.png in Resources */,
 				419484802153A27A00680A26 /* cleanser_scent_03.png in Resources */,
 				4F3B4E8D22806E4E008FAB09 /* BNF619Efficacy2.png in Resources */,
+				4F00CD49228522D80092F7B4 /* makeup_03_19aw.png in Resources */,
 				DE06F7201F16450200EF2FE2 /* desc_4.png in Resources */,
 				DE2C300920737ADE00548627 /* eee_item01_after.png in Resources */,
 				DE325B11207741BF00B660C9 /* lx_img_tmp.png in Resources */,
@@ -3845,6 +3877,7 @@
 				DA80CB34225458E40017694A /* p2_graph_flower.png in Resources */,
 				6E4ABB4220AA6CAF000355D2 /* 02_02.png in Resources */,
 				DE2C300F20737B3D00548627 /* eee_technology2_item01.png in Resources */,
+				4F00CD4B228522D80092F7B4 /* makeup_01_19aw.png in Resources */,
 				DE2C300C20737ADE00548627 /* eee_item01_before.png in Resources */,
 				E5E0D3EE1DF3D04C0053373F /* IdealSecondSelectViewController.storyboard in Resources */,
 				C050C96C1E8267450009679D /* d_2.png in Resources */,
@@ -3894,8 +3927,10 @@
 				26AD5D7420230A1F002A2076 /* KozGoPr6N-Regular.otf in Resources */,
 				C050C91E1E82619F0009679D /* orange_L.png in Resources */,
 				DE80C66C20726D4E00CD326A /* 18aw_85.png in Resources */,
+				4F00CD4F228522D80092F7B4 /* makeup_07_19aw.png in Resources */,
 				44D7BC0E2283DDFC0073D506 /* p9_01.png in Resources */,
 				44D7BC092283DDFC0073D506 /* p9_02.png in Resources */,
+				4F00CD4E228522D80092F7B4 /* makeup_05_19aw.png in Resources */,
 				DE325B1C2077469000B660C9 /* lx_b02.png in Resources */,
 				DE80C67B20726DCC00CD326A /* 18aw_98.png in Resources */,
 				4F3B4E7322805337008FAB09 /* BNFEfficacy3.png in Resources */,
@@ -3946,6 +3981,7 @@
 				DE2C8F501E9B9F5800B5FC4A /* ACaslonPro-Regular.otf in Resources */,
 				8045C1E81EEE862700284CF9 /* LifeStyleFirstProductView.xib in Resources */,
 				C02818B21E6D4A5E00D4DADA /* StepUsageView.xib in Resources */,
+				4F00CD4C228522D80092F7B4 /* makeup_06_19aw.png in Resources */,
 				DEED708B20A54E85001027EB /* SMBKTextureViewController.storyboard in Resources */,
 				4FCDAF6B225C87EF00F7BBF2 /* Waso624EfficacyView.xib in Resources */,
 				DE078948220CA5F600D6CBAF /* LXLegendaryEnmeiComplexView.xib in Resources */,
@@ -4035,11 +4071,13 @@
 				4194846D21539EE300680A26 /* WasoCleanserEfficacyView.xib in Resources */,
 				2680EC212037E4FA005257B1 /* makeup_8.png in Resources */,
 				260E34AE2019CF7B0006109B /* UTM-play-button.png in Resources */,
+				445DA9BE22840B4F00C80EC1 /* one_line.png in Resources */,
 				C050C97A1E8267450009679D /* efficacy_face2_01.png in Resources */,
 				C050C98C1E8267450009679D /* f_effect_3.png in Resources */,
 				DA0D5F1F22004470006703D5 /* LuxuryLegendaryEnmeiViewController.storyboard in Resources */,
 				2680EC10203404D0005257B1 /* before_03.png in Resources */,
 				C050C90C1E82619F0009679D /* ss_ibuki_hoshi.png in Resources */,
+				4F00CD4A228522D80092F7B4 /* makeup_02_19aw.png in Resources */,
 				C050C9A31E8267450009679D /* utm_bg_02.png in Resources */,
 				C050C9711E8267450009679D /* d_block_2s.png in Resources */,
 				C050C9121E82619F0009679D /* wab01_before.png in Resources */,
@@ -4058,6 +4096,7 @@
 				6E4ABB3F20AA6CAF000355D2 /* 02_04.png in Resources */,
 				419D8DF721006A4100106B49 /* UtmMaskEfficacyView.xib in Resources */,
 				4FCDAF67225C7D5400F7BBF2 /* graph_anim_623.png in Resources */,
+				4F00CD4D228522D80092F7B4 /* makeup_04_19aw.png in Resources */,
 				C050C9101E82619F0009679D /* ss_purple_5.png in Resources */,
 				DA80CB31225458DA0017694A /* p2_bar_red.png in Resources */,
 				C02818A21E6BCE7C00D4DADA /* WasoFeatureView.xib in Resources */,
@@ -4337,7 +4376,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AImage/AImage.framework",
 				"${BUILT_PRODUCTS_DIR}/APNGKit/APNGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -4360,7 +4399,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Share Beauty App/Pods-Share Beauty App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4425,6 +4464,7 @@
 				DEC751F52073BCC300A9FC1C /* WASOPeelHowToUseResultView.swift in Sources */,
 				C058183A1D6DBA9B00C8FB55 /* UIView+FQExtention.swift in Sources */,
 				DE38CC571F25C47E001656E5 /* GscThumnailCollectionViewCell.swift in Sources */,
+				44D7BC122283EBA60073D506 /* MakeUp19AWView.swift in Sources */,
 				DE2C90861E9C66E600B5FC4A /* LXHeaderView.swift in Sources */,
 				C0DA9AF31DB8CC7E00692058 /* DropDownCell.swift in Sources */,
 				EB73659C1D8312A700D223BA /* TroubleTranslateTable.swift in Sources */,

@@ -92,7 +92,6 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         mForthComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -110, 0, 0)
         mForthTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8539)
         mForthVText.text = AppItemTable.getNameByItemId(itemId: 8540)
-        print("test:\(mForthVText.text!)")
         
     }
     
