@@ -24,7 +24,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
 
         // image
         for i in 0..<3 {
-            let image = UIImage(named: "makeup_0\(i+1).png")!
+            let image = UIImage(named: "makeup_0\(i+1)_19aw.png")!
             let faceImageV = UIImageView(image:image)
             faceImageV.contentMode = .scaleAspectFit
             faceImageV.clipsToBounds = true
@@ -167,7 +167,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: self.size.width, height: self.size.height*5)
             // image
             for i in 3..<5 {
-                let image = UIImage(named: "makeup_0\(i+1).png")!
+                let image = UIImage(named: "makeup_0\(i+1)_19aw.png")!
                 let faceImageV = UIImageView(image:image)
                 faceImageV.contentMode = .scaleAspectFit
                 faceImageV.clipsToBounds = true
@@ -273,7 +273,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: self.size.width, height: self.size.height*5)
             // image
             for i in 3..<5 {
-                let image = UIImage(named: "makeup_0\(i+3).png")!
+                let image = UIImage(named: "makeup_0\(i+3)_19aw.png")!
                 let faceImageV = UIImageView(image:image)
                 faceImageV.contentMode = .scaleAspectFit
                 faceImageV.clipsToBounds = true
