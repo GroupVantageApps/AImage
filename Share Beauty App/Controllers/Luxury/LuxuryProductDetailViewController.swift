@@ -231,11 +231,15 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         mCategoryButtonHowToUse.title = mItemsCommon["02"]
         mCategoryButtonEfficacy.title = mItemsCommon["03"]
         mCategoryButtonTechnologies.title = techText
-        mCategoryButtonDefend.title = lxArr["17"]
+        if productId == 621 {
+            mCategoryButtonDefend.title = AppItemTable.getNameByItemId(itemId: 8447)
+        }else{
+            mCategoryButtonDefend.title = lxArr["17"]
+        }
         mTransitionView.setLikeItText(text: mItemsSideMenu["09"])
         
         mImgVProduct.image = FileTable.getImage(product.image)
-        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525 || productId == 621{
+        if productId == 516 || productId == 517 || productId == 520 || productId == 521 || productId == 519 || productId == 522 || productId == 523 || productId == 524 || productId == 525{
             mCategoryButtonTechnologies.enabled = true
             mCategoryButtonDefend.enabled = true
         } else {
@@ -347,11 +351,11 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
         fiveSecretBtn.addTarget(self, action: #selector(self.toFiveSecretsView(_:)), for: .touchUpInside)
 
         self.mRightContentV.addSubview(fiveSecretBtn)
-//        if (self.productId == 621) {
-//            mCategoryButtonTechnologies.enabled = false
-//            mCategoryButtonEfficacy.enabled = false
-//            mCategoryButtonDefend.enabled = false
-//        }
+        if (self.productId == 621) {
+            mCategoryButtonTechnologies.enabled = true
+            mCategoryButtonEfficacy.enabled = true
+            mCategoryButtonDefend.enabled = true
+        }
     }
 
     override func viewDidLayoutSubviews() {

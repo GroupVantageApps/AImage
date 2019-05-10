@@ -27,7 +27,6 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
     weak var delegate: IdealSelectCollectionViewDelegate?
     var lines: [DataStructLine] = [] {
         didSet {
-            print("======Lines===========")
             addCollectionView(lines.count)
             var i = 0
             for idealSelectCell in mIdealSelectCells {
@@ -163,7 +162,6 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
                 idealSelectCell.showedSubTitle = self.showedSubTitle
                 idealSelectCell.titleFontSize = self.titleFontSize
                 idealSelectCell.subTitleFontSize = self.subTitleFontSize
-                print(self.subTitleFontSize)
                 idealSelectCell.selectedImgSize = self.selectedImgSize
                 idealSelectCell.translatesAutoresizingMaskIntoConstraints = false
                 mountView.addSubview(idealSelectCell)

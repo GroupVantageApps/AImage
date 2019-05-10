@@ -26,14 +26,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-dF-cFB">
-                                        <rect key="frame" x="50" y="40" width="900" height="56"/>
+                                        <rect key="frame" x="50" y="40" width="900" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="900" id="3vc-Hu-RaS"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Beauty tailors solutions">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="48"/>
+                                                    <font key="NSFont" size="48" name="Reader-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" paragraphSpacing="5" paragraphSpacingBefore="7" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>

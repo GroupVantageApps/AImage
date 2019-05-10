@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Reader-Medium.otf">
+            <string>Reader-Medium</string>
+        </array>
+        <array key="Reader-Regular.otf">
+            <string>Reader</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Waso624EfficacyView" customModule="Share_Beauty_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f6-HS-9XG">
+                    <rect key="frame" x="0.0" y="0.0" width="1044" height="513"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="624_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="zBr-I8-jmO">
+                            <rect key="frame" x="0.0" y="0.0" width="1044" height="513"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_anim_624.png" translatesAutoresizingMaskIntoConstraints="NO" id="u9D-Uu-l3h" customClass="APNGImageView" customModule="APNGKit">
+                            <rect key="frame" x="1" y="-96" width="1027" height="581"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8406" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-yB-bph">
+                            <rect key="frame" x="16" y="435" width="330" height="68"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Test county: France
+Test period: From 19 Feb. through 25 Feb. 2018 Subject: 109 Caucasian females, ages 20 y.o. to 30 y.o.</string>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="13"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8402" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makes the skin feel smoother." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhV-5M-97n">
+                            <rect key="frame" x="58" y="270" width="169" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8403" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makes the skin feel smoother." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tv-AY-zzK">
+                            <rect key="frame" x="307" y="270" width="169" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8404" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makes the skin feel smoother." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yai-OO-Zez">
+                            <rect key="frame" x="556" y="270" width="169" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8405" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Makes the skin feel smoother." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT3-9b-ywO">
+                            <rect key="frame" x="787" y="270" width="218" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zBr-I8-jmO" secondAttribute="trailing" id="7kq-nw-eMc"/>
+                        <constraint firstItem="zBr-I8-jmO" firstAttribute="top" secondItem="6f6-HS-9XG" secondAttribute="top" id="7pk-yM-6VR"/>
+                        <constraint firstAttribute="bottom" secondItem="zBr-I8-jmO" secondAttribute="bottom" id="7uw-cQ-Snn"/>
+                        <constraint firstItem="zBr-I8-jmO" firstAttribute="leading" secondItem="6f6-HS-9XG" secondAttribute="leading" id="JPY-Tu-C9x"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="6f6-HS-9XG" secondAttribute="bottom" id="8US-lf-Ca8"/>
+                <constraint firstAttribute="trailing" secondItem="6f6-HS-9XG" secondAttribute="trailing" constant="-20" id="9pO-q7-3v7"/>
+                <constraint firstItem="6f6-HS-9XG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mG2-J5-7Mg"/>
+                <constraint firstItem="6f6-HS-9XG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oe9-k5-uxO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mApngImageV" destination="u9D-Uu-l3h" id="2fq-qG-Bcc"/>
+                <outlet property="mContentView" destination="6f6-HS-9XG" id="pUh-9S-CYa"/>
+            </connections>
+            <point key="canvasLocation" x="19.921875" y="41.796875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="624_bg.png" width="2048" height="1038"/>
+        <image name="graph_anim_624.png" width="2048" height="1536"/>
+    </resources>
+</document>

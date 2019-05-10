@@ -278,7 +278,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LifeStyleCollectionViewCell
             let lifeStyle = mLifeStyles[indexPath.row / 2]
             cell.contentView.viewWithTag(indexPath.row)
-            print("cell.tag:\(cell.tag)")
             cell.image = lifeStyle.image
             cell.text = lifeStyle.text
             cell.isRecommend = lifeStyle.isRecommend
@@ -289,9 +288,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
                 cell.focusAnimation()
             }
             cell.delegate = self
-
-            print("cell.image:\(String(describing: cell.image))")
-
             return cell
         }
     }
@@ -620,7 +616,6 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             }
             if let text = AppItemTable.getNameByItemId(itemId: element.discription) {
                 label.text = text
-                print(text)
             }
             mScrollV.addSubview(label)
         }

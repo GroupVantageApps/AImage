@@ -671,9 +671,31 @@
                                                     </view>
                                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-cW-fKQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="613"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sar-Sg-eQx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="512" height="613"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="512" id="nc4-Jg-81g"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htS-iE-EVv" userLabel="MVContent Right">
+                                                                <rect key="frame" x="512" y="0.0" width="512" height="613"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="512" id="wqD-Of-7V9"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="htS-iE-EVv" secondAttribute="trailing" id="4hS-D2-hP6"/>
+                                                            <constraint firstAttribute="bottom" secondItem="sar-Sg-eQx" secondAttribute="bottom" id="B2X-rE-Qgo"/>
+                                                            <constraint firstItem="sar-Sg-eQx" firstAttribute="leading" secondItem="eQA-cW-fKQ" secondAttribute="leading" id="C7E-wo-TDd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="htS-iE-EVv" secondAttribute="bottom" id="d20-Uh-MPz"/>
                                                             <constraint firstAttribute="height" constant="535" id="ioa-FJ-CKv"/>
+                                                            <constraint firstItem="sar-Sg-eQx" firstAttribute="top" secondItem="eQA-cW-fKQ" secondAttribute="top" id="vZX-94-84C"/>
+                                                            <constraint firstItem="htS-iE-EVv" firstAttribute="top" secondItem="eQA-cW-fKQ" secondAttribute="top" id="zhd-Y9-w7z"/>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
@@ -829,6 +851,8 @@
                         <outlet property="mVCategoryImageBase" destination="yHV-lG-PXe" id="Aue-PM-y5w"/>
                         <outlet property="mVColorBall" destination="CbQ-Ai-fK0" id="QoF-Rz-Jdr"/>
                         <outlet property="mVContent" destination="eQA-cW-fKQ" id="NYv-PP-6o0"/>
+                        <outlet property="mVContentLeft" destination="sar-Sg-eQx" id="HAV-Y0-zTN"/>
+                        <outlet property="mVContentRight" destination="htS-iE-EVv" id="rA2-Je-EnU"/>
                         <outlet property="mVHowToUse" destination="HK7-2k-hNf" id="Thc-bY-3uV"/>
                         <outlet property="mVMain" destination="fmO-Po-Pdd" id="kdi-9c-MBS"/>
                         <outlet property="mVRelationProductBase" destination="hBN-OY-8nf" id="MSt-UM-ZGG"/>
