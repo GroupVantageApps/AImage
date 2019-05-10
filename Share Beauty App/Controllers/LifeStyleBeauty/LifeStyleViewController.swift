@@ -550,7 +550,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             // }
         }
 
-        mContentWidth = contentWidth + 700
+        mContentWidth = contentWidth + 270
 
         setInfoImage()
     }
@@ -574,96 +574,25 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         imageItemIds = []
         labelItems = []
         
-        var hasUtmComment: Bool = false
-        var hasMoiComment: Bool = false
-        var hasSunComment: Bool = false
+
         var hasMakComment: Bool = false
-        var pastProductId: Int = 0
-        var oChangeIndex: Bool = false
-        var tChangeIndex: Bool = false
-        var itemIds = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 623: 8164, 625: 8165, 626: 8165]
-        for (index, product) in productList.products.enumerated() {
-            let productId = product.productId
-            if productId == 620 {
-                if pastProductId != 619 {
-                    itemIds[620] = 8163
-                }
-            } else if productId == 624 {
-                if pastProductId != 623 {
-                    itemIds[624] = 8164
-                }
-            }
-            print("----------start------")
-            print(itemIds[product.productId] ?? 0)
-            print(product.productId)
-            print(itemIds[product.productId] ?? 0 != 0 )
-            print(index)
-            if itemIds[product.productId] ?? 0 != 0
-            {
-                var index_f = index;
-                if tChangeIndex {
-                    index_f = index - 2
-                } else if oChangeIndex {
-                    index_f = index - 1
-                }
-            let itemWidth: CGFloat = 680
-            var imageX: CGFloat = itemWidth * CGFloat(index_f) - 20//60
+        let itemIds = [616, 617, 618, 619, 625, 626]
+        let itemIdSentences = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 625: 8165, 626: 8165]
+        for (index, item) in itemIds.enumerated() {
+            let productId = item
+
+            let itemWidth: CGFloat = [625, 626].contains(productId) ? 1400 : 680
+            let imageX: CGFloat = [625, 626].contains(productId) ? (680 * 4 + itemWidth * CGFloat(index - 4) + 120) : (itemWidth * CGFloat(index) + 20)
             let imageY: CGFloat = 170
             let height: CGFloat = 130
-            var width: CGFloat = itemWidth - 150  //80
+            let width: CGFloat = [625, 626].contains(productId) ? itemWidth - 300 : itemWidth - 150  //80
             
             let font: UIFont = UIFont(name: "Reader", size: 17)!
-            
-            if product.lineId == Const.lineIdUTM && utmProductsCount >= 2 && !hasUtmComment {
-                hasUtmComment = true
-                width = width * CGFloat(utmProductsCount)
-                imageX += (itemWidth * CGFloat(utmProductsCount) - width) / 2
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
-                labelItems.append((discription: 7985, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-                
-            } else if moistureProductIds.contains(product.productId) && moistureProductsCount >= 2 && !hasMoiComment {
-                hasMoiComment = true
-                width = width * CGFloat(moistureProductsCount)
-                imageX += (itemWidth * CGFloat(moistureProductsCount) - width) / 2
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
-                labelItems.append((discription: 7986, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-                
-            } else if product.lineId == Const.lineIdSUNCARE && suncareProductsCount >= 2 && !hasSunComment {
-                hasSunComment = true
-                width = width * CGFloat(suncareProductsCount)
-                imageX += (itemWidth * CGFloat(suncareProductsCount) - width) / 2
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
-                labelItems.append((discription: 7987, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-                
-            } else if product.lineId == Const.lineIdMAKEUP && makeUpProductsCount >= 2 && !hasMakComment {
-                hasMakComment = true
-                width = width * CGFloat(makeUpProductsCount)
-                imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
-                imageItemIds.append((discription: "lifestyle10", x: imageX, y: imageY, width: width, height: height))
-                labelItems.append((discription: 7988, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-            } else if productIdsDefault.contains(product.productId)  {
-                    
-                hasMakComment = true
-                width = width * CGFloat(makeUpProductsCount)
-                imageX += (itemWidth * CGFloat(makeUpProductsCount) - width) / 2
-                imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
-                print("-------------------------------")
-                print(itemIds[product.productId])
-                print(product.productId)
-                labelItems.append((discription: itemIds[product.productId] ?? 8165, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
-            }
-                
-            }
-            if pastProductId == 619 && productId == 620 {
-                oChangeIndex = true
-            } else if pastProductId == 623 && productId == 624 {
-                if oChangeIndex {
-                    tChangeIndex = true
-                } else {
-                    oChangeIndex = true
-                }
-            }
-            pastProductId = productId
+            hasMakComment = true
+            print(productId)
+            print(itemIdSentences[productId])
+            imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
+            labelItems.append((discription: itemIdSentences[productId] ?? 1111, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
         }
 
         imageItemIds.enumerated().forEach { (i: Int, element: (discription: String, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat)) in
