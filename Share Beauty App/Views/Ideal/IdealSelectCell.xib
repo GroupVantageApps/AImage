@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -67,22 +66,25 @@
                     <rect key="frame" x="1" y="1" width="597" height="598"/>
                     <subviews>
                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="check_ideal" translatesAutoresizingMaskIntoConstraints="NO" id="qMv-Dd-f4A">
-                            <rect key="frame" x="10" y="286" width="27" height="27"/>
+                            <rect key="frame" x="10" y="285.5" width="27" height="27"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="27" id="XVN-Q5-09d"/>
                                 <constraint firstAttribute="width" secondItem="qMv-Dd-f4A" secondAttribute="height" multiplier="1:1" id="e8i-CK-Ggg"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdC-Ga-8bw">
-                            <rect key="frame" x="38" y="272.5" width="521.5" height="53"/>
+                            <rect key="frame" x="38" y="272.5" width="521" height="53"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hydrating, Pore minimizing, Anti-Breakouts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-qS-lhV">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hydrating, Pore minimizing, Anti-Breakouts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-qS-lhV">
+                                    <rect key="frame" x="0.0" y="0.0" width="521" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="521" id="qPb-7e-ixO"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="FMO-ss-QEO">
-                                    <rect key="frame" x="0.0" y="19" width="521.5" height="34"/>
+                                    <rect key="frame" x="0.0" y="19" width="521" height="34"/>
                                     <string key="text">BNENEFIANCE
 WrinkleResist</string>
                                     <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
@@ -117,8 +119,8 @@ WrinkleResist</string>
                         <constraint firstAttribute="trailing" secondItem="FMS-wO-hGE" secondAttribute="trailing" id="0xa-yn-rLq"/>
                         <constraint firstItem="FMS-wO-hGE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Qh-8a-axQ"/>
                         <constraint firstItem="VdC-Ga-8bw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Av1-hl-6ZI"/>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VdC-Ga-8bw" secondAttribute="bottom" constant="10" id="DjE-tB-2Fj"/>
-                        <constraint firstItem="VdC-Ga-8bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="HMa-Kw-GR6"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VdC-Ga-8bw" secondAttribute="bottom" constant="2" id="DjE-tB-2Fj"/>
+                        <constraint firstItem="VdC-Ga-8bw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="HMa-Kw-GR6"/>
                         <constraint firstAttribute="bottom" secondItem="FMS-wO-hGE" secondAttribute="bottom" id="ITU-JG-Z56"/>
                         <constraint firstItem="FMS-wO-hGE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TU7-pW-Ixs"/>
                         <constraint firstItem="FMS-wO-hGE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TVZ-on-lWY"/>
@@ -165,7 +167,7 @@ WrinkleResist</string>
                     <exclude reference="NAw-FT-0x4"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="111.5" y="313"/>
+            <point key="canvasLocation" x="111.03515624999999" y="312.5"/>
         </view>
     </objects>
     <resources>
