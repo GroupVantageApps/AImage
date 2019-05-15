@@ -7,6 +7,7 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
     @IBOutlet weak private var mVContent: UIView!
     @IBOutlet var ProBtn: UIButton!
 
+    @IBOutlet weak var LegendaryProductBtn: UILabel!
     @IBOutlet weak var LegendaryEnmeiBtn: UILabel!
     @IBOutlet var LLEBtn: UIButton!
     
@@ -28,17 +29,16 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
     private static let outAppInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL, Const.outAppInfoUvInfo, Const.outAppInfoSoftener, Const.outAppInfoNavigator]
     private static let outAppFoundationInfos = [Const.outAppInfoFoundation, Const.outAppInfoUltimune, Const.outAppInfoESSENTIAL]
     
-    @IBOutlet var LECImage: UIImageView!
+    @IBOutlet weak var LECTitle: UILabel!
     
     override
     func viewDidLoad() {
         super.viewDidLoad()
         
+        LegendaryProductBtn.text = AppItemTable.getNameByItemId(itemId: 8445)
+        LECTitle.text = AppItemTable.getNameByItemId(itemId: 8446)
         LegendaryEnmeiBtn.text = AppItemTable.getNameByItemId(itemId: 8447)
         
-        let lecImage = UIImage(named: "page2_lead.png")
-        self.LECImage.image = lecImage
-
         mScrollV.delegate = self
         mHeaderView.delegate = self
         mNavigationView.delegate = self
