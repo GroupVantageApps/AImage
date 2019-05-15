@@ -17,13 +17,14 @@ class BNF618SecondTechView: UIView {
     }
     
     func setView() {
-        for index in 0...11 {
+        for index in 0...12 {
+            
             let tag = index + 8284
             let label: UILabel = self.viewWithTag(tag) as! UILabel
             if [5,6].contains(index) {
                 let attrStr = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
                
-                attrStr.setFont(UIUtil.getReaderMedium(11))
+                attrStr.setFont(UIUtil.getReaderMedium(12))
                 let shadow = NSShadow()
                 shadow.shadowColor = UIColor.white
                 shadow.shadowBlurRadius = 3.0
@@ -38,7 +39,7 @@ class BNF618SecondTechView: UIView {
                 let label2: UILabel = UILabel.init(frame: label.frame)
                 
                 let attrStr2 = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
-                attrStr2.setFont(UIUtil.getReaderMedium(11))
+                attrStr2.setFont(UIUtil.getReaderMedium(12))
                 
                 label2.attributedText = attrStr2
                 label2.numberOfLines = 2
