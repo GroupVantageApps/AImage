@@ -9,7 +9,7 @@
 // TODO: productID 620用なのでファイル名など適切に置き換え
 import Foundation
 
-class BNF619FirstEfficacyView: UIView {
+class BNF620FirstEfficacyView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()

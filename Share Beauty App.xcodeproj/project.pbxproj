@@ -203,17 +203,17 @@
 		4F3B4E7122802BA6008FAB09 /* 19AW_BNF3_before.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6F22802BA6008FAB09 /* 19AW_BNF3_before.png */; };
 		4F3B4E7322805337008FAB09 /* BNFEfficacy3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E7222805337008FAB09 /* BNFEfficacy3.png */; };
 		4F3B4E76228058D7008FAB09 /* BNF620FirstTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E74228058D7008FAB09 /* BNF620FirstTechView.swift */; };
-		4F3B4E77228058D7008FAB09 /* BNF619FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E75228058D7008FAB09 /* BNF619FirstTechView.xib */; };
+		4F3B4E77228058D7008FAB09 /* BNF620FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E75228058D7008FAB09 /* BNF620FirstTechView.xib */; };
 		4F3B4E792280592C008FAB09 /* BNF619Tech1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E782280592C008FAB09 /* BNF619Tech1.png */; };
 		4F3B4E7C22805F04008FAB09 /* BNF620ThirdTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E7A22805F03008FAB09 /* BNF620ThirdTechView.swift */; };
-		4F3B4E7D22805F04008FAB09 /* BNF619ThirdTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E7B22805F04008FAB09 /* BNF619ThirdTechView.xib */; };
+		4F3B4E7D22805F04008FAB09 /* BNF620ThirdTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E7B22805F04008FAB09 /* BNF620ThirdTechView.xib */; };
 		4F3B4E7F22805F57008FAB09 /* BNF619Tech3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E7E22805F57008FAB09 /* BNF619Tech3.png */; };
-		4F3B4E8222806AFD008FAB09 /* BNF619FirstEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8022806AFC008FAB09 /* BNF619FirstEfficacyView.xib */; };
+		4F3B4E8222806AFD008FAB09 /* BNF620FirstEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8022806AFC008FAB09 /* BNF620FirstEfficacyView.xib */; };
 		4F3B4E8322806AFD008FAB09 /* BNF620FirstEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8122806AFD008FAB09 /* BNF620FirstEfficacyView.swift */; };
 		4F3B4E8822806DE7008FAB09 /* BNF620SecondEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8422806DE6008FAB09 /* BNF620SecondEfficacyView.swift */; };
 		4F3B4E8922806DE7008FAB09 /* BNF620ThirdEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8522806DE7008FAB09 /* BNF620ThirdEfficacyView.swift */; };
-		4F3B4E8A22806DE7008FAB09 /* BNF619ThirdEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8622806DE7008FAB09 /* BNF619ThirdEfficacyView.xib */; };
-		4F3B4E8B22806DE7008FAB09 /* BNF619SecondEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8722806DE7008FAB09 /* BNF619SecondEfficacyView.xib */; };
+		4F3B4E8A22806DE7008FAB09 /* BNF620ThirdEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8622806DE7008FAB09 /* BNF620ThirdEfficacyView.xib */; };
+		4F3B4E8B22806DE7008FAB09 /* BNF620SecondEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8722806DE7008FAB09 /* BNF620SecondEfficacyView.xib */; };
 		4F3B4E8D22806E4E008FAB09 /* BNF619Efficacy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8C22806E4D008FAB09 /* BNF619Efficacy2.png */; };
 		4F3BEE8522800F5A002524E5 /* BNF619FirstEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8322800F59002524E5 /* BNF619FirstEfficacyView.swift */; };
 		4F3BEE8622800F5A002524E5 /* BNF618FirstEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8422800F5A002524E5 /* BNF618FirstEfficacyView.xib */; };
@@ -1140,17 +1140,17 @@
 		4F3B4E6F22802BA6008FAB09 /* 19AW_BNF3_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 19AW_BNF3_before.png; sourceTree = "<group>"; };
 		4F3B4E7222805337008FAB09 /* BNFEfficacy3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNFEfficacy3.png; sourceTree = "<group>"; };
 		4F3B4E74228058D7008FAB09 /* BNF620FirstTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF620FirstTechView.swift; sourceTree = "<group>"; };
-		4F3B4E75228058D7008FAB09 /* BNF619FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619FirstTechView.xib; sourceTree = "<group>"; };
+		4F3B4E75228058D7008FAB09 /* BNF620FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620FirstTechView.xib; sourceTree = "<group>"; };
 		4F3B4E782280592C008FAB09 /* BNF619Tech1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNF619Tech1.png; sourceTree = "<group>"; };
 		4F3B4E7A22805F03008FAB09 /* BNF620ThirdTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF620ThirdTechView.swift; sourceTree = "<group>"; };
-		4F3B4E7B22805F04008FAB09 /* BNF619ThirdTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619ThirdTechView.xib; sourceTree = "<group>"; };
+		4F3B4E7B22805F04008FAB09 /* BNF620ThirdTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620ThirdTechView.xib; sourceTree = "<group>"; };
 		4F3B4E7E22805F57008FAB09 /* BNF619Tech3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNF619Tech3.png; sourceTree = "<group>"; };
-		4F3B4E8022806AFC008FAB09 /* BNF619FirstEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619FirstEfficacyView.xib; sourceTree = "<group>"; };
+		4F3B4E8022806AFC008FAB09 /* BNF620FirstEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620FirstEfficacyView.xib; sourceTree = "<group>"; };
 		4F3B4E8122806AFD008FAB09 /* BNF620FirstEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF620FirstEfficacyView.swift; sourceTree = "<group>"; };
 		4F3B4E8422806DE6008FAB09 /* BNF620SecondEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF620SecondEfficacyView.swift; sourceTree = "<group>"; };
 		4F3B4E8522806DE7008FAB09 /* BNF620ThirdEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF620ThirdEfficacyView.swift; sourceTree = "<group>"; };
-		4F3B4E8622806DE7008FAB09 /* BNF619ThirdEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619ThirdEfficacyView.xib; sourceTree = "<group>"; };
-		4F3B4E8722806DE7008FAB09 /* BNF619SecondEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619SecondEfficacyView.xib; sourceTree = "<group>"; };
+		4F3B4E8622806DE7008FAB09 /* BNF620ThirdEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620ThirdEfficacyView.xib; sourceTree = "<group>"; };
+		4F3B4E8722806DE7008FAB09 /* BNF620SecondEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620SecondEfficacyView.xib; sourceTree = "<group>"; };
 		4F3B4E8C22806E4D008FAB09 /* BNF619Efficacy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNF619Efficacy2.png; sourceTree = "<group>"; };
 		4F3BEE8322800F59002524E5 /* BNF619FirstEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619FirstEfficacyView.swift; sourceTree = "<group>"; };
 		4F3BEE8422800F5A002524E5 /* BNF618FirstEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618FirstEfficacyView.xib; sourceTree = "<group>"; };
@@ -2404,15 +2404,15 @@
 			isa = PBXGroup;
 			children = (
 				4F3B4E74228058D7008FAB09 /* BNF620FirstTechView.swift */,
-				4F3B4E75228058D7008FAB09 /* BNF619FirstTechView.xib */,
+				4F3B4E75228058D7008FAB09 /* BNF620FirstTechView.xib */,
 				4F3B4E7A22805F03008FAB09 /* BNF620ThirdTechView.swift */,
-				4F3B4E7B22805F04008FAB09 /* BNF619ThirdTechView.xib */,
+				4F3B4E7B22805F04008FAB09 /* BNF620ThirdTechView.xib */,
 				4F3B4E8122806AFD008FAB09 /* BNF620FirstEfficacyView.swift */,
-				4F3B4E8022806AFC008FAB09 /* BNF619FirstEfficacyView.xib */,
+				4F3B4E8022806AFC008FAB09 /* BNF620FirstEfficacyView.xib */,
 				4F3B4E8422806DE6008FAB09 /* BNF620SecondEfficacyView.swift */,
-				4F3B4E8722806DE7008FAB09 /* BNF619SecondEfficacyView.xib */,
+				4F3B4E8722806DE7008FAB09 /* BNF620SecondEfficacyView.xib */,
 				4F3B4E8522806DE7008FAB09 /* BNF620ThirdEfficacyView.swift */,
-				4F3B4E8622806DE7008FAB09 /* BNF619ThirdEfficacyView.xib */,
+				4F3B4E8622806DE7008FAB09 /* BNF620ThirdEfficacyView.xib */,
 				4F1DB746227ED1450062F4CA /* BNF619FirstTechView.swift */,
 				4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */,
 				4F91B0EC227F3B7700E46211 /* BNF619SecondTechView.swift */,
@@ -3696,7 +3696,7 @@
 				41BE495D21869F8C004BAA57 /* Tormenti.png in Resources */,
 				4194847E2153A27A00680A26 /* cleanser_scent_02.png in Resources */,
 				DE48C3151EB6ABB600D29A8D /* LXProductGraphView.xib in Resources */,
-				4F3B4E77228058D7008FAB09 /* BNF619FirstTechView.xib in Resources */,
+				4F3B4E77228058D7008FAB09 /* BNF620FirstTechView.xib in Resources */,
 				E55194B21DF43E120064C37D /* ProductDetailViewController.storyboard in Resources */,
 				26F378332023F9E300123F4D /* SFSLX_180129_14.png in Resources */,
 				DE2C907F1E9C66E600B5FC4A /* LXCherryGraphView.xib in Resources */,
@@ -3705,7 +3705,7 @@
 				DE80C67120726D6200CD326A /* 18aw_94.png in Resources */,
 				4FCDAF65225C7BF000F7BBF2 /* Waso623EfficacyView.xib in Resources */,
 				DE07893E220CA07400D6CBAF /* tmp_lec.png in Resources */,
-				4F3B4E7D22805F04008FAB09 /* BNF619ThirdTechView.xib in Resources */,
+				4F3B4E7D22805F04008FAB09 /* BNF620ThirdTechView.xib in Resources */,
 				DA22A5D8220AC3CE00CF5FEE /* page2_lead.png in Resources */,
 				26768D87202C1C4E005BE606 /* Water_image_CMYK.png in Resources */,
 				C0880D051E4B2579006A3713 /* CountrySettingViewController.storyboard in Resources */,
@@ -3819,7 +3819,7 @@
 				DE2C301A20738CC900548627 /* EEESecondEfficacyResultView.xib in Resources */,
 				C050C9A11E8267450009679D /* t_star.png in Resources */,
 				C0417E721E65A4D3009519EC /* MakeupViewController.storyboard in Resources */,
-				4F3B4E8A22806DE7008FAB09 /* BNF619ThirdEfficacyView.xib in Resources */,
+				4F3B4E8A22806DE7008FAB09 /* BNF620ThirdEfficacyView.xib in Resources */,
 				26768DB8202C5FE1005BE606 /* enhanceGraph_03.png in Resources */,
 				B38F63BD1F47682700176804 /* After_4_weeks.png in Resources */,
 				DE2C91331E9C681100B5FC4A /* LuxuryIngredientViewController.storyboard in Resources */,
@@ -3908,7 +3908,7 @@
 				2642A25E20329ADE009E72F9 /* enhanceGraph_07.png in Resources */,
 				DEE83E5D1EB761F5000C7D8D /* LXTechBiologicalView.xib in Resources */,
 				DE2C300320737AB200548627 /* eee_6484.png in Resources */,
-				4F3B4E8222806AFD008FAB09 /* BNF619FirstEfficacyView.xib in Resources */,
+				4F3B4E8222806AFD008FAB09 /* BNF620FirstEfficacyView.xib in Resources */,
 				419484832153A27A00680A26 /* cleanser_scent_01.png in Resources */,
 				C050C90A1E82619F0009679D /* ss_hukidashi_3.png in Resources */,
 				DE2C91B91E9C6F8000B5FC4A /* LXProductDetailViewController.storyboard in Resources */,
@@ -4010,7 +4010,7 @@
 				44D7BC0D2283DDFC0073D506 /* p10_03.png in Resources */,
 				44D7BC062283DDFC0073D506 /* p14_02.png in Resources */,
 				DE2C91891E9C682500B5FC4A /* lx_icon_day.png in Resources */,
-				4F3B4E8B22806DE7008FAB09 /* BNF619SecondEfficacyView.xib in Resources */,
+				4F3B4E8B22806DE7008FAB09 /* BNF620SecondEfficacyView.xib in Resources */,
 				E5E0D3F41DF3D32E0053373F /* LanguageSettingViewController.storyboard in Resources */,
 				6E4ABB3620AA6CAF000355D2 /* complexion_35.png in Resources */,
 				44D7BC032283DDFC0073D506 /* p11_01.png in Resources */,

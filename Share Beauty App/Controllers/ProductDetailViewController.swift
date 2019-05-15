@@ -2710,9 +2710,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 620 {
             self.techScrollV.contentSize =  CGSize(width: self.mVContent.frame.width, height: (self.mVContent.height)*4)
             
-            let nib = UINib(nibName: "BNF619FirstTechView", bundle: nil)
+            let nib = UINib(nibName: "BNF620FirstTechView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)
-            guard let tech1 = views[0] as? BNF619FirstTechView else { return }
+            guard let tech1 = views[0] as? BNF620FirstTechView else { return }
             tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(tech1)
             
@@ -2725,9 +2725,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             view2.mScrollView.removeConstraints(ar)
             self.techScrollV.addSubview(view2)
             
-            let nib3 = UINib(nibName: "BNF619ThirdTechView", bundle: nil)
+            let nib3 = UINib(nibName: "BNF620ThirdTechView", bundle: nil)
             let views3 = nib3.instantiate(withOwner: self, options: nil)
-            guard let view3 = views3[0] as? BNF619ThirdTechView else { return }
+            guard let view3 = views3[0] as? BNF620ThirdTechView else { return }
             view3.frame = CGRect(x: 0, y:  mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(view3)
             
@@ -2762,21 +2762,21 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             
             
         } else if productId == 620 {
-            let nib = UINib(nibName: "BNF619FirstEfficacyView", bundle: nil)
+            let nib = UINib(nibName: "BNF620FirstEfficacyView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)
-            guard let view1 = views[0] as? BNF619FirstEfficacyView else { return }
+            guard let view1 = views[0] as? BNF620FirstEfficacyView else { return }
             view1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view1)
             
-            let nib2 = UINib(nibName: "BNF619SecondEfficacyView", bundle: nil)
+            let nib2 = UINib(nibName: "BNF620SecondEfficacyView", bundle: nil)
             let views2 = nib2.instantiate(withOwner: self, options: nil)
-            guard let view2 = views2[0] as? BNF619SecondEfficacyView else { return }
+            guard let view2 = views2[0] as? BNF620SecondEfficacyView else { return }
             view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view2)
             
-            let nib3 = UINib(nibName: "BNF619ThirdEfficacyView", bundle: nil)
+            let nib3 = UINib(nibName: "BNF620ThirdEfficacyView", bundle: nil)
             let views3 = nib3.instantiate(withOwner: self, options: nil)
-            guard let view3 = views3[0] as? BNF619ThirdEfficacyView else { return }
+            guard let view3 = views3[0] as? BNF620ThirdEfficacyView else { return }
             view3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view3)
             
