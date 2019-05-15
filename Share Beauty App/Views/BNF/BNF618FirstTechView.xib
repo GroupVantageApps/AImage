@@ -63,7 +63,7 @@
 ingredients in an ideal balance to
 achieve a softening effect on the skin.</string>
                                     <attributes>
-                                        <font key="NSFont" size="18" name="Reader-Medium"/>
+                                        <font key="NSFont" metaFont="system" size="18"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" minimumLineHeight="1" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
