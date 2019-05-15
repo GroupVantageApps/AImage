@@ -60,19 +60,19 @@ class LatestMoisturizerEfficiencyView: UIView {
             var percentY: CGFloat = thirdTitle.bottom + 40
             var percentDic: [Int:[String]] = [602:["85%", "80%", "85%"],
                                               614:["89%", "80%", "86%"],
-                                              604:["00", "00", "00"],
+                                              604:["91%", "93%", "92%"],
                                               605:["84%", "82%", "86%"],
                                               606:["90%", "96%", "89%"],
                                               607:["93%", "98%", "86%"],
-                                              608:["00", "00", "00"]]
-    
+                                              608:["91%", "93%", "92%"]]
+            
             var itemIdDic: [Int: Int] = [602: 8111,
                                          614: 8111,
-                                         604: 100,
+                                         604: 8120,
                                          605: 8124,
                                          606: 8143,
                                          607: 8147,
-                                         608: 100]
+                                         608: 8120]
     
             if contryIdsA.contains(LanguageConfigure.countryId) {
                 percentDic.updateValue(["94%", "89%", "89%"], forKey: 604)
