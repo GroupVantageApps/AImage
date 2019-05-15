@@ -74,6 +74,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
         for i in 0..<3 {
             if i == 0 {
                 descriptItemIds = [8474,8475,8476,8477,8478,8479,8480,8481]
+                descriptTexts.removeAll()
                 for j in 0..<8 {
                     let image = UIImage(named: "one_line.png")!
                     let lineV = UIImageView(image:image)
@@ -103,6 +104,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 }
             } else if i == 1 {
                 descriptItemIds = [8484,8485,8486,8487,8488,8489]
+                descriptTexts.removeAll()
                 for j in 0..<6 {
                     let image = UIImage(named: "one_line.png")!
                     let lineV = UIImageView(image:image)
@@ -132,6 +134,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 }
             } else if i == 2 {
                 descriptItemIds = [8492,8493,8494,8495,8496,8497,8498,8499,8500,8501]
+                descriptTexts.removeAll()
                 for j in 0..<10 {
                     let image = UIImage(named: "one_line.png")!
                     let lineV = UIImageView(image:image)
@@ -211,6 +214,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             for i in 3..<5 {
                 if i == 3 {
                     descriptItemIds = [8504,8505,8506,8507,8508,8509]
+                    descriptTexts.removeAll()
                     for j in 0..<6 {
                         let image = UIImage(named: "one_line.png")!
                         let lineV = UIImageView(image:image)
@@ -239,7 +243,8 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                         self.mScrollV.addSubview(descriptLabel)
                     }
                 } else if i == 4 {
-                    descriptItemIds = [8512,8513,8514,8515,8516,8517,8518,8519]
+                    descriptItemIds = [8512,8513,8514,8515,8516,8518,8517,8519]
+                    descriptTexts.removeAll()
                     for j in 0..<8 {
                         let image = UIImage(named: "one_line.png")!
                         let lineV = UIImageView(image:image)
@@ -288,7 +293,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 title.textColor = UIColor.black
                 title.font = UIFont(name: "Reader-Bold", size: 18)
                 if i == 3 {
-                    title.text = AppItemTable.getNameByItemId(itemId: 8520) // "ModernMatte Powder Lipstick"
+                    title.text = AppItemTable.getNameByItemId(itemId: 8521) // "ModernMatte Powder Lipstick"
                     title.frame = CGRect(x: Int(self.size.width/2 + 40), y: 270+(Int(self.mScrollV.frame.height))*i, width: 700, height: 40)
                 } else if i == 4 {
                     title.text = AppItemTable.getNameByItemId(itemId: 8526) // "ModernMatte Powder Lipstick"
@@ -303,7 +308,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 subTitle.textColor = UIColor.black
                 subTitle.font = UIFont(name: "Reader-Bold", size: 24)
                 if i == 3 {
-                    subTitle.text = AppItemTable.getNameByItemId(itemId: 8521) // "517 Rose Hip"
+                    subTitle.text = AppItemTable.getNameByItemId(itemId: 8520) // "517 Rose Hip"
                     subTitle.frame = CGRect(x: Int(self.size.width/2 + 40), y: 300+(Int(self.mScrollV.frame.height))*i, width: 700, height: 40)
                 } else if i == 4 {
                     subTitle.text = AppItemTable.getNameByItemId(itemId: 8527) // "515 Mellow Drama"
@@ -317,6 +322,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             for i in 3..<5 {
                 if i == 3 {
                     descriptItemIds = [8522,8523,8524,8525]
+                    descriptTexts.removeAll()
                     for j in 0..<4 {
                         let image = UIImage(named: "one_line.png")!
                         let lineV = UIImageView(image:image)
@@ -346,6 +352,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                     }
                 } else if i == 4 {
                     descriptItemIds = [8528,8529,8530,8531,8532,8533]
+                    descriptTexts.removeAll()
                     for j in 0..<6 {
                         let image = UIImage(named: "one_line.png")!
                         let lineV = UIImageView(image:image)

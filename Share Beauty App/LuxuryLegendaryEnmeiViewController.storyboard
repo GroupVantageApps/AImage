@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,8 +48,8 @@
                                                             <action selector="tappedProduct:" destination="kdo-NC-5K0" eventType="touchUpInside" id="tdY-hR-RhK"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-iX-Lfv">
-                                                        <rect key="frame" x="225" y="452" width="63.5" height="51"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B29-iX-Lfv">
+                                                        <rect key="frame" x="138" y="461" width="237" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,8 +78,8 @@
                                                             <action selector="showSubView:" destination="kdo-NC-5K0" eventType="touchUpInside" id="nGU-Mv-7RV"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                                         " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
-                                                        <rect key="frame" x="168" y="461" width="237" height="31"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                                         " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-sw-3hz">
+                                                        <rect key="frame" x="138" y="461" width="237" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
@@ -126,21 +126,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-DS-D4E" userLabel="LECView">
                                 <rect key="frame" x="0.0" y="114" width="1024" height="117"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page2_lead.png" translatesAutoresizingMaskIntoConstraints="NO" id="fy6-Gk-fiW">
-                                        <rect key="frame" x="297" y="0.0" width="430" height="117"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv0-NF-wWi">
+                                        <rect key="frame" x="262" y="0.0" width="500" height="117"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="430" id="6A6-4H-lv1"/>
-                                            <constraint firstAttribute="height" constant="117" id="XMp-ka-WL5"/>
+                                            <constraint firstAttribute="height" constant="117" id="1Wc-u6-ZJh"/>
+                                            <constraint firstAttribute="width" constant="500" id="8Mg-jH-amz"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="42"/>
+                                        <color key="textColor" red="0.68235294117647061" green="0.58823529411764708" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstItem="fy6-Gk-fiW" firstAttribute="leading" secondItem="qt0-DS-D4E" secondAttribute="leading" constant="297" id="0FM-Gr-dl7"/>
-                                    <constraint firstAttribute="bottom" secondItem="fy6-Gk-fiW" secondAttribute="bottom" id="Hhg-g3-jQN"/>
-                                    <constraint firstAttribute="trailing" secondItem="fy6-Gk-fiW" secondAttribute="trailing" constant="297" id="aaR-1e-5zU"/>
-                                    <constraint firstItem="fy6-Gk-fiW" firstAttribute="top" secondItem="qt0-DS-D4E" secondAttribute="top" id="dcx-Mf-tB5"/>
+                                    <constraint firstItem="Fv0-NF-wWi" firstAttribute="top" secondItem="qt0-DS-D4E" secondAttribute="top" id="AAP-Gm-F6y"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fv0-NF-wWi" secondAttribute="bottom" id="BZB-ti-bAb"/>
+                                    <constraint firstItem="Fv0-NF-wWi" firstAttribute="leading" secondItem="qt0-DS-D4E" secondAttribute="leading" constant="262" id="RzV-qw-QFQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fv0-NF-wWi" secondAttribute="trailing" constant="262" id="Tha-Gd-ooy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -165,9 +167,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="LECImage" destination="fy6-Gk-fiW" id="M2R-pc-dYo"/>
+                        <outlet property="LECTitle" destination="Fv0-NF-wWi" id="V55-4w-xwl"/>
                         <outlet property="LLEBtn" destination="gdZ-OM-cIZ" id="1Y0-VF-lus"/>
                         <outlet property="LegendaryEnmeiBtn" destination="QAV-sw-3hz" id="c5A-TM-aZR"/>
+                        <outlet property="LegendaryProductBtn" destination="B29-iX-Lfv" id="75A-45-ukG"/>
                         <outlet property="ProBtn" destination="x9T-ag-Oim" id="uAJ-Ul-NQi"/>
                         <outlet property="mHeaderView" destination="Gru-nb-TYE" id="gli-hl-TQx"/>
                         <outlet property="mNavigationView" destination="RQT-jL-lLe" id="Atk-IF-8eg"/>
@@ -182,7 +185,6 @@
     </scenes>
     <resources>
         <image name="p2_plant.png" width="1024" height="1029"/>
-        <image name="page2_lead.png" width="3144" height="914"/>
         <image name="page2_visual_1.png" width="1024" height="1029"/>
     </resources>
 </document>
