@@ -166,7 +166,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             }
         }
 
-        if !([5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27].contains(countryId)) {
+        if [5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27].contains(countryId) {
             self.mScrollV.contentSize = CGSize(width: self.size.width, height: self.size.height*5)
             // image
             for i in 3..<5 {
