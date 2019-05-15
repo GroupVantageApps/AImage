@@ -166,7 +166,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
             }
         }
 
-        if [5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27].contains(countryId) {
+        if !([5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27].contains(countryId)) {
             self.mScrollV.contentSize = CGSize(width: self.size.width, height: self.size.height*5)
             // image
             for i in 3..<5 {
@@ -293,7 +293,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 title.textColor = UIColor.black
                 title.font = UIFont(name: "Reader-Bold", size: 18)
                 if i == 3 {
-                    title.text = AppItemTable.getNameByItemId(itemId: 8520) // "ModernMatte Powder Lipstick"
+                    title.text = AppItemTable.getNameByItemId(itemId: 8521) // "ModernMatte Powder Lipstick"
                     title.frame = CGRect(x: Int(self.size.width/2 + 40), y: 270+(Int(self.mScrollV.frame.height))*i, width: 700, height: 40)
                 } else if i == 4 {
                     title.text = AppItemTable.getNameByItemId(itemId: 8526) // "ModernMatte Powder Lipstick"
@@ -308,7 +308,7 @@ class MakeUp19AWView: UIView, UIScrollViewDelegate {
                 subTitle.textColor = UIColor.black
                 subTitle.font = UIFont(name: "Reader-Bold", size: 24)
                 if i == 3 {
-                    subTitle.text = AppItemTable.getNameByItemId(itemId: 8521) // "517 Rose Hip"
+                    subTitle.text = AppItemTable.getNameByItemId(itemId: 8520) // "517 Rose Hip"
                     subTitle.frame = CGRect(x: Int(self.size.width/2 + 40), y: 300+(Int(self.mScrollV.frame.height))*i, width: 700, height: 40)
                 } else if i == 4 {
                     subTitle.text = AppItemTable.getNameByItemId(itemId: 8527) // "515 Mellow Drama"
