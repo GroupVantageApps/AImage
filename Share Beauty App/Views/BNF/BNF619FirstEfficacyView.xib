@@ -26,15 +26,57 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-dp-LdP" customClass="BNF619FirstEfficacyView" customModule="Share_Beauty_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="513"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8356" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizing Effect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-DP-0cg">
-                            <rect key="frame" x="282" y="312" width="461" height="35"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8297" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rapid Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnc-cV-dQ3">
+                            <rect key="frame" x="277" y="41" width="461" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8358" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-0t-ZrO">
-                            <rect key="frame" x="336" y="362" width="144" height="67"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8301" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moisturizing Effect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ap6-DP-0cg">
+                            <rect key="frame" x="282" y="182" width="461" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader-Bold" family="Reader" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8298" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54Z-t9-IaC">
+                            <rect key="frame" x="285" y="83" width="144" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="86">
+                                    <attributes>
+                                        <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="72" name="Reader-Bold"/>
+                                        <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="72" name="Reader-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                        <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <real key="NSStrokeWidth" value="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="%">
+                                    <attributes>
+                                        <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <font key="NSFont" size="48" name="Reader-Bold"/>
+                                        <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="48" name="Reader-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                            <tabStops/>
+                                        </paragraphStyle>
+                                        <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <real key="NSStrokeWidth" value="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-0t-ZrO">
+                            <rect key="frame" x="285" y="232" width="144" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText">
                                 <fragment content="46">
@@ -43,6 +85,7 @@
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <font key="NSFont" size="72" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="72" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -56,6 +99,7 @@
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <font key="NSFont" size="48" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="48" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -66,15 +110,38 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8357" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="clinically tested" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eda-3M-lEo">
-                            <rect key="frame" x="501" y="375" width="176" height="37"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8307" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tested by 100 women, ages 35-49; 3 months of regular use (2018/4/6-8/27); Tested in Singapore" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-Rc-COF">
+                            <rect key="frame" x="753" y="73" width="255" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="11"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8299" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="of women felt it was fast-acting." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-2Q-P3B">
+                            <rect key="frame" x="471" y="96" width="176" height="37"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8354" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-d2-Zd8">
-                            <rect key="frame" x="119" y="76" width="787" height="35"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8302" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="clinically tested" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eda-3M-lEo">
+                            <rect key="frame" x="471" y="247" width="176" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8305" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfv-Ja-LOY">
+                            <rect key="frame" x="471" y="388" width="242" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">*Fine lines, underpufflines, 
+stress wrinkles (frown lines)</string>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8304" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8j-d2-Zd8">
+                            <rect key="frame" x="119" y="334" width="787" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <string key="text" base64-UTF8="YES">
 VmlzdWFsZXZhbHVhdGlvbioBRGV2aWNlIG1lYXN1cmVtZW50Kio
@@ -83,16 +150,17 @@ VmlzdWFsZXZhbHVhdGlvbioBRGV2aWNlIG1lYXN1cmVtZW50Kio
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8353" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7t-dt-ndB">
-                            <rect key="frame" x="200" y="110" width="280" height="150"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8303" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7t-dt-ndB">
+                            <rect key="frame" x="191" y="353" width="238" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText">
                                 <fragment content="Diminishes">
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -107,8 +175,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -119,8 +188,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -132,8 +202,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -143,17 +214,29 @@ Cg
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8355" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="**Crow’s feet" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-89-jAC">
-                            <rect key="frame" x="503" y="136" width="271" height="94"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8308" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tested by 19-35 women, ages 36-53; 3 months of regular use (2018/6/18-9/12); Tested in Germany" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGI-Db-miS">
+                            <rect key="frame" x="753" y="373" width="255" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="11"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8306" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="**Crow’s feet" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uP-89-jAC">
+                            <rect key="frame" x="471" y="420" width="242" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-7t-BYw">
-                            <rect key="frame" x="42" y="285" width="940" height="1"/>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-PY-qYA">
+                            <rect key="frame" x="21" y="169" width="987" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-8t-td0">
+                            <rect key="frame" x="21" y="325" width="987" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                 </view>

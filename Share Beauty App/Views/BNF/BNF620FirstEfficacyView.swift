@@ -6,10 +6,10 @@
 //  Copyright © 2018年 AQUA Co., Ltd. All rights reserved.
 //
 
-// TODO: productID 619用なのでファイル名など適切に置き換え
+// TODO: productID 620用なのでファイル名など適切に置き換え
 import Foundation
 
-class BNF618FirstEfficacyView: UIView {
+class BNF620FirstEfficacyView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,12 +17,17 @@ class BNF618FirstEfficacyView: UIView {
     }
     
     func setView() {
-        for index in 0...11 {
-            let tag = index + 8297
+        for index in 0...5 {
+            let tag = index + 8353
             let label: UILabel = self.viewWithTag(tag) as! UILabel
-            let title = self.convertSpecialCharacters(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
+            var title = self.convertSpecialCharacters(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
             label.text = title
             label.adjustsFontSizeToFitWidth = true
+            
+            if index == 5 {
+                title = self.convertSpecialCharacters(string: AppItemTable.getNameByItemId(itemId: 8375) ?? "not exist")
+                label.text = title
+            }
         }
     }
     
