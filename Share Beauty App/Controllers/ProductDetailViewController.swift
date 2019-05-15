@@ -2686,15 +2686,15 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 subview.removeFromSuperview()
             }
 
-            let nib = UINib(nibName: "BNF618FirstTechView", bundle: nil)
+            let nib = UINib(nibName: "BNF619FirstTechView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)
-            guard let tech1 = views[0] as? BNF618FirstTechView else { return }
+            guard let tech1 = views[0] as? BNF619FirstTechView else { return }
             tech1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(tech1)
             
-            let nib2 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let nib2 = UINib(nibName: "BNF619SecondTechView", bundle: nil)
             let views2 = nib2.instantiate(withOwner: self, options: nil)
-            guard let tech2 = views2[0] as? BNF618SecondTechView else { return }
+            guard let tech2 = views2[0] as? BNF619SecondTechView else { return }
             tech2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(tech2)
             
@@ -2731,9 +2731,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             view3.frame = CGRect(x: 0, y:  mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(view3)
             
-            let nib4 = UINib(nibName: "BNF618SecondTechView", bundle: nil)
+            let nib4 = UINib(nibName: "BNF619SecondTechView", bundle: nil)
             let views4 = nib4.instantiate(withOwner: self, options: nil)
-            guard let view4 = views4[0] as? BNF618SecondTechView else { return }
+            guard let view4 = views4[0] as? BNF619SecondTechView else { return }
             view4.frame = CGRect(x: 0, y: mVContent.frame.height * 3, width: mVContent.frame.width, height: mVContent.frame.height)
             self.techScrollV.addSubview(view4)
         }
@@ -2741,22 +2741,22 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     
     func setEffency19AW(){
         if productId == 619 {
-            let nib = UINib(nibName: "BNF618FirstEfficacyView", bundle: nil)
+            let nib = UINib(nibName: "BNF619FirstEfficacyView", bundle: nil)
             let views = nib.instantiate(withOwner: self, options: nil)
-            guard let view1 = views[0] as? BNF618FirstEfficacyView else { return }
+            guard let view1 = views[0] as? BNF619FirstEfficacyView else { return }
             view1.frame = CGRect(x: 0, y: 0, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view1)
             
             
-            let nib2 = UINib(nibName: "BNF618SecondEfficacyView", bundle: nil)
+            let nib2 = UINib(nibName: "BNF619SecondEfficacyView", bundle: nil)
             let views2 = nib2.instantiate(withOwner: self, options: nil)
-            guard let view2 = views2[0] as? BNF618SecondEfficacyView else { return }
+            guard let view2 = views2[0] as? BNF619SecondEfficacyView else { return }
             view2.frame = CGRect(x: 0, y: mVContent.frame.height, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view2)
             
-            let nib3 = UINib(nibName: "BNF618ThirdEfficacyView", bundle: nil)
+            let nib3 = UINib(nibName: "BNF619ThirdEfficacyView", bundle: nil)
             let views3 = nib3.instantiate(withOwner: self, options: nil)
-            guard let view3 = views3[0] as? BNF618ThirdEfficacyView else { return }
+            guard let view3 = views3[0] as? BNF619ThirdEfficacyView else { return }
             view3.frame = CGRect(x: 0, y: mVContent.frame.height * 2, width: mVContent.frame.width, height: mVContent.frame.height)
             self.efficacyScrollV.addSubview(view3)
             

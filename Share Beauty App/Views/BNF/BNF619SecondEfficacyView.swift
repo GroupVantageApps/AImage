@@ -9,7 +9,7 @@
 // TODO: productID 619用なのでファイル名など適切に置き換え
 import Foundation
 
-class BNF618SecondEfficacyView: UIView {
+class BNF619SecondEfficacyView: UIView {
     @IBOutlet weak var mBeforeImg: UIImageView!
     @IBOutlet weak var mBeforeBtn: UIButton!
     @IBOutlet weak var mAfterBtn: UIButton!

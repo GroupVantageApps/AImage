@@ -192,12 +192,12 @@
 		4F00CD4D228522D80092F7B4 /* makeup_04_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD46228522D80092F7B4 /* makeup_04_19aw.png */; };
 		4F00CD4E228522D80092F7B4 /* makeup_05_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD47228522D80092F7B4 /* makeup_05_19aw.png */; };
 		4F00CD4F228522D80092F7B4 /* makeup_07_19aw.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F00CD48228522D80092F7B4 /* makeup_07_19aw.png */; };
-		4F1DB747227ED1450062F4CA /* BNF618FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */; };
+		4F1DB747227ED1450062F4CA /* BNF619FirstTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB745227ED1450062F4CA /* BNF619FirstTechView.xib */; };
 		4F1DB748227ED1450062F4CA /* BNF619FirstTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DB746227ED1450062F4CA /* BNF619FirstTechView.swift */; };
 		4F1DB74A227ED1B20062F4CA /* BNFTech1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DB749227ED1B20062F4CA /* BNFTech1.png */; };
-		4F3B4E6822802A05008FAB09 /* BNF618SecondEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6222802A04008FAB09 /* BNF618SecondEfficacyView.xib */; };
+		4F3B4E6822802A05008FAB09 /* BNF619SecondEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6222802A04008FAB09 /* BNF619SecondEfficacyView.xib */; };
 		4F3B4E6922802A05008FAB09 /* BNF619ThirdEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6322802A04008FAB09 /* BNF619ThirdEfficacyView.swift */; };
-		4F3B4E6A22802A05008FAB09 /* BNF618ThirdEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6422802A04008FAB09 /* BNF618ThirdEfficacyView.xib */; };
+		4F3B4E6A22802A05008FAB09 /* BNF619ThirdEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6422802A04008FAB09 /* BNF619ThirdEfficacyView.xib */; };
 		4F3B4E6B22802A05008FAB09 /* BNF619SecondEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6522802A04008FAB09 /* BNF619SecondEfficacyView.swift */; };
 		4F3B4E7022802BA6008FAB09 /* 19AW_BNF3_after.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6E22802BA5008FAB09 /* 19AW_BNF3_after.png */; };
 		4F3B4E7122802BA6008FAB09 /* 19AW_BNF3_before.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E6F22802BA6008FAB09 /* 19AW_BNF3_before.png */; };
@@ -216,8 +216,8 @@
 		4F3B4E8B22806DE7008FAB09 /* BNF620SecondEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8722806DE7008FAB09 /* BNF620SecondEfficacyView.xib */; };
 		4F3B4E8D22806E4E008FAB09 /* BNF619Efficacy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F3B4E8C22806E4D008FAB09 /* BNF619Efficacy2.png */; };
 		4F3BEE8522800F5A002524E5 /* BNF619FirstEfficacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8322800F59002524E5 /* BNF619FirstEfficacyView.swift */; };
-		4F3BEE8622800F5A002524E5 /* BNF618FirstEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8422800F5A002524E5 /* BNF618FirstEfficacyView.xib */; };
-		4F91B0ED227F3B7700E46211 /* BNF618SecondTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F91B0EB227F3B7700E46211 /* BNF618SecondTechView.xib */; };
+		4F3BEE8622800F5A002524E5 /* BNF619FirstEfficacyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F3BEE8422800F5A002524E5 /* BNF619FirstEfficacyView.xib */; };
+		4F91B0ED227F3B7700E46211 /* BNF619SecondTechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F91B0EB227F3B7700E46211 /* BNF619SecondTechView.xib */; };
 		4F91B0EE227F3B7700E46211 /* BNF619SecondTechView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91B0EC227F3B7700E46211 /* BNF619SecondTechView.swift */; };
 		4F91B0F0227F3BB100E46211 /* BNFTech2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F91B0EF227F3BB000E46211 /* BNFTech2.png */; };
 		4FCDAF5A225C682400F7BBF2 /* Waso623TechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FCDAF56225C682300F7BBF2 /* Waso623TechView.xib */; };
@@ -1129,12 +1129,12 @@
 		4F00CD46228522D80092F7B4 /* makeup_04_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_04_19aw.png; sourceTree = "<group>"; };
 		4F00CD47228522D80092F7B4 /* makeup_05_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_05_19aw.png; sourceTree = "<group>"; };
 		4F00CD48228522D80092F7B4 /* makeup_07_19aw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makeup_07_19aw.png; sourceTree = "<group>"; };
-		4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618FirstTechView.xib; sourceTree = "<group>"; };
+		4F1DB745227ED1450062F4CA /* BNF619FirstTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619FirstTechView.xib; sourceTree = "<group>"; };
 		4F1DB746227ED1450062F4CA /* BNF619FirstTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619FirstTechView.swift; sourceTree = "<group>"; };
 		4F1DB749227ED1B20062F4CA /* BNFTech1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNFTech1.png; sourceTree = "<group>"; };
-		4F3B4E6222802A04008FAB09 /* BNF618SecondEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618SecondEfficacyView.xib; sourceTree = "<group>"; };
+		4F3B4E6222802A04008FAB09 /* BNF619SecondEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619SecondEfficacyView.xib; sourceTree = "<group>"; };
 		4F3B4E6322802A04008FAB09 /* BNF619ThirdEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619ThirdEfficacyView.swift; sourceTree = "<group>"; };
-		4F3B4E6422802A04008FAB09 /* BNF618ThirdEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618ThirdEfficacyView.xib; sourceTree = "<group>"; };
+		4F3B4E6422802A04008FAB09 /* BNF619ThirdEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619ThirdEfficacyView.xib; sourceTree = "<group>"; };
 		4F3B4E6522802A04008FAB09 /* BNF619SecondEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619SecondEfficacyView.swift; sourceTree = "<group>"; };
 		4F3B4E6E22802BA5008FAB09 /* 19AW_BNF3_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 19AW_BNF3_after.png; sourceTree = "<group>"; };
 		4F3B4E6F22802BA6008FAB09 /* 19AW_BNF3_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 19AW_BNF3_before.png; sourceTree = "<group>"; };
@@ -1153,8 +1153,8 @@
 		4F3B4E8722806DE7008FAB09 /* BNF620SecondEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF620SecondEfficacyView.xib; sourceTree = "<group>"; };
 		4F3B4E8C22806E4D008FAB09 /* BNF619Efficacy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNF619Efficacy2.png; sourceTree = "<group>"; };
 		4F3BEE8322800F59002524E5 /* BNF619FirstEfficacyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619FirstEfficacyView.swift; sourceTree = "<group>"; };
-		4F3BEE8422800F5A002524E5 /* BNF618FirstEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618FirstEfficacyView.xib; sourceTree = "<group>"; };
-		4F91B0EB227F3B7700E46211 /* BNF618SecondTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF618SecondTechView.xib; sourceTree = "<group>"; };
+		4F3BEE8422800F5A002524E5 /* BNF619FirstEfficacyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619FirstEfficacyView.xib; sourceTree = "<group>"; };
+		4F91B0EB227F3B7700E46211 /* BNF619SecondTechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNF619SecondTechView.xib; sourceTree = "<group>"; };
 		4F91B0EC227F3B7700E46211 /* BNF619SecondTechView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNF619SecondTechView.swift; sourceTree = "<group>"; };
 		4F91B0EF227F3BB000E46211 /* BNFTech2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BNFTech2.png; sourceTree = "<group>"; };
 		4FCDAF56225C682300F7BBF2 /* Waso623TechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Waso623TechView.xib; sourceTree = "<group>"; };
@@ -2414,15 +2414,15 @@
 				4F3B4E8522806DE7008FAB09 /* BNF620ThirdEfficacyView.swift */,
 				4F3B4E8622806DE7008FAB09 /* BNF620ThirdEfficacyView.xib */,
 				4F1DB746227ED1450062F4CA /* BNF619FirstTechView.swift */,
-				4F1DB745227ED1450062F4CA /* BNF618FirstTechView.xib */,
+				4F1DB745227ED1450062F4CA /* BNF619FirstTechView.xib */,
 				4F91B0EC227F3B7700E46211 /* BNF619SecondTechView.swift */,
-				4F91B0EB227F3B7700E46211 /* BNF618SecondTechView.xib */,
+				4F91B0EB227F3B7700E46211 /* BNF619SecondTechView.xib */,
 				4F3BEE8322800F59002524E5 /* BNF619FirstEfficacyView.swift */,
-				4F3BEE8422800F5A002524E5 /* BNF618FirstEfficacyView.xib */,
+				4F3BEE8422800F5A002524E5 /* BNF619FirstEfficacyView.xib */,
 				4F3B4E6522802A04008FAB09 /* BNF619SecondEfficacyView.swift */,
-				4F3B4E6222802A04008FAB09 /* BNF618SecondEfficacyView.xib */,
+				4F3B4E6222802A04008FAB09 /* BNF619SecondEfficacyView.xib */,
 				4F3B4E6322802A04008FAB09 /* BNF619ThirdEfficacyView.swift */,
-				4F3B4E6422802A04008FAB09 /* BNF618ThirdEfficacyView.xib */,
+				4F3B4E6422802A04008FAB09 /* BNF619ThirdEfficacyView.xib */,
 			);
 			path = BNF;
 			sourceTree = "<group>";
@@ -3681,7 +3681,7 @@
 				C0423F821E3627A500D56960 /* shiseido-finder.db in Resources */,
 				C023C2181E14EBA7002FBB1B /* LineStepLowerCollectionViewCell.xib in Resources */,
 				6E4ABB4420AA6CAF000355D2 /* complexion_38.png in Resources */,
-				4F3B4E6822802A05008FAB09 /* BNF618SecondEfficacyView.xib in Resources */,
+				4F3B4E6822802A05008FAB09 /* BNF619SecondEfficacyView.xib in Resources */,
 				338DE5721FBC4D2800E353CA /* AboutShiseidoImageViewController.storyboard in Resources */,
 				E52891DA1DF3006F007B92B2 /* LineStepViewController.storyboard in Resources */,
 				DE80C66620726D3600CD326A /* 18aw_92.png in Resources */,
@@ -3993,7 +3993,7 @@
 				C050C9C11E8276C60009679D /* Shiseido-Light.otf in Resources */,
 				C050C9131E82619F0009679D /* wab_slider_1_18.png in Resources */,
 				DE06F70E1F16450200EF2FE2 /* sensitive.png in Resources */,
-				4F1DB747227ED1450062F4CA /* BNF618FirstTechView.xib in Resources */,
+				4F1DB747227ED1450062F4CA /* BNF619FirstTechView.xib in Resources */,
 				DA22A5D7220AC3CB00CF5FEE /* btn_close@4x.png in Resources */,
 				C050C9701E8267450009679D /* d_block_2m.png in Resources */,
 				DE2C919E1E9C682500B5FC4A /* lx_top_menu.png in Resources */,
@@ -4004,7 +4004,7 @@
 				DE2C90931E9C66E600B5FC4A /* LXTroubleSelectView.xib in Resources */,
 				DEED708D20A54E85001027EB /* SMBKTopViewController.storyboard in Resources */,
 				DE2C8F511E9B9F5800B5FC4A /* BigCaslonFB-Regular.otf in Resources */,
-				4F91B0ED227F3B7700E46211 /* BNF618SecondTechView.xib in Resources */,
+				4F91B0ED227F3B7700E46211 /* BNF619SecondTechView.xib in Resources */,
 				6E4ABB3820AA6CAF000355D2 /* makeup_03.png in Resources */,
 				DE2C91371E9C681100B5FC4A /* LuxuryYutakaViewController.storyboard in Resources */,
 				44D7BC0D2283DDFC0073D506 /* p10_03.png in Resources */,
@@ -4020,7 +4020,7 @@
 				DA9ACF71226858B100AE83EF /* obi19aw.mp4 in Resources */,
 				2680EC222037E4FA005257B1 /* makeup_2.png in Resources */,
 				260E34AC2019CCFE0006109B /* moviStartBtn.png in Resources */,
-				4F3B4E6A22802A05008FAB09 /* BNF618ThirdEfficacyView.xib in Resources */,
+				4F3B4E6A22802A05008FAB09 /* BNF619ThirdEfficacyView.xib in Resources */,
 				DA9ACF6522684F7E00AE83EF /* p4_image.png in Resources */,
 				4F00CD4122840E890092F7B4 /* UTM_Edited33.mp4 in Resources */,
 				6E4ABB3B20AA6CAF000355D2 /* 02_button.png in Resources */,
@@ -4179,7 +4179,7 @@
 				DE2C301C20738CC900548627 /* EEEFirstEfficacyResultView.xib in Resources */,
 				80429B8A1EF5C2550022C99D /* LifeStyleSecondProductView.xib in Resources */,
 				41BE496621869F8C004BAA57 /* Laminaria.png in Resources */,
-				4F3BEE8622800F5A002524E5 /* BNF618FirstEfficacyView.xib in Resources */,
+				4F3BEE8622800F5A002524E5 /* BNF619FirstEfficacyView.xib in Resources */,
 				C050C9C01E8276C60009679D /* Shiseido-ExtraLightx.otf in Resources */,
 				4172958D207765E000F83D5A /* 13_yazirushi_02.png in Resources */,
 				DE2C90951E9C66E600B5FC4A /* LXYutakaConceptContentFirstView.xib in Resources */,
