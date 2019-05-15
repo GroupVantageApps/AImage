@@ -404,8 +404,7 @@ class ProductListData: NSObject {
                 productIds += [66, 365, 292, 51, 32, 622, 524, 525]
             }
         }
-        print("&&&produ")
-        print(productIds)
+        
         return productIds
     }
 

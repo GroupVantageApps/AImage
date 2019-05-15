@@ -57,15 +57,14 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         mUpperSteps = line.step
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
         var beautyCsvId = 7
-        print("fff")
+        
         print(mLowerSteps)
         for (i, step) in mLowerSteps.enumerated() {
                 let baseV = self.view.viewWithTag(i + 10)! as UIView
                 let stepLbl = baseV.viewWithTag(i + 60) as! UILabel
                 let stepCsvId = i + 4
             
-            print("-------------")
-            print(lxArr[String(stepCsvId)])
+            
             
             if ((lxArr[String(stepCsvId)]?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {
                 stepLbl.text = lxArr[String(stepCsvId)]
@@ -76,10 +75,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                 stepLbl.attributedText = stepLblString
             }
                 products = ProductListData(productIds: step.product).products
-                if i == 2 {
-                    print("############")
-                    print(products)
-                }
+                
                 for (index, product) in products.enumerated() {
                     tmpProducts.append(product)
                     if product.defaultDisplay == 1 {
