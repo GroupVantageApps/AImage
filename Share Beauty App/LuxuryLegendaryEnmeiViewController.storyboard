@@ -126,8 +126,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-DS-D4E" userLabel="LECView">
                                 <rect key="frame" x="0.0" y="114" width="1024" height="117"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv0-NF-wWi">
-                                        <rect key="frame" x="262" y="0.0" width="500" height="117"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Fv0-NF-wWi">
+                                        <rect key="frame" x="157" y="0.0" width="706" height="117"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="117" id="1Wc-u6-ZJh"/>
                                             <constraint firstAttribute="width" constant="500" id="8Mg-jH-amz"/>
