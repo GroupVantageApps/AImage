@@ -29,8 +29,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button" image="btn_next.png"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                                      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-ne-mMg">
-                            <rect key="frame" x="35" y="95" width="925" height="40"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                                      " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="1vw-ne-mMg">
+                            <rect key="frame" x="35" y="70" width="925" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="40"/>
                             <color key="textColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,7 +48,7 @@
                                 <color key="titleShadowColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                         " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69Y-9r-ewA">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                                         " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="69Y-9r-ewA">
                             <rect key="frame" x="18" y="637" width="323" height="39"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,8 +57,8 @@
                             <color key="textColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5M-Yo-Rrr">
-                            <rect key="frame" x="416" y="202" width="496" height="315"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5M-Yo-Rrr">
+                            <rect key="frame" x="416" y="202" width="496" height="354"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="20"/>
                             <color key="textColor" red="0.68235294120000001" green="0.58823529409999997" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
                 <outlet property="subscript" destination="p5M-Yo-Rrr" id="8qr-ir-ciU"/>
                 <outlet property="title" destination="1vw-ne-mMg" id="1UV-6S-S7o"/>
             </connections>
-            <point key="canvasLocation" x="39" y="52"/>
+            <point key="canvasLocation" x="38.848920863309353" y="51.798561151079141"/>
         </view>
     </objects>
     <resources>
