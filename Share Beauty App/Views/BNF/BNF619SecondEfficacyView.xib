@@ -55,7 +55,7 @@
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" metaFont="system" size="33"/>
                                         <real key="NSKern" value="0.0"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
@@ -71,7 +71,7 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" metaFont="system" size="33"/>
                                         <real key="NSKern" value="0.0"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
@@ -83,7 +83,7 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" metaFont="system" size="33"/>
                                         <real key="NSKern" value="0.0"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
@@ -96,7 +96,7 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" size="33" name="Reader-Bold"/>
+                                        <font key="NSFont" metaFont="system" size="33"/>
                                         <real key="NSKern" value="0.0"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>

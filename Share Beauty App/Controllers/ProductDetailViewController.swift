@@ -2633,6 +2633,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
     func didTapEfficacyResults(){
         print("Efficacy")
         
+        
         //初期位置
         if productId == 616 {
             for i in 0...1{
