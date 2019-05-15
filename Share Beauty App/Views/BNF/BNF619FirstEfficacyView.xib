@@ -41,15 +41,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="8298" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54Z-t9-IaC">
-                            <rect key="frame" x="285" y="83" width="144" height="67"/>
+                            <rect key="frame" x="285" y="83" width="144" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText">
                                 <fragment content="86">
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="72"/>
+                                        <font key="NSFont" size="72" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="72" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -61,9 +62,9 @@
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="48"/>
+                                        <font key="NSFont" size="48" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
-                                        <font key="NSOriginalFont" metaFont="system" size="48"/>
+                                        <font key="NSOriginalFont" size="48" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -75,15 +76,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="8300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-0t-ZrO">
-                            <rect key="frame" x="285" y="232" width="144" height="67"/>
+                            <rect key="frame" x="285" y="232" width="144" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText">
                                 <fragment content="46">
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="72"/>
+                                        <font key="NSFont" size="72" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="72" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -95,8 +97,9 @@
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="48"/>
+                                        <font key="NSFont" size="48" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="48" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="76" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -155,8 +158,9 @@ VmlzdWFsZXZhbHVhdGlvbioBRGV2aWNlIG1lYXN1cmVtZW50Kio
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="31"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -171,8 +175,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="31"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -183,8 +188,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="31"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -196,8 +202,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="31"/>
+                                        <font key="NSFont" size="31" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="31" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -224,12 +231,12 @@ Cg
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-PY-qYA">
                             <rect key="frame" x="21" y="169" width="987" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-8t-td0">
                             <rect key="frame" x="21" y="325" width="987" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                 </view>

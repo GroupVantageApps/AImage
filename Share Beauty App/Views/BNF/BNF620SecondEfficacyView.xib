@@ -55,8 +55,9 @@
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="33"/>
+                                        <font key="NSFont" size="33" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="33" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -71,8 +72,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="33"/>
+                                        <font key="NSFont" size="33" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="33" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -83,8 +85,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="33"/>
+                                        <font key="NSFont" size="33" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="33" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -96,8 +99,9 @@ Cg
                                     <attributes>
                                         <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="NSColor" red="0.62663757801055908" green="0.54997783899307251" blue="0.49803030490875244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="33"/>
+                                        <font key="NSFont" size="33" name="Reader-Bold"/>
                                         <real key="NSKern" value="0.0"/>
+                                        <font key="NSOriginalFont" size="33" name="Reader-Bold"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                             <tabStops/>
                                         </paragraphStyle>
@@ -185,6 +189,6 @@ Cg
         </view>
     </objects>
     <resources>
-        <image name="BNF620Efficacy2.png" width="16" height="16"/>
+        <image name="BNF620Efficacy2.png" width="870" height="424"/>
     </resources>
 </document>
