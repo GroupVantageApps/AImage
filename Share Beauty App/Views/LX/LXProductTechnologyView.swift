@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import AVKit
+import AVFoundation
 
 class LXProductTechnologyView: UIView, UIScrollViewDelegate {
     
@@ -14,6 +16,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
     var mContentV: UIView!
     var mPageControl : UIPageControl = UIPageControl(frame:CGRect(x: 960/2 - 100, y: 655, width: 200, height: 50))
 
+    var player : AVPlayer?
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(productId: Int){
   
@@ -88,6 +91,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
             self.mScrollV.contentSize = CGSize(width: 960 * 2, height: self.size.height)
             self.mPageControl.numberOfPages = 2
             self.mScrollV.addSubview(self.mContentV)
+            player = gene2V.player
         }
         
         
@@ -111,6 +115,9 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        if pageNumber == 1 {
+            player!.play()
+        }
         self.mPageControl.currentPage = Int(pageNumber)
 
     }

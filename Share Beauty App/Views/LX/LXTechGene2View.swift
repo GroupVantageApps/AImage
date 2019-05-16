@@ -22,6 +22,7 @@ class LXTechGene2View : UIView{
     @IBOutlet weak var right5: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
+    var player : AVPlayer?
     
     func setUI() {
         title.text = AppItemTable.getNameByItemId(itemId: 8456)
@@ -37,12 +38,11 @@ class LXTechGene2View : UIView{
         
         
         let path = Bundle.main.path(forResource: "LxEffectImageP2", ofType: "mp4")!
-        let player = AVPlayer(url: URL(fileURLWithPath: path))
+        player = AVPlayer(url: URL(fileURLWithPath: path))
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame =  CGRect(x:0, y: 0, width: 960, height: 700)
         playerLayer.zPosition = -1
         self.layer.insertSublayer(playerLayer, at: 0)
-        player.play()
 
     }
 
