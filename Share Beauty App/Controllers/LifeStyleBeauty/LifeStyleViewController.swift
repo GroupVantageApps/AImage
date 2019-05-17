@@ -572,8 +572,8 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         
 
         var hasMakComment: Bool = false
-        let itemIds = [616, 617, 618, 619, 625, 626]
-        let itemIdSentences = [616: 8160, 617: 8161, 618: 8162, 619: 8163, 625: 8165, 626: 8165]
+        let itemIds = [616, 618, 619, 623, 625, 626]
+        let itemIdSentences = [616: 8160, 618: 8162, 619: 8163, 623: 8164, 625: 8165, 626: 8165]
         for (index, item) in itemIds.enumerated() {
             let productId = item
 
