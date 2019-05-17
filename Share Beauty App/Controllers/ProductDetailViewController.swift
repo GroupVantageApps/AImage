@@ -336,13 +336,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         if [617, 618].contains(self.product.productId) {
             self.efficacyScrollV.delegate = self
             self.efficacyScrollV.frame.size = CGSize(width: self.mVContent.frame.width, height: self.mVContent.height)
-            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*3)
+            self.efficacyScrollV.contentSize = CGSize(width: efficacyScrollV.frame.width, height: (efficacyScrollV.frame.height)*1)
             self.efficacyScrollV.isPagingEnabled = true
             self.efficacyScrollV.bounces = false
             
             let efficacyV: EyeTreatEffView = UINib(nibName: "EyeTreatEffView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! EyeTreatEffView
             efficacyV.setEffency19AW(productId: productId)
-            self.mVContent.addSubview(efficacyV)
+            self.efficacyScrollV.addSubview(efficacyV)
         }
     
         if [619, 620].contains(self.product.productId) {
