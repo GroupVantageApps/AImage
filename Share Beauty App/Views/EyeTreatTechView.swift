@@ -59,7 +59,11 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 title.textAlignment = NSTextAlignment.center
                 title.textColor = UIColor.white
                 title.backgroundColor = red
-                generateV.addSubview(title)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 9.2) {
+                    generateV.addSubview(title)
+                }
+                
                 
                 
                 for i in 1...3{
@@ -70,29 +74,35 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     title.textAlignment = .left
                     title.frame = CGRect(x: 768 - 120, y: 150+(513*0)+(70*(i-1)), width: 400, height: 100)
                     description.textColor = UIColor.black
-                    description.font = UIFont(name: "Reader-regular", size: 16)
-                    description.numberOfLines = 0
+                    description.numberOfLines = 1
                     description.sizeToFit()
                     description.textAlignment = .left
                     description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
-                    
+                    description.adjustsFontSizeToFitWidth = true
                     
                     if i == 1{
                         title.text = AppItemTable.getNameByItemId(itemId: 8204)//"Skin Shield (Smoothing Oil"
                         title.frame = CGRect(x: 768 - 120, y: 165+(513*0)+(70*(i-1)), width: 400, height: 100)
-                        description.text = AppItemTable.getNameByItemId(itemId: 8205) // "oReduces friction from the skin surface."
+                        description.text = AppItemTable.getNameByItemId(itemId: 8205) // "Reduces friction from the skin surface."
                         description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                     }else if i == 2{
                         title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
                         description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
-                        description.frame = CGRect(x: 768 - 120, y: 175+(513*0)+(70*(i-1)), width: 340, height: 100)
+                        description.frame = CGRect(x: 768 - 120, y: 210+(513*0)+(70*(i-1)), width: 340, height: 30)
+                        
+
                     }else if i == 3{
                         title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
                         description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
+                        description.frame = CGRect(x: 768 - 120, y: 210+(513*0)+(70*(i-1)), width: 340, height: 30)
                     }
                     
-                    generateV.addSubview(title)
-                    generateV.addSubview(description)
+
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 9.2) {
+                        generateV.addSubview(title)
+                        generateV.addSubview(description)
+                    }
+
                 }
                 
                 let path = Bundle.main.path(forResource: "UTM_Edited33", ofType: "mp4")!
