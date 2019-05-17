@@ -32,6 +32,8 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 titleLabel.frame = CGRect(x: 20 , y: 20+(513*i), width: 600, height: 30)
                 titleLabel.text = AppItemTable.getNameByItemId(itemId: 8200)// "Smoothing Defense Complex"
                 titleLabel.font = UIFont(name: "Reader-Bold", size: 22)
+                titleLabel.numberOfLines = 0
+                titleLabel.minimumScaleFactor = 0.5
                 titleLabel.textColor = UIColor.black
                 
                 let titleDescription = UILabel()
@@ -70,11 +72,12 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     let title = UILabel()
                     let description = UILabel()
                     title.textColor = UIColor.black
-                    title.font = UIFont(name: "Reader-Bold", size: 20)
+                    title.font = UIFont(name: "Reader-Bold", size: 18)
                     title.textAlignment = .left
-                    title.frame = CGRect(x: 768 - 120, y: 150+(513*0)+(70*(i-1)), width: 400, height: 100)
+                    title.frame = CGRect(x: 768 - 120, y: 150+(513*0)+(70*(i-1)), width: 340, height: 100) //width: 400
+                    title.numberOfLines = 0
                     description.textColor = UIColor.black
-                    description.numberOfLines = 1
+                    description.numberOfLines = 0
                     description.sizeToFit()
                     description.textAlignment = .left
                     description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
@@ -88,13 +91,13 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     }else if i == 2{
                         title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
                         description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
-                        description.frame = CGRect(x: 768 - 120, y: 210+(513*0)+(70*(i-1)), width: 340, height: 30)
+                        description.frame = CGRect(x: 768 - 120, y: 220+(513*0)+(70*(i-1)), width: 340, height: 30)
                         
 
                     }else if i == 3{
                         title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
                         description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
-                        description.frame = CGRect(x: 768 - 120, y: 210+(513*0)+(70*(i-1)), width: 340, height: 30)
+                        description.frame = CGRect(x: 768 - 120, y: 220+(513*0)+(70*(i-1)), width: 340, height: 30)
                     }
                     
 
