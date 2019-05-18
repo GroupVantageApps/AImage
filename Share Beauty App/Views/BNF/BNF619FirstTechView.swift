@@ -23,7 +23,7 @@ class BNF619FirstTechView: UIView {
             if [3,4,5,6].contains(index) {
                 let attrStr = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
                 
-                var font_color = UIColor(red: 136/255, green: 183/255, blue: 205/255, alpha: 1)
+                var font_color = UIColor(red: 109/255, green: 187/255, blue: 187/255, alpha: 1)//red: 136/255, green: 183/255, blue: 205/255, alpha: 1)
                 var font_size = CGFloat(18.0)
                 if index == 4 {
                     font_color = UIColor(red: 109/255, green: 187/255, blue: 192/255, alpha: 1)
@@ -32,14 +32,14 @@ class BNF619FirstTechView: UIView {
                 attrStr.setFont(UIUtil.getReaderBold(font_size))
                 attrStr.setTextColor(UIColor.white)
                 let shadow = NSShadow()
-                shadow.shadowColor = UIColor.gray
-                shadow.shadowBlurRadius = 5.0
+               // shadow.shadowColor = UIColor.gray
+                shadow.shadowBlurRadius = 2.0
                 
                 attrStr.addAttribute(NSShadowAttributeName, value: shadow, range: NSMakeRange(0, attrStr.length))
                 
                 label.attributedText = attrStr
                 label.adjustsFontSizeToFitWidth = true
-                
+                label.numberOfLines = 0
                 let label2: UILabel = UILabel.init(frame: label.frame)
                 
                 let attrStr2 = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: tag) ?? "not exist")
@@ -53,6 +53,7 @@ class BNF619FirstTechView: UIView {
                 label2.attributedText = attrStr2
                 label2.textAlignment = .center
                 label2.adjustsFontSizeToFitWidth = true
+                label2.numberOfLines = 0
                 
                 self.addSubview(label2)
             } else {

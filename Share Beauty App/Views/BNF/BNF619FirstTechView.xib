@@ -70,33 +70,37 @@ achieve a softening effect on the skin.</string>
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8281" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NMF Component" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpr-cJ-eH0">
-                            <rect key="frame" x="75" y="438" width="145" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8281" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NMF Component" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="mpr-cJ-eH0">
+                            <rect key="frame" x="75" y="438" width="145" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.56225646751552827" green="0.84223089771893911" blue="0.9461018458549223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8282" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aqua-in-pool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-Rc-COF">
-                            <rect key="frame" x="261" y="438" width="145" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8282" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aqua-in-pool" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="F4H-Rc-COF">
+                            <rect key="frame" x="261" y="438" width="145" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.56225646751552827" green="0.84223089771893911" blue="0.9461018458549223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8279" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peptide with affinity to skin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-2Q-P3B">
-                            <rect key="frame" x="118" y="167" width="247" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8279" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peptide with affinity to skin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-2Q-P3B">
+                            <rect key="frame" x="118" y="146" width="247" height="46"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.56225646751552827" green="0.84223089771893911" blue="0.9461018458549223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="8280" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AQUAPEPTIDE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bde-O0-taT">
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8280" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AQUAPEPTIDE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bde-O0-taT">
                             <rect key="frame" x="162" y="291" width="159" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
+                            <color key="shadowColor" red="0.56225646751552827" green="0.84223089771893911" blue="0.9461018458549223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
                     </subviews>
                 </view>
