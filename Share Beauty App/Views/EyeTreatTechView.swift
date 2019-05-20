@@ -37,13 +37,15 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 titleLabel.textColor = UIColor.black
                 
                 let titleDescription = UILabel()
-                titleDescription.frame = CGRect(x: 150, y: 60+(513*i), width: 500, height: 100)
+                titleDescription.frame = CGRect(x: 150, y: 50+(513*i), width: 600, height: 120)
 
                 titleDescription.text = AppItemTable.getNameByItemId(itemId: 8201) // "The SHISEIDO original technology provides a shield-like effect to reduce damage caused by friction.  It also protects the  stratum corneum, and maintains moisture of the eye area"
                 titleDescription.font = UIFont(name: "Reader-regular", size: 16)
                 titleDescription.numberOfLines = 0
                 titleDescription.textAlignment = NSTextAlignment.left
                 titleDescription.textColor = UIColor.black
+                titleDescription.adjustsFontForContentSizeCategory = true
+                titleDescription.minimumScaleFactor = 0.4
                 
                 let line:UIImage = UIImage(named:"utm_line.png")!
                 let utmLine = UIImageView(image:line)
@@ -55,13 +57,13 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 generateV.addSubview(titleDescription)
                 
                 let title = UILabel()
-                title.frame = CGRect(x:  768 - 120, y: 165+(513*i), width: 200, height: 27)
+                title.frame = CGRect(x:  768 - 120, y: 180+(513*i), width: 340, height: 27)
                 title.text = AppItemTable.getNameByItemId(itemId: 8203)//"Shiseido-Original"
+                title.textAlignment = .left
                 title.font = UIFont(name: "Reader-Bold", size: 16)
-                title.textAlignment = NSTextAlignment.center
-                title.textColor = UIColor.white
-                title.backgroundColor = red
-                
+                title.textAlignment = NSTextAlignment.left
+                title.textColor = red
+                //title.backgroundColor = red
                 DispatchQueue.main.asyncAfter(deadline: .now() + 9.2) {
                     generateV.addSubview(title)
                 }
@@ -75,29 +77,32 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     title.font = UIFont(name: "Reader-Bold", size: 18)
                     title.textAlignment = .left
                     title.frame = CGRect(x: 768 - 120, y: 150+(513*0)+(70*(i-1)), width: 340, height: 100) //width: 400
-                    title.numberOfLines = 0
+                    title.numberOfLines = 1
+                    title.adjustsFontSizeToFitWidth = true
+                    title.minimumScaleFactor = 0.2
                     description.textColor = UIColor.black
                     description.numberOfLines = 0
                     description.sizeToFit()
                     description.textAlignment = .left
                     description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                     description.adjustsFontSizeToFitWidth = true
-                    
+                    description.minimumScaleFactor = 0.3
                     if i == 1{
                         title.text = AppItemTable.getNameByItemId(itemId: 8204)//"Skin Shield (Smoothing Oil"
                         title.frame = CGRect(x: 768 - 120, y: 165+(513*0)+(70*(i-1)), width: 400, height: 100)
+                        title.textColor = red
                         description.text = AppItemTable.getNameByItemId(itemId: 8205) // "Reduces friction from the skin surface."
                         description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                     }else if i == 2{
                         title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
                         description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
-                        description.frame = CGRect(x: 768 - 120, y: 220+(513*0)+(70*(i-1)), width: 340, height: 30)
+                        description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                         
 
                     }else if i == 3{
                         title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
                         description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
-                        description.frame = CGRect(x: 768 - 120, y: 220+(513*0)+(70*(i-1)), width: 340, height: 30)
+                        description.frame = CGRect(x: 768 - 120, y: 195+(513*0)+(70*(i-1)), width: 340, height: 100)
                     }
                     
 
