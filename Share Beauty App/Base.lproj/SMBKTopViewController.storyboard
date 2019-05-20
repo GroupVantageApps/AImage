@@ -93,12 +93,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-WN-UCh">
+                                    <button opaque="NO" tag="6" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpb-WN-UCh">
                                         <rect key="frame" x="100" y="430" width="270" height="82"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="23.5"/>
                                         <inset key="titleEdgeInsets" minX="103" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="&gt; Complexion">
+                                        <state key="normal" title="&gt; Complexion" backgroundImage="02_button_comp.png">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -375,6 +375,7 @@ for face, eyes, and lips. </string>
         <image name="02_03.png" width="437" height="437"/>
         <image name="02_04.png" width="437" height="437"/>
         <image name="02_button.png" width="415" height="166"/>
+        <image name="02_button_comp.png" width="270" height="82"/>
         <image name="complextion_btn.png" width="16" height="16"/>
         <image name="p2_complexion.png" width="746" height="648"/>
         <image name="p2_makeup.png" width="646" height="646"/>
