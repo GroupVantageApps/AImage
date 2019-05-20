@@ -60,7 +60,7 @@
                             <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="8291" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peptide with affinity to skin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXW-XF-5qt">
@@ -69,7 +69,7 @@
                             <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" tag="8295" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peptide with affinity to skin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPt-rg-sIl">
@@ -133,7 +133,7 @@
                             <fontDescription key="fontDescription" name="Reader-Medium" family="Reader" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
-                            <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <size key="shadowOffset" width="1" height="1"/>
                         </label>
                     </subviews>
