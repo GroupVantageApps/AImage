@@ -506,6 +506,38 @@ class EyeTreatEffView: UIView, UIScrollViewDelegate {
             graphImage.contentMode = .scaleToFill
             graphImage.frame = CGRect(x: 170,y: 17+Int(self.efficacyScrollV.frame.height)*2,width: 318,height: 450)
             self.efficacyScrollV.addSubview(graphImage)
+            
+            
+            let red : UIImage = UIImage(named: "p6_3months.png")!
+            let redImage = UIImageView(image: red)
+            redImage.contentMode = .scaleToFill
+            redImage.frame = CGRect(x: 350,y: 470+Int(self.efficacyScrollV.frame.height)*2,width: 40,height: 20)
+            self.efficacyScrollV.addSubview(redImage)
+            
+            let gray : UIImage = UIImage(named: "p6_1week.png")!
+            let grayImage = UIImageView(image: gray)
+            grayImage.contentMode = .scaleToFill
+            grayImage.frame = CGRect(x: 170,y: 470+Int(self.efficacyScrollV.frame.height)*2,width: 40,height: 20)
+            self.efficacyScrollV.addSubview(grayImage)
+            
+            let reddescription = UILabel()
+            reddescription.textColor = UIColor.black
+            reddescription.font = UIFont(name: "Reader-Medium", size: 17)
+            reddescription.numberOfLines = 0
+            reddescription.textAlignment = .left
+            reddescription.text = AppItemTable.getNameByItemId(itemId: 8275)
+            reddescription.frame = CGRect(x: 400,y: 470+Int(self.efficacyScrollV.frame.height)*2,width: 150,height: 20)
+            self.efficacyScrollV.addSubview(reddescription)
+        
+            let graydescription = UILabel()
+            graydescription.textColor = UIColor.black
+            graydescription.font = UIFont(name: "Reader-Medium", size: 17)
+            graydescription.numberOfLines = 0
+            graydescription.textAlignment = .left
+            graydescription.text = AppItemTable.getNameByItemId(itemId: 8274)
+            graydescription.frame = CGRect(x: 220,y: 470+Int(self.efficacyScrollV.frame.height)*2,width: 150,height: 20)
+            self.efficacyScrollV.addSubview(graydescription)
+            
             for i in 1...6{
                 
                 let percentLabel = UILabel()
