@@ -81,6 +81,7 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     title.adjustsFontSizeToFitWidth = true
                     title.minimumScaleFactor = 0.2
                     description.textColor = UIColor.black
+                    description.font = UIFont(name: "Reader-regular", size: 12)
                     description.numberOfLines = 0
                     description.sizeToFit()
                     description.textAlignment = .left
