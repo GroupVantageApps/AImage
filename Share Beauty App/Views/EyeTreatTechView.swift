@@ -44,7 +44,7 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 titleDescription.numberOfLines = 0
                 titleDescription.textAlignment = NSTextAlignment.left
                 titleDescription.textColor = UIColor.black
-                titleDescription.adjustsFontForContentSizeCategory = true
+               // titleDescription.adjustsFontForContentSizeCategory = true
                 titleDescription.minimumScaleFactor = 0.4
                 
                 let line:UIImage = UIImage(named:"utm_line.png")!
