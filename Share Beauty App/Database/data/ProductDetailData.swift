@@ -208,8 +208,8 @@ class ProductDetailData: NSObject {
 
             var data = DataStructColorball()
             data.colorballId = colorballId
-            data.name = colorBallEntity.name
-            if LanguageConfigure.countryId == 5 || LanguageConfigure.countryId == 6 /**|| LanguageConfigure.countryId == 7 **/{
+            data.name = colorBallEntity.name /**色玉多言語化の箇所**/
+            if LanguageConfigure.countryId == 5 || LanguageConfigure.countryId == 6 || LanguageConfigure.countryId == 7 /**|| LanguageConfigure.countryId == 7 **/{
                 if colorBallTranslateEntity.nameLocal != "" {
                     data.name = colorBallTranslateEntity.nameLocal
                 }
