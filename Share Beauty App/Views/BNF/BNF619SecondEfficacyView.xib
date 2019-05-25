@@ -76,7 +76,7 @@
                                 <action selector="onTapABBtnWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="DsT-tf-REb"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="8312" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idQ-dX-EB3">
+                        <button opaque="NO" tag="8312" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="idQ-dX-EB3">
                             <rect key="frame" x="519" y="340" width="157" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Reader" family="Reader" pointSize="17"/>
