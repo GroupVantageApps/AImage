@@ -44,7 +44,7 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                 titleDescription.numberOfLines = 0
                 titleDescription.textAlignment = NSTextAlignment.left
                 titleDescription.textColor = UIColor.black
-                titleDescription.adjustsFontForContentSizeCategory = true
+               // titleDescription.adjustsFontForContentSizeCategory = true
                 titleDescription.minimumScaleFactor = 0.4
                 
                 let line:UIImage = UIImage(named:"utm_line.png")!
@@ -97,13 +97,13 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     }else if i == 2{
                         title.text = AppItemTable.getNameByItemId(itemId: 8206) //"Cell Shield (high fructose corn syry"
                         description.text = AppItemTable.getNameByItemId(itemId: 8207)// "Directly bonds with the stratum corneum to protect its moisture and lessen damage"
-                        description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
+                        description.frame = CGRect(x: 768 - 120, y: 175+(513*0)+(70*(i-1)), width: 340, height: 100)
                         
 
                     }else if i == 3{
                         title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
                         description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
-                        description.frame = CGRect(x: 768 - 120, y: 195+(513*0)+(70*(i-1)), width: 340, height: 100)
+                        description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                     }
                     
 
