@@ -158,7 +158,7 @@ class EyeTreatEffView: UIView, UIScrollViewDelegate {
                 text.textColor = UIColor.lightGray
                 text.font = UIFont(name: "Reader-Medium", size: 12)
                 text.font = text.font.withSize(13)
-                text.textAlignment = .center
+                text.textAlignment = .right
                 text.numberOfLines = 0
                 if i == 0 {
                     text.text = AppItemTable.getNameByItemId(itemId: 8173)
@@ -216,7 +216,7 @@ class EyeTreatEffView: UIView, UIScrollViewDelegate {
                 text.textColor = UIColor.lightGray
                 text.font = UIFont(name: "Reader-Medium", size: 12)
                 text.font = text.font.withSize(13)
-                text.textAlignment = .center
+                text.textAlignment = .right
                 text.numberOfLines = 0
                 text.frame = CGRect(x: 800, y: 450+(Int(self.efficacyScrollV.frame.height)*i), width: 200, height: 40)
                 if i == 0 {
