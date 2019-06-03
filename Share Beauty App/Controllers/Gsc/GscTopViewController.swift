@@ -355,8 +355,8 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             mSunCareSelectView2.addSubview(urbanLbl) 
             
             //Active,Sports Btn
-            let activeBtnImg = UIImage.init(named: "active")
-            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 3, y: 0, width: selfWidth/4, height: selfHeight - 69))
+            let activeBtnImg = UIImage.init(named: "active_sports")
+            let activeBtn = UIButton.init(frame: CGRect(x: selfWidth/4 * 3, y: 0, width: selfWidth/4, height: selfHeight - 200))
             activeBtn.addTarget(self, action: #selector(GscTopViewController.onTapActiveBtn), for: .touchUpInside)
             activeBtn.setBackgroundImage(activeBtnImg, for: .normal)
             mSunCareSelectView2.addSubview(activeBtn)  
