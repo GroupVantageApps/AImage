@@ -74,14 +74,14 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     let title = UILabel()
                     let description = UILabel()
                     title.textColor = UIColor.black
-                    title.font = UIFont(name: "Reader-Bold", size: 18)
+                    title.font = UIFont(name: "Reader-Bold", size: 16)
                     title.textAlignment = .left
                     title.frame = CGRect(x: 768 - 120, y: 150+(513*0)+(70*(i-1)), width: 340, height: 100) //width: 400
                     title.numberOfLines = 1
                     title.adjustsFontSizeToFitWidth = true
-                    title.minimumScaleFactor = 0.2
+                    title.minimumScaleFactor = 0.1
                     description.textColor = UIColor.black
-                    description.font = UIFont(name: "Reader-regular", size: 12)
+                    description.font = UIFont(name: "Reader-regular", size: 10)
                     description.numberOfLines = 0
                     description.sizeToFit()
                     description.textAlignment = .left
@@ -92,6 +92,9 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                         title.text = AppItemTable.getNameByItemId(itemId: 8204)//"Skin Shield (Smoothing Oil"
                         title.frame = CGRect(x: 768 - 120, y: 165+(513*0)+(70*(i-1)), width: 400, height: 100)
                         title.textColor = red
+                        title.numberOfLines = 1
+                        title.adjustsFontSizeToFitWidth = true
+                        title.minimumScaleFactor = 0.1
                         description.text = AppItemTable.getNameByItemId(itemId: 8205) // "Reduces friction from the skin surface."
                         description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
                     }else if i == 2{
@@ -103,7 +106,7 @@ class EyeTreatTechView: UIView, UIScrollViewDelegate {
                     }else if i == 3{
                         title.text = AppItemTable.getNameByItemId(itemId: 8208) //"Lipid shield (Macadamia nut oil)"
                         description.text = AppItemTable.getNameByItemId(itemId: 8209) // "Blends into intra-cellular lipids to protect the stratum corneum cells for a brighter, moisturized eye area."
-                        description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 100)
+                        description.frame = CGRect(x: 768 - 120, y: 185+(513*0)+(70*(i-1)), width: 340, height: 120)
                     }
                     
 
