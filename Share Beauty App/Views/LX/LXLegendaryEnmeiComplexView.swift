@@ -12,13 +12,13 @@ class LXLegendaryEnmeiComplexView : UIView{
     
     @IBOutlet weak var title: UILabel!
     
-    @IBOutlet weak var `subscript`: UILabel!
     @IBOutlet weak var Btn: UILabel!
     
+    @IBOutlet weak var desLbl: UILabel!
     
     func setUI() {
         title.text = AppItemTable.getNameByItemId(itemId: 8447)
-        `subscript`.text = AppItemTable.getNameByItemId(itemId: 8466)
+        desLbl.text = AppItemTable.getNameByItemId(itemId: 8466)
         Btn.text = AppItemTable.getNameByItemId(itemId: 8467)
         
         

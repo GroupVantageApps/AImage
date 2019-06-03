@@ -72,7 +72,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="Btn" destination="69Y-9r-ewA" id="Y6h-hB-ZGU"/>
-                <outlet property="subscript" destination="p5M-Yo-Rrr" id="8qr-ir-ciU"/>
+                <outlet property="desLbl" destination="p5M-Yo-Rrr" id="qGl-Rb-Rsf"/>
                 <outlet property="title" destination="1vw-ne-mMg" id="1UV-6S-S7o"/>
             </connections>
             <point key="canvasLocation" x="38.848920863309353" y="51.798561151079141"/>
