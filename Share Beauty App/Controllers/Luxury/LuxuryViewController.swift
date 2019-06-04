@@ -72,15 +72,18 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             yutakaBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["3"]?.count)!))
             yutakaBtn.titleLabel?.attributedText = yutakaBtnString
 //
-//            let enmeiBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["4"]!, attributes: [NSFontAttributeName: font!])
-//            enmeiBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["4"]?.count)!))
+
 //            enmeiBtn.titleLabel?.attributedText = enmeiBtnString
             
 //            productBtn.setTitle(lxArr["1"], for: .normal)
 //            ingredientBtn.setTitle(lxArr["2"], for: .normal)
             yutakaBtn.setTitle(lxArr["3"], for: .normal)
-//            enmeiBtn.setTitle(lxArr["4"], for: .normal)
         }
+        
+        let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 30)
+        let enmeiBtnString: NSMutableAttributedString = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: 8446) ?? "", attributes: [NSFontAttributeName: font!])
+        enmeiBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: ((AppItemTable.getNameByItemId(itemId: 8446) ?? "").count)))
+        enmeiBtn.setTitle(AppItemTable.getNameByItemId(itemId: 8446), for: .normal)
         
         if LanguageConfigure.isOutAppBtnHiddenCountry {
             self.setDropDown(dataSource: type(of: self).outAppFoundationInfos.map {$0.title})
