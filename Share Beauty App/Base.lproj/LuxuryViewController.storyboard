@@ -96,7 +96,11 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="129" id="ZoE-wS-Mxc"/>
                                                         </constraints>
-                                                        <state key="normal" backgroundImage="btn_legendary_enemi.png"/>
+                                                        <fontDescription key="fontDescription" name="ACaslonPro-Regular" family="Adobe Caslon Pro" pointSize="23"/>
+                                                        <inset key="titleEdgeInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="LE" backgroundImage="btn_legendary_enemi.png">
+                                                            <color key="titleColor" red="0.66124987602233887" green="0.60721319913864136" blue="0.38427025079727173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="onTapLuxuryMenu:" destination="T4m-bh-eTl" eventType="touchUpInside" id="udy-1h-MzU"/>
                                                         </connections>
