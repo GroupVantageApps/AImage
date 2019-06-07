@@ -36,7 +36,7 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
         super.viewDidLoad()
         
         LegendaryProductBtn.text = AppItemTable.getNameByItemId(itemId: 8445)
-        LECTitle.text = AppItemTable.getNameByItemId(itemId: 8446)
+        LECTitle.text = AppItemTable.getNameByItemId(itemId: 8446)?.replacingOccurrences(of: "\n", with: " ")
         LegendaryEnmeiBtn.text = AppItemTable.getNameByItemId(itemId: 8447)
         
         mScrollV.delegate = self
