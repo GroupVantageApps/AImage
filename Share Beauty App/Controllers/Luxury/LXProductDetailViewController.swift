@@ -264,6 +264,9 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
                 mImgVSecondDailyCare.image = imgNight
             }
         }
+        if (mImgVFirstDailyCare.image == nil && mImgVSecondDailyCare.image == nil) {
+            mItemDailyCare.text = nil
+        }
 //        mBtnMovie.isEnabled = (product.movie != 0)
 //        mBtnBrush.isEnabled = Bool(product.brush as NSNumber)
         if mIsUtm || mIsUtmEye {

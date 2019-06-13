@@ -277,7 +277,9 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 mImgVSecondDailyCare.image = imgNight
             }
         }
-
+        if (mImgVFirstDailyCare.image == nil && mImgVSecondDailyCare.image == nil) {
+            mItemDailyCare.text = nil
+        }
         if mIsUtm || mIsUtmEye {
             mUtmFeaturesView = UtmFeaturesView()
             mUtmFeaturesView.delegate = self
