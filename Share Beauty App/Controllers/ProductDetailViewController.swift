@@ -1186,7 +1186,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             self.setEEESCV()
         } else if productId == 570 {
             mCategoryButtonEfficacy.enabled = true
-            mCategoryButtonHowToUse.enabled = true
+            mCategoryButtonHowToUse.enabled = false
             self.setWasoEfficacySCV()
         } else if productId == 571 {
             mCategoryButtonEfficacy.enabled = true
