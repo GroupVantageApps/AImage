@@ -5236,7 +5236,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f9aa7383-5b7b-4fce-95ef-acc1ef77b610";
 				PROVISIONING_PROFILE_SPECIFIER = SBA19TEST;
@@ -5269,7 +5269,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba.test;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.shiseido.ssdsba;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "f9aa7383-5b7b-4fce-95ef-acc1ef77b610";
 				PROVISIONING_PROFILE_SPECIFIER = SBA19TEST;
