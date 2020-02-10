@@ -283,7 +283,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         mVBaseIbukiBtn.isHidden = !mIsMakeUp
 
         //#804 スライド5.6の背景の水玉表示
-        if self.product.productId == 498 || self.product.productId == 499 || (545 <= self.product.productId && self.product.productId <= 550){
+        if self.product.productId == 498 || (545 <= self.product.productId && self.product.productId <= 548){
             mImageBackgroundDot.isHidden = false
         } else {
             mImageBackgroundDot.isHidden = true
