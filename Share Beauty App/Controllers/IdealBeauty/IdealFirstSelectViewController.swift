@@ -118,17 +118,16 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
     }
 
     @IBAction func onTapNext(_ sender: AnyObject) {
-//        if mSelectedLineIds.count == 1 && mSelectedLineIds.first == 2 {
-//            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
-//            nextVc.selectedLineIds = mSelectedLineIds
-//            delegate?.nextVc(nextVc)
-//        } else {
-        
+        if mSelectedLineIds.count == 1 && (mSelectedLineIds.index(of: 17) != nil) {
+            let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
+            nextVc.selectedLineIds = mSelectedLineIds
+            delegate?.nextVc(nextVc)
+        } else {
         let selectedLineIds = ProductListData.sortLineId(mSelectedLineIds)
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealSecondSelectViewController.self) as! IdealSecondSelectViewController
         nextVc.selectedLineIds = selectedLineIds
         delegate?.nextVc(nextVc)
-//        }
+        }
     }
     @IBAction func onTapNewApproach(_ sender: Any) {
         let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: NewApproachViewController.self) as! NewApproachViewController
@@ -152,10 +151,11 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
         }
         
         //Suncareボタンをtapした場合 GSCへ遷移 
-        if line.lineId == 17 {
-            let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
-            delegate?.pushVc(toVc)
-        }
+//        if line.lineId == 17 {
+//            print(mSelectedLineIds)
+//            let toVc = UIViewController.GetViewControllerFromStoryboard("GscTopViewController", targetClass: GscTopViewController.self) as! GscTopViewController
+//            delegate?.pushVc(toVc)
+//        }
     }
     func didSelectCellSomeone(_ sender: IdealSelectCollectionView) {
         print("didSelectCellSomeone")

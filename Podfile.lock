@@ -19,7 +19,7 @@ DEPENDENCIES:
   - Zip
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - APNGKit
     - SCLAlertView
@@ -50,4 +50,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1812bdfd5f973a5435fe30dc05b382acb5415f2b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
