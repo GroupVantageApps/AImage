@@ -11,12 +11,11 @@ import AVKit
 import AVFoundation
 
 class IdealResultViewController: UIViewController, NavigationControllerAnnotation, IdealProductViewDelegate, IdealResultCollectionViewDelegate, TroubleViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
-    @IBOutlet weak private var mIdealResultCollectionVFirst: IdealResultCollectionView!
-    @IBOutlet weak private var mIdealResultCollectionV: IdealResultCollectionView!
-    @IBOutlet weak private var mVSelectBase: UIView!
-    @IBOutlet weak private var mVSelectLineClickable: UIView!
     @IBOutlet weak private var mTroubleView: TroubleView!
     @IBOutlet weak var mCollectionView: UICollectionView!
+    @IBOutlet weak var mRelationPearentView: UIView!
+    @IBOutlet weak private var mRelationScrollV: UIScrollView!
+    @IBOutlet weak private var mVRelationProductBase: UIView!
     @IBOutlet weak private var mBtnDropDown: BaseButton!
     @IBOutlet weak private var mVDropDown: UIView!
     @IBOutlet weak private var mImgVToggle: UIImageView!
@@ -26,6 +25,8 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     @IBOutlet weak private var mConstraintBottomLineView: NSLayoutConstraint!
     @IBOutlet weak private var mVMain: UIView!
     @IBOutlet weak private var mScrollVPinch: UIScrollView!
+    @IBOutlet weak private var mConstraintLeft: NSLayoutConstraint!
+    @IBOutlet weak private var mConstraintRight: NSLayoutConstraint!
 
     private let mScreen = ScreenData(screenId: Const.screenIdIdealBeauty4)
 
@@ -66,21 +67,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mVSelectBase.isHidden = (products != nil)
-        if var lines = IdealBeautyLinesData().lines {
-            if lines.first != nil {
-                mIdealResultCollectionVFirst.lines = [lines.first!]
-                lines.removeFirst()
-            }
-            mIdealResultCollectionV.lines = lines
-        }
-
-        mIdealResultCollectionVFirst.selectedLineIds = self.selectedLineIds
-        mIdealResultCollectionVFirst.delegate = self
-
-
-        mIdealResultCollectionV.selectedLineIds = self.selectedLineIds
-        mIdealResultCollectionV.delegate = self
+       
         mTroubleView.delegate = self
 
         items = AppItemTable.getItems(screenId: Const.screenIdIdealBeauty4)
@@ -92,9 +79,6 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         if selectedStepLowerIds.count > 1 {
             self.setupDropDown()
         }
-        let swipeGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
-        swipeGesture.maximumNumberOfTouches = 1
-        mVSelectBase.addGestureRecognizer(swipeGesture)
         mScrollVPinch.delegate = self
         
         self.movieTelop = TelopData(movieId: 6542)
@@ -103,8 +87,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setProductListData()
-        //*cellに画像とテキストがうまく反映されないバグのためreloadをコメントアウト
-        //mCollectionView.reloadData()
+        makeRelationProducts()
    }
 
     override func viewDidLayoutSubviews() {
@@ -440,41 +423,59 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         self.toggleLineSelect(duration: 0.4)
     }
 
-    func didSwipe(_ gestureRecognizer: UIPanGestureRecognizer) {
-        let topLimit = mVSelectBase.superview!.bottom
-        let bottomLimit = mVSelectBase.superview!.bottom + mVSelectBase.height - mVSelectLineClickable.height
-        switch gestureRecognizer.state {
-        case .began:
-            mCurrentTop = gestureRecognizer.location(in: mVSelectBase).y
-        case .changed:
-            mlastLocation = gestureRecognizer.translation(in: mVSelectBase).y
-            let bottom = mVSelectBase.top + gestureRecognizer.location(in: mVSelectBase).y - mCurrentTop + mVSelectBase.height
-            if topLimit > bottom {
-                mVSelectBase.bottom = topLimit
-                if mIsShowLineView {
-                    mCanAnimateLineView = false
-                }
-            } else if bottomLimit < bottom {
-                mVSelectBase.bottom = bottomLimit
-                if !mIsShowLineView {
-                    mCanAnimateLineView = false
-                }
-            } else {
-                mVSelectBase.bottom = bottom
-                mCanAnimateLineView = true
-            }
-        case .ended, .cancelled:
-            if !mCanAnimateLineView { return }
-            var duration = abs(mVSelectBase.height / gestureRecognizer.velocity(in: mVSelectBase).y)
-            if duration > 0.4 {
-                duration = 0.4
-            }
-            self.toggleLineSelect(duration: duration)
-        default:
-            return
-        }
+    private func makeRelationProducts() {
+         if mVRelationProductBase.subviews.count != 0 {
+                 return
+             }
+         let relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+         if relationProducts.count == 0 {
+                 print("no products")
+             } else {
+                 for dataStructProduct in relationProducts {
+                         let button: BaseButton = BaseButton()
+                         button.translatesAutoresizingMaskIntoConstraints = false
+                         button.tag = dataStructProduct.productId
+                         button.addTarget(
+                             self,
+                             action: #selector(onTapRelationProduct(_:)),
+                             for: .touchUpInside)
+                         let image = FileTable.getImage(dataStructProduct.image)
+                         button.setImage(image, for: UIControlState())
+                         mVRelationProductBase.addSubview(button)
+                     }
+             }
+ 
+         for subView in mVRelationProductBase.subviews {
+                 let top = NSLayoutConstraint(item: subView, attribute: .top, relatedBy: .equal, toItem: mVRelationProductBase, attribute: .top, multiplier: 1.0, constant: 0)
+                 let bottom = NSLayoutConstraint(item: subView, attribute: .bottom, relatedBy: .equal, toItem: mVRelationProductBase, attribute: .bottom, multiplier: 1.0, constant: 0)
+                 let aspect = NSLayoutConstraint(item: subView, attribute: .width, relatedBy: .equal, toItem: subView, attribute: .height, multiplier: 1012.0 / 964.0, constant: 0)
+                 mVRelationProductBase.addConstraints([top, bottom, aspect])
+                 if subView === mVRelationProductBase.subviews.first {
+                         let left = NSLayoutConstraint(item: subView, attribute: .left, relatedBy: .equal, toItem: mVRelationProductBase, attribute: .left, multiplier: 1.0, constant: 0)
+                         mVRelationProductBase.addConstraint(left)
+                     }
+                 if subView === mVRelationProductBase.subviews.last {
+                         let right = NSLayoutConstraint(item: subView, attribute: .right, relatedBy: .equal, toItem: mVRelationProductBase, attribute: .right, multiplier: 1.0, constant: 0)
+                         mVRelationProductBase.addConstraint(right)
+                     } else {
+                         let right = NSLayoutConstraint(item: mVRelationProductBase.subviews.after(subView)!, attribute: .left, relatedBy: .equal, toItem: subView, attribute: .right, multiplier: 1.0, constant: 0)
+                         mVRelationProductBase.addConstraint(right)
+                     }
+             }
+         self.view.layoutIfNeeded()
+         if mRelationScrollV.width > mVRelationProductBase.width {
+                 let padding: CGFloat = (mRelationScrollV.width - mVRelationProductBase.width) / 2
+                 mConstraintLeft.constant = padding
+                 mConstraintRight.constant = padding
+             }
     }
-
+ 
+     @objc private func onTapRelationProduct(_ sender: BaseButton) {
+             let nextVc = UIViewController.GetViewControllerFromStoryboard("ProductDetailViewController", targetClass: ProductDetailViewController.self) as! ProductDetailViewController
+             nextVc.productId = sender.tag
+             nextVc.relationProducts = mProducts.filter {$0.idealBeautyType == Const.idealBeautyTypeProduct}
+             self.delegate?.nextVc(nextVc)
+         }
     
     // MARK: - IdealProductListViewDelegate
     func didTap(_ sender: IdealProductView) {

@@ -98,7 +98,7 @@ class ProductListData: NSObject {
         }
 
         var lineToIdealDic: [Int: DataStructIdeal] = [:]
-        
+        print(idealsOrigin)
         for idealOrigin in idealsOrigin {
             for product in idealOrigin.products {
                 var isSkip: Bool = false
@@ -131,8 +131,11 @@ class ProductListData: NSObject {
         // SHISEIDOとMAKEUPラインを抽出（順番を後ろにするため）
         var idealSHISEIDO: DataStructIdeal = DataStructIdeal()
         var idealMAKEUP: DataStructIdeal = DataStructIdeal()
+        var idealSuncare: DataStructIdeal = DataStructIdeal()
         var haveShiseido: Bool = false
         var haveMakeup: Bool = false
+        var haveSuncare: Bool = false
+        
         
         if lineToIdealDic[Const.lineIdSHISEIDO] != nil {
             haveShiseido = true
@@ -144,9 +147,16 @@ class ProductListData: NSObject {
             idealMAKEUP = lineToIdealDic[Const.lineIdMAKEUP]!
             lineToIdealDic.removeValue(forKey: Const.lineIdMAKEUP)
         }
+        
+        if lineToIdealDic[17] != nil {
+            haveSuncare = true
+            idealSuncare = lineToIdealDic[17]!
+            lineToIdealDic.removeValue(forKey: 17)
+        }
+
         // 選択したラインは最初に表示
         for lineId in self.otherLineIds {
-            if lineToIdealDic[lineId] != nil {
+            if lineToIdealDic[lineId] != nil && lineId != 17 {
                 sortedIdeals.append(lineToIdealDic[lineId]!)
                 lineToIdealDic.removeValue(forKey: lineId)
             }
@@ -159,8 +169,14 @@ class ProductListData: NSObject {
         if haveShiseido {
             sortedIdeals.append(idealSHISEIDO)
         }
+    
         if haveMakeup {
             sortedIdeals.append(idealMAKEUP)
+        }
+        
+        //Suncareを最後に追加
+        if haveSuncare {
+            sortedIdeals.append(idealSuncare)
         }
 
         prepareDataStructIdeal(sortedIdeals)
@@ -202,11 +218,21 @@ class ProductListData: NSObject {
     }
 
     func setProductData(_ ideals: [DataStructIdeal]) {
+        var hasSuncare = false
+        var sunCateProducts: [ProductData] = []
         //ideals から products を作成
         for ideal in ideals {
-            self.products.append(ideal.line)
-            for product in ideal.products {
-                self.products.append(product)
+            if ideal.line.lineId == 17 {
+                hasSuncare = true
+                sunCateProducts.append(ideal.line)
+                for product in ideal.products {
+                    sunCateProducts.append(product)
+                }
+            } else {
+                self.products.append(ideal.line)
+                for product in ideal.products {
+                    self.products.append(product)
+                }
             }
         }
         
@@ -243,6 +269,10 @@ class ProductListData: NSObject {
                 self.addUTM()
             }
         }
+        if hasSuncare {
+            self.products.append(contentsOf: self.distinctProducts(sunCateProducts))
+        }
+        
         self.products = distinctProducts(products)
     }
 
@@ -342,6 +372,7 @@ class ProductListData: NSObject {
 
     func getProductIdsByLineAndStep(_ lineId: Int, stepLowerIds: [Int]) -> [ProductData] {
         var products: [ProductData] = []
+        print(lineId)
         let entity: LineTranslateEntity = LineTranslateTable.getEntity(lineId)
         for stepLowerId in stepLowerIds {
             for step in entity.lineStep {
@@ -356,7 +387,15 @@ class ProductListData: NSObject {
                 }
             }
         }
-
+        // SuncareはLowerIdsがないのでこのような対応
+        if lineId == 17 {
+            for step in entity.lineStep {
+                let tempProducts = step.product.map { ProductData(productId: $0) }
+                let newProducts = tempProducts.filter { $0.newItemFlg == 1 }
+                let oldProducts = tempProducts.filter { $0.newItemFlg == 0 }
+                products += (newProducts + oldProducts)
+            }
+        }
         return products
     }
 
