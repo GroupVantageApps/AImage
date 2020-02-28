@@ -1216,7 +1216,9 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         } else if productId == 623 || productId == 624 {
             // 19AW Waso
             mCategoryButtonTechnologies.enabled = true
-            mCategoryButtonEfficacy.enabled = false
+            if productId == 624 {
+                mCategoryButtonEfficacy.enabled = true
+            }
         } else if productId == 619 ||  productId == 620 {
             // 19AW BNF
             mCategoryButtonTechnologies.enabled = true
