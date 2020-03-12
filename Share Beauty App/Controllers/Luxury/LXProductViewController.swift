@@ -4,7 +4,7 @@
 //
 //  Created by madoka.igarashi on 2017/02/14.
 //  Copyright © 2017年 AQUA Co., Ltd. All rights reserved.
-// sharedBeauty(白)から遷移する用のLX商品一覧画面
+// sharedBeautyから遷移する用のLX商品一覧画面
 
 import Foundation
 import AVFoundation
@@ -36,7 +36,7 @@ class LXProductViewController: UIViewController, NavigationControllerAnnotation,
         self.mBABtn.setBackgroundImage(FileTable.getLXFileImage("lx_search.png"), for: .normal)
 
         mScrollV.delegate = self
-        print("LuxuryProductViewController")
+        print("LXProductViewController")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
    
         let lxArr = LanguageConfigure.lxcsv
