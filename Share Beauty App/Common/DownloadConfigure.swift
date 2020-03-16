@@ -74,11 +74,12 @@ class DownloadConfigure {
             if let value = UserDefaultKey.target.get() {
                 return Target(rawValue: value as! Int)!
             } else {
-                //UserDefaultKey.target.set(value: Target.release.rawValue)//DB向き 本番
-                //return Target.release
                 //DB向き 本番
-                 UserDefaultKey.target.set(value: Target.develop.rawValue)//DB向き　develop or release 無理やり
-                return Target.develop //DB向き　develop or release 無理やり
+                UserDefaultKey.target.set(value: Target.release.rawValue)//DB向き 本番
+                return Target.release
+                //DB向き 開発
+////                 UserDefaultKey.target.set(value: Target.develop.rawValue)//DB向き　develop or release 無理やり
+//                return Target.develop //DB向き　develop or release 無理やり
             }
         }
         set (value) {
