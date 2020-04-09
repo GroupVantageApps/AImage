@@ -193,10 +193,10 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
         vcChild.view.translatesAutoresizingMaskIntoConstraints = false
 
-        let equalWidth = NSLayoutConstraint(item: vcChild.view, attribute: .width, relatedBy: .equal, toItem: mVContainer, attribute: .width, multiplier: 1.0, constant: 0)
-        let equalHeight = NSLayoutConstraint(item: vcChild.view, attribute: .height, relatedBy: .equal, toItem: mVContainer, attribute: .height, multiplier: 1.0, constant: 0)
-        let top = NSLayoutConstraint(item: vcChild.view, attribute: .top, relatedBy: .equal, toItem: mVContainer, attribute: .top, multiplier: 1.0, constant: 0)
-        let left = NSLayoutConstraint(item: vcChild.view, attribute: .left, relatedBy: .equal, toItem: mVContainer, attribute: .left, multiplier: 1.0, constant: 0)
+        let equalWidth = NSLayoutConstraint(item: vcChild.view!, attribute: .width, relatedBy: .equal, toItem: mVContainer, attribute: .width, multiplier: 1.0, constant: 0)
+        let equalHeight = NSLayoutConstraint(item: vcChild.view!, attribute: .height, relatedBy: .equal, toItem: mVContainer, attribute: .height, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: vcChild.view!, attribute: .top, relatedBy: .equal, toItem: mVContainer, attribute: .top, multiplier: 1.0, constant: 0)
+        let left = NSLayoutConstraint(item: vcChild.view!, attribute: .left, relatedBy: .equal, toItem: mVContainer, attribute: .left, multiplier: 1.0, constant: 0)
 
         mVContainer.addConstraints([equalWidth, equalHeight, top, left])
         self.view.layoutIfNeeded()
@@ -333,7 +333,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
                 constraintleftToVc.constant = 0
 
                 let annotation = toVc as! NavigationControllerAnnotation
-                if children.index(of: toVc) == 0 {
+                if children.firstIndex(of: toVc) == 0 {
                     mNavigationView.animateExit(0.3, options: .layoutSubviews)
                 } else {
                     mNavigationView.setTheme(annotation.theme, duration: 0.3)

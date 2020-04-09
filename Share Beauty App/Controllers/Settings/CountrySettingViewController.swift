@@ -112,8 +112,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
         mRegionTableView.reloadData()
         mCountryTableView.reloadData()
 
-        let regionIndex = mRegions.index(where: {$0.regionId == mRegionId})!
-        let countryIndex = mCountries.index(where: {$0.countryId == mCountryId})!
+        let regionIndex = mRegions.firstIndex(where: {$0.regionId == mRegionId})!
+        let countryIndex = mCountries.firstIndex(where: {$0.countryId == mCountryId})!
 
         mSelectedRegion.text = mRegions[regionIndex].name
 

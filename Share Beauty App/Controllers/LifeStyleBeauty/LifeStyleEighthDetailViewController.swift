@@ -41,7 +41,7 @@ class LifeStyleEighthDetailViewController: UIViewController, NavigationControlle
         super.viewWillAppear(animated)
         let productList = ProductListData(screenId: Const.screenIdLifeStyleBeautyI)
         items = AppItemTable.getItems(screenId: Const.screenIdLifeStyleBeautyI)
-        print(items)
+        print(items!)
         
         for enumerated in productList.products.enumerated() {
             let i = enumerated.offset

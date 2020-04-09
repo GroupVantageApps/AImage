@@ -213,7 +213,7 @@ class IdealProductView: UICollectionViewCell {
         mBtnTroubles.forEach { (btn) in
             btn.titleLabel?.numberOfLines = 2
             btn.titleLabel?.lineBreakMode = .byWordWrapping
-            for v in [mVBaseLine, mLblLineTitle] as [Any] {
+            for v in [mVBaseLine!, mLblLineTitle!] as [Any] {
                 (v as AnyObject).addGestureRecognizer(
                     UITapGestureRecognizer(
                         target: self, action: #selector(toggleLineOpen(_:))))

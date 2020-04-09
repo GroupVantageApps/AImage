@@ -26,7 +26,7 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
     var items: [String: String]!
     var layouted: Bool = false
 
-    fileprivate weak var mPlayer: AVPlayer!
+    fileprivate var mPlayer: AVPlayer!
     fileprivate var mAspect: CGFloat = 1.0
     fileprivate var mSelectedLineIds: [Int] = []
     fileprivate var mIdealSelectCellCount = 0 {
@@ -106,7 +106,7 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if !layouted {
-            let height = NSLayoutConstraint(item: mIdealSelectCollectionVFirst, attribute: .height, relatedBy: .equal, toItem: mIdealSelectCollectionV, attribute: .height, multiplier: (1.0 / mAspect), constant: -((mAspect - 1) * mIdealSelectCollectionV.space / mAspect))
+            let height = NSLayoutConstraint(item: mIdealSelectCollectionVFirst!, attribute: .height, relatedBy: .equal, toItem: mIdealSelectCollectionV, attribute: .height, multiplier: (1.0 / mAspect), constant: -((mAspect - 1) * mIdealSelectCollectionV.space / mAspect))
             mIdealSelectCollectionV.superview!.addConstraint(height)
         } else {
             layouted = true
@@ -118,7 +118,7 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
     }
 
     @IBAction func onTapNext(_ sender: AnyObject) {
-        if mSelectedLineIds.count == 1 && (mSelectedLineIds.index(of: 17) != nil) {
+        if mSelectedLineIds.count == 1 && (mSelectedLineIds.firstIndex(of: 17) != nil) {
             let nextVc = UIViewController.GetViewControllerFromStoryboard(targetClass: IdealResultViewController.self) as! IdealResultViewController
             nextVc.selectedLineIds = mSelectedLineIds
             delegate?.nextVc(nextVc)
@@ -145,7 +145,7 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
         if sender.selected {
             mSelectedLineIds.append(line.lineId)
         } else {
-            if let index = (mSelectedLineIds.index { $0 == line.lineId }) {
+            if let index = (mSelectedLineIds.firstIndex { $0 == line.lineId }) {
                 mSelectedLineIds.remove(at: index)
             }
         }

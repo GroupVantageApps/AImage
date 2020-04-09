@@ -516,7 +516,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
     func setText(i:Int, titleText:UILabel, descriptionText:UILabel, toDetailBtn:UIButton){
         if i == 0{
             titleText.text = lx2Arr["8"] 
-            descriptionText.text = "\(lx2Arr["9"] as! String)\n\(lx2Arr["10"] as! String)\n\(lx2Arr["11"] as! String)"
+            descriptionText.text = "\(lx2Arr["9"]!)\n\(lx2Arr["10"]!)\n\(lx2Arr["11"]!)"
             toDetailBtn.setTitle(lx2Arr["12"], for: .normal)
             
         }else if i == 1{

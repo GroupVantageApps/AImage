@@ -83,10 +83,10 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         
         vcChild.view.translatesAutoresizingMaskIntoConstraints = false
         
-        let equalWidth = NSLayoutConstraint(item: vcChild.view, attribute: .width, relatedBy: .equal, toItem: mVContent, attribute: .width, multiplier: 1.0, constant: 0)
-        let equalHeight = NSLayoutConstraint(item: vcChild.view, attribute: .height, relatedBy: .equal, toItem: mVContent, attribute: .height, multiplier: 1.0, constant: 0)
-        let top = NSLayoutConstraint(item: vcChild.view, attribute: .top, relatedBy: .equal, toItem: mVContent, attribute: .top, multiplier: 1.0, constant: 0)
-        let left = NSLayoutConstraint(item: vcChild.view, attribute: .left, relatedBy: .equal, toItem: mVContent, attribute: .left, multiplier: 1.0, constant: 0)
+        let equalWidth = NSLayoutConstraint(item: vcChild.view!, attribute: .width, relatedBy: .equal, toItem: mVContent, attribute: .width, multiplier: 1.0, constant: 0)
+        let equalHeight = NSLayoutConstraint(item: vcChild.view!, attribute: .height, relatedBy: .equal, toItem: mVContent, attribute: .height, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: vcChild.view!, attribute: .top, relatedBy: .equal, toItem: mVContent, attribute: .top, multiplier: 1.0, constant: 0)
+        let left = NSLayoutConstraint(item: vcChild.view!, attribute: .left, relatedBy: .equal, toItem: mVContent, attribute: .left, multiplier: 1.0, constant: 0)
         
         mVContent.addConstraints([equalWidth, equalHeight, top, left])
         self.view.layoutIfNeeded()
@@ -103,10 +103,10 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         
         toVc.view.translatesAutoresizingMaskIntoConstraints = false
         
-        let equalWidth = NSLayoutConstraint(item: toVc.view, attribute: .width, relatedBy: .equal, toItem: mVContent, attribute: .width, multiplier: 1.0, constant: 0)
-        let equalHeight = NSLayoutConstraint(item: toVc.view, attribute: .height, relatedBy: .equal, toItem: mVContent, attribute: .height, multiplier: 1.0, constant: 0)
-        let top = NSLayoutConstraint(item: toVc.view, attribute: .top, relatedBy: .equal, toItem: mVContent, attribute: .top, multiplier: 1.0, constant: 0)
-        let left = NSLayoutConstraint(item: toVc.view, attribute: .left, relatedBy: .equal, toItem: mVContent, attribute: .left, multiplier: 1.0, constant: 0)
+        let equalWidth = NSLayoutConstraint(item: toVc.view!, attribute: .width, relatedBy: .equal, toItem: mVContent, attribute: .width, multiplier: 1.0, constant: 0)
+        let equalHeight = NSLayoutConstraint(item: toVc.view!, attribute: .height, relatedBy: .equal, toItem: mVContent, attribute: .height, multiplier: 1.0, constant: 0)
+        let top = NSLayoutConstraint(item: toVc.view!, attribute: .top, relatedBy: .equal, toItem: mVContent, attribute: .top, multiplier: 1.0, constant: 0)
+        let left = NSLayoutConstraint(item: toVc.view!, attribute: .left, relatedBy: .equal, toItem: mVContent, attribute: .left, multiplier: 1.0, constant: 0)
         
         mVContent.addConstraints([equalWidth, equalHeight, top, left])
         self.view.layoutIfNeeded()

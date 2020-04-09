@@ -126,7 +126,7 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         if sender.selected {
             mStepLowerIds.append(stepLower.stepLowerId)
         } else {
-            if let index = mStepLowerIds.index(where: { $0 == stepLower.stepLowerId }) {
+            if let index = mStepLowerIds.firstIndex(where: { $0 == stepLower.stepLowerId }) {
                 mStepLowerIds.remove(at: index)
             }
         }

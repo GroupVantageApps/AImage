@@ -44,12 +44,12 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         let lxTreatMentArr = LanguageConfigure.lxyutaka
         for id in lxTreatMentArr {
             if defaultArr.contains(id - 1){
-                let index = defaultArr.index(of: id - 1)
+                let index = defaultArr.firstIndex(of: id - 1)
                 defaultArr.remove(at: index!)
             }
         }
         print("-----------------------------")
-        print(defaultArr.index(of: page)!)
+        print(defaultArr.firstIndex(of: page)!)
 
         self.mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.mScrollView.frame.size.width * CGFloat(defaultArr.count), height: self.size.height))
         self.mScrollView.addSubview(mContentV)
@@ -72,13 +72,13 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
             self.mContentV.addSubview(subView)
         }
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * CGFloat(defaultArr.count), height: self.mScrollView.frame.size.height)
-        self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(defaultArr.index(of: page)!), y:0), animated: false)
+        self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(defaultArr.firstIndex(of: page)!), y:0), animated: false)
         self.mScrollView.isPagingEnabled = true
         mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
         configurePageControl()
         self.mPageControl.numberOfPages = defaultArr.count
 
-        mPageControl.currentPage = defaultArr.index(of: page)!
+        mPageControl.currentPage = defaultArr.firstIndex(of: page)!
     }
 
     func configurePageControl() {

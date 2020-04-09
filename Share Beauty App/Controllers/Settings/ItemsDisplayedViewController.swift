@@ -52,7 +52,7 @@ extension ItemsDisplayedViewController {
         }
  */
         LineTranslateTable.changeDisplayFlg(lineId: mLineId, isDisplay: sender.isOn)
-        if let targetIndex = mLines.index(where: {$0.lineId == mLineId}) {
+        if let targetIndex = mLines.firstIndex(where: {$0.lineId == mLineId}) {
             mLines[safe: targetIndex]?.displayFlg = Int(truncating: sender.isOn as NSNumber)
         }
     }
@@ -60,7 +60,7 @@ extension ItemsDisplayedViewController {
 
 extension ItemsDisplayedViewController: ItemsDisplayedTableViewCellInput {
     func changedDisplayStatus(cell: ItemsDisplayedTableViewCell, isDisplay: Bool) {
-        guard let product = cell.product, let targetIndex = mProducts.index(of: product) else {
+        guard let product = cell.product, let targetIndex = mProducts.firstIndex(of: product) else {
             return
         }
         let defaultDisplay = Int(truncating: isDisplay as NSNumber)

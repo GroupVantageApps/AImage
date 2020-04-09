@@ -98,7 +98,7 @@ class LineTranslateTable: NSObject {
     class func changeDisplayFlg(lineId: Int, isDisplay: Bool) {
         let database = ModelDatabase.getDatabase()
         let languageId: Int? = LanguageConfigure.languageId
-        let display_flg = Int(isDisplay as NSNumber)
+        let display_flg = Int(truncating: isDisplay as NSNumber)
         database.open()
         database.executeUpdate("UPDATE m_line_translate SET display_flg = ? WHERE line_id = ? AND language_id = ?", withArgumentsIn: [display_flg, lineId, languageId!])
         database.close()

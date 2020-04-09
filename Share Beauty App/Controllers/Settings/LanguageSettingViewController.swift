@@ -34,7 +34,7 @@ class LanguageSettingViewController: UIViewController, NavigationControllerAnnot
         mLanguageTableView.delegate = self
         mLanguageTableView.dataSource = self
 
-        let index = mLanguages.index(where: {$0.languageId == mLanguageId})!
+        let index = mLanguages.firstIndex(where: {$0.languageId == mLanguageId})!
 
         mLanguageTableView.selectRow(
             at: IndexPath.init(row: index, section: 0),

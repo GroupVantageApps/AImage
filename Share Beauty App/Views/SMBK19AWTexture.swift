@@ -152,9 +152,9 @@ class SMBK19AWTexture: UICollectionViewCell, IdealProductViewDelegate, IdealResu
     
     func didTapMirror(_ show: Bool, product: ProductData) {
         if show {
-            mShowTrobleIndexes.append(self.productList.index(of: product)!)
+            mShowTrobleIndexes.append(self.productList.firstIndex(of: product)!)
         } else {
-            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: self.productList.index(of: product)!)!)
+            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.firstIndex(of: self.productList.firstIndex(of: product)!)!)
         }
     }
 

@@ -120,9 +120,9 @@ class SMBKTextureViewController: UIViewController, NavigationControllerAnnotatio
     
     func didTapMirror(_ show: Bool, product: ProductData) {
         if show {
-            mShowTrobleIndexes.append(selectedTextureProducts.index(of: product)!)
+            mShowTrobleIndexes.append(selectedTextureProducts.firstIndex(of: product)!)
         } else {
-            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: selectedTextureProducts.index(of: product)!)!)
+            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.firstIndex(of: selectedTextureProducts.firstIndex(of: product)!)!)
         }
     }
     

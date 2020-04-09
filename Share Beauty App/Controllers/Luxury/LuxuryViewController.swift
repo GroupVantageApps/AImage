@@ -218,6 +218,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             print("interruption began")
         case .ended:
             print("interruption ended")
+        @unknown default:
+            fatalError("fatalError")
         }
     }
     @objc func endMovie(type: Int) {

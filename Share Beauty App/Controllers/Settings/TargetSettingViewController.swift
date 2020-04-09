@@ -36,7 +36,7 @@ class TargetSettingViewController: UIViewController, NavigationControllerAnnotat
         mTargetTableView.delegate = self
         mTargetTableView.dataSource = self
 
-        let index = mTargets.index(where: {$0 == mTarget})!
+        let index = mTargets.firstIndex(where: {$0 == mTarget})!
 
         mTargetTableView.selectRow(
             at: IndexPath.init(row: index, section: 0),

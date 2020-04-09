@@ -55,7 +55,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
     private var mLifeStyles = [LifeStyle]()
     private var mCounts = [String: Int]()
     
-    private let nextVcs: DictionaryLiteral = [
+    private let nextVcs: KeyValuePairs = [
         4:LifeStyleFifthDetailViewController.self,
         5:LifeStyleSixthDetailViewController.self,
         6:LifeStyleSeventhDetailViewController.self,
@@ -311,7 +311,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         }
         let height: CGFloat = collectionView.height
         print("------------------")
-        print(width)
+        print(width!)
         return CGSize(width: width, height: height)
     }
 

@@ -105,7 +105,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         if getProdut_id == 10002{
             let product = mProducts.filter { $0.productId == 0 && $0.lineId == 2 }
             if let utmLine = product.first {
-                let utmLineIndex = mProducts.index(of: utmLine)
+                let utmLineIndex = mProducts.firstIndex(of: utmLine)
                 let scrollPosition =  utmLineIndex! * 2
                 mCollectionView.scrollToItem(at: IndexPath(item: scrollPosition, section: 0), at: .left, animated: true)
             }
@@ -506,7 +506,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         if sender.selected {
             selectedLineIds.append(line.lineId)
         } else {
-            if let index = (selectedLineIds.index { $0 == line.lineId }) {
+            if let index = (selectedLineIds.firstIndex { $0 == line.lineId }) {
                 selectedLineIds.remove(at: index)
             }
         }
@@ -515,7 +515,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         var targetIndex: Int?
         if sender.selected {
             if let targetProduct = (mProducts.filter { $0.lineId == line.lineId && $0.idealBeautyType == Const.idealBeautyTypeLine }).first {
-                targetIndex = mProducts.index(of: targetProduct)! * 2 + 1
+                targetIndex = mProducts.firstIndex(of: targetProduct)! * 2 + 1
             }
         } else {
             if mProducts.count != 0 {
@@ -597,9 +597,9 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
     }
     func didTapMirror(_ show: Bool, product: ProductData) {
         if show {
-            mShowTrobleIndexes.append(mProducts.index(of: product)!)
+            mShowTrobleIndexes.append(mProducts.firstIndex(of: product)!)
         } else {
-            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.index(of: mProducts.index(of: product)!)!)
+            mShowTrobleIndexes.remove(at: mShowTrobleIndexes.firstIndex(of: mProducts.firstIndex(of: product)!)!)
         }
     }
     @IBAction private func onTapDropDown(_ sender: AnyObject) {

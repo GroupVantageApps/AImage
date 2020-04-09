@@ -58,7 +58,7 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         super.viewDidLoad()
         self.workItem = DispatchWorkItem {
             print("executed")
-            self.onTapNextBtn(self.mNextBtn)
+            self.onTapNextBtn(self.mNextBtn!)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: self.workItem)
 

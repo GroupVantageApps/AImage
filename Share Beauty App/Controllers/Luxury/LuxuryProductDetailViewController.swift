@@ -479,7 +479,7 @@ class LuxuryProductDetailViewController: LXBaseViewController, LXNavigationViewD
                 mVCategoryImageBase.addConstraint(bottom)
             }
         }
-        let height = NSLayoutConstraint(item: mVCategoryImageBase, attribute: .height, relatedBy: .equal, toItem: mVCategoryImageBase.superview!, attribute: .height, multiplier: CGFloat(imageIds.count), constant: 0)
+        let height = NSLayoutConstraint(item: mVCategoryImageBase!, attribute: .height, relatedBy: .equal, toItem: mVCategoryImageBase.superview!, attribute: .height, multiplier: CGFloat(imageIds.count), constant: 0)
         if let beforeHeight = NSLayoutConstraint.findEqualRelation(mVCategoryImageBase.superview!.constraints, constraint: height) {
             mVCategoryImageBase.superview!.removeConstraint(beforeHeight)
         }
