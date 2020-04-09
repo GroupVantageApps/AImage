@@ -13,7 +13,7 @@ target 'Share Beauty App' do
   pod 'APNGKit'
   pod 'AImage', :git => 'git@github.com:Yuya-Tominaga-VIT/AImage.git', :branch => 'Swift4.2'
   pod 'Zip'
-  pod 'TouchVisualizer'
+  pod 'TouchVisualizer', :git => 'https://github.com/morizotter/TouchVisualizer.git'
   target 'Share Beauty AppTests' do
     inherit! :search_paths
     # Pods for testing

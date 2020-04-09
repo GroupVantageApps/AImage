@@ -5,7 +5,7 @@ PODS:
   - SCLAlertView (0.8.1)
   - SwiftSpinner (2.1.0)
   - SwiftyJSON (5.0.0)
-  - TouchVisualizer (3.0.0)
+  - TouchVisualizer (3.0.2)
   - Zip (1.1.0)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - SCLAlertView (from `https://github.com/vikmeup/SCLAlertView-Swift.git`, branch `0.8.1`)
   - SwiftSpinner
   - SwiftyJSON
-  - TouchVisualizer
+  - TouchVisualizer (from `https://github.com/morizotter/TouchVisualizer.git`)
   - Zip
 
 SPEC REPOS:
@@ -24,7 +24,6 @@ SPEC REPOS:
     - APNGKit
     - SwiftSpinner
     - SwiftyJSON
-    - TouchVisualizer
     - Zip
 
 EXTERNAL SOURCES:
@@ -34,6 +33,8 @@ EXTERNAL SOURCES:
   SCLAlertView:
     :branch: 0.8.1
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
+  TouchVisualizer:
+    :git: https://github.com/morizotter/TouchVisualizer.git
 
 CHECKOUT OPTIONS:
   AImage:
@@ -42,6 +43,9 @@ CHECKOUT OPTIONS:
   SCLAlertView:
     :commit: 17f7c90dfc9c7f15564e84621d48441d403323ee
     :git: https://github.com/vikmeup/SCLAlertView-Swift.git
+  TouchVisualizer:
+    :commit: 7abc28eb80ff5c41d803dc78cb68098a34bfff8d
+    :git: https://github.com/morizotter/TouchVisualizer.git
 
 SPEC CHECKSUMS:
   AImage: 820dc5319fc86a888a7724e8f54dff8a16d54d49
@@ -50,9 +54,9 @@ SPEC CHECKSUMS:
   SCLAlertView: 9603594eeae6f8f38f67f486c841d0d397ef641f
   SwiftSpinner: 0f15c006307f8d8bbac075638927ec1361b565d7
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  TouchVisualizer: 5cb21ff505c4e60166fe0c8e84a82e5d9ee9e64c
+  TouchVisualizer: 9e17108c80089feee20203eb34b430bf397473e1
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 4fb5724fe29ec59a57c6fc9c607dcbcf79f0749a
+PODFILE CHECKSUM: d83cbf0d64356818907dca26fe9198beb29ee274
 
 COCOAPODS: 1.7.5
