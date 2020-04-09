@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@objcMembers
 class LanguageConfigure: NSObject {
     private static let defaultRegionId = 2
     private static let defaultCountryId = 6

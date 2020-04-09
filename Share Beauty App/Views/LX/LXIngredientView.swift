@@ -49,7 +49,7 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
             
             self.mScrollV.contentSize = CGSize(width: 960 , height: self.size.height)
             self.mScrollV.addSubview(self.mContentV)
-            mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+            mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
             mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
             self.addSubview(mXbutton)
         } else {
@@ -65,7 +65,7 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
         print(self.size.height)
         self.mPlayImgV.image = FileTable.getLXFileImage("skingenece_playImg.png")
         self.mEffectImgV.image = FileTable.getLXFileImage("skingenece_graphimg.png")
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+            mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         mMovieBtn = self.viewWithTag(30) as! UIButton!
@@ -103,7 +103,7 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
     }
     
     @IBAction func showMovie(_ sender: Any) {
-        let vc = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: LuxuryIngredientViewController.self) as! LuxuryIngredientViewController
+        _ = UIViewController.GetViewControllerFromStoryboard("LuxuryIngredientViewController", targetClass: LuxuryIngredientViewController.self) as! LuxuryIngredientViewController
         self.removeFromSuperview()
         delegate?.movieAct()
     }

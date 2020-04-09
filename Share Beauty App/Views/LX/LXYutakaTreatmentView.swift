@@ -35,7 +35,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         self.addSubview(self.mScrollView)
 
 
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: .normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         
@@ -74,7 +74,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         self.mScrollView.contentSize = CGSize(width: self.mScrollView.frame.size.width * CGFloat(defaultArr.count), height: self.mScrollView.frame.size.height)
         self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(defaultArr.index(of: page)!), y:0), animated: false)
         self.mScrollView.isPagingEnabled = true
-        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
         configurePageControl()
         self.mPageControl.numberOfPages = defaultArr.count
 
@@ -98,7 +98,7 @@ class LXYutakaTreatmentView: UIView, UIScrollViewDelegate, LXYutakaTreatmentCont
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         mPageControl.currentPage = Int(pageNumber)
     }
-    func close() {
+    @objc func close() {
         self.isHidden = true
         print("Button pressed")
     }

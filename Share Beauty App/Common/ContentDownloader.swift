@@ -221,7 +221,7 @@ class ContentDownloader: NSObject {
             if database.executeUpdate(sql, withArgumentsIn: values) {
                 if let fileId = id,
                     let data = content?.data(using: String.Encoding.utf8),
-                    let fileName = JSON(data: data)["file_name"].string,
+                    let fileName = try JSON(data: data)["file_name"].string,
                     table == "m_file" {
                     let url = FileTable.getPath(fileId: fileId, fileName: fileName)
                     let downloadFileInfo = (fileId: fileId, fileUrl: url)

@@ -56,15 +56,15 @@ class LXCategoryButton: BaseView {
     @IBInspectable var title: String? {
         didSet {
             if ((title?.data(using: String.Encoding.ascii, allowLossyConversion: false)) != nil) {
-                mBtnCategory.setTitle(title, for: UIControlState())
+                mBtnCategory.setTitle(title, for: UIControl.State())
             } else {
                 
                 mBtnCategory.titleLabel?.adjustsFontSizeToFitWidth = true
                 let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)
-                let mBtnCategoryString: NSMutableAttributedString = NSMutableAttributedString(string: title!, attributes: [NSFontAttributeName:font!])
-                mBtnCategoryString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (title?.count)! ))
+                let mBtnCategoryString: NSMutableAttributedString = NSMutableAttributedString(string: title!, attributes: [NSAttributedString.Key.font:font!])
+                mBtnCategoryString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (title?.count)! ))
                 mBtnCategory.titleLabel?.attributedText = mBtnCategoryString
-                mBtnCategory.setTitle(title, for: UIControlState())
+                mBtnCategory.setTitle(title, for: UIControl.State())
                 mBtnCategory.titleLabel?.lineBreakMode = .byTruncatingTail
             }
         }

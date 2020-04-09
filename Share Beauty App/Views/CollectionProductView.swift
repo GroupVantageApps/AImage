@@ -52,8 +52,8 @@ class CollectionProductView: UICollectionViewCell {
                 mLblLine.text = name
                 let color = UIColor(hex: "C8102E", alpha: 1.0)
                 let underline = NSAttributedString(string: name, attributes:
-                    [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-                     NSUnderlineColorAttributeName: color
+                    [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                     NSAttributedString.Key.underlineColor: color
                     ])
                 mLblLine.attributedText = underline
                 // mLblLine.sizeToFit()
@@ -66,8 +66,8 @@ class CollectionProductView: UICollectionViewCell {
                 mLblBlack.text = name
                 let color = UIColor(hex: "C8102E", alpha: 1.0)
                 let underline = NSAttributedString(string: name, attributes:
-                    [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-                     NSUnderlineColorAttributeName: color
+                    [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                     NSAttributedString.Key.underlineColor: color
                     ])
                 mLblBlack.attributedText = underline
                 
@@ -93,14 +93,14 @@ class CollectionProductView: UICollectionViewCell {
             let icon_night = UIImage(named: "icon_night")
 
             if product != nil {
-                recommend = Bool(product!.recommend as NSNumber)
+                recommend = Bool(truncating: product!.recommend as NSNumber)
             } else {
                 return;
             }
-            if Bool(NSNumber(value: product.day)) {
+            if Bool(truncating: NSNumber(value: product.day)) {
                 self.dayImageView.image = icon_day
             }
-            if Bool(NSNumber(value: self.product.night)) {
+            if Bool(truncating: NSNumber(value: self.product.night)) {
                 if self.dayImageView.image == nil {
                     self.dayImageView.image = icon_night
                 } else {
@@ -119,7 +119,7 @@ class CollectionProductView: UICollectionViewCell {
     }
 
     override func didMoveToSuperview() {
-        mBtnProductImg.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        mBtnProductImg.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
     }
     @IBAction func onTapProduct(_ sender: AnyObject) {
         delegate?.didSelectProduct(self)

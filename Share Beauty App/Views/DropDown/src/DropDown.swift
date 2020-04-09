@@ -154,12 +154,12 @@ public final class DropDown: UIView {
 	fileprivate var yConstraint: NSLayoutConstraint!
 
 	//MARK: Appearance
-	public dynamic var cellHeight = DPDConstant.UI.RowHeight {
+    @objc public dynamic var cellHeight = DPDConstant.UI.RowHeight {
 		willSet { tableView.rowHeight = newValue }
 		didSet { reloadAllComponents() }
 	}
 
-	fileprivate dynamic var tableViewBackgroundColor = DPDConstant.UI.BackgroundColor {
+    @objc fileprivate dynamic var tableViewBackgroundColor = DPDConstant.UI.BackgroundColor {
 		willSet { tableView.backgroundColor = newValue }
 	}
 
@@ -173,14 +173,14 @@ public final class DropDown: UIView {
 
 	Changing the background color automatically reloads the drop down.
 	*/
-	public dynamic var selectionBackgroundColor = DPDConstant.UI.SelectionBackgroundColor
+    @objc public dynamic var selectionBackgroundColor = DPDConstant.UI.SelectionBackgroundColor
 
 	/**
 	The separator color between cells.
 
 	Changing the separator color automatically reloads the drop down.
 	*/
-	public dynamic var separatorColor = DPDConstant.UI.SeparatorColor {
+    @objc public dynamic var separatorColor = DPDConstant.UI.SeparatorColor {
 		willSet { tableView.separatorColor = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -190,7 +190,7 @@ public final class DropDown: UIView {
 
 	Changing the corner radius automatically reloads the drop down.
 	*/
-	public dynamic var cornerRadius = DPDConstant.UI.CornerRadius {
+    @objc public dynamic var cornerRadius = DPDConstant.UI.CornerRadius {
 		willSet {
 			tableViewContainer.layer.cornerRadius = newValue
 			tableView.layer.cornerRadius = newValue
@@ -203,7 +203,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow color automatically reloads the drop down.
 	*/
-	public dynamic var shadowColor = DPDConstant.UI.Shadow.Color {
+    @objc public dynamic var shadowColor = DPDConstant.UI.Shadow.Color {
 		willSet { tableViewContainer.layer.shadowColor = newValue.cgColor }
 		didSet { reloadAllComponents() }
 	}
@@ -213,7 +213,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow color automatically reloads the drop down.
 	*/
-	public dynamic var shadowOffset = DPDConstant.UI.Shadow.Offset {
+    @objc public dynamic var shadowOffset = DPDConstant.UI.Shadow.Offset {
 		willSet { tableViewContainer.layer.shadowOffset = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -223,7 +223,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow opacity automatically reloads the drop down.
 	*/
-	public dynamic var shadowOpacity = DPDConstant.UI.Shadow.Opacity {
+    @objc public dynamic var shadowOpacity = DPDConstant.UI.Shadow.Opacity {
 		willSet { tableViewContainer.layer.shadowOpacity = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -233,7 +233,7 @@ public final class DropDown: UIView {
 
 	Changing the shadow radius automatically reloads the drop down.
 	*/
-	public dynamic var shadowRadius = DPDConstant.UI.Shadow.Radius {
+    @objc public dynamic var shadowRadius = DPDConstant.UI.Shadow.Radius {
 		willSet { tableViewContainer.layer.shadowRadius = newValue }
 		didSet { reloadAllComponents() }
 	}
@@ -241,7 +241,7 @@ public final class DropDown: UIView {
 	/**
 	The duration of the show/hide animation.
 	*/
-	public dynamic var animationduration = DPDConstant.Animation.Duration
+    @objc public dynamic var animationduration = DPDConstant.Animation.Duration
 
 	/**
 	The option of the show animation. Global change.
@@ -256,12 +256,12 @@ public final class DropDown: UIView {
 	/**
 	The option of the show animation. Only change the caller. To change all drop down's use the static var.
 	*/
-	public var animationEntranceOptions: UIViewAnimationOptions = DropDown.animationEntranceOptions
+    public var animationEntranceOptions: UIView.AnimationOptions = DropDown.animationEntranceOptions
 	
 	/**
 	The option of the hide animation. Only change the caller. To change all drop down's use the static var.
 	*/
-	public var animationExitOptions: UIViewAnimationOptions = DropDown.animationExitOptions
+    public var animationExitOptions: UIView.AnimationOptions = DropDown.animationExitOptions
 
 	/**
 	The downScale transformation of the tableview when the DropDown is appearing
@@ -275,7 +275,7 @@ public final class DropDown: UIView {
 
 	Changing the text color automatically reloads the drop down.
 	*/
-	public dynamic var textColor = DPDConstant.UI.TextColor {
+    @objc public dynamic var textColor = DPDConstant.UI.TextColor {
 		didSet { reloadAllComponents() }
 	}
 
@@ -284,7 +284,7 @@ public final class DropDown: UIView {
 
 	Changing the text font automatically reloads the drop down.
 	*/
-	public dynamic var textFont = DPDConstant.UI.TextFont {
+    @objc public dynamic var textFont = DPDConstant.UI.TextFont {
 		didSet { reloadAllComponents() }
 	}
     
@@ -690,7 +690,7 @@ extension DropDown {
 		for index in 0..<dataSource.count {
 			configureCell(templateCell, at: index)
 			templateCell.bounds.size.height = cellHeight
-			let width = templateCell.systemLayoutSizeFitting(UILayoutFittingCompressedSize).width
+            let width = templateCell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).width
 			
 			if width > maxWidth {
 				maxWidth = width
@@ -772,7 +772,7 @@ extension DropDown {
 
 		let visibleWindow = UIWindow.visibleWindow()
 		visibleWindow?.addSubview(self)
-		visibleWindow?.bringSubview(toFront: self)
+        visibleWindow?.bringSubviewToFront(self)
 
 		self.translatesAutoresizingMaskIntoConstraints = false
 		visibleWindow?.addUniversalConstraints(format: "|[dropDown]|", views: ["dropDown": self])
@@ -996,12 +996,12 @@ extension DropDown {
 		NotificationCenter.default.addObserver(
 			self,
 			selector: #selector(keyboardUpdate),
-			name: NSNotification.Name.UIKeyboardWillShow,
+            name: UIResponder.keyboardWillShowNotification,
 			object: nil)
 		NotificationCenter.default.addObserver(
 			self,
 			selector: #selector(keyboardUpdate),
-			name: NSNotification.Name.UIKeyboardWillHide,
+            name: UIResponder.keyboardWillHideNotification,
 			object: nil)
 	}
 

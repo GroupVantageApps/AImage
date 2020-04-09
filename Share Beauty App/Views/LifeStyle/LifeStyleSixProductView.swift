@@ -63,7 +63,7 @@ class LifeStyleSixthProductView: BaseView {
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        self.mProductButton.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        self.mProductButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
         let imageId = AppItemTranslateTable.getEntity(7920).mainImage.first
         self.mBackImageView.image = FileTable.getImage(imageId)

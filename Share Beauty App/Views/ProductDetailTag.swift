@@ -19,7 +19,7 @@ class ProductDetailTag: BaseView {
     var trouble: DataStructTrouble? {
         didSet {
             if trouble != nil {
-                mBtn.setTitle(trouble?.troubleName, for: UIControlState())
+                mBtn.setTitle(trouble?.troubleName, for: UIControl.State())
                 mBtn.isEnabled = !Const.troubleIdNotImage.contains(trouble!.troubleId)
 
                 if trouble?.displayFlg == Const.troubleDisplayStrong {

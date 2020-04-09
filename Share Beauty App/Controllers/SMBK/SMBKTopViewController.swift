@@ -80,16 +80,16 @@ class SMBKTopViewController: UIViewController, NavigationControllerAnnotation {
         let complexionTitle = AppItemTable.getNameByItemId(itemId: 8543)
         MakeupBtn.setTitle(makeupTitle, for: .normal)
         MakeupBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
-        MakeupBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 50, 0, 0)
+        MakeupBtn.titleEdgeInsets = UIEdgeInsets(top: 10, left: 50, bottom: 0, right: 0)
         MakeupBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)
         ComplexionBtn.setTitle(complexionTitle, for: .normal)
         ComplexionBtn.titleLabel?.font = UIFont(name: "Reader-Bold", size: 25)
-        ComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -10, 0, 0)
+        ComplexionBtn.titleEdgeInsets = UIEdgeInsets(top: 10, left: -10, bottom: 0, right: 0)
         ComplexionBtn.setTitleColor(UIColor(red255: 255, green255: 255, blue255: 255, alpha: 1), for: .normal)        
         mComplextionBtn.isHidden = true
         let compButton = "> " + mSMKArr["29"]!
         mForthComplexionBtn.setTitle(compButton, for: .normal)
-        mForthComplexionBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -110, 0, 0)
+        mForthComplexionBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: -110, bottom: 0, right: 0)
         mForthTitleLbl.text = AppItemTable.getNameByItemId(itemId: 8539)
         mForthVText.text = AppItemTable.getNameByItemId(itemId: 8540)
         

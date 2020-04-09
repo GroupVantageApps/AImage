@@ -18,7 +18,7 @@ class LXGreenTeaView: UIView{
     func setUI() {
         self.mUpImgV.image = FileTable.getLXFileImage("graphPoint_up.png")
         self.mDownImgV.image = FileTable.getLXFileImage("graphPoint_down.png")
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         

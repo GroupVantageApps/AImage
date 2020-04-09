@@ -70,8 +70,8 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                 stepLbl.text = lxArr[String(stepCsvId)]
             } else {
                 let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 20)   
-                let stepLblString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(stepCsvId)]!, attributes: [NSFontAttributeName: font!])
-                stepLblString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(stepCsvId)]?.count)!))
+                let stepLblString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(stepCsvId)]!, attributes: [NSAttributedString.Key.font: font!])
+                stepLblString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (lxArr[String(stepCsvId)]?.count)!))
                 stepLbl.attributedText = stepLblString
             }
                 products = ProductListData(productIds: step.product).products
@@ -87,7 +87,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                     paragraphStyle.minimumLineHeight = lineHeight
                     paragraphStyle.maximumLineHeight = lineHeight
                     let attributedText = NSMutableAttributedString(string: product.productName)
-                    attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle,
+                        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle,
                                                  range: NSMakeRange(0, attributedText.length))
                     productLbl.attributedText = attributedText
                     productLbl.textAlignment = .center
@@ -96,14 +96,14 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                     image.image =  FileTable.getImage(product.image)
 
                     let btn = baseV.viewWithTag(index + 80) as! BaseButton
-                    btn.isSelected = Bool(product.recommend as NSNumber)
-                    btn.addTarget(self, action: #selector(LuxuryProductViewController.onTapRecommend(_:)), for: UIControlEvents.touchUpInside)
+                        btn.isSelected = Bool(truncating: product.recommend as NSNumber)
+                        btn.addTarget(self, action: #selector(LuxuryProductViewController.onTapRecommend(_:)), for: UIControl.Event.touchUpInside)
                     if i == 1 { btn.tag = btn.tag + 6 }
                     if i == 2 { btn.tag = btn.tag + 11 }
                     
                     let button = baseV.viewWithTag(index + 50) as! UIButton
                     button.tag = product.productId
-                    button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControlEvents.touchUpInside)
+                        button.addTarget(self, action: #selector(LuxuryProductViewController.tappedProduct(_:)), for: UIControl.Event.touchUpInside)
                     let beautyLbl: UILabel
 
                     if (index > 2 && i == 0) || (index > 0 && i == 1) {
@@ -263,11 +263,11 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
         })
         avPlayer.play()
     }
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
 
-    func onTapRecommend(_ sender: BaseButton) {
+    @objc func onTapRecommend(_ sender: BaseButton) {
         sender.isSelected = !sender.isSelected
         let product = tmpProducts[sender.tag - 80]
         

@@ -61,7 +61,7 @@ extension UIView {
         animateIgnoreInteraction(duration: duration, delay: 0, options: .layoutSubviews, animations: animations, completion: nil)
     }
 
-    public class func animateIgnoreInteraction(duration: TimeInterval, delay: TimeInterval, options: UIViewAnimationOptions, animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
+    public class func animateIgnoreInteraction(duration: TimeInterval, delay: TimeInterval, options: UIView.AnimationOptions, animations: @escaping () -> Void, completion: ((Bool) -> Void)?) {
         UIApplication.shared.beginIgnoringInteractionEvents()
         UIView.animate(
             withDuration: duration,

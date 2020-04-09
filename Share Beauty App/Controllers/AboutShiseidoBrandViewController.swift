@@ -46,7 +46,7 @@ class AboutShiseidoBrandViewController: UIViewController, NavigationControllerAn
         // Dispose of any resources that can be recreated.
     }
 	
-	override func willMove(toParentViewController parent: UIViewController?) {
+    override func willMove(toParent parent: UIViewController?) {
 		if parent == nil {
 			if let observer = self.timeObserver {
 				self.player.removeTimeObserver(observer)
@@ -79,7 +79,7 @@ private extension AboutShiseidoBrandViewController {
 		self.player = AVPlayer(url: FileTable.getPath(movieId))
 		
 		let layer = self.mAVPlayerV.layer as! AVPlayerLayer
-		layer.videoGravity = AVLayerVideoGravityResizeAspect
+        layer.videoGravity = AVLayerVideoGravity.resizeAspect
 		layer.player = player
 		
 		// 動画テロップデータ読み込み

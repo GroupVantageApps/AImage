@@ -82,8 +82,8 @@ class CircleGraphView: UIView {
         let swipe = CABasicAnimation(keyPath: "strokeEnd");
         swipe.duration = duration
         
-        swipe.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        swipe.fillMode = kCAFillModeForwards
+        swipe.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        swipe.fillMode = CAMediaTimingFillMode.forwards
         swipe.isRemovedOnCompletion = false
         swipe.autoreverses = false
         

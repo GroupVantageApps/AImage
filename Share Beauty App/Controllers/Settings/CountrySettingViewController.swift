@@ -143,8 +143,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
                 initAppData()
 
             } else {
-                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertControllerStyle.alert)
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertController.Style.alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
                     (_) -> Void in
                     print("OK")
                 })
@@ -242,8 +242,8 @@ class CountrySettingViewController: UIViewController, NavigationControllerAnnota
             if Utility.checkReachability() == true {
                 initAppData()
             } else {
-                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertControllerStyle.alert)
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+                let alert: UIAlertController = UIAlertController(title: "エラー", message: "ネットワークがオフライン状態です。", preferredStyle:  UIAlertController.Style.alert)
+                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
                     (_) -> Void in
                     print("OK")
                 })

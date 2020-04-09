@@ -98,12 +98,12 @@ class MakeupViewController: UIViewController, NavigationControllerAnnotation, UI
             }
         }
         mDropDown.dataSource = lowerNames
-        self.mBtnDropDown.setTitle(mDropDown.dataSource[0], for: UIControlState())
+        self.mBtnDropDown.setTitle(mDropDown.dataSource[0], for: UIControl.State())
         mDropDown.anchorView = mBtnDropDown
         mDropDown.bottomOffset = CGPoint(x: 0, y: mBtnDropDown.height)
         mDropDown.direction = .bottom
         mDropDown.selectionAction = { [unowned self] (index, item) in
-            self.mBtnDropDown.setTitle(item, for: UIControlState())
+            self.mBtnDropDown.setTitle(item, for: UIControl.State())
             if index == 0 {
                 self.mProducts = self.products
             } else {

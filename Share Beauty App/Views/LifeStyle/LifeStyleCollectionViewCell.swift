@@ -54,9 +54,9 @@ class LifeStyleCollectionViewCell: UICollectionViewCell {
     private func makeStringFromhtml(string: String) -> NSAttributedString? {
         do {
             let encodedData = string.data(using: String.Encoding.utf8)!
-            let attributedOptions: [String : AnyObject] = [
-                NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType as AnyObject, //表示データのドキュメントタイプ
-                NSCharacterEncodingDocumentAttribute : String.Encoding.utf8.rawValue as AnyObject, //表示データの文字エンコード
+            let attributedOptions: [NSAttributedString.DocumentReadingOptionKey : Any] = [
+                .documentType : NSAttributedString.DocumentType.html as AnyObject, //表示データのドキュメントタイプ
+                .characterEncoding : String.Encoding.utf8.rawValue as AnyObject, //表示データの文字エンコード
             ]
             //文字列の変換処理の実装（try 〜 catch構文を使っています。）
             let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)

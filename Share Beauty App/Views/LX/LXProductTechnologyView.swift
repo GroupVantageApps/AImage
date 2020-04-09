@@ -105,9 +105,9 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
-        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
         
-        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
     }
@@ -128,7 +128,7 @@ class LXProductTechnologyView: UIView, UIScrollViewDelegate {
     @IBAction func changeValue(_ sender: UISlider) {
         
     }
-    func close() {
+    @objc func close() {
         self.isHidden = true
         print("Button pressed")
     }

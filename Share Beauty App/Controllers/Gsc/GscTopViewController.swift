@@ -65,7 +65,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     
         mBaseView = UIView.init(frame: CGRect(x: 0, y: 40, width: selfWidth, height: selfHeight - 69 ))
         mVContent.addSubview(mBaseView)
-        mVContent.bringSubview(toFront: mGscHeaderView)
+        mVContent.bringSubviewToFront(mGscHeaderView)
         
         let gscArr = LanguageConfigure.gsccsv
 
@@ -182,7 +182,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
     private func audioSessionInterrupted(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
             let interruptionTypeRawValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
-            let interruptionType = AVAudioSessionInterruptionType(rawValue: interruptionTypeRawValue) else {
+            let interruptionType = AVAudioSession.InterruptionType(rawValue: interruptionTypeRawValue) else {
                 return
         }    
         
@@ -253,7 +253,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
 
     }
     
-    func onTapFaceBtn() {
+    @objc func onTapFaceBtn() {
         if mGroupType == "A" {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
             nextVc.mSelect1Type = "face"
@@ -270,7 +270,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
     }
     
-    func onTapBodyBtn() {
+    @objc func onTapBodyBtn() {
         if mGroupType == "A" {
             let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
             nextVc.mSelect1Type = "body"
@@ -285,7 +285,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
     }
     
-    func onTapLineDetail() {
+    @objc func onTapLineDetail() {
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscNavigationViewController", targetClass: GscNavigationViewController.self) as! GscNavigationViewController
         self.navigationController?.pushViewController(nextVc, animated: false)
     }
@@ -298,7 +298,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
         mSunCareSelectView2 = UIView.init(frame: CGRect(x: 0, y: 8, width: selfWidth, height: selfHeight - 69 ))
         mBaseView.addSubview(mSunCareSelectView2)
-        mBaseView.bringSubview(toFront: mSunCareSelectView2)
+        mBaseView.bringSubviewToFront(mSunCareSelectView2)
         
         let bgImg = UIImage.init(named: "suncare_bg")
         let bgImgV = UIImageView.init(image: bgImg)
@@ -422,7 +422,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         }
     }
     
-    func onTapSensitiveBtn() {
+    @objc func onTapSensitiveBtn() {
     
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
@@ -431,7 +431,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
     }
     
-    func onTapChildrenBtn() {
+    @objc func onTapChildrenBtn() {
         
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
@@ -440,7 +440,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
     }
     
-    func onTapUrbanBtn() {
+    @objc func onTapUrbanBtn() {
         
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
@@ -449,24 +449,24 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
         
     }
     
-    func onTapActiveBtn() {
+    @objc func onTapActiveBtn() {
         let nextVc = UIViewController.GetViewControllerFromStoryboard("GscResultViewController", targetClass: GscResultViewController.self) as! GscResultViewController
         nextVc.mSelect1Type = mSelectType
         nextVc.mSelect2Type = "active"
         self.navigationController?.pushViewController(nextVc, animated: false)
     }
     
-    func onTapstandAloneBtn() {
+    @objc func onTapstandAloneBtn() {
         print("onTapstandAloneBtn")
         if standAloneBtnTapCount < 4 {
             standAloneBtnTapCount = standAloneBtnTapCount + 1
         } else {
-            let alert = UIAlertController(title: "", message: "GSC Mode", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { action in
+            let alert = UIAlertController(title: "", message: "GSC Mode", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in
                 LanguageConfigure.isSuncareStandAloneApp = !LanguageConfigure.isSuncareStandAloneApp
                 print(LanguageConfigure.isSuncareStandAloneApp)
             }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         

@@ -32,7 +32,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         self.mScrollView.delegate = self
         self.mScrollView.showsHorizontalScrollIndicator = false
         
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         
@@ -156,7 +156,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         configurePageControl()
         
         self.mScrollView.isPagingEnabled = true
-        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
         
     }
 
@@ -185,7 +185,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
             graphView3.setUp(left: 54, right: 80, l_title: lxArr["28"]!,r_title: lxArr["29"]!)
         }
     }
-    func close() {
+    @objc func close() {
         self.removeFromSuperview()
         print("Button pressed")
     }

@@ -22,15 +22,15 @@ class SMKCategoryButton: UIButton {
         self.setAttributedTitle(btnText, for: .normal)
         self.setTitleColor(UIColor.black, for: .normal)
         self.titleLabel!.font = UIFont(name: "Reader-Bold", size: CGFloat(18))
-        self.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, 110, 0, 5)
+        self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
+        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: 110, bottom: 0, right: 5)
         self.titleLabel!.numberOfLines = 0
         // 折り返し
         self.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
         // 行間調整
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.4
-        btnText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, btnText.length))
+        btnText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, btnText.length))
         
         self.layer.borderWidth = 1.5
         self.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0).cgColor

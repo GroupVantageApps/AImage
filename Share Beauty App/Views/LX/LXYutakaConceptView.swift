@@ -28,7 +28,7 @@ class LXYutakaConceptView: UIView  ,UIScrollViewDelegate{
     @IBOutlet weak var mContentV: UIView!
     @IBOutlet weak var mScrollV: UIScrollView!
     func setAction(){
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
 

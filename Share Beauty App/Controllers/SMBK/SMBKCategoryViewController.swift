@@ -119,7 +119,7 @@ class SMBKCategoryViewController: UIViewController, NavigationControllerAnnotati
         self.myScrollView.setContentOffset(offset, animated: true)
     }
     
-    func onTapCategoryBtn(_ sender: SMKCategoryButton) {
+    @objc func onTapCategoryBtn(_ sender: SMKCategoryButton) {
         if sender.isSelected {
             sender.isSelected = false
             sender.layer.borderWidth = 1.5

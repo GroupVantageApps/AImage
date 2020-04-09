@@ -227,7 +227,7 @@ class TopViewController: UIViewController, NavigationControllerAnnotation {
         
         let transition = CATransition()
         transition.duration = 1.5
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         self.mImgVMainVisual.layer.add(transition, forKey: nil)
     }
     

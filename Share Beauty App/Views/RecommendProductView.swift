@@ -24,7 +24,7 @@ class RecommendProductView: UICollectionViewCell {
     
     @IBInspectable var productImage: UIImage? {
         didSet {
-            mBtnProductImg.setImage(productImage, for: UIControlState())
+            mBtnProductImg.setImage(productImage, for: UIControl.State())
         }
     }
     @IBInspectable var strCategory: String? {
@@ -60,8 +60,8 @@ class RecommendProductView: UICollectionViewCell {
             strLine = product?.lineName
             strName = product?.productName
             if product != nil {
-                reward = Bool(product!.reward as NSNumber)
-                recommend = Bool(product!.recommend as NSNumber)
+                reward = Bool(truncating: product!.reward as NSNumber)
+                recommend = Bool(truncating: product!.recommend as NSNumber)
             }
             productImage = FileTable.getImage(product?.image)
         }
@@ -70,7 +70,7 @@ class RecommendProductView: UICollectionViewCell {
     weak var delegate: RecommendProductViewDelegate?
 
     override func didMoveToSuperview() {
-        mBtnProductImg.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        mBtnProductImg.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
     }
     override func awakeFromNib() {
         super.awakeFromNib()

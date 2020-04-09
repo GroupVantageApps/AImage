@@ -84,20 +84,20 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm01 = UIImageView(frame: CGRect(x: 80, y: 70, width: 410, height: 330))
             let utm01Image = UIImage(named: "MoisturizingCream02_before")
             utm01.image = utm01Image
-            utm01.contentMode = UIViewContentMode.scaleAspectFit
+            utm01.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm01)
             
             //Right Image
             let utm02After = UIImageView(frame: CGRect(x: 541, y: 70, width: 410, height: 330))
             let utm02AfterImage = UIImage(named: "MoisturizingCream01_after")
             utm02After.image = utm02AfterImage
-            utm02After.contentMode = UIViewContentMode.scaleAspectFit
+            utm02After.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm02After)
             //Before Right Image
             utm02 = UIImageView(frame: CGRect(x: 541, y: 70, width: 410, height: 330))
             let utm02Image = UIImage(named: "MoisturizingCream01_before")
             utm02.image = utm02Image
-            utm02.contentMode = UIViewContentMode.scaleAspectFit
+            utm02.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
             setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
@@ -107,12 +107,12 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_MoisturizingCream"))
             sliderLeft.tag = 1
-            sliderLeft.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControlEvents.valueChanged)
+            sliderLeft.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControl.Event.valueChanged)
             scrollView.addSubview(sliderLeft)
             var sliderRight = UISlider(frame: CGRect(x: 537, y: 440, width: 410, height: 45))
             sliderRight = sliderSetting(slider: sliderRight, thambImage: UIImage(named: "efficacy_slider_circle_MoisturizingCream"))
             sliderRight.tag = 2
-            sliderRight.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControlEvents.valueChanged)
+            sliderRight.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControl.Event.valueChanged)
             scrollView.addSubview(sliderRight)
             
             aimage01 = APNGImageView(image: FileTable.getAImage(6364))
@@ -193,19 +193,19 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             utm01 = UIImageView(frame: CGRect(x: 80, y: 70, width: 410, height: 330))
             let utm01Image = UIImage(named: "DayCream02_before")
             utm01.image = utm01Image
-            utm01.contentMode = UIViewContentMode.scaleAspectFit
+            utm01.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm01)
             
             let utm02After = UIImageView(frame: CGRect(x: 541, y: 70, width: 410, height: 330))
             let utm02AfterImage = UIImage(named: "DayCream01_after")
             utm02After.image = utm02AfterImage
-            utm02After.contentMode = UIViewContentMode.scaleAspectFit
+            utm02After.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm02After)
             //Before Right Image
             utm02 = UIImageView(frame: CGRect(x: 541, y: 70, width: 410, height: 330))
             let utm02Image = UIImage(named: "DayCream01_before")
             utm02.image = utm02Image
-            utm02.contentMode = UIViewContentMode.scaleAspectFit
+            utm02.contentMode = UIView.ContentMode.scaleAspectFit
             scrollView.addSubview(utm02)
             
             setLabelBlack(frame: CGRect(x: 80, y: 400, width: 120, height: 40), text: beforeUseText, size: 12)
@@ -215,12 +215,12 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
             var sliderLeft = UISlider(frame: CGRect(x: 80, y: 440, width: 410, height: 45))
             sliderLeft = sliderSetting(slider: sliderLeft, thambImage: UIImage(named: "efficacy_slider_circle_Emulsion"))
             sliderLeft.tag = 1
-            sliderLeft.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControlEvents.valueChanged)
+            sliderLeft.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControl.Event.valueChanged)
             scrollView.addSubview(sliderLeft)
             var sliderRight = UISlider(frame: CGRect(x: 537, y: 440, width: 410, height: 45))
             sliderRight = sliderSetting(slider: sliderRight, thambImage: UIImage(named: "efficacy_slider_circle_Emulsion"))
             sliderRight.tag = 2
-            sliderRight.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControlEvents.valueChanged)
+            sliderRight.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControl.Event.valueChanged)
             scrollView.addSubview(sliderRight)
             
             aimage01 = APNGImageView(image: FileTable.getAImage(6370))
@@ -251,7 +251,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         let imageView = UIImageView(frame: frame)
         let image = UIImage(named: name)
         imageView.image = image
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         scrollView.addSubview(imageView)
     }
     func showUtmImageByID(frame:CGRect, ID:Int) {
@@ -260,7 +260,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         if let loadImage = image {
             imageView.image = loadImage
         }
-        imageView.contentMode = UIViewContentMode.scaleToFill
+        imageView.contentMode = UIView.ContentMode.scaleToFill
         scrollView.addSubview(imageView)
     }
     func showUtmLabelText(text:String, frame:CGRect, fontSize:CGFloat, tracking:CGFloat, lineHeight:CGFloat, isRed:Bool, isBold:Bool) {
@@ -286,7 +286,7 @@ class EssentialEnagyEfficacy: UIView, UIScrollViewDelegate, APNGImageViewDelegat
         lbl.adjustsFontSizeToFitWidth = true
         scrollView.addSubview(lbl)
     }
-    func sliderAction(slider:UISlider) {
+    @objc func sliderAction(slider:UISlider) {
         let tag = slider.tag
         switch tag {
         case 1:

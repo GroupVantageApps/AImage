@@ -38,12 +38,12 @@ class LXGraphView: UIView {
         } else {   
             let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 13) 
             
-            let mBtnRightGraphString: NSMutableAttributedString = NSMutableAttributedString(string: r_title, attributes: [NSFontAttributeName: font!])
-            mBtnRightGraphString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: r_title.count))
+            let mBtnRightGraphString: NSMutableAttributedString = NSMutableAttributedString(string: r_title, attributes: [NSAttributedString.Key.font: font!])
+            mBtnRightGraphString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: r_title.count))
             mBtnRightGraph.titleLabel?.attributedText = mBtnRightGraphString
             
-            let mBtnLeftGraphString: NSMutableAttributedString = NSMutableAttributedString(string: l_title, attributes: [NSFontAttributeName: font!])
-            mBtnLeftGraphString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: l_title.count))
+            let mBtnLeftGraphString: NSMutableAttributedString = NSMutableAttributedString(string: l_title, attributes: [NSAttributedString.Key.font: font!])
+            mBtnLeftGraphString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: l_title.count))
             mBtnLeftGraph.titleLabel?.attributedText = mBtnLeftGraphString
             
         }
@@ -62,7 +62,7 @@ class LXGraphView: UIView {
         }
     }
 
-    func tappedRightGraphBtn() {
+    @objc func tappedRightGraphBtn() {
         UIView.animate(withDuration: 1.0) { () -> Void in
             self.mImgVBackGround.alpha = 1
         }
@@ -85,7 +85,7 @@ class LXGraphView: UIView {
         }
     }
     
-    func tappedLeftGraphBtn() {
+    @objc func tappedLeftGraphBtn() {
         self.mImgVBackGround.alpha = 0
         UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse], animations: {
             UIView.setAnimationRepeatCount(1.9)

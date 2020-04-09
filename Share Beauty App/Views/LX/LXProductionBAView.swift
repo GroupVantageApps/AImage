@@ -30,7 +30,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
 
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(){
-        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
 
@@ -97,7 +97,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         self.mPageControl.frame = CGRect(x: 960/2 - 100, y: self.size.height - 45, width: 200, height: 50)
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
-        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
 
     }
 
@@ -123,7 +123,7 @@ class LXProductionBAView: UIView, UIScrollViewDelegate {
         }
         
     }
-    func close() {
+    @objc func close() {
         self.isHidden = true
         print("Button pressed")
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol IdealProductViewDelegate: NSObjectProtocol {
-    weak var mCollectionView: UICollectionView! { get }
+    var mCollectionView: UICollectionView! { get }
     func didTap(_ sender: IdealProductView)
     func didTapTrouble(_ sender: DataStructTrouble)
     func didTapMirror(_ show: Bool, product: ProductData)
@@ -55,7 +55,7 @@ class IdealProductView: UICollectionViewCell {
             mBtnTroubles.forEach { (btn) in
                 if let trouble = mTroubles[safe: btn.tag] {
                     btn.isHidden = false
-                    btn.setTitle(trouble.troubleName, for: UIControlState())
+                    btn.setTitle(trouble.troubleName, for: UIControl.State())
                 } else {
                     btn.isHidden = true
                 }
@@ -80,7 +80,7 @@ class IdealProductView: UICollectionViewCell {
     }
     var productImage: UIImage? {
         didSet {
-            mBtnProduct.setImage(productImage, for: UIControlState())
+            mBtnProduct.setImage(productImage, for: UIControl.State())
         }
     }
     var day: Bool = false {
@@ -117,15 +117,15 @@ class IdealProductView: UICollectionViewCell {
                     self.productName = product?.productName
                     self.mTroubles = (product?.troubles)!
                     if product != nil {
-                        self.isNew = Bool(product!.newItemFlg as NSNumber)
-                        self.day = Bool(product!.day as NSNumber)
-                        self.night = Bool(product!.night as NSNumber)
+                        self.isNew = Bool(truncating: product!.newItemFlg as NSNumber)
+                        self.day = Bool(truncating: product!.day as NSNumber)
+                        self.night = Bool(truncating: product!.night as NSNumber)
                         if product!.lineId == Const.lineIdBioPerformance {
                             self.isBop = true
                         } else {
                             self.isBop = false
                         }
-                        isRecommend = Bool(product!.recommend as NSNumber)
+                        isRecommend = Bool(truncating: product!.recommend as NSNumber)
                     }
                     mVBaseProduct.isHidden = false
                     mVBaseLine.isHidden = true
@@ -194,7 +194,7 @@ class IdealProductView: UICollectionViewCell {
                 paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
                 
                 let lineFeatureText = NSMutableAttributedString(string: (product?.lineFeature)!)
-                lineFeatureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, lineFeatureText.length))
+                lineFeatureText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, lineFeatureText.length))
                 mLblLineDetail.attributedText = lineFeatureText
             }
         
@@ -296,7 +296,7 @@ class IdealProductView: UICollectionViewCell {
         self.delegate?.didTapTrouble(mTroubles[sender.tag])
     }
 
-    func toggleLineOpen(_ sender: AnyObject) {
+    @objc func toggleLineOpen(_ sender: AnyObject) {
         if lineFeatureEmpty() { return }
         isLineOpened = !isLineOpened
         reloadData()

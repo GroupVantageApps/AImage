@@ -36,7 +36,7 @@ class CategoryButton: BaseView {
 
     @IBInspectable var title: String? {
         didSet {
-            mBtnCategory.setTitle(title, for: UIControlState())
+            mBtnCategory.setTitle(title, for: UIControl.State())
         }
     }
 

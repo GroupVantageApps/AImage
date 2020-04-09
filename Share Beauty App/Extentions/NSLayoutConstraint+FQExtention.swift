@@ -9,7 +9,7 @@
 import UIKit
 
 public extension NSLayoutConstraint {
-    class func findEqualRelation(_ constraints: [NSLayoutConstraint], item: AnyObject, toItem: AnyObject?, firstattribute: NSLayoutAttribute, secondattribute: NSLayoutAttribute, constant: CGFloat? = nil) -> NSLayoutConstraint? {
+    class func findEqualRelation(_ constraints: [NSLayoutConstraint], item: AnyObject, toItem: AnyObject?, firstattribute: NSLayoutConstraint.Attribute, secondattribute: NSLayoutConstraint.Attribute, constant: CGFloat? = nil) -> NSLayoutConstraint? {
         for constraint in constraints {
             if constraint.firstItem === item &&
                 constraint.secondItem === toItem &&
@@ -29,7 +29,7 @@ public extension NSLayoutConstraint {
     }
 
     class func findEqualRelation(_ constraints: [NSLayoutConstraint], constraint: NSLayoutConstraint) -> NSLayoutConstraint? {
-        return self.findEqualRelation(constraints, item: constraint.firstItem, toItem: constraint.secondItem, firstattribute: constraint.firstAttribute, secondattribute: constraint.secondAttribute, constant: constraint.constant)
+        return self.findEqualRelation(constraints, item: constraint.firstItem!, toItem: constraint.secondItem, firstattribute: constraint.firstAttribute, secondattribute: constraint.secondAttribute, constant: constraint.constant)
     }
 
     class func findEqualLeft(_ constraints: [NSLayoutConstraint], item: AnyObject, toItem: AnyObject?) -> NSLayoutConstraint? {
@@ -55,10 +55,10 @@ public extension NSLayoutConstraint {
 }
 
 public extension NSLayoutConstraint {
-    class func makeEqualEdgeConstraintWithSpace(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute, space: CGFloat) -> NSLayoutConstraint {
+    class func makeEqualEdgeConstraintWithSpace(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute, space: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: attribute, multiplier: 1.0, constant: space)
     }
-    class func makeEqualEdgeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute, space: CGFloat) -> NSLayoutConstraint {
+    class func makeEqualEdgeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute, space: CGFloat) -> NSLayoutConstraint {
         return makeEqualEdgeConstraintWithSpace(item: item, toItem: toItem, attribute: attribute, space: space)
     }
     class func equalLeftEdge(item: AnyObject, toItem: AnyObject, space: CGFloat = 0) -> NSLayoutConstraint {
@@ -76,8 +76,8 @@ public extension NSLayoutConstraint {
 }
 
 public extension NSLayoutConstraint {
-    class func makeConnectEdgeConstraintWithSpace(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute, space: CGFloat) -> NSLayoutConstraint {
-        var toAttribute: NSLayoutAttribute!
+    class func makeConnectEdgeConstraintWithSpace(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute, space: CGFloat) -> NSLayoutConstraint {
+        var toAttribute: NSLayoutConstraint.Attribute!
         switch attribute {
         case .top:
             toAttribute = .bottom
@@ -91,7 +91,7 @@ public extension NSLayoutConstraint {
         }
         return NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: toAttribute, multiplier: 1.0, constant: space)
     }
-    class func makeConnectEdgeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute) -> NSLayoutConstraint {
+    class func makeConnectEdgeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint {
         return makeConnectEdgeConstraintWithSpace(item: item, toItem: toItem, attribute: attribute, space: 0)
     }
     class func connectLeftRightEdge(item: AnyObject, toItem: AnyObject, space: CGFloat) -> NSLayoutConstraint {
@@ -103,13 +103,13 @@ public extension NSLayoutConstraint {
 }
 
 public extension NSLayoutConstraint {
-    class func makeEqualSizeConstraintWithScale(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute, multiplier: CGFloat) -> NSLayoutConstraint {
+    class func makeEqualSizeConstraintWithScale(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute, multiplier: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: attribute, multiplier: multiplier, constant: 0)
     }
-    class func makeSize(item: AnyObject, attribute: NSLayoutAttribute, constant: CGFloat) -> NSLayoutConstraint {
+    class func makeSize(item: AnyObject, attribute: NSLayoutConstraint.Attribute, constant: CGFloat) -> NSLayoutConstraint {
         return NSLayoutConstraint(item: item, attribute: attribute, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: constant)
     }
-    class func makeEqualSizeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutAttribute) -> NSLayoutConstraint {
+    class func makeEqualSizeConstraint(item: AnyObject, toItem: AnyObject, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint {
         return makeEqualSizeConstraintWithScale(item: item, toItem: toItem, attribute: attribute, multiplier: 1.0)
     }
     class func equalWidth(item: AnyObject, toItem: AnyObject) -> NSLayoutConstraint {

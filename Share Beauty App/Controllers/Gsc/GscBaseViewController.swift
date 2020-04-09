@@ -166,7 +166,7 @@ class GscBaseViewController: UIViewController {
         })
     }
 
-    func endMovie() {
+    @objc func endMovie() {
         print(#function)
     }
 }

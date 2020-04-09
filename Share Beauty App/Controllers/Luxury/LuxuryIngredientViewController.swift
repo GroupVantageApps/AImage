@@ -116,7 +116,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         self.view.addSubview(skingraph)
     }
     
-    func playIngredientMovie(){
+    @objc func playIngredientMovie(){
         bgAudioPlayer.pause()
         
         let path = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/IngredientVIew.mp4"))
@@ -167,7 +167,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
         avPlayer.play()
     }
     
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     func didTapshowGeneTech(){

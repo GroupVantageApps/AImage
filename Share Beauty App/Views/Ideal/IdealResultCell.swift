@@ -24,7 +24,7 @@ class IdealResultCell: BaseView {
     @IBInspectable var titleFontSize: CGFloat = 20.0 {
         didSet {
             if #available(iOS 8.2, *) {
-                mLblTitle.font = UIFont.systemFont(ofSize: titleFontSize, weight: UIFontWeightSemibold)
+                mLblTitle.font = UIFont.systemFont(ofSize: titleFontSize, weight: UIFont.Weight.semibold)
             } else {
                 mLblTitle.font = UIFont.boldSystemFont(ofSize: titleFontSize)
             }

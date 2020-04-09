@@ -28,7 +28,7 @@ class LXProductBLSView: UIView, UIScrollViewDelegate{
         imageBg.image = FileTable.getLXFileImage("lx_bls_bg.png")
         
         mPlayMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         if self.size.height != 700 { 
@@ -71,7 +71,7 @@ class LXProductBLSView: UIView, UIScrollViewDelegate{
         }
     }
     
-    func close() {
+    @objc func close() {
         self.isHidden = true
         print("Button pressed")
     }

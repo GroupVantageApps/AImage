@@ -26,7 +26,7 @@ protocol NavigationControllerDelegate: NSObjectProtocol {
 }
 
 protocol NavigationControllerAnnotation: NSObjectProtocol {
-    weak var delegate: NavigationControllerDelegate? {get set}
+    var delegate: NavigationControllerDelegate? {get set}
     var theme: String? {get}
     var isEnterWithNavigationView: Bool {get}
 }
@@ -104,14 +104,14 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.didBecomeActive),
-            name: .UIApplicationDidBecomeActive,
+            name: UIApplication.didBecomeActiveNotification,
             object: nil)
     }
 
     deinit {
         NotificationCenter.default.removeObserver(
             self,
-            name: .UIApplicationDidBecomeActive,
+            name: UIApplication.didBecomeActiveNotification,
             object: nil)
     }
 
@@ -165,7 +165,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     private func startNoGestureTimer() {
-        if !(self.childViewControllers.last is TopViewController) || !Const.isShowScreenSaver { return }
+        if !(self.children.last is TopViewController) || !Const.isShowScreenSaver { return }
         self.cancelNoGestureTimer()
         mScreensaveTimer = Timer.scheduledTimer(
             timeInterval: TimeInterval(NavigationViewController.startScreenSaverSecond),
@@ -180,7 +180,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     @objc private func fire() {
-        if !(self.childViewControllers.last is TopViewController) { return }
+        if !(self.children.last is TopViewController) { return }
         self.present(UIViewController.GetViewControllerFromStoryboard("ScreenSaveViewController", targetClass: ScreenSaveViewController.self), animated: true, completion:nil)
     }
 
@@ -264,8 +264,8 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
         self.cancelNoGestureTimer()
         toVc.delegate = self
         if animated {
-            if let fromVc = childViewControllers.last {
-                addChildViewController(toVc)
+            if let fromVc = children.last {
+                addChild(toVc)
                 fromVc.beginAppearanceTransition(false, animated: true)
                 toVc.beginAppearanceTransition(true, animated: true)
                 toVc.view.alpha = 0
@@ -286,18 +286,18 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
                     completion: { _ in
                         fromVc.endAppearanceTransition()
                         toVc.endAppearanceTransition()
-                        toVc.didMove(toParentViewController: self)
+                        toVc.didMove(toParent: self)
                         fromVc.view.removeFromSuperview()
                         LoadingView.dismiss(vc: self)
                 })
             }
         } else {
             mNavigationView.setTheme(toVc.theme)
-            addChildViewController(toVc)
+            addChild(toVc)
             addContainerView(toVc, readd: false)
-            toVc.didMove(toParentViewController: self)
-            if let fromVc = childViewControllers.last {
-                if fromVc !== childViewControllers.first {
+            toVc.didMove(toParent: self)
+            if let fromVc = children.last {
+                if fromVc !== children.first {
                     fromVc.view.removeFromSuperview()
                 }
             }
@@ -305,12 +305,12 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     fileprivate func prevVc(_ animated: Bool) {
-        if let toVc: UIViewController = childViewControllers[safe: childViewControllers.endIndex - 2] {
-            let fromVc: UIViewController = childViewControllers.last!
+        if let toVc: UIViewController = children[safe: children.endIndex - 2] {
+            let fromVc: UIViewController = children.last!
             if let annotation = fromVc as? NavigationControllerOptionAnnotation {
                 annotation.willPrev?()
             }
-            fromVc.willMove(toParentViewController: nil)
+            fromVc.willMove(toParent: nil)
             toVc.beginAppearanceTransition(true, animated: true)
             fromVc.beginAppearanceTransition(false, animated: true)
             addContainerView(toVc, readd: true)
@@ -318,7 +318,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
                 fromVc.view.removeFromSuperview()
                 fromVc.endAppearanceTransition()
                 toVc.endAppearanceTransition()
-                fromVc.removeFromParentViewController()
+                fromVc.removeFromParent()
                 if toVc is TopViewController {
                     self.startNoGestureTimer()
                 }
@@ -333,7 +333,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
                 constraintleftToVc.constant = 0
 
                 let annotation = toVc as! NavigationControllerAnnotation
-                if childViewControllers.index(of: toVc) == 0 {
+                if children.index(of: toVc) == 0 {
                     mNavigationView.animateExit(0.3, options: .layoutSubviews)
                 } else {
                     mNavigationView.setTheme(annotation.theme, duration: 0.3)
@@ -354,35 +354,35 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     }
 
     private func backRootVc(_ animated: Bool, isFromDelegate: Bool = false) {
-        let toVc: UIViewController = childViewControllers.first!
-        let fromVc: UIViewController = childViewControllers.last!
+        let toVc: UIViewController = children.first!
+        let fromVc: UIViewController = children.last!
 
         if toVc === fromVc {
             return
         }
 
-        self.childViewControllers.forEach { vc in
+        self.children.forEach { vc in
             if let annotation = vc as? NavigationControllerOptionAnnotation {
                 annotation.willBackRoot?(isFromDelegate: isFromDelegate)
             }
         }
 
-        fromVc.willMove(toParentViewController: nil)
+        fromVc.willMove(toParent: nil)
         toVc.beginAppearanceTransition(true, animated: true)
         fromVc.beginAppearanceTransition(false, animated: true)
         addContainerView(toVc, readd: true)
-        for childVc in self.childViewControllers {
+        for childVc in self.children {
             if toVc === childVc || fromVc === childVc {
                 continue
             }
-            childVc.removeFromParentViewController()
+            childVc.removeFromParent()
         }
 
         let completion = {() -> Void in
             fromVc.view.removeFromSuperview()
             fromVc.endAppearanceTransition()
             toVc.endAppearanceTransition()
-            fromVc.removeFromParentViewController()
+            fromVc.removeFromParent()
             self.startNoGestureTimer()
         }
 
@@ -395,7 +395,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
             constraintleftToVc.constant = 0
 
             let annotation = toVc as! NavigationControllerAnnotation
-            if childViewControllers.index(of: toVc) == 0 {
+            if children.index(of: toVc) == 0 {
                 mNavigationView.animateExit(0.3, options: .layoutSubviews)
             } else {
                 mNavigationView.setTheme(annotation.theme, duration: 0.3)
@@ -534,7 +534,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
 
     func didHSideBarAction(_ type: SideBarActionType) {
         animateSideBar(false, completion: {
-            let currentVc = self.childViewControllers.last
+            let currentVc = self.children.last
             switch type {
             case .home:
                 self.showTop()
@@ -558,7 +558,7 @@ class NavigationViewController: UIViewController, NavigationControllerDelegate, 
     func nextVcFromSideBar<T: UIViewController>(_ nextVc: T) where T: NavigationControllerAnnotation {
         print(nextVc.self)
         let classNameNextVc = NSStringFromClass(type(of: nextVc))
-        let classNameLastVc = NSStringFromClass(type(of: self.childViewControllers.last!))
+        let classNameLastVc = NSStringFromClass(type(of: self.children.last!))
         animateSideBar(false, completion: {
             if classNameNextVc != classNameLastVc {
                 self.nextVc(nextVc, animated: true)

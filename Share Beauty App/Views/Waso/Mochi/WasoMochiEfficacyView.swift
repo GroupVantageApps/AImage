@@ -63,7 +63,7 @@ class WasoMochiEfficacyView: UIView {
         graphImageV.frame = CGRect(x: 50, y: 10, width: mPageTwoContentV.width - 100, height: mPageTwoContentV.height - 50)
         let image: UIImage = UIImage(named: "mochi_effi_graph.png")!
         graphImageV.image = image
-        graphImageV.contentMode = UIViewContentMode.scaleAspectFit
+        graphImageV.contentMode = UIView.ContentMode.scaleAspectFit
         mPageTwoContentV.addSubview(graphImageV)
         
         for index in 0...1 {

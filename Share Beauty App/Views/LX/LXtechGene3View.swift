@@ -29,7 +29,7 @@ class LXTechGene3View : UIView{
         mVSlider.minimumValue = 0
         mVSlider.maximumValue = 1
         mVSlider.value = 0
-        mVSlider.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControlEvents.valueChanged)
+        mVSlider.addTarget(self, action: #selector(self.sliderAction(slider:)), for: UIControl.Event.valueChanged)
         mVContent.addSubview(mVSlider)
         
         
@@ -43,7 +43,7 @@ class LXTechGene3View : UIView{
         slider.setMaximumTrackImage(UIImage(named: "efficacy_slider_empty"), for: .normal)
         return slider
     }
-    func sliderAction(slider:UISlider) {
+    @objc func sliderAction(slider:UISlider) {
         let tag = slider.tag
         switch tag {
         case 1:

@@ -219,11 +219,11 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
             
             let featureText = NSMutableAttributedString(string: product.feature)
-            featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+            featureText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
             mLblFeature.attributedText = featureText
             
             let howToUseText = NSMutableAttributedString(string: product.feature)
-            howToUseText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
+            howToUseText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
             mLblHowToUse.attributedText = howToUseText
         }
 
@@ -250,10 +250,10 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         self.setSpecialMenu()
         self.setCategoryButtonDefend()
 
-        if Bool(product.day as NSNumber) {
+        if Bool(truncating: product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "icon_day")!
         }
-        if Bool(product.night as NSNumber) {
+        if Bool(truncating: product.night as NSNumber) {
             let imgNight = UIImage(named: "icon_night")!
             if mImgVFirstDailyCare.image == nil {
                 mImgVFirstDailyCare.image = imgNight
@@ -265,7 +265,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             mItemDailyCare.text = nil
         }
         mBtnMovie.isEnabled = (product.movie != 0)
-        mBtnBrush.isEnabled = Bool(product.brush as NSNumber)
+        mBtnBrush.isEnabled = Bool(truncating: product.brush as NSNumber)
 
         self.initSpecialView()
 
@@ -824,7 +824,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         super.viewWillAppear(animated)
         
         product = ProductDetailData(productId: productId)
-        mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
+        mTransitionView.isLikeItSelected(isSelected: Bool(truncating: product!.recommend as NSNumber))
     }
 	
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -855,7 +855,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                 action: #selector(onTapRelationProduct(_:)),
                 for: .touchUpInside)
             let image = FileTable.getImage(product.image)
-            button.setImage(image, for: UIControlState())
+            button.setImage(image, for: UIControl.State())
             mVRelationProductBase.addSubview(button)
         } else {
             for dataStructProduct in relationProducts {
@@ -867,7 +867,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
                     action: #selector(onTapRelationProduct(_:)),
                     for: .touchUpInside)
                 let image = FileTable.getImage(dataStructProduct.image)
-                button.setImage(image, for: UIControlState())
+                button.setImage(image, for: UIControl.State())
                 mVRelationProductBase.addSubview(button)
             }
         }
@@ -937,7 +937,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
             let attributedText = NSMutableAttributedString(string: contentText)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 1.2
-            attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+            attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
             contentLabel.attributedText = attributedText
 
             contentLabel.font = UIFont(name: "Reader", size: 14)
@@ -1877,7 +1877,7 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
 
     @IBAction private func onTapLineDetail(_ sender: AnyObject) {
         let line = LineDetailData(lineId: self.product.lineId)
-        if line.feature != "" && Bool(line.lineStepFlg as NSNumber) {
+        if line.feature != "" && Bool(truncating: line.lineStepFlg as NSNumber) {
             let lineDetailVc = UIViewController.GetViewControllerFromStoryboard("LineDetailViewController", targetClass: LineDetailViewController.self) as! LineDetailViewController
             lineDetailVc.lineId = self.product.lineId
             lineDetailVc.beautySecondId = self.product.beautySecondId

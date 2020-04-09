@@ -42,7 +42,7 @@ class WasoCleanserScentView: UIView {
             let productImageV: UIImageView = UIImageView(frame: CGRect(x: productName.left, y: productName.bottom + 20, width: 220, height: 330))
             let productImage: UIImage = UIImage(named: "waso_570.png")!
             productImageV.image = productImage
-            productImageV.contentMode = UIViewContentMode.scaleAspectFit
+            productImageV.contentMode = UIView.ContentMode.scaleAspectFit
             
             let left: CGFloat = mContentView.centerX - 135
             
@@ -81,7 +81,7 @@ class WasoCleanserScentView: UIView {
             circleOneImageV.frame = CGRect(x: left, y: 320, width: 120, height: 120)
             //let circleOneImage: UIImage = UIImage(named: "waso_green_83.png")!
             //circleOneImageV.image = circleOneImage
-            circleOneImageV.contentMode = UIViewContentMode.scaleAspectFit
+            circleOneImageV.contentMode = UIView.ContentMode.scaleAspectFit
             
             print(circleOneImageV.frame)
 
@@ -100,7 +100,7 @@ class WasoCleanserScentView: UIView {
             circleTwoImageV.origin.x = circleOneImageV.right + 30
             //let circleTwoImage: UIImage = UIImage(named: "waso_green_83.png")!
             //circleTwoImageV.image = circleTwoImage
-            circleTwoImageV.contentMode = UIViewContentMode.scaleAspectFit
+            circleTwoImageV.contentMode = UIView.ContentMode.scaleAspectFit
             
             let circleTwoText: UILabel = UILabel(frame: circleTextFrame)
             circleTwoText.text = AppItemTable.getNameByItemId(itemId: 8035 + page * 8)

@@ -181,7 +181,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             object: player.currentItem
         )
         let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResize
+        layer.videoGravity = AVLayerVideoGravity.resize
         layer.player = player
         player.play()
     }
@@ -223,7 +223,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
         return result
     }
 
-    func didFinishPlaying() {
+    @objc func didFinishPlaying() {
         NotificationCenter.default.removeObserver(self)
         self.mVMain.alpha = 0
         mAVPlayerV.removeFromSuperview()

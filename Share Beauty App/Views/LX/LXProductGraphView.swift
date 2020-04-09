@@ -17,7 +17,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
     let mXbutton = UIButton(frame: CGRect(x: 960 - 38, y: 16.7, width: 38, height: 38))
     func setUI(){
         mContentV = UIView.init(frame: CGRect(x: 0, y: 0, width: self.size.width*4, height: self.size.height))
-        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage( FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
         
@@ -204,7 +204,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         self.mPageControl.pageIndicatorTintColor = UIColor.lightGray
         self.mPageControl.currentPageIndicatorTintColor = UIColor(red: 171.0/255, green: 154.0/255, blue: 89.0/255, alpha: 1.0)
         self.addSubview(mPageControl)
-        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        self.mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
 
     }
 
@@ -218,13 +218,13 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         let x = CGFloat(mPageControl.currentPage) * self.mScrollV.frame.size.width
         self.mScrollV.setContentOffset(CGPoint(x: x,y :0), animated: true)
     }
-    func close() {
+    @objc func close() {
         self.removeFromSuperview()
         print("Button pressed")
     }
 
     func updateAnimation(view: LXProductGraphContentView) {
-        let tempV = view as! LXProductGraphContentView
+        let tempV = view 
         if tempV.tag == 103 {
             let subV = tempV.viewWithTag(201)
   
@@ -277,7 +277,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
         let view = self.mScrollV.viewWithTag(tag) as! LXProductGraphContentView
         if view.hasAnimated { return }
         
-        for i in 0..<view.maxCount {
+        for _ in 0..<view.maxCount {
             self.updateAnimation(view: view)
         }
 

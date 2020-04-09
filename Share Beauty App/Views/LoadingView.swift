@@ -26,7 +26,7 @@ class LoadingView: BaseView {
         })
     }
     
-    static func blurEffectView(fromBlurStyle style: UIBlurEffectStyle, frame: CGRect) -> UIVisualEffectView {
+    static func blurEffectView(fromBlurStyle style: UIBlurEffect.Style, frame: CGRect) -> UIVisualEffectView {
         let effect = UIBlurEffect(style: style)
         let blurView = UIVisualEffectView(effect: effect)
         blurView.frame = frame

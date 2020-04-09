@@ -50,8 +50,8 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         } else {   
             
             let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 28)   
-            let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["67"]!, attributes: [NSFontAttributeName: font!])
-            btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["67"]?.count)!))
+            let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["67"]!, attributes: [NSAttributedString.Key.font: font!])
+            btnString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (lxArr["67"]?.count)!))
             conceptBtn.titleLabel?.attributedText = btnString
             conceptBtn.setTitle(lxArr["67"], for: .normal)
         }
@@ -90,8 +90,8 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
                 } else {   
                     
                     let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 19)   
-                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSFontAttributeName: font!])
-                    btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
+                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSAttributedString.Key.font: font!])
+                    btnString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
                     btn.titleLabel?.attributedText = btnString
                     btn.setTitle(lxArr[String(csvId)], for: .normal)
                 }
@@ -102,8 +102,8 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
                 } else {   
                     
                     let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 19)   
-                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSFontAttributeName: font!])
-                    btnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
+                    let btnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr[String(csvId)]!, attributes: [NSAttributedString.Key.font: font!])
+                    btnString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (lxArr[String(csvId)]?.count)!))
                     btn.titleLabel?.attributedText = btnString
                     btn.setTitle(lxArr[String(csvId)], for: .normal)
                 }
@@ -183,7 +183,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
         avPlayer.play()
     }
     
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     

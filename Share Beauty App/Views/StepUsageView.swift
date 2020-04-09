@@ -101,10 +101,10 @@ class StepUsageView: BaseView {
         mCurrentInfo = info
         mLblStep.text = "Step\(info.stepNumber)"
         mLblDescription.text = info.text
-        mPlayer.seek(to: CMTimeMakeWithSeconds(info.startTime, Int32(NSEC_PER_SEC)))
+        mPlayer.seek(to: CMTimeMakeWithSeconds(info.startTime, preferredTimescale: Int32(NSEC_PER_SEC)))
 
-        let endTime = CMTimeMakeWithSeconds(info.endTime, Int32(NSEC_PER_SEC))
-        mTimeObserver = mPlayer.addBoundaryTimeObserver(forTimes: [NSValue(time: endTime)], queue: DispatchQueue.main) { [weak self] time in
+        let endTime = CMTimeMakeWithSeconds(info.endTime, preferredTimescale: Int32(NSEC_PER_SEC))
+        mTimeObserver = mPlayer.addBoundaryTimeObserver(forTimes: [NSValue(time: endTime)], queue: DispatchQueue.main) { [weak self] in
             if self == nil {return}
             self!.stopVideo()
             if self!.mAllStepFlg {
@@ -146,7 +146,7 @@ class StepUsageView: BaseView {
             object: mPlayer.currentItem
         )
         let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResizeAspect
+        layer.videoGravity = AVLayerVideoGravity.resizeAspect
         layer.player = mPlayer
     }
 
@@ -157,7 +157,7 @@ class StepUsageView: BaseView {
         mPlayer = nil
     }
     
-    func didFinishPlaying() {
-        mPlayer.seek(to: kCMTimeZero)
+    @objc func didFinishPlaying() {
+        mPlayer.seek(to: CMTime.zero)
     }
 }

@@ -30,7 +30,7 @@ class LXYutakaConceptSubView: UIView ,UIScrollViewDelegate{
         self.addSubview(self.mScrollView)
 
 
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
 
@@ -57,7 +57,7 @@ class LXYutakaConceptSubView: UIView ,UIScrollViewDelegate{
         }
         self.mScrollView.isPagingEnabled = true
         self.mScrollView.setContentOffset(CGPoint(x: self.mScrollView.width * CGFloat(page), y:0), animated: false)
-        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControlEvents.valueChanged)
+        mPageControl.addTarget(self, action: Selector(("changePage:")), for: UIControl.Event.valueChanged)
         configurePageControl()
         mPageControl.currentPage = page
         
@@ -81,7 +81,7 @@ class LXYutakaConceptSubView: UIView ,UIScrollViewDelegate{
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         mPageControl.currentPage = Int(pageNumber)
     }
-    func close() {
+    @objc func close() {
         self.removeFromSuperview()
         print("Button pressed")
     }

@@ -144,10 +144,10 @@ class RecommendedViewController: UIViewController, NavigationControllerAnnotatio
     @IBAction func onTapDeleteAll(_ sender: Any) {
         Utility.log("onTapDeleteAll")
 
-        let alert: UIAlertController = UIAlertController(title: "Confirm", message: "Delete all item(s)", preferredStyle:  UIAlertControllerStyle.alert)
+        let alert: UIAlertController = UIAlertController(title: "Confirm", message: "Delete all item(s)", preferredStyle:  UIAlertController.Style.alert)
 
         // OKボタン
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {
             (action: UIAlertAction!) -> Void in
             print("OK")
             RecommendTable.deleteAll()
@@ -156,7 +156,7 @@ class RecommendedViewController: UIViewController, NavigationControllerAnnotatio
         })
 
         // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
             // ボタンが押された時の処理を書く（クロージャ実装）
             (action: UIAlertAction!) -> Void in
             print("Cancel")

@@ -32,7 +32,7 @@ class BNF620FirstTechView: UIView {
                 shadow.shadowColor = UIColor.gray
                 shadow.shadowBlurRadius = 5.0
                 
-                attrStr.addAttribute(NSShadowAttributeName, value: shadow, range: NSMakeRange(0, attrStr.length))
+                attrStr.addAttribute(NSAttributedString.Key.shadow, value: shadow, range: NSMakeRange(0, attrStr.length))
                 
                 label.attributedText = attrStr
                 label.adjustsFontSizeToFitWidth = true
@@ -43,8 +43,8 @@ class BNF620FirstTechView: UIView {
                 attrStr2.setFont(UIUtil.getReaderBold(font_size))
                 attrStr2.setTextColor(UIColor.white)
                 
-                attrStr2.addAttribute(NSStrokeWidthAttributeName, value: -5.0, range: NSMakeRange(0, attrStr.length))
-                attrStr2.addAttribute(NSStrokeColorAttributeName, value: font_color, range: NSMakeRange(0, attrStr.length))
+                attrStr2.addAttribute(NSAttributedString.Key.strokeWidth, value: -5.0, range: NSMakeRange(0, attrStr.length))
+                attrStr2.addAttribute(NSAttributedString.Key.strokeColor, value: font_color, range: NSMakeRange(0, attrStr.length))
                 
                 label2.attributedText = attrStr2
                 label2.textAlignment = .left

@@ -13,7 +13,7 @@ protocol GscNavigationControllerDelegate: NSObjectProtocol {
 }
 
 protocol GscNavigationControllerAnnotation: NSObjectProtocol {
-    weak var gscDelegate: GscNavigationControllerDelegate? {get set}
+    var gscDelegate: GscNavigationControllerDelegate? {get set}
 }
 
 class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, GscHeaderViewDelegate, GscNavigationControllerDelegate {
@@ -54,8 +54,8 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
     } else {
         mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
     }
-    let selfWidth = self.view.bounds.width
-    let selfHeight = self.view.bounds.height
+        _ = self.view.bounds.width
+        _ = self.view.bounds.height
     
     mScrollV.delegate = self
         if (mProductId != nil) {
@@ -77,7 +77,7 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
     }
 
     func setVc(vcChild: UIViewController) {
-        addChildViewController(vcChild)
+        addChild(vcChild)
         
         mVContent.addSubview(vcChild.view)
         
@@ -91,13 +91,13 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         mVContent.addConstraints([equalWidth, equalHeight, top, left])
         self.view.layoutIfNeeded()
         
-        vcChild.didMove(toParentViewController: self)
+        vcChild.didMove(toParent: self)
     }
     
     func nextVc<T: UIViewController>(_ toVc: T) where T: GscNavigationControllerAnnotation {
         print(#function)
         toVc.gscDelegate = self
-        addChildViewController(toVc)
+        addChild(toVc)
         
         mVContent.addSubview(toVc.view)
         
@@ -111,7 +111,7 @@ class GscNavigationViewController: GscBaseViewController, UIScrollViewDelegate, 
         mVContent.addConstraints([equalWidth, equalHeight, top, left])
         self.view.layoutIfNeeded()
         
-        toVc.didMove(toParentViewController: self)
+        toVc.didMove(toParent: self)
 
     }      
 

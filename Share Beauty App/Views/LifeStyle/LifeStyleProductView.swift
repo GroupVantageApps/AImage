@@ -108,8 +108,8 @@ class LifeStyleProductView: BaseView {
 			mLblLine.text = self.style == .beautyOnly ? nil : lineName
             let color = UIColor(hex: "C8102E", alpha: 1.0)
             let underline = NSAttributedString(string: lineName!, attributes:
-                [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-                 NSUnderlineColorAttributeName: color
+                [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                 NSAttributedString.Key.underlineColor: color
                 ])
             mLblLine.attributedText = underline
             mLblLine.sizeToFit()
@@ -124,8 +124,8 @@ class LifeStyleProductView: BaseView {
             mLblProduct.text = productName
             let color = UIColor(hex: "C8102E", alpha: 1.0)
             let underline = NSAttributedString(string: productName!, attributes:
-                [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-                 NSUnderlineColorAttributeName: color
+                [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                 NSAttributedString.Key.underlineColor: color
                 ])
             mLblProduct.attributedText = underline
         }
@@ -133,7 +133,7 @@ class LifeStyleProductView: BaseView {
 
     @IBInspectable var imgProduct: UIImage? {
         didSet {
-            mBtnProduct.setImage(imgProduct, for: UIControlState())
+            mBtnProduct.setImage(imgProduct, for: UIControl.State())
         }
     }
 
@@ -189,7 +189,7 @@ class LifeStyleProductView: BaseView {
             self.imgProduct = FileTable.getImage(product?.image)
             self.explainText = product?.feature
             if product != nil {
-                isRecommend = Bool(product!.recommend as NSNumber)
+                isRecommend = Bool(truncating: product!.recommend as NSNumber)
             }
         }
     }
@@ -200,7 +200,7 @@ class LifeStyleProductView: BaseView {
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        mBtnProduct.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        mBtnProduct.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
     }
 
     override func updateConstraints() {

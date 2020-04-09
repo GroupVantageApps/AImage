@@ -9,6 +9,7 @@
 import UIKit
 import APNGKit
 
+@objcMembers
 class FileTable: NSObject {
 
     static let imageDirPath = NSHomeDirectory() + "/Library/Caches/images/"

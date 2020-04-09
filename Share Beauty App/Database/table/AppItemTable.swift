@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 
+@objcMembers
 class AppItemTable: NSObject {
 
     class func getEntity(_ appItemId: Int) -> AppItemEntity {

@@ -28,7 +28,7 @@ class WasoMochiTechView: UIView {
         thermographImageV.frame = CGRect(x: 0, y: 30, width: mTechView.width - 100, height: 290)
         let image: UIImage = UIImage(named: "mochi_thermography.png")!
         thermographImageV.image = image
-        thermographImageV.contentMode = UIViewContentMode.scaleAspectFit
+        thermographImageV.contentMode = UIView.ContentMode.scaleAspectFit
         thermographImageV.centerX = mTechView.width / 2
         mTechView.addSubview(thermographImageV)
         

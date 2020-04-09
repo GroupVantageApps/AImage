@@ -50,7 +50,7 @@ class NavigationView: BaseView {
                 UIView.animateIgnoreInteraction(
                     duration: duration / 2,
                     delay: 0,
-                    options: UIViewAnimationOptions.curveEaseOut,
+                    options: UIView.AnimationOptions.curveEaseOut,
                     animations: {
                         self.mLblTheme.alpha = 1
                 },
@@ -59,7 +59,7 @@ class NavigationView: BaseView {
         })
     }
 
-    func animateEnter(_ duration: TimeInterval, options: UIViewAnimationOptions) {
+    func animateEnter(_ duration: TimeInterval, options: UIView.AnimationOptions) {
         if mIsEnter {
            return
         }
@@ -76,7 +76,7 @@ class NavigationView: BaseView {
         })
     }
 
-    func animateExit(_ duration: TimeInterval, options: UIViewAnimationOptions) {
+    func animateExit(_ duration: TimeInterval, options: UIView.AnimationOptions) {
         if !mIsEnter {
             return
         }
@@ -96,9 +96,9 @@ class NavigationView: BaseView {
 
     func show(_ show: Bool, animateDuration: TimeInterval?) {
         if animateDuration == nil {
-            mVContent.alpha = CGFloat(show as NSNumber)
+            mVContent.alpha = CGFloat(truncating: show as NSNumber)
         } else {
-            mVContent.alpha = CGFloat(!show as NSNumber)
+            mVContent.alpha = CGFloat(truncating: !show as NSNumber)
             UIView.animateIgnoreInteraction(
                 duration: animateDuration!,
                 delay: 0,

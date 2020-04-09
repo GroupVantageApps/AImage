@@ -43,7 +43,7 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
         mDescriptionLabel.text = description
     }
 
-    func playSound (sender: Any) {
+    @objc func playSound (sender: Any) {
         let tag = (sender as AnyObject).tag
         delegate?.playSounds(tag: tag!)
     }

@@ -68,8 +68,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
 //            ingredientBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["2"]?.count)!))
 //            ingredientBtn.titleLabel?.attributedText = ingredientBtnString
             
-            let yutakaBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["3"]!, attributes: [NSFontAttributeName: font!])
-            yutakaBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (lxArr["3"]?.count)!))
+            let yutakaBtnString: NSMutableAttributedString = NSMutableAttributedString(string: lxArr["3"]!, attributes: [NSAttributedString.Key.font: font!])
+            yutakaBtnString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (lxArr["3"]?.count)!))
             yutakaBtn.titleLabel?.attributedText = yutakaBtnString
 //
 
@@ -81,8 +81,8 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         }
         
         let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size: 30)
-        let enmeiBtnString: NSMutableAttributedString = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: 8446) ?? "", attributes: [NSFontAttributeName: font!])
-        enmeiBtnString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: ((AppItemTable.getNameByItemId(itemId: 8446) ?? "").count)))
+        let enmeiBtnString: NSMutableAttributedString = NSMutableAttributedString(string: AppItemTable.getNameByItemId(itemId: 8446) ?? "", attributes: [NSAttributedString.Key.font: font!])
+        enmeiBtnString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: ((AppItemTable.getNameByItemId(itemId: 8446) ?? "").count)))
         enmeiBtn.setTitle(AppItemTable.getNameByItemId(itemId: 8446), for: .normal)
         
         if LanguageConfigure.isOutAppBtnHiddenCountry {
@@ -93,7 +93,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
          print("LuxuryViewController.viewDidLoad")
         LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         
-        moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+        moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? MoviePlayerView
         moviePlay.isTop = true
         moviePlay.delegate = self
         moviePlay.setUI()
@@ -131,7 +131,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
         movieBtn.setImage(UIImage(named: "btn_next.png"), for: .normal)
         movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
         self.mVContent.addSubview(movieBtn)
-        self.view.bringSubview(toFront: movieBtn)
+        self.view.bringSubviewToFront(movieBtn)
     }
 
     @objc private func playMovie(_ sender: AnyObject){
@@ -209,7 +209,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
     private func audioSessionInterrupted(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
             let interruptionTypeRawValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
-            let interruptionType = AVAudioSessionInterruptionType(rawValue: interruptionTypeRawValue) else {
+            let interruptionType = AVAudioSession.InterruptionType(rawValue: interruptionTypeRawValue) else {
                 return
         }    
         
@@ -220,7 +220,7 @@ class LuxuryViewController: LXBaseViewController, UIScrollViewDelegate, MoviePla
             print("interruption ended")
         }
     }
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         let soundFilePath = Utility.getDocumentPath(String(format: "lx_movie/lx_movie/lx_bg.m4a"))
             let fileURL = URL(fileURLWithPath: soundFilePath)
             do {

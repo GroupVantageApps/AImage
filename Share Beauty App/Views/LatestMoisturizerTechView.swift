@@ -81,7 +81,7 @@ class LatestMoisturizerTechView: UIView {
             imageV.frame = CGRect(x: 0, y: 40, width: 150, height: 110)
             let image: UIImage = UIImage(named: imageNames[index + 1])!
             imageV.image = image
-            imageV.contentMode = UIViewContentMode.scaleAspectFill
+            imageV.contentMode = UIView.ContentMode.scaleAspectFill
             imageV.centerX = circleSize / 2
             
             let markSize: CGFloat = 45
@@ -234,7 +234,7 @@ class LatestMoisturizerTechView: UIView {
         topImageV.size = imageSize
         topImageV.image = tImage
         topImageV.layer.cornerRadius = imageSize.width / 2
-        topImageV.contentMode = UIViewContentMode.scaleAspectFill
+        topImageV.contentMode = UIView.ContentMode.scaleAspectFill
         topImageV.clipsToBounds = true
         topImageV.centerX = triangleV.width / 2
         
@@ -243,7 +243,7 @@ class LatestMoisturizerTechView: UIView {
         leftImageV.size = imageSize
         leftImageV.image = lImage
         leftImageV.layer.cornerRadius = imageSize.width / 2
-        leftImageV.contentMode = UIViewContentMode.scaleAspectFill
+        leftImageV.contentMode = UIView.ContentMode.scaleAspectFill
         leftImageV.clipsToBounds = true
         leftImageV.bottom = triangleV.height
         
@@ -252,7 +252,7 @@ class LatestMoisturizerTechView: UIView {
         rightImageV.size = imageSize
         rightImageV.image = rImage
         rightImageV.layer.cornerRadius = imageSize.width / 2
-        rightImageV.contentMode = UIViewContentMode.scaleAspectFill
+        rightImageV.contentMode = UIView.ContentMode.scaleAspectFill
         rightImageV.clipsToBounds = true
         rightImageV.right = triangleV.width
         rightImageV.bottom = triangleV.height
@@ -334,7 +334,7 @@ class LatestMoisturizerTechView: UIView {
         let graphImage: UIImage = UIImage(named: "laminin_graph")!
         graphV.frame = CGRect(x: 0, y: rightGraphTitle.bottom + 20, width: 300, height: 260)
         graphV.image = graphImage
-        graphV.contentMode = UIViewContentMode.scaleAspectFit
+        graphV.contentMode = UIView.ContentMode.scaleAspectFit
         graphV.centerX = rightGraphTitle.centerX + 25
         
         let high: UILabel = UILabel()
@@ -409,7 +409,7 @@ class LatestMoisturizerTechView: UIView {
             let image: UIImage = UIImage(named: imageNames[index])!
             circleImageV.image = image
             circleImageV.layer.cornerRadius = imageSize / 2
-            circleImageV.contentMode = UIViewContentMode.scaleAspectFill
+            circleImageV.contentMode = UIView.ContentMode.scaleAspectFill
             circleImageV.clipsToBounds = true
             if index % 2 == 0 {
                 circleImageV.left = 30
@@ -477,7 +477,7 @@ class LatestMoisturizerTechView: UIView {
             graphImageV.frame = CGRect(x: rightView.width - 230, y: rightView.height / 2 * CGFloat(index), width: 230, height: 150)
             let image: UIImage = UIImage(named: "sakura_graph_0\(index + 1)")!
             graphImageV.image = image
-            graphImageV.contentMode = UIViewContentMode.scaleAspectFit
+            graphImageV.contentMode = UIView.ContentMode.scaleAspectFit
             rightView.addSubview(graphImageV)
             
             let high: UILabel = UILabel()

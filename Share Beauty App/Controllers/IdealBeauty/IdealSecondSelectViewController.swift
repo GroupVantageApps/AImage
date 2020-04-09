@@ -61,7 +61,7 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
             object: mPlayer.currentItem
         )
         let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResize
+        layer.videoGravity = AVLayerVideoGravity.resize
         layer.player = mPlayer
         mPlayer.play()
     }
@@ -115,8 +115,8 @@ class IdealSecondSelectViewController: UIViewController, NavigationControllerAnn
         delegate?.prevVc()
     }
 
-    func didFinishPlaying() {
-        mPlayer.seek(to: kCMTimeZero)
+    @objc func didFinishPlaying() {
+        mPlayer.seek(to: CMTime.zero)
         mPlayer.play()
     }
 

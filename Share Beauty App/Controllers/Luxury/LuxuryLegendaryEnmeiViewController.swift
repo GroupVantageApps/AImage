@@ -48,17 +48,17 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
             mHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         }
         print("LuxuryLegendaryEnmeiViewController")
-        self.mScrollV.sendSubview(toBack: mHeaderView)
-        self.mScrollV.sendSubview(toBack: mNavigationView)
+        self.mScrollV.sendSubviewToBack(mHeaderView)
+        self.mScrollV.sendSubviewToBack(mNavigationView)
         
 //        LogManager.tapItem(screenCode: mScreen.code, itemId: "")
         
-        let lxArr = LanguageConfigure.lxcsv
+        _ = LanguageConfigure.lxcsv
 
         let line = LineDetailData.init(lineId: 1)
         mUpperSteps = line.step
         mLowerSteps = mUpperSteps.flatMap {$0.lineStep}
-        var beautyCsvId = 7
+        _ = 7
         print(mLowerSteps)
 
     }
@@ -109,7 +109,7 @@ class LuxuryLegendaryEnmeiViewController: LXBaseViewController, LXProductBLSView
         })
         avPlayer.play()
     }
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     

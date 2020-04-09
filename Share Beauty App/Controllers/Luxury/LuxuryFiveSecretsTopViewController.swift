@@ -101,7 +101,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
 
         }
         
-        var movieBtn = UIButton()
+        let movieBtn = UIButton()
         movieBtn.frame = CGRect(x: self.mVContent.frame.width-70, y: 105, width: 40, height: 40)
         movieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         movieBtn.addTarget(self, action: #selector(self.playMovie(_:)), for: .touchUpInside)
@@ -375,7 +375,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
             self.closeBtn_pop.addTarget(self, action: #selector(self.onTapClosePopUp(_:)), for: .touchUpInside)
             
             self.pageControll_pop.isHidden = false
-            let currentPage = sender.tag - 80
+            _ = sender.tag - 80
             self.pageControll_pop.numberOfPages = 3
             self.pageControll_pop.pageIndicatorTintColor = UIColor.lightGray
             self.pageControll_pop.currentPageIndicatorTintColor = gold
@@ -480,7 +480,7 @@ class LuxuryFiveSecretsTopViewController: LXBaseViewController, LXNavigationView
         avPlayer.play()
     }
     
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         bgAudioPlayer.play()
     }
     

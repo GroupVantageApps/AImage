@@ -138,36 +138,36 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             style.maximumLineHeight = 18
             
             let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)   
-            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSFontAttributeName: font!])
-            mLblFeatureString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.feature.count))
+            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSAttributedString.Key.font: font!])
+            mLblFeatureString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.feature.count))
             mLblFeature.attributedText = mLblFeatureString
             
-            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSFontAttributeName: font!])
-            mLblHowToUseString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.howToUse.count))
+            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSAttributedString.Key.font: font!])
+            mLblHowToUseString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.howToUse.count))
             mLblHowToUse.attributedText = mLblHowToUseString
             
-            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSFontAttributeName: font!])
-            mLblUnitString.setAttributes([NSFontAttributeName: font!,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.unitName.count))
+            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSAttributedString.Key.font: font!])
+            mLblUnitString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.unitName.count))
             mLblUnit.attributedText = mLblUnitString
             
         } else {   
             let font: UIFont? = UIFont(name: "ACaslonPro-Regular", size:15)    
-            let mItemFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["08"]!, attributes: [NSFontAttributeName:font!])
-            mItemFeatureString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["08"]?.count)!))
+            let mItemFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["08"]!, attributes: [NSAttributedString.Key.font:font!])
+            mItemFeatureString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (mItems["08"]?.count)!))
             mItemFeature.attributedText = mItemFeatureString
             
-            let mItemHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["09"]!, attributes: [NSFontAttributeName:font!])
-            mItemHowToUseString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["09"]?.count)!))
+            let mItemHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["09"]!, attributes: [NSAttributedString.Key.font:font!])
+            mItemHowToUseString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (mItems["09"]?.count)!))
             mItemHowToUse.attributedText = mItemHowToUseString
             
-            let mItemDailyCareString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["11"]!, attributes: [NSFontAttributeName:font!])
-            mItemDailyCareString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: (mItems["11"]?.count)!))
+            let mItemDailyCareString: NSMutableAttributedString = NSMutableAttributedString(string: mItems["11"]!, attributes: [NSAttributedString.Key.font:font!])
+            mItemDailyCareString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: (mItems["11"]?.count)!))
             mItemDailyCare.attributedText = mItemDailyCareString
             
             
             
-            let mLblBeautyNameString: NSMutableAttributedString = NSMutableAttributedString(string: product.beautyName, attributes: [NSFontAttributeName:font!])
-            mLblBeautyNameString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: product.beautyName.count))
+            let mLblBeautyNameString: NSMutableAttributedString = NSMutableAttributedString(string: product.beautyName, attributes: [NSAttributedString.Key.font:font!])
+            mLblBeautyNameString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: product.beautyName.count))
             mLblBeautyName.attributedText = mLblBeautyNameString
             
             mLblLineName.text = product.lineName
@@ -177,16 +177,16 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             style.minimumLineHeight = 18
             style.maximumLineHeight = 18
             
-            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSFontAttributeName: font!])
-            mLblFeatureString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.feature.count))
+            let mLblFeatureString: NSMutableAttributedString = NSMutableAttributedString(string: product.feature, attributes: [NSAttributedString.Key.font: font!])
+            mLblFeatureString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.feature.count))
             mLblFeature.attributedText = mLblFeatureString
             
-            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSFontAttributeName: font!])
-            mLblHowToUseString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.howToUse.count))
+            let mLblHowToUseString: NSMutableAttributedString = NSMutableAttributedString(string: product.howToUse, attributes: [NSAttributedString.Key.font: font!])
+            mLblHowToUseString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.howToUse.count))
             mLblHowToUse.attributedText = mLblHowToUseString
             
-            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSFontAttributeName: font!])
-            mLblUnitString.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1,NSParagraphStyleAttributeName : style], range: NSRange(location:0,length: product.unitName.count))
+            let mLblUnitString: NSMutableAttributedString = NSMutableAttributedString(string: product.unitName, attributes: [NSAttributedString.Key.font: font!])
+            mLblUnitString.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1,NSAttributedString.Key.paragraphStyle : style], range: NSRange(location:0,length: product.unitName.count))
             mLblUnit.attributedText = mLblUnitString
             
         }
@@ -200,13 +200,13 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
             paragraphStyle.maximumLineHeight = Const.lineHeightMyanmar
             
             let featureText = NSMutableAttributedString(string: product.feature)
-            featureText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: featureText.length))
-            featureText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
+            featureText.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: featureText.length))
+            featureText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, featureText.length))
             mLblFeature.attributedText = featureText
             
             let howToUseText = NSMutableAttributedString(string: product.feature)
-            howToUseText.setAttributes([NSFontAttributeName: font!,NSBaselineOffsetAttributeName: -1], range: NSRange(location:0,length: howToUseText.length))
-            howToUseText.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
+            howToUseText.setAttributes([NSAttributedString.Key.font: font!,NSAttributedString.Key.baselineOffset: -1], range: NSRange(location:0,length: howToUseText.length))
+            howToUseText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, howToUseText.length))
             mLblHowToUse.attributedText = howToUseText
         }
 
@@ -253,10 +253,10 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         
         mImgVProduct.image = FileTable.getImage(product.image)
 
-        if Bool(product.day as NSNumber) {
+        if Bool(truncating: product.day as NSNumber) {
             mImgVFirstDailyCare.image = UIImage(named: "lx_icon_day")!
         }
-        if Bool(product.night as NSNumber) {
+        if Bool(truncating: product.night as NSNumber) {
             let imgNight = UIImage(named: "lx_icon_night")!
             if mImgVFirstDailyCare.image == nil {
                 mImgVFirstDailyCare.image = imgNight
@@ -355,7 +355,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         product = ProductDetailData(productId: productId)
-        mTransitionView.isLikeItSelected(isSelected: Bool(product!.recommend as NSNumber))
+        mTransitionView.isLikeItSelected(isSelected: Bool(truncating: product!.recommend as NSNumber))
     }
 
     // MARK: - PrivateMethod
@@ -373,7 +373,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
                 action: #selector(onTapRelationProduct(_:)),
                 for: .touchUpInside)
             let image = FileTable.getImage(product.image)
-            button.setImage(image, for: UIControlState())
+            button.setImage(image, for: UIControl.State())
             mVRelationProductBase.addSubview(button)
         } else {
             for dataStructProduct in relationProducts {
@@ -385,7 +385,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
                     action: #selector(onTapRelationProduct(_:)),
                     for: .touchUpInside)
                 let image = FileTable.getImage(dataStructProduct.image)
-                button.setImage(image, for: UIControlState())
+                button.setImage(image, for: UIControl.State())
                 mVRelationProductBase.addSubview(button)
             }
         }
@@ -761,7 +761,7 @@ class LXProductDetailViewController: UIViewController, NavigationControllerAnnot
         avPlayer.play()
     }
     
-    func endMovie(type: Int) {
+    @objc func endMovie(type: Int) {
         let moviePlay = mTroubleView.viewWithTag(50)
         moviePlay?.removeFromSuperview()
     }

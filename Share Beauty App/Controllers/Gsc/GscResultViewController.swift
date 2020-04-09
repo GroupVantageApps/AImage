@@ -46,8 +46,8 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             mGscHeaderView.setDropDown(dataSource: type(of: self).outAppInfos.map {$0.title})
         }
         
-        let selfWidth = self.view.bounds.width
-        let selfHeight = self.view.bounds.height
+        _ = self.view.bounds.width
+        _ = self.view.bounds.height
         
         //SuncareLIneのProductデータ取得
         mThumnailProducts = ProductListData.init(lineId: 17).products
@@ -100,7 +100,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         }
         let bgImg = UIImage.init(named: "suncare_bg")
         mBGImgV.image = bgImg
-        mVContent.bringSubview(toFront: mGscHeaderView)
+        mVContent.bringSubviewToFront(mGscHeaderView)
         
         
         let selectLbl = UILabel.init(frame: CGRect(x: 5, y: 5, width: 45, height: 50))
@@ -152,7 +152,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
                 FileTable.getImage(ProductData.init(productId: Int($0)!).image) != nil
             }
             
-            let product = ProductData.init(productId: Int(productList[0])!)
+            _ = ProductData.init(productId: Int(productList[0])!)
             
             for (i, productId) in disPlayProductList.enumerated() {
                 let product = ProductData.init(productId: Int(productId)!)
@@ -264,7 +264,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             }
             
             for (i, productId) in disPlayProductList.enumerated() {
-                let product = ProductData.init(productId: Int(productId)!)
+                _ = ProductData.init(productId: Int(productId)!)
                 var x = i*240
                 var w = 240
                 var margin_x = 70
@@ -303,7 +303,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             AgroupSubTitleLbl.font = UIFont.init(name: "Optima-Bold", size: 16.0)
             AgroupSubTitleLbl.numberOfLines = 0
             let attributedText = NSMutableAttributedString.init(string: gscArr["18"] ?? "content is null" )
-            attributedText.addAttribute(NSKernAttributeName, value: customLetterSpacing, range: NSRange(location: 0, length: attributedText.length))
+            attributedText.addAttribute(NSAttributedString.Key.kern, value: customLetterSpacing, range: NSRange(location: 0, length: attributedText.length))
             AgroupSubTitleLbl.attributedText = attributedText
             AgroupSubTitleLbl.textColor = UIColor.black
             AgroupSubTitleLbl.adjustsFontSizeToFitWidth = true
@@ -340,7 +340,7 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
         self.showTop()
     }
     
-    func goDetailVc(_ sender: Any) {
+    @objc func goDetailVc(_ sender: Any) {
         //TODO
         let tag = (sender as AnyObject).tag
         print(tag ?? 0)

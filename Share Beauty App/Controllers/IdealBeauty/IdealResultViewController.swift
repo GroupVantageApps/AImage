@@ -156,11 +156,11 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
         lowerNames += mStepLowers.map {$0.name}
 
         mDropDown.dataSource = lowerNames
-        self.mBtnDropDown.setTitle(mDropDown.dataSource[0], for: UIControlState())
+        self.mBtnDropDown.setTitle(mDropDown.dataSource[0], for: UIControl.State())
         mDropDown.anchorView = mBtnDropDown
         mDropDown.bottomOffset = CGPoint(x: 0, y: mBtnDropDown.height)
         mDropDown.selectionAction = { [unowned self] (index, item) in
-            self.mBtnDropDown.setTitle(item, for: UIControlState())
+            self.mBtnDropDown.setTitle(item, for: UIControl.State())
             if index == 0 {
                 self.selectedStepLowerIds = self.mStepLowers.map {$0.stepLowerId}
             } else {
@@ -227,7 +227,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
 //        print("start")
 //    }
     
-    func showMovie(sender: UIButton) {
+    @objc func showMovie(sender: UIButton) {
         let movie_id = sender.tag == 10 ? 6713 : 6612
         let avPlayer: AVPlayer = AVPlayer(url: FileTable.getPath(movie_id))
         let avPlayerVc = AVPlayerViewController()
@@ -440,7 +440,7 @@ class IdealResultViewController: UIViewController, NavigationControllerAnnotatio
                              action: #selector(onTapRelationProduct(_:)),
                              for: .touchUpInside)
                          let image = FileTable.getImage(dataStructProduct.image)
-                         button.setImage(image, for: UIControlState())
+                         button.setImage(image, for: .normal)
                          mVRelationProductBase.addSubview(button)
                      }
              }

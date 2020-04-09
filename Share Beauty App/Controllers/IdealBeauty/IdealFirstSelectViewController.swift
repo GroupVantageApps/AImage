@@ -74,7 +74,7 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
             object: mPlayer.currentItem
         )
         let layer = mAVPlayerV.layer as! AVPlayerLayer
-        layer.videoGravity = AVLayerVideoGravityResize
+        layer.videoGravity = AVLayerVideoGravity.resize
         layer.player = mPlayer
         mPlayer.play()
     }
@@ -134,8 +134,8 @@ class IdealFirstSelectViewController: UIViewController, NavigationControllerAnno
         delegate?.nextVc(nextVc)
     }
 
-    func didFinishPlaying() {
-        mPlayer.seek(to: kCMTimeZero)
+    @objc func didFinishPlaying() {
+        mPlayer.seek(to: CMTime.zero)
         mPlayer.play()
     }
 

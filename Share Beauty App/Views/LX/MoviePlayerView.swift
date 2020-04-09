@@ -23,7 +23,7 @@ class MoviePlayerView: UIView {
     
     func setUI() {
         if !isTop {
-        mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControlState.normal)
+            mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         }
         self.frame = CGRect(x: 0, y: 0, width: 1024, height: 768)
@@ -38,7 +38,7 @@ class MoviePlayerView: UIView {
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = CGRect(x: 0, y: 0, width: 1024, height: 748)
         
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         self.backgroundColor = UIColor.black
         
         self.layer.addSublayer(playerLayer)
@@ -62,7 +62,7 @@ class MoviePlayerView: UIView {
         self.playerLayer!.removeFromSuperlayer()
         delegate?.endMovie(type: type)
     }
-    func playerDidFinishPlaying(note: NSNotification) {
+    @objc func playerDidFinishPlaying(note: NSNotification) {
         print("end moive")
         if type == 0 {
             self.isHidden = true
@@ -80,7 +80,7 @@ class MoviePlayerView: UIView {
             })
         }
         else {
-            self.player.seek(to: kCMTimeZero)
+            self.player.seek(to: CMTime.zero)
             self.player.play()
         }
     }

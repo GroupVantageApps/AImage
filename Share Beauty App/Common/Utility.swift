@@ -85,7 +85,7 @@ class Utility: NSObject {
     class func getJsonContent(_ resultSet: FMResultSet) -> JSON? {
         let jsonString = resultSet.string(forColumn: "content").replacingOccurrences(of: ":null,", with: ":0,").replacingOccurrences(of: ":null}", with: ":0}")
         if let data = jsonString.data(using: String.Encoding.utf8) {
-            return JSON(data: data)
+            return try! JSON(data: data)
         } else {
             return nil
         }
@@ -113,7 +113,7 @@ class Utility: NSObject {
             .replacingOccurrences(of: "&quot;", with: "\"")
 
         if let data = string.data(using: String.Encoding.utf8) {
-            return JSON(data: data)
+            return try! JSON(data: data)
         } else {
             return nil
         }
