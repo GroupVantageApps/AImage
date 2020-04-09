@@ -20,7 +20,7 @@ class BNF620ThirdEfficacyView: UIView {
         for subView in self.subviews {
             if type(of: subView) == UILabel.self {
                 let label: UILabel = subView as! UILabel
-                var title = AppItemTable.getNameByItemId(itemId: label.tag)
+                let title = AppItemTable.getNameByItemId(itemId: label.tag)
                 label.text = title
                 label.adjustsFontSizeToFitWidth = true
             }

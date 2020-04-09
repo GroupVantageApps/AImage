@@ -799,7 +799,7 @@
                                               
                                               UIImageView * effect_highlight = [[UIImageView alloc]initWithFrame:CGRectMake(x , y , w, h)];
                                               effect_highlight.image = [UIImage imageNamed:@"sizle_highlight"];
-                                              [scrollView addSubview:effect_highlight];
+                                              [self->scrollView addSubview:effect_highlight];
                                               [self addEffect:effect_highlight];
                                               
                                               

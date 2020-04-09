@@ -73,7 +73,7 @@ class TargetSettingViewController: UIViewController, NavigationControllerAnnotat
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: LanguageSettingTableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "TargetCell") as! LanguageSettingTableViewCell
+        cell = tableView.dequeueReusableCell(withIdentifier: "TargetCell") as? LanguageSettingTableViewCell
         cell.title = DownloadConfigure.targets[indexPath.row].name
         return cell
     }

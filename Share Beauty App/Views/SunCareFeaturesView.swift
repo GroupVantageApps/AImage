@@ -57,7 +57,7 @@ class SunCareFeaturesView: BaseView {
         super.willMove(toSuperview: newSuperview)
         let utmArr = UIUtil.getUtmArray() as AnyObject as! [String]
         mButton1.setTitle(utmArr[7], for: .normal)
-        mSSArr = UIUtil.get17SSArray() as AnyObject as! [String]
+        mSSArr = UIUtil.get17SSArray() as AnyObject as? [String]
         mButtonBalloon1.addTarget(self, action: #selector(self.animateShake(_:)), for: .touchUpInside)
         mButtonBalloon2.addTarget(self, action: #selector(self.animateShake(_:)), for: .touchUpInside)
         mButtonBalloon3.addTarget(self, action: #selector(self.animateShake(_:)), for: .touchUpInside)

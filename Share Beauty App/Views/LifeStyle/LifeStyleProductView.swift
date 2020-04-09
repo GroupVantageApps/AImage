@@ -72,28 +72,28 @@ class LifeStyleProductView: BaseView {
         didSet {
 //            mLblHeader.text = headerText
             print("headerText")
-            print(headerText)
+            print(headerText!)
         }
     }
 
     @IBInspectable var answerText: String? {
         didSet {
             print("answerText")
-            print(answerText)
+            print(answerText!)
         }
     }
 
     @IBInspectable var explainText: String? {
         didSet {
             print("explainText")
-            print(explainText)
+            print(explainText!)
         }
     }
 
     @IBInspectable var whyText: String? {
         didSet {
             print("wwwwhy")
-            print(whyText)
+            print(whyText!)
         }
     }
 
@@ -183,7 +183,7 @@ class LifeStyleProductView: BaseView {
             {
                 self.discriptionLabel.text = AppItemTable.getNameByItemId(itemId: discroptionList[(product?.productId)!]!)
             }
-            print("self.discriptionLabel.text:\(self.discriptionLabel.text)")
+            print("self.discriptionLabel.text:\(String(describing: self.discriptionLabel.text))")
             self.lineName = product?.lineName
             self.productName = product?.productName
             self.imgProduct = FileTable.getImage(product?.image)

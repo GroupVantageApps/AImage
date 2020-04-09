@@ -1,12 +1,12 @@
 import Alamofire
 
 enum Router: URLRequestConvertible {
-    case downloadKey()
-    case downloadMaster()
+    case downloadKey
+    case downloadMaster
     case downloadFile(fileId: String)
-    case downloadComplete()
-    case downloadError()
-    case downloadCheck()
+    case downloadComplete
+    case downloadError
+    case downloadCheck
 
 //    static let baseURLString = Bundle.main.object(forInfoDictionaryKey: "SERVER_APP_URL") as! String
     static let baseURLString = "https://www.idnscp.net/shiseido_catalog/mng"
@@ -69,20 +69,20 @@ enum Router: URLRequestConvertible {
         urlRequest.addValue(Const.userAgent, forHTTPHeaderField: "User-Agent")
 
         switch self {
-        case .downloadKey():
+        case .downloadKey:
             let params = ["target": target(), "countryId": countryId()]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
             break
-        case .downloadMaster():
+        case .downloadMaster:
             var params = ["target": target(), "countryId": countryId()]
             if let key = key() {
                 params["key"] = key
             }
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
             break
-        case .downloadCheck(),
-             .downloadComplete(),
-             .downloadError():
+        case .downloadCheck,
+             .downloadComplete,
+             .downloadError:
             var params = [String: String]()
             if let key = key() {
                 params["key"] = key

@@ -80,7 +80,7 @@ class ContentDownloader: NSObject {
     }
 
     func downloadUpdateStatus(completion: ((ContentDownloadResult) -> ())?) {
-        Alamofire.request(Router.downloadCheck()).responseJSON { response in
+        Alamofire.request(Router.downloadCheck).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -97,7 +97,7 @@ class ContentDownloader: NSObject {
     }
 
     func downloadComplete(completion: @escaping (ContentDownloadResult) -> ()) {
-        Alamofire.request(Router.downloadComplete()).responseJSON { response in
+        Alamofire.request(Router.downloadComplete).responseJSON { response in
             switch response.result {
             case .success(let value):
                 if JSON(value)["result"].string == "0" {
@@ -115,7 +115,7 @@ class ContentDownloader: NSObject {
     }
 
     func downloadError(completion: @escaping (ContentDownloadResult) -> ()) {
-        Alamofire.request(Router.downloadError()).responseJSON { response in
+        Alamofire.request(Router.downloadError).responseJSON { response in
             switch response.result {
             case .success(let value):
                 if JSON(value)["result"].string == "0" {
@@ -129,7 +129,7 @@ class ContentDownloader: NSObject {
     }
 
     private func downloadKey() {
-        Alamofire.request(Router.downloadKey()).responseJSON { response in
+        Alamofire.request(Router.downloadKey).responseJSON { response in
             switch response.result {
             case .success(let value):
                 if let key = JSON(value)["key"].string {
@@ -146,7 +146,7 @@ class ContentDownloader: NSObject {
 
     private func downloadMaster() {
         Utility.log("ContentDownloader.downloadMaster")
-        Alamofire.request(Router.downloadMaster()).responseJSON { response in
+        Alamofire.request(Router.downloadMaster).responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -299,7 +299,7 @@ class ContentDownloader: NSObject {
                 let ceiled = Double(Int(progress * 100.0)) / 100.0
                 SwiftSpinner.show(progress: ceiled, title: "DownloadFile...\n\(Int(ceiled * 100))%")
 
-                print("fileId: \(logInfo["fileId"]) is Complete")
+                print("fileId: \(String(describing: logInfo["fileId"])) is Complete")
                 self.logInfos.append(logInfo)
 
                 if self.partDownloadedCount == self.partFileCount {

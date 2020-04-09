@@ -114,7 +114,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     }
 
     @IBAction func tappedConceptBtn(_ sender: Any) {
-        mConceptView = UINib(nibName: "LXYutakaConceptView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaConceptView
+        mConceptView = UINib(nibName: "LXYutakaConceptView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? LXYutakaConceptView
         mConceptView.delegate = self
         mConceptView.setAction()
         mConceptView.center = CGPoint(x: self.view.width * 0.5, y:self.view.height * 0.5)
@@ -141,7 +141,7 @@ class LuxuryYutakaViewController: LXBaseViewController, LXNavigationViewDelegte,
     
     
     @IBAction private func tappedTreatmentBtn(_ sender: AnyObject) {
-        print(sender.tag)
+        print(sender.tag!)
         let treatmentView = UINib(nibName: "LXYutakaTreatmentView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! LXYutakaTreatmentView
         treatmentView.delegate = self
         treatmentView.setUI(page: sender.tag - 10)

@@ -586,7 +586,7 @@ class LifeStyleViewController: UIViewController, NavigationControllerAnnotation,
             let font: UIFont = UIFont(name: "Reader", size: 17)!
             hasMakComment = true
             print(productId)
-            print(itemIdSentences[productId])
+            print(itemIdSentences[productId]!)
             imageItemIds.append((discription: "baloon_19AW", x: imageX, y: imageY, width: width, height: height))
             labelItems.append((discription: itemIdSentences[productId] ?? 1111, x: imageX + CGFloat(10), y: imageY, width: width - CGFloat(20), font: font))
         }

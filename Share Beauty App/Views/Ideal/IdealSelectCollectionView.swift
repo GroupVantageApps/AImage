@@ -43,7 +43,7 @@ class IdealSelectCollectionView: BaseView, IdealSelectCellDelegate {
             for idealSelectCell in mIdealSelectCells {
                 idealSelectCell.stepLower = stepLowers[safe: i]
                 if let stepLower = stepLowers[safe: i] {
-                    idealSelectCell.enabled = Bool(stepLower.valid as NSNumber)
+                    idealSelectCell.enabled = Bool(truncating: stepLower.valid as NSNumber)
                 }
                 i += 1
             }

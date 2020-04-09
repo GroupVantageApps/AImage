@@ -115,7 +115,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                         if !(index == 3 && i == 0) {
                         print("\(index) \(i)")
                         beautyLbl.text = lxArr[String(beautyCsvId)]
-                        print("\(beautyCsvId):\(lxArr[String(beautyCsvId)])")
+                            print("\(beautyCsvId):\(String(describing: lxArr[String(beautyCsvId)]))")
                         beautyCsvId = beautyCsvId + 1
                             if beautyCsvId == 8 { beautyCsvId = beautyCsvId + 1}
                         }
@@ -173,7 +173,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
                             if !(index == 3 && i == 0) {
                                 print("\(index) \(i)")
                                 beautyLbl.text = lxArr[String(beautyCsvId)]
-                                print("\(beautyCsvId):\(lxArr[String(beautyCsvId)])")
+                                print("\(beautyCsvId):\(String(describing: lxArr[String(beautyCsvId)]))")
                                 beautyCsvId = beautyCsvId + 1
                                 if beautyCsvId == 8 { beautyCsvId = beautyCsvId + 1}
                             }
@@ -215,7 +215,7 @@ class LuxuryProductViewController: LXBaseViewController, LXProductBLSViewDelegat
     }
 
     @IBAction func tappedProduct(_ sender: AnyObject) {
-        print("tappedProduct:\(sender.tag)")
+        print("tappedProduct:\(String(describing: sender.tag))")
         let toVc = UIViewController.GetViewControllerFromStoryboard("LuxuryProductDetailViewController", targetClass: LuxuryProductDetailViewController.self) as! LuxuryProductDetailViewController
         toVc.productId = sender.tag
         toVc.bgAudioPlayer = self.bgAudioPlayer

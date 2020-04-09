@@ -65,7 +65,7 @@ class LanguageSettingViewController: UIViewController, NavigationControllerAnnot
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: LanguageSettingTableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as! LanguageSettingTableViewCell
+        cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as? LanguageSettingTableViewCell
         cell.title = mLanguages[indexPath.row].name
         //French(for Canada)は非表示
         if mLanguages[indexPath.row].languageId == 17 {

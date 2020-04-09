@@ -98,7 +98,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 circleV.percentLabel.text = percentStr
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
+                print("\(csvId):\(String(describing: percentStr))")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
                 circleV.graphImgV.image = FileTable.getLXFileImage(image)
                 circleV.drawCircle()
@@ -171,7 +171,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 circleV.percentLabel.text = percentStr
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
+                print("\(csvId):\(String(describing: percentStr))")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
                 circleV.graphImgV.image = FileTable.getLXFileImage(image)
                 circleV.drawCircle()
@@ -286,7 +286,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 circleV.percentLabel.text = percentStr
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
+                print("\(csvId):\(String(describing: percentStr))")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
                 circleV.graphImgV.image = FileTable.getLXFileImage(image)
                 circleV.drawCircle()
@@ -366,7 +366,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 circleV.percentLabel.text = percentStr
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
+                print("\(csvId):\(String(describing: percentStr))")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
                 print(image)
                 circleV.graphImgV.image = FileTable.getLXFileImage(image)
@@ -418,7 +418,7 @@ class LXProductEfficacyView: UIView, UIScrollViewDelegate {
                 circleV.percentLabel.text = percentStr
                 percentStr = percentStr?.replacingOccurrences(of: "%", with: "")
                 percentStr = percentStr?.replacingOccurrences(of: " ", with: "")
-                print("\(csvId):\(percentStr)")
+                print("\(csvId):\(String(describing: percentStr))")
                 let image = String(format: "lx_graph_%@.png", percentStr!)
                 print(image)
                 circleV.graphImgV.image = FileTable.getLXFileImage(image)

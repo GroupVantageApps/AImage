@@ -136,7 +136,7 @@ class StepUsageView: BaseView {
 
         stepUsageInfos = movieInfo.stepUsageInfos
         dic[stepUsageInfos.count]!.isHidden = false
-        mStepBtns = (dic[stepUsageInfos.count]!.subviews) as! [UIButton]
+        mStepBtns = (dic[stepUsageInfos.count]!.subviews) as? [UIButton]
 
         mPlayer = AVPlayer(url: FileTable.getPath(movieInfo.movieId))
         NotificationCenter.default.addObserver(

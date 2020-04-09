@@ -173,7 +173,7 @@ class LogManager: NSObject {
             print("Error!: \(error)")
         }
         
-        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        _ = UIDevice.current.identifierForVendor?.uuidString
         
         let str = "json=" + json
         let strData = str.data(using: String.Encoding.utf8)

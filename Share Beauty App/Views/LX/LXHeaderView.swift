@@ -65,12 +65,12 @@ class LXHeaderView: BaseView {
 
     func showSkipButton(_ show: Bool, animateDuration: TimeInterval?) {
         if animateDuration == nil {
-            mBtnSkip.alpha = CGFloat(show as NSNumber)
+            mBtnSkip.alpha = CGFloat(truncating: show as NSNumber)
         } else {
             UIView.animateIgnoreInteraction(
                 duration: animateDuration!,
                 animations: {
-                    self.mBtnSkip.alpha = CGFloat(show as NSNumber)
+                    self.mBtnSkip.alpha = CGFloat(truncating: show as NSNumber)
                 },
                 completion: { finished in
                 }

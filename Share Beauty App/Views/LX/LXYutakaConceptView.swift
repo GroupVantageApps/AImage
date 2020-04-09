@@ -36,7 +36,7 @@ class LXYutakaConceptView: UIView  ,UIScrollViewDelegate{
         self.mScrollV.minimumZoomScale = 1.0
         self.mScrollV.maximumZoomScale = 6.0
     
-        showMovieBtn = self.viewWithTag(30) as! UIButton!
+        showMovieBtn = self.viewWithTag(30) as? UIButton
         showMovieBtn.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         

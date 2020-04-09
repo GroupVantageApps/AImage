@@ -163,7 +163,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     var csvId = 128 + i*2 + index*15
                     if i > 2 { csvId = csvId + 1 }
                     let percentStr = lxArr[String(csvId)]
-                    print("\(csvId):\(percentStr)")
+                    print("\(csvId):\(String(describing: percentStr))")
                     let image = String(format: "lx_graph_%@.png", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
                     print(image)
                     circleV.graphImgV.image = FileTable.getLXFileImage(image)
@@ -179,7 +179,7 @@ class LXProductGraphView: UIView, UIScrollViewDelegate {
                     var csvId = 172 + i*2
                     if i > 1 { csvId = csvId + 1 }
                     let percentStr = lxArr[String(csvId)]
-                    print("\(csvId):\(percentStr)")
+                    print("\(csvId):\(String(describing: percentStr))")
                     let image = String(format: "lx_graph_%@.png", (percentStr?.replacingOccurrences(of: "%", with: ""))!)
                     print((percentStr?.replacingOccurrences(of: "%", with: ""))!)
                     circleV.graphImgV.image = FileTable.getLXFileImage(image)

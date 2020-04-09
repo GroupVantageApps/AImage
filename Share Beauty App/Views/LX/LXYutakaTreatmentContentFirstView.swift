@@ -26,13 +26,13 @@ class LXYutakaTreatmentContentFirstView: UIView, AVAudioPlayerDelegate {
     var mPlaySoundVerTwo: UIButton!
     
     func setUI(image: String, title: String, description: String, index: Int, page_num: [Int]){
-        mPlaySoundVerOne = self.viewWithTag(30) as! UIButton!
+        mPlaySoundVerOne = self.viewWithTag(30) as? UIButton
         mPlaySoundVerOne.addTarget(self, action: #selector(playSound), for: .touchUpInside)
         mPlaySoundVerOne.tag = page_num[index]
         let playImageOne:UIImage = UIImage(named: "lx_play_sound_1.png")!
         mPlaySoundVerOne.setImage(playImageOne, for: .normal)
         
-        mPlaySoundVerTwo = self.viewWithTag(31) as! UIButton!
+        mPlaySoundVerTwo = self.viewWithTag(31) as? UIButton
         mPlaySoundVerTwo.addTarget(self, action: #selector(playSound), for: .touchUpInside)
         mPlaySoundVerTwo.tag = page_num[index] + 10
         let playImageTwo:UIImage = UIImage(named: "lx_play_sound_2.png")!

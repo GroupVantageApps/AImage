@@ -71,7 +71,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
 
         if !fromFindBtn {
             
-            moviePlay2 = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+            moviePlay2 = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? MoviePlayerView
             moviePlay2.isTop = true
             moviePlay2.delegate = self
             moviePlay2.type = 2
@@ -86,7 +86,7 @@ class GscTopViewController: GscBaseViewController, UIScrollViewDelegate, MoviePl
             
             
             
-            moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! MoviePlayerView
+            moviePlay = UINib(nibName: "MoviePlayerView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as? MoviePlayerView
             moviePlay.isTop = true
             moviePlay.delegate = self
             moviePlay.addSubview(bgImgV)

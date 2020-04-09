@@ -70,7 +70,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         subView.addSubview(graphView)
         self.mScrollView.addSubview(subView)
         
-        let showMovieBtn = subView.viewWithTag(20) as! UIButton!
+        let showMovieBtn = subView.viewWithTag(20) as? UIButton
         showMovieBtn?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         
@@ -106,7 +106,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         subView2.addSubview(graphView2)
         self.mScrollView.addSubview(subView2)
         
-        let showMovieBtn2 = subView2.viewWithTag(20) as! UIButton!
+        let showMovieBtn2 = subView2.viewWithTag(20) as? UIButton
         showMovieBtn2?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn2?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         graphView2.tag = 60
@@ -140,7 +140,7 @@ class IngredientSkinGraphView: UIView, UIScrollViewDelegate{
         let amountLabel = subView3.viewWithTag(14) as! UILabel 
         amountLabel.center.y = 380
         
-        let showMovieBtn3 = subView3.viewWithTag(20) as! UIButton!
+        let showMovieBtn3 = subView3.viewWithTag(20) as? UIButton
         showMovieBtn3?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn3?.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
         

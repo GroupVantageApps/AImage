@@ -52,7 +52,7 @@ class LifeStyleSixthProductView: BaseView {
             self.productName = product?.productName
             self.productImage = FileTable.getImage(product?.image)
             if product != nil {
-                isRecommend = Bool(product!.recommend as NSNumber)
+                isRecommend = Bool(truncating: product!.recommend as NSNumber)
             }
         }
     }

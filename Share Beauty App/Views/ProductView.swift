@@ -36,10 +36,10 @@ class ProductView: UICollectionViewCell {
             self.mImgVDailyCareFirst.image = nil
             self.mImgVDailyCareSecond.image = nil
 
-            if Bool(NSNumber(value: self.product.day)) {
+            if Bool(truncating: NSNumber(value: self.product.day)) {
                 self.mImgVDailyCareFirst.image = icon_day
             }
-            if Bool(NSNumber(value: self.product.night)) {
+            if Bool(truncating: NSNumber(value: self.product.night)) {
                 if self.mImgVDailyCareFirst.image == nil {
                     self.mImgVDailyCareFirst.image = icon_night
                 } else {

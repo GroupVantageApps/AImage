@@ -99,7 +99,7 @@ class DownloadConfigure {
             } else {
                 UserDefaultKey.api.set(value: value!)
             }
-            print("apiKey: \(self.apiKey)")
+            print("apiKey: \(String(describing: self.apiKey))")
         }
     }
 

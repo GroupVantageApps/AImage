@@ -134,13 +134,13 @@ class GscResultViewController: GscBaseViewController, UIScrollViewDelegate, GscH
             var productList :[String] = []
             
             if mGroupType == "A" {
-                if gcodeDic?[mSelect1Type] as! [String]  != nil {
+                if gcodeDic?[mSelect1Type] as? [String]  != nil {
                     productList = gcodeDic?[mSelect1Type] as! [String]
                     
                 }
             } else {
                 let upperDic = gcodeDic?[mSelect1Type] as? Dictionary<String, AnyObject>
-                if upperDic?[mSelect2Type] as! [String] != nil {
+                if upperDic?[mSelect2Type] as? [String] != nil {
                     productList = upperDic?[mSelect2Type] as! [String]
                 } else {
                     

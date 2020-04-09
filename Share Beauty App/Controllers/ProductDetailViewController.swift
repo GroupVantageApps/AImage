@@ -2350,13 +2350,13 @@ class ProductDetailViewController: UIViewController, NavigationControllerAnnotat
         
         var offset = CGPoint()
         if sender.tag == 1{
-            print("tag:*\(sender.tag)")
+            print("tag:*\(String(describing: sender.tag))")
             offset = CGPoint(x: 0, y: self.techScrollV.frame.height)
         } else if sender.tag == 2{
-            print("tag:*\(sender.tag)")
+            print("tag:*\(String(describing: sender.tag))")
             offset = CGPoint(x: 0, y: self.techScrollV.frame.height*2)
         } else if sender.tag == 3{
-            print("tag:*\(sender.tag)")
+            print("tag:*\(String(describing: sender.tag))")
             offset = CGPoint(x: 0, y: self.techScrollV.frame.height*3)
         }
         self.techScrollV.setContentOffset(offset, animated: true)

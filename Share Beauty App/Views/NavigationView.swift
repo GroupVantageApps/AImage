@@ -104,7 +104,7 @@ class NavigationView: BaseView {
                 delay: 0,
                 options: .curveEaseOut,
                 animations: {
-                    self.mVContent.alpha = CGFloat(show as NSNumber)
+                    self.mVContent.alpha = CGFloat(truncating: show as NSNumber)
                 },
                 completion: nil
             )

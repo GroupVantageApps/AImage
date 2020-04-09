@@ -29,7 +29,7 @@ class WhiteLucentFeaturesView: BaseView {
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        sArr = UIUtil.get17SSArray() as AnyObject as! [String]
+        sArr = UIUtil.get17SSArray() as AnyObject as? [String]
     }
 
     override func didMoveToSuperview() {

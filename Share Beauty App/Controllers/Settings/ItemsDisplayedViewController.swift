@@ -53,7 +53,7 @@ extension ItemsDisplayedViewController {
  */
         LineTranslateTable.changeDisplayFlg(lineId: mLineId, isDisplay: sender.isOn)
         if let targetIndex = mLines.index(where: {$0.lineId == mLineId}) {
-            mLines[safe: targetIndex]?.displayFlg = Int(sender.isOn as NSNumber)
+            mLines[safe: targetIndex]?.displayFlg = Int(truncating: sender.isOn as NSNumber)
         }
     }
 }
@@ -63,7 +63,7 @@ extension ItemsDisplayedViewController: ItemsDisplayedTableViewCellInput {
         guard let product = cell.product, let targetIndex = mProducts.index(of: product) else {
             return
         }
-        let defaultDisplay = Int(isDisplay as NSNumber)
+        let defaultDisplay = Int(truncating: isDisplay as NSNumber)
         ProductTranslateTable.changeDefaultDisplay(product.productId, isDisplay: defaultDisplay)
         mProducts[safe: targetIndex]?.defaultDisplay = defaultDisplay
     }
@@ -97,11 +97,11 @@ extension ItemsDisplayedViewController: UITableViewDataSource {
         var cell: ItemsDisplayedTableViewCell!
 
         if tableView.tag == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: "LineCell") as! ItemsDisplayedTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "LineCell") as? ItemsDisplayedTableViewCell
             cell.title = mLines[indexPath.row].name
             cell.isLineCell = true
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as! ItemsDisplayedTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell") as? ItemsDisplayedTableViewCell
             cell.product = mProducts[indexPath.row]
             cell.delegate = self
         }

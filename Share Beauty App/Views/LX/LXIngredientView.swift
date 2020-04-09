@@ -68,14 +68,14 @@ class LXIngredientView: UIView, UIScrollViewDelegate {
             mXbutton.setImage(FileTable.getLXFileImage("btn_close.png"), for: UIControl.State.normal)
         mXbutton.addTarget(self, action: #selector(close), for: .touchUpInside)
         self.addSubview(mXbutton)
-        mMovieBtn = self.viewWithTag(30) as! UIButton!
+        mMovieBtn = self.viewWithTag(30) as? UIButton
         mMovieBtn.addTarget(self, action: #selector(showMovie), for: .touchUpInside)
-        mGraphBtn = self.viewWithTag(31) as! UIButton!
+        mGraphBtn = self.viewWithTag(31) as? UIButton
         mGraphBtn.addTarget(self, action: #selector(showSkinGraph), for: .touchUpInside)
 
         let image = FileTable.getLXFileAImage("enmei.png")
         image?.repeatCount = 10
-        apngImageV = self.viewWithTag(50) as! APNGImageView!
+        apngImageV = self.viewWithTag(50) as? APNGImageView
         apngImageV.image = image
         apngImageV.startAnimating()
         let lxArr = LanguageConfigure.lxcsv
