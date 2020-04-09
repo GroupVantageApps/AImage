@@ -33,7 +33,6 @@ fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-let defaultClarity: Float = 0.8
 let floatEps: Float = 1E-6
 let checkInternal = [60,30,20,15,12,10,6,5,4,3,2,1]
 
@@ -41,32 +40,32 @@ let _imageStorageKey = malloc(8)
 public extension UIImage
 {
     
-    public convenience init(aImageData: Data, clarity: Float = defaultClarity){
+    convenience init(aImageData: Data, clarity: Float = 0.8){
         self.init()
         add(aImage: aImageData, with: clarity)
     }
     
-    public func add(aImage data:Data, with clarity:Float = defaultClarity){
+    func add(aImage data:Data, with clarity:Float = 0.8){
         self.m_ = image_storage()
         m_!.imageSource = CGImageSourceCreateWithData(data as CFData, nil)
         if (clarity <= 0 || clarity > 1) {
             print("Warning.Illegal input parameter 'clarity',request >0&&<=1.Using default clarity.")
-            calculateFrameDelay(calcuDelayTimes(m_!.imageSource), clarity: defaultClarity)
+            calculateFrameDelay(calcuDelayTimes(m_!.imageSource), clarity: 0.8)
         } else {
             calculateFrameDelay(calcuDelayTimes(m_!.imageSource), clarity: clarity)
         }
         calculateFrameSize()
     }
     
-    public func getImageSource() -> CGImageSource { return m_!.imageSource! }
+    func getImageSource() -> CGImageSource { return m_!.imageSource! }
     
-    public func getRefreshFactor() -> Int { return m_!.displayRefreshFactor! }
+    func getRefreshFactor() -> Int { return m_!.displayRefreshFactor! }
     
-    public func getImageSize() -> Int { return m_!.imageSize! }
+    func getImageSize() -> Int { return m_!.imageSize! }
     
-    public func getImageNumber() -> Int { return m_!.imageCount! }
+    func getImageNumber() -> Int { return m_!.imageCount! }
     
-    public func getDisplayOrder() -> [Int] { return m_!.displayOrder! }
+    func getDisplayOrder() -> [Int] { return m_!.displayOrder! }
     
     
     fileprivate func calcuDelayTimes(_ imageSource: CGImageSource?) -> [Float] {
@@ -156,10 +155,10 @@ public extension UIImage
     
     fileprivate var m_: image_storage? {
         get {
-            return (objc_getAssociatedObject(self, _imageStorageKey) as! image_storage)
+            return (objc_getAssociatedObject(self, _imageStorageKey!) as! image_storage)
         }
         set {
-            objc_setAssociatedObject(self, _imageStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
+            objc_setAssociatedObject(self, _imageStorageKey!, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
         }
     }
 }

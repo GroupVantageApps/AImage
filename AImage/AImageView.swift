@@ -9,18 +9,17 @@
 import ImageIO
 import UIKit
 let _imageviewStorageKey = malloc(8)
-let defaultMemoryLimit = 20
 let shouldCacheImmediatelyOptions = [kCGImageSourceShouldCacheImmediately as String : true as NSNumber] as CFDictionary
 
 public extension UIImageView{
     
-    public convenience init(AImage:UIImage, MemoryLimit_MB:Int = defaultMemoryLimit) {
+    convenience init(AImage:UIImage, MemoryLimit_MB:Int = 20) {
         self.init()
         setAImage(AImage,MemoryLimit_MB: MemoryLimit_MB)
     }
     
     
-    public func setAImage(_ AImage:UIImage, MemoryLimit_MB:Int = defaultMemoryLimit) {
+    func setAImage(_ AImage:UIImage, MemoryLimit_MB:Int = 20) {
         self.m_ = imageview_storage()
         self.m_!.aImage = AImage
         self.m_!.displayOrderIndex = 0
@@ -37,24 +36,24 @@ public extension UIImageView{
         }
         
         self.m_!.timer!.frameInterval = self.getAImage().getRefreshFactor()
-        self.m_!.timer!.add(to: .main, forMode: RunLoopMode.commonModes)
+        self.m_!.timer!.add(to: .main, forMode: RunLoop.Mode.common)
     }
     
     
-    public func APlay() {
+    func APlay() {
         self.m_!.needToPlay = true;
     }
     
-    public func AStop() {
+    func AStop() {
         self.m_!.needToPlay = false;
     }
     
-    public func getPlayJudge() -> Bool { return m_!.needToPlay! }
-    public func getTimer() -> CADisplayLink { return m_!.timer! }
-    public func getAImage() -> UIImage { return m_!.aImage! }
-    public func getDisplayOrderIndex() -> Int{ return m_!.displayOrderIndex! }
-    public func getCurrentImage() -> UIImage{ return m_!.currentImage! }
-    public func getImageCache() -> NSCache<AnyObject, AnyObject> { return m_!.cache! }
+    func getPlayJudge() -> Bool { return m_!.needToPlay! }
+    func getTimer() -> CADisplayLink { return m_!.timer! }
+    func getAImage() -> UIImage { return m_!.aImage! }
+    func getDisplayOrderIndex() -> Int{ return m_!.displayOrderIndex! }
+    func getCurrentImage() -> UIImage{ return m_!.currentImage! }
+    func getImageCache() -> NSCache<AnyObject, AnyObject> { return m_!.cache! }
     
     func prepareCache() {
         self.m_!.cache = NSCache()
@@ -65,7 +64,7 @@ public extension UIImageView{
     }
     
     //bound to 'displayLink'
-    func updateFrameWithoutCache() {
+    @objc func updateFrameWithoutCache() {
         if(self.getPlayJudge() == true){
             self.image = self.getCurrentImage()
             
@@ -77,7 +76,7 @@ public extension UIImageView{
     }
     
     //bound to 'displayLink'
-    func updateFrameWithCache() {
+    @objc func updateFrameWithCache() {
         if(self.getPlayJudge() == true){
             self.image = self.getImageCache().object(forKey: self.getDisplayOrderIndex() as AnyObject) as? UIImage
             self.m_!.displayOrderIndex = (self.getDisplayOrderIndex()+1)%self.getAImage().getImageNumber()
@@ -86,10 +85,10 @@ public extension UIImageView{
     
     private var m_:imageview_storage? {
         get {
-            return (objc_getAssociatedObject(self, _imageviewStorageKey) as! imageview_storage)
+            return (objc_getAssociatedObject(self, _imageviewStorageKey!) as! imageview_storage)
         }
         set {
-            objc_setAssociatedObject(self, _imageviewStorageKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
+            objc_setAssociatedObject(self, _imageviewStorageKey!, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN);
         }
     }
 }
