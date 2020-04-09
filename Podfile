@@ -9,11 +9,11 @@ target 'Share Beauty App' do
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
   pod 'SwiftSpinner'
-  pod 'SCLAlertView'
-  pod 'APNGKit', '~> 0.5'
-  pod 'AImage', :git => 'https://github.com/wangjwchn/AImage', :branch => 'Swift3'
+  pod 'SCLAlertView', :git => 'https://github.com/vikmeup/SCLAlertView-Swift.git', :branch => '0.8.1'
+  pod 'APNGKit'
+  pod 'AImage', :git => 'git@github.com:Yuya-Tominaga-VIT/AImage.git', :branch => 'Swift4.2'
   pod 'Zip'
-  pod 'TouchVisualizer', '~>2.0.1'
+  pod 'TouchVisualizer'
   target 'Share Beauty AppTests' do
     inherit! :search_paths
     # Pods for testing
