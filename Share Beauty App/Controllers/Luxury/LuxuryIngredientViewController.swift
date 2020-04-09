@@ -58,7 +58,7 @@ class LuxuryIngredientViewController: LXBaseViewController, LXNavigationViewDele
             label.text = lxArr[String(csvId)]
         }
         
-        let showMovieBtn = self.view.viewWithTag(20) as! UIButton!
+        let showMovieBtn = self.view.viewWithTag(20) as? UIButton
         showMovieBtn?.setImage(FileTable.getLXFileImage("lx_start.png"), for: .normal)
         showMovieBtn?.addTarget(self, action: #selector(playIngredientMovie), for: .touchUpInside)
         
